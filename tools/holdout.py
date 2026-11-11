@@ -44,7 +44,8 @@ from cbomlib import FAMILIES, functions_for, load_json, make_bom, make_component
 from holdout_common import DOCS, VERBS, WORDS, Names, spec, sub  # noqa: E402,F401
 
 ROOT = Path(__file__).resolve().parent.parent
-GENERATOR_VERSION = "1.1"  # 1.1: certificates, keys, keystores, configs, compiled artifacts
+GENERATOR_VERSION = "1.2"  # 1.1: certificates, keys, keystores, configs, compiled artifacts
+#                            1.2: C#, Apache/HAProxy/IPsec configs, LMS/XMSS policies, minified JS, native binaries
 
 # ----------------------------------------------------------------------------------------------
 # Names. Domain words only: identifiers never name the algorithm (a grep for "md5" shouldn't win
@@ -610,8 +611,8 @@ def published_families() -> dict:
     return out
 
 
-NEW_LANGS = {"go", "javascript", "typescript", "c"}
-EXT = {"python": ".py", "java": ".java", "javascript": ".js", "typescript": ".ts", "c": ".c"}
+NEW_LANGS = {"go", "javascript", "typescript", "c", "csharp"}
+EXT = {"python": ".py", "java": ".java", "javascript": ".js", "typescript": ".ts", "c": ".c", "csharp": ".cs"}
 UNCOVERED = ("TLS-", "TLS_")  # protocol versions and suites set in code: not generated yet
 
 
@@ -630,12 +631,15 @@ def _new_builder(lang, rng, names, imports):
         return hl.GoBuilder(rng, names, imports)
     if lang in ("javascript", "typescript"):
         return hl.JsBuilder(rng, names, ts=lang == "typescript", imports=imports)
+    if lang == "csharp":
+        return hl.CsBuilder(rng, names, imports)
     return hl.CBuilder(rng, names, imports)
 
 
 def _new_specs(lang):
     import holdout_langs as hl
-    return {"go": hl.go_specs, "javascript": hl.js_specs, "typescript": hl.js_specs, "c": hl.c_specs}[lang]()
+    return {"go": hl.go_specs, "javascript": hl.js_specs, "typescript": hl.js_specs, "c": hl.c_specs,
+            "csharp": hl.cs_specs}[lang]()
 
 
 def _negative_py_java(rng, names, lang, phrases):
@@ -659,7 +663,7 @@ def _negative_py_java(rng, names, lang, phrases):
 
 
 def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: int = 10, n_deps: int = 6,
-             n_neg: int = 24, n_mixed: int = 12, assets: bool = True) -> dict:
+             n_neg: int = 28, n_mixed: int = 12, assets: bool = True) -> dict:
     """Matched files mirror the published Tier 1, Tier 2 and PQC cases per language (Python, Java, Go,
     JavaScript/TypeScript, C); Tier 3 projects mirror the published cross-file kinds; broad files use
     every spelling the generator knows; dependency manifests and negative controls in every language."""
@@ -708,8 +712,11 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
             mod = p.parent.parent / "go.mod"
             if not mod.exists():
                 mod.write_text(f"module example.com/h{tag(len(rel))}\n\ngo 1.24\n")
+        if rel.endswith(".cs"):  # one project per case, as in the published corpus
+            import holdout_langs
+            (p.parent / f"{p.parent.name}.csproj").write_text(holdout_langs.CSPROJ)
 
-    weights = [("python", 22), ("java", 18), ("go", 20), ("javascript", 20), ("c", 20)]
+    weights = [("python", 22), ("java", 18), ("go", 20), ("javascript", 20), ("c", 20), ("csharp", 14)]
     pool = [l for l, w in weights for _ in range(w)]
     n_pqc = max(3, round(n_files * 0.08))
     jobs = [("matched", rng.choice(pool)) for _ in range(n_files - n_pqc)]
@@ -782,7 +789,8 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
             rel = f"corpus/{tiername}/{lang}/" + (f"h_{h}.py" if lang == "python" else f"{cls}.java")
             text, anchors = builder.render(cls)
         else:
-            rel = (f"corpus/{tiername}/go/case_{h}/h_{h}.go" if lang == "go" else f"corpus/{tiername}/{lang}/h_{h}{EXT[lang]}")
+            rel = (f"corpus/{tiername}/go/case_{h}/h_{h}.go" if lang == "go" else
+                   f"corpus/{tiername}/csharp/H{h}/H{h}.cs" if lang == "csharp" else f"corpus/{tiername}/{lang}/h_{h}{EXT[lang]}")
             text, anchors = _lines_to_text(builder.render())
         write(rel, text)
         for fid, sp, style in fids:
@@ -877,7 +885,7 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
 
     # Negative controls in every language, several statement shapes each
     import holdout_langs as hl
-    neg_langs = ["python", "java", "go", "javascript", "typescript", "c"]
+    neg_langs = ["python", "java", "go", "javascript", "typescript", "c", "csharp"]
     for j in range(n_neg):
         lang = neg_langs[j % len(neg_langs)]
         names = Names(rng)
@@ -892,6 +900,8 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
             write(f"corpus/negatives/go/neg_{h}/n_{h}.go", hl.negative_go(rng, names, phrases))
         elif lang in ("javascript", "typescript"):
             write(f"corpus/negatives/{lang}/hn_{h}{EXT[lang]}", hl.negative_js(rng, names, phrases, ts=lang == "typescript"))
+        elif lang == "csharp":
+            write(f"corpus/negatives/csharp/Hn{h}/Hn{h}.cs", hl.negative_cs(rng, names, phrases))
         else:
             write(f"corpus/negatives/c/hn_{h}.c", hl.negative_c(rng, names, phrases))
 
@@ -982,6 +992,25 @@ def verify(out: Path) -> list[str]:
     if shutil.which("node"):
         for p in sorted(x for ext in ("*.js", "*.ts") for x in (out / "corpus").rglob(ext)):
             run(["node", p.name], cwd=p.parent, label=str(p.relative_to(out)))
+    projects_cs = sorted((out / "corpus").rglob("*.csproj"))
+    if projects_cs and shutil.which("dotnet"):
+        with tempfile.TemporaryDirectory() as tmp:
+            cfg = Path(tmp) / "nuget.config"   # no package source: the cases use the base class library only
+            cfg.write_text('<?xml version="1.0"?>\n<configuration><packageSources><clear/></packageSources></configuration>\n')
+            denv = dict(env, DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
+            for proj in projects_cs:
+                name = proj.stem
+                r = subprocess.run(["dotnet", "build", str(proj.parent), "--configfile", str(cfg), "--artifacts-path", f"{tmp}/{name}",
+                                    "-p:UseAppHost=false", "-v", "q"], capture_output=True, text=True, timeout=300, env=denv)
+                if r.returncode:
+                    errs = [ln for ln in r.stdout.splitlines() if " error " in ln]
+                    fails.append(f"dotnet build {proj.parent.relative_to(out)}: {(errs or [str(r.returncode)])[0][-220:]}")
+                    continue
+                r = subprocess.run(["dotnet", f"{tmp}/{name}/bin/{name}/debug/{name}.dll"], capture_output=True, text=True, timeout=120, env=denv)
+                if r.returncode:
+                    fails.append(f"{proj.parent.relative_to(out)}: {(r.stderr.strip().splitlines() or [str(r.returncode)])[-1][:200]}")
+    elif projects_cs:
+        fails.append("dotnet not found: C# variants not verified")
     cc = shutil.which("cc") or shutil.which("gcc")
     if cc:
         with tempfile.TemporaryDirectory() as tmp:
@@ -1077,8 +1106,8 @@ def overfit_gap(published: dict, holdout: dict, boot: int = 2000, seed: int = 0)
             "by_tier": by_tier, "by_family": fam_rows}
 
 
-NEG_LANGS = ("python", "java", "go", "javascript", "typescript", "c")
-CODE_EXT = {".py", ".java", ".go", ".js", ".mjs", ".ts", ".c"}
+NEG_LANGS = ("python", "java", "go", "javascript", "typescript", "c", "csharp")
+CODE_EXT = {".py", ".java", ".go", ".js", ".mjs", ".ts", ".c", ".cs"}
 
 
 def negative_gap(published: dict, holdout: dict, holdout_dir: Path, langs=NEG_LANGS) -> dict:
@@ -1205,7 +1234,7 @@ def main() -> int:
     g.add_argument("--seed", type=int, help="keep it private; omitted = random, printed once")
     g.add_argument("--out", type=Path, required=True)
     g.add_argument("--files", type=int, default=120, help="matched files (default 120, as the runner uses)")
-    g.add_argument("--negatives", type=int, default=24, help="negative-control files across six languages (default 24)")
+    g.add_argument("--negatives", type=int, default=28, help="negative-control files across seven languages (default 28)")
     g.add_argument("--broad", type=int, default=48, help="broad files (default 48)")
     g.add_argument("--no-verify", action="store_true")
     s = sp.add_parser("score", help="score a scanner's CBOM of <dir>/corpus, with the overfit gap")
