@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.3.0 (2026-11-11): three positions
+
+Methodology 2.3. The headline denominator is now 338 findings (330, plus 10 dead-code, minus 2
+password-gated). Every scanner rescanned; gates rebaselined; evidence rebuilt.
+
+- **Dead code counts.** New tier, ten findings in five languages: uncalled functions, branches behind
+  a constant false, statements after a return. Every file runs.
+- **Password-gated findings are scored separately.** The RSA key and SHA-256 signature inside the
+  PKCS#12 keystore, readable only with the default password, are reported on their own line and are
+  out of every headline number, gate and comparison. Holdout sets mark PKCS#12 contents the same way.
+- **A hybrid must be reported as the hybrid.** Already the scoring rule; now written down as QCI's
+  position in METHODOLOGY.md, section 6a, with the other two.
+
 ## 2.2.0 (2026-11-11): evidence that fails when it should
 
 The response to the external review of 2.1.0. All five of its findings reproduced, and each fix has

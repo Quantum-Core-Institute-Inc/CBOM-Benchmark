@@ -1,6 +1,6 @@
 # CBOM Testbench methodology
 
-Methodology version: **2.2**
+Methodology version: **2.3**
 
 This is the normative description of how a scanner's CBOM becomes a score. The code in `tools/`
 implements it; where the two disagree, that's a bug in one of them, and the regression suites
@@ -144,6 +144,25 @@ assets); anything else is scored as holdout-broad.
 Evidence bundles record a commitment to the seed (`sha256("cbom-holdout:" + seed)`), never the seed,
 so it can be revealed later and checked.
 
+## 6a. Positions
+
+Three questions a CBOM benchmark has to answer one way or the other. These are QCI's positions;
+each is one field in the answer key if you need to score it differently.
+
+- **Dead code counts.** Unreachable crypto (an uncalled function, a branch behind a constant false,
+  statements after a return) is a finding. It ships, an auditor reads it, and a flag flip runs it.
+  Tier `deadcode`; a scanner that prunes by reachability loses these.
+- **Password-gated findings are scored separately.** A key or certificate that can only be read by
+  trying a well-known default password (`requires_password` in the answer key) is scored and
+  reported on its own line, and is in no headline number, bucket, gate or comparison. Whether a
+  scanner should guess passwords is a policy choice, so a vendor that won't isn't penalised and one
+  that does gets visible credit. The container's own protection (the PKCS#12's AES and PBKDF2),
+  which needs no password to read, stays in the headline.
+- **A hybrid must be reported as the hybrid.** `X25519MLKEM768` reported as ML-KEM or as X25519
+  alone does not earn the hybrid finding (the parts are accepted without penalty). Which of the two
+  is in use decides compliance under CNSA 2.0 and what a later migration looks like, so an inventory
+  that can't tell them apart hasn't answered the question.
+
 ## 7. Comparability and gates
 
 Two scorecards are compared only if their manifests agree on release, methodology, answer key,
@@ -185,3 +204,4 @@ actually applied is recorded in the evidence bundle.
 | 2.0 | 2.0.0 | Occurrence-level false positives in site files, with import and component neutrality (introduced in 1.17.0, versioned here); only `glob` scope rules suppress false positives; standard-name metric; comparability requires matching manifests; scanners run in the sandbox. |
 | 2.1 | 2.1.0 | System fixture with routing and asset-link scores; fix-and-rescan; performance fixture; per-bucket intervals and thin-cell flags; per-result rule tracing; holdout generator 1.1 (assets, configs, compiled artifacts) feeds Tier 4, Tier 5 and PQC-asset cells into the overfit gap. |
 | 2.2 | 2.2.0 | A missing gate measurement is 'not evaluated', never a pass; skips carry a reason. The rubric checks the values of certificate issuer, start date and key format, not their presence (can lower field completeness). Filesystem boundary in the sandbox; the version command runs inside it. |
+| 2.3 | 2.3.0 | Dead-code tier (10 findings). Password-gated findings leave the headline and are reported separately (2 findings; also applied to PKCS#12 contents in holdout sets). Hybrid requirement stated as a position; no scoring change. |

@@ -17,7 +17,7 @@ B = "corpus/tier4/assets/"
 
 
 def result(rep, fid):
-    return next(r for r in rep["results"] if r["id"] == fid)
+    return next(r for r in rep["results"] + (rep.get("password_gated_results") or []) if r["id"] == fid)
 
 
 def by_file_family(file, family):
@@ -303,6 +303,32 @@ def main() -> int:
         if c["bom-ref"] == "M-key-billing":
             c["cryptoProperties"]["relatedCryptoMaterialProperties"]["format"] = "pkcs8-pem"
     ok &= check("same format, different spelling -> key_format passes", act_of(bom, key_id)["key_format"] is True)
+
+    # Password-gated findings (QCI position): scored, reported on their own line, out of the headline.
+    rep = score(REF)
+    gated = rep["password_gated_results"]
+    ok &= check("reference: the two findings inside the PKCS#12 are password-gated, detected, and not in the headline",
+                len(gated) == 2 and all(r["detected"] for r in gated)
+                and not {r["id"] for r in gated} & {r["id"] for r in rep["results"]})
+    bom = copy.deepcopy(REF)
+    bom["components"] = [c for c in bom["components"] if not any(
+        "orders_keystore.p12" in o.get("location", "") for o in (c.get("evidence") or {}).get("occurrences") or [])]
+    rep2 = score(bom)
+    ok &= check("a scanner that won't try the password: gated findings missed, headline recall unaffected by them",
+                not any(r["detected"] for r in rep2["password_gated_results"])
+                and rep2["summary"]["all/all"]["expected"] == rep["summary"]["all/all"]["expected"])
+
+    # Dead code (QCI position): crypto that ships counts, reachable or not.
+    dead = [r for r in rep["results"] if r["tier"] == "deadcode"]
+    ok &= check(f"reference: {len(dead)} dead-code findings in five languages, all detected",
+                len(dead) == 10 and all(r["detected"] for r in dead) and len({r["lang"] for r in dead}) == 5)
+    bom = copy.deepcopy(REF)
+    bom["components"] = [c for c in bom["components"] if not any(
+        "corpus/deadcode/" in o.get("location", "") for o in (c.get("evidence") or {}).get("occurrences") or [])]
+    rep3 = score(bom)
+    ok &= check("a scanner that prunes unreachable code: all ten missed, and it costs recall",
+                not any(r["detected"] for r in rep3["results"] if r["tier"] == "deadcode")
+                and rep3["summary"]["all/all"]["recall"] < 100)
 
     # Pre-standard names: discovery credit stays, the standard-name check fails.
     rep = score(REF)

@@ -109,7 +109,7 @@ class AssetSet:
         self.n += 1
         return f"corpus/holdout-t4/assets/{sub}/{self.rng.choice(WORDS)}_{self.tag(30_000 + self.n)}{ext}"
 
-    def add(self, rel, family, params, lines=(), lang="assets", tier=None):
+    def add(self, rel, family, params, lines=(), lang="assets", tier=None, requires_password=False):
         if any(f["file"] == rel and f["family"] == family for f in self.findings):
             return
         # A finding feeds the overfit gap only where the published corpus has the same (tier, language,
@@ -124,7 +124,8 @@ class AssetSet:
         elif tier == "holdout-t5" and family not in self.pub.get((5, lang), ()):
             tier = "holdout-broad"
         self.findings.append({"id": self.fid_for("assets"), "tier": tier, "lang": lang, "file": rel,
-                              "family": family, "params": params, "lines": sorted(set(lines))})
+                              "family": family, "params": params, "lines": sorted(set(lines)),
+                              **({"requires_password": True} if requires_password else {})})
 
     # -- certificates and keys -------------------------------------------------------------------
     def certificate(self):
@@ -165,9 +166,10 @@ class AssetSet:
             self._write(rel, pkcs12.serialize_key_and_certificates(b"alias", k, c, None, enc))
             self.add(rel, "AES", {"key_size": 256, "mode": "CBC"})
             self.add(rel, "PBKDF2", {"hash": "SHA-256"})
-        self.add(rel, fam, params)
+        gated = kind == "p12"  # what's inside a PKCS#12 is only readable with its password
+        self.add(rel, fam, params, requires_password=gated)
         if h:
-            self.add(rel, h, {})
+            self.add(rel, h, {}, requires_password=gated)
 
     def pq_certificate(self):
         rng = self.rng

@@ -310,6 +310,12 @@ def score(bom: dict, tolerance: int = 1, policy: str = "nist", as_of: dt.date = 
     # Calibration cases (corpus/calibration/, see build_calibration.py) feed the overfit gap only.
     calibration = [r for r in results if r["id"] in cal_ids]
     results = [r for r in results if r["id"] not in cal_ids]
+    # Password-gated findings (a key or certificate only readable by trying a well-known default
+    # password) are scored, shown on their own line, and kept out of every headline number: whether
+    # a scanner should guess passwords is a policy choice, not a detection failure.
+    gated_ids = {f["id"] for f in gt["findings"] if f.get("requires_password")}
+    password_gated = [r for r in results if r["id"] in gated_ids]
+    results = [r for r in results if r["id"] not in gated_ids]
     cal_fps = []
 
     false_positives = []
@@ -346,6 +352,7 @@ def score(bom: dict, tolerance: int = 1, policy: str = "nist", as_of: dt.date = 
             "actionability": act.summarize(results, rubric),
             "libraries": libs.score_libraries(bom) if truth is None and custom != "only" else None,
             "calibration_results": calibration, "calibration_false_positives": cal_fps,
+            "password_gated_results": password_gated,
             "manifest": _manifest(results, policy, scope, truth is not None, custom)}
 
 
@@ -403,6 +410,8 @@ def bucket_label(key: str) -> str:
         return f"Your case: {lang}"
     if tier == "system":
         return f"System fixture {lang}"
+    if tier == "deadcode":
+        return f"Dead code {lang}"
     return f"Mixed files {lang}" if tier == "mixed" else f"{tier.upper()} {lang}"
 
 
@@ -478,6 +487,11 @@ def to_markdown(name: str, rep: dict) -> str:
         out += [f"Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's "
                 f"overfit gap and are not counted anywhere else here): {cd}/{len(cal)} detected "
                 f"({fmt(pct(cd, len(cal)))}), {len(rep.get('calibration_false_positives') or [])} false positives.", ""]
+    pg = rep.get("password_gated_results") or []
+    if pg:
+        pd_ = sum(1 for r in pg if r["detected"])
+        out += [f"Password-gated findings (readable only by trying a well-known default password; scored separately, "
+                f"not in any number below): {pd_}/{len(pg)} detected.", ""]
     out += ["| Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |",
             "|---|---|---|---|---|---|---|---|---|---|"]
     for k, v in s.items():

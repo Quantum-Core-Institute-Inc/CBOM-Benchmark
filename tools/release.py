@@ -51,7 +51,7 @@ def corpus_sha() -> str:
 
 def shipped_finding_ids() -> list[str]:
     gt = json.loads((ROOT / "expected" / "ground_truth.json").read_text())
-    return sorted(f["id"] for f in gt["findings"] if not f.get("calibration"))
+    return sorted(f["id"] for f in gt["findings"] if not f.get("calibration") and not f.get("requires_password"))
 
 
 def findings_sha(ids) -> str:

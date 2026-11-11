@@ -9056,6 +9056,134 @@
         "resource \"aws_kms_key\" \"payments_data\""
       ],
       "note": "no key spec: AWS KMS defaults to SYMMETRIC_DEFAULT, which is AES-256-GCM"
+    },
+    {
+      "id": "DC-PY-01",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "hashlib.md5(data)"
+      ],
+      "dead": "function with no caller"
+    },
+    {
+      "id": "DC-PY-02",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "RSA",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "rsa.generate_private_key("
+      ],
+      "dead": "branch behind a constant that is always false"
+    },
+    {
+      "id": "DC-JV-01",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "Cipher.getInstance(\"DES/CBC/PKCS5Padding\")"
+      ],
+      "dead": "private method with no caller"
+    },
+    {
+      "id": "DC-JV-02",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "SHA-1",
+      "params": {},
+      "anchors": [
+        "MessageDigest.getInstance(\"SHA-1\")"
+      ],
+      "dead": "branch behind a constant that is always false"
+    },
+    {
+      "id": "DC-GO-01",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "md5.Sum(data)"
+      ],
+      "dead": "function with no caller"
+    },
+    {
+      "id": "DC-GO-02",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "RC4",
+      "params": {},
+      "anchors": [
+        "rc4.NewCipher("
+      ],
+      "dead": "branch behind a constant that is always false"
+    },
+    {
+      "id": "DC-JS-01",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "createHash(\"md5\")"
+      ],
+      "dead": "function with no caller"
+    },
+    {
+      "id": "DC-JS-02",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "createCipheriv(\"des-ede3-cbc\""
+      ],
+      "dead": "statement after a return"
+    },
+    {
+      "id": "DC-C-01",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "EVP_md5()"
+      ],
+      "dead": "function with no caller"
+    },
+    {
+      "id": "DC-C-02",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "EVP_des_ede3_cbc()"
+      ],
+      "dead": "branch that is never taken"
     }
   ],
   "also_ok": [
