@@ -2,12 +2,11 @@
 
 ## Unreleased
 
-- **Third-party scanners run on GitHub.** `.github/workflows/third-party-scanners.yml` installs
-  cbom-scan 0.1.0, pqcheck 0.1.0 and quantascan 1.0.1 at pinned versions, runs each in the sandbox
-  (no network, benchmark tree hidden) and uploads a verifiable evidence bundle. The workflow holds
-  no secrets. Results are artifacts, not published columns: `integrations/third-party/README.md`
-  says what has to be read before one goes into the comparison, and which scanners were looked
-  at and left out.
+- **The image is built before the tag.** `.github/workflows/image.yml` builds the Dockerfile from the
+  real base images on any pull request that touches it (and weekly, and on demand), records the
+  digest each base tag resolved to, requires every toolchain to report a version, runs the required
+  checks inside the image with no network, and confirms the sandbox refuses to run unconfined when
+  the container lacks the capability it needs. Nothing is published.
 
 ## 2.4.0 (2026-11-11): more of what's deployed
 
