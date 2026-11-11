@@ -587,6 +587,168 @@ class CBuilder:
 
 
 # =============================================================================================
+# C# / .NET (generator 1.2). One project per case, base class library only.
+# =============================================================================================
+CS_HASH = {"MD5": "MD5", "SHA-1": "SHA1", "SHA-256": "SHA256", "SHA3-256": "SHA3_256", "SHA-512": "SHA512"}
+CS_CURVE = {"P-256": "nistP256", "P-384": "nistP384", "P-521": "nistP521"}
+CS_TYPE = {"str": "string", "int": "int", "hashname": "HashAlgorithmName", "curve": "ECCurve",
+           "hashctor": "Func<HashAlgorithm>", "mode": "CipherMode"}
+CS_DATA = "Encoding.UTF8.GetBytes(<<d>>)"
+
+
+def cs_specs():
+    def cs_hash(r, m=False):
+        fam = r.choice(["MD5", "SHA-1", "SHA-256", "SHA3-256"] + ([] if m else ["SHA-512"]))
+        return spec(fam, {}, [f"@byte[] <<x1>> = {CS_HASH[fam]}.HashData({CS_DATA});"], "<<x1>>.Length",
+                    api=f"{CS_HASH[fam]}.HashData")
+
+    def cs_hash_named(r, m=False):
+        fam = {2: "SHA-1"}.get(m) or r.choice(["MD5", "SHA-1", "SHA-256", "SHA-512"])
+        return spec(fam, {}, ["@using IncrementalHash <<x1>> = IncrementalHash.CreateHash(new HashAlgorithmName(<<S>>));",
+                              f"<<x1>>.AppendData({CS_DATA});"], "<<x1>>.GetHashAndReset().Length",
+                    f'"{CS_HASH[fam]}"', "str", api="IncrementalHash.CreateHash", carries_family=True)
+
+    def cs_hash_factory(r, m=False):
+        fam = r.choice({2: ["MD5", "SHA-512"]}.get(m, ["MD5", "SHA-1", "SHA-256", "SHA-512"]))
+        return spec(fam, {}, ["@using HashAlgorithm <<x1>> = <<S>>();"], f"<<x1>>.ComputeHash({CS_DATA}).Length",
+                    f"{CS_HASH[fam]}.Create", "hashctor", api="HashAlgorithm factory", carries_family=True)
+
+    def cs_rsa(r, m=False):
+        bits = r.choice([1024, 2048, 3072])
+        return spec("RSA", {"key_size": bits}, ["@using RSA <<x1>> = RSA.Create(<<S>>);"],
+                    f"<<x1>>.SignData({CS_DATA}, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1).Length",
+                    str(bits), "int", also_ok=["SHA-256"], api="RSA.Create")
+
+    def cs_ecdsa(r, m=False):
+        curve = r.choice(list(CS_CURVE))
+        return spec("EC", {"curve": curve}, ["@using ECDsa <<x1>> = ECDsa.Create(<<S>>);"],
+                    f"<<x1>>.SignData({CS_DATA}, HashAlgorithmName.SHA256).Length",
+                    f"ECCurve.NamedCurves.{CS_CURVE[curve]}", "curve", also_ok=["SHA-256"], api="ECDsa.Create")
+
+    def cs_ecdh(r, m=False):
+        curve = r.choice(list(CS_CURVE))
+        return spec("EC", {"curve": curve}, ["@using ECDiffieHellman <<x1>> = ECDiffieHellman.Create(<<S>>);"],
+                    "<<x1>>.PublicKey.ExportSubjectPublicKeyInfo().Length",
+                    f"ECCurve.NamedCurves.{CS_CURVE[curve]}", "curve", api="ECDiffieHellman.Create")
+
+    def cs_aes(r, m=False):
+        bits = r.choice([128, 192, 256])
+        mode = "CBC" if m else r.choice(["CBC", "ECB"])
+        return spec("AES", {"key_size": bits, "mode": mode},
+                    ["@using Aes <<x1>> = Aes.Create();", "@<<x1>>.KeySize = <<S>>;", f"@<<x1>>.Mode = CipherMode.{mode};"],
+                    "<<x1>>.CreateEncryptor().TransformFinalBlock(new byte[16], 0, 16).Length", str(bits), "int", api="Aes.Create")
+
+    def cs_aesgcm(r, m=False):
+        nbytes = r.choice([16, 32])
+        return spec("AES", {"key_size": nbytes * 8, "mode": "GCM"},
+                    ["@byte[] <<x2>> = RandomNumberGenerator.GetBytes(<<S>>);", "@using AesGcm <<x1>> = new AesGcm(<<x2>>, 16);",
+                     "byte[] <<x3>> = new byte[16];", "byte[] <<x4>> = new byte[16];",
+                     "<<x1>>.Encrypt(new byte[12], new byte[16], <<x3>>, <<x4>>);"],
+                    "<<x3>>.Length + <<x4>>.Length", str(nbytes), "int", api="AesGcm")
+
+    def cs_3des(r, m=False):
+        return spec("3DES", {"mode": "CBC"}, ["@using TripleDES <<x1>> = TripleDES.Create();", "<<x1>>.Mode = CipherMode.CBC;"],
+                    "<<x1>>.CreateEncryptor().TransformFinalBlock(new byte[16], 0, 16).Length", api="TripleDES.Create")
+
+    def cs_hmac(r, m=False):
+        fam = "SHA-256" if m else r.choice(["MD5", "SHA-1", "SHA-256", "SHA-512"])
+        return spec("HMAC", {"hash": fam}, [f'@using HMAC{CS_HASH[fam]} <<x1>> = new HMAC{CS_HASH[fam]}(Encoding.UTF8.GetBytes("svc-<<w>>"));'],
+                    f"<<x1>>.ComputeHash({CS_DATA}).Length", also_ok=[fam], api=f"HMAC{CS_HASH[fam]}")
+
+    def cs_pbkdf2(r, m=False):
+        fam = "SHA-512" if m else r.choice(["SHA-1", "SHA-256", "SHA-512"])
+        return spec("PBKDF2", {"hash": fam},
+                    ['@byte[] <<x1>> = Rfc2898DeriveBytes.Pbkdf2("pw-<<w>>", Encoding.UTF8.GetBytes("salt-<<w>>"), 1000, <<S>>, 32);'],
+                    "<<x1>>.Length", f"HashAlgorithmName.{CS_HASH[fam]}", "hashname", also_ok=[fam, "HMAC"],
+                    api="Rfc2898DeriveBytes.Pbkdf2")
+
+    def cs_dsa(r, m=False):
+        return spec("DSA", {"key_size": 2048}, ["@using DSA <<x1>> = DSA.Create(<<S>>);"],
+                    f"<<x1>>.SignData({CS_DATA}, HashAlgorithmName.SHA256).Length", "2048", "int", also_ok=["SHA-256"],
+                    api="DSA.Create")
+
+    t1 = [cs_hash, cs_rsa, cs_ecdsa, cs_ecdh, cs_aes, cs_aesgcm, cs_3des, cs_hmac, cs_pbkdf2, cs_dsa]
+    t2 = [cs_hash_named, cs_hash_factory, cs_rsa, cs_ecdsa, cs_aes]
+    return {"t1": t1, "t2": t2, "pqc": [], "broad": t1 + [cs_hash_named, cs_hash_factory]}
+
+
+class CsBuilder:
+    """Indirection styles: a constant or static field, a settings class, a lookup table, a parameter."""
+
+    def __init__(self, rng, names, imports="canonical"):
+        self.rng, self.names = rng, names
+        self.settings, self.top, self.funcs, self.mains = [], [], [], []
+
+    def styles_for(self, sp):
+        return ["field", "settings", "table", "arg"]
+
+    def add(self, sp, style, fid):
+        nm, rng = self.names, self.rng
+        m = {f"x{i}": nm.camel() for i in range(1, 5)}
+        m.update(w=rng.choice(WORDS), d=f'"{rng.choice(WORDS)}-{rng.randint(100, 999)}"')
+        slot, typ = sp["slot"], CS_TYPE.get(sp["kind"])
+        const = "const" if sp["kind"] in ("str", "int") else "static readonly"
+        fn = nm.camel().capitalize()
+        params, args = "", ""
+        if style == "inline":
+            m["S"] = slot
+        elif style == "field":
+            c = nm.cap()
+            self.top.append((f"    {const if const == 'const' else 'static readonly'} {typ} {c} = {slot};", fid))
+            m["S"] = c
+        elif style == "settings":
+            c = nm.cap()
+            self.settings.append((f"    public {const} {typ} {c} = {slot};", fid))
+            m["S"] = f"Settings.{c}"
+        elif style == "table":
+            c, k = nm.cap(), nm.key()
+            self.top.append((f'    static readonly Dictionary<string, {typ}> {c} = new Dictionary<string, {typ}> {{ ["{k}"] = {slot} }};', fid))
+            m["S"] = f'{c}["{k}"]'
+        elif style == "arg":
+            p = nm.camel()
+            params, args = f"{typ} {p}", slot
+            m["S"] = p
+        body = [(f"    static int {fn}({params}) {{", None)]
+        for line in sp["body"]:
+            body.append(("        " + sub(line.lstrip("@"), m), fid if line.startswith("@") else None))
+        body += [("        return " + sub(sp["ret"], m) + ";", None), ("    }", None), ("", None)]
+        self.funcs.append(body)
+        self.mains.append((f"        Console.WriteLine({fn}({args}));", fid if style == "arg" else None))
+
+    def filler(self):
+        f = self.names.camel().capitalize()
+        n = self.rng.randint(2, 9)
+        self.funcs.append([(f"    static int {f}(int[] items) {{", None), ("        int total = 0;", None),
+                           ("        foreach (int item in items) { total += item; }", None),
+                           (f"        return total % {n};", None), ("    }", None), ("", None)])
+        self.mains.append((f"        Console.WriteLine({f}(new[] {{ {n}, 4, 9 }}));", None))
+
+    def render(self):
+        self.rng.shuffle(self.funcs)
+        lines = [(f"// {self.rng.choice(['Claims intake', 'Statement export', 'Device enrolment', 'Partner sync'])} helpers.", None),
+                 ("using System;", None), ("using System.Collections.Generic;", None),
+                 ("using System.Security.Cryptography;", None), ("using System.Text;", None), ("", None)]
+        if self.settings:
+            lines += [("static class Settings {", None)] + self.settings + [("}", None), ("", None)]
+        lines += [("class Program {", None)] + self.top + ([("", None)] if self.top else [])
+        for f in self.funcs:
+            lines += f
+        return lines + [("    static void Main() {", None)] + self.mains + [("    }", None), ("}", None)]
+
+
+CSPROJ = """<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+</Project>
+"""
+
+
+# =============================================================================================
 # Negative controls in the new languages: algorithm names in several statement shapes, no crypto.
 # =============================================================================================
 
@@ -613,3 +775,11 @@ def negative_c(rng, names, phrases):
                       f'static const char *const {c1}[] = {{"{phrases[1]}", "{phrases[2]}"}};', "",
                       f"static const char *{f}(void) {{", f'    return "{phrases[3]}";', "}", "",
                       "int main(void) {", f'    printf("%s %s %s\\n", {c1}[0], {c1}[1], {f}());', "    return 0;", "}", ""])
+
+
+def negative_cs(rng, names, phrases):
+    c1, f = names.cap(), names.camel().capitalize()
+    return "\n".join([f"// {rng.choice(['Release notes', 'Operator notes'])}: {phrases[0]}.", "using System;", "",
+                      "class Program {", f'    static readonly string[] {c1} = {{ "{phrases[1]}", "{phrases[2]}" }};', "",
+                      f"    static string {f}() {{", f'        return "{phrases[3]}";', "    }", "",
+                      "    static void Main() {", f'        Console.WriteLine(string.Join("; ", {c1}) + " " + {f}());', "    }", "}", ""])

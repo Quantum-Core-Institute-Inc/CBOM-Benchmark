@@ -447,12 +447,14 @@ Two more gaps ride along: false positives per negative file (gated at +0.5) and 
 found in the right manifest (reported only; six manifests a seed is too few to gate on).
 
 Since 2.1 the holdout also generates certificates, keys, keystores, TLS and SSH configs and compiled
-`.pyc` and `.jar` files, so Tier 4, Tier 5 and PQC-asset cells are in the gap too.
+`.pyc` and `.jar` files, so Tier 4, Tier 5 and PQC-asset cells are in the gap too. Generator 1.2 adds
+C#, Apache, HAProxy and IPsec configs, firmware signing policies naming LMS and XMSS, minified
+JavaScript and stripped native binaries.
 
-Calibrated before trusting it: the reference CBOM reads 0 and a memorizer +100. On 2.1, over five
-seeds, grep reads -2.3 to +1.0 and QCI v0.7, v2.2 and v2.3 between -2.1 and +3.8, never
-significant. On the negatives,
-grep and 0.3.0 stay between -0.3 and +0.25 per file and v0.7 reads +0.7 to +1.2. Details, and the limits, in [HOLDOUT.md](HOLDOUT.md).
+Calibrated before trusting it: the reference CBOM reads 0 and a memorizer +100. On 2.4.0 with
+generator 1.2, over five seeds, grep reads -4.0 to -2.2 and QCI v0.7, v2.2 and v2.3.4 between -3.1
+and +1.0, never significant. On the negatives, grep and v2.3.4 stay between 0 and +0.36 per file
+and v0.7 and v2.2 read +0.6 to +0.9, over the 0.5 limit as before. Details, and the limits, in [HOLDOUT.md](HOLDOUT.md).
 
 ## Is the CBOM actionable?
 

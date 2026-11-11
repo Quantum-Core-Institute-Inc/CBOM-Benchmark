@@ -52,6 +52,20 @@ def main() -> int:
         langs = {f["lang"] for f in ta["findings"]}
         if not {"python", "java", "go", "c"} <= langs or not langs & {"javascript", "typescript"}:
             bad.append(f"missing a language: {langs}")
+        # Generator 1.2: C#, more config formats, stateful-signature policies, minified and native artifacts.
+        if "csharp" not in langs:
+            bad.append("no C# cases")
+        files = {f["file"] for f in ta["findings"]}
+        for what, hit in (("HAProxy config", lambda x: x.endswith(".cfg")), ("IPsec config", lambda x: "/ipsec/" in x),
+                          ("firmware signing policy", lambda x: "/firmware/" in x), ("minified JavaScript", lambda x: x.endswith(".min.js")),
+                          ("native binary", lambda x: "/c/bin/" in x)):
+            if not any(hit(x) for x in files):
+                bad.append(f"no {what} in the set")
+        if not {"LMS", "XMSS"} <= {f["family"] for f in ta["findings"]}:
+            bad.append("no LMS or XMSS finding in the set")
+        for cs in sorted(x for x in files if x.endswith(".cs")):
+            if not (a / cs).with_name(Path(cs).parent.name + ".csproj").exists():
+                bad.append(f"{cs}: no project file beside it")
         libs = json.loads((a / "libraries.json").read_text())
         if not libs.get("libraries") or any(not (a / x["file"]).exists() for x in libs["libraries"]):
             bad.append("no dependency manifests, or a library points at a missing file")

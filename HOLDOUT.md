@@ -26,8 +26,9 @@ seed: reveal the seed later and anyone can check it was the one used.
 ## What gets generated
 
 Five matched tiers, a broad set, negative controls and dependency manifests, in every language the
-published corpus has: Python, Java, Go, JavaScript/TypeScript and C/OpenSSL. Every file executes or
-compiles, like the published corpus (`go build`, `node`, `cc -Werror -lcrypto`, `javac`).
+published corpus has: Python, Java, Go, JavaScript/TypeScript, C/OpenSSL and, since generator 1.2,
+C#. Every file executes or compiles, like the published corpus (`go build`, `node`,
+`cc -Werror -lcrypto`, `javac`, `dotnet build` with no package source).
 
 **Matched** (`holdout-t1`, `holdout-t2`, `holdout-t3`, `holdout-pqc`, `holdout-mixed`). The same API spellings,
 values and kinds of indirection as the published cases, with new code around them: new
@@ -59,7 +60,18 @@ assets, Tier 5 Python and Java, PQC assets); other families go to holdout-broad.
 fresh every run; the answer key for a seed is identical. The generator's leak checks don't apply to
 these files, which name algorithms by design: config syntax does.
 
-**Negatives.** 24 files across all six languages: algorithm names in log lines, constants,
+**Generator 1.2** covers what benchmark 2.4.0 added. C# cases, one project per case with its own file
+name: one-shot `HashData`, `IncrementalHash` by name, a `Func<HashAlgorithm>` held in a field, a
+settings class, a table or a parameter, `RSA.Create`, `ECDsa` and `ECDiffieHellman` on named curves,
+`Aes` with key size and mode set separately, `AesGcm`, `TripleDES`, the `HMAC*` classes,
+`Rfc2898DeriveBytes.Pbkdf2` and `DSA`. Sixteen configs instead of eight, now including Apache httpd
+(`SSLProtocol -all +...`), HAProxy (a minimum version, TLS 1.2 and 1.3 suites on separate lines, the
+DH group size on a tuning line) and strongSwan proposals in both `swanctl.conf` and legacy
+`ipsec.conf` spelling. Firmware signing policies naming LMS and XMSS parameter sets, sometimes
+beside a classical signer. Three minified JavaScript bundles (one line, one-letter names) and three
+stripped native binaries linked to libcrypto. C# negatives join the others.
+
+**Negatives.** 28 files across all seven languages: algorithm names in log lines, constants,
 returned values, struct fields and changelog comments, including post-quantum claims
 ("ML-KEM-768 rollout approved"), and no crypto.
 
@@ -104,11 +116,17 @@ and reads high for one that has. Measured, not assumed:
 | qci-pqc-scan v0.7 | | -1.9 to +0.5, none significant |
 | qci-pqc-scan v2.2 | | -2.1 to +3.5, none significant |
 | qci-pqc-scan v2.3 | | -0.9 to +3.8, none significant |
+| *Benchmark 2.4.0, generator 1.2 (C#, more configs, signing policies, minified and native artifacts in the gap):* | | |
+| Reference CBOM | | 0, every seed |
+| `baseline_grep.py` | | -4.0 to -2.2, none significant |
+| qci-pqc-scan v0.7 | | -1.8 to -0.4, none significant |
+| qci-pqc-scan v2.2 | | -3.1 to +0.7, none significant |
+| qci-pqc-scan v2.3.4 | | -0.9 to +1.0, none significant |
 | A scanner that memorized the answer key | | +100 |
 
 Five seeds (1234, 4242, 55, 777, 90210), default sizes: 120 matched files, 48 broad, 10 Tier 3
-projects, 12 mixed files, 24 negatives, 6 manifests, about 350 findings. Intervals are about ±5
-points (9.4 to 10.5 wide). How they narrowed:
+projects, 12 mixed files, 28 negatives, 6 manifests, about 440 findings since generator 1.2 (about
+350 before). Intervals are about ±5 points. How they narrowed:
 
 | Testbench | What changed | Interval width |
 |---|---|---|
@@ -116,6 +134,16 @@ points (9.4 to 10.5 wide). How they narrowed:
 | v1.15 | mixed tier added | 11.6 to 13.1 |
 | v1.16 | calibration cases on the published side | 9.4 to 10.5 |
 | 2.1 | assets, configs and compiled artifacts in the gap (129 to 148 cells) | 9.0 to 10.2 |
+| 2.4, generator 1.2 | C#, more config formats, signing policies, minified and native artifacts in the gap (133 to 157 cells) | 8.9 to 10.5 |
+
+Generator 1.2 added cells without narrowing the interval for QCI (9.7 to 10.5 in its declared scope):
+the published side of the new cells is the hand-written cases alone, a few findings each. The grep
+baseline now reads a little negative on every seed, -4.0 to -2.2, with the upper end of its interval
+as low as +0.3: it does a little better on generated code than on the published cases in the same
+cells. That is the direction that doesn't matter for overfitting, but it is closer to the line than
+it was (-2.3 to +1.0 on generator 1.1), and which new cells moved it hasn't been worked out. A control
+that reads significantly negative would mean the generated cases are easier than the published ones
+they are matched to, which is a generator fault to fix, not a scanner result.
 
 The holdout side is now the larger share. One seed with three times the matched files (360, seed
 4242, v0.7) reads -0.5, interval -4.3 to +3.1: about ±3.7. Use `--files 360` when a release is close
@@ -147,6 +175,12 @@ words: algorithm names in log lines, string constants and returned values, post-
 The first version used 12 Python and Java negatives and the margin was thin: v0.7 read +0.52 on one
 seed against a limit of 0.5. With 24 files in six languages the controls stay within -0.3 to +0.25
 and v0.7 never comes within 0.2 of the limit.
+
+On generator 1.2 (28 files, seven languages, benchmark 2.4.0) the gaps are: grep 0.00 to +0.36, QCI
+v2.3.4 0.00 to +0.04, v2.2 **+0.64 to +0.79**, v0.7 **+0.60 to +0.92**. The same verdicts as before,
+with less room on both sides of the 0.5 limit: grep's worst seed is 0.14 under it and v0.7's best
+seed 0.10 over. If a later generator change moves either closer, the answer is more negative files
+per seed (`--negatives`), not a different limit.
 
 v0.7 added filters for the statement shapes in the published negatives (log calls, docstring lines,
 string catalogs) and bare-word patterns (`HMAC\b`, `PBKDF2`) that fire on any mention. The
@@ -188,13 +222,15 @@ help on the holdout's Tier 3, which shows up as a Tier 3 gap. v0.7 did hardcode 
 (`AesCbcCipher`, `LegacyDesede`, `digest_factory`); they turned out to contribute nothing, and its
 Tier 3 reads 79 to 100% on both sides. Reading the diff of each release is still part of the job.
 
-TLS protocol settings (Tier 1 `TLS-` cases) and Tier 4 assets (certificates, keystores, config
-files) have no generator yet, so they don't enter the gap.
+TLS protocol settings in code (Tier 1 `TLS-` cases) have no generator yet, so they don't enter the gap.
 
-The cases added in 2.4.0 have no generator either: C#, the Apache, HAProxy and IPsec configs, LMS and
-XMSS, and the minified, obfuscated and native artifacts. A scanner could fit to those 55 findings and
-the gap wouldn't show it. Until a generator covers them, treat a jump on those rows alone with the
-same suspicion as a jump on any hand-written file.
+Of the 55 findings added in 2.4.0, generator 1.2 covers the C# cases, the Apache, HAProxy and IPsec
+configs, LMS and XMSS in signing policies, minified JavaScript and native binaries. Still without a
+generator: the ProGuard-obfuscated jar (the generator's jars are compiled, not obfuscated), LMS and
+XMSS in Java code, and the two stateful public keys identified by OID. A scanner could fit to those
+eight findings and the gap wouldn't show it. C# also has no calibration cases on the published side
+and no mixed or cross-file cases on either, so its cells are thin: read a C# jump with the interval
+in view.
 
 With the default 120 matched files the interval is about ±5 points; with 360, about ±3.7. That
 catches a team that has fixed a meaningful share of the published misses in ways that don't carry

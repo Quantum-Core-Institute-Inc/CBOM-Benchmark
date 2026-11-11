@@ -296,6 +296,132 @@ class AssetSet:
         for fam, params, ln in _config_findings(lines, toks):
             self.add(rel, fam, params, [ln])
 
+    # -- more config formats (generator 1.2): the directives differ, the algorithms don't -------------
+    def httpd(self):
+        """Apache httpd: protocols are switched on and off one by one, ciphers are an OpenSSL list."""
+        rng = self.rng
+        from cbomlib import CIPHER_SUITES
+        protos = sorted(rng.sample(["TLSv1", "TLSv1.1", "TLSv1.2", "TLSv1.3"], rng.randint(1, 3)))
+        pool = [s for s in CIPHER_SUITES if not s.startswith("TLS_AES") and not s.startswith("TLS_CHACHA")]
+        suites = rng.sample(pool, rng.randint(1, 3))
+        host = _cn(rng)
+        lines = [f"# {host}", "Listen 443", "", "<VirtualHost *:443>", f"    ServerName {host}", "    SSLEngine on",
+                 f"    SSLCertificateFile    /etc/httpd/tls/{rng.choice(WORDS)}.crt",
+                 f"    SSLCertificateKeyFile /etc/httpd/tls/{rng.choice(WORDS)}.key"]
+        if rng.random() < 0.5:
+            lines += ["    # Before the audit:", "    # SSLProtocol all -SSLv3"]
+        p_ln = len(lines) + 1
+        lines.append("    SSLProtocol         -all " + " ".join("+" + p for p in protos))
+        s_ln = len(lines) + 1
+        lines.append("    SSLCipherSuite      " + ":".join(CIPHER_SUITES[x] for x in suites))
+        lines += ["    SSLHonorCipherOrder on", f"    ProxyPass / http://{rng.choice(WORDS)}.internal:8080/", "</VirtualHost>"]
+        rel = self._rel("tls", ".conf")
+        self._write(rel, "\n".join(lines) + "\n")
+        self.also_ok.append({"file": rel, "families": SUITE_PARTS})
+        toks = [(x, p_ln) for x in protos] + [(CIPHER_SUITES[x], s_ln) for x in suites]
+        for fam, params, ln in _config_findings(lines, toks):
+            self.add(rel, fam, params, [ln])
+
+    def haproxy(self):
+        """HAProxy: a minimum version, TLS 1.2 and 1.3 suites on separate lines, and the DH group
+        size on a tuning line that names no algorithm."""
+        rng = self.rng
+        from cbomlib import CIPHER_SUITES
+        versions = ["TLSv1.0", "TLSv1.1", "TLSv1.2", "TLSv1.3"]
+        minv = rng.choice(versions[:3])
+        pool = [x for x in CIPHER_SUITES if not x.startswith("TLS_AES") and not x.startswith("TLS_CHACHA")]
+        suites = rng.sample(pool, rng.randint(1, 2))
+        tls13 = rng.sample([x for x in CIPHER_SUITES if x.startswith(("TLS_AES", "TLS_CHACHA"))], rng.randint(0, 2))
+        bits = rng.choice([1024, 2048, 3072, 4096])
+        lines = ["global", "    log /dev/log local0", "    maxconn 4096", f"    tune.ssl.default-dh-param {bits}",
+                 f"    ssl-default-bind-options ssl-min-ver {minv} no-tls-tickets",
+                 "    ssl-default-bind-ciphers " + ":".join(CIPHER_SUITES[x] for x in suites)]
+        d_ln, m_ln, s_ln = 4, 5, 6
+        t_ln = None
+        if tls13:
+            t_ln = len(lines) + 1
+            lines.append("    ssl-default-bind-ciphersuites " + ":".join(tls13))
+        name = rng.choice(WORDS)
+        lines += ["", "defaults", "    mode http", "    timeout client 30s", "", f"frontend {name}_in",
+                  f"    bind :443 ssl crt /etc/haproxy/tls/{name}.pem alpn h2,http/1.1", f"    default_backend {name}_pool",
+                  "", f"backend {name}_pool", f"    server app1 10.0.{rng.randint(1, 9)}.{rng.randint(10, 250)}:8080 check"]
+        rel = self._rel("tls", ".cfg")
+        self._write(rel, "\n".join(lines) + "\n")
+        above = [normalize(v)[0] for v in versions[versions.index(minv) + 1:]]
+        self.also_ok.append({"file": rel, "families": SUITE_PARTS + above})
+        self.add(rel, "DH", {"key_size": bits}, [d_ln])
+        toks = [(minv, m_ln)] + [(CIPHER_SUITES[x], s_ln) for x in suites] + [(x, t_ln) for x in tls13]
+        for fam, params, ln in _config_findings(lines, toks):
+            self.add(rel, fam, params, [ln])
+
+    def _ike_proposal(self, aead_ok=True):
+        """One IKE/ESP proposal in strongSwan spelling -> (text, [(family, params)])."""
+        rng = self.rng
+        dh = rng.choice(["modp1024", "modp1536", "modp2048", "modp3072", "modp4096", "ecp256", "ecp384"] + (["x25519"] if aead_ok else []))
+        if aead_ok and rng.random() < 0.3:
+            enc = rng.choice(["aes256gcm16", "aes128gcm16", "chacha20poly1305"])
+            return f"{enc}-{dh}", [normalize(enc), normalize(dh)]
+        enc = rng.choice(["aes128", "aes192", "aes256", "3des"])
+        integ = rng.choice(["sha1", "sha256", "sha384", "sha512"])
+        return f"{enc}-{integ}-{dh}", [normalize(enc), ("HMAC", {"hash": normalize(integ)[0]}), normalize(dh)]
+
+    def _ipsec_file(self, rel, lines, placed):
+        """placed: [(line, [(family, params)])]; the first use of a family in the file is the finding."""
+        self._write(rel, "\n".join(lines) + "\n")
+        self.also_ok.append({"file": rel, "families": ["SHA-1", "SHA-256", "SHA-384", "SHA-512", "AES", "DH", "EC", "HMAC"]})
+        for ln, algs in placed:
+            for fam, params in algs:
+                self.add(rel, fam, params, [ln])
+
+    def swanctl(self):
+        rng = self.rng
+        ike, ike_algs = self._ike_proposal()
+        esp, esp_algs = self._ike_proposal()
+        name = rng.choice(WORDS)
+        lines = ["# strongSwan, swanctl format", "connections {", f"    {name}-site {{", "        version = 2",
+                 f"        remote_addrs = vpn.{_cn(rng)}", f"        proposals = {ike}", "        local {",
+                 "            auth = pubkey", f"            certs = {name}.crt", "        }", "        children {",
+                 f"            {name}-net {{", f"                esp_proposals = {esp}",
+                 f"                remote_ts = 10.{rng.randint(1, 250)}.0.0/16", "            }", "        }", "    }", "}"]
+        self._ipsec_file(self._rel("ipsec", ".conf"), lines, [(6, ike_algs), (13, esp_algs)])
+
+    def ipsec_conf(self):
+        rng = self.rng
+        ike, ike_algs = self._ike_proposal(aead_ok=False)
+        esp, esp_algs = self._ike_proposal(aead_ok=False)
+        esp, esp_algs = esp.rsplit("-", 1)[0], esp_algs[:-1]   # legacy ESP lines usually name no DH group
+        name = rng.choice(WORDS)
+        lines = ["# strongSwan, legacy ipsec.conf format", "config setup", '    charondebug="ike 1, knl 1"', "",
+                 f"conn {name}-tunnel", f"    keyexchange=ikev{rng.choice([1, 2])}", "    authby=secret",
+                 f"    right=198.51.100.{rng.randint(2, 250)}", f"    ike={ike}!", f"    esp={esp}!", "    auto=start"]
+        self._ipsec_file(self._rel("ipsec", ".conf"), lines, [(9, ike_algs), (10, esp_algs)])
+
+    def signing_policy(self):
+        """A firmware signing policy naming stateful hash-based schemes (SP 800-208) and, sometimes,
+        the classical signer kept for old devices."""
+        rng = self.rng
+        lms = rng.choice(["LMS_SHA256_M32_H5", "LMS_SHA256_M32_H10", "LMS_SHA256_M32_H15", "LMS_SHA256_M24_H10"])
+        xmss = rng.choice(["XMSS-SHA2_10_256", "XMSS-SHA2_16_256", "XMSS-SHA2_20_256", "XMSSMT-SHA2_20/2_256"])
+        legacy = rng.choice([None, "ecdsa-p256", "ecdsa-p384", "rsa-3072"])
+        signers = [(rng.choice(["bootloader", "recovery", "radio"]), lms), (rng.choice(["application", "updater"]), xmss)]
+        rng.shuffle(signers)
+        if rng.random() < 0.3:
+            signers = signers[:1]
+        lines = [f"# Firmware signing policy: {rng.choice(WORDS)} fleet", "version: 3", "signers:"]
+        placed = []
+        for role, alg in signers:
+            lines += [f"  {role}:", f"    algorithm: {alg}", f"    hsm_slot: {rng.randint(1, 9)}", "    state: hsm-only"]
+            placed.append((len(lines) - 2, normalize(alg)))
+        if legacy:
+            lines += ["  legacy:", f"    algorithm: {legacy}", f"    retire_by: 20{rng.randint(27, 30)}-06-30"]
+            placed.append((len(lines) - 1, normalize(legacy)))
+        lines += ["verify:", "  reject_reused_index: true"]
+        rel = self._rel("firmware", ".yaml")
+        self._write(rel, "\n".join(lines) + "\n")
+        self.also_ok.append({"file": rel, "families": ["SHA-256"]})
+        for ln, (fam, params) in placed:
+            self.add(rel, fam, params, [ln])
+
     def sshd(self, pq=False):
         rng = self.rng
         hostkeys = rng.sample(["ssh-rsa", "ssh-ed25519", "ecdsa-sha2-nistp256"], rng.randint(1, 2))
@@ -341,8 +467,66 @@ JAVA_ART = {
 }
 
 
-def artifacts(aset: AssetSet, n_py: int, n_java: int) -> list[str]:
-    """Compile generated programs into .pyc / .jar under corpus/holdout-t5/. -> problems"""
+# Minified JavaScript: written minified (one line, one-letter names), so no minifier is needed.
+# family -> (params, function body using e = require("node:crypto") and an argument r)
+JS_ART = {
+    "MD5": ({}, 'return e.createHash("md5").update(r).digest("hex").length'),
+    "SHA-1": ({}, 'return e.createHash("sha1").update(r).digest("hex").length'),
+    "AES": ({"key_size": 128, "mode": "CBC"}, 'const t=e.createCipheriv("aes-128-cbc",e.randomBytes(16),e.randomBytes(16));'
+                                              "return Buffer.concat([t.update(r),t.final()]).length"),
+    "3DES": ({"mode": "CBC"}, 'const t=e.createCipheriv("des-ede3-cbc",e.randomBytes(24),e.randomBytes(8));'
+                              "return Buffer.concat([t.update(r),t.final()]).length"),
+    "RSA": ({"key_size": 1024}, 'return e.generateKeyPairSync("rsa",{modulusLength:1024}).publicKey.export({type:"spki",format:"der"}).length'),
+    "EC": ({"curve": "P-256"}, 'return e.generateKeyPairSync("ec",{namedCurve:"prime256v1"}).publicKey.export({type:"spki",format:"der"}).length'),
+    "HMAC": ({"hash": "MD5"}, 'return e.createHmac("md5","k").update(r).digest("hex").length'),
+}
+# Native binaries: family -> (params, C statements; `ok` accumulates success)
+C_ART = {
+    "MD5": ({}, ["ok &= EVP_Digest(msg, sizeof msg, md, &n, EVP_md5(), NULL);"]),
+    "SHA-1": ({}, ["ok &= EVP_Digest(msg, sizeof msg, md, &n, EVP_sha1(), NULL);"]),
+    "3DES": ({"mode": "CBC"}, ["ok &= seal(EVP_des_ede3_cbc());"]),
+    "AES": ({"key_size": 128, "mode": "CBC"}, ["ok &= seal(EVP_aes_128_cbc());"]),
+    "RSA": ({"key_size": 1024}, ["ok &= keygen(1024);"]),
+}
+C_ART_SRC = """#include <stdio.h>
+#include <openssl/evp.h>
+#include <openssl/rsa.h>
+
+static int seal(const EVP_CIPHER *c) {
+    unsigned char key[32] = "%(word)s-key-material-0123456789", iv[16] = "0123456789abcde", out[64];
+    int n = 0, m = 0;
+    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+    int ok = ctx && EVP_EncryptInit_ex(ctx, c, NULL, key, iv) && EVP_EncryptUpdate(ctx, out, &n, (const unsigned char *)"reading-0042", 12)
+             && EVP_EncryptFinal_ex(ctx, out + n, &m);
+    EVP_CIPHER_CTX_free(ctx);
+    return ok;
+}
+
+static int keygen(int bits) {
+    EVP_PKEY *pkey = NULL;
+    EVP_PKEY_CTX *ctx = EVP_PKEY_CTX_new_id(EVP_PKEY_RSA, NULL);
+    int ok = ctx && EVP_PKEY_keygen_init(ctx) > 0 && EVP_PKEY_CTX_set_rsa_keygen_bits(ctx, bits) > 0 && EVP_PKEY_keygen(ctx, &pkey) > 0;
+    EVP_PKEY_free(pkey);
+    EVP_PKEY_CTX_free(ctx);
+    return ok;
+}
+
+int main(void) {
+    unsigned char md[EVP_MAX_MD_SIZE];
+    const unsigned char msg[] = "%(word)s-frame";
+    unsigned int n = 0;
+    int ok = 1;
+    (void)seal; (void)keygen; (void)md; (void)msg; (void)n;
+%(body)s
+    printf("%%d\\n", ok);
+    return ok ? 0 : 1;
+}
+"""
+
+
+def artifacts(aset: AssetSet, n_py: int, n_java: int, n_js: int = 0, n_native: int = 0) -> list[str]:
+    """Compile generated programs into .pyc / .jar, a minified .js and a stripped native binary under
+    corpus/holdout-t5/. -> problems"""
     rng, problems = aset.rng, []
     work = Path(tempfile.mkdtemp(prefix="cbom-art-"))
     try:
@@ -388,24 +572,54 @@ def artifacts(aset: AssetSet, n_py: int, n_java: int) -> list[str]:
                     continue
                 for f in fams:
                     aset.add(rel, f, JAVA_ART[f][0], lang="java", tier="holdout-t5")
+        for j in range(n_js):
+            fams = rng.sample(list(JS_ART), rng.randint(1, 3))
+            letters = rng.sample("abcdfghijklmnopqsuvwxyz", len(fams))
+            text = '"use strict";const e=require("node:crypto");' + "".join(
+                f"function {c}(r){{{JS_ART[f][1]}}}" for c, f in zip(letters, fams))
+            text += "console.log(" + ",".join(f'{c}("{rng.choice(WORDS)}")' for c in letters) + ");\n"
+            rel = f"corpus/holdout-t5/javascript/dist/{rng.choice(WORDS)}-{aset.tag(70_000 + j)}.min.js"
+            aset._write(rel, text)
+            for f in fams:
+                aset.add(rel, f, JS_ART[f][0], lines=[1], lang="javascript", tier="holdout-t5")
+        cc = shutil.which("cc") or shutil.which("gcc")
+        if n_native and cc and shutil.which("strip"):
+            for j in range(n_native):
+                fams = rng.sample(list(C_ART), rng.randint(1, 3))
+                src = work / f"n{j}.c"
+                src.write_text(C_ART_SRC % {"word": rng.choice(WORDS)[:6], "body": "\n".join("    " + ln for f in fams for ln in C_ART[f][1])})
+                rel = f"corpus/holdout-t5/c/bin/{rng.choice(WORDS)}-{aset.tag(80_000 + j)}"
+                dst = aset.out / rel
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                r = subprocess.run([cc, "-O2", "-o", str(dst), str(src), "-lcrypto"], capture_output=True, text=True)
+                if r.returncode == 0:
+                    r = subprocess.run(["strip", str(dst)], capture_output=True, text=True)
+                if r.returncode:
+                    problems.append(f"cc native {j}: {r.stderr[-200:]}")
+                    continue
+                for f in fams:
+                    aset.add(rel, f, C_ART[f][0], lang="c", tier="holdout-t5")
+        elif n_native:
+            problems.append("cc/strip not found: native binaries not generated")
     finally:
         shutil.rmtree(work, ignore_errors=True)
     return problems
 
 
-def generate(out: Path, rng, tag, fid_for, n_certs=10, n_keys=8, n_configs=8, n_pq=4, n_py=3, n_java=3,
+def generate(out: Path, rng, tag, fid_for, n_certs=10, n_keys=8, n_configs=16, n_pq=8, n_py=3, n_java=3, n_js=3, n_native=3,
              published: dict | None = None) -> dict:
     aset = AssetSet(out, rng, tag, fid_for, published)
     for _ in range(n_certs):
         aset.certificate()
     for _ in range(n_keys):
         aset.key_file()
-    makers = [aset.nginx, aset.openssl_cnf, aset.spring, aset.sshd]
+    makers = [aset.nginx, aset.openssl_cnf, aset.spring, aset.sshd,
+              aset.httpd, aset.haproxy, aset.swanctl, aset.ipsec_conf]
     for j in range(n_configs):
         makers[j % len(makers)]()
     for j in range(n_pq):
-        [aset.pq_certificate, lambda: aset.nginx(pq=True), lambda: aset.sshd(pq=True)][j % 3]()
-    problems = artifacts(aset, n_py, n_java)
+        [aset.pq_certificate, lambda: aset.nginx(pq=True), lambda: aset.sshd(pq=True), aset.signing_policy][j % 4]()
+    problems = artifacts(aset, n_py, n_java, n_js, n_native)
     return {"findings": aset.findings, "also_ok": aset.also_ok, "problems": problems}
 
 
@@ -426,11 +640,16 @@ def verify(out: Path, findings: list[dict]) -> list[str]:
                 r = subprocess.run(["java", "-jar", str(p)], capture_output=True, text=True, timeout=120)
                 if r.returncode:
                     fails.append(f"{rel}: {r.stderr.strip()[-160:]}")
+            elif "/c/bin/" in rel:
+                p.chmod(0o755)
+                r = subprocess.run([str(p)], capture_output=True, text=True, timeout=120)
+                if r.returncode:
+                    fails.append(f"{rel}: exit {r.returncode} {r.stderr.strip()[-120:]}")
             elif p.suffix == ".der":
                 x509.load_der_x509_certificate(data)
             elif p.suffix == ".p12":
                 pkcs12.load_key_and_certificates(data, b"changeit")
-            elif p.suffix in (".yaml",):
+            elif p.suffix in (".yaml",) and b"tls.crt" in data:
                 import re
                 x509.load_pem_x509_certificates(base64.b64decode(re.search(rb"tls\.crt:\s*(\S+)", data).group(1)))
             elif b"BEGIN CERTIFICATE" in data:
