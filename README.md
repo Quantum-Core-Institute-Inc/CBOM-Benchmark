@@ -17,7 +17,7 @@ dated against NIST, the federal EO 14412 and NSA CNSA 2.0 transition deadlines. 
 each reported finding is **actionable**, not just whether it was found, and it lets you **add your
 own code** as scored cases; see [BYOC.md](BYOC.md). It ships wired to the **QCI PQC Readiness
 Scanner** (`qci-pqc-scan`): one command installs it, scans the corpus and gates its CI; see
-[Scoring the QCI PQC scanner](#scoring-the-qci-pqc-scanner). And because a public corpus gets
+[integrations/qci-pqc/FINDINGS.md](integrations/qci-pqc/FINDINGS.md). And because a public corpus gets
 learned, it generates **private holdout sets** that show whether a published score still predicts
 performance on unseen code; see [HOLDOUT.md](HOLDOUT.md).
 
@@ -35,11 +35,11 @@ performance on unseen code; see [HOLDOUT.md](HOLDOUT.md).
   library, the right manifest and the right version. See [Crypto libraries](#crypto-libraries).
 - Mixed files: 15 realistic-size modules (220 to 520 lines) with three to five crypto uses each, often
   one algorithm twice with different parameters, among ordinary code and log messages that name
-  algorithms the file doesn't use. 62 site findings. See [Mixed files](#mixed-files).
+  algorithms the file doesn't use. 62 site findings.
 - 12 negative-control files contain no crypto at all.
 - A calibration set of 304 generated Tier 1-2 cases tops each hand-written cell up to four cases, so
   the holdout's overfit gap has something to compare against. They're scored but kept out of every
-  headline number. See [Calibration cases](#calibration-cases).
+  headline number. See [HOLDOUT.md](HOLDOUT.md).
 
 Every code case executes, every Tier 4 asset parses with standard tooling, and every hand-rolled
 Tier 5 algorithm is checked against a reference implementation.
