@@ -342,66 +342,6 @@ A worked example ships in `corpus/custom/example_envelope/`: an in-house envelop
 application code picks `profile="LEGACY_COMPAT"` and never names an algorithm. Grep finds its
 algorithms (they're named in the profile table) but misses both AES key sizes.
 
-## Scoring the QCI PQC scanner
-
-The testbench is set up to score [qci-pqc-scanner](https://github.com/Quantum-Core-Institute-Inc/qci-pqc-scanner)
-directly. From a checkout of the scanner:
-
-```bash
-python tools/run_qci_pqc.py --scanner ../qci-pqc-scanner     # installs into .qci-venv/, scans, scores
-python tools/run_qci_pqc.py --qci-bin qci-pqc                 # or use an installed binary
-```
-
-It runs `qci-pqc scan corpus --reproducible`, checks the scanner's CBOM against the CycloneDX 1.6
-schema, translates it, scores it twice (inside the scanner's declared scope and over everything), and
-writes `reports/qci-pqc/SUMMARY.md`. Exit codes: 0 every gate passed, 1 a gate in
-`integrations/qci-pqc/gates.json` failed, 3 the gates were **not evaluated** (the baseline was set
-on a different release, answer key, corpus, scorer, policy or adapter, or there is none).
-`--report-only` (alias `--no-gate`) always exits 0 and says REPORT ONLY at the top of the summary,
-so a green report-only job can't be mistaken for a gated one.
-
-Every gate is a required measurement. If a run didn't produce one (no holdout seed, no schema
-validator, a metric the scanner's output can't support) the gate is listed as missing and the run
-is not evaluated: exit 3, or 1 if another gate failed. A gate is skipped only with a reason on
-record: `--without-holdout` for a run made without a holdout on purpose, or `when_missing: skip` in
-the gates file for a measurement a scanner may legitimately not produce. `tools/rebaseline.py`
-resets the floors from scored runs; rebaseline first and run the scanners after, because the docs
-check refuses a report directory and an evidence bundle that give different verdicts.
-
-Three things are specific to this scanner, all in `integrations/qci-pqc/` and `tools/adapters/qci_pqc.py`:
-
-- **Declared scope.** `scope.json` encodes the scanner's own `docs/LIMITATIONS.md`: JARs, `.pyc`,
-  DER/PKCS#12/JKS and certificate signature algorithms are listed in the scorecard but not counted.
-  `score.py --scope <file>` works for any scanner that publishes its limits.
-- **Categories vs algorithms.** QCI reports many findings as risk categories (`DH/ECDH`,
-  `SSH-Weak-Cipher`, `Hybrid-KEM`). Exact algorithm names are scored strictly. Categories can't be
-  credited as an algorithm without guessing, so they're scored separately as *signal coverage*: a
-  category on the line of an expected finding it plausibly describes. Both numbers are reported.
-- **Ratchet gates.** `gates.json` holds a release's measured results as floors. Raise a gate when a
-  release improves it.
-
-`github-workflow.yml` is a ready-to-copy CI job for the scanner repo. `FINDINGS.md` is the
-write-up for the scanner team: what 0.3.0 misses, why, and where in its source to fix it.
-
-qci-pqc-scan v2.3.4 on testbench 2.1 (identical to v2.3.0 on every measure), in declared scope: recall 74.7% (v2.2: 74.3%), precision 99.6%
-with one false positive (DH matched in the bytes of the system fixture's Go binary), no PQC
-over-claims, and no extra false positives on fresh negative controls. Crypto libraries in the right
-manifest: 96.4%, with versions. The overfit gap is -0.9 to +3.8 over five seeds, never significant.
-It fails three ratchet gates and the schema limit: its CBOM is invalid (`"version": null` on five
-libraries), parameters are often missing where v2.2 guessed them (56.8%), and a leftover string
-filter drops `createHash("sha1")`, which costs ticket-ready and deadline-weighted recall. On the 2.1
-measurements it routes 5 of 17 system findings to the wrong team, links no assets, verifies 4 of 8
-eligible migrations (every miss is a missing parameter on the new algorithm), and scans 3,000 files
-in two minutes at 49 MB. `FINDINGS.md` has the 2.1 notes and the v2.3.4, v2.3.0, v2.2, v0.7 and 0.3.0 reviews.
-
-Gates carry the full release stamp they were measured on (`tools/release.py`: testbench version,
-finding count, and hashes of the answer key, corpus, scorer, policy and adapter). They're enforced
-only against that exact stamp. When any part changes, the run exits 3 and lists what moved; review
-it and reset with `--rebaseline`. Pin a testbench release in CI (`TESTBENCH_REF`) so that happens
-when you choose, and treat exit 3 as a failure there. Other scanners follow the
-same pattern: write an adapter in `tools/adapters/` only if the output needs translating, and a
-`scope.json` if the scanner documents what it skips.
-
 ## Crypto libraries
 
 The first question a CISO asks is often not "where is SHA-1 called" but "which applications ship
@@ -434,81 +374,6 @@ positives are a commented-out dependency reported, a look-alike reported *as cry
 crypto library attributed to a manifest that doesn't declare it. `verify_corpus.py` checks every
 manifest parses with its ecosystem's rules and lists what the answer key says it lists.
 
-## Comparing scanners
-
-`tools/compare.py` puts any number of scorecards side by side, recomputed from per-finding results
-on the shipped corpus so every scanner has the same denominator (no declared scopes, no BYOC cases):
-
-```bash
-python tools/run_qci_pqc.py --scanner ../qci-pqc-scanner     # -> reports/qci-pqc/scorecard-full.json
-python tools/run_cdxgen.py --install                          # -> reports/cdxgen/scorecard.json
-python tools/compare.py --scanner "QCI 0.3.0=reports/qci-pqc/scorecard-full.json" \
-    --scanner "cdxgen 12.9.1=reports/cdxgen/scorecard.json" \
-    --baseline "grep baseline=reports/baseline_grep.json" --out reports/comparison
-```
-
-Current result (`reports/comparison.md`):
-
-<!-- generated:comparison (tools/render_docs.py; edit the scorecards, not this table) -->
-| | QCI v2.3.4 | QCI v2.2 | QCI v0.7 | cdxgen 12.9.1 | grep baseline |
-|---|---|---|---|---|---|
-| Recall | 70.3% | 69.7% | 57.3% | 4.2% | 68.8% |
-| incl. findings reported without an algorithm name | 73.6% | 73.0% | 60.0% | 11.5% | n/a |
-| Parameters correct (of detected) | 56.9% | 64.8% | 67.2% | 78.6% | 53.7% |
-| Precision | 99.6% | 92.0% | 87.1% | 100.0% | 59.1% |
-| False positives | 1 | 20 | 28 | 0 | 157 |
-| PQC over-claims | 0 | 7 | 13 | 0 | 28 |
-| PQC by standard name (of detected PQC) | 100.0% | 100.0% | 100.0% | n/a | 100.0% |
-| System fixture: recall | 65.4% (17/26) | 65.4% (17/26) | 53.8% (14/26) | 0.0% (0/26) | 50.0% (13/26) |
-| System fixture: routable to the owning team | 70.6% | 70.6% | 64.3% | n/a | 61.5% |
-| System fixture: asset links | 0.0% (0/2) † | 0.0% (0/2) † | 0.0% (0/2) † | 0.0% (0/2) † | 0.0% (0/2) † |
-| Ticket-ready (of detected) | 47.0% | 54.3% | 54.5% | 78.6% | 49.3% |
-| Mixed files: recall | 80.6% (50/62) | 79.0% (49/62) | 62.9% (39/62) | 6.5% (4/62) | 88.7% (55/62) |
-| Crypto libraries, right manifest | 96.4% (27/28) | 28.6% (8/28) | 25.0% (7/28) | 75.0% (21/28) | 0.0% (0/28) |
-| Library versions correct (of found) | 84.6% | 0.0% | 0.0% | 100.0% | n/a |
-
-Shipped corpus, 330 findings for every column, no declared scopes. Full tables, by language and tier, in `reports/comparison.md`.
-<!-- /generated:comparison -->
-
-Fixing things, and finishing big trees:
-
-<!-- generated:operations (tools/render_docs.py; edit the scorecards, not this table) -->
-| | QCI v2.3.4 | QCI v2.2 | QCI v0.7 | cdxgen 12.9.1 | grep baseline |
-|---|---|---|---|---|---|
-| Verified remediation (of eligible migrations) | 4/8 (50.0%) | 4/7 (57.1%) | 4/5 (80.0%) | none eligible | 0/7 (0.0%) |
-| Migrations eligible (of 10) | 8 | 7 | 5 | 0 | 7 |
-| Large repo: finished inside the budget | yes | yes | yes | yes | yes |
-| Large repo: wall time | 118 s | 123 s | 83 s | 105 s | 4 s |
-| Large repo: peak memory | 50 MB | 49 MB | 49 MB | 1692 MB | 34 MB |
-| Large repo: planted uses found | 54/60 | 60/60 | 49/60 | 8/60 | 55/60 |
-| Large repo: found, first vs last quarter of the tree | 91.7% / 100.0% | 100.0% / 100.0% | 83.3% / 83.3% | 8.3% / 0.0% | 100.0% / 88.9% |
-
-Fix and rescan: the 10 reference migrations in `remediation/`, scored as in METHODOLOGY.md 4b. Large repo: `bench.py perf --size medium` (3,000 code files, 17 MB, 60 planted Tier 1 uses, seed 2026), 600 s budget, same host for every scanner.
-<!-- /generated:operations -->
-
-Recall is over the whole corpus here, so QCI's numbers are a little below its declared-scope ones.
-The overlap section of `reports/comparison.md` shows who finds what: cdxgen's unique findings are all
-JavaScript/TypeScript, it remains far ahead on version accuracy, and most of what no product finds
-sits in certificates, keys and configs, C and Go.
-
-The QCI false positives in older releases are almost all in the mixed files: algorithm names in log
-messages and notes dictionaries. v2.3 drops them, which is where its precision gain comes from. Its
-parameter accuracy fell because it stopped guessing file-wide and now often reports none, which is
-the honest failure but still a failure. See [Mixed files](#mixed-files) and `integrations/qci-pqc/FINDINGS.md`.
-Notes on cdxgen are in `integrations/cdxgen/NOTES.md`.
-
-Read the grep column carefully. It matches the products on recall because most of this corpus names
-its algorithms somewhere, and it pays for that in false positives and PQC over-claims (see the table). It was
-also written alongside the corpus, so it isn't an independent product: it shows how much is findable
-by name alone, which is the bar a real scanner should clear on precision *and* recall.
-
-A scanner whose output is standard CycloneDX 1.6 with `evidence.occurrences` needs no adapter: score
-its CBOM with `score.py --exclude-custom` and pass the JSON to `compare.py`. Adapters
-(`tools/adapters/`) exist only where a scanner's output needs translating, and each one documents
-every translation it makes. IBM/PQCA's CBOMkit-theia isn't included: building it here requires
-fetching and compiling its source, which this environment didn't permit. Run it wherever you can and
-add its CBOM the same way.
-
 ## The system fixture
 
 `corpus/system/payments-platform/` is one application instead of one file: a Go API, a Python
@@ -533,20 +398,6 @@ Two numbers only a system can produce:
 the fixture's own source; `verify_corpus.py` runs every service, both artifacts, and parses every
 key. Grep's result is the point: it finds the wrapper-decided findings through the config and routes
 every one of them to the wrong team.
-
-## Fix and rescan
-
-`remediation/` holds ten reference migrations: RSA signing to ML-DSA-65 in Python and Java,
-AES-ECB, AES-CBC and 3DES to AES-256-GCM in five languages, an nginx config moved to TLS 1.3 with
-`X25519MLKEM768`, and an sshd config moved to Ed25519 host keys, ML-KEM hybrid key exchange,
-AES-GCM and HMAC-SHA-512. Each after-file runs (`tools/test_remediation.py`).
-`bench.py run --remediation` applies them all, rescans, and scores each migration: the old
-algorithm (or, for AES-ECB to AES-GCM, the old parameters) must be gone from that file, the new
-algorithm reported with the right parameters, and nothing else in the file may change. A migration
-counts only if the scanner found what it retires in the first place; otherwise it's "not eligible",
-not a failure. Anything that changes outside the migrated files is reported as a regression. The
-migrated files keep a "Migrated: X replaced with Y" comment, the way real migrations do, so a scanner
-that reads comments still sees the old name; that's most of why grep verifies none.
 
 ## Big trees
 
@@ -579,67 +430,6 @@ Calibrated before trusting it: the reference CBOM reads 0 and a memorizer +100. 
 seeds, grep reads -2.3 to +1.0 and QCI v0.7, v2.2 and v2.3 between -2.1 and +3.8, never
 significant. On the negatives,
 grep and 0.3.0 stay between -0.3 and +0.25 per file and v0.7 reads +0.7 to +1.2. Details, and the limits, in [HOLDOUT.md](HOLDOUT.md).
-
-## Mixed files
-
-Every other code case is a small file built around one or two uses, which is the easy shape for a
-scanner. A real module is a few hundred lines with crypto in three or four helpers, the same algorithm
-twice with different settings, ordinary code in between, and log messages that mention algorithms
-the module doesn't use. `corpus/mixed/` is 15 files of that, 62 sites, in all six languages.
-
-What they catch that the small files can't:
-
-- **File-wide parameter guessing.** A scanner that reads "the first `SHA256` in the file" or "the
-  first number after `initialize(`" gets one-algorithm files right and mixed ones wrong. Each site is
-  scored on its own parameters.
-- **One report per file and family.** Two AES sites need two reports at two lines.
-- **Name matching without context.** Every algorithm name in a log line or notes dictionary belongs
-  to a family the file doesn't use, so each hit is a plain false positive.
-- **Line-window de-duplication.** Sites of the same family are sometimes a few lines apart.
-
-| | Recall | Params correct (of detected) | Sites sharing a family with another site, params correct | False positives |
-|---|---|---|---|---|
-| QCI v2.2 | 79.0% (49/62) | 40.8% (20/49) | 8 of 22 detected | 19 (7 PQC over-claims) |
-| QCI v0.7 | 62.9% (39/62) | 38.5% (15/39) | 7 of 18 detected | 23 (11 PQC over-claims) |
-| QCI 0.3.0 | 21.0% (13/62) | 30.8% (4/13) | 0 of 5 | 14 |
-| cdxgen 12.9.1 | 6.5% (4/62) | 3 of 4 | none detected | 0 |
-| grep baseline | 88.7% (55/62) | 34.5% (19/55) | 5 of 24 | 82 |
-
-QCI v0.7's parameter accuracy drops from 76% on the rest of the corpus to 38% here. The cause is in
-its source: `scanner.py` searches the whole file for `sha256` and, if it finds it, labels every HMAC
-and PBKDF2 in that file SHA-256; key sizes and AES modes come from the first match anywhere in the
-file. On single-purpose test files that's usually right. The FINDINGS file has the details.
-
-The files are generated (`tools/build_mixed.py`, a fixed public seed, checked by `--check`) from the
-same code as the holdout's mixed tier, so the holdout can test whether a mixed-file score carries over.
-Generated doesn't mean toy: every file runs, and the ordinary code is ordinary code.
-
-## Calibration cases
-
-The overfit gap (next section) compares published and holdout recall cell by cell, a cell being
-(tier, language, family). In the hand-written corpus 155 of 191 such cells hold a single case, so the
-published side of each comparison is 0% or 100% and most of the gap's uncertainty came from there.
-`corpus/calibration/` adds generated siblings, written by the holdout's matched generator from a
-fixed public seed (`tools/build_calibration.py`, `--check` to verify), until every Tier 1-2 cell has
-four cases. That's 304 cases; one cell (Java Tier 1 DES) has no generator spelling and stays at one.
-
-They are deliberately kept out of the benchmark. Recall, precision, the deadline view, the gates and
-`compare.py` see only the hand-written corpus; false positives in `corpus/calibration/` aren't counted.
-Every scorecard reports them on one line, and `score.py` returns them as `calibration_results`, which
-the overfit gap adds to the published side.
-
-They also give a one-time check that needed no holdout at all, because no scanner had seen them:
-
-| | Hand-written Tier 1-2 | Calibration, same cell mix |
-|---|---|---|
-| QCI v2.2 | 78.0% | 81.6% |
-| QCI v0.7 | 59.2% | 64.1% |
-| QCI 0.3.0 | 26.3% | 28.6% |
-| cdxgen 12.9.1 | 8.6% | 9.5% |
-| grep baseline | 90.1% | 91.1% |
-
-Every scanner does a little better on the generated cases, which are plainer than the hand-written
-ones. Neither QCI release is doing better on the cases it was tuned against.
 
 ## Is the CBOM actionable?
 
@@ -674,10 +464,6 @@ quantum levels, code context, library links and certificate metadata stripped. I
 everything, and a quarter of what it finds can't become a ticket: no certificate has an expiry date,
 and no RSA or EC key says whether it's for key exchange or signing. Grep's actionable
 recall is about half its recall (see the calibration table under Quick start).
-
-**The rubric is proposed, not official.** No official minimum elements for a CBOM exist yet;
-EO 14412 directs CISA to publish them, due around March 2027. The rubric is a data file: move a check
-between `must` and `should`, disable it, or align it to CISA's list when that appears.
 
 ## Deadlines and policies
 
@@ -905,54 +691,3 @@ Tier 4 key material is regenerated by `generate_tier4_assets.py`. Key bytes chan
 the ground truth doesn't depend on them. SHA-1 certificates are built by re-signing the TBS bytes,
 because modern `cryptography` (correctly) refuses to sign with SHA-1.
 
-## Judgment calls you may want to revisit
-
-- **Dead code** isn't tested. Whether unreachable crypto belongs in a CBOM is a policy question
-  (it ships, so arguably yes). Decide the policy before writing those cases.
-- **Runtime-selectable vs config-selectable.** Branches chosen by a runtime argument or env var
-  (`registry_strategy`, `strategy_factory`, `t2_dispatch_table.py`, `T2Enum.java`) make every option
-  a required finding. Lookup tables only reached by editing config (`jwt_alg_mapping`'s HS384/HS512)
-  count only the configured value; the others are accepted but not required.
-- **Cipher suites are scored by name**, not decomposed. A scanner that reports
-  `TLS_RSA_WITH_3DES_EDE_CBC_SHA` as RSA + 3DES + SHA-1 gets no suite credit, though the components
-  are accepted without penalty. Suites are the unit an engineer edits in a config file.
-- **TLS version floors.** `MinProtocol = TLSv1` in `openssl.cnf` requires TLS-1.0 only; higher
-  versions are accepted, not required.
-- **Default passwords.** Two PKCS#12 findings need `changeit`. If your policy is that scanners must
-  not try passwords, filter on `requires_password` and score them separately.
-- **Hashes inside signatures** are accepted, not required, in code (`SHA256withRSA` requires RSA).
-  For certificates, the signature hash *is* required, because a SHA-1-signed certificate is a
-  finding in its own right.
-- **TLS cipher-suite names used purely as enum labels** (`NLookalikes.java`) are a negative.
-
-- **Hand-rolled crypto is in scope.** Some would say a CBOM inventories library usage and
-  homemade crypto is a code-review problem. The view here is that the inventory exists to find
-  what needs replacing, and homemade RSA needs replacing more urgently than anything else in it.
-- **Obfuscation vs. ordinary indirection.** Base64-encoded algorithm names are rare in honest code.
-  Reflection and dynamic import aren't. If your scanner market only cares about non-hostile code,
-  weight `T5Reflection.java` and `t5_dynamic_import.py` above the rest of the tier.
-
-- **Hybrid policy.** A named hybrid group must be reported as the hybrid. If your organization only
-  cares whether *some* PQ protection is present, you could accept ML-KEM in its place; that's a
-  one-line change to `also_ok`, but it would stop distinguishing a hybrid from pure ML-KEM.
-- **Kyber and Dilithium** get family credit as ML-KEM and ML-DSA, so recall doesn't punish a naming
-  choice. The round-3 submissions and the FIPS standards are not byte-compatible, though, so every
-  scorecard also reports **PQC by standard name**: the share of detected PQC findings reported under
-  the FIPS name or OID. If you're auditing for FIPS 203/204 specifically, read that line, not recall.
-
-## Roadmap
-
-- **PQC extensions:** SLH-DSA (not yet in `cryptography`), LMS and XMSS for firmware signing (CNSA 2.0
-  approves both), composite ML-DSA certificates once the IETF drafts settle, ML-DSA JWKs, and
-  JSSE hybrid groups when the JDK ships them.
-- **Tier 5 extensions:** native binaries (C against OpenSSL, Go with its stdlib crypto), minified
-  JavaScript, ProGuard-obfuscated jars, algorithm names stored encrypted and decrypted at startup,
-  hand-rolled AES with its S-box.
-- **Tier 4 extensions:** Apache httpd and HAProxy configs, cipher-string macros (`HIGH:!aNULL`),
-  IPsec/strongSwan, cloud KMS key specs in Terraform, certificates embedded in Java and Python
-  source as string literals.
-- **More languages:** Go and C# are the obvious next two.
-- **Integration repo:** one realistic microservice mixing every tier for a headline number. The mixed
-  files are the single-file version of this; a multi-file service with config, manifests and
-  certificates is the next step.
-- **Real scanner runs:** a results table with named tools is what turns this into a published benchmark.
