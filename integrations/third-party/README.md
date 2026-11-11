@@ -10,10 +10,19 @@ Open-source CBOM scanners that QCI doesn't maintain, run against the corpus by
 | pqcheck | 0.1.0 | PyPI | `pqcheck scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
 | quantascan | 1.0.1 | npm | `quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json` | CycloneDX 1.6 CBOM |
 
-The commands were written from each package's command-line definition. All three ran to completion
-(exit 0) on the workflow's first run. Only quantascan's bundle has been scored so far, and nobody
-has read it yet: its first number was 15.3% recall at 70.6% precision on 393 findings, which is a
-raw result, before the steps below.
+The commands were written from each package's command-line definition and all three run to
+completion in the sandbox. First results on benchmark 2.4.0 (393 findings, no adapter, no declared
+scope, nobody has read the bundles yet):
+
+| Scanner | Recall | Precision | Parameters correct | Verified migrations |
+|---|---|---|---|---|
+| cbom-scan 0.1.0 | 12.5% | 83.1% | 55.1% | 0 of 2 eligible |
+| pqcheck 0.1.0 | 20.6% | 98.8% | 56.8% | 1 of 4 eligible |
+| quantascan 1.0.1 | 15.3% | 70.6% | 61.7% | 0 of 2 eligible |
+
+These are raw numbers, not published results. A scanner that names algorithms in a vocabulary the
+normalizer doesn't know scores low here for a reason an adapter would fix, and none of the three has
+been checked for that.
 
 ## Why they aren't in the comparison yet
 
