@@ -11274,6 +11274,164 @@
       ]
     },
     {
+      "id": "DC-PY-01",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "hashlib.md5(data)"
+      ],
+      "dead": "function with no caller",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "DC-PY-02",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "RSA",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "rsa.generate_private_key("
+      ],
+      "dead": "branch behind a constant that is always false",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "DC-JV-01",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "Cipher.getInstance(\"DES/CBC/PKCS5Padding\")"
+      ],
+      "dead": "private method with no caller",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "id": "DC-JV-02",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "SHA-1",
+      "params": {},
+      "anchors": [
+        "MessageDigest.getInstance(\"SHA-1\")"
+      ],
+      "dead": "branch behind a constant that is always false",
+      "lines": [
+        14
+      ]
+    },
+    {
+      "id": "DC-GO-01",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "md5.Sum(data)"
+      ],
+      "dead": "function with no caller",
+      "lines": [
+        13
+      ]
+    },
+    {
+      "id": "DC-GO-02",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "RC4",
+      "params": {},
+      "anchors": [
+        "rc4.NewCipher("
+      ],
+      "dead": "branch behind a constant that is always false",
+      "lines": [
+        18
+      ]
+    },
+    {
+      "id": "DC-JS-01",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "createHash(\"md5\")"
+      ],
+      "dead": "function with no caller",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "id": "DC-JS-02",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "createCipheriv(\"des-ede3-cbc\""
+      ],
+      "dead": "statement after a return",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "DC-C-01",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "EVP_md5()"
+      ],
+      "dead": "function with no caller",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "id": "DC-C-02",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "EVP_des_ede3_cbc()"
+      ],
+      "dead": "branch that is never taken",
+      "lines": [
+        11
+      ]
+    },
+    {
       "family": "RSA",
       "params": {
         "key_size": 2048

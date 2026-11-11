@@ -12,7 +12,7 @@ Point a scanner at `corpus/`, feed its CycloneDX 1.6 output to `tools/score.py`,
 scorecard that says *where* it fails: which tier, which language, which algorithm, whether it
 got the key size right, and how much noise it generated on files that contain no crypto at all.
 
-Version 2.2.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **six languages**: 330 shipped findings, each
+Version 2.3.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **six languages**: 338 shipped findings, each
 dated against NIST, the federal EO 14412 and NSA CNSA 2.0 transition deadlines. It scores whether
 each reported finding is **actionable**, not just whether it was found, and it lets you **add your
 own code** as scored cases; see [BYOC.md](BYOC.md). It ships wired to the **QCI PQC Readiness
@@ -192,6 +192,7 @@ different versions are never compared.
 | **5. Adversarial** | Names assembled at runtime (fragments, base64, `chr()` codes, reversed strings, char arrays); `importlib` and Java reflection; hand-rolled RC4, SHA-256, TEA and textbook RSA with no crypto library call at all; a `.pyc` and a `.jar` with no source. | 17 (9 Python, 8 Java) |
 | **PQC** | ML-KEM-768/1024 and ML-DSA-44/65/87 via `cryptography`, the JDK 24+ JCA and Go's `crypto/mlkem`; Go `tls.Config` preferring `X25519MLKEM768` with an X25519 fallback; including a parameter set passed through a constant or `NamedParameterSpec`; an application-level X25519 + ML-KEM hybrid; ML-DSA certificates, one PQ key signed by a classical RSA CA; ML-KEM and ML-DSA key files; hybrid groups (`X25519MLKEM768`, `SecP384r1MLKEM1024`) in nginx and OpenSSL configs; `mlkem768x25519-sha256` and `sntrup761x25519` in sshd_config; and two PQC-washing decoys plus a washing config. | 36 (6 Python, 4 Java, 4 Go, 22 assets) |
 | **Mixed** | Realistic-size modules, 220 to 520 lines, with three to five crypto uses spread through ordinary code: CSV parsing, pagination, retries, money formatting, logging. Most files use one family twice with different parameters (AES-128-CBC and AES-256-CTR, HMAC-MD5 and HMAC-SHA512, P-256 and P-521); the surrounding code has numbers a guesser will grab (page sizes of 256, buffers of 32 bytes, `bit_length()`); log lines and note dictionaries name algorithms the file doesn't use, including PQC claims. Scored per site, not per file. | 62 sites in 15 files (3 Python, 3 Java, 3 Go, 2 JavaScript, 1 TypeScript, 3 C) |
+| **Dead code** | Crypto that ships and never runs: a function nothing calls, a branch behind a constant that is always false, statements after a `return`. It counts, because it's in the artifact an auditor will read and one config flip away from running. A scanner that prunes unreachable code misses all of it. | 10 (2 each in Python, Java, Go, JavaScript, C) |
 | **Negatives** | Algorithm names in docstrings, comments, UI labels, log messages, identifiers and a Markdown runbook; known-answer test vectors; CRC32, Adler32, Base64, `hash()`; a file with valid PEM armor around base64 that isn't a certificate; and code that reuses crypto's constants and math for other jobs (Fibonacci hashing with TEA's constant, `pow()` for an IBAN check, `modPow` in a primality test); in Go, JavaScript and C, algorithm names in string tables, display labels and changelog comments next to FNV, CRC32 and djb2. Zero real crypto. | 12 files |
 
 Positive files also carry **decoys**: comments mentioning ML-DSA and X25519MLKEM768 in files that
@@ -521,8 +522,8 @@ certificate signatures, TLS 1.0–1.2, five cipher suites, and SSH key exchange,
 Tier 5 adds RC4, TEA and HMAC-MD5. The PQC category adds ML-KEM-768/1024, ML-DSA-44/65/87, four
 hybrid key-exchange groups and TLS 1.3.
 
-Quantum-relevant split: 122 of 330 findings are Shor-vulnerable (RSA, DSA, EC, DH, Ed25519, X25519,
-and TLS suites with RSA or ECDHE key exchange); 71 are classically broken (MD5, SHA-1, DES, 3DES,
+Quantum-relevant split: 122 of 338 findings are Shor-vulnerable (RSA, DSA, EC, DH, Ed25519, X25519,
+and TLS suites with RSA or ECDHE key exchange); 80 are classically broken (MD5, SHA-1, DES, 3DES,
 RC4, and HMAC over SHA-1 or MD5); 21 are post-quantum, 6 of them hybrids.
 
 ## How scoring works

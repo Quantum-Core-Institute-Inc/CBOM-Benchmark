@@ -144,6 +144,7 @@ GREP_GROUPS = [
     ("PQC, assets", ["pqc/assets"]),
     ("Mixed files", ["mixed/python", "mixed/java", "mixed/go", "mixed/javascript", "mixed/typescript", "mixed/c"]),
     ("System fixture", ["system/go", "system/python", "system/java", "system/artifacts", "system/assets"]),
+    ("Dead code", ["deadcode/python", "deadcode/java", "deadcode/go", "deadcode/javascript", "deadcode/c"]),
 ]
 
 BLOCK = re.compile(r"(<!-- generated:(?P<name>[\w-]+)[^>]*-->\n)(?P<body>.*?)(<!-- /generated:(?P=name) -->)", re.S)
@@ -223,6 +224,7 @@ def comparison_block(ms: dict) -> str:
             ("False positives", "False positives", False),
             ("PQC over-claims", "PQC over-claims", False),
             ("PQC by standard name (of detected PQC)", "PQC by standard name (of detected PQC)", True),
+            ("tier:Dead code", "Dead code: recall", True),
             ("tier:System fixture", "System fixture: recall", True),
             ("System fixture: routable (of detected)", "System fixture: routable to the owning team", True),
             ("System fixture: asset links", "System fixture: asset links", True),

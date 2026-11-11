@@ -31,7 +31,7 @@ LANGS = [("Python", {"python"}), ("Java", {"java"}), ("Go", {"go"}), ("JavaScrip
          ("C / OpenSSL", {"c"}), ("Certificates, keys, configs", {"assets"}), ("Built artifacts (system fixture)", {"artifacts"})]
 TIERS = [("1. Direct", {1}), ("2. Indirection", {2}), ("3. Cross-file", {3}), ("4. Non-code assets", {4}),
          ("5. Adversarial", {5}), ("Post-quantum", {"pqc"}),
-         ("Mixed files", {"mixed"}), ("System fixture", {"system"})]
+         ("Mixed files", {"mixed"}), ("System fixture", {"system"}), ("Dead code", {"deadcode"})]
 
 
 MUST_MATCH = ("release", "methodology", "answer_key", "corpus", "scorer", "policy")
