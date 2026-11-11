@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Image name (registries require lowercase; the repository name has capitals)
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
@@ -45,14 +45,20 @@ jobs:
           load: ${{ vars.PUSH_IMAGE != 'true' }}
           push: ${{ vars.PUSH_IMAGE == 'true' }}
           tags: ${{ env.IMAGE }}:${{ github.ref_name }}
-          provenance: true
-          sbom: true
+          # Attestations are a manifest list, which the local image store can't load; attach them
+          # only when the image is pushed to a registry.
+          provenance: ${{ vars.PUSH_IMAGE == 'true' }}
+          sbom: ${{ vars.PUSH_IMAGE == 'true' }}
 
       - name: Record the image digest
         run: |
+          # A pushed image has a registry digest; a locally loaded one is identified by its image id.
           DIGEST="${{ steps.build.outputs.digest }}"
+          [ "${{ vars.PUSH_IMAGE }}" = "true" ] || DIGEST="$(docker image inspect -f '{{.Id}}' "${IMAGE}:${GITHUB_REF_NAME}")"
+          test -n "$DIGEST"
           echo "CBOM_IMAGE_DIGEST=${IMAGE}@${DIGEST}" >> "$GITHUB_ENV"
           echo "Image: ${IMAGE}@${DIGEST}" >> "$GITHUB_STEP_SUMMARY"
+          docker run --rm --entrypoint cat "${IMAGE}:${GITHUB_REF_NAME}" /testbench/TOOLCHAINS.json >> "$GITHUB_STEP_SUMMARY"
 
       - uses: sigstore/cosign-installer@v3
         if: vars.PUSH_IMAGE == 'true' && vars.SIGN_IMAGE == 'true'
