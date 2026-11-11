@@ -1,0 +1,15 @@
+{
+  "name": "qci-pqc declared scope (docs/LIMITATIONS.md)",
+  "scanner": "qci-pqc-scan",
+  "scanner_version": "0.3.0",
+  "source": "https://github.com/Quantum-Core-Institute-Inc/qci-pqc-scanner/blob/main/docs/LIMITATIONS.md",
+  "note": "Findings matching these rules are listed in the scorecard but not counted. Everything else LIMITATIONS.md calls in scope is scored: source code and config patterns, PEM certificates and keys, TLS and SSH configs, NIST PQC names. Key size from certificates is scored too: LIMITATIONS lists it as out of scope, but certs.py reports it, so the scanner gets credit when it's right.",
+  "out_of_scope": [
+    {"glob": "*.jar", "reason": "Binary / JAR scanning (LIMITATIONS: out of scope)"},
+    {"glob": "*.pyc", "reason": "Binary scanning (LIMITATIONS: out of scope)"},
+    {"glob": "*.der", "reason": "Binary DER certificate; scanner inspects PEM only"},
+    {"glob": "*.p12", "reason": "Binary PKCS#12 keystore; scanner inspects PEM only"},
+    {"glob": "*.jks", "reason": "Binary Java keystore; scanner inspects PEM only"},
+    {"cert_role": "signature", "reason": "Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS)"}
+  ]
+}

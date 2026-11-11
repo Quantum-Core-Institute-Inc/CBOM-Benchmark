@@ -1,0 +1,10 @@
+# Last matching pattern wins.
+*                                   @acme/platform-architecture
+/libs/cryptokit/                    @acme/platform-security
+/config/crypto-profiles.json        @acme/platform-security
+/services/api-gateway/              @acme/edge-team
+/services/settlement-worker/        @acme/payments-team
+/services/ledger-service/           @acme/ledger-team
+/edge/                              @acme/sre
+/deploy/                            @acme/sre
+/infra/                             @acme/sre

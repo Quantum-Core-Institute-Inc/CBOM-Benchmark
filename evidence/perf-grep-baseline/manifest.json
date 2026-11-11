@@ -1,0 +1,108 @@
+{
+  "bundle_format": 1,
+  "kind": "perf",
+  "testbench": "2.2.0",
+  "methodology": "2.2",
+  "created": "2026-11-11T15:21:20Z",
+  "fixture": {
+    "seed": 2026,
+    "size": "medium",
+    "code_files": 3000,
+    "planted": 60,
+    "bytes": 17177695,
+    "families": [
+      "MD5",
+      "SHA-1",
+      "RSA",
+      "3DES"
+    ],
+    "languages": [
+      "python",
+      "java",
+      "go",
+      "javascript",
+      "c"
+    ]
+  },
+  "budget_s": 600,
+  "scanner": {
+    "name": "grep baseline",
+    "cmd": [
+      "python3",
+      "baseline_grep.py",
+      "{corpus}",
+      "-o",
+      "{out}/cbom.json"
+    ],
+    "cbom": "cbom.json",
+    "adapter": "none"
+  },
+  "image": {
+    "digest": null
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "python3",
+      "baseline_grep.py",
+      "corpus",
+      "-o",
+      "cbom.json"
+    ],
+    "exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 3.72,
+    "cpu_user_s": 3.62,
+    "cpu_sys_s": 0.07,
+    "peak_rss_mb": 34.4,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts, 1 path(s) allowed back by the caller",
+      "hidden_caller_paths": 2
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 600,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "status": "finished",
+  "within_budget": true,
+  "throughput": {
+    "files_per_s": 806.5,
+    "mb_per_s": 4.62
+  },
+  "result": {
+    "planted": 60,
+    "found": 55,
+    "recall": 91.7,
+    "recall_by_quartile": [
+      100.0,
+      92.9,
+      87.5,
+      88.9
+    ],
+    "noise_files_reported": 0,
+    "coverage_falloff": false,
+    "missed": [
+      "corpus/svc03/c/pkg08/catalog_payment_01424.c",
+      "corpus/svc05/javascript/pkg00/shipment_profile_02008.js",
+      "corpus/svc05/javascript/pkg04/batch_report_02103.js",
+      "corpus/svc05/javascript/pkg11/member_profile_02283.js",
+      "corpus/svc07/javascript/pkg03/metric_route_02883.js"
+    ]
+  }
+}

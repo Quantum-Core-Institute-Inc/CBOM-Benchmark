@@ -1,0 +1,197 @@
+{
+  "testbench": "2.2.0",
+  "methodology": "2.2",
+  "stamp": {
+    "release": "2.2.0",
+    "methodology": "2.2",
+    "findings": 330,
+    "answer_key": "0c7489f223e2060d",
+    "corpus": "19f42a26eeadb7dd",
+    "scorer": "a28229a0c1833b03",
+    "policy": "nist:732cd8a8d8f317e9"
+  },
+  "created": "2026-11-11T16:50:41Z",
+  "image": null,
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "status": "pass",
+  "counts": {
+    "checks": 19,
+    "passed": 19,
+    "corpus": {
+      "passed": 495,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "checks": [
+    {
+      "name": "corpus executes (strict)",
+      "status": "pass",
+      "detail": "All 495 corpus cases execute (0 failed, 0 skipped).",
+      "seconds": 130.4
+    },
+    {
+      "name": "answer key reproducible",
+      "status": "pass",
+      "detail": "byte-identical",
+      "seconds": 0.6
+    },
+    {
+      "name": "mixed files reproducible",
+      "status": "pass",
+      "detail": "corpus/mixed matches the generator (62 sites)",
+      "seconds": 0.1
+    },
+    {
+      "name": "calibration cases reproducible",
+      "status": "pass",
+      "detail": "corpus/calibration matches the generator (304 cases)",
+      "seconds": 0.1
+    },
+    {
+      "name": "reference replays to 100%",
+      "status": "pass",
+      "detail": "recall 100.0, params 100.0, FP 0",
+      "seconds": 2.7
+    },
+    {
+      "name": "docs match scorecards",
+      "status": "pass",
+      "detail": "Docs match the release scorecards.",
+      "seconds": 1.0
+    },
+    {
+      "name": "tests: test_bench",
+      "status": "pass",
+      "detail": "All bench checks pass.",
+      "seconds": 112.7
+    },
+    {
+      "name": "tests: test_cdxgen_adapter",
+      "status": "pass",
+      "detail": "cdxgen adapter checks: all pass",
+      "seconds": 0.0
+    },
+    {
+      "name": "tests: test_compare",
+      "status": "pass",
+      "detail": "All comparison checks pass.",
+      "seconds": 5.5
+    },
+    {
+      "name": "tests: test_gates",
+      "status": "pass",
+      "detail": "All gate checks pass.",
+      "seconds": 0.1
+    },
+    {
+      "name": "tests: test_holdout",
+      "status": "pass",
+      "detail": "holdout checks: all pass",
+      "seconds": 37.1
+    },
+    {
+      "name": "tests: test_libraries",
+      "status": "pass",
+      "detail": "All library checks pass.",
+      "seconds": 0.1
+    },
+    {
+      "name": "tests: test_linkage",
+      "status": "pass",
+      "detail": "All linkage checks pass.",
+      "seconds": 14.3
+    },
+    {
+      "name": "tests: test_normalize",
+      "status": "pass",
+      "detail": "130/130 normalizer cases pass",
+      "seconds": 0.0
+    },
+    {
+      "name": "tests: test_policy",
+      "status": "pass",
+      "detail": "41/41 policy checks pass",
+      "seconds": 7.8
+    },
+    {
+      "name": "tests: test_qci_adapter",
+      "status": "pass",
+      "detail": "5/5 adapter checks pass",
+      "seconds": 0.0
+    },
+    {
+      "name": "tests: test_remediation",
+      "status": "pass",
+      "detail": "All remediation checks pass.",
+      "seconds": 14.3
+    },
+    {
+      "name": "tests: test_sandbox",
+      "status": "pass",
+      "detail": "Sandbox checks: all pass",
+      "seconds": 6.4
+    },
+    {
+      "name": "tests: test_scorer",
+      "status": "pass",
+      "detail": "All scorer checks pass.",
+      "seconds": 88.1
+    }
+  ],
+  "corpus_verification": {
+    "areas": {
+      "Assets and other": {
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      },
+      "C": {
+        "passed": 80,
+        "failed": 0,
+        "skipped": 0
+      },
+      "Dependency manifests": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0
+      },
+      "Go": {
+        "passed": 86,
+        "failed": 0,
+        "skipped": 0
+      },
+      "Java": {
+        "passed": 102,
+        "failed": 0,
+        "skipped": 0
+      },
+      "JavaScript/TypeScript": {
+        "passed": 78,
+        "failed": 0,
+        "skipped": 0
+      },
+      "Python": {
+        "passed": 106,
+        "failed": 0,
+        "skipped": 0
+      },
+      "System fixture": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "total": {
+      "passed": 495,
+      "failed": 0,
+      "skipped": 0
+    },
+    "failures": [],
+    "skip_reasons": []
+  }
+}

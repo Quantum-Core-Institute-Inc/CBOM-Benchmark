@@ -1,0 +1,231 @@
+{
+  "id": "cnsa2",
+  "title": "NSA CNSA 2.0",
+  "scope": "National Security Systems and vendors selling into them. Dates depend on the kind of system (the finding's 'use').",
+  "sources_retrieved": "2026-11-11",
+  "sources": [
+    {
+      "id": "CNSA2-FAQ",
+      "name": "NSA, The Commercial National Security Algorithm Suite 2.0 and Quantum Computing FAQ",
+      "revision": "Version 2.0 (U/OO/194427-22)",
+      "status": "final",
+      "published": "2024-04",
+      "url": "https://media.defense.gov/2022/Sep/07/2003071836/-1/-1/1/CSI_CNSA_2.0_FAQ_.PDF"
+    }
+  ],
+  "use_dates": {
+    "firmware-signing": "2030-12-31",
+    "networking": "2030-12-31",
+    "web": "2033-12-31",
+    "os": "2033-12-31",
+    "niche": "2033-12-31",
+    "custom": "2033-12-31"
+  },
+  "rules": [
+    {
+      "id": "cnsa2-aes",
+      "match": {
+        "family": [
+          "AES"
+        ],
+        "params": {
+          "key_size": {
+            "in": [
+              256
+            ]
+          }
+        }
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "section": "CNSA 2.0 section, \"What is ... CNSA 2.0?\" (algorithm table: AES-256)"
+    },
+    {
+      "id": "cnsa2-mlkem",
+      "match": {
+        "family": [
+          "ML-KEM"
+        ],
+        "params": {
+          "param_set": {
+            "in": [
+              "1024"
+            ]
+          }
+        }
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "section": "CNSA 2.0 section, algorithm table (ML-KEM-1024)"
+    },
+    {
+      "id": "cnsa2-mldsa",
+      "match": {
+        "family": [
+          "ML-DSA"
+        ],
+        "params": {
+          "param_set": {
+            "in": [
+              "87"
+            ]
+          }
+        }
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "section": "CNSA 2.0 section, algorithm table (ML-DSA-87)"
+    },
+    {
+      "id": "cnsa2-hash",
+      "match": {
+        "family": [
+          "SHA-384",
+          "SHA-512"
+        ]
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "section": "CNSA 2.0 section, algorithm table (SHA-384 or SHA-512)"
+    },
+    {
+      "id": "cnsa2-hmac",
+      "match": {
+        "family": [
+          "HMAC"
+        ],
+        "params": {
+          "hash": {
+            "in": [
+              "SHA-384",
+              "SHA-512"
+            ]
+          }
+        }
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "section": "CNSA 2.0 section, algorithm table (SHA-384 or SHA-512)"
+    },
+    {
+      "id": "cnsa2-hybrid-1024",
+      "match": {
+        "family": [
+          "SecP384r1MLKEM1024"
+        ]
+      },
+      "status": "review",
+      "source": "CNSA2-FAQ",
+      "note": "Both halves are CNSA-grade (ML-KEM-1024, P-384). Whether a hybrid is acceptable after the exclusive-use date is a program-office decision.",
+      "section": "Hybrids section, \"What is NSA's position on the use of hybrid solutions?\""
+    },
+    {
+      "id": "pq-wrong-level",
+      "match": {
+        "flag": "pq"
+      },
+      "status": "not-approved",
+      "source": "CNSA2-FAQ",
+      "note": "Post-quantum, but not at CNSA 2.0 parameters (ML-KEM-1024, ML-DSA-87 only).",
+      "section": "CNSA 2.0 section, algorithm table (ML-KEM-1024 and ML-DSA-87 only)"
+    },
+    {
+      "id": "aes-short",
+      "match": {
+        "family": [
+          "AES"
+        ],
+        "params": {
+          "key_size": {
+            "in": [
+              128,
+              192
+            ]
+          }
+        }
+      },
+      "status": "not-approved",
+      "source": "CNSA2-FAQ",
+      "note": "CNSA requires 256-bit AES keys.",
+      "section": "CNSA 2.0 section, algorithm table (AES-256 only)"
+    },
+    {
+      "id": "cnsa1-rsa",
+      "match": {
+        "family": [
+          "RSA",
+          "DH"
+        ],
+        "params": {
+          "key_size": {
+            "gte": 3072
+          }
+        }
+      },
+      "status": "deprecated",
+      "disallowed_after": "use",
+      "source": "CNSA2-FAQ",
+      "note": "CNSA 1.0 strength; acceptable only until this system type's exclusive-use date.",
+      "section": "Timeframe section, \"What timeframe information can NSA provide for adoption of CNSA 2.0?\"; CNSA 1.0 is the interim until exclusive-use dates"
+    },
+    {
+      "id": "cnsa1-ec",
+      "match": {
+        "family": [
+          "EC"
+        ],
+        "params": {
+          "curve": {
+            "in": [
+              "P-384"
+            ]
+          }
+        }
+      },
+      "status": "deprecated",
+      "disallowed_after": "use",
+      "source": "CNSA2-FAQ",
+      "note": "CNSA 1.0 curve; acceptable only until this system type's exclusive-use date.",
+      "section": "Timeframe section; CNSA 1.0 is the interim until exclusive-use dates"
+    },
+    {
+      "id": "protocols",
+      "match": {
+        "flag": "protocol"
+      },
+      "status": "out-of-scope",
+      "source": "CNSA2-FAQ",
+      "note": "CNSA 2.0 lists algorithms, not protocol versions.",
+      "section": "CNSA 2.0 lists algorithms, not protocol versions (algorithm table)"
+    },
+    {
+      "id": "suites",
+      "match": {
+        "flag": "suite"
+      },
+      "status": "out-of-scope",
+      "source": "CNSA2-FAQ",
+      "note": "Judge the suite by its components and the CNSA TLS profile.",
+      "section": "CNSA 2.0 lists algorithms, not suites (algorithm table)"
+    },
+    {
+      "id": "kdf",
+      "match": {
+        "family": [
+          "PBKDF2"
+        ]
+      },
+      "status": "out-of-scope",
+      "source": "CNSA2-FAQ",
+      "section": "Not covered by the algorithm table"
+    },
+    {
+      "id": "not-cnsa",
+      "match": {},
+      "status": "not-approved",
+      "source": "CNSA2-FAQ",
+      "note": "Not a CNSA algorithm or strength (never CNSA 1.0 either).",
+      "section": "CNSA 2.0 section, algorithm table"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
++------------------------+------------+--------------------------+----------------------------------------------------+
+|                                           SECURE MODE: Environment audit                                            |
+|                                                   3 high   8 low                                                    |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Category               | Severity   | Variable(s)              | Details                                            |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Environment Variable   | HIGH       | NODE_PATH                | NODE_PATH is set and may cause unexpected modules  |
+|                        |            |                          | to be loaded, enabling module-resolution poisoning |
+|                        |            |                          | .                                                  |
+|                        |            |                          | Mitigation: Unset NODE_PATH before processing untr |
+|                        |            |                          | usted repositories.                                |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Environment Variable   | HIGH       | DENO_CERT                | DENO_CERT is set to a custom TLS certificate autho |
+|                        |            |                          | rity. A custom CA combined with an outbound proxy  |
+|                        |            |                          | can enable man-in-the-middle attacks on registry l |
+|                        |            |                          | ookups and SBOM uploads.                           |
+|                        |            |                          | Mitigation: Unset DENO_CERT unless you explicitly  |
+|                        |            |                          | require a private CA bundle. Prefer the system tru |
+|                        |            |                          | st store.                                          |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Privilege              | HIGH       | UID                      | cdxgen is running as root (UID 0). Any code execut |
+|                        |            |                          | ed during SBOM generation—including package manage |
+|                        |            |                          | r install hooks—will run with full system privileg |
+|                        |            |                          | es.                                                |
+|                        |            |                          | Mitigation: Run cdxgen as a non-privileged user. U |
+|                        |            |                          | se a container or VM with a dedicated low-privileg |
+|                        |            |                          | e account.                                         |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Credential Exposure    | LOW        | AWS_SECRET_ACCESS_KEY    | Credential-like environment variables are set. Bui |
+|                        |            | CLAUDE_CODE_CHILD_SESSIO | ld tools or install scripts invoked during SBOM ge |
+|                        |            | N                        | neration may read inherited environment variables. |
+|                        |            | CLAUDE_CODE_MESSAGING_TO | Mitigation: Unset unneeded secrets when scanning u |
+|                        |            | KEN                      | ntrusted repositories. Prefer ephemeral, scoped CI |
+|                        |            | CLAUDE_CODE_USER_EMAIL   |  credentials injected only for the step that needs |
+|                        |            | CLOUDSDK_AUTH_ACCESS_TOK |  them.                                             |
+|                        |            | EN                       |                                                    |
+|                        |            | GH_TOKEN                 |                                                    |
+|                        |            | GITHUB_TOKEN             |                                                    |
++------------------------+------------+--------------------------+----------------------------------------------------+
+| Network Interception   | LOW        | HTTPS_PROXY              | An outbound proxy is configured via HTTPS_PROXY. R |
+|                        |            |                          | egistry lookups, dependency downloads, and SBOM up |
+|                        |            |                          | loads will be routed through this proxy.           |
+|                        |            |                          | Mitigation: Verify the proxy is trusted and uses T |
+|                        |            |                          | LS. Remove the variable if not required for this s |
+|                        |            |                          | can.                                               |
++------------------------+------------+--------------------------+----------------------------------------------------+
+[1;35mSECURE MODE: DO NOT run cdxgen with root privileges.[0m
+Executing 'mvn in /tmp/cdxgen-scan-4wpr2k_a/corpus/deps/java-gateway
+You can try the following remediation tips to resolve this error:
+
+1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
+2. Perform 'mvn compile package' before invoking this command. Fix any errors found during this invocation.
+3. Ensure the temporary directory is available and has sufficient disk space to copy all the artifacts.
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.2.0/maven-clean-plugin-3.2.0.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-clean-plugin:3.2.0: Plugin org.apache.maven.plugins:maven-clean-plugin:3.2.0 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-clean-plugin:pom:3.2.0 (absent): Could not transfer artifact org.apache.maven.plugins:maven-clean-plugin:pom:3.2.0 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org: Name or service not known
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.3.1/maven-resources-plugin-3.3.1.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-resources-plugin:3.3.1: Plugin org.apache.maven.plugins:maven-resources-plugin:3.3.1 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-resources-plugin:pom:3.3.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-resources-plugin:pom:3.3.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.4.1/maven-jar-plugin-3.4.1.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-jar-plugin:3.4.1: Plugin org.apache.maven.plugins:maven-jar-plugin:3.4.1 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-jar-plugin:pom:3.4.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-jar-plugin:pom:3.4.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.13.0/maven-compiler-plugin-3.13.0.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-compiler-plugin:3.13.0: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.13.0 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-compiler-plugin:pom:3.13.0 (absent): Could not transfer artifact org.apache.maven.plugins:maven-compiler-plugin:pom:3.13.0 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.2.5/maven-surefire-plugin-3.2.5.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-surefire-plugin:3.2.5: Plugin org.apache.maven.plugins:maven-surefire-plugin:3.2.5 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-surefire-plugin:pom:3.2.5 (absent): Could not transfer artifact org.apache.maven.plugins:maven-surefire-plugin:pom:3.2.5 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-install-plugin:3.1.2: Plugin org.apache.maven.plugins:maven-install-plugin:3.1.2 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-install-plugin:pom:3.1.2 (absent): Could not transfer artifact org.apache.maven.plugins:maven-install-plugin:pom:3.1.2 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-deploy-plugin:3.1.2: Plugin org.apache.maven.plugins:maven-deploy-plugin:3.1.2 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-deploy-plugin:pom:3.1.2 (absent): Could not transfer artifact org.apache.maven.plugins:maven-deploy-plugin:pom:3.1.2 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.12.1/maven-site-plugin-3.12.1.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-site-plugin:3.12.1: Plugin org.apache.maven.plugins:maven-site-plugin:3.12.1 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-site-plugin:pom:3.12.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-site-plugin:pom:3.12.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/3.1.0/maven-antrun-plugin-3.1.0.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:3.1.0: Plugin org.apache.maven.plugins:maven-antrun-plugin:3.1.0 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-antrun-plugin:pom:3.1.0 (absent): Could not transfer artifact org.apache.maven.plugins:maven-antrun-plugin:pom:3.1.0 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-assembly-plugin:3.7.1: Plugin org.apache.maven.plugins:maven-assembly-plugin:3.7.1 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-assembly-plugin:pom:3.7.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-assembly-plugin:pom:3.7.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/3.7.0/maven-dependency-plugin-3.7.0.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-dependency-plugin:3.7.0: Plugin org.apache.maven.plugins:maven-dependency-plugin:3.7.0 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-dependency-plugin:pom:3.7.0 (absent): Could not transfer artifact org.apache.maven.plugins:maven-dependency-plugin:pom:3.7.0 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/3.0.1/maven-release-plugin-3.0.1.pom
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-release-plugin:3.0.1: Plugin org.apache.maven.plugins:maven-release-plugin:3.0.1 or one of its dependencies could not be resolved:
+	The following artifacts could not be resolved: org.apache.maven.plugins:maven-release-plugin:pom:3.0.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-release-plugin:pom:3.0.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+[WARNING] Could not transfer metadata org.apache.maven.plugins/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+[WARNING] Could not transfer metadata org.codehaus.mojo/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+[WARNING] org.apache.maven.plugins/maven-metadata.xml failed to transfer from https://repo.maven.apache.org/maven2 during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer metadata org.apache.maven.plugins/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+[WARNING] org.codehaus.mojo/maven-metadata.xml failed to transfer from https://repo.maven.apache.org/maven2 during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer metadata org.codehaus.mojo/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.515 s
+[INFO] Finished at: 2026-11-11T10:10:08-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] No plugin found for prefix 'dependency' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (/root/.m2/repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException
+
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=43039 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+
+The above build errors could be due to:
+
+1. Try building the project with 'mvn package -Dmaven.test.skip=true' using the correct version of Java and maven before invoking cdxgen.
+2. Private dependencies cannot be downloaded: Check if any additional arguments must be passed to maven and set them via MVN_ARGS environment variable.
+3. Check if all required environment variables including any maven profile arguments are passed correctly to this tool.
+
+Falling back to parsing pom.xml files. Only direct dependencies would get included!
+Is this a gradle project? Try running cdxgen with `-t gradle`.
+1. Check if the correct version of golang is installed. Try building the application using go build or make command to troubleshoot.
+2. If the application uses private go modules, ensure the environment variable GOPRIVATE is set with the comma-separated repo names.
+Ensure $HOME/.netrc file contains a valid username and password for the private repos.
+3. Alternatively, consider generating a post-build SBOM from the built binary using blint. Use the official container image and invoke cdxgen with the arguments `-t binary --lifecycle post-build`.
+Manually parsing go.mod files. The resultant BOM would be incomplete.
+Set the environment variable CDXGEN_GEM_HOME or GEM_HOME to collect the module names for installed gems.
+Unable to extract component information from /tmp/cdxgen-scan-4wpr2k_a/corpus/tier5/java/compiled/billing-core.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cdxgen-scan-4wpr2k_a/corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar. The SBOM won't include this artifact.
+About to collect jar dependencies for the path /tmp/cdxgen-scan-4wpr2k_a/corpus
+Executing 'mvn in /tmp/cdxgen-scan-4wpr2k_a/corpus
+You can try the following remediation tips to resolve this error:
+
+1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
+2. Perform 'mvn compile package' before invoking this command. Fix any errors found during this invocation.
+3. Ensure the temporary directory is available and has sufficient disk space to copy all the artifacts.
+About to collect jar dependencies from the gradle cache. This would take a while ...
+/root/.gradle/caches/modules-2/files-2.1 did not contain any jars. Try building the project to improve the BOM precision.
+To speed up successive re-runs, pass the argument --skip-maven-collector to evinse command.
+Creating reachables slice for /tmp/cdxgen-scan-4wpr2k_a/corpus. Please wait ...
+Creating usages slice for /tmp/cdxgen-scan-4wpr2k_a/corpus. Please wait ...
+Use an official cdxgen container image to improve the precision of endpoints detection (for SaaSBOM).
+Unable to identify component evidence for the input SBOM based on the slices from atom. The slices are either empty or lack appropriate tags.
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=43039 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+ undefined
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=43039 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+ undefined

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "cbom.json": {
+      "sha256": "5e1414306c7a566b5ff2f0db9910ed850ceb10b21fb47acc845ca06200178cad",
+      "size": 1503725
+    },
+    "findings.json": {
+      "sha256": "1eec5b0689f34e4f934971568bf24f9bdaabee277b397e1b377862264c5cdca2",
+      "size": 246880
+    },
+    "report.html": {
+      "sha256": "ac4526725c810ca9ca437bdbee25dff8978f5fd19cbd355504a9d84de99d37c1",
+      "size": 369214
+    },
+    "results.sarif": {
+      "sha256": "6a225b101e6763a5bb38507ecfc37bbceb0ee61b093817521828e0851307210f",
+      "size": 378019
+    }
+  },
+  "generated": null,
+  "reproducible": true,
+  "ruleset_hash": "3ac86d1e15812efb",
+  "scanner_version": "0.7.0",
+  "summary": {
+    "findings": 770,
+    "project": "corpus",
+    "readiness_score": 0.0,
+    "reproducible": true,
+    "ruleset_hash": "3ac86d1e15812efb",
+    "scanners": [
+      "qci-pattern"
+    ]
+  }
+}

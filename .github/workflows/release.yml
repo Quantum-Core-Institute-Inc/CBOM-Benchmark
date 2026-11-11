@@ -1,0 +1,97 @@
+# On a version tag: build the pinned image, run the required checks inside it with no network,
+# produce the reference evidence bundles, and attach everything to the GitHub release.
+#
+# QCI decisions this workflow leaves as switches (repository variables):
+#   PUSH_IMAGE=true    push the image to ghcr.io/<owner>/<repo> (needs packages: write)
+#   SIGN_IMAGE=true    sign the pushed image with cosign, keyless via GitHub OIDC
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write      # attach release assets
+  packages: write      # only used when PUSH_IMAGE=true
+  id-token: write      # only used when SIGN_IMAGE=true
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Image name (registries require lowercase; the repository name has capitals)
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
+      - name: The tag matches VERSION
+        run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        if: vars.PUSH_IMAGE == 'true'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build (and push) the image
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: ${{ vars.PUSH_IMAGE != 'true' }}
+          push: ${{ vars.PUSH_IMAGE == 'true' }}
+          tags: ${{ env.IMAGE }}:${{ github.ref_name }}
+          provenance: true
+          sbom: true
+
+      - name: Record the image digest
+        run: |
+          DIGEST="${{ steps.build.outputs.digest }}"
+          echo "CBOM_IMAGE_DIGEST=${IMAGE}@${DIGEST}" >> "$GITHUB_ENV"
+          echo "Image: ${IMAGE}@${DIGEST}" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: sigstore/cosign-installer@v3
+        if: vars.PUSH_IMAGE == 'true' && vars.SIGN_IMAGE == 'true'
+      - name: Sign the image
+        if: vars.PUSH_IMAGE == 'true' && vars.SIGN_IMAGE == 'true'
+        run: cosign sign --yes "$CBOM_IMAGE_DIGEST"
+
+      - name: Required checks, inside the image, no network
+        run: |
+          mkdir -p evidence
+          docker run --rm --network none --cap-add SYS_ADMIN --security-opt apparmor=unconfined -e CBOM_IMAGE_DIGEST -v "$PWD/evidence:/evidence" \
+            "${IMAGE}:${GITHUB_REF_NAME}" checks --out /evidence/checks.json
+
+      - name: Reference bundles (answer key and grep baseline), inside the image, no network
+        run: |
+          for spec in "answer-key|cp /testbench/expected/expected.cdx.json {out}/cbom.json" \
+                      "grep-baseline|python /testbench/tools/baseline_grep.py {corpus} -o {out}/cbom.json"; do
+            name="${spec%%|*}"; cmd="${spec#*|}"
+            docker run --rm --network none --cap-add SYS_ADMIN --security-opt apparmor=unconfined -e CBOM_IMAGE_DIGEST -v "$PWD/evidence:/evidence" \
+              "${IMAGE}:${GITHUB_REF_NAME}" run --name "$name" --scanner-version "${GITHUB_REF_NAME}" \
+              --scanner-cmd "$cmd" --checks /evidence/checks.json --require-isolation \
+              --allow-path /testbench/tools --allow-path /testbench/expected \
+              --bundle "/evidence/$name"
+            docker run --rm --network none --cap-add SYS_ADMIN --security-opt apparmor=unconfined -v "$PWD/evidence:/evidence" \
+              "${IMAGE}:${GITHUB_REF_NAME}" verify "/evidence/$name"
+          done
+
+      - name: Package the evidence
+        run: |
+          sudo chown -R "$(id -u)" evidence
+          tar -czf "cbom-testbench-${GITHUB_REF_NAME}-evidence.tar.gz" evidence
+          sha256sum "cbom-testbench-${GITHUB_REF_NAME}-evidence.tar.gz" > "cbom-testbench-${GITHUB_REF_NAME}-evidence.tar.gz.sha256"
+
+      - name: Attach to the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --notes-file CHANGELOG.md
+          gh release upload "$GITHUB_REF_NAME" --clobber \
+            "cbom-testbench-${GITHUB_REF_NAME}-evidence.tar.gz" \
+            "cbom-testbench-${GITHUB_REF_NAME}-evidence.tar.gz.sha256" \
+            evidence/checks.json

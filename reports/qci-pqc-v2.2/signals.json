@@ -1,0 +1,458 @@
+[
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/c/cal_sha3256_035.c",
+    "line": 12,
+    "ref": "QCI-0041"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/c/cal_sha3256_036.c",
+    "line": 12,
+    "ref": "QCI-0042"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/c/cal_sha3256_037.c",
+    "line": 8,
+    "ref": "QCI-0043"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
+    "line": 5,
+    "ref": "QCI-0115"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
+    "line": 32,
+    "ref": "QCI-0116"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
+    "line": 5,
+    "ref": "QCI-0117"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
+    "line": 24,
+    "ref": "QCI-0118"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
+    "line": 5,
+    "ref": "QCI-0119"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
+    "line": 32,
+    "ref": "QCI-0120"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/java/Cal1037ShipmentSettings.java",
+    "line": 5,
+    "ref": "QCI-0174"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/java/Cal1038MemberOptions.java",
+    "line": 9,
+    "ref": "QCI-0175"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/java/Cal1039PayloadDefaults.java",
+    "line": 13,
+    "ref": "QCI-0176"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/javascript/cal_sha3256_034.js",
+    "line": 9,
+    "ref": "QCI-0249"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/javascript/cal_sha3256_035.js",
+    "line": 9,
+    "ref": "QCI-0251"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/javascript/cal_sha3256_036.js",
+    "line": 5,
+    "ref": "QCI-0253"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/python/cal_sha3256_039.py",
+    "line": 6,
+    "ref": "QCI-0307"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/python/cal_sha3256_040.py",
+    "line": 6,
+    "ref": "QCI-0308"
+  },
+  {
+    "category": "SHA-3",
+    "location": "calibration/tier1/python/cal_sha3256_041.py",
+    "line": 17,
+    "ref": "QCI-0309"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/c/audit_daemon.c",
+    "line": 218,
+    "ref": "QCI-0435"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/c/audit_daemon.c",
+    "line": 315,
+    "ref": "QCI-0438"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/go/invoice_gateway/main.go",
+    "line": 207,
+    "ref": "QCI-0453"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/go/invoice_gateway/main.go",
+    "line": 230,
+    "ref": "QCI-0455"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/javascript/device_session.js",
+    "line": 94,
+    "ref": "QCI-0499"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/javascript/partner_routes.js",
+    "line": 263,
+    "ref": "QCI-0509"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/python/invoice_service.py",
+    "line": 52,
+    "ref": "QCI-0511"
+  },
+  {
+    "category": "SHA-3",
+    "location": "mixed/python/order_jobs.py",
+    "line": 33,
+    "ref": "QCI-0525"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "negatives/assets/upload_validator_fake.pem",
+    "line": 1,
+    "ref": "QCI-0539"
+  },
+  {
+    "category": "Hybrid-Named",
+    "location": "negatives/go/strings/main.go",
+    "line": 11,
+    "ref": "QCI-0540"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "pqc/assets/certs/firmware_signing.pem",
+    "line": 1,
+    "ref": "QCI-0543"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "pqc/assets/certs/migrated_leaf.pem",
+    "line": 1,
+    "ref": "QCI-0545"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "pqc/assets/certs/release_root_mldsa.pem",
+    "line": 1,
+    "ref": "QCI-0548"
+  },
+  {
+    "category": "PKCS8",
+    "location": "pqc/assets/keys/attestation_signer.pem",
+    "line": 1,
+    "ref": "QCI-0550"
+  },
+  {
+    "category": "Named-Hybrid",
+    "location": "pqc/assets/ssh/sshd_config_pq",
+    "line": 6,
+    "ref": "QCI-0553"
+  },
+  {
+    "category": "SSH-Classical-Kex",
+    "location": "pqc/assets/ssh/sshd_config_pq",
+    "line": 6,
+    "ref": "QCI-0554"
+  },
+  {
+    "category": "SSH-PQC-Kex",
+    "location": "pqc/assets/ssh/sshd_config_pq",
+    "line": 6,
+    "ref": "QCI-0555"
+  },
+  {
+    "category": "SSH-Modern-Cipher",
+    "location": "pqc/assets/ssh/sshd_config_pq",
+    "line": 7,
+    "ref": "QCI-0560"
+  },
+  {
+    "category": "Hybrid-Named",
+    "location": "pqc/assets/tls/nginx_pq.conf",
+    "line": 14,
+    "ref": "QCI-0563"
+  },
+  {
+    "category": "Hybrid-Named",
+    "location": "pqc/assets/tls/openssl_pq.cnf",
+    "line": 13,
+    "ref": "QCI-0572"
+  },
+  {
+    "category": "Named-Hybrid",
+    "location": "pqc/assets/tls/openssl_pq.cnf",
+    "line": 13,
+    "ref": "QCI-0573"
+  },
+  {
+    "category": "Java-PQC",
+    "location": "pqc/java/PqParamSpec.java",
+    "line": 9,
+    "ref": "QCI-0579"
+  },
+  {
+    "category": "Java-PQC",
+    "location": "pqc/java/PqSignature.java",
+    "line": 11,
+    "ref": "QCI-0583"
+  },
+  {
+    "category": "SSH-Modern-Cipher",
+    "location": "system/payments-platform/edge/nginx/gateway.conf",
+    "line": 9,
+    "ref": "QCI-0597"
+  },
+  {
+    "category": "TLS-Classical-Cipher",
+    "location": "system/payments-platform/edge/nginx/gateway.conf",
+    "line": 9,
+    "ref": "QCI-0598"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "system/payments-platform/edge/nginx/tls/gateway.crt",
+    "line": 1,
+    "ref": "QCI-0600"
+  },
+  {
+    "category": "Private-Key",
+    "location": "system/payments-platform/edge/nginx/tls/gateway.key",
+    "line": 1,
+    "ref": "QCI-0601"
+  },
+  {
+    "category": "SHA-3",
+    "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "line": 12895,
+    "ref": "QCI-0646"
+  },
+  {
+    "category": "SHA-3",
+    "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "line": 13300,
+    "ref": "QCI-0651"
+  },
+  {
+    "category": "SHA-3",
+    "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "line": 13514,
+    "ref": "QCI-0653"
+  },
+  {
+    "category": "SHA-3",
+    "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "line": 14665,
+    "ref": "QCI-0655"
+  },
+  {
+    "category": "SHA-3",
+    "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "line": 16986,
+    "ref": "QCI-0678"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "system/payments-platform/services/settlement-worker/partner_ca.py",
+    "line": 4,
+    "ref": "QCI-0686"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/c/t1_digests.c",
+    "line": 18,
+    "ref": "QCI-0694"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/go/hashes/main.go",
+    "line": 8,
+    "ref": "QCI-0713"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/go/hashes/main.go",
+    "line": 17,
+    "ref": "QCI-0716"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/java/T1Hashes.java",
+    "line": 13,
+    "ref": "QCI-0737"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/javascript/t1_hashes.js",
+    "line": 8,
+    "ref": "QCI-0762"
+  },
+  {
+    "category": "SHA-3",
+    "location": "tier1/python/t1_hashes.py",
+    "line": 9,
+    "ref": "QCI-0787"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/api_gateway.pem",
+    "line": 1,
+    "ref": "QCI-0855"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/device_ed25519.pem",
+    "line": 1,
+    "ref": "QCI-0857"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/payments_legacy.crt",
+    "line": 1,
+    "ref": "QCI-0859"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/portal_fullchain.pem",
+    "line": 1,
+    "ref": "QCI-0862"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/portal_fullchain.pem",
+    "line": 20,
+    "ref": "QCI-0863"
+  },
+  {
+    "category": "X509-Cert",
+    "location": "tier4/assets/certs/telemetry_ecdsa.pem",
+    "line": 1,
+    "ref": "QCI-0865"
+  },
+  {
+    "category": "PKCS8",
+    "location": "tier4/assets/keys/billing_service.pem",
+    "line": 1,
+    "ref": "QCI-0866"
+  },
+  {
+    "category": "Private-Key",
+    "location": "tier4/assets/keys/treasury_hot_wallet.key",
+    "line": 1,
+    "ref": "QCI-0871"
+  },
+  {
+    "category": "SSH-Classical-HostKey",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 8,
+    "ref": "QCI-0873"
+  },
+  {
+    "category": "SSH-Classical-Kex",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 9,
+    "ref": "QCI-0876"
+  },
+  {
+    "category": "SSH-Weak-Kex",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 9,
+    "ref": "QCI-0877"
+  },
+  {
+    "category": "SSH-Modern-Cipher",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 10,
+    "ref": "QCI-0880"
+  },
+  {
+    "category": "SSH-Weak-Cipher",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 10,
+    "ref": "QCI-0881"
+  },
+  {
+    "category": "SSH-Weak-MAC",
+    "location": "tier4/assets/ssh/sshd_config",
+    "line": 11,
+    "ref": "QCI-0883"
+  },
+  {
+    "category": "TLS-Weak-Protocol",
+    "location": "tier4/assets/tls/nginx.conf",
+    "line": 20,
+    "ref": "QCI-0890"
+  },
+  {
+    "category": "TLS1.0/1.1",
+    "location": "tier4/assets/tls/nginx.conf",
+    "line": 20,
+    "ref": "QCI-0891"
+  },
+  {
+    "category": "SSH-Modern-Cipher",
+    "location": "tier4/assets/tls/nginx.conf",
+    "line": 21,
+    "ref": "QCI-0894"
+  },
+  {
+    "category": "TLS-Classical-Cipher",
+    "location": "tier4/assets/tls/nginx.conf",
+    "line": 21,
+    "ref": "QCI-0895"
+  },
+  {
+    "category": "TLS-Weak-Cipher",
+    "location": "tier4/assets/tls/nginx.conf",
+    "line": 21,
+    "ref": "QCI-0896"
+  }
+]

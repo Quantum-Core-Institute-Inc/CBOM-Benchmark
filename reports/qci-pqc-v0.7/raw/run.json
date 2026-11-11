@@ -1,0 +1,38 @@
+{
+  "cmd": [
+    "qci-pqc",
+    "scan",
+    "corpus",
+    "--reproducible",
+    "--adapter",
+    "internal",
+    "--out",
+    "out",
+    "--json"
+  ],
+  "exit_code": 0,
+  "signal": null,
+  "timed_out": false,
+  "wall_s": 86.35,
+  "cpu_user_s": 59.52,
+  "cpu_sys_s": 0.12,
+  "peak_rss_mb": 56.3,
+  "isolation": {
+    "environment": "scrubbed",
+    "seed_withheld": true,
+    "inputs_hashed": true,
+    "rlimits": true,
+    "network": "isolated (network namespace)",
+    "inputs_readonly": "read-only bind mount",
+    "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+    "hidden_caller_paths": 1
+  },
+  "tampered": [],
+  "limits": {
+    "wall_s": 1800,
+    "cpu_s": null,
+    "mem_mb": 32768,
+    "fsize_mb": 4096,
+    "network": false
+  }
+}

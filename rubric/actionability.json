@@ -1,0 +1,130 @@
+{
+  "id": "cbom-actionability-v1",
+  "status": "proposed",
+  "note": "No official minimum elements for a CBOM exist yet. EO 14412 (June 22, 2026) directs CISA to publish them within 270 days (about March 2027). This rubric asks what a migration ticket needs. Change 'tier' to move a check between must and should, or set 'enabled': false; when CISA publishes, align the check list to it.",
+  "tiers": {
+    "must": "Without it there's no ticket: the engineer can't find the thing, size the fix, or pick the replacement.",
+    "should": "Without it the ticket bounces back with questions."
+  },
+  "checks": [
+    {
+      "id": "location",
+      "tier": "must",
+      "label": "Exact location",
+      "cyclonedx": "evidence.occurrences[].location (+ .line for code)",
+      "why": "The engineer has to find the line. For code, the line must be right (\u00b11); for files such as certificates, the right file."
+    },
+    {
+      "id": "parameters",
+      "tier": "must",
+      "label": "Correct parameters",
+      "cyclonedx": "algorithmProperties.parameterSetIdentifier / curve / mode",
+      "why": "RSA-1024 and RSA-4096 are different tickets with different deadlines."
+    },
+    {
+      "id": "primitive",
+      "tier": "must",
+      "label": "Primitive, where the family is ambiguous",
+      "cyclonedx": "algorithmProperties.primitive",
+      "why": "RSA can be key transport (replace with ML-KEM) or signing (replace with ML-DSA); EC can be ECDH or ECDSA. Applies to RSA and EC only, where the name doesn't settle it."
+    },
+    {
+      "id": "cert_expiry",
+      "tier": "must",
+      "label": "Certificate expiry (correct)",
+      "cyclonedx": "certificateProperties.notValidAfter",
+      "why": "Renewal is the cheapest migration window. Checked against the real certificate."
+    },
+    {
+      "id": "cert_subject",
+      "tier": "must",
+      "label": "Certificate subject (correct)",
+      "cyclonedx": "certificateProperties.subjectName",
+      "why": "Identifies which service or system the certificate belongs to."
+    },
+    {
+      "id": "key_type",
+      "tier": "must",
+      "label": "Key material type",
+      "cyclonedx": "relatedCryptoMaterialProperties.type",
+      "why": "A private key on disk is an incident; a public key is an inventory line."
+    },
+    {
+      "id": "protocol_version",
+      "tier": "must",
+      "label": "Protocol version",
+      "cyclonedx": "protocolProperties.type + version",
+      "why": "TLS 1.0 and TLS 1.3 are different remediation tasks."
+    },
+    {
+      "id": "oid",
+      "tier": "should",
+      "label": "OID",
+      "cyclonedx": "cryptoProperties.oid",
+      "why": "Unambiguous identity across tools that name things differently."
+    },
+    {
+      "id": "functions",
+      "tier": "should",
+      "label": "Crypto functions",
+      "cyclonedx": "algorithmProperties.cryptoFunctions",
+      "why": "Sign, encrypt, derive: tells you which code paths to test after the change."
+    },
+    {
+      "id": "quantum_level",
+      "tier": "should",
+      "label": "Quantum security level (correct)",
+      "cyclonedx": "algorithmProperties.nistQuantumSecurityLevel",
+      "why": "Lets the CBOM be sorted by quantum exposure without re-deriving it."
+    },
+    {
+      "id": "code_context",
+      "tier": "should",
+      "label": "Code context",
+      "cyclonedx": "evidence.occurrences[].symbol or .additionalContext",
+      "why": "The call or symbol, so the ticket shows what to change without opening the file."
+    },
+    {
+      "id": "provenance",
+      "tier": "should",
+      "label": "Providing library",
+      "cyclonedx": "dependencies[].provides",
+      "why": "Many fixes are a library upgrade or a provider swap, not a code change."
+    },
+    {
+      "id": "cert_issuer",
+      "tier": "should",
+      "label": "Certificate issuer",
+      "cyclonedx": "certificateProperties.issuerName",
+      "why": "Tells you which CA, and so which team, issues the replacement."
+    },
+    {
+      "id": "cert_validity_start",
+      "tier": "should",
+      "label": "Certificate start date",
+      "cyclonedx": "certificateProperties.notValidBefore",
+      "why": "Age of the certificate; flags long-lived certs."
+    },
+    {
+      "id": "cert_refs",
+      "tier": "should",
+      "label": "Certificate key and signature linked",
+      "cyclonedx": "certificateProperties.subjectPublicKeyRef + signatureAlgorithmRef",
+      "why": "A PQ key under a classical signature is only half migrated; you can only see that with both."
+    },
+    {
+      "id": "key_format",
+      "tier": "should",
+      "label": "Key format",
+      "cyclonedx": "relatedCryptoMaterialProperties.format",
+      "why": "PKCS#8, SEC1, OpenSSH, JWK: decides the tooling for rotation."
+    },
+    {
+      "id": "suite_listed",
+      "tier": "should",
+      "label": "Cipher suite in a protocol",
+      "cyclonedx": "protocolProperties.cipherSuites[]",
+      "why": "Suites belong to an endpoint's protocol config, which is what gets edited."
+    }
+  ]
+}

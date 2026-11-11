@@ -1,0 +1,418 @@
+{
+  "id": "nist",
+  "title": "NIST: IR 8547 (final) + SP 800-131A Rev. 2 + FIPS 186-5 + SP 800-52 Rev. 2",
+  "scope": "U.S. federal systems and anyone who adopts NIST's transition schedule (most regulated industries do).",
+  "sources_retrieved": "2026-11-11",
+  "sources": [
+    {
+      "id": "IR8547",
+      "name": "NIST IR 8547, Transition to Post-Quantum Cryptography Standards",
+      "revision": "final",
+      "status": "final",
+      "published": "2026-10-27",
+      "url": "https://csrc.nist.gov/pubs/ir/8547/final"
+    },
+    {
+      "id": "SP800-131A",
+      "name": "NIST SP 800-131A Rev. 2, Transitioning the Use of Cryptographic Algorithms and Key Lengths",
+      "revision": "Rev. 2",
+      "status": "final",
+      "published": "2019-03",
+      "url": "https://csrc.nist.gov/pubs/sp/800/131/a/r2/final"
+    },
+    {
+      "id": "SP800-131A-R3-IPD",
+      "name": "NIST SP 800-131A Rev. 3, initial public draft",
+      "revision": "Rev. 3 ipd",
+      "status": "draft",
+      "published": "2024-10",
+      "url": "https://csrc.nist.gov/pubs/sp/800/131/a/r3/ipd"
+    },
+    {
+      "id": "SHA1-2030",
+      "name": "NIST, NIST Retires SHA-1 Cryptographic Algorithm (announcement)",
+      "revision": "announcement",
+      "status": "final",
+      "published": "2022-12-15",
+      "url": "https://csrc.nist.gov/News/2022/nist-transitioning-away-from-sha-1-for-all-apps"
+    },
+    {
+      "id": "FIPS186-5",
+      "name": "FIPS 186-5, Digital Signature Standard (DSS)",
+      "revision": "186-5",
+      "status": "final",
+      "published": "2023-02-03",
+      "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
+    },
+    {
+      "id": "SP800-186",
+      "name": "NIST SP 800-186, Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters",
+      "revision": "final",
+      "status": "final",
+      "published": "2023-02-03",
+      "url": "https://csrc.nist.gov/pubs/sp/800/186/final"
+    },
+    {
+      "id": "SP800-52",
+      "name": "NIST SP 800-52 Rev. 2, Guidelines for the Selection, Configuration, and Use of TLS Implementations",
+      "revision": "Rev. 2",
+      "status": "final",
+      "published": "2019-08",
+      "url": "https://csrc.nist.gov/pubs/sp/800/52/r2/final"
+    },
+    {
+      "id": "SP800-227",
+      "name": "NIST SP 800-227, Recommendations for Key-Encapsulation Mechanisms",
+      "revision": "final",
+      "status": "final",
+      "published": "2025-09-18",
+      "url": "https://csrc.nist.gov/pubs/sp/800/227/final"
+    },
+    {
+      "id": "SP800-132",
+      "name": "NIST SP 800-132, Recommendation for Password-Based Key Derivation: Part 1: Storage Applications",
+      "revision": "final",
+      "status": "final",
+      "published": "2010-12-22",
+      "url": "https://csrc.nist.gov/pubs/sp/800/132/final"
+    },
+    {
+      "id": "FIPS46-3",
+      "name": "FIPS 46-3, Data Encryption Standard (DES), withdrawn 2005-05-19",
+      "revision": "46-3 (withdrawn)",
+      "status": "final",
+      "published": "1999-10-25",
+      "url": "https://csrc.nist.gov/pubs/fips/46-3/final"
+    }
+  ],
+  "rules": [
+    {
+      "id": "pq-approved",
+      "match": {
+        "flag": "pq"
+      },
+      "status": "approved",
+      "source": "IR8547",
+      "note": "FIPS 203/204/205. Hybrids are permitted under SP 800-56C when at least one input is approved; NIST advises deploying hybrid ML-KEM now.",
+      "section": "Sec. 4.1.1 Table 3 and Sec. 4.1.2 Table 5 (approved PQC); hybrids: Sec. 3.2.1",
+      "also": [
+        {
+          "source": "SP800-227",
+          "section": "Sec. 4.6.2, Approved Key Combiners"
+        }
+      ]
+    },
+    {
+      "id": "des",
+      "match": {
+        "family": [
+          "DES"
+        ]
+      },
+      "status": "not-approved",
+      "source": "FIPS46-3",
+      "note": "Single DES; FIPS 46-3 was withdrawn in 2005.",
+      "section": "Withdrawal notice (May 19, 2005)"
+    },
+    {
+      "id": "never-approved",
+      "match": {
+        "family": [
+          "MD5",
+          "RC4",
+          "TEA"
+        ]
+      },
+      "status": "not-approved",
+      "source": "SP800-131A",
+      "note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "section": "Sec. 2 Table 1 and Sec. 9 Table 8 list the approved ciphers and hashes; MD5, RC4 and TEA are not among them"
+    },
+    {
+      "id": "tdea",
+      "match": {
+        "family": [
+          "3DES"
+        ]
+      },
+      "status": "disallowed",
+      "disallowed_after": "2023-12-31",
+      "source": "SP800-131A",
+      "note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "section": "Sec. 2, Table 1 (three-key TDEA encryption disallowed after 2023; decryption legacy use)"
+    },
+    {
+      "id": "suite-weak-cipher",
+      "match": {
+        "flag": "suite",
+        "name_contains": [
+          "3DES",
+          "RC4"
+        ]
+      },
+      "status": "not-approved",
+      "source": "SP800-52",
+      "note": "Cipher suite uses a disallowed bulk cipher.",
+      "section": "Sec. 3.3.1 (only suites of NIST-approved algorithms) and Sec. 3.3.1.1 (3DES suites no longer allowed)"
+    },
+    {
+      "id": "tls-legacy-ssl",
+      "match": {
+        "family": [
+          "SSL-2.0",
+          "SSL-3.0"
+        ]
+      },
+      "status": "not-approved",
+      "source": "SP800-52",
+      "note": "SSL 2.0 and 3.0 shall not be used.",
+      "section": "Sec. 3.1, Protocol Version Support (SSL 2.0 and 3.0 shall not be used)"
+    },
+    {
+      "id": "tls-legacy",
+      "match": {
+        "family": [
+          "TLS-1.0",
+          "TLS-1.1"
+        ]
+      },
+      "status": "review",
+      "source": "SP800-52",
+      "note": "TLS 1.2 is required. Government-only servers shall not use TLS 1.0 and should not use 1.1; citizen- or business-facing servers may still enable them for interoperability. Agencies must support TLS 1.3 since Jan 1, 2024.",
+      "section": "Sec. 3.1, Protocol Version Support"
+    },
+    {
+      "id": "tls-current",
+      "match": {
+        "family": [
+          "TLS-1.2",
+          "TLS-1.3"
+        ]
+      },
+      "status": "approved",
+      "source": "SP800-52",
+      "note": "Hybrid key-exchange guidance for TLS is deferred to the next revision of SP 800-52.",
+      "section": "Sec. 3.1, Protocol Version Support"
+    },
+    {
+      "id": "suite-chacha",
+      "match": {
+        "flag": "suite",
+        "name_contains": [
+          "CHACHA20"
+        ]
+      },
+      "status": "not-approved",
+      "source": "SP800-52",
+      "note": "ChaCha20-Poly1305 is not a FIPS-approved algorithm.",
+      "section": "Sec. 3.3.1.2, Cipher Suites for TLS 1.3 (TLS_CHACHA20_POLY1305_SHA256 not listed)"
+    },
+    {
+      "id": "sha1-hmac",
+      "match": {
+        "family": [
+          "HMAC",
+          "PBKDF2"
+        ],
+        "params": {
+          "hash": {
+            "in": [
+              "SHA-1"
+            ]
+          }
+        }
+      },
+      "status": "deprecated",
+      "disallowed_after": "2030-12-31",
+      "source": "SHA1-2030",
+      "note": "All SHA-1 uses end Dec 31, 2030.",
+      "section": "Announcement: SHA-1 to be phased out by December 31, 2030",
+      "also": [
+        {
+          "source": "IR8547",
+          "section": "Sec. 4.1.3, Table 8 footnote on SHA-1"
+        }
+      ]
+    },
+    {
+      "id": "md5-hmac",
+      "match": {
+        "family": [
+          "HMAC",
+          "PBKDF2"
+        ],
+        "params": {
+          "hash": {
+            "in": [
+              "MD5"
+            ]
+          }
+        }
+      },
+      "status": "not-approved",
+      "source": "SP800-131A",
+      "note": "MD5 is not an approved hash function, in HMAC or otherwise.",
+      "section": "Sec. 9 Table 8 (approved hashes) and Sec. 10 Table 9 (HMAC)"
+    },
+    {
+      "id": "sha1",
+      "match": {
+        "family": [
+          "SHA-1"
+        ]
+      },
+      "status": "deprecated",
+      "disallowed_after": "2030-12-31",
+      "source": "SHA1-2030",
+      "note": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation.",
+      "section": "Announcement: SHA-1 to be phased out by December 31, 2030",
+      "also": [
+        {
+          "source": "SP800-131A",
+          "section": "Sec. 9, Table 8 (SHA-1 disallowed for signature generation)"
+        },
+        {
+          "source": "IR8547",
+          "section": "Sec. 4.1.3, Table 8 footnote on SHA-1"
+        }
+      ]
+    },
+    {
+      "id": "below-112",
+      "match": {
+        "family": [
+          "RSA",
+          "DSA",
+          "DH"
+        ],
+        "params": {
+          "key_size": {
+            "lt": 2048
+          }
+        }
+      },
+      "status": "disallowed",
+      "disallowed_after": "2013-12-31",
+      "source": "SP800-131A",
+      "note": "Below 112-bit security; disallowed since 2014.",
+      "section": "Sec. 3 Table 2 (signatures), Sec. 5 Table 4 (DH key agreement), Sec. 6 Table 5 (RSA key transport)"
+    },
+    {
+      "id": "dsa",
+      "match": {
+        "family": [
+          "DSA"
+        ]
+      },
+      "status": "disallowed",
+      "disallowed_after": "2023-02-03",
+      "source": "FIPS186-5",
+      "note": "DSA signature generation removed by FIPS 186-5; verification of legacy signatures only.",
+      "section": "Sec. 4, The Digital Signature Algorithm (DSA): no longer approved for signature generation"
+    },
+    {
+      "id": "non-nist-curve",
+      "match": {
+        "family": [
+          "EC"
+        ],
+        "params": {
+          "curve": {
+            "in": [
+              "secp256k1"
+            ]
+          }
+        }
+      },
+      "status": "review",
+      "source": "SP800-186",
+      "note": "Not among SP 800-186's curves for federal use; allowed only for blockchain-related applications.",
+      "section": "Sec. 3.1.2 Table 2 (allowed curves); secp256k1 is referenced for blockchain-related applications only"
+    },
+    {
+      "id": "quantum-vulnerable",
+      "match": {
+        "flag": "shor"
+      },
+      "status": "deprecated",
+      "deprecated_after": "2030-12-31",
+      "disallowed_after": "2035-12-31",
+      "source": "IR8547",
+      "note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "section": "Sec. 4.1.1 Table 2 (signatures) and Sec. 4.1.2 Table 4 (key establishment): deprecated after 2030, disallowed after 2035"
+    },
+    {
+      "id": "chacha",
+      "match": {
+        "family": [
+          "ChaCha20-Poly1305"
+        ]
+      },
+      "status": "not-approved",
+      "source": "SP800-131A",
+      "note": "Not FIPS-approved. Fine outside FIPS scope; a finding inside it.",
+      "section": "Sec. 2, Table 1: ChaCha20 is not an approved block cipher or mode"
+    },
+    {
+      "id": "aes-ecb",
+      "match": {
+        "family": [
+          "AES"
+        ],
+        "params": {
+          "mode": {
+            "in": [
+              "ECB"
+            ]
+          }
+        }
+      },
+      "status": "approved",
+      "source": "SP800-131A",
+      "note": "Approved today. SP 800-131A Rev. 3 (draft) proposes retiring ECB as a confidentiality mode: a note, not a rule.",
+      "section": "Sec. 2, Table 1 (AES acceptable)",
+      "also": [
+        {
+          "source": "SP800-131A-R3-IPD",
+          "section": "Draft proposal to retire ECB for confidentiality (note only, not enforced)"
+        }
+      ]
+    },
+    {
+      "id": "approved-symmetric",
+      "match": {
+        "family": [
+          "AES",
+          "SHA-224",
+          "SHA-256",
+          "SHA-384",
+          "SHA-512",
+          "SHA3-256",
+          "SHA3-384",
+          "SHA3-512",
+          "HMAC",
+          "PBKDF2"
+        ]
+      },
+      "status": "approved",
+      "source": "SP800-131A",
+      "section": "Sec. 2 Table 1 (AES), Sec. 9 Table 8 (SHA-2, SHA-3), Sec. 10 Table 9 (HMAC with keys of 112 bits or more)",
+      "also": [
+        {
+          "source": "SP800-132",
+          "section": "Sec. 5.3, PBKDF Specification (PBKDF2 with HMAC and an approved hash)"
+        }
+      ]
+    },
+    {
+      "id": "tls13-suites",
+      "match": {
+        "flag": "suite"
+      },
+      "status": "approved",
+      "source": "SP800-52",
+      "note": "TLS 1.3 suite; key exchange is negotiated separately.",
+      "section": "Sec. 3.3.1.2, Cipher Suites for TLS 1.3"
+    }
+  ]
+}

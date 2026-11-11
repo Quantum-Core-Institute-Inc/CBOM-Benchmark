@@ -1,0 +1,13 @@
+# Base-image OpenSSL 3.5 configuration (copied into /etc/ssl/openssl.cnf)
+
+openssl_conf = openssl_init
+
+[openssl_init]
+ssl_conf = ssl_sect
+
+[ssl_sect]
+system_default = system_default_sect
+
+[system_default_sect]
+MinProtocol = TLSv1.3
+Groups = SecP384r1MLKEM1024:X25519MLKEM768:secp384r1

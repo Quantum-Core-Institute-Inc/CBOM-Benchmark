@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.acme'
+version = '1.4.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.80'
+    implementation 'org.bouncycastle:bctls-jdk18on:1.80'
+    implementation 'com.google.guava:guava:33.2.1-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}

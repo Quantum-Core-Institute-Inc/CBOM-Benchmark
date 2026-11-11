@@ -1,0 +1,7 @@
+.git
+.qci-venv
+.cdxgen
+**/__pycache__
+bundles/
+reports/*/raw/
+corpus/holdout*

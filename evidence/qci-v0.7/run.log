@@ -1,0 +1,30 @@
+{
+  "project": "corpus",
+  "findings": 770,
+  "readiness_score": 0.0,
+  "breakdown": {
+    "vulnerable_count": 280,
+    "weak_count": 143,
+    "pqc_count": 44,
+    "penalty_vulnerable": 4200,
+    "penalty_weak": 715,
+    "bonus_pqc": 88,
+    "raw": -4727.0,
+    "formula": "100 - (vulnerable\u00d715) - (weak\u00d75) + (pqc\u00d72)"
+  },
+  "scanners": [
+    "qci-pattern"
+  ],
+  "ignored": 0,
+  "baseline_diff": null,
+  "outputs": {
+    "report": "/tmp/cbom-sandbox-1bwdcgnj/out/report.html",
+    "cbom": "/tmp/cbom-sandbox-1bwdcgnj/out/cbom.json",
+    "sarif": "/tmp/cbom-sandbox-1bwdcgnj/out/results.sarif"
+  }
+}
+
+--- stderr ---
+Scanning /tmp/cbom-sandbox-1bwdcgnj/corpus with adapter(s): internal ...
+  qci-pattern: 1028 raw findings
+Deduplicated: 1028 → 770 findings

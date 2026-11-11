@@ -1,0 +1,12 @@
+[project]
+name = "release-signer"
+version = "2.3.0"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=48,<51",
+    "liboqs-python==0.16.0",
+    "click==8.1.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.2.0"]

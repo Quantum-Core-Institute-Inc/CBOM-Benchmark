@@ -1,0 +1,168 @@
+{
+  "bundle_format": 1,
+  "testbench": "2.2.0",
+  "methodology": "2.2",
+  "created": "2026-11-11T17:00:14Z",
+  "stamp": {
+    "release": "2.2.0",
+    "methodology": "2.2",
+    "findings": 330,
+    "answer_key": "0c7489f223e2060d",
+    "corpus": "19f42a26eeadb7dd",
+    "scorer": "a28229a0c1833b03",
+    "policy": "nist:732cd8a8d8f317e9"
+  },
+  "files": {
+    "METHODOLOGY.md": "7630a70ea5c94ac21d8db073835828ca2e0fc315a885882967ac25c228e6d64e",
+    "VERSION": "c4a2383a03bdb6739d16a0e24058e4b9c7da4e63d203e0be2f448868cc03c530",
+    "expected/ground_truth.json": "3b377b52de95faebcf86334419a95463cdc4986fc554fb427f5e074b2b7d4a7e",
+    "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
+    "policies/cnsa2.json": "af021232a2481aaacec2abe3fa15bff6d6416c9e04d2692000d11b77f503acd7",
+    "policies/eo14412-hva.json": "3fc1e30afe7f5965c825e8e043b91752d0d821b6e9053eaafe899a2aab49ebaf",
+    "policies/nist.json": "101dbd3d5203663ad0f6006ca64b0e4f804c1c1e94a50117b4d5e821a6881f2c",
+    "rubric/actionability.json": "ab9f2e71be0c2d0445fe96c07fed5961b89377c24bea53f86ce014d005acb121",
+    "tools/actionability.py": "19b8eb26534de9248d8fff6e88fe0ce8775a8f950abbd947be7f06a3d316c0f7",
+    "tools/assetfacts.py": "8be04ea768b96f52abcea5c59b32cb31891d64867a6051b928765dbaeb3f877f",
+    "tools/cbomlib.py": "d791f6aefc3aea68811ce717201bce13b3dcec149c32e782cd453fb7378ae20a",
+    "tools/libraries.py": "4c6ca81358eb24b70861ce272eb9f041bee7a0ca5d3d966fbf20ebaa429d7bec",
+    "tools/policy.py": "7133fe4cd6ef415f629669e575792593b415a14f771163e80ebbd3c9eb0fca87",
+    "tools/score.py": "0c6ade42e76a92560d810f4026dc10aee6c19e1df1ec993f1d9b5f77739e7231",
+    "tools/truth.py": "5747625d107e845bfbe383f1df807b319a813f28c7e34a813a80eac516c667d0"
+  },
+  "scanner": {
+    "name": "grep baseline",
+    "version": "testbench 2.2.0",
+    "cmd": [
+      "python3",
+      "baseline_grep.py",
+      "{corpus}",
+      "-o",
+      "{out}/cbom.json"
+    ],
+    "executable_sha256": "a1465955ff079431b89dbaf8020b2ac100cfb49c5ba806f8bacc6257d8292346",
+    "image": null,
+    "image_id": null,
+    "allowed_paths": [
+      "tools"
+    ],
+    "cbom": "cbom.json",
+    "adapter": "none",
+    "adapter_version": null,
+    "scope": null,
+    "policy": "nist",
+    "cbom_schema": "valid CycloneDX 1.6"
+  },
+  "image": {
+    "digest": null,
+    "containerized": false
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "python3",
+      "baseline_grep.py",
+      "corpus",
+      "-o",
+      "cbom.json"
+    ],
+    "exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 1.14,
+    "cpu_user_s": 1.09,
+    "cpu_sys_s": 0.04,
+    "peak_rss_mb": 32.1,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts, 1 path(s) allowed back by the caller",
+      "hidden_caller_paths": 1
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 1800,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "headline": {
+    "scored_findings": 330,
+    "recall": 68.8,
+    "primary_site_recall": 64.2,
+    "params_accuracy": 53.7,
+    "precision": 59.1,
+    "false_positives": 157,
+    "pqc_overclaims": 28,
+    "pqc_standard_name_pct": 100.0,
+    "ticket_ready_pct": 49.3,
+    "actionable_recall": 33.9,
+    "deadline_weighted_recall": 68.7,
+    "library_recall": 0.0
+  },
+  "remediation": {
+    "verdict": "scored",
+    "run": {
+      "cmd": [
+        "python3",
+        "baseline_grep.py",
+        "corpus",
+        "-o",
+        "cbom.json"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "wall_s": 1.07,
+      "cpu_user_s": 1.02,
+      "cpu_sys_s": 0.04,
+      "peak_rss_mb": 73.0,
+      "isolation": {
+        "environment": "scrubbed",
+        "seed_withheld": true,
+        "inputs_hashed": true,
+        "rlimits": true,
+        "network": "isolated (network namespace)",
+        "inputs_readonly": "read-only bind mount",
+        "filesystem": "confined: 8 location(s) hidden behind empty mounts, 1 path(s) allowed back by the caller",
+        "hidden_caller_paths": 2
+      },
+      "tampered": [],
+      "limits": {
+        "wall_s": 1800,
+        "cpu_s": null,
+        "mem_mb": 32768,
+        "fsize_mb": 4096,
+        "network": false
+      }
+    },
+    "total": 10,
+    "eligible": 7,
+    "verified": 0,
+    "verified_pct": 0.0,
+    "regressions_outside": 0
+  },
+  "checks": {
+    "status": "pass",
+    "counts": {
+      "checks": 19,
+      "passed": 19,
+      "corpus": {
+        "passed": 495,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "stale": null
+  },
+  "verdict": "scored"
+}

@@ -1,0 +1,116 @@
+{
+  "case": "example_envelope",
+  "description": "In-house envelope library: apps pick a named profile; the library maps profiles to algorithms. Algorithm names never appear in app code.",
+  "owner": "Platform Security (example)",
+  "lang": "python",
+  "use": "custom",
+  "run": [
+    "python3",
+    "main.py"
+  ],
+  "findings": [
+    {
+      "file": "envelope/wrap_transport.py",
+      "family": "RSA",
+      "params": {
+        "key_size": 2048
+      },
+      "anchors": [
+        "rsa.generate_private_key(public_exponent=65537, key_size=bits)"
+      ],
+      "alt_files": [
+        {
+          "file": "envelope/profiles.py",
+          "anchors": [
+            "\"wrap_bits\": 2048"
+          ]
+        },
+        {
+          "file": "envelope/core.py",
+          "anchors": [
+            "if p[\"wrap\"] == \"rsa-oaep\":"
+          ]
+        }
+      ],
+      "note": "LEGACY_COMPAT profile; key size only known from the profile table",
+      "confirmed": true
+    },
+    {
+      "file": "envelope/wrap_agreement.py",
+      "family": "EC",
+      "params": {
+        "curve": "P-256"
+      },
+      "anchors": [
+        "ephemeral = ec.generate_private_key(_CURVES[curve]())"
+      ],
+      "alt_files": [
+        {
+          "file": "envelope/profiles.py",
+          "anchors": [
+            "\"wrap_curve\": \"p256\""
+          ]
+        }
+      ],
+      "note": "STANDARD profile; the p384 table entry is unreachable",
+      "confirmed": true
+    },
+    {
+      "file": "envelope/bulk_chained.py",
+      "family": "AES",
+      "params": {
+        "key_size": 128,
+        "mode": "CBC"
+      },
+      "anchors": [
+        "enc = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()"
+      ],
+      "alt_files": [
+        {
+          "file": "envelope/profiles.py",
+          "anchors": [
+            "\"bulk\": \"cbc\", \"bulk_bytes\": 16"
+          ]
+        }
+      ],
+      "note": "key length from the profile table (16 bytes)",
+      "confirmed": true
+    },
+    {
+      "file": "envelope/bulk_aead.py",
+      "family": "AES",
+      "params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "anchors": [
+        "AESGCM(key).encrypt"
+      ],
+      "alt_files": [
+        {
+          "file": "envelope/profiles.py",
+          "anchors": [
+            "\"bulk\": \"gcm\", \"bulk_bytes\": 32"
+          ]
+        }
+      ],
+      "note": "key length from the profile table (32 bytes)",
+      "confirmed": true
+    }
+  ],
+  "also_ok": [
+    {
+      "file": "envelope/wrap_transport.py",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "envelope/wrap_agreement.py",
+      "families": [
+        "SHA-256"
+      ]
+    }
+  ],
+  "decoys": {}
+}

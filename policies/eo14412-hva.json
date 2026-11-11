@@ -1,0 +1,75 @@
+{
+  "id": "eo14412-hva",
+  "title": "EO 14412: federal high value assets and high impact systems",
+  "scope": "Federal HVAs and high impact systems (not National Security Systems). Covered contractors face a Dec 31, 2030 FIPS/PQC compliance date under the FAR rule the order directs. Everything the order doesn't address falls back to the NIST policy.",
+  "inherits": "nist",
+  "sources_retrieved": "2026-11-11",
+  "sources": [
+    {
+      "id": "EO14412",
+      "name": "Executive Order 14412, Securing the Nation Against Advanced Cryptographic Attacks (signed June 22, 2026)",
+      "status": "final",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/eo-14412.pdf",
+      "revision": "signed 2026-06-22",
+      "published": "2026-06-22"
+    }
+  ],
+  "rules": [
+    {
+      "id": "pq-approved",
+      "match": {
+        "flag": "pq"
+      },
+      "status": "approved",
+      "source": "EO14412",
+      "section": "Sec. 2(g) (PQC defined), Sec. 2(k) (FIPS 203), Sec. 5(b) (PQC algorithms standardized by NIST)"
+    },
+    {
+      "id": "hva-signatures",
+      "match": {
+        "flag": "shor",
+        "family": [
+          "Ed25519",
+          "DSA",
+          "RSA",
+          "EC"
+        ],
+        "primitive": {
+          "in": [
+            "signature"
+          ]
+        }
+      },
+      "status": "deprecated",
+      "disallowed_after": "2031-12-31",
+      "source": "EO14412",
+      "note": "Sec. 4(b)(iii): transition digital signatures to PQC by Dec 31, 2031.",
+      "section": "Sec. 4(b)(iii): PQC for digital signatures by December 31, 2031"
+    },
+    {
+      "id": "hva-signature-only-families",
+      "match": {
+        "family": [
+          "Ed25519",
+          "DSA"
+        ]
+      },
+      "status": "deprecated",
+      "disallowed_after": "2031-12-31",
+      "source": "EO14412",
+      "note": "Sec. 4(b)(iii): transition digital signatures to PQC by Dec 31, 2031.",
+      "section": "Sec. 4(b)(iii): PQC for digital signatures by December 31, 2031"
+    },
+    {
+      "id": "hva-key-establishment",
+      "match": {
+        "flag": "shor"
+      },
+      "status": "deprecated",
+      "disallowed_after": "2030-12-31",
+      "source": "EO14412",
+      "note": "Sec. 4(b)(ii): transition key establishment to PQC by Dec 31, 2030. RSA and EC keys of unknown use are dated by the earlier deadline.",
+      "section": "Sec. 4(b)(ii): PQC for key establishment by December 31, 2030"
+    }
+  ]
+}

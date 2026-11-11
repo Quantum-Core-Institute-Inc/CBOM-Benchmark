@@ -1,0 +1,7 @@
+{
+  "storage_encryption": {
+    "algorithm": "AES",
+    "mode": "CBC",
+    "key_bits": 128
+  }
+}

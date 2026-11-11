@@ -1,0 +1,4 @@
+# Extra for tools/verify_corpus.py --strict (running every corpus case). Also needs, on PATH:
+# Go 1.24+, Node 22.18+, a C compiler with OpenSSL 3 headers (libssl-dev), JDK 21 (javac/java).
+-r requirements.txt
+jdk4py==25.0.2.1    # a Java 25 runtime for the JDK 24+ ML-KEM / ML-DSA cases

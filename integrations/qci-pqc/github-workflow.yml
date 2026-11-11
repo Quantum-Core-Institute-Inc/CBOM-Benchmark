@@ -1,0 +1,115 @@
+# Copy to .github/workflows/cbom-testbench.yml in the qci-pqc-scanner repository.
+#
+# Two jobs, on purpose:
+#
+#   build   runs the scanner's own build code (pip wheel). It has NO secrets: no holdout seed, no
+#           testbench token. Whatever that code does, it can't learn the seed or touch the
+#           testbench checkout the scoring job uses. It hands over wheels and their sha256.
+#   score   has the holdout seed. It never runs the scanner's build code: it installs the wheels
+#           (binary only, no build step) and then runs the scanner only inside the testbench
+#           sandbox, which gives it a read-only copy of the corpus, no network, no seed, and no
+#           view of the testbench tree or the holdout answer key.
+#
+# Stronger still, for a scanner you don't control: build a scanner-only image from the wheels
+# (integrations/scanner-image.Dockerfile) and pass --scanner-image to bench.py; the scanner then runs
+# in its own container and sees nothing but the corpus and an output directory.
+#
+# Add a repository secret CBOM_HOLDOUT_SEED (any integer). Without it the two holdout gates are
+# missing measurements and the job fails with exit 3; that is deliberate. To run without a holdout
+# on purpose, pass --without-holdout and the gates are recorded as skipped.
+#
+# Exit codes of the scoring step: 0 every gate evaluated and passed; 1 a gate failed; 3 gates not
+# evaluated (stale baseline, or a required measurement missing). All non-zero codes fail the job.
+name: CBOM testbench
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  TESTBENCH_REPO: Quantum-Core-Institute-Inc/CBOM-Benchmark
+  # Pin a testbench release (tag). gates.json is stamped with the release, methodology, answer key,
+  # corpus, scorer, policy and adapter it was set on; anything else exits 3.
+  TESTBENCH_REF: v2.2.0
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build wheels (the scanner and its dependencies), no secrets in this job
+        run: |
+          pip wheel --wheel-dir wheels ".[x509]"
+          (cd wheels && sha256sum *.whl > SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scanner-wheels
+          path: wheels/
+
+  score:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.TESTBENCH_REPO }}
+          ref: ${{ env.TESTBENCH_REF }}
+          token: ${{ secrets.TESTBENCH_TOKEN || github.token }}
+          path: testbench
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: scanner-wheels
+          path: wheels
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Testbench dependencies
+        run: pip install -r testbench/requirements.txt
+
+      - name: Install the scanner from the wheels (no build code runs; no secrets in this step)
+        run: |
+          (cd wheels && sha256sum -c SHA256SUMS)
+          python -m venv scanner-venv
+          scanner-venv/bin/pip install --no-index --find-links wheels --only-binary :all: "qci-pqc-scan[x509]"
+
+      - name: Let the sandbox create namespaces (Ubuntu 24.04 restricts unprivileged user namespaces)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      - name: Score, gate and bundle (the scanner runs only inside the sandbox)
+        working-directory: testbench
+        env:
+          # Only this step sees the seed, and the sandbox never passes it on. Keep it a secret, never
+          # upload the holdout files, and rotate it if per-finding holdout results are ever shared.
+          CBOM_HOLDOUT_SEED: ${{ secrets.CBOM_HOLDOUT_SEED }}
+        run: |
+          Q="$GITHUB_WORKSPACE/scanner-venv/bin/qci-pqc"
+          python tools/bench.py run --name "qci-pqc ${{ github.sha }}" --adapter qci-pqc \
+            --scanner-cmd "$Q scan {corpus} --reproducible --adapter internal --out {out} --json" \
+            --version-cmd "$Q --version" --scope integrations/qci-pqc/scope.json \
+            --gates integrations/qci-pqc/gates.json --remediation --require-isolation \
+            --bundle "$GITHUB_WORKSPACE/bundle"
+
+      - name: Verify the bundle and publish the summary
+        if: always()
+        working-directory: testbench
+        run: |
+          python tools/bench.py verify "$GITHUB_WORKSPACE/bundle"
+          cat "$GITHUB_WORKSPACE/bundle/scorecard.md" "$GITHUB_WORKSPACE/bundle/gates.md" >> "$GITHUB_STEP_SUMMARY" || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cbom-testbench-evidence
+          path: bundle/

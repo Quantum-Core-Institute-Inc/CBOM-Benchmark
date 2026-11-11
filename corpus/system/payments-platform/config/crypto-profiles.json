@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "settlement-payload": {"cipher": "AES-128-CBC"},
+    "webhook-signature": {"mac": "HmacSHA1"},
+    "partner-token": {"jws": "RS256", "keyBits": 2048},
+    "ledger-statement": {"signature": "SHA256withECDSA", "curve": "secp256r1"}
+  }
+}

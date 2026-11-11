@@ -1,0 +1,6 @@
+.qci-venv/
+.cdxgen/
+__pycache__/
+corpus/holdout*/
+bundles/
+# Compiled fixtures under corpus/ are test inputs and are tracked on purpose.

@@ -1,0 +1,379 @@
+{
+  "schema": "cbom-testbench libraries 1",
+  "notes": "Crypto libraries declared in corpus/deps/. One finding per (manifest, library). 'version' is what the manifest declares (null for a range); 'scope' is direct or transitive (lockfile only). 'pq_capable' says whether that version ships NIST ML-KEM / ML-DSA, and is null where it doesn't apply (password hashing) or wasn't verified. 'status' is set only where a primary source says so. Sources are in the 'sources' block.",
+  "sources": {
+    "pyca-cryptography": "https://cryptography.io/changelog.html (47.0.0: ML-KEM/ML-DSA with AWS-LC and BoringSSL only; 48.0.0: with OpenSSL 3.5.0+, available in the wheels)",
+    "bouncycastle": "https://old.bouncycastle.org/releasenotes.html (1.78: ML-KEM per the FIPS 203 initial public draft) and https://bouncycastle.org/resources/latest-nist-pqc-standards-and-more-bouncy-castle-java-1-79/ (1.79: the finalized ML-KEM, ML-DSA, SLH-DSA); Maven Central: bcprov-jdk15on last release 1.70 (2021-12-01), bcprov-jdk18on from 1.71 (2022-04-06)",
+    "circl": "https://github.com/cloudflare/circl/releases (v1.4.0: ML-KEM; v1.5.0: ML-DSA)",
+    "crypto-js": "https://app.unpkg.com/crypto-js@4.2.0/files/README.md ('Active development of CryptoJS has been discontinued. This library is no longer maintained.')",
+    "openssl": "https://mirror.openssl-library.org/post/2023-09-11-eol-111/ ('OpenSSL 1.1.1 has reached its EOL as of today, 11th September 2023') and https://openssl-library.org/post/2025-04-08-openssl-35-final-release (3.5 adds ML-KEM, ML-DSA and SLH-DSA)"
+  },
+  "libraries": [
+    {
+      "id": "L-PY-01",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "cryptography",
+      "library": "pyca-cryptography",
+      "version": "41.0.7",
+      "scope": "direct",
+      "pq_capable": false,
+      "note": "ML-KEM/ML-DSA need 48.0.0+"
+    },
+    {
+      "id": "L-PY-02",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "pycryptodome",
+      "library": "pycryptodome",
+      "version": "3.19.0",
+      "scope": "direct",
+      "pq_capable": false
+    },
+    {
+      "id": "L-PY-03",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "pyOpenSSL",
+      "library": "pyopenssl",
+      "version": "23.3.0",
+      "scope": "direct",
+      "pq_capable": null,
+      "note": "algorithms depend on the linked OpenSSL"
+    },
+    {
+      "id": "L-PY-04",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "PyJWT",
+      "library": "pyjwt",
+      "version": "2.8.0",
+      "scope": "direct",
+      "pq_capable": false,
+      "note": "the [crypto] extra pulls in cryptography for RS/ES/EdDSA"
+    },
+    {
+      "id": "L-PY-05",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "paramiko",
+      "library": "paramiko",
+      "version": "3.4.0",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-PY-06",
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "bcrypt",
+      "library": "bcrypt",
+      "version": "4.1.2",
+      "scope": "direct",
+      "pq_capable": null,
+      "note": "password hashing"
+    },
+    {
+      "id": "L-PY-07",
+      "file": "corpus/deps/python-signer/pyproject.toml",
+      "ecosystem": "pypi",
+      "package": "cryptography",
+      "library": "pyca-cryptography",
+      "version": null,
+      "scope": "direct",
+      "pq_capable": true,
+      "note": "declared >=48,<51"
+    },
+    {
+      "id": "L-PY-08",
+      "file": "corpus/deps/python-signer/pyproject.toml",
+      "ecosystem": "pypi",
+      "package": "liboqs-python",
+      "library": "liboqs",
+      "version": "0.16.0",
+      "scope": "direct",
+      "pq_capable": true
+    },
+    {
+      "id": "L-JV-01",
+      "file": "corpus/deps/java-gateway/pom.xml",
+      "ecosystem": "maven",
+      "package": "org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on",
+      "library": "bouncycastle",
+      "version": "1.70",
+      "scope": "direct",
+      "pq_capable": false,
+      "status": "superseded: last jdk15on release; the line continues as -jdk18on",
+      "note": "version comes from a ${bc.version} property"
+    },
+    {
+      "id": "L-JV-02",
+      "file": "corpus/deps/java-gateway/pom.xml",
+      "ecosystem": "maven",
+      "package": "com.nimbusds:nimbus-jose-jwt",
+      "library": "nimbus-jose-jwt",
+      "version": "9.37.3",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-JV-03",
+      "file": "corpus/deps/java-gateway/pom.xml",
+      "ecosystem": "maven",
+      "package": "io.jsonwebtoken:jjwt-api",
+      "library": "jjwt",
+      "version": "0.12.5",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-JV-04",
+      "file": "corpus/deps/java-pq/build.gradle",
+      "ecosystem": "maven",
+      "package": "org.bouncycastle:bcprov-jdk18on, bctls-jdk18on",
+      "library": "bouncycastle",
+      "version": "1.80",
+      "scope": "direct",
+      "pq_capable": true
+    },
+    {
+      "id": "L-JS-01",
+      "file": "corpus/deps/node-api/package.json",
+      "alt_files": [
+        "corpus/deps/node-api/package-lock.json"
+      ],
+      "ecosystem": "npm",
+      "package": "jsonwebtoken",
+      "library": "jsonwebtoken",
+      "version": "9.0.2",
+      "scope": "direct",
+      "pq_capable": false
+    },
+    {
+      "id": "L-JS-02",
+      "file": "corpus/deps/node-api/package.json",
+      "alt_files": [
+        "corpus/deps/node-api/package-lock.json"
+      ],
+      "ecosystem": "npm",
+      "package": "crypto-js",
+      "library": "crypto-js",
+      "version": "4.2.0",
+      "scope": "direct",
+      "pq_capable": false,
+      "status": "unmaintained: development discontinued upstream"
+    },
+    {
+      "id": "L-JS-03",
+      "file": "corpus/deps/node-api/package.json",
+      "alt_files": [
+        "corpus/deps/node-api/package-lock.json"
+      ],
+      "ecosystem": "npm",
+      "package": "node-forge",
+      "library": "node-forge",
+      "version": "1.3.1",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-JS-04",
+      "file": "corpus/deps/node-api/package.json",
+      "alt_files": [
+        "corpus/deps/node-api/package-lock.json"
+      ],
+      "ecosystem": "npm",
+      "package": "bcryptjs",
+      "library": "bcryptjs",
+      "version": "2.4.3",
+      "scope": "direct",
+      "pq_capable": null,
+      "note": "password hashing"
+    },
+    {
+      "id": "L-JS-05",
+      "file": "corpus/deps/node-api/package.json",
+      "alt_files": [
+        "corpus/deps/node-api/package-lock.json"
+      ],
+      "ecosystem": "npm",
+      "package": "@noble/post-quantum",
+      "library": "noble-post-quantum",
+      "version": "0.5.4",
+      "scope": "direct",
+      "pq_capable": true
+    },
+    {
+      "id": "L-JS-06",
+      "file": "corpus/deps/node-api/package-lock.json",
+      "ecosystem": "npm",
+      "package": "@noble/curves",
+      "library": "noble-curves",
+      "version": "2.0.1",
+      "scope": "transitive",
+      "pq_capable": false,
+      "note": "via @noble/post-quantum"
+    },
+    {
+      "id": "L-JS-07",
+      "file": "corpus/deps/node-api/package-lock.json",
+      "ecosystem": "npm",
+      "package": "@noble/hashes",
+      "library": "noble-hashes",
+      "version": "2.0.1",
+      "scope": "transitive",
+      "pq_capable": null,
+      "note": "via @noble/post-quantum"
+    },
+    {
+      "id": "L-JS-08",
+      "file": "corpus/deps/node-api/package-lock.json",
+      "ecosystem": "npm",
+      "package": "jws",
+      "library": "jws",
+      "version": "3.2.3",
+      "scope": "transitive",
+      "pq_capable": false,
+      "note": "via jsonwebtoken"
+    },
+    {
+      "id": "L-JS-09",
+      "file": "corpus/deps/node-api/package-lock.json",
+      "ecosystem": "npm",
+      "package": "jwa",
+      "library": "jwa",
+      "version": "1.4.2",
+      "scope": "transitive",
+      "pq_capable": false,
+      "note": "via jsonwebtoken, jws"
+    },
+    {
+      "id": "L-GO-01",
+      "file": "corpus/deps/go-service/go.mod",
+      "ecosystem": "golang",
+      "package": "golang.org/x/crypto",
+      "library": "golang-x-crypto",
+      "version": "0.31.0",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-GO-02",
+      "file": "corpus/deps/go-service/go.mod",
+      "ecosystem": "golang",
+      "package": "github.com/cloudflare/circl",
+      "library": "circl",
+      "version": "1.6.1",
+      "scope": "direct",
+      "pq_capable": true
+    },
+    {
+      "id": "L-GO-03",
+      "file": "corpus/deps/go-service/go.mod",
+      "ecosystem": "golang",
+      "package": "github.com/golang-jwt/jwt/v5",
+      "library": "golang-jwt",
+      "version": "5.2.1",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-C-01",
+      "file": "corpus/deps/c-agent/conanfile.txt",
+      "alt_files": [
+        "corpus/deps/c-agent/CMakeLists.txt"
+      ],
+      "ecosystem": "conan",
+      "package": "openssl",
+      "library": "openssl",
+      "version": "1.1.1w",
+      "scope": "direct",
+      "pq_capable": false,
+      "status": "end of life since 2023-09-11"
+    },
+    {
+      "id": "L-C-02",
+      "file": "corpus/deps/c-agent/conanfile.txt",
+      "alt_files": [
+        "corpus/deps/c-agent/CMakeLists.txt"
+      ],
+      "ecosystem": "conan",
+      "package": "libsodium",
+      "library": "libsodium",
+      "version": "1.0.18",
+      "scope": "direct",
+      "pq_capable": null
+    },
+    {
+      "id": "L-SYS-01",
+      "file": "corpus/system/payments-platform/services/settlement-worker/requirements.txt",
+      "ecosystem": "pypi",
+      "package": "cryptography",
+      "library": "pyca-cryptography",
+      "version": "42.0.5",
+      "scope": "direct",
+      "pq_capable": false,
+      "note": "ML-KEM/ML-DSA need 48.0.0+"
+    },
+    {
+      "id": "L-SYS-02",
+      "file": "corpus/system/payments-platform/services/ledger-service/build.gradle",
+      "alt_files": [
+        "corpus/system/payments-platform/services/ledger-service/gradle.lockfile"
+      ],
+      "ecosystem": "maven",
+      "package": "org.bouncycastle:bcprov-jdk18on",
+      "library": "bouncycastle",
+      "version": "1.77",
+      "scope": "direct",
+      "pq_capable": false,
+      "note": "finalized ML-KEM/ML-DSA from 1.79"
+    }
+  ],
+  "also_ok": [
+    {
+      "file": "corpus/deps/node-api/package-lock.json",
+      "libraries": [
+        "ecdsa-sig-formatter",
+        "buffer-equal-constant-time",
+        "nodejs-runtime"
+      ]
+    },
+    {
+      "file": "corpus/deps/node-api/package.json",
+      "libraries": [
+        "nodejs-runtime"
+      ]
+    },
+    {
+      "file": "corpus/deps/go-service/go.mod",
+      "libraries": [
+        "golang-x-sys"
+      ]
+    }
+  ],
+  "decoys": [
+    {
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "library": "pycrypto",
+      "why": "commented out"
+    },
+    {
+      "file": "corpus/deps/java-gateway/pom.xml",
+      "library": "jasypt",
+      "why": "inside an XML comment"
+    }
+  ],
+  "lookalikes": [
+    {
+      "file": "corpus/deps/python-billing/requirements.txt",
+      "library": "hashids",
+      "why": "obfuscates integer IDs; not cryptography"
+    },
+    {
+      "file": "corpus/deps/node-api/package.json",
+      "library": "hashids",
+      "why": "obfuscates integer IDs; not cryptography"
+    }
+  ]
+}

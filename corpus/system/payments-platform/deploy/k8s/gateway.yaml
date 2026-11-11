@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: payments
+spec:
+  replicas: 3
+  selector:
+    matchLabels: {app: api-gateway}
+  template:
+    metadata:
+      labels: {app: api-gateway}
+    spec:
+      containers:
+        - name: api-gateway
+          image: registry.example/payments/api-gateway:4.12.0
+          env:
+            - name: CRYPTO_PROFILES
+              value: /etc/payments/crypto-profiles.json
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-gateway
+  namespace: payments
+spec:
+  tls:
+    - hosts: [api.payments.example]
+      secretName: gateway-ingress-tls
+  rules:
+    - host: api.payments.example
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: api-gateway, port: {number: 8080}}

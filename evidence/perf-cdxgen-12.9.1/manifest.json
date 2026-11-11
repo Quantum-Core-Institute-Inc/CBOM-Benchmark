@@ -1,0 +1,129 @@
+{
+  "bundle_format": 1,
+  "kind": "perf",
+  "testbench": "2.2.0",
+  "methodology": "2.2",
+  "created": "2026-11-11T15:21:13Z",
+  "fixture": {
+    "seed": 2026,
+    "size": "medium",
+    "code_files": 3000,
+    "planted": 60,
+    "bytes": 17177695,
+    "families": [
+      "MD5",
+      "SHA-1",
+      "RSA",
+      "3DES"
+    ],
+    "languages": [
+      "python",
+      "java",
+      "go",
+      "javascript",
+      "c"
+    ]
+  },
+  "budget_s": 600,
+  "scanner": {
+    "name": "cdxgen 12.9.1",
+    "cmd": [
+      "cbom",
+      "--spec-version",
+      "1.6",
+      "--no-install-deps",
+      "--evidence",
+      "-o",
+      "{out}/cbom.json",
+      "{corpus}"
+    ],
+    "cbom": "cbom.json",
+    "adapter": "cdxgen"
+  },
+  "image": {
+    "digest": null
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "cbom",
+      "--spec-version",
+      "1.6",
+      "--no-install-deps",
+      "--evidence",
+      "-o",
+      "cbom.json",
+      "corpus"
+    ],
+    "exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 104.54,
+    "cpu_user_s": 169.32,
+    "cpu_sys_s": 8.24,
+    "peak_rss_mb": 1692.3,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+      "hidden_caller_paths": 2
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 600,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "status": "finished",
+  "within_budget": true,
+  "throughput": {
+    "files_per_s": 28.7,
+    "mb_per_s": 0.16
+  },
+  "result": {
+    "planted": 60,
+    "found": 8,
+    "recall": 13.3,
+    "recall_by_quartile": [
+      8.3,
+      14.3,
+      31.2,
+      0.0
+    ],
+    "noise_files_reported": 0,
+    "coverage_falloff": false,
+    "missed": [
+      "corpus/svc00/python/pkg00/order_report_00010.py",
+      "corpus/svc00/go/pkg01/shipment_payment_00047.go",
+      "corpus/svc00/java/pkg04/BatchReport101.java",
+      "corpus/svc00/go/pkg12/batch_report_00312.go",
+      "corpus/svc00/python/pkg13/shipment_account_00330.py",
+      "corpus/svc00/go/pkg14/profile_batch_00367.go",
+      "corpus/svc00/java/pkg14/CursorTenant371.java",
+      "corpus/svc01/java/pkg00/BucketQueue401.java",
+      "corpus/svc01/python/pkg00/record_payment_00420.py",
+      "corpus/svc01/go/pkg03/queue_batch_00487.go",
+      "corpus/svc01/go/pkg07/catalog_report_00577.go",
+      "corpus/svc02/java/pkg02/RouteBatch861.java",
+      "corpus/svc02/c/pkg04/bucket_shipment_00914.c",
+      "corpus/svc02/go/pkg07/bucket_payment_00982.go",
+      "corpus/svc02/python/pkg09/bucket_profile_01030.py",
+      "corpus/svc02/java/pkg15/BatchRoute1176.java",
+      "corpus/svc02/java/pkg15/AccountCursor1196.java",
+      "corpus/svc03/python/pkg02/report_account_01265.py",
+      "corpus/svc03/go/pkg03/tenant_queue_01287.go",
+      "corpus/svc03/c/pkg07/profile_route_01394.c"
+    ]
+  }
+}
