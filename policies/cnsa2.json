@@ -77,6 +77,19 @@
       "section": "CNSA 2.0 section, algorithm table (ML-DSA-87)"
     },
     {
+      "id": "cnsa2-stateful-hbs",
+      "match": {
+        "family": [
+          "LMS",
+          "XMSS"
+        ]
+      },
+      "status": "approved",
+      "source": "CNSA2-FAQ",
+      "note": "Approved for signing software and firmware only; all SP 800-208 parameter sets, SHA-256/192 recommended.",
+      "section": "CNSA 2.0 section, algorithm table (Leighton-Micali Signature, Xtended Merkle Signature Scheme)"
+    },
+    {
       "id": "cnsa2-hash",
       "match": {
         "family": [

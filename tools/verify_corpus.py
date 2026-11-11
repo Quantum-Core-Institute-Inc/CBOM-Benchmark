@@ -40,6 +40,10 @@ def _category(text: str) -> str:
         return "System fixture"
     if "(go run)" in text or path.endswith(".go"):
         return "Go"
+    if "(dotnet)" in text or path.split(" ")[0].endswith(".cs"):
+        return "C#"
+    if "/tier5/c/bin/" in path:
+        return "C"
     for ext, cat in ((".py", "Python"), (".pyc", "Python"), (".java", "Java"), (".jar", "Java"), (".js", "JavaScript/TypeScript"),
                      (".mjs", "JavaScript/TypeScript"), (".ts", "JavaScript/TypeScript"), (".c", "C")):
         if path.split(" ")[0].endswith(ext):
@@ -269,6 +273,17 @@ def verify_tier5(failures, has_java):
         else:
             report(f"{pyc.relative_to(ROOT)} (runs as bytecode)", r, failures)
 
+    native = t5 / "c" / "bin" / "meterd"
+    if native.exists():
+        import platform
+        if platform.system() == "Linux" and platform.machine() == "x86_64":
+            native.chmod(0o755)
+            report(f"{native.relative_to(ROOT)} (stripped binary, self-test)", run([str(native)], cwd=ROOT), failures)
+        else:
+            print(f"[skip] {native.relative_to(ROOT)}: an x86-64 Linux binary, and this host isn't")
+    if has_java and (t5 / "java" / "compiled" / "token-vault.jar").exists():
+        vault = t5 / "java" / "compiled" / "token-vault.jar"
+        report(f"{vault.relative_to(ROOT)} (obfuscated, java -jar)", run(["java", "-jar", str(vault)], cwd=ROOT), failures, tail=3)
     if has_java:
         jar = t5 / "java" / "compiled" / "billing-core.jar"
         if jar.exists():
@@ -284,6 +299,36 @@ def verify_tier5(failures, has_java):
                 failures.append(("T5BlockTransform test vector", [c.stdout.strip(), c.stderr.strip()[-200:]]))
             c = run(["java", "-cp", out, "T5HandrolledPubkey"], cwd=t5 / "java")
             report("corpus/tier5/java/T5HandrolledPubkey.java (2048-bit modulus)", c, failures)
+
+
+def bcprov_jar() -> str | None:
+    """Bouncy Castle's provider jar, for the LMS and XMSS cases (the JDK has neither)."""
+    for cand in (os.environ.get("BCPROV_JAR"), "/usr/share/java/bcprov.jar"):
+        if cand and Path(cand).is_file():
+            return cand
+    return None
+
+
+def verify_csharp(failures):
+    """One project per case. Built with an empty package source list, so nothing is fetched: the
+    cases use only the base class library."""
+    projects = sorted(CORPUS.rglob("*.csproj"))
+    if not projects:
+        return
+    if not shutil.which("dotnet"):
+        skip_many("C#", len(projects), "dotnet not found")
+        return
+    env = dict(os.environ, DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
+    with tempfile.TemporaryDirectory() as td:
+        cfg = Path(td) / "nuget.config"
+        cfg.write_text('<?xml version="1.0"?>\n<configuration><packageSources><clear/></packageSources></configuration>\n')
+        for proj in projects:
+            name = proj.stem
+            c = subprocess.run(["dotnet", "build", str(proj.parent), "--configfile", str(cfg), "--artifacts-path", f"{td}/{name}",
+                                "-p:UseAppHost=false", "-v", "q"], capture_output=True, text=True, env=env)
+            if c.returncode == 0:
+                c = subprocess.run(["dotnet", f"{td}/{name}/bin/{name}/debug/{name}.dll"], capture_output=True, text=True, env=env, cwd=proj.parent)
+            report(f"{proj.parent.relative_to(ROOT)}/Program.cs (dotnet)", c, failures, tail=3)
 
 
 def pq_java() -> str | None:
@@ -319,6 +364,16 @@ def verify_pqc_assets(failures):
         except Exception as e:  # noqa: BLE001
             print(f"[FAIL] {p.relative_to(ROOT)}")
             failures.append((str(p), [repr(e)]))
+    # Stateful hash-based keys: no Python library here parses them, so check the algorithm OID in the SPKI.
+    import base64
+    for name, oid_der, what in (("bootloader_lms_pub.pem", bytes.fromhex("060b2a864886f70d0109100311"), "HSS/LMS (1.2.840.113549.1.9.16.3.17)"),
+                                ("update_xmss_pub.pem", bytes.fromhex("060904007f000f01010d00"), "XMSS (0.4.0.127.0.15.1.1.13.0)")):
+        p = a / "keys" / name
+        der = base64.b64decode("".join(ln for ln in p.read_text().splitlines() if not ln.startswith("-----")))
+        ok = der[0] == 0x30 and der[2] == 0x30 and der[4:4 + len(oid_der)] == oid_der
+        print(f"[{'ok ' if ok else 'FAIL'}] {p.relative_to(ROOT)}: SPKI algorithm {what}")
+        if not ok:
+            failures.append((str(p), ["SPKI algorithm identifier is not the expected OID"]))
     for p, loader in ((a / "keys" / "kem_recipient_pub.pem", lambda b: ser.load_pem_public_key(b)),
                       (a / "keys" / "attestation_signer.pem", lambda b: ser.load_pem_private_key(b, None))):
         try:
@@ -465,6 +520,17 @@ def main() -> int:
         for java in sorted(CORPUS.rglob("*.java")):
             if is_multi_file(java):
                 continue
+            if "org.bouncycastle" in java.read_text():
+                bc = bcprov_jar()
+                if bc is None:
+                    print(f"[skip] {java.relative_to(ROOT)}: needs Bouncy Castle (apt install libbcprov-java, or set BCPROV_JAR)")
+                    continue
+                with tempfile.TemporaryDirectory() as out:
+                    c = run(["javac", "-cp", bc, "-d", out, java.name], cwd=java.parent)
+                    if c.returncode == 0:
+                        c = run(["java", "-cp", f"{out}{os.pathsep}{bc}", java.stem], cwd=java.parent)
+                    report(f"{java.relative_to(ROOT)} (Bouncy Castle)", c, failures, tail=3)
+                continue
             needs_pq = java.relative_to(CORPUS).parts[0] == "pqc" or (
                 java.relative_to(CORPUS).parts[0] == "mixed" and re.search(r'"ML-(KEM|DSA)', java.read_text()))
             if needs_pq and java25 is None:
@@ -493,6 +559,7 @@ def main() -> int:
     verify_go_node_c(failures)
     verify_manifests(failures)
     verify_tier4(failures)
+    verify_csharp(failures)
     verify_tier5(failures, has_java)
     verify_pqc_assets(failures)
     verify_custom(failures)

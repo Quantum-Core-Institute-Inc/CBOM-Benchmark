@@ -116,8 +116,14 @@ def library_for(f: dict) -> str | None:
     if "library" in f and f["library"] is None:
         return None
     path = f["file"]
+    if path.endswith(".java") and "org.bouncycastle" in (ROOT / path).read_text(encoding="utf-8"):
+        return "lib-bouncycastle"
     if path.endswith(".java") or path.endswith(".jar"):
         return "lib-openjdk"
+    if path.endswith(".cs"):
+        return "lib-dotnet"
+    if "/tier5/c/bin/" in path:
+        return "lib-openssl"
     if path.endswith(".pyc"):
         return "lib-cpython"
     if path.endswith(".go"):
@@ -146,4 +152,8 @@ LIBRARIES = [
      "purl": "pkg:generic/openssl"},
     {"type": "library", "bom-ref": "lib-openjdk", "name": "OpenJDK security providers (SUN, SunJCE, SunEC)",
      "purl": "pkg:generic/openjdk"},
+    {"type": "library", "bom-ref": "lib-bouncycastle", "name": "Bouncy Castle provider (bcprov)", "group": "org.bouncycastle",
+     "purl": "pkg:maven/org.bouncycastle/bcprov-jdk18on"},
+    {"type": "library", "bom-ref": "lib-dotnet", "name": ".NET base class library (System.Security.Cryptography)",
+     "purl": "pkg:generic/dotnet"},
 ]

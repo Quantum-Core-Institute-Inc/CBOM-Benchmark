@@ -1,41 +1,72 @@
 # CBOM Testbench Scorecard: expected.cdx
 
-**Overall:** 308/308 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
+**Overall:** 397/397 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 304/304 detected (100.0%), 0 false positives.
 
-| Bucket | Detected | Recall | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
-|---|---|---|---|---|---|---|---|---|
-| Tier 1 c | 20/20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 go | 20/20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 java | 16/16 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 javascript | 17/17 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 python | 16/16 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 2 c | 6/6 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 2 go | 6/6 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 2 java | 8/8 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 2 python | 9/9 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 2 typescript | 7/7 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 3 java | 7/7 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 3 python | 9/9 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 4 assets | 48/48 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 5 java | 8/8 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 5 python | 9/9 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Your case: example_envelope | 4/4 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files c | 13/13 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files go | 12/12 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files java | 13/13 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files javascript | 8/8 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files python | 12/12 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Mixed files typescript | 4/4 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC assets | 22/22 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC go | 4/4 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC java | 4/4 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC python | 6/6 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 308/308 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Negative controls | | | | | | | 0 | |
+Password-gated findings (readable only by trying a well-known default password; scored separately, not in any number below): 2/2 detected.
+
+| Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
+|---|---|---|---|---|---|---|---|---|---|
+| Tier 1 c | 20/20 | 100.0% | 83.9–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 csharp | 13/13 | 100.0% | 77.2–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 go | 20/20 | 100.0% | 83.9–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 java | 16/16 | 100.0% | 80.6–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 javascript | 17/17 | 100.0% | 81.6–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 python | 16/16 | 100.0% | 80.6–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 c | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 csharp | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 go | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 java | 8/8 | 100.0% | 67.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 2 typescript | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 3 java | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 3 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 4 assets | 66/66 | 100.0% | 94.5–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 5 c | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | n/a | 100.0% | 0 | 100.0% |
+| Tier 5 java | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 5 javascript | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 5 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Your case: example_envelope | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Dead code c | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Dead code go | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Dead code java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Dead code javascript | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Dead code python | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files c | 13/13 | 100.0% | 77.2–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files go | 12/12 | 100.0% | 75.7–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files java | 13/13 | 100.0% | 77.2–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files javascript | 8/8 | 100.0% | 67.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files python | 12/12 | 100.0% | 75.7–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Mixed files typescript | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC assets | 27/27 | 100.0% | 87.5–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC go | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC java | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC python | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| System fixture artifacts | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | n/a | 100.0% | 0 | 100.0% |
+| System fixture assets | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| System fixture python | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| **Total** | 397/397 | 100.0% | 99.0–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Negative controls | | | | | | | | 0 | |
+
+Intervals are 95% Wilson intervals on recall. 26 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
+
+**PQC by standard name: 27/27 (100.0%).** Detected post-quantum findings reported under the FIPS 203/204/205 name or OID. Reports that only say Kyber, Dilithium, SPHINCS+ or Falcon keep their recall credit and fail this check.
+
+## System fixture: routing and asset links
+
+**Routable: 26/26 detected system findings (100.0%)** (of 26). Routable means a reported location resolves, through the fixture's CODEOWNERS, to the team that owns the fix. Reporting only the shared wrapper or its config is detection, but the ticket lands with platform-security.
+
+**Asset links: 2/2.**
+
+| Link | Found |
+|---|---|
+| nginx terminates TLS with this certificate (ssl_certificate) | yes |
+| the certificate's public key belongs to this private key | yes |
 
 **Recall** counts a finding reported anywhere acceptable, including the config or constants file that names the algorithm. **At primary site** counts only findings reported in the file the ground truth anchors them to: the crypto call itself or, for a shared wrapper, the caller that binds the parameters. It's the stricter number, and the one that tells an engineer what to change.
 
@@ -49,37 +80,37 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 79/79 | 100.0% | 100.0% |
-| Due by end of 2030 | 4 | 28/28 | 100.0% | 100.0% |
+| Due now (not approved or past its date) | 5 | 99/99 | 100.0% | 100.0% |
+| Due by end of 2030 | 4 | 39/39 | 100.0% | 100.0% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 87/87 | 100.0% | 100.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 114/114 | 100.0% | 100.0% |
+| Due 2034 to 2035 | 2 | 109/109 | 100.0% | 100.0% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 150/150 | 100.0% | 100.0% |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 308/308 detected findings (100.0%)**, meaning every must-have is present and correct. **Actionable recall: 100.0%** of all 308 expected findings were both found and ticket-ready. Field completeness across all checks: 100.0%.
+**Ticket-ready: 397/397 detected findings (100.0%)**, meaning every must-have is present and correct. **Actionable recall: 100.0%** of all 397 expected findings were both found and ticket-ready. Field completeness across all checks: 100.0%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 308 | 308 | 100.0% |
-| Correct parameters | must | 185 | 185 | 100.0% |
-| Primitive, where the family is ambiguous | must | 64 | 64 | 100.0% |
-| Certificate expiry (correct) | must | 24 | 24 | 100.0% |
-| Certificate subject (correct) | must | 24 | 24 | 100.0% |
-| Key material type | must | 8 | 8 | 100.0% |
-| Protocol version | must | 12 | 12 | 100.0% |
-| OID | should | 263 | 263 | 100.0% |
-| Crypto functions | should | 274 | 274 | 100.0% |
-| Quantum security level (correct) | should | 272 | 272 | 100.0% |
-| Code context | should | 116 | 116 | 100.0% |
-| Providing library | should | 116 | 116 | 100.0% |
-| Certificate issuer | should | 24 | 24 | 100.0% |
-| Certificate start date | should | 24 | 24 | 100.0% |
-| Certificate key and signature linked | should | 24 | 24 | 100.0% |
-| Key format | should | 8 | 8 | 100.0% |
-| Cipher suite in a protocol | should | 11 | 11 | 100.0% |
+| Exact location | must | 397 | 397 | 100.0% |
+| Correct parameters | must | 226 | 226 | 100.0% |
+| Primitive, where the family is ambiguous | must | 83 | 83 | 100.0% |
+| Certificate expiry (correct) | must | 28 | 28 | 100.0% |
+| Certificate subject (correct) | must | 28 | 28 | 100.0% |
+| Key material type | must | 11 | 11 | 100.0% |
+| Protocol version | must | 16 | 16 | 100.0% |
+| OID | should | 328 | 328 | 100.0% |
+| Crypto functions | should | 348 | 348 | 100.0% |
+| Quantum security level (correct) | should | 339 | 339 | 100.0% |
+| Code context | should | 126 | 126 | 100.0% |
+| Providing library | should | 131 | 131 | 100.0% |
+| Certificate issuer | should | 28 | 28 | 100.0% |
+| Certificate start date | should | 28 | 28 | 100.0% |
+| Certificate key and signature linked | should | 28 | 28 | 100.0% |
+| Key format | should | 11 | 11 | 100.0% |
+| Cipher suite in a protocol | should | 20 | 20 | 100.0% |
 
 ## Missed findings
 
@@ -95,7 +126,7 @@ None.
 
 ## Crypto libraries (dependency manifests)
 
-- Found in the right manifest: **26/26** (100.0%); found anywhere, including with no location: 26/26
+- Found in the right manifest: **28/28** (100.0%); found anywhere, including with no location: 28/28
 - Direct dependencies: 100.0%; transitive (lockfile): 100.0%
 - Versions correct, of found libraries the manifest pins (none reported counts as not correct): 100.0%
 - PQC-capability verdicts (where the scanner gives one): none given
@@ -129,6 +160,8 @@ None.
 | `go-service/go.mod` | github.com/golang-jwt/jwt/v5 | 5.2.1 | direct | yes | ok |
 | `c-agent/conanfile.txt` | openssl | 1.1.1w | direct | yes | ok |
 | `c-agent/conanfile.txt` | libsodium | 1.0.18 | direct | yes | ok |
+| `corpus/system/payments-platform/services/settlement-worker/requirements.txt` | cryptography | 42.0.5 | direct | yes | ok |
+| `corpus/system/payments-platform/services/ledger-service/build.gradle` | org.bouncycastle:bcprov-jdk18on | 1.77 | direct | yes | ok |
 
 ## Per-finding detail
 
@@ -220,8 +253,6 @@ None.
 | T4-AS-19 | EC | yes | yes | yes | n/a | yes |
 | T4-AS-20 | AES | yes | yes | yes | n/a | yes |
 | T4-AS-21 | PBKDF2 | yes | yes | yes | n/a | yes |
-| T4-AS-22 | RSA | yes | yes | yes | n/a | yes |
-| T4-AS-23 | SHA-256 | yes | yes | yes | n/a | n/a |
 | T4-AS-24 | RSA | yes | yes | yes | n/a | yes |
 | T4-AS-25 | SHA-1 | yes | yes | yes | n/a | n/a |
 | T4-AS-26 | RSA | yes | yes | yes | yes | yes |
@@ -247,6 +278,26 @@ None.
 | T4-AS-46 | TLS-1.0 | yes | yes | yes | yes | n/a |
 | T4-AS-47 | EC | yes | yes | yes | n/a | yes |
 | T4-AS-48 | SHA-384 | yes | yes | yes | n/a | n/a |
+| T4-AS-49 | TLS-1.1 | yes | yes | yes | yes | n/a |
+| T4-AS-50 | TLS-1.2 | yes | yes | yes | yes | n/a |
+| T4-AS-51 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| T4-AS-52 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-53 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-54 | TLS-1.1 | yes | yes | yes | yes | n/a |
+| T4-AS-55 | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
+| T4-AS-56 | TLS_RSA_WITH_AES_256_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-57 | TLS_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| T4-AS-58 | TLS_CHACHA20_POLY1305_SHA256 | yes | yes | yes | yes | n/a |
+| T4-AS-59 | DH | yes | yes | yes | yes | yes |
+| T4-AS-60 | AES | yes | yes | yes | yes | yes |
+| T4-AS-61 | HMAC | yes | yes | yes | yes | yes |
+| T4-AS-62 | DH | yes | yes | yes | yes | yes |
+| T4-AS-63 | ChaCha20-Poly1305 | yes | yes | yes | yes | yes |
+| T4-AS-64 | X25519 | yes | yes | yes | yes | yes |
+| T4-AS-65 | 3DES | yes | yes | yes | yes | yes |
+| T4-AS-66 | HMAC | yes | yes | yes | yes | yes |
+| T4-AS-67 | DH | yes | yes | yes | yes | yes |
+| T4-AS-68 | AES | yes | yes | yes | yes | yes |
 | T5-PY-01 | SHA-1 | yes | yes | yes | yes | yes |
 | T5-PY-02 | MD5 | yes | yes | yes | yes | yes |
 | T5-PY-03 | RSA | yes | yes | yes | yes | yes |
@@ -264,6 +315,15 @@ None.
 | T5-JV-06 | AES | yes | yes | yes | n/a | yes |
 | T5-JV-07 | RSA | yes | yes | yes | n/a | yes |
 | T5-JV-08 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-JV-09 | DES | yes | yes | yes | n/a | yes |
+| T5-JV-10 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-JV-11 | EC | yes | yes | yes | n/a | yes |
+| T5-JS-01 | MD5 | yes | yes | yes | yes | yes |
+| T5-JS-02 | AES | yes | yes | yes | yes | yes |
+| T5-JS-03 | RSA | yes | yes | yes | yes | yes |
+| T5-C-01 | MD5 | yes | yes | yes | n/a | yes |
+| T5-C-02 | 3DES | yes | yes | yes | n/a | yes |
+| T5-C-03 | RSA | yes | yes | yes | n/a | yes |
 | PQ-PY-01 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-PY-02 | ML-DSA | yes | yes | yes | yes | yes |
 | PQ-PY-03 | X25519 | yes | yes | yes | yes | yes |
@@ -274,6 +334,8 @@ None.
 | PQ-JV-02 | ML-DSA | yes | yes | yes | yes | yes |
 | PQ-JV-03 | ML-DSA | yes | yes | yes | yes | yes |
 | PQ-JV-04 | EC | yes | yes | yes | yes | yes |
+| PQ-JV-05 | LMS | yes | yes | yes | yes | n/a |
+| PQ-JV-06 | XMSS | yes | yes | yes | yes | n/a |
 | PQ-AS-01 | ML-DSA | yes | yes | yes | n/a | yes |
 | PQ-AS-02 | ML-DSA | yes | yes | yes | n/a | yes |
 | PQ-AS-03 | ML-DSA | yes | yes | yes | n/a | yes |
@@ -296,6 +358,11 @@ None.
 | PQ-AS-20 | TLS-1.3 | yes | yes | yes | yes | n/a |
 | PQ-AS-21 | X25519 | yes | yes | yes | yes | yes |
 | PQ-AS-22 | EC | yes | yes | yes | yes | yes |
+| PQ-AS-23 | LMS | yes | yes | yes | n/a | n/a |
+| PQ-AS-24 | XMSS | yes | yes | yes | n/a | n/a |
+| PQ-AS-25 | LMS | yes | yes | yes | yes | n/a |
+| PQ-AS-26 | XMSS | yes | yes | yes | yes | n/a |
+| PQ-AS-27 | EC | yes | yes | yes | yes | yes |
 | T1-GO-01 | MD5 | yes | yes | yes | yes | yes |
 | T1-GO-02 | SHA-1 | yes | yes | yes | yes | yes |
 | T1-GO-03 | SHA-256 | yes | yes | yes | yes | yes |
@@ -370,12 +437,31 @@ None.
 | T1-C-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
 | T1-C-19 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
 | T1-C-20 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
+| T1-CS-01 | MD5 | yes | yes | yes | yes | yes |
+| T1-CS-02 | SHA-1 | yes | yes | yes | yes | yes |
+| T1-CS-03 | SHA-256 | yes | yes | yes | yes | yes |
+| T1-CS-04 | SHA3-256 | yes | yes | yes | yes | yes |
+| T1-CS-05 | RSA | yes | yes | yes | yes | yes |
+| T1-CS-06 | EC | yes | yes | yes | yes | yes |
+| T1-CS-07 | EC | yes | yes | yes | yes | yes |
+| T1-CS-08 | AES | yes | yes | yes | yes | yes |
+| T1-CS-09 | AES | yes | yes | yes | yes | yes |
+| T1-CS-10 | 3DES | yes | yes | yes | yes | yes |
+| T1-CS-11 | HMAC | yes | yes | yes | yes | yes |
+| T1-CS-12 | PBKDF2 | yes | yes | yes | yes | yes |
+| T1-CS-13 | DSA | yes | yes | yes | yes | yes |
 | T2-C-01 | AES | yes | yes | yes | yes | yes |
 | T2-C-02 | SHA-1 | yes | yes | yes | yes | yes |
 | T2-C-03 | RSA | yes | yes | yes | yes | yes |
 | T2-C-04 | EC | yes | yes | yes | yes | yes |
 | T2-C-05 | HMAC | yes | yes | yes | yes | yes |
 | T2-C-06 | 3DES | yes | yes | yes | yes | yes |
+| T2-CS-01 | AES | yes | yes | yes | yes | yes |
+| T2-CS-02 | SHA-1 | yes | yes | yes | yes | yes |
+| T2-CS-03 | MD5 | yes | yes | yes | yes | yes |
+| T2-CS-04 | SHA-512 | yes | yes | yes | yes | yes |
+| T2-CS-05 | RSA | yes | yes | yes | yes | yes |
+| T2-CS-06 | EC | yes | yes | yes | yes | yes |
 | MX-PY-1a | PBKDF2 | yes | yes | yes | yes | yes |
 | MX-PY-1b | PBKDF2 | yes | yes | yes | yes | yes |
 | MX-PY-1c | HMAC | yes | yes | yes | yes | yes |
@@ -438,6 +524,42 @@ None.
 | MX-C-3b | 3DES | yes | yes | yes | yes | yes |
 | MX-C-3c | AES | yes | yes | yes | yes | yes |
 | MX-C-3d | DH | yes | yes | yes | yes | yes |
+| SYS-GO-01 | RSA | yes | yes | yes | yes | yes |
+| SYS-GO-02 | HMAC | yes | yes | yes | yes | yes |
+| SYS-GO-03 | SHA-256 | yes | yes | yes | yes | yes |
+| SYS-PY-01 | AES | yes | yes | yes | yes | yes |
+| SYS-PY-02 | HMAC | yes | yes | yes | yes | yes |
+| SYS-PY-03 | RSA | yes | yes | yes | n/a | yes |
+| SYS-PY-04 | SHA-1 | yes | yes | yes | n/a | n/a |
+| SYS-JV-01 | EC | yes | yes | yes | yes | yes |
+| SYS-JV-02 | SHA-1 | yes | yes | yes | yes | yes |
+| SYS-AR-01 | EC | yes | yes | yes | n/a | yes |
+| SYS-AR-02 | SHA-1 | yes | yes | yes | n/a | yes |
+| SYS-AR-03 | RSA | yes | yes | yes | n/a | yes |
+| SYS-AR-04 | HMAC | yes | yes | yes | n/a | n/a |
+| SYS-AR-05 | SHA-1 | yes | yes | yes | n/a | yes |
+| SYS-AR-06 | SHA-256 | yes | yes | yes | n/a | yes |
+| SYS-AS-01 | TLS-1.2 | yes | yes | yes | yes | n/a |
+| SYS-AS-02 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| SYS-AS-03 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| SYS-AS-04 | RSA | yes | yes | yes | n/a | yes |
+| SYS-AS-05 | SHA-256 | yes | yes | yes | n/a | n/a |
+| SYS-AS-06 | RSA | yes | yes | yes | n/a | yes |
+| SYS-AS-07 | EC | yes | yes | yes | n/a | yes |
+| SYS-AS-08 | SHA-384 | yes | yes | yes | n/a | n/a |
+| SYS-AS-09 | EC | yes | yes | yes | yes | yes |
+| SYS-AS-10 | RSA | yes | yes | yes | yes | yes |
+| SYS-AS-11 | AES | yes | yes | yes | yes | yes |
+| DC-PY-01 | MD5 | yes | yes | yes | yes | yes |
+| DC-PY-02 | RSA | yes | yes | yes | yes | yes |
+| DC-JV-01 | DES | yes | yes | yes | yes | yes |
+| DC-JV-02 | SHA-1 | yes | yes | yes | yes | yes |
+| DC-GO-01 | MD5 | yes | yes | yes | yes | yes |
+| DC-GO-02 | RC4 | yes | yes | yes | yes | yes |
+| DC-JS-01 | MD5 | yes | yes | yes | yes | yes |
+| DC-JS-02 | 3DES | yes | yes | yes | yes | yes |
+| DC-C-01 | MD5 | yes | yes | yes | yes | yes |
+| DC-C-02 | 3DES | yes | yes | yes | yes | yes |
 | C-example_envelope-01 | RSA | yes | yes | yes | yes | yes |
 | C-example_envelope-02 | EC | yes | yes | yes | yes | yes |
 | C-example_envelope-03 | AES | yes | yes | yes | yes | yes |

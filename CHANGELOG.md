@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.4.0 (2026-11-11): more of what's deployed
+
+55 new findings, 393 in all. No scoring rule changed, so the methodology stays 2.3; the release, the
+corpus and the answer key are part of every stamp, so 2.3.0 scorecards and gates don't carry over.
+Every scanner rescanned; gates rebaselined; evidence rebuilt.
+
+- **C#.** A seventh language. 14 single-file .NET 8 projects, 19 findings: Tier 1 (`MD5.HashData`,
+  `RSA.Create(2048)`, `ECDiffieHellman`, `AesGcm`, `TripleDES`, `Rfc2898DeriveBytes.Pbkdf2`, `DSA`)
+  and Tier 2 (constants, `IncrementalHash` by name, a `Func<HashAlgorithm>` table, a settings class
+  behind a wrapper, a curve picked by a helper). Two negative controls. Each project builds with an
+  empty package source list, so nothing is fetched.
+- **LMS and XMSS.** The stateful hash-based signatures of SP 800-208, which CNSA 2.0 wants for
+  firmware signing first. Bouncy Castle signing code for each, an HSS/LMS and an XMSS public key
+  recognisable only by OID, and a firmware signing policy naming both beside a P-384 signer kept for
+  old devices: 7 findings. The NIST and CNSA 2.0 policies gain a rule for them (approved, for
+  software and firmware signing, state kept in hardware). The normalizer reads `LMS_SHA256_M32_H10`
+  as LMS, not SHA-256. There's no Python case yet: installing the PyPI LMS package was blocked where this was built.
+- **Harder Tier 5.** Three artifacts with no source in the corpus, 9 findings: a ProGuard-obfuscated
+  jar (names replaced, algorithm strings intact), a minified JavaScript bundle, and a stripped ELF
+  binary that shows MD5 and 3DES only as imported libcrypto symbols and its RSA key size only as an
+  immediate operand. Sources are in `tier5-sources/`; `build_tier5_compiled.py` rebuilds them.
+- **More config formats.** Apache httpd (`SSLProtocol -all +TLSv1.1 +TLSv1.2`), HAProxy (a minimum
+  version, TLS 1.2 and 1.3 suites on separate lines, the DH group size on a tuning line), and
+  strongSwan in both spellings (`swanctl.conf` proposals and a legacy `ipsec.conf` with
+  `3des-sha1-modp1024!`): 20 findings. The normalizer reads `modp2048` as a 2048-bit DH group.
+- **Toolchain.** The corpus check needs the .NET 8 SDK and Bouncy Castle's provider jar
+  (`libbcprov-java`); CI and the Dockerfile install both. The Dockerfile's new .NET stage is
+  untested here, like the rest of the image.
+- **Not covered by the holdout generator.** None of the above has a generator yet, so these 55
+  findings don't enter the overfit gap (HOLDOUT.md says so).
+
 ## 2.3.0 (2026-11-11): three positions
 
 Methodology 2.3. The headline denominator is now 338 findings (330, plus 10 dead-code, minus 2

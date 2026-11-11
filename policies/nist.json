@@ -83,9 +83,36 @@
       "status": "final",
       "published": "1999-10-25",
       "url": "https://csrc.nist.gov/pubs/fips/46-3/final"
+    },
+    {
+      "id": "SP800-208",
+      "name": "NIST SP 800-208, Recommendation for Stateful Hash-Based Signature Schemes",
+      "revision": "final",
+      "status": "final",
+      "published": "2020-10-29",
+      "url": "https://csrc.nist.gov/pubs/sp/800/208/final"
     }
   ],
   "rules": [
+    {
+      "id": "stateful-hbs",
+      "match": {
+        "family": [
+          "LMS",
+          "XMSS"
+        ]
+      },
+      "status": "approved",
+      "source": "SP800-208",
+      "note": "Approved, with conditions: a one-time key must never sign twice, so key generation and signing belong in a hardware module that doesn't export the key. Meant for firmware and software signing, not general use.",
+      "section": "Sec. 1.1 (intended applications) and Sec. 8 (key generation and signing in hardware modules)",
+      "also": [
+        {
+          "source": "IR8547",
+          "section": "Sec. 4.1.1 Table 3 (LMS, HSS, XMSS, XMSS^MT)"
+        }
+      ]
+    },
     {
       "id": "pq-approved",
       "match": {

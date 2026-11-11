@@ -191,6 +191,11 @@ Tier 3 reads 79 to 100% on both sides. Reading the diff of each release is still
 TLS protocol settings (Tier 1 `TLS-` cases) and Tier 4 assets (certificates, keystores, config
 files) have no generator yet, so they don't enter the gap.
 
+The cases added in 2.4.0 have no generator either: C#, the Apache, HAProxy and IPsec configs, LMS and
+XMSS, and the minified, obfuscated and native artifacts. A scanner could fit to those 55 findings and
+the gap wouldn't show it. Until a generator covers them, treat a jump on those rows alone with the
+same suspicion as a jump on any hand-written file.
+
 With the default 120 matched files the interval is about ±5 points; with 360, about ±3.7. That
 catches a team that has fixed a meaningful share of the published misses in ways that don't carry
 over. It won't catch a couple of overfit rules.

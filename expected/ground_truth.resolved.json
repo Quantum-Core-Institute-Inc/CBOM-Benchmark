@@ -10,7 +10,8 @@
     "'requires_password' marks findings only visible after opening a keystore; the password is the Java default.",
     "'materials' describes the certificates and keys behind Tier 4 findings, so the reference CBOM can model them as certificate and related-crypto-material components.",
     "Tier 5 compiled findings are attributed to the archive or bytecode file; a scanner may report 'x.jar!/path/Inner.class' and it still matches.",
-    "The 'pqc' category is scored as its own bucket. Hybrid TLS/SSH groups (X25519MLKEM768 etc.) are families in their own right; in code, an application-level hybrid is scored as its two components."
+    "The 'pqc' category is scored as its own bucket. Hybrid TLS/SSH groups (X25519MLKEM768 etc.) are families in their own right; in code, an application-level hybrid is scored as its two components.",
+    "Tier 5 also ships a minified JavaScript bundle, a ProGuard-obfuscated jar and a stripped native binary; their sources are under tier5-sources/, outside the corpus."
   ],
   "findings": [
     {
@@ -1913,6 +1914,306 @@
       "lines": []
     },
     {
+      "id": "T4-AS-49",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "family": "TLS-1.1",
+      "params": {},
+      "anchors": [
+        "SSLProtocol         -all +TLSv1.1 +TLSv1.2"
+      ],
+      "lines": [
+        14
+      ]
+    },
+    {
+      "id": "T4-AS-50",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "family": "TLS-1.2",
+      "params": {},
+      "anchors": [
+        "SSLProtocol         -all +TLSv1.1 +TLSv1.2"
+      ],
+      "lines": [
+        14
+      ]
+    },
+    {
+      "id": "T4-AS-51",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "family": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "params": {},
+      "anchors": [
+        "SSLCipherSuite      ECDHE"
+      ],
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "T4-AS-52",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "family": "TLS_RSA_WITH_AES_128_CBC_SHA",
+      "params": {},
+      "anchors": [
+        "SSLCipherSuite      ECDHE"
+      ],
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "T4-AS-53",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "family": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+      "params": {},
+      "anchors": [
+        "SSLCipherSuite      ECDHE"
+      ],
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "T4-AS-54",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "TLS-1.1",
+      "params": {},
+      "anchors": [
+        "ssl-default-bind-options ssl-min-ver TLSv1.1"
+      ],
+      "note": "a minimum version: 1.1 and everything above it is on",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "id": "T4-AS-55",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+      "params": {},
+      "anchors": [
+        "ssl-default-bind-ciphers ECDHE"
+      ],
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "T4-AS-56",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "TLS_RSA_WITH_AES_256_CBC_SHA",
+      "params": {},
+      "anchors": [
+        "ssl-default-bind-ciphers ECDHE"
+      ],
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "T4-AS-57",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "TLS_AES_256_GCM_SHA384",
+      "params": {},
+      "anchors": [
+        "ssl-default-bind-ciphersuites TLS_AES_256"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T4-AS-58",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "TLS_CHACHA20_POLY1305_SHA256",
+      "params": {},
+      "anchors": [
+        "ssl-default-bind-ciphersuites TLS_AES_256"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T4-AS-59",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "family": "DH",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "tune.ssl.default-dh-param 1024"
+      ],
+      "note": "the DHE group size is a tuning line, not a cipher line",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "id": "T4-AS-60",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "family": "AES",
+      "params": {
+        "key_size": 256
+      },
+      "anchors": [
+        "proposals = aes256-sha256-modp2048"
+      ],
+      "note": "IKE proposal",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "T4-AS-61",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "family": "HMAC",
+      "params": {
+        "hash": "SHA-256"
+      },
+      "anchors": [
+        "proposals = aes256-sha256-modp2048"
+      ],
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "T4-AS-62",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "family": "DH",
+      "params": {
+        "key_size": 2048
+      },
+      "anchors": [
+        "proposals = aes256-sha256-modp2048"
+      ],
+      "note": "modp2048 is RFC 3526 group 14",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "T4-AS-63",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "family": "ChaCha20-Poly1305",
+      "params": {},
+      "anchors": [
+        "esp_proposals = chacha20poly1305-x25519"
+      ],
+      "lines": [
+        21
+      ]
+    },
+    {
+      "id": "T4-AS-64",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "family": "X25519",
+      "params": {},
+      "anchors": [
+        "esp_proposals = chacha20poly1305-x25519"
+      ],
+      "lines": [
+        21
+      ]
+    },
+    {
+      "id": "T4-AS-65",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/ipsec.conf",
+      "family": "3DES",
+      "params": {},
+      "anchors": [
+        "ike=3des-sha1-modp1024!"
+      ],
+      "note": "IKEv1 proposal",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "T4-AS-66",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/ipsec.conf",
+      "family": "HMAC",
+      "params": {
+        "hash": "SHA-1"
+      },
+      "anchors": [
+        "ike=3des-sha1-modp1024!"
+      ],
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "T4-AS-67",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/ipsec.conf",
+      "family": "DH",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "ike=3des-sha1-modp1024!"
+      ],
+      "note": "modp1024 is Oakley group 2",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "T4-AS-68",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/ipsec/ipsec.conf",
+      "family": "AES",
+      "params": {
+        "key_size": 128
+      },
+      "anchors": [
+        "esp=aes128-sha1!"
+      ],
+      "lines": [
+        13
+      ]
+    },
+    {
       "id": "T5-PY-01",
       "tier": 5,
       "lang": "python",
@@ -2192,6 +2493,124 @@
       "lines": []
     },
     {
+      "id": "T5-JV-09",
+      "tier": 5,
+      "lang": "java",
+      "file": "corpus/tier5/java/compiled/token-vault.jar",
+      "family": "DES",
+      "params": {
+        "mode": "ECB"
+      },
+      "note": "ProGuard-obfuscated jar: class and method names replaced, no source in corpus",
+      "lines": []
+    },
+    {
+      "id": "T5-JV-10",
+      "tier": 5,
+      "lang": "java",
+      "file": "corpus/tier5/java/compiled/token-vault.jar",
+      "family": "SHA-1",
+      "params": {},
+      "note": "ProGuard-obfuscated jar",
+      "lines": []
+    },
+    {
+      "id": "T5-JV-11",
+      "tier": 5,
+      "lang": "java",
+      "file": "corpus/tier5/java/compiled/token-vault.jar",
+      "family": "EC",
+      "params": {
+        "curve": "P-256"
+      },
+      "note": "ProGuard-obfuscated jar; the curve is a string constant",
+      "lines": []
+    },
+    {
+      "id": "T5-JS-01",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/session-tokens.min.js",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "e.createHash(\"md5\")"
+      ],
+      "note": "minified bundle: one line, names mangled, no source in corpus",
+      "lines": [
+        1
+      ]
+    },
+    {
+      "id": "T5-JS-02",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/session-tokens.min.js",
+      "family": "AES",
+      "params": {
+        "key_size": 128,
+        "mode": "CBC"
+      },
+      "anchors": [
+        "r=\"aes-128-cbc\""
+      ],
+      "note": "minified bundle; the cipher name is hoisted into a one-letter constant",
+      "lines": [
+        1
+      ]
+    },
+    {
+      "id": "T5-JS-03",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/session-tokens.min.js",
+      "family": "RSA",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "e.generateKeyPairSync(\"rsa\",{modulusLength:1024})"
+      ],
+      "note": "minified bundle",
+      "lines": [
+        1
+      ]
+    },
+    {
+      "id": "T5-C-01",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/meterd",
+      "family": "MD5",
+      "params": {},
+      "note": "stripped ELF; visible as an imported libcrypto symbol (EVP_md5)",
+      "lines": []
+    },
+    {
+      "id": "T5-C-02",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/meterd",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "note": "stripped ELF; imported symbol EVP_des_ede3_cbc",
+      "lines": []
+    },
+    {
+      "id": "T5-C-03",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/meterd",
+      "family": "RSA",
+      "params": {
+        "key_size": 1024
+      },
+      "note": "stripped ELF; the key size is an immediate operand, not a string",
+      "lines": []
+    },
+    {
       "id": "PQ-PY-01",
       "tier": "pqc",
       "lang": "python",
@@ -2363,6 +2782,40 @@
       "lines": [
         19,
         24
+      ]
+    },
+    {
+      "id": "PQ-JV-05",
+      "tier": "pqc",
+      "lang": "java",
+      "file": "corpus/pqc/java/FirmwareSignLms.java",
+      "family": "LMS",
+      "params": {},
+      "anchors": [
+        "KeyPairGenerator.getInstance(\"LMS\", \"BCPQC\")",
+        "LMSigParameters.lms_sha256_n32_h5"
+      ],
+      "note": "stateful hash-based signature (SP 800-208); Bouncy Castle",
+      "lines": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "PQ-JV-06",
+      "tier": "pqc",
+      "lang": "java",
+      "file": "corpus/pqc/java/UpdateSignXmss.java",
+      "family": "XMSS",
+      "params": {},
+      "anchors": [
+        "KeyPairGenerator.getInstance(\"XMSS\", \"BCPQC\")",
+        "XMSSParameterSpec.SHA2_10_256"
+      ],
+      "note": "stateful hash-based signature (SP 800-208); Bouncy Castle",
+      "lines": [
+        16,
+        17
       ]
     },
     {
@@ -2660,6 +3113,73 @@
       ],
       "lines": [
         16
+      ]
+    },
+    {
+      "id": "PQ-AS-23",
+      "tier": "pqc",
+      "lang": "assets",
+      "file": "corpus/pqc/assets/keys/bootloader_lms_pub.pem",
+      "family": "LMS",
+      "params": {},
+      "note": "HSS/LMS public key, OID 1.2.840.113549.1.9.16.3.17 (RFC 8708)",
+      "lines": []
+    },
+    {
+      "id": "PQ-AS-24",
+      "tier": "pqc",
+      "lang": "assets",
+      "file": "corpus/pqc/assets/keys/update_xmss_pub.pem",
+      "family": "XMSS",
+      "params": {},
+      "note": "XMSS public key under the OID Bouncy Castle writes (0.4.0.127.0.15.1.1.13.0)",
+      "lines": []
+    },
+    {
+      "id": "PQ-AS-25",
+      "tier": "pqc",
+      "lang": "assets",
+      "file": "corpus/pqc/assets/firmware/signing-policy.yaml",
+      "family": "LMS",
+      "params": {},
+      "anchors": [
+        "algorithm: LMS_SHA256_M32_H10",
+        "ots: LMOTS_SHA256_N32_W8"
+      ],
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "PQ-AS-26",
+      "tier": "pqc",
+      "lang": "assets",
+      "file": "corpus/pqc/assets/firmware/signing-policy.yaml",
+      "family": "XMSS",
+      "params": {},
+      "anchors": [
+        "algorithm: XMSS-SHA2_10_256"
+      ],
+      "lines": [
+        13
+      ]
+    },
+    {
+      "id": "PQ-AS-27",
+      "tier": "pqc",
+      "lang": "assets",
+      "file": "corpus/pqc/assets/firmware/signing-policy.yaml",
+      "family": "EC",
+      "params": {
+        "curve": "P-384"
+      },
+      "anchors": [
+        "algorithm: ecdsa-p384"
+      ],
+      "note": "the classical signer kept for old devices",
+      "lines": [
+        18
       ]
     },
     {
@@ -3852,6 +4372,219 @@
       ]
     },
     {
+      "id": "T1-CS-01",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/Hashes/Program.cs",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "MD5.HashData("
+      ],
+      "lines": [
+        9
+      ]
+    },
+    {
+      "id": "T1-CS-02",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/Hashes/Program.cs",
+      "family": "SHA-1",
+      "params": {},
+      "anchors": [
+        "SHA1.HashData("
+      ],
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "T1-CS-03",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/Hashes/Program.cs",
+      "family": "SHA-256",
+      "params": {},
+      "anchors": [
+        "SHA256.HashData("
+      ],
+      "lines": [
+        11
+      ]
+    },
+    {
+      "id": "T1-CS-04",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/Hashes/Program.cs",
+      "family": "SHA3-256",
+      "params": {},
+      "anchors": [
+        "SHA3_256.HashData("
+      ],
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "T1-CS-05",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/RsaSign/Program.cs",
+      "family": "RSA",
+      "params": {
+        "key_size": 2048
+      },
+      "anchors": [
+        "RSA.Create(2048)"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T1-CS-06",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+      "family": "EC",
+      "params": {
+        "curve": "P-256"
+      },
+      "anchors": [
+        "ECDsa.Create(ECCurve.NamedCurves.nistP256)"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T1-CS-07",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/KeyAgreement/Program.cs",
+      "family": "EC",
+      "params": {
+        "curve": "P-384"
+      },
+      "anchors": [
+        "ECDiffieHellman alice = ECDiffieHellman.Create(",
+        "alice.DeriveRawSecretAgreement("
+      ],
+      "note": "ECDH",
+      "lines": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "T1-CS-08",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/AesCbc/Program.cs",
+      "family": "AES",
+      "params": {
+        "key_size": 128,
+        "mode": "CBC"
+      },
+      "anchors": [
+        "Aes.Create()",
+        "aes.KeySize = 128",
+        "aes.Mode = CipherMode.CBC"
+      ],
+      "lines": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "T1-CS-09",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/AesGcmSeal/Program.cs",
+      "family": "AES",
+      "params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "anchors": [
+        "new AesGcm(key, 16)",
+        "byte[] key = RandomNumberGenerator.GetBytes(32)"
+      ],
+      "note": "key size is the length of the key buffer",
+      "lines": [
+        13,
+        8
+      ]
+    },
+    {
+      "id": "T1-CS-10",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/TripleDesLegacy/Program.cs",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "TripleDES.Create()"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T1-CS-11",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/MacKdf/Program.cs",
+      "family": "HMAC",
+      "params": {
+        "hash": "SHA-256"
+      },
+      "anchors": [
+        "new HMACSHA256("
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "T1-CS-12",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/MacKdf/Program.cs",
+      "family": "PBKDF2",
+      "params": {
+        "hash": "SHA-512"
+      },
+      "anchors": [
+        "Rfc2898DeriveBytes.Pbkdf2("
+      ],
+      "note": ".NET names PBKDF2 after its RFC",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "T1-CS-13",
+      "tier": 1,
+      "lang": "csharp",
+      "file": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+      "family": "DSA",
+      "params": {
+        "key_size": 2048
+      },
+      "anchors": [
+        "DSA.Create(2048)"
+      ],
+      "lines": [
+        8
+      ]
+    },
+    {
       "id": "T2-C-01",
       "tier": 2,
       "lang": "c",
@@ -3956,6 +4689,113 @@
       "lines": [
         10,
         16
+      ]
+    },
+    {
+      "id": "T2-CS-01",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+      "family": "AES",
+      "params": {
+        "key_size": 192,
+        "mode": "CBC"
+      },
+      "anchors": [
+        "Aes.Create()",
+        "const int KeyBits = 192",
+        "Chaining = CipherMode.CBC"
+      ],
+      "note": "key size and mode held in constants",
+      "lines": [
+        11,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "T2-CS-02",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/HashByName/Program.cs",
+      "family": "SHA-1",
+      "params": {},
+      "anchors": [
+        "IncrementalHash.CreateHash(",
+        "const string Fingerprint = \"SHA1\""
+      ],
+      "note": "digest chosen by a name in a constant",
+      "lines": [
+        10,
+        7
+      ]
+    },
+    {
+      "id": "T2-CS-03",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/DispatchTable/Program.cs",
+      "family": "MD5",
+      "params": {},
+      "anchors": [
+        "[\"legacy\"] = MD5.Create"
+      ],
+      "note": "constructor held in a table",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "id": "T2-CS-04",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/DispatchTable/Program.cs",
+      "family": "SHA-512",
+      "params": {},
+      "anchors": [
+        "[\"modern\"] = SHA512.Create"
+      ],
+      "note": "constructor held in a table",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "T2-CS-05",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/KeyFactory/Program.cs",
+      "family": "RSA",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "return RSA.Create(bits)",
+        "public const int SigningBits = 1024"
+      ],
+      "note": "size passes through a settings class and a wrapper",
+      "lines": [
+        12,
+        7
+      ]
+    },
+    {
+      "id": "T2-CS-06",
+      "tier": 2,
+      "lang": "csharp",
+      "file": "corpus/tier2/csharp/CurveSwitch/Program.cs",
+      "family": "EC",
+      "params": {
+        "curve": "P-521"
+      },
+      "anchors": [
+        "ECDsa.Create(Pick(\"high\"))",
+        "ECCurve.NamedCurves.nistP521"
+      ],
+      "note": "curve picked by a helper; the other branch is P-256",
+      "lines": [
+        12,
+        8
       ]
     },
     {
@@ -11689,6 +12529,51 @@
       ]
     },
     {
+      "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
+      "families": [
+        "RSA",
+        "EC",
+        "DH",
+        "AES",
+        "3DES",
+        "ChaCha20-Poly1305",
+        "SHA-1",
+        "SHA-256",
+        "SHA-384",
+        "HMAC"
+      ]
+    },
+    {
+      "file": "corpus/tier4/assets/tls/haproxy.cfg",
+      "families": [
+        "RSA",
+        "EC",
+        "DH",
+        "AES",
+        "3DES",
+        "ChaCha20-Poly1305",
+        "SHA-1",
+        "SHA-256",
+        "SHA-384",
+        "HMAC",
+        "TLS-1.2",
+        "TLS-1.3"
+      ],
+      "note": "ssl-min-ver TLSv1.1 leaves 1.2 and 1.3 on"
+    },
+    {
+      "file": "corpus/tier4/assets/ipsec/swanctl.conf",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "corpus/tier4/assets/ipsec/ipsec.conf",
+      "families": [
+        "SHA-1"
+      ]
+    },
+    {
       "file": "corpus/tier4/assets/tls/application.yml",
       "families": [
         "RSA",
@@ -12460,6 +13345,71 @@
       "note": "the algorithms inside the cipher suites, as for Tier 4 nginx.conf"
     },
     {
+      "file": "corpus/pqc/java/FirmwareSignLms.java",
+      "families": [
+        "SHA-256"
+      ],
+      "note": "the hash inside the parameter-set name"
+    },
+    {
+      "file": "corpus/pqc/java/UpdateSignXmss.java",
+      "families": [
+        "SHA-256"
+      ],
+      "note": "the hash inside the parameter-set name"
+    },
+    {
+      "file": "corpus/pqc/assets/firmware/signing-policy.yaml",
+      "families": [
+        "SHA-256"
+      ],
+      "note": "the hash inside the parameter-set name"
+    },
+    {
+      "file": "corpus/tier1/csharp/RsaSign/Program.cs",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "corpus/tier1/csharp/MacKdf/Program.cs",
+      "families": [
+        "SHA-256",
+        "SHA-512"
+      ]
+    },
+    {
+      "file": "corpus/tier2/csharp/KeyFactory/Program.cs",
+      "families": [
+        "SHA-256"
+      ]
+    },
+    {
+      "file": "corpus/tier2/csharp/CurveSwitch/Program.cs",
+      "families": [
+        "SHA-512"
+      ]
+    },
+    {
+      "file": "corpus/tier5/javascript/dist/session-tokens.min.js",
+      "families": [
+        "SHA-256"
+      ],
+      "note": "the digest inside crypto.sign"
+    },
+    {
       "file": "corpus/custom/example_envelope/envelope/wrap_transport.py",
       "families": [
         "SHA-256"
@@ -12793,6 +13743,20 @@
         "not_after": "2027-02-02T00:00:00Z",
         "sig_oid": "1.2.840.10045.4.3.3"
       }
+    },
+    {
+      "id": "M-pq-lms-pub",
+      "kind": "public-key",
+      "file": "corpus/pqc/assets/keys/bootloader_lms_pub.pem",
+      "key": "PQ-AS-23",
+      "format": "SPKI PEM"
+    },
+    {
+      "id": "M-pq-xmss-pub",
+      "kind": "public-key",
+      "file": "corpus/pqc/assets/keys/update_xmss_pub.pem",
+      "key": "PQ-AS-24",
+      "format": "SPKI PEM"
     }
   ],
   "links": [

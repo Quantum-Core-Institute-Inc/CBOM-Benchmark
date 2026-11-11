@@ -44,6 +44,10 @@ FAMILIES = {
     "ML-DSA":            {"primitive": "signature",     "shor": False, "pq": True},
     "SLH-DSA":           {"primitive": "signature",     "shor": False, "pq": True},
     "FN-DSA":            {"primitive": "signature",     "shor": False, "pq": True},
+    # Stateful hash-based signatures (NIST SP 800-208): quantum-safe, approved for firmware signing
+    # by CNSA 2.0, and dangerous if the state is ever reused, which is why an inventory needs them.
+    "LMS":               {"primitive": "signature",     "shor": False, "pq": True, "stateful": True},
+    "XMSS":              {"primitive": "signature",     "shor": False, "pq": True, "stateful": True},
     # Hybrid key-establishment groups: a classical and a post-quantum exchange combined. Each is
     # its own family. Reporting only the classical half calls a migrated endpoint vulnerable;
     # reporting only the PQ half overstates what was deployed.
@@ -57,6 +61,9 @@ PQ_PARAM_FAMILIES = {"ML-KEM", "ML-DSA", "SLH-DSA"}
 PQ_LEVELS = {"ML-KEM": {"512": 1, "768": 3, "1024": 5}, "ML-DSA": {"44": 2, "65": 3, "87": 5}}
 HYBRID_LEVELS = {"X25519MLKEM768": 3, "SecP256r1MLKEM768": 3, "SecP384r1MLKEM1024": 5}
 PQ_OIDS = {
+    "1.2.840.113549.1.9.16.3.17": ("LMS", None),          # id-alg-hss-lms-hashsig (RFC 8708)
+    "1.3.6.1.5.5.7.6.34": ("XMSS", None), "1.3.6.1.5.5.7.6.35": ("XMSS", None),   # RFC 9802 (XMSS, XMSS^MT)
+    "0.4.0.127.0.15.1.1.13.0": ("XMSS", None), "0.4.0.127.0.15.1.1.14.0": ("XMSS", None),
     "2.16.840.1.101.3.4.3.17": ("ML-DSA", "44"), "2.16.840.1.101.3.4.3.18": ("ML-DSA", "65"),
     "2.16.840.1.101.3.4.3.19": ("ML-DSA", "87"), "2.16.840.1.101.3.4.4.1": ("ML-KEM", "512"),
     "2.16.840.1.101.3.4.4.2": ("ML-KEM", "768"), "2.16.840.1.101.3.4.4.3": ("ML-KEM", "1024"),
@@ -174,8 +181,8 @@ def _mode(s: str) -> str | None:
     for m in _MODES:
         if m in tokens:
             return m
-    for m in _MODES:  # e.g. "AESGCM", "AES256GCM"
-        if s.upper().endswith(m):
+    for m in _MODES:  # e.g. "AESGCM", "AES256GCM", and IKE's "AES256GCM16" (tag length suffix)
+        if re.sub(r"(?<=GCM|CCM)(8|12|16)$", "", s.upper()).endswith(m):
             return m
     return None
 
@@ -277,8 +284,14 @@ def normalize(name: str, props: dict | None = None) -> tuple[str, dict]:
             return finish(fam)
     if raw in PQ_OIDS:
         fam, ps = PQ_OIDS[raw]
-        params["param_set"] = ps
+        if ps:
+            params["param_set"] = ps
         return finish(fam)
+    # Stateful hash-based signatures, before the hash rules: "LMS_SHA256_M32_H10" is LMS, not SHA-256.
+    if re.search(r"XMSS", u):
+        return finish("XMSS")
+    if re.search(r"(^|[^A-Z])(HSS|LMS|LMOTS)([^A-Z]|$)|HSS[-_/]?LMS", u):
+        return finish("LMS")
     m = re.search(r"ML[-_]?KEM[-_.]?(?:GENERATEKEY)?(512|768|1024)?|KYBER[-_]?(512|768|1024)?", u)
     if m:
         ps = m.group(1) or m.group(2)
@@ -300,6 +313,8 @@ def normalize(name: str, props: dict | None = None) -> tuple[str, dict]:
             params["param_set"] = ps
         return finish("SLH-DSA")
 
+    if "RFC2898" in u:  # .NET's name for PBKDF2 (Rfc2898DeriveBytes)
+        u = u.replace("RFC2898DERIVEBYTES", "PBKDF2").replace("RFC2898", "PBKDF2")
     if "PBKDF2" in u:
         h = norm_hash(u.split("PBKDF2", 1)[1])
         if h:
@@ -348,7 +363,7 @@ def normalize(name: str, props: dict | None = None) -> tuple[str, dict]:
         if m:
             params["mode"] = m
         return finish("AES")
-    if re.search(r"ECDSA|ECDH|^EC$|^ECC|^EC[-_]|EC(?=P\d)", u) or _curve(u) and "RSA" not in u:
+    if re.search(r"ECDSA|ECDH|ECDIFFIE|^EC$|^ECC|^EC[-_]|EC(?=P\d)", u) or _curve(u) and "RSA" not in u:
         c = _curve(u)
         if c:
             params["curve"] = c
@@ -366,6 +381,9 @@ def normalize(name: str, props: dict | None = None) -> tuple[str, dict]:
     modp = re.fullmatch(r"MODP[-_]?(\d+)", u)  # RFC 3526 group numbers (Node's getDiffieHellman)
     if modp and modp.group(1) in MODP_BITS:
         params["key_size"] = MODP_BITS[modp.group(1)]
+        return finish("DH")
+    if modp and int(modp.group(1)) >= 768:  # IKE spelling: the modulus size itself (modp2048)
+        params["key_size"] = int(modp.group(1))
         return finish("DH")
     if re.search(r"^(FF)?DHE?($|[-_\d])|DIFFIE", u):
         ks = _first_int(u, range(512, 16385))
