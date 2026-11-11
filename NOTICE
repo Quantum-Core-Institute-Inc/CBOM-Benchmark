@@ -1,0 +1,8 @@
+QCI CBOM Benchmark
+Copyright 2026 Quantum Core Institute Inc.
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). This covers the tools, the test
+corpus, the answer key, the policies and the documentation.
+
+The certificates, keys and keystores under corpus/ are test fixtures generated for this benchmark.
+They protect nothing and must not be used for anything else.
