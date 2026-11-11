@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- **Third-party scanners run on GitHub.** `.github/workflows/third-party-scanners.yml` installs
+  cbom-scan 0.1.0, pqcheck 0.1.0 and quantascan 1.0.1 at pinned versions, runs each in the sandbox
+  (no network, benchmark tree hidden) and uploads a verifiable evidence bundle. The workflow holds
+  no secrets. Results are artifacts, not published columns: `integrations/third-party/README.md`
+  says what has to be read before one goes into the comparison, and which scanners were looked
+  at and left out.
+
 ## 2.4.0 (2026-11-11): more of what's deployed
 
 55 new findings, 393 in all. No scoring rule changed, so the methodology stays 2.3; the release, the

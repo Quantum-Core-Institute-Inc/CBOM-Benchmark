@@ -1,0 +1,109 @@
+# Runs open-source CBOM scanners that QCI doesn't maintain against the corpus and uploads an
+# evidence bundle for each. Nothing here is published into reports/ or the README: a third-party
+# result goes into the comparison only after someone has read the bundle (see
+# integrations/third-party/README.md).
+#
+# There are no secrets in this workflow and no holdout seed, so the scanner is installed and run
+# in one job. The run itself still happens in the sandbox: no network, the benchmark tree and
+# answer key hidden, limits applied, input hashed before and after.
+name: third-party scanners
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/third-party-scanners.yml
+      - integrations/third-party/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: third-party-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false          # one scanner breaking says nothing about the others
+      matrix:
+        include:
+          - id: cbom-scan
+            name: cbom-scan 0.1.0
+            version: "0.1.0"
+            ecosystem: pip
+            package: cbom-scan==0.1.0
+            cmd: "cbom-scan scan {corpus} --format json --fail-on never --output {out}/cbom.json"
+          - id: pqcheck
+            name: pqcheck 0.1.0
+            version: "0.1.0"
+            ecosystem: pip
+            package: pqcheck==0.1.0
+            cmd: "pqcheck scan {corpus} --format cbom --output {out}/cbom.json"
+          - id: quantascan
+            name: quantascan 1.0.1
+            version: "1.0.1"
+            ecosystem: npm
+            package: quantascan@1.0.1
+            cmd: "quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v4
+        if: matrix.ecosystem == 'npm'
+        with:
+          node-version: "22.18"
+
+      - name: Benchmark dependencies (pinned)
+        run: pip install -r requirements.txt
+
+      - name: Install the scanner (pinned; this is the only step that needs the network)
+        run: |
+          SCANNER_HOME="$RUNNER_TEMP/scanner"
+          if [ "${{ matrix.ecosystem }}" = "pip" ]; then
+            python -m venv "$SCANNER_HOME"
+            "$SCANNER_HOME/bin/pip" install --no-input "${{ matrix.package }}"
+            "$SCANNER_HOME/bin/pip" freeze > scanner-packages.txt
+            echo "$SCANNER_HOME/bin" >> "$GITHUB_PATH"
+          else
+            mkdir -p "$SCANNER_HOME" && cd "$SCANNER_HOME"
+            npm install --no-audit --no-fund --ignore-scripts "${{ matrix.package }}"
+            npm ls --all > "$GITHUB_WORKSPACE/scanner-packages.txt" || true
+            echo "$SCANNER_HOME/node_modules/.bin" >> "$GITHUB_PATH"
+          fi
+          echo "SCANNER_HOME=$SCANNER_HOME" >> "$GITHUB_ENV"
+
+      - name: Allow unprivileged user namespaces (the sandbox needs them on ubuntu-24.04 runners)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      - name: Scan, score and bundle, in the sandbox
+        run: |
+          python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
+            --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 \
+            --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" \
+            --bundle "bundle/${{ matrix.id }}"
+
+      - name: The bundle re-derives
+        run: python tools/bench.py verify "bundle/${{ matrix.id }}"
+
+      - name: Summary
+        if: always()
+        run: |
+          B="bundle/${{ matrix.id }}"
+          {
+            echo "## ${{ matrix.name }}"
+            if [ -f "$B/scorecard.md" ]; then sed -n '1,60p' "$B/scorecard.md"; else echo "No scorecard: see run.log in the artifact."; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bundle-${{ matrix.id }}
+          path: |
+            bundle/${{ matrix.id }}
+            scanner-packages.txt
+          if-no-files-found: warn
