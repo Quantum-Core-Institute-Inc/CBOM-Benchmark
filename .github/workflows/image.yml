@@ -1,0 +1,101 @@
+# Builds the release image from the real base images, without publishing anything, and runs the
+# required checks inside it with no network. The release workflow does the same on a tag; this one
+# does it before the tag, so a broken base image, apt step or toolchain stage is found on a pull
+# request instead of on a release.
+#
+# Runs when something the image depends on changes, weekly (base image tags move), and on demand.
+name: image
+
+on:
+  pull_request:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - requirements.txt
+      - requirements-verify.txt
+      - tools/verify_corpus.py
+      - tools/sandbox.py
+      - corpus/**
+      - .github/workflows/image.yml
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: image-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Resolve the base image digests
+        run: |
+          # The Dockerfile pins bases by tag. Record what each tag points at today, so a build that
+          # breaks next week can be compared with the one that passed.
+          {
+            echo "| Base image | Digest |"; echo "|---|---|"
+            grep -E '^ARG [A-Z]+_IMAGE=' Dockerfile | cut -d= -f2 | while read -r ref; do
+              digest="$(docker buildx imagetools inspect "$ref" --format '{{json .Manifest.Digest}}' | tr -d '"')"
+              test -n "$digest"
+              echo "| \`$ref\` | \`$digest\` |"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Build the image (the strict corpus check runs as its last step)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          push: false
+          tags: cbom-benchmark:ci
+          provenance: false
+          sbom: false
+
+      - name: Toolchains in the image
+        run: |
+          docker run --rm --entrypoint cat cbom-benchmark:ci /testbench/TOOLCHAINS.json | tee toolchains.json
+          # Every toolchain the corpus check needs must have reported a version.
+          python3 - <<'PY'
+          import json, sys
+          t = json.load(open("toolchains.json"))
+          missing = [k for k in ("python", "go", "node", "javac", "dotnet", "bcprov", "cc", "openssl") if not str(t.get(k, "")).strip()]
+          print("missing:", missing or "none")
+          sys.exit(1 if missing else 0)
+          PY
+          { echo '```json'; cat toolchains.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Required checks, inside the image, no network
+        run: |
+          mkdir -p evidence
+          docker run --rm --network none --cap-add SYS_ADMIN --security-opt apparmor=unconfined \
+            -v "$PWD/evidence:/evidence" cbom-benchmark:ci checks --out /evidence/checks.json
+
+      - name: The sandbox refuses to run unconfined without the capability
+        run: |
+          # Without SYS_ADMIN the image can't make its filesystem boundary; --require-isolation must
+          # then refuse, not run the scanner unconfined.
+          if docker run --rm --network none cbom-benchmark:ci run --name probe --scanner-version ci \
+               --scanner-cmd "cp /testbench/expected/expected.cdx.json {out}/cbom.json" \
+               --require-isolation --bundle /tmp/probe > probe.log 2>&1; then
+            cat probe.log; echo "ran without a filesystem boundary"; exit 1
+          fi
+          # It has to have failed for that reason, not some other one.
+          grep -q "filesystem boundary was required\|required isolation not available" probe.log || { cat probe.log; exit 1; }
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: image-checks
+          path: |
+            evidence/checks.json
+            toolchains.json
+          if-no-files-found: warn

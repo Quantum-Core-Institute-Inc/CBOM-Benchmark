@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- **The image is built before the tag.** `.github/workflows/image.yml` builds the Dockerfile from the
+  real base images on any pull request that touches it (and weekly, and on demand), records the
+  digest each base tag resolved to, requires every toolchain to report a version, runs the required
+  checks inside the image with no network, and confirms the sandbox refuses to run unconfined when
+  the container lacks the capability it needs. Nothing is published.
+
 ## 2.4.0 (2026-11-11): more of what's deployed
 
 55 new findings, 393 in all. No scoring rule changed, so the methodology stays 2.3; the release, the

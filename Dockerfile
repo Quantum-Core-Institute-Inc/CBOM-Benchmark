@@ -16,9 +16,10 @@
 #
 # Tested without the official base images (the build environment couldn't pull them): this file
 # builds and passes its strict corpus check against stand-in bases with the same layout, and the
-# release workflow's container steps pass against that image. What a tagged build on GitHub adds is
-# the real bases, the apt step and the digest. Since 2.4.0 that also covers the .NET SDK stage and
-# the Debian Bouncy Castle package, neither of which could be pulled here.
+# release workflow's container steps pass against that image. The real bases, the apt step, the
+# .NET SDK stage and the Debian Bouncy Castle package are built and checked on GitHub by
+# .github/workflows/image.yml (pull requests that touch the image, weekly, and on demand), which
+# also records the digest each base tag resolved to. A tagged release adds the published digest.
 #
 # Base images are pinned by tag here. The release workflow resolves and records their digests and
 # the digest of the built image; pin by digest (image@sha256:...) once a release is cut.
