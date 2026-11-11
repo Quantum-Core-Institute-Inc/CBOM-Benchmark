@@ -168,7 +168,7 @@
   "regressions_outside": {
     "lost": [],
     "gained": [],
-    "false_positives_before": 1,
-    "false_positives_after": 1
+    "false_positives_before": 3,
+    "false_positives_after": 3
   }
 }

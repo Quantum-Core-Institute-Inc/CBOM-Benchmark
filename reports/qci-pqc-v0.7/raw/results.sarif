@@ -8542,6 +8542,25 @@
           ]
         },
         {
+          "ruleId": "qci/PQC-Dependency",
+          "level": "warning",
+          "message": {
+            "text": "PQC-Dependency (pqc) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pqc/java/FirmwareSignLms.java"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/ML-KEM-1024",
           "level": "warning",
           "message": {
@@ -8726,6 +8745,25 @@
                 },
                 "region": {
                   "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/PQC-Dependency",
+          "level": "warning",
+          "message": {
+            "text": "PQC-Dependency (pqc) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pqc/java/UpdateSignXmss.java"
+                },
+                "region": {
+                  "startLine": 15
                 }
               }
             }
@@ -11734,6 +11772,82 @@
           ]
         },
         {
+          "ruleId": "qci/AES",
+          "level": "warning",
+          "message": {
+            "text": "AES (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/csharp/AesGcmSeal/Program.cs"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DSA",
+          "level": "error",
+          "message": {
+            "text": "DSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/csharp/DsaLegacy/Program.cs"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/PBKDF2",
+          "level": "warning",
+          "message": {
+            "text": "PBKDF2 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/csharp/MacKdf/Program.cs"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/3DES",
+          "level": "warning",
+          "message": {
+            "text": "3DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/csharp/TripleDesLegacy/Program.cs"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/DSA",
           "level": "error",
           "message": {
@@ -12868,6 +12982,25 @@
                 },
                 "region": {
                   "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier2/csharp/HashByName/Program.cs"
+                },
+                "region": {
+                  "startLine": 7
                 }
               }
             }
@@ -14109,6 +14242,44 @@
           ]
         },
         {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/ipsec/ipsec.conf"
+                },
+                "region": {
+                  "startLine": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/ChaCha20-Poly1305",
+          "level": "warning",
+          "message": {
+            "text": "ChaCha20-Poly1305 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/ipsec/swanctl.conf"
+                },
+                "region": {
+                  "startLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/PKCS8",
           "level": "warning",
           "message": {
@@ -14451,6 +14622,82 @@
           ]
         },
         {
+          "ruleId": "qci/DH",
+          "level": "error",
+          "message": {
+            "text": "DH (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SSH-Modern-Cipher",
+          "level": "warning",
+          "message": {
+            "text": "SSH-Modern-Cipher (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS-Cert-Config",
+          "level": "warning",
+          "message": {
+            "text": "TLS-Cert-Config (unknown) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS-Weak-Protocol",
+          "level": "warning",
+          "message": {
+            "text": "TLS-Weak-Protocol (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/TLS-Cert-Config",
           "level": "warning",
           "message": {
@@ -14692,6 +14939,44 @@
                 },
                 "region": {
                   "startLine": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/meterd"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DH",
+          "level": "error",
+          "message": {
+            "text": "DH (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/meterd"
+                },
+                "region": {
+                  "startLine": 65
                 }
               }
             }

@@ -40,7 +40,8 @@ ABBR = {"python": "PY", "java": "JV", "go": "GO", "javascript": "JS", "typescrip
 
 def hand_cells(gt: dict) -> Counter:
     return Counter((f["tier"], f["lang"], f["family"]) for f in gt["findings"]
-                   if f["tier"] in (1, 2) and not f.get("calibration") and not f["family"].startswith(ho.UNCOVERED))
+                   if f["tier"] in (1, 2) and not f.get("calibration") and not f["family"].startswith(ho.UNCOVERED)
+                   and f["lang"] in ABBR)  # a language with no generator (C#, so far) gets no calibration cases
 
 
 def one_case(lang: str, tier: int, family: str, rng: random.Random, names: Names, fid: str, k: int = 0):

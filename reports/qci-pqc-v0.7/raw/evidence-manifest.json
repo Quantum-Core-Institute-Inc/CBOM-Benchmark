@@ -1,20 +1,20 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "597725037fcd5ddb08f43ec502eebde64251357ee7e831134ec8ffc8f9aa8903",
-      "size": 1513057
+      "sha256": "3f2c4e28169f864a59e86c43589972fe15ae15db43910cd6667b5f33aeee0b14",
+      "size": 1541419
     },
     "findings.json": {
-      "sha256": "723299f34af64399946401d73019e923e73a7725c4259f94dc7732969b478f47",
-      "size": 248184
+      "sha256": "becbde96aa3941045c5562978a5578b8c940049871cd6b8ab82dfd83a22ace4a",
+      "size": 252114
     },
     "report.html": {
-      "sha256": "fca93802b92b858cc724093c5be79ca392fb67e2d25126add78d3c0338331dc1",
-      "size": 371018
+      "sha256": "083917f663e72cb41f06feab893192f8e141a4759d4d009de47a9b5a56545a89",
+      "size": 376844
     },
     "results.sarif": {
-      "sha256": "895033529942a731d7a628d2bbb93deaac599d9a476a33a5dec8b8b8e9e2e337",
-      "size": 380364
+      "sha256": "113ef9fffd832f5b1fb82853d4147199474f731ff65fa84dc6eacae0da901ec6",
+      "size": 387600
     }
   },
   "generated": null,
@@ -22,7 +22,7 @@
   "ruleset_hash": "3ac86d1e15812efb",
   "scanner_version": "0.7.0",
   "summary": {
-    "findings": 775,
+    "findings": 790,
     "project": "corpus",
     "readiness_score": 0.0,
     "reproducible": true,

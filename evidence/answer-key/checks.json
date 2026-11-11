@@ -1,16 +1,16 @@
 {
-  "testbench": "2.3.0",
+  "testbench": "2.4.0",
   "methodology": "2.3",
   "stamp": {
-    "release": "2.3.0",
+    "release": "2.4.0",
     "methodology": "2.3",
-    "findings": 338,
-    "answer_key": "9e3fdc9bed8b4bf4",
-    "corpus": "069efaeef382b6bd",
-    "scorer": "09d445faf1a63801",
-    "policy": "nist:732cd8a8d8f317e9"
+    "findings": 393,
+    "answer_key": "c9f27be6d6a5098a",
+    "corpus": "a0087dc174d516e4",
+    "scorer": "4449df0c3850c51f",
+    "policy": "nist:c78f618c306e7d48"
   },
-  "created": "2026-11-11T19:21:13Z",
+  "created": "2026-11-11T20:24:02Z",
   "image": null,
   "host": {
     "python": "3.13.18",
@@ -22,7 +22,7 @@
     "checks": 19,
     "passed": 19,
     "corpus": {
-      "passed": 500,
+      "passed": 523,
       "failed": 0,
       "skipped": 0
     }
@@ -31,14 +31,14 @@
     {
       "name": "corpus executes (strict)",
       "status": "pass",
-      "detail": "All 500 corpus cases execute (0 failed, 0 skipped).",
-      "seconds": 151.0
+      "detail": "All 523 corpus cases execute (0 failed, 0 skipped).",
+      "seconds": 162.5
     },
     {
       "name": "answer key reproducible",
       "status": "pass",
       "detail": "byte-identical",
-      "seconds": 0.8
+      "seconds": 0.7
     },
     {
       "name": "mixed files reproducible",
@@ -56,7 +56,7 @@
       "name": "reference replays to 100%",
       "status": "pass",
       "detail": "recall 100.0, params 100.0, FP 0",
-      "seconds": 2.9
+      "seconds": 3.0
     },
     {
       "name": "docs match scorecards",
@@ -68,7 +68,7 @@
       "name": "tests: test_bench",
       "status": "pass",
       "detail": "All bench checks pass.",
-      "seconds": 119.1
+      "seconds": 119.7
     },
     {
       "name": "tests: test_cdxgen_adapter",
@@ -80,7 +80,7 @@
       "name": "tests: test_compare",
       "status": "pass",
       "detail": "All comparison checks pass.",
-      "seconds": 5.7
+      "seconds": 6.3
     },
     {
       "name": "tests: test_gates",
@@ -92,31 +92,31 @@
       "name": "tests: test_holdout",
       "status": "pass",
       "detail": "holdout checks: all pass",
-      "seconds": 36.2
+      "seconds": 33.2
     },
     {
       "name": "tests: test_libraries",
       "status": "pass",
       "detail": "All library checks pass.",
-      "seconds": 0.0
+      "seconds": 0.1
     },
     {
       "name": "tests: test_linkage",
       "status": "pass",
       "detail": "All linkage checks pass.",
-      "seconds": 13.7
+      "seconds": 16.4
     },
     {
       "name": "tests: test_normalize",
       "status": "pass",
-      "detail": "130/130 normalizer cases pass",
+      "detail": "149/149 normalizer cases pass",
       "seconds": 0.0
     },
     {
       "name": "tests: test_policy",
       "status": "pass",
       "detail": "41/41 policy checks pass",
-      "seconds": 7.9
+      "seconds": 9.3
     },
     {
       "name": "tests: test_qci_adapter",
@@ -128,30 +128,35 @@
       "name": "tests: test_remediation",
       "status": "pass",
       "detail": "All remediation checks pass.",
-      "seconds": 14.8
+      "seconds": 16.1
     },
     {
       "name": "tests: test_sandbox",
       "status": "pass",
       "detail": "Sandbox checks: all pass",
-      "seconds": 6.5
+      "seconds": 6.4
     },
     {
       "name": "tests: test_scorer",
       "status": "pass",
       "detail": "All scorer checks pass.",
-      "seconds": 96.4
+      "seconds": 103.9
     }
   ],
   "corpus_verification": {
     "areas": {
       "Assets and other": {
-        "passed": 27,
+        "passed": 29,
         "failed": 0,
         "skipped": 0
       },
       "C": {
-        "passed": 81,
+        "passed": 82,
+        "failed": 0,
+        "skipped": 0
+      },
+      "C#": {
+        "passed": 16,
         "failed": 0,
         "skipped": 0
       },
@@ -166,12 +171,12 @@
         "skipped": 0
       },
       "Java": {
-        "passed": 103,
+        "passed": 106,
         "failed": 0,
         "skipped": 0
       },
       "JavaScript/TypeScript": {
-        "passed": 79,
+        "passed": 80,
         "failed": 0,
         "skipped": 0
       },
@@ -187,7 +192,7 @@
       }
     },
     "total": {
-      "passed": 500,
+      "passed": 523,
       "failed": 0,
       "skipped": 0
     },

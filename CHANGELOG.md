@@ -28,6 +28,10 @@ Every scanner rescanned; gates rebaselined; evidence rebuilt.
 - **Toolchain.** The corpus check needs the .NET 8 SDK and Bouncy Castle's provider jar
   (`libbcprov-java`); CI and the Dockerfile install both. The Dockerfile's new .NET stage is
   untested here, like the rest of the image.
+- **QCI v2.3.4 on the new cases:** 68.6% recall in scope (74.7% on 2.3.0), two new false positives,
+  three gates failed. Details in `integrations/qci-pqc/FINDINGS.md`.
+- **Fixes.** The docs check reports a missing or half-written evidence bundle instead of crashing on
+  it. Calibration cases are only generated for languages that have a generator.
 - **Not covered by the holdout generator.** None of the above has a generator yet, so these 55
   findings don't enter the overfit gap (HOLDOUT.md says so).
 

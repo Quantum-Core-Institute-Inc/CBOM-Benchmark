@@ -11871,6 +11871,193 @@
       "evidence": {
         "occurrences": [
           {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-543",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "mode": "gcm",
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-544",
+      "name": "DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 21
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-545",
+      "name": "EC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 22
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-546",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-547",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 9
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 14
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-548",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-549",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 16
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 17
+          },
+          {
+            "location": "corpus/negatives/csharp/StringsAndComments/Program.cs",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-550",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
             "location": "corpus/negatives/go/strings/main.go",
             "line": 11
           }
@@ -11879,7 +12066,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-543",
+      "bom-ref": "grep-551",
       "name": "DSA-3072",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -11900,7 +12087,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-544",
+      "bom-ref": "grep-552",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -11920,7 +12107,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-545",
+      "bom-ref": "grep-553",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -11939,7 +12126,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-546",
+      "bom-ref": "grep-554",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -11958,7 +12145,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-547",
+      "bom-ref": "grep-555",
       "name": "RSA-3072",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -11983,7 +12170,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-548",
+      "bom-ref": "grep-556",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12003,7 +12190,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-549",
+      "bom-ref": "grep-557",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12023,7 +12210,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-550",
+      "bom-ref": "grep-558",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12042,7 +12229,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-551",
+      "bom-ref": "grep-559",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12078,7 +12265,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-552",
+      "bom-ref": "grep-560",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12106,7 +12293,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-553",
+      "bom-ref": "grep-561",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12126,7 +12313,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-554",
+      "bom-ref": "grep-562",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12146,7 +12333,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-555",
+      "bom-ref": "grep-563",
       "name": "AES-256-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12172,7 +12359,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-556",
+      "bom-ref": "grep-564",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12192,7 +12379,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-557",
+      "bom-ref": "grep-565",
       "name": "ECC-P-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12213,7 +12400,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-558",
+      "bom-ref": "grep-566",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12249,7 +12436,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-559",
+      "bom-ref": "grep-567",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12268,7 +12455,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-560",
+      "bom-ref": "grep-568",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12287,7 +12474,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-561",
+      "bom-ref": "grep-569",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12316,7 +12503,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-562",
+      "bom-ref": "grep-570",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12344,7 +12531,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-563",
+      "bom-ref": "grep-571",
       "name": "AES-256-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12366,7 +12553,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-564",
+      "bom-ref": "grep-572",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12385,7 +12572,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-565",
+      "bom-ref": "grep-573",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12406,7 +12593,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-566",
+      "bom-ref": "grep-574",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12426,7 +12613,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-567",
+      "bom-ref": "grep-575",
       "name": "3DES-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12447,7 +12634,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-568",
+      "bom-ref": "grep-576",
       "name": "AES-256-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12473,7 +12660,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-569",
+      "bom-ref": "grep-577",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12493,7 +12680,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-570",
+      "bom-ref": "grep-578",
       "name": "EC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12513,7 +12700,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-571",
+      "bom-ref": "grep-579",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12541,7 +12728,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-572",
+      "bom-ref": "grep-580",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12560,7 +12747,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-573",
+      "bom-ref": "grep-581",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12583,7 +12770,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-574",
+      "bom-ref": "grep-582",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12616,7 +12803,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-575",
+      "bom-ref": "grep-583",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12648,7 +12835,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-576",
+      "bom-ref": "grep-584",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12668,7 +12855,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-577",
+      "bom-ref": "grep-585",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12700,7 +12887,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-578",
+      "bom-ref": "grep-586",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12720,7 +12907,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-579",
+      "bom-ref": "grep-587",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12740,7 +12927,51 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-580",
+      "bom-ref": "grep-588",
+      "name": "EC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 18
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-589",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 7
+          },
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-590",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12760,7 +12991,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-581",
+      "bom-ref": "grep-591",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12784,7 +13015,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-582",
+      "bom-ref": "grep-592",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12803,7 +13034,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-583",
+      "bom-ref": "grep-593",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12823,7 +13054,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-584",
+      "bom-ref": "grep-594",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12843,7 +13074,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-585",
+      "bom-ref": "grep-595",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12862,7 +13093,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-586",
+      "bom-ref": "grep-596",
       "name": "TLS-1.3",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12881,7 +13112,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-587",
+      "bom-ref": "grep-597",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12901,7 +13132,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-588",
+      "bom-ref": "grep-598",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12920,7 +13151,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-589",
+      "bom-ref": "grep-599",
       "name": "TLS-1.3",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12939,7 +13170,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-590",
+      "bom-ref": "grep-600",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12959,7 +13190,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-591",
+      "bom-ref": "grep-601",
       "name": "ECC-P-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12980,7 +13211,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-592",
+      "bom-ref": "grep-602",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -12999,7 +13230,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-593",
+      "bom-ref": "grep-603",
       "name": "TLS-1.3",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13018,7 +13249,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-594",
+      "bom-ref": "grep-604",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13038,7 +13269,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-595",
+      "bom-ref": "grep-605",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13061,7 +13292,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-596",
+      "bom-ref": "grep-606",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13080,7 +13311,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-597",
+      "bom-ref": "grep-607",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13100,7 +13331,27 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-598",
+      "bom-ref": "grep-608",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/java/FirmwareSignLms.java",
+            "line": 20
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-609",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13123,7 +13374,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-599",
+      "bom-ref": "grep-610",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13147,7 +13398,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-600",
+      "bom-ref": "grep-611",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13170,7 +13421,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-601",
+      "bom-ref": "grep-612",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13194,7 +13445,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-602",
+      "bom-ref": "grep-613",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13217,7 +13468,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-603",
+      "bom-ref": "grep-614",
       "name": "DH",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13237,7 +13488,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-604",
+      "bom-ref": "grep-615",
       "name": "ECC-P-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13262,7 +13513,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-605",
+      "bom-ref": "grep-616",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13297,7 +13548,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-606",
+      "bom-ref": "grep-617",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13320,7 +13571,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-607",
+      "bom-ref": "grep-618",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13340,7 +13591,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-608",
+      "bom-ref": "grep-619",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13368,7 +13619,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-609",
+      "bom-ref": "grep-620",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13391,7 +13642,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-610",
+      "bom-ref": "grep-621",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13414,7 +13665,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-611",
+      "bom-ref": "grep-622",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13437,7 +13688,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-612",
+      "bom-ref": "grep-623",
       "name": "DH",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13457,7 +13708,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-613",
+      "bom-ref": "grep-624",
       "name": "ECC-P-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13478,7 +13729,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-614",
+      "bom-ref": "grep-625",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13521,7 +13772,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-615",
+      "bom-ref": "grep-626",
       "name": "AES-128-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13543,7 +13794,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-616",
+      "bom-ref": "grep-627",
       "name": "ECC-P-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13564,7 +13815,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-617",
+      "bom-ref": "grep-628",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13583,7 +13834,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-618",
+      "bom-ref": "grep-629",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13603,7 +13854,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-619",
+      "bom-ref": "grep-630",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13623,7 +13874,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-620",
+      "bom-ref": "grep-631",
       "name": "AES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13643,7 +13894,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-621",
+      "bom-ref": "grep-632",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13663,7 +13914,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-622",
+      "bom-ref": "grep-633",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13683,7 +13934,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-623",
+      "bom-ref": "grep-634",
       "name": "TLS-1.2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13702,7 +13953,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-624",
+      "bom-ref": "grep-635",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13726,7 +13977,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-625",
+      "bom-ref": "grep-636",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13757,7 +14008,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-626",
+      "bom-ref": "grep-637",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13785,7 +14036,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-627",
+      "bom-ref": "grep-638",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13809,7 +14060,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-628",
+      "bom-ref": "grep-639",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13841,7 +14092,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-629",
+      "bom-ref": "grep-640",
       "name": "EC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13861,7 +14112,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-630",
+      "bom-ref": "grep-641",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13880,7 +14131,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-631",
+      "bom-ref": "grep-642",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13907,7 +14158,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-632",
+      "bom-ref": "grep-643",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13927,7 +14178,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-633",
+      "bom-ref": "grep-644",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13947,7 +14198,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-634",
+      "bom-ref": "grep-645",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -13967,7 +14218,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-635",
+      "bom-ref": "grep-646",
       "name": "AES-128-CTR",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14041,7 +14292,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-636",
+      "bom-ref": "grep-647",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14096,7 +14347,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-637",
+      "bom-ref": "grep-648",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14120,7 +14371,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-638",
+      "bom-ref": "grep-649",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14139,7 +14390,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-639",
+      "bom-ref": "grep-650",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14244,7 +14495,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-640",
+      "bom-ref": "grep-651",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14292,7 +14543,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-641",
+      "bom-ref": "grep-652",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14348,7 +14599,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-642",
+      "bom-ref": "grep-653",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14368,7 +14619,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-643",
+      "bom-ref": "grep-654",
       "name": "SHA3-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14392,7 +14643,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-644",
+      "bom-ref": "grep-655",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14416,7 +14667,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-645",
+      "bom-ref": "grep-656",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14436,7 +14687,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-646",
+      "bom-ref": "grep-657",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14455,7 +14706,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-647",
+      "bom-ref": "grep-658",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14474,7 +14725,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-648",
+      "bom-ref": "grep-659",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14494,7 +14745,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-649",
+      "bom-ref": "grep-660",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14514,7 +14765,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-650",
+      "bom-ref": "grep-661",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14534,7 +14785,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-651",
+      "bom-ref": "grep-662",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14554,7 +14805,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-652",
+      "bom-ref": "grep-663",
       "name": "SHA3-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14574,7 +14825,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-653",
+      "bom-ref": "grep-664",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14594,7 +14845,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-654",
+      "bom-ref": "grep-665",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14621,7 +14872,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-655",
+      "bom-ref": "grep-666",
       "name": "PBKDF2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14640,7 +14891,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-656",
+      "bom-ref": "grep-667",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14660,7 +14911,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-657",
+      "bom-ref": "grep-668",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14680,7 +14931,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-658",
+      "bom-ref": "grep-669",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14700,7 +14951,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-659",
+      "bom-ref": "grep-670",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14720,7 +14971,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-660",
+      "bom-ref": "grep-671",
       "name": "RSA-3072",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14749,7 +15000,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-661",
+      "bom-ref": "grep-672",
       "name": "RSA-1024",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14790,7 +15041,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-662",
+      "bom-ref": "grep-673",
       "name": "AES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14810,7 +15061,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-663",
+      "bom-ref": "grep-674",
       "name": "DES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14831,7 +15082,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-664",
+      "bom-ref": "grep-675",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14851,7 +15102,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-665",
+      "bom-ref": "grep-676",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14871,7 +15122,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-666",
+      "bom-ref": "grep-677",
       "name": "DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14891,7 +15142,357 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-667",
+      "bom-ref": "grep-678",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "cbc",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 8
+          },
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 9
+          },
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 10
+          },
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 11
+          },
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 12
+          },
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-679",
+      "name": "AES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesGcmSeal/Program.cs",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-680",
+      "name": "DSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "2048",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+            "line": 8
+          },
+          {
+            "location": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-681",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-682",
+      "name": "EC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-683",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-684",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-685",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-686",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-687",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-688",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-689",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-690",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-691",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/RsaSign/Program.cs",
+            "line": 8
+          },
+          {
+            "location": "corpus/tier1/csharp/RsaSign/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-692",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/RsaSign/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-693",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/TripleDesLegacy/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-694",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14918,7 +15519,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-668",
+      "bom-ref": "grep-695",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14941,7 +15542,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-669",
+      "bom-ref": "grep-696",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14961,7 +15562,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-670",
+      "bom-ref": "grep-697",
       "name": "DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -14989,7 +15590,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-671",
+      "bom-ref": "grep-698",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15025,7 +15626,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-672",
+      "bom-ref": "grep-699",
       "name": "EC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15053,7 +15654,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-673",
+      "bom-ref": "grep-700",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15077,7 +15678,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-674",
+      "bom-ref": "grep-701",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15109,7 +15710,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-675",
+      "bom-ref": "grep-702",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15133,7 +15734,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-676",
+      "bom-ref": "grep-703",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15157,7 +15758,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-677",
+      "bom-ref": "grep-704",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15181,7 +15782,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-678",
+      "bom-ref": "grep-705",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15204,7 +15805,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-679",
+      "bom-ref": "grep-706",
       "name": "PBKDF2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15227,7 +15828,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-680",
+      "bom-ref": "grep-707",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15251,7 +15852,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-681",
+      "bom-ref": "grep-708",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15280,7 +15881,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-682",
+      "bom-ref": "grep-709",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15308,7 +15909,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-683",
+      "bom-ref": "grep-710",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15328,7 +15929,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-684",
+      "bom-ref": "grep-711",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15351,7 +15952,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-685",
+      "bom-ref": "grep-712",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15379,7 +15980,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-686",
+      "bom-ref": "grep-713",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15399,7 +16000,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-687",
+      "bom-ref": "grep-714",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15419,7 +16020,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-688",
+      "bom-ref": "grep-715",
       "name": "AES-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15447,7 +16048,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-689",
+      "bom-ref": "grep-716",
       "name": "AES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15475,7 +16076,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-690",
+      "bom-ref": "grep-717",
       "name": "DH",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15503,7 +16104,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-691",
+      "bom-ref": "grep-718",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15543,7 +16144,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-692",
+      "bom-ref": "grep-719",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15563,7 +16164,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-693",
+      "bom-ref": "grep-720",
       "name": "ECC-P-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15608,7 +16209,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-694",
+      "bom-ref": "grep-721",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15628,7 +16229,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-695",
+      "bom-ref": "grep-722",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15648,7 +16249,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-696",
+      "bom-ref": "grep-723",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15668,7 +16269,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-697",
+      "bom-ref": "grep-724",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15688,7 +16289,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-698",
+      "bom-ref": "grep-725",
       "name": "SHA3-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15708,7 +16309,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-699",
+      "bom-ref": "grep-726",
       "name": "3DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15733,7 +16334,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-700",
+      "bom-ref": "grep-727",
       "name": "DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15766,7 +16367,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-701",
+      "bom-ref": "grep-728",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15793,7 +16394,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-702",
+      "bom-ref": "grep-729",
       "name": "PBKDF2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15812,7 +16413,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-703",
+      "bom-ref": "grep-730",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15840,7 +16441,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-704",
+      "bom-ref": "grep-731",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15864,7 +16465,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-705",
+      "bom-ref": "grep-732",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15888,7 +16489,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-706",
+      "bom-ref": "grep-733",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15912,7 +16513,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-707",
+      "bom-ref": "grep-734",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15932,7 +16533,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-708",
+      "bom-ref": "grep-735",
       "name": "AES-128-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15954,7 +16555,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-709",
+      "bom-ref": "grep-736",
       "name": "AES-256-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15976,7 +16577,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-710",
+      "bom-ref": "grep-737",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -15996,7 +16597,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-711",
+      "bom-ref": "grep-738",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16016,7 +16617,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-712",
+      "bom-ref": "grep-739",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16036,7 +16637,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-713",
+      "bom-ref": "grep-740",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16056,7 +16657,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-714",
+      "bom-ref": "grep-741",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16076,7 +16677,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-715",
+      "bom-ref": "grep-742",
       "name": "SHA3-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16096,7 +16697,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-716",
+      "bom-ref": "grep-743",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16119,7 +16720,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-717",
+      "bom-ref": "grep-744",
       "name": "PBKDF2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16142,7 +16743,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-718",
+      "bom-ref": "grep-745",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16162,7 +16763,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-719",
+      "bom-ref": "grep-746",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16182,7 +16783,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-720",
+      "bom-ref": "grep-747",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16206,7 +16807,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-721",
+      "bom-ref": "grep-748",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16227,7 +16828,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-722",
+      "bom-ref": "grep-749",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16247,7 +16848,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-723",
+      "bom-ref": "grep-750",
       "name": "DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16268,7 +16869,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-724",
+      "bom-ref": "grep-751",
       "name": "RSA-3072",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16289,7 +16890,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-725",
+      "bom-ref": "grep-752",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16309,7 +16910,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-726",
+      "bom-ref": "grep-753",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16329,7 +16930,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-727",
+      "bom-ref": "grep-754",
       "name": "AES-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16349,7 +16950,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-728",
+      "bom-ref": "grep-755",
       "name": "AES-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16374,7 +16975,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-729",
+      "bom-ref": "grep-756",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16398,7 +16999,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-730",
+      "bom-ref": "grep-757",
       "name": "DH-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16419,7 +17020,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-731",
+      "bom-ref": "grep-758",
       "name": "DSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16448,7 +17049,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-732",
+      "bom-ref": "grep-759",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16468,7 +17069,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-733",
+      "bom-ref": "grep-760",
       "name": "ECC-P-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16493,7 +17094,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-734",
+      "bom-ref": "grep-761",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16513,7 +17114,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-735",
+      "bom-ref": "grep-762",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16533,7 +17134,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-736",
+      "bom-ref": "grep-763",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16553,7 +17154,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-737",
+      "bom-ref": "grep-764",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16573,7 +17174,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-738",
+      "bom-ref": "grep-765",
       "name": "SHA3-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16593,7 +17194,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-739",
+      "bom-ref": "grep-766",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16624,7 +17225,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-740",
+      "bom-ref": "grep-767",
       "name": "PBKDF2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16647,7 +17248,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-741",
+      "bom-ref": "grep-768",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16671,7 +17272,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-742",
+      "bom-ref": "grep-769",
       "name": "Ed25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16695,7 +17296,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-743",
+      "bom-ref": "grep-770",
       "name": "ML-KEM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16714,7 +17315,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-744",
+      "bom-ref": "grep-771",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16746,7 +17347,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-745",
+      "bom-ref": "grep-772",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16766,7 +17367,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-746",
+      "bom-ref": "grep-773",
       "name": "ML-DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16785,7 +17386,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-747",
+      "bom-ref": "grep-774",
       "name": "RSA-2048",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16810,7 +17411,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-748",
+      "bom-ref": "grep-775",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16834,7 +17435,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-749",
+      "bom-ref": "grep-776",
       "name": "3DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16859,7 +17460,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-750",
+      "bom-ref": "grep-777",
       "name": "DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16879,7 +17480,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-751",
+      "bom-ref": "grep-778",
       "name": "ECC-P-521",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16900,7 +17501,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-752",
+      "bom-ref": "grep-779",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16920,7 +17521,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-753",
+      "bom-ref": "grep-780",
       "name": "AES-192-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16942,7 +17543,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-754",
+      "bom-ref": "grep-781",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16965,7 +17566,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-755",
+      "bom-ref": "grep-782",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -16985,7 +17586,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-756",
+      "bom-ref": "grep-783",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17009,7 +17610,158 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-757",
+      "bom-ref": "grep-784",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 11
+          },
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 12
+          },
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 13
+          },
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 14
+          },
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 15
+          },
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 16
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-785",
+      "name": "EC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/CurveSwitch/Program.cs",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-786",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/DispatchTable/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-787",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/HashByName/Program.cs",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-788",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 11
+          },
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 12
+          },
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 16
+          },
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-789",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-790",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17029,7 +17781,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-758",
+      "bom-ref": "grep-791",
       "name": "DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17053,7 +17805,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-759",
+      "bom-ref": "grep-792",
       "name": "EC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17077,7 +17829,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-760",
+      "bom-ref": "grep-793",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17101,7 +17853,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-761",
+      "bom-ref": "grep-794",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17124,7 +17876,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-762",
+      "bom-ref": "grep-795",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17148,7 +17900,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-763",
+      "bom-ref": "grep-796",
       "name": "RSA-1024",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17181,7 +17933,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-764",
+      "bom-ref": "grep-797",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17204,7 +17956,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-765",
+      "bom-ref": "grep-798",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17224,7 +17976,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-766",
+      "bom-ref": "grep-799",
       "name": "ECC-P-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17249,7 +18001,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-767",
+      "bom-ref": "grep-800",
       "name": "DSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17273,7 +18025,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-768",
+      "bom-ref": "grep-801",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17293,7 +18045,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-769",
+      "bom-ref": "grep-802",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17313,7 +18065,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-770",
+      "bom-ref": "grep-803",
       "name": "AES-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17333,7 +18085,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-771",
+      "bom-ref": "grep-804",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17353,7 +18105,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-772",
+      "bom-ref": "grep-805",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17373,7 +18125,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-773",
+      "bom-ref": "grep-806",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17392,7 +18144,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-774",
+      "bom-ref": "grep-807",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17412,7 +18164,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-775",
+      "bom-ref": "grep-808",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17432,7 +18184,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-776",
+      "bom-ref": "grep-809",
       "name": "ECC-P-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17461,7 +18213,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-777",
+      "bom-ref": "grep-810",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17481,7 +18233,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-778",
+      "bom-ref": "grep-811",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17501,7 +18253,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-779",
+      "bom-ref": "grep-812",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17521,7 +18273,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-780",
+      "bom-ref": "grep-813",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17541,7 +18293,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-781",
+      "bom-ref": "grep-814",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17564,7 +18316,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-782",
+      "bom-ref": "grep-815",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17584,7 +18336,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-783",
+      "bom-ref": "grep-816",
       "name": "AES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17604,7 +18356,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-784",
+      "bom-ref": "grep-817",
       "name": "DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17625,7 +18377,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-785",
+      "bom-ref": "grep-818",
       "name": "ECC-P-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17646,7 +18398,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-786",
+      "bom-ref": "grep-819",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17666,7 +18418,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-787",
+      "bom-ref": "grep-820",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17686,7 +18438,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-788",
+      "bom-ref": "grep-821",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17706,7 +18458,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-789",
+      "bom-ref": "grep-822",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17729,7 +18481,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-790",
+      "bom-ref": "grep-823",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17749,7 +18501,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-791",
+      "bom-ref": "grep-824",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17768,7 +18520,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-792",
+      "bom-ref": "grep-825",
       "name": "AES-128-ECB",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17790,7 +18542,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-793",
+      "bom-ref": "grep-826",
       "name": "AES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17810,7 +18562,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-794",
+      "bom-ref": "grep-827",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17830,7 +18582,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-795",
+      "bom-ref": "grep-828",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17850,7 +18602,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-796",
+      "bom-ref": "grep-829",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17870,7 +18622,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-797",
+      "bom-ref": "grep-830",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17897,7 +18649,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-798",
+      "bom-ref": "grep-831",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17917,7 +18669,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-799",
+      "bom-ref": "grep-832",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17937,7 +18689,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-800",
+      "bom-ref": "grep-833",
       "name": "AES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17969,7 +18721,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-801",
+      "bom-ref": "grep-834",
       "name": "3DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -17989,7 +18741,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-802",
+      "bom-ref": "grep-835",
       "name": "AES-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18010,7 +18762,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-803",
+      "bom-ref": "grep-836",
       "name": "3DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18043,7 +18795,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-804",
+      "bom-ref": "grep-837",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18063,7 +18815,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-805",
+      "bom-ref": "grep-838",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18087,7 +18839,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-806",
+      "bom-ref": "grep-839",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18110,7 +18862,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-807",
+      "bom-ref": "grep-840",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18130,7 +18882,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-808",
+      "bom-ref": "grep-841",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18150,7 +18902,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-809",
+      "bom-ref": "grep-842",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18170,7 +18922,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-810",
+      "bom-ref": "grep-843",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18193,7 +18945,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-811",
+      "bom-ref": "grep-844",
       "name": "AES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18213,7 +18965,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-812",
+      "bom-ref": "grep-845",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18237,7 +18989,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-813",
+      "bom-ref": "grep-846",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18261,7 +19013,149 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-814",
+      "bom-ref": "grep-847",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-848",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-849",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12
+          },
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-850",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-851",
+      "name": "ChaCha20-Poly1305",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-852",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-853",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-854",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18281,7 +19175,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-815",
+      "bom-ref": "grep-855",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18301,7 +19195,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-816",
+      "bom-ref": "grep-856",
       "name": "AES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18321,7 +19215,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-817",
+      "bom-ref": "grep-857",
       "name": "ChaCha20-Poly1305",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18341,7 +19235,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-818",
+      "bom-ref": "grep-858",
       "name": "DH",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18361,7 +19255,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-819",
+      "bom-ref": "grep-859",
       "name": "HMAC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18380,7 +19274,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-820",
+      "bom-ref": "grep-860",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18408,7 +19302,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-821",
+      "bom-ref": "grep-861",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18432,7 +19326,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-822",
+      "bom-ref": "grep-862",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18452,7 +19346,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-823",
+      "bom-ref": "grep-863",
       "name": "X25519",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18472,7 +19366,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-824",
+      "bom-ref": "grep-864",
       "name": "AES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18495,7 +19389,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-825",
+      "bom-ref": "grep-865",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18519,7 +19413,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-826",
+      "bom-ref": "grep-866",
       "name": "SHA-384",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18539,7 +19433,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-827",
+      "bom-ref": "grep-867",
       "name": "TLS-1.1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18558,7 +19452,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-828",
+      "bom-ref": "grep-868",
       "name": "TLS-1.2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18577,7 +19471,272 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-829",
+      "bom-ref": "grep-869",
+      "name": "AES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 7
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-870",
+      "name": "ChaCha20-Poly1305",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-871",
+      "name": "EC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-872",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 7
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-873",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 4
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-874",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-875",
+      "name": "AES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-876",
+      "name": "DES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "gcm",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-877",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-878",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 4
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-879",
+      "name": "SSL-2.0",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-880",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-881",
+      "name": "TLS-1.2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-882",
       "name": "AES-GCM",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18597,7 +19756,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-830",
+      "bom-ref": "grep-883",
       "name": "DES-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18622,7 +19781,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-831",
+      "bom-ref": "grep-884",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18642,7 +19801,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-832",
+      "bom-ref": "grep-885",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18662,7 +19821,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-833",
+      "bom-ref": "grep-886",
       "name": "SSL-3.0",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18681,7 +19840,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-834",
+      "bom-ref": "grep-887",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18704,7 +19863,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-835",
+      "bom-ref": "grep-888",
       "name": "TLS-1.1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18723,7 +19882,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-836",
+      "bom-ref": "grep-889",
       "name": "TLS-1.2",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18742,7 +19901,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-837",
+      "bom-ref": "grep-890",
       "name": "SHA-1",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18762,7 +19921,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-838",
+      "bom-ref": "grep-891",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -18775,6 +19934,153 @@
           {
             "location": "corpus/tier4/assets/tls/openssl.cnf",
             "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-892",
+      "name": "DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-893",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-894",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd",
+            "line": 8
+          },
+          {
+            "location": "corpus/tier5/c/bin/meterd",
+            "line": 77
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-895",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "cbc",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-896",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-897",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "1024",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-898",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
           }
         ]
       }

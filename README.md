@@ -81,9 +81,9 @@ Two calibration points ship with it:
 <!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
 | Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
 |---|---|---|---|---|---|---|---|---|---|
-| `expected/expected.cdx.json` (the answer key) | 338 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
-| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 338 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 73.7% | 73.7% |
-| `tools/baseline_grep.py` (naive regex) | 338 | 69.2% | 64.8% | 55.1% | 159 | 59.5% | 28 | 50.9% | 35.2% |
+| `expected/expected.cdx.json` (the answer key) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
+| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
+| `tools/baseline_grep.py` (naive regex) | 393 | 67.4% | 63.6% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.4% |
 
 Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
 <!-- /generated:calibration-points -->
@@ -95,13 +95,16 @@ Grep by tier, which is the shape you should expect a weak scanner to have:
 |---|---|---|---|---|
 | 1. Direct, Python and Java | 32 | 100% | 100% | 56.2–75% |
 | 1. Direct, Go / JavaScript / C | 57 | 65–82.4% | 65–82.4% | 42.9–85.7% |
+| 1. Direct, C# | 13 | 92.3% | 92.3% | 58.3% |
 | 2. Indirection, Python and Java | 17 | 100% | 87.5–88.9% | 50–55.6% |
 | 2. Indirection, Go / TypeScript / C | 19 | 83.3–100% | 83.3–100% | 33.3–60% |
+| 2. Indirection, C# | 6 | 83.3% | 83.3% | 40% |
 | 3. Cross-file | 16 | 100% | 42.9–55.6% | 33.3–42.9% |
-| 4. Non-code assets | 46 | 32.6% | 32.6% | 66.7% |
-| 5. Adversarial | 17 | 0% | 0% | n/a |
-| PQC, code | 14 | 50–100% | 50–100% | 25–50% |
-| PQC, assets | 22 | 40.9% | 40.9% | 100% |
+| 4. Non-code assets | 66 | 34.8% | 34.8% | 69.6% |
+| 5. Adversarial, source and bytecode | 20 | 0% | 0% | n/a |
+| 5. Adversarial, minified JS and native binary | 6 | 66.7–100% | 66.7–100% | 50–100% |
+| PQC, code | 16 | 50–100% | 50–100% | 25–50% |
+| PQC, assets | 27 | 37% | 37% | 90% |
 | Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
 | System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |
 | Dead code | 10 | 50–100% | 50–100% | 100% |
