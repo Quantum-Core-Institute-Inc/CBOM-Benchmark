@@ -35447,7 +35447,7 @@
     }
   ],
   "manifest": {
-    "release": "2.4.0",
+    "release": "2.4.1",
     "methodology": "2.3",
     "findings": 393,
     "answer_key": "c9f27be6d6a5098a",
@@ -35460,7 +35460,7 @@
     "finding_set": "3fcb732598bba9b6",
     "scope": null,
     "scanner": "grep baseline",
-    "scanner_version": "benchmark 2.4.0",
+    "scanner_version": "benchmark 2.4.1",
     "adapter": null
   }
 }

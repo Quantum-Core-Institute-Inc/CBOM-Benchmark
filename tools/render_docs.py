@@ -38,26 +38,20 @@ CALIBRATION = [
 ]
 GREP = "reports/baseline_grep.json"
 COMPARISON = {
-    "scanners": [("QCI v2.3.4", "reports/qci-pqc/scorecard-full.json"),
-                 ("QCI v2.2", "reports/qci-pqc-v2.2/scorecard-full.json"),
-                 ("QCI v0.7", "reports/qci-pqc-v0.7/scorecard-full.json"),
+    "scanners": [("QCI v2.3.4.1", "reports/qci-pqc/scorecard-full.json"),
                  ("cdxgen 12.9.1", "reports/cdxgen/scorecard.json")],
     "baselines": [("grep baseline", "reports/baseline_grep.json")],
 }
 DOCS = ["README.md"]
 # Each published scorecard has an evidence bundle; their headline numbers must agree.
-EVIDENCE = {"reports/qci-pqc/scorecard.json": "evidence/qci-v2.3.4",
-            "reports/qci-pqc-v2.2/scorecard.json": "evidence/qci-v2.2",
-            "reports/qci-pqc-v0.7/scorecard.json": "evidence/qci-v0.7",
+EVIDENCE = {"reports/qci-pqc/scorecard.json": "evidence/qci-v2.3.4.1",
             "reports/cdxgen/scorecard.json": "evidence/cdxgen-12.9.1",
             "reports/baseline_grep.json": "evidence/grep-baseline",
             "reports/reference.json": "evidence/answer-key"}
 
 
 # Fix-and-rescan and the large-repository run, per scanner: (column, run bundle, perf bundle)
-OPS = [("QCI v2.3.4", "evidence/qci-v2.3.4", "evidence/perf-qci-v2.3.4"),
-       ("QCI v2.2", "evidence/qci-v2.2", "evidence/perf-qci-v2.2"),
-       ("QCI v0.7", "evidence/qci-v0.7", "evidence/perf-qci-v0.7"),
+OPS = [("QCI v2.3.4.1", "evidence/qci-v2.3.4.1", "evidence/perf-qci-v2.3.4.1"),
        ("cdxgen 12.9.1", "evidence/cdxgen-12.9.1", "evidence/perf-cdxgen-12.9.1"),
        ("grep baseline", "evidence/grep-baseline", "evidence/perf-grep-baseline")]
 

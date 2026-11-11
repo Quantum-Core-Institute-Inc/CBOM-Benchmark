@@ -1,10 +1,10 @@
 {
   "bundle_format": 1,
-  "testbench": "2.4.0",
+  "testbench": "2.4.1",
   "methodology": "2.3",
-  "created": "2026-11-11T20:33:53Z",
+  "created": "2026-11-11T23:24:40Z",
   "stamp": {
-    "release": "2.4.0",
+    "release": "2.4.1",
     "methodology": "2.3",
     "findings": 393,
     "answer_key": "c9f27be6d6a5098a",
@@ -13,8 +13,8 @@
     "policy": "nist:c78f618c306e7d48"
   },
   "files": {
-    "METHODOLOGY.md": "8a2cfe0575db06c41c5967a2951ac82463522996e9ae91678d889615be21b79a",
-    "VERSION": "2ad7b0c3f0ede58c3165b7a8a5479e890a758d39bfe8683eaef50ce6afad7232",
+    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "VERSION": "6d850e3ac42d0dd06bfdcce9151c1e6b40f4cf5272778f63eececea27c78f0b6",
     "expected/ground_truth.json": "6954e7b555a574e229395734417bef90adf5ad5bb78941321e125ef52c8d64da",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -31,7 +31,7 @@
   },
   "scanner": {
     "name": "grep baseline",
-    "version": "benchmark 2.4.0",
+    "version": "benchmark 2.4.1",
     "cmd": [
       "python3",
       "baseline_grep.py",
@@ -72,10 +72,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 1.13,
-    "cpu_user_s": 1.08,
+    "wall_s": 1.09,
+    "cpu_user_s": 1.03,
     "cpu_sys_s": 0.04,
-    "peak_rss_mb": 32.3,
+    "peak_rss_mb": 32.2,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -122,10 +122,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 1.12,
-      "cpu_user_s": 1.07,
+      "wall_s": 1.09,
+      "cpu_user_s": 1.03,
       "cpu_sys_s": 0.05,
-      "peak_rss_mb": 73.4,
+      "peak_rss_mb": 73.6,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,

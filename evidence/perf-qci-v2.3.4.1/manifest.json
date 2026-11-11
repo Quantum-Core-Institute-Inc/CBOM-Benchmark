@@ -1,0 +1,110 @@
+{
+  "bundle_format": 1,
+  "kind": "perf",
+  "testbench": "2.4.1",
+  "methodology": "2.3",
+  "created": "2026-11-11T23:09:18Z",
+  "fixture": {
+    "seed": 2026,
+    "size": "medium",
+    "code_files": 3000,
+    "planted": 60,
+    "bytes": 17177695,
+    "families": [
+      "MD5",
+      "SHA-1",
+      "RSA",
+      "3DES"
+    ],
+    "languages": [
+      "python",
+      "java",
+      "go",
+      "javascript",
+      "c"
+    ]
+  },
+  "budget_s": 600,
+  "scanner": {
+    "name": "QCI v2.3.4.1",
+    "cmd": [
+      "qci-pqc",
+      "scan",
+      "{corpus}",
+      "--reproducible",
+      "--adapter",
+      "internal",
+      "--out",
+      "{out}",
+      "--json"
+    ],
+    "cbom": "cbom.json",
+    "adapter": "qci-pqc"
+  },
+  "image": {
+    "digest": null
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "qci-pqc",
+      "scan",
+      "corpus",
+      "--reproducible",
+      "--adapter",
+      "internal",
+      "--out",
+      "out",
+      "--json"
+    ],
+    "exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 115.28,
+    "cpu_user_s": 114.15,
+    "cpu_sys_s": 0.31,
+    "peak_rss_mb": 53.3,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+      "hidden_caller_paths": 2
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 600,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "status": "finished",
+  "within_budget": true,
+  "throughput": {
+    "files_per_s": 26.0,
+    "mb_per_s": 0.15
+  },
+  "result": {
+    "planted": 60,
+    "found": 60,
+    "recall": 100.0,
+    "recall_by_quartile": [
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "noise_files_reported": 0,
+    "coverage_falloff": false,
+    "missed": []
+  }
+}

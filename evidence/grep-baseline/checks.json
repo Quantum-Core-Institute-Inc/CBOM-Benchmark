@@ -1,8 +1,8 @@
 {
-  "testbench": "2.4.0",
+  "testbench": "2.4.1",
   "methodology": "2.3",
   "stamp": {
-    "release": "2.4.0",
+    "release": "2.4.1",
     "methodology": "2.3",
     "findings": 393,
     "answer_key": "c9f27be6d6a5098a",
@@ -10,7 +10,7 @@
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48"
   },
-  "created": "2026-11-11T20:24:02Z",
+  "created": "2026-11-11T23:22:18Z",
   "image": null,
   "host": {
     "python": "3.13.18",
@@ -32,7 +32,7 @@
       "name": "corpus executes (strict)",
       "status": "pass",
       "detail": "All 523 corpus cases execute (0 failed, 0 skipped).",
-      "seconds": 162.5
+      "seconds": 166.9
     },
     {
       "name": "answer key reproducible",
@@ -56,19 +56,19 @@
       "name": "reference replays to 100%",
       "status": "pass",
       "detail": "recall 100.0, params 100.0, FP 0",
-      "seconds": 3.0
+      "seconds": 3.2
     },
     {
       "name": "docs match scorecards",
       "status": "pass",
       "detail": "Docs match the release scorecards.",
-      "seconds": 0.8
+      "seconds": 0.7
     },
     {
       "name": "tests: test_bench",
       "status": "pass",
       "detail": "All bench checks pass.",
-      "seconds": 119.7
+      "seconds": 121.7
     },
     {
       "name": "tests: test_cdxgen_adapter",
@@ -80,7 +80,7 @@
       "name": "tests: test_compare",
       "status": "pass",
       "detail": "All comparison checks pass.",
-      "seconds": 6.3
+      "seconds": 6.2
     },
     {
       "name": "tests: test_gates",
@@ -92,19 +92,19 @@
       "name": "tests: test_holdout",
       "status": "pass",
       "detail": "holdout checks: all pass",
-      "seconds": 33.2
+      "seconds": 50.2
     },
     {
       "name": "tests: test_libraries",
       "status": "pass",
       "detail": "All library checks pass.",
-      "seconds": 0.1
+      "seconds": 0.0
     },
     {
       "name": "tests: test_linkage",
       "status": "pass",
       "detail": "All linkage checks pass.",
-      "seconds": 16.4
+      "seconds": 15.1
     },
     {
       "name": "tests: test_normalize",
@@ -116,7 +116,7 @@
       "name": "tests: test_policy",
       "status": "pass",
       "detail": "41/41 policy checks pass",
-      "seconds": 9.3
+      "seconds": 9.2
     },
     {
       "name": "tests: test_qci_adapter",
@@ -128,19 +128,19 @@
       "name": "tests: test_remediation",
       "status": "pass",
       "detail": "All remediation checks pass.",
-      "seconds": 16.1
+      "seconds": 15.5
     },
     {
       "name": "tests: test_sandbox",
       "status": "pass",
       "detail": "Sandbox checks: all pass",
-      "seconds": 6.4
+      "seconds": 2.8
     },
     {
       "name": "tests: test_scorer",
       "status": "pass",
       "detail": "All scorer checks pass.",
-      "seconds": 103.9
+      "seconds": 102.5
     }
   ],
   "corpus_verification": {

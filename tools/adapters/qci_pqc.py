@@ -1,4 +1,4 @@
-"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), built against version 0.3.0.
+"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), last checked against version 2.3.4.1.
 
 The scanner writes a schema-valid CycloneDX 1.6 CBOM (cbom.json). Its component names fall into
 two kinds, and this adapter treats them differently on purpose:
@@ -25,7 +25,7 @@ from cbomlib import FAMILIES
 from . import common
 
 ADAPTER_VERSION = "1.1"
-BUILT_FOR = "qci-pqc-scan 0.3.0 and 0.7.0"
+BUILT_FOR = "qci-pqc-scan 2.3.4.1"
 
 # QCI family name -> testbench algorithm name (scored strictly).
 EXACT = {
@@ -37,7 +37,7 @@ EXACT = {
     "ML-DSA": "ML-DSA", "ML-DSA-44": "ML-DSA-44", "ML-DSA-65": "ML-DSA-65", "ML-DSA-87": "ML-DSA-87",
     "SLH-DSA": "SLH-DSA", "FN-DSA": "FN-DSA", "Kyber-prestandard": "Kyber",
     "SSH-Ed25519-HostKey": "Ed25519",
-    # Added in 0.7.0: names that state the algorithm (and sometimes its parameters) outright.
+    # Names that state the algorithm (and sometimes its parameters) outright.
     "AES-CBC": "AES-CBC", "AES-128-CBC": "AES-128-CBC", "AES-192-CBC": "AES-192-CBC", "AES-256-CBC": "AES-256-CBC",
     "DESEDE": "3DES", "DESede": "3DES", "DH": "DH", "DSA": "DSA", "ECC-P-256": "ECC-P-256", "ECC-P-384": "ECC-P-384",
     "ECC-P-521": "ECC-P-521", "HMAC": "HMAC", "HMAC-SHA-1": "HMAC-SHA1", "HMAC-SHA-256": "HMAC-SHA256",

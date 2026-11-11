@@ -2670,6 +2670,16 @@
   },
   {
     "id": "QCI-0232",
+    "family": "SHA-1",
+    "status": "weak",
+    "path": "calibration/tier1/javascript/cal_sha1_029.js",
+    "line": 9,
+    "priority": 50,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0233",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "calibration/tier1/javascript/cal_sha1_030.js",
@@ -2682,25 +2692,12 @@
     ]
   },
   {
-    "id": "QCI-0233",
-    "family": "Node-crypto",
-    "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha256_031.js",
-    "line": 2,
-    "priority": 80,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
     "id": "QCI-0234",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha256_031.js",
-    "line": 13,
-    "priority": 30,
+    "family": "SHA-1",
+    "status": "weak",
+    "path": "calibration/tier1/javascript/cal_sha1_030.js",
+    "line": 5,
+    "priority": 50,
     "recommendation": "",
     "timeline": []
   },
@@ -2708,7 +2705,7 @@
     "id": "QCI-0235",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha256_032.js",
+    "path": "calibration/tier1/javascript/cal_sha256_031.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2721,8 +2718,8 @@
     "id": "QCI-0236",
     "family": "SHA-256",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha256_032.js",
-    "line": 9,
+    "path": "calibration/tier1/javascript/cal_sha256_031.js",
+    "line": 13,
     "priority": 30,
     "recommendation": "",
     "timeline": []
@@ -2731,7 +2728,7 @@
     "id": "QCI-0237",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha256_033.js",
+    "path": "calibration/tier1/javascript/cal_sha256_032.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2744,7 +2741,7 @@
     "id": "QCI-0238",
     "family": "SHA-256",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha256_033.js",
+    "path": "calibration/tier1/javascript/cal_sha256_032.js",
     "line": 9,
     "priority": 30,
     "recommendation": "",
@@ -2754,7 +2751,7 @@
     "id": "QCI-0239",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha3256_034.js",
+    "path": "calibration/tier1/javascript/cal_sha256_033.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2765,9 +2762,9 @@
   },
   {
     "id": "QCI-0240",
-    "family": "SHA-3",
+    "family": "SHA-256",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha3256_034.js",
+    "path": "calibration/tier1/javascript/cal_sha256_033.js",
     "line": 9,
     "priority": 30,
     "recommendation": "",
@@ -2777,7 +2774,7 @@
     "id": "QCI-0241",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha3256_035.js",
+    "path": "calibration/tier1/javascript/cal_sha3256_034.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2790,7 +2787,7 @@
     "id": "QCI-0242",
     "family": "SHA-3",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha3256_035.js",
+    "path": "calibration/tier1/javascript/cal_sha3256_034.js",
     "line": 9,
     "priority": 30,
     "recommendation": "",
@@ -2800,7 +2797,7 @@
     "id": "QCI-0243",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_sha3256_036.js",
+    "path": "calibration/tier1/javascript/cal_sha3256_035.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2813,8 +2810,8 @@
     "id": "QCI-0244",
     "family": "SHA-3",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/javascript/cal_sha3256_036.js",
-    "line": 5,
+    "path": "calibration/tier1/javascript/cal_sha3256_035.js",
+    "line": 9,
     "priority": 30,
     "recommendation": "",
     "timeline": []
@@ -2823,7 +2820,7 @@
     "id": "QCI-0245",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_x25519_037.js",
+    "path": "calibration/tier1/javascript/cal_sha3256_036.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2834,23 +2831,19 @@
   },
   {
     "id": "QCI-0246",
-    "family": "X25519",
-    "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_x25519_037.js",
+    "family": "SHA-3",
+    "status": "safe_symmetric",
+    "path": "calibration/tier1/javascript/cal_sha3256_036.js",
     "line": 5,
-    "priority": 80,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
   },
   {
     "id": "QCI-0247",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_x25519_038.js",
+    "path": "calibration/tier1/javascript/cal_x25519_037.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2863,8 +2856,8 @@
     "id": "QCI-0248",
     "family": "X25519",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_x25519_038.js",
-    "line": 13,
+    "path": "calibration/tier1/javascript/cal_x25519_037.js",
+    "line": 5,
     "priority": 80,
     "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
     "timeline": [
@@ -2877,7 +2870,7 @@
     "id": "QCI-0249",
     "family": "Node-crypto",
     "status": "vulnerable",
-    "path": "calibration/tier1/javascript/cal_x25519_039.js",
+    "path": "calibration/tier1/javascript/cal_x25519_038.js",
     "line": 2,
     "priority": 80,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -2888,6 +2881,33 @@
   },
   {
     "id": "QCI-0250",
+    "family": "X25519",
+    "status": "vulnerable",
+    "path": "calibration/tier1/javascript/cal_x25519_038.js",
+    "line": 13,
+    "priority": 80,
+    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)",
+      "Federal high-value key establishment: 31 Dec 2030"
+    ]
+  },
+  {
+    "id": "QCI-0251",
+    "family": "Node-crypto",
+    "status": "vulnerable",
+    "path": "calibration/tier1/javascript/cal_x25519_039.js",
+    "line": 2,
+    "priority": 80,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0252",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/javascript/cal_x25519_039.js",
@@ -2901,7 +2921,7 @@
     ]
   },
   {
-    "id": "QCI-0251",
+    "id": "QCI-0253",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier1/python/cal_3des_001.py",
@@ -2911,7 +2931,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0252",
+    "id": "QCI-0254",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier1/python/cal_3des_002.py",
@@ -2921,7 +2941,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0253",
+    "id": "QCI-0255",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier1/python/cal_3des_003.py",
@@ -2931,7 +2951,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0254",
+    "id": "QCI-0256",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_aes_004.py",
@@ -2941,7 +2961,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0255",
+    "id": "QCI-0257",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_aes_005.py",
@@ -2951,7 +2971,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0256",
+    "id": "QCI-0258",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_chacha20poly1305_006.py",
@@ -2961,7 +2981,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0257",
+    "id": "QCI-0259",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_chacha20poly1305_007.py",
@@ -2971,7 +2991,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0258",
+    "id": "QCI-0260",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_chacha20poly1305_008.py",
@@ -2981,7 +3001,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0259",
+    "id": "QCI-0261",
     "family": "DH",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dh_009.py",
@@ -2995,7 +3015,7 @@
     ]
   },
   {
-    "id": "QCI-0260",
+    "id": "QCI-0262",
     "family": "DH",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dh_010.py",
@@ -3009,7 +3029,7 @@
     ]
   },
   {
-    "id": "QCI-0261",
+    "id": "QCI-0263",
     "family": "DH",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dh_011.py",
@@ -3023,7 +3043,7 @@
     ]
   },
   {
-    "id": "QCI-0262",
+    "id": "QCI-0264",
     "family": "DSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dsa_012.py",
@@ -3038,7 +3058,7 @@
     ]
   },
   {
-    "id": "QCI-0263",
+    "id": "QCI-0265",
     "family": "DSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dsa_013.py",
@@ -3053,7 +3073,7 @@
     ]
   },
   {
-    "id": "QCI-0264",
+    "id": "QCI-0266",
     "family": "DSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_dsa_014.py",
@@ -3068,7 +3088,7 @@
     ]
   },
   {
-    "id": "QCI-0265",
+    "id": "QCI-0267",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ec_015.py",
@@ -3083,7 +3103,7 @@
     ]
   },
   {
-    "id": "QCI-0266",
+    "id": "QCI-0268",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ec_016.py",
@@ -3098,7 +3118,7 @@
     ]
   },
   {
-    "id": "QCI-0267",
+    "id": "QCI-0269",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ec_017.py",
@@ -3113,7 +3133,7 @@
     ]
   },
   {
-    "id": "QCI-0268",
+    "id": "QCI-0270",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ed25519_018.py",
@@ -3127,7 +3147,7 @@
     ]
   },
   {
-    "id": "QCI-0269",
+    "id": "QCI-0271",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ed25519_019.py",
@@ -3141,7 +3161,7 @@
     ]
   },
   {
-    "id": "QCI-0270",
+    "id": "QCI-0272",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_ed25519_020.py",
@@ -3155,7 +3175,7 @@
     ]
   },
   {
-    "id": "QCI-0271",
+    "id": "QCI-0273",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_hmac_021.py",
@@ -3165,7 +3185,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0272",
+    "id": "QCI-0274",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_hmac_021.py",
@@ -3175,7 +3195,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0273",
+    "id": "QCI-0275",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_hmac_022.py",
@@ -3185,7 +3205,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0274",
+    "id": "QCI-0276",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier1/python/cal_hmac_022.py",
@@ -3195,7 +3215,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0275",
+    "id": "QCI-0277",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_hmac_023.py",
@@ -3205,7 +3225,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0276",
+    "id": "QCI-0278",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_hmac_023.py",
@@ -3215,7 +3235,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0277",
+    "id": "QCI-0279",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier1/python/cal_md5_024.py",
@@ -3225,7 +3245,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0278",
+    "id": "QCI-0280",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier1/python/cal_md5_025.py",
@@ -3235,7 +3255,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0279",
+    "id": "QCI-0281",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier1/python/cal_md5_026.py",
@@ -3245,28 +3265,8 @@
     "timeline": []
   },
   {
-    "id": "QCI-0280",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "calibration/tier1/python/cal_pbkdf2_027.py",
-    "line": 18,
-    "priority": 40,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0281",
-    "family": "PBKDF2",
-    "status": "safe_symmetric",
-    "path": "calibration/tier1/python/cal_pbkdf2_027.py",
-    "line": 18,
-    "priority": 40,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0282",
-    "family": "SHA-256",
+    "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_pbkdf2_027.py",
     "line": 18,
@@ -3276,27 +3276,27 @@
   },
   {
     "id": "QCI-0283",
-    "family": "HMAC",
+    "family": "PBKDF2",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/python/cal_pbkdf2_028.py",
-    "line": 7,
-    "priority": 30,
+    "path": "calibration/tier1/python/cal_pbkdf2_027.py",
+    "line": 18,
+    "priority": 40,
     "recommendation": "",
     "timeline": []
   },
   {
     "id": "QCI-0284",
-    "family": "PBKDF2",
+    "family": "SHA-256",
     "status": "safe_symmetric",
-    "path": "calibration/tier1/python/cal_pbkdf2_028.py",
-    "line": 7,
-    "priority": 30,
+    "path": "calibration/tier1/python/cal_pbkdf2_027.py",
+    "line": 18,
+    "priority": 40,
     "recommendation": "",
     "timeline": []
   },
   {
     "id": "QCI-0285",
-    "family": "SHA-256",
+    "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_pbkdf2_028.py",
     "line": 7,
@@ -3306,6 +3306,26 @@
   },
   {
     "id": "QCI-0286",
+    "family": "PBKDF2",
+    "status": "safe_symmetric",
+    "path": "calibration/tier1/python/cal_pbkdf2_028.py",
+    "line": 7,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0287",
+    "family": "SHA-256",
+    "status": "safe_symmetric",
+    "path": "calibration/tier1/python/cal_pbkdf2_028.py",
+    "line": 7,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0288",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_pbkdf2_029.py",
@@ -3315,7 +3335,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0287",
+    "id": "QCI-0289",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_pbkdf2_029.py",
@@ -3325,7 +3345,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0288",
+    "id": "QCI-0290",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_pbkdf2_029.py",
@@ -3335,7 +3355,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0289",
+    "id": "QCI-0291",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_rsa_030.py",
@@ -3350,7 +3370,7 @@
     ]
   },
   {
-    "id": "QCI-0290",
+    "id": "QCI-0292",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_rsa_031.py",
@@ -3365,7 +3385,7 @@
     ]
   },
   {
-    "id": "QCI-0291",
+    "id": "QCI-0293",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_rsa_032.py",
@@ -3380,7 +3400,7 @@
     ]
   },
   {
-    "id": "QCI-0292",
+    "id": "QCI-0294",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier1/python/cal_sha1_033.py",
@@ -3390,7 +3410,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0293",
+    "id": "QCI-0295",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier1/python/cal_sha1_034.py",
@@ -3400,7 +3420,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0294",
+    "id": "QCI-0296",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier1/python/cal_sha1_035.py",
@@ -3410,7 +3430,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0295",
+    "id": "QCI-0297",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha256_036.py",
@@ -3420,7 +3440,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0296",
+    "id": "QCI-0298",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha256_037.py",
@@ -3430,7 +3450,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0297",
+    "id": "QCI-0299",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha256_038.py",
@@ -3440,7 +3460,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0298",
+    "id": "QCI-0300",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha3256_039.py",
@@ -3450,7 +3470,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0299",
+    "id": "QCI-0301",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha3256_040.py",
@@ -3460,7 +3480,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0300",
+    "id": "QCI-0302",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "calibration/tier1/python/cal_sha3256_041.py",
@@ -3470,7 +3490,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0301",
+    "id": "QCI-0303",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_x25519_042.py",
@@ -3484,7 +3504,7 @@
     ]
   },
   {
-    "id": "QCI-0302",
+    "id": "QCI-0304",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_x25519_042.py",
@@ -3498,7 +3518,7 @@
     ]
   },
   {
-    "id": "QCI-0303",
+    "id": "QCI-0305",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_x25519_043.py",
@@ -3512,7 +3532,7 @@
     ]
   },
   {
-    "id": "QCI-0304",
+    "id": "QCI-0306",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_x25519_044.py",
@@ -3526,7 +3546,7 @@
     ]
   },
   {
-    "id": "QCI-0305",
+    "id": "QCI-0307",
     "family": "X25519",
     "status": "vulnerable",
     "path": "calibration/tier1/python/cal_x25519_044.py",
@@ -3540,7 +3560,7 @@
     ]
   },
   {
-    "id": "QCI-0306",
+    "id": "QCI-0308",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier2/c/cal_3des_002.c",
@@ -3550,7 +3570,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0307",
+    "id": "QCI-0309",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier2/c/cal_3des_003.c",
@@ -3560,30 +3580,10 @@
     "timeline": []
   },
   {
-    "id": "QCI-0308",
-    "family": "MD5",
-    "status": "weak",
-    "path": "calibration/tier2/c/cal_hmac_010.c",
-    "line": 6,
-    "priority": 50,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0309",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "calibration/tier2/c/cal_hmac_010.c",
-    "line": 15,
-    "priority": 30,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0310",
     "family": "MD5",
     "status": "weak",
-    "path": "calibration/tier2/c/cal_hmac_011.c",
+    "path": "calibration/tier2/c/cal_hmac_010.c",
     "line": 6,
     "priority": 50,
     "recommendation": "",
@@ -3593,6 +3593,26 @@
     "id": "QCI-0311",
     "family": "HMAC",
     "status": "safe_symmetric",
+    "path": "calibration/tier2/c/cal_hmac_010.c",
+    "line": 15,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0312",
+    "family": "MD5",
+    "status": "weak",
+    "path": "calibration/tier2/c/cal_hmac_011.c",
+    "line": 6,
+    "priority": 50,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0313",
+    "family": "HMAC",
+    "status": "safe_symmetric",
     "path": "calibration/tier2/c/cal_hmac_011.c",
     "line": 11,
     "priority": 30,
@@ -3600,7 +3620,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0312",
+    "id": "QCI-0314",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/c/cal_hmac_012.c",
@@ -3610,7 +3630,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0313",
+    "id": "QCI-0315",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/c/cal_hmac_012.c",
@@ -3620,30 +3640,10 @@
     "timeline": []
   },
   {
-    "id": "QCI-0314",
-    "family": "3DES",
-    "status": "weak",
-    "path": "calibration/tier2/go/cal_3des_001/cal_3des_001.go",
-    "line": 6,
-    "priority": 50,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0315",
-    "family": "3DES",
-    "status": "weak",
-    "path": "calibration/tier2/go/cal_3des_001/cal_3des_001.go",
-    "line": 11,
-    "priority": 50,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0316",
     "family": "3DES",
     "status": "weak",
-    "path": "calibration/tier2/go/cal_3des_002/cal_3des_002.go",
+    "path": "calibration/tier2/go/cal_3des_001/cal_3des_001.go",
     "line": 6,
     "priority": 50,
     "recommendation": "",
@@ -3653,8 +3653,8 @@
     "id": "QCI-0317",
     "family": "3DES",
     "status": "weak",
-    "path": "calibration/tier2/go/cal_3des_002/cal_3des_002.go",
-    "line": 10,
+    "path": "calibration/tier2/go/cal_3des_001/cal_3des_001.go",
+    "line": 11,
     "priority": 50,
     "recommendation": "",
     "timeline": []
@@ -3663,7 +3663,7 @@
     "id": "QCI-0318",
     "family": "3DES",
     "status": "weak",
-    "path": "calibration/tier2/go/cal_3des_003/cal_3des_003.go",
+    "path": "calibration/tier2/go/cal_3des_002/cal_3des_002.go",
     "line": 6,
     "priority": 50,
     "recommendation": "",
@@ -3673,6 +3673,26 @@
     "id": "QCI-0319",
     "family": "3DES",
     "status": "weak",
+    "path": "calibration/tier2/go/cal_3des_002/cal_3des_002.go",
+    "line": 10,
+    "priority": 50,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0320",
+    "family": "3DES",
+    "status": "weak",
+    "path": "calibration/tier2/go/cal_3des_003/cal_3des_003.go",
+    "line": 6,
+    "priority": 50,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0321",
+    "family": "3DES",
+    "status": "weak",
     "path": "calibration/tier2/go/cal_3des_003/cal_3des_003.go",
     "line": 42,
     "priority": 50,
@@ -3680,30 +3700,10 @@
     "timeline": []
   },
   {
-    "id": "QCI-0320",
-    "family": "AES",
-    "status": "safe_symmetric",
-    "path": "calibration/tier2/go/cal_aes_004/cal_aes_004.go",
-    "line": 5,
-    "priority": 30,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0321",
-    "family": "AES",
-    "status": "safe_symmetric",
-    "path": "calibration/tier2/go/cal_aes_004/cal_aes_004.go",
-    "line": 30,
-    "priority": 30,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0322",
     "family": "AES",
     "status": "safe_symmetric",
-    "path": "calibration/tier2/go/cal_aes_005/cal_aes_005.go",
+    "path": "calibration/tier2/go/cal_aes_004/cal_aes_004.go",
     "line": 5,
     "priority": 30,
     "recommendation": "",
@@ -3713,9 +3713,9 @@
     "id": "QCI-0323",
     "family": "AES",
     "status": "safe_symmetric",
-    "path": "calibration/tier2/go/cal_aes_005/cal_aes_005.go",
-    "line": 34,
-    "priority": 40,
+    "path": "calibration/tier2/go/cal_aes_004/cal_aes_004.go",
+    "line": 30,
+    "priority": 30,
     "recommendation": "",
     "timeline": []
   },
@@ -3723,7 +3723,7 @@
     "id": "QCI-0324",
     "family": "AES",
     "status": "safe_symmetric",
-    "path": "calibration/tier2/go/cal_aes_006/cal_aes_006.go",
+    "path": "calibration/tier2/go/cal_aes_005/cal_aes_005.go",
     "line": 5,
     "priority": 30,
     "recommendation": "",
@@ -3733,6 +3733,26 @@
     "id": "QCI-0325",
     "family": "AES",
     "status": "safe_symmetric",
+    "path": "calibration/tier2/go/cal_aes_005/cal_aes_005.go",
+    "line": 34,
+    "priority": 40,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0326",
+    "family": "AES",
+    "status": "safe_symmetric",
+    "path": "calibration/tier2/go/cal_aes_006/cal_aes_006.go",
+    "line": 5,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0327",
+    "family": "AES",
+    "status": "safe_symmetric",
     "path": "calibration/tier2/go/cal_aes_006/cal_aes_006.go",
     "line": 22,
     "priority": 30,
@@ -3740,7 +3760,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0326",
+    "id": "QCI-0328",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/go/cal_ec_007/cal_ec_007.go",
@@ -3754,7 +3774,7 @@
     ]
   },
   {
-    "id": "QCI-0327",
+    "id": "QCI-0329",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/go/cal_hmac_010/cal_hmac_010.go",
@@ -3764,7 +3784,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0328",
+    "id": "QCI-0330",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/go/cal_hmac_010/cal_hmac_010.go",
@@ -3774,7 +3794,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0329",
+    "id": "QCI-0331",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/go/cal_hmac_011/cal_hmac_011.go",
@@ -3784,7 +3804,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0330",
+    "id": "QCI-0332",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/go/cal_hmac_011/cal_hmac_011.go",
@@ -3794,7 +3814,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0331",
+    "id": "QCI-0333",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/go/cal_hmac_012/cal_hmac_012.go",
@@ -3804,7 +3824,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0332",
+    "id": "QCI-0334",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/go/cal_hmac_012/cal_hmac_012.go",
@@ -3814,40 +3834,10 @@
     "timeline": []
   },
   {
-    "id": "QCI-0333",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
-    "line": 6,
-    "priority": 80,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0334",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
-    "line": 19,
-    "priority": 80,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
     "id": "QCI-0335",
     "family": "RSA",
     "status": "vulnerable",
-    "path": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
+    "path": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
     "line": 6,
     "priority": 80,
     "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
@@ -3862,8 +3852,8 @@
     "id": "QCI-0336",
     "family": "RSA",
     "status": "vulnerable",
-    "path": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
-    "line": 29,
+    "path": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
+    "line": 19,
     "priority": 80,
     "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
     "timeline": [
@@ -3877,7 +3867,7 @@
     "id": "QCI-0337",
     "family": "RSA",
     "status": "vulnerable",
-    "path": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go",
+    "path": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
     "line": 6,
     "priority": 80,
     "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
@@ -3892,6 +3882,36 @@
     "id": "QCI-0338",
     "family": "RSA",
     "status": "vulnerable",
+    "path": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
+    "line": 29,
+    "priority": 80,
+    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)",
+      "Federal high-value key establishment: 31 Dec 2030",
+      "Federal high-value signatures: 31 Dec 2031"
+    ]
+  },
+  {
+    "id": "QCI-0339",
+    "family": "RSA",
+    "status": "vulnerable",
+    "path": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go",
+    "line": 6,
+    "priority": 80,
+    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)",
+      "Federal high-value key establishment: 31 Dec 2030",
+      "Federal high-value signatures: 31 Dec 2031"
+    ]
+  },
+  {
+    "id": "QCI-0340",
+    "family": "RSA",
+    "status": "vulnerable",
     "path": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go",
     "line": 21,
     "priority": 80,
@@ -3904,7 +3924,7 @@
     ]
   },
   {
-    "id": "QCI-0339",
+    "id": "QCI-0341",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/go/cal_sha1_016/cal_sha1_016.go",
@@ -3914,7 +3934,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0340",
+    "id": "QCI-0342",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/go/cal_sha1_017/cal_sha1_017.go",
@@ -3924,7 +3944,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0341",
+    "id": "QCI-0343",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/go/cal_sha1_018/cal_sha1_018.go",
@@ -3934,7 +3954,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0342",
+    "id": "QCI-0344",
     "family": "DESede",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2001UploadConfig.java",
@@ -3944,7 +3964,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0343",
+    "id": "QCI-0345",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2001UploadConfig.java",
@@ -3954,7 +3974,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0344",
+    "id": "QCI-0346",
     "family": "DESede",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2002VoucherDefaults.java",
@@ -3964,7 +3984,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0345",
+    "id": "QCI-0347",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2002VoucherDefaults.java",
@@ -3974,7 +3994,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0346",
+    "id": "QCI-0348",
     "family": "DESede",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2003VoucherConfig.java",
@@ -3984,7 +4004,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0347",
+    "id": "QCI-0349",
     "family": "3DES",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2003VoucherConfig.java",
@@ -3994,7 +4014,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0348",
+    "id": "QCI-0350",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier2/java/Cal2004AccountSettings.java",
@@ -4004,7 +4024,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0349",
+    "id": "QCI-0351",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier2/java/Cal2005TenantSettings.java",
@@ -4014,7 +4034,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0350",
+    "id": "QCI-0352",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier2/java/Cal2006BillingOptions.java",
@@ -4024,7 +4044,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0351",
+    "id": "QCI-0353",
     "family": "DSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2009ProfileProfile.java",
@@ -4039,7 +4059,7 @@
     ]
   },
   {
-    "id": "QCI-0352",
+    "id": "QCI-0354",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2010ProfileSettings.java",
@@ -4054,7 +4074,7 @@
     ]
   },
   {
-    "id": "QCI-0353",
+    "id": "QCI-0355",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2011DeviceOptions.java",
@@ -4068,7 +4088,7 @@
     ]
   },
   {
-    "id": "QCI-0354",
+    "id": "QCI-0356",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2011DeviceOptions.java",
@@ -4083,7 +4103,7 @@
     ]
   },
   {
-    "id": "QCI-0355",
+    "id": "QCI-0357",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2012InvoiceProfile.java",
@@ -4098,7 +4118,7 @@
     ]
   },
   {
-    "id": "QCI-0356",
+    "id": "QCI-0358",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2013TenantOptions.java",
@@ -4108,7 +4128,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0357",
+    "id": "QCI-0359",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2015UploadSettings.java",
@@ -4118,7 +4138,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0358",
+    "id": "QCI-0360",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2016RecordConfig.java",
@@ -4132,7 +4152,7 @@
     ]
   },
   {
-    "id": "QCI-0359",
+    "id": "QCI-0361",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2017ReportSettings.java",
@@ -4146,7 +4166,7 @@
     ]
   },
   {
-    "id": "QCI-0360",
+    "id": "QCI-0362",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/java/Cal2018ReceiptProfile.java",
@@ -4160,7 +4180,7 @@
     ]
   },
   {
-    "id": "QCI-0361",
+    "id": "QCI-0363",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2020TenantDefaults.java",
@@ -4170,7 +4190,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0362",
+    "id": "QCI-0364",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/java/Cal2021ReportOptions.java",
@@ -4180,7 +4200,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0363",
+    "id": "QCI-0365",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier2/java/Cal2022ShipmentSettings.java",
@@ -4190,30 +4210,10 @@
     "timeline": []
   },
   {
-    "id": "QCI-0364",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "calibration/tier2/java/Cal2023TenantOptions.java",
-    "line": 1,
-    "priority": 30,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0365",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "calibration/tier2/java/Cal2023TenantOptions.java",
-    "line": 7,
-    "priority": 30,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0366",
     "family": "SHA-256",
     "status": "safe_symmetric",
-    "path": "calibration/tier2/java/Cal2024TenantSettings.java",
+    "path": "calibration/tier2/java/Cal2023TenantOptions.java",
     "line": 1,
     "priority": 30,
     "recommendation": "",
@@ -4223,6 +4223,26 @@
     "id": "QCI-0367",
     "family": "SHA-256",
     "status": "safe_symmetric",
+    "path": "calibration/tier2/java/Cal2023TenantOptions.java",
+    "line": 7,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0368",
+    "family": "SHA-256",
+    "status": "safe_symmetric",
+    "path": "calibration/tier2/java/Cal2024TenantSettings.java",
+    "line": 1,
+    "priority": 30,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0369",
+    "family": "SHA-256",
+    "status": "safe_symmetric",
     "path": "calibration/tier2/java/Cal2024TenantSettings.java",
     "line": 11,
     "priority": 30,
@@ -4230,7 +4250,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0368",
+    "id": "QCI-0370",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_aes_001.py",
@@ -4240,7 +4260,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0369",
+    "id": "QCI-0371",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_aes_002.py",
@@ -4250,7 +4270,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0370",
+    "id": "QCI-0372",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/python/cal_ec_003.py",
@@ -4264,7 +4284,7 @@
     ]
   },
   {
-    "id": "QCI-0371",
+    "id": "QCI-0373",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/python/cal_ec_003.py",
@@ -4279,7 +4299,7 @@
     ]
   },
   {
-    "id": "QCI-0372",
+    "id": "QCI-0374",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/python/cal_ec_004.py",
@@ -4294,7 +4314,7 @@
     ]
   },
   {
-    "id": "QCI-0373",
+    "id": "QCI-0375",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/python/cal_ec_005.py",
@@ -4309,7 +4329,7 @@
     ]
   },
   {
-    "id": "QCI-0374",
+    "id": "QCI-0376",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_hmac_006.py",
@@ -4319,7 +4339,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0375",
+    "id": "QCI-0377",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/python/cal_hmac_006.py",
@@ -4329,7 +4349,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0376",
+    "id": "QCI-0378",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_hmac_007.py",
@@ -4339,7 +4359,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0377",
+    "id": "QCI-0379",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/python/cal_hmac_007.py",
@@ -4349,7 +4369,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0378",
+    "id": "QCI-0380",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_hmac_008.py",
@@ -4359,7 +4379,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0379",
+    "id": "QCI-0381",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/python/cal_hmac_008.py",
@@ -4369,7 +4389,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0380",
+    "id": "QCI-0382",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/python/cal_md5_009.py",
@@ -4379,7 +4399,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0381",
+    "id": "QCI-0383",
     "family": "MD5",
     "status": "weak",
     "path": "calibration/tier2/python/cal_md5_010.py",
@@ -4389,7 +4409,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0382",
+    "id": "QCI-0384",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/python/cal_sha1_015.py",
@@ -4399,7 +4419,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0383",
+    "id": "QCI-0385",
     "family": "SHA-1",
     "status": "weak",
     "path": "calibration/tier2/python/cal_sha1_016.py",
@@ -4409,7 +4429,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0384",
+    "id": "QCI-0386",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_sha256_017.py",
@@ -4419,7 +4439,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0385",
+    "id": "QCI-0387",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_sha256_018.py",
@@ -4429,7 +4449,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0386",
+    "id": "QCI-0388",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "calibration/tier2/python/cal_sha256_019.py",
@@ -4439,7 +4459,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0387",
+    "id": "QCI-0389",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_ec_006.ts",
@@ -4454,7 +4474,7 @@
     ]
   },
   {
-    "id": "QCI-0388",
+    "id": "QCI-0390",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_ec_007.ts",
@@ -4469,7 +4489,7 @@
     ]
   },
   {
-    "id": "QCI-0389",
+    "id": "QCI-0391",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_ec_008.ts",
@@ -4484,7 +4504,7 @@
     ]
   },
   {
-    "id": "QCI-0390",
+    "id": "QCI-0392",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/typescript/cal_hmac_009.ts",
@@ -4494,7 +4514,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0391",
+    "id": "QCI-0393",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/typescript/cal_hmac_010.ts",
@@ -4504,7 +4524,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0392",
+    "id": "QCI-0394",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "calibration/tier2/typescript/cal_hmac_011.ts",
@@ -4514,7 +4534,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0393",
+    "id": "QCI-0395",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_rsa_012.ts",
@@ -4529,7 +4549,7 @@
     ]
   },
   {
-    "id": "QCI-0394",
+    "id": "QCI-0396",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_rsa_013.ts",
@@ -4544,7 +4564,7 @@
     ]
   },
   {
-    "id": "QCI-0395",
+    "id": "QCI-0397",
     "family": "RSA",
     "status": "vulnerable",
     "path": "calibration/tier2/typescript/cal_rsa_014.ts",
@@ -4559,7 +4579,7 @@
     ]
   },
   {
-    "id": "QCI-0396",
+    "id": "QCI-0398",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "custom/example_envelope/envelope/bulk_aead.py",
@@ -4569,7 +4589,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0397",
+    "id": "QCI-0399",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "custom/example_envelope/envelope/bulk_chained.py",
@@ -4579,7 +4599,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0398",
+    "id": "QCI-0400",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "custom/example_envelope/envelope/wrap_agreement.py",
@@ -4593,7 +4613,7 @@
     ]
   },
   {
-    "id": "QCI-0399",
+    "id": "QCI-0401",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "custom/example_envelope/envelope/wrap_agreement.py",
@@ -4608,7 +4628,7 @@
     ]
   },
   {
-    "id": "QCI-0400",
+    "id": "QCI-0402",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "custom/example_envelope/envelope/wrap_agreement.py",
@@ -4618,7 +4638,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0401",
+    "id": "QCI-0403",
     "family": "RSA",
     "status": "vulnerable",
     "path": "custom/example_envelope/envelope/wrap_transport.py",
@@ -4633,7 +4653,7 @@
     ]
   },
   {
-    "id": "QCI-0402",
+    "id": "QCI-0404",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "custom/example_envelope/envelope/wrap_transport.py",
@@ -4643,7 +4663,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0403",
+    "id": "QCI-0405",
     "family": "MD5",
     "status": "weak",
     "path": "deadcode/c/dead_branches.c",
@@ -4653,7 +4673,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0404",
+    "id": "QCI-0406",
     "family": "3DES",
     "status": "weak",
     "path": "deadcode/c/dead_branches.c",
@@ -4663,7 +4683,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0405",
+    "id": "QCI-0407",
     "family": "RC4",
     "status": "weak",
     "path": "deadcode/go/legacy/main.go",
@@ -4673,7 +4693,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0406",
+    "id": "QCI-0408",
     "family": "MD5",
     "status": "weak",
     "path": "deadcode/go/legacy/main.go",
@@ -4683,7 +4703,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0407",
+    "id": "QCI-0409",
     "family": "RC4",
     "status": "weak",
     "path": "deadcode/go/legacy/main.go",
@@ -4693,7 +4713,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0408",
+    "id": "QCI-0410",
     "family": "DES",
     "status": "weak",
     "path": "deadcode/java/DeadLegacy.java",
@@ -4703,7 +4723,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0409",
+    "id": "QCI-0411",
     "family": "SHA-1",
     "status": "weak",
     "path": "deadcode/java/DeadLegacy.java",
@@ -4713,7 +4733,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0410",
+    "id": "QCI-0412",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "deadcode/javascript/dead_paths.js",
@@ -4726,7 +4746,7 @@
     ]
   },
   {
-    "id": "QCI-0411",
+    "id": "QCI-0413",
     "family": "3DES",
     "status": "weak",
     "path": "deadcode/javascript/dead_paths.js",
@@ -4736,7 +4756,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0412",
+    "id": "QCI-0414",
     "family": "MD5",
     "status": "weak",
     "path": "deadcode/python/dead_export.py",
@@ -4746,7 +4766,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0413",
+    "id": "QCI-0415",
     "family": "RSA",
     "status": "vulnerable",
     "path": "deadcode/python/dead_export.py",
@@ -4761,36 +4781,10 @@
     ]
   },
   {
-    "id": "QCI-0414",
-    "family": "libsodium",
-    "status": "vulnerable",
-    "path": "deps/c-agent/CMakeLists.txt",
-    "line": 1,
-    "priority": 50,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
-    "id": "QCI-0415",
-    "family": "openssl",
-    "status": "vulnerable",
-    "path": "deps/c-agent/CMakeLists.txt",
-    "line": 1,
-    "priority": 50,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
     "id": "QCI-0416",
     "family": "libsodium",
     "status": "vulnerable",
-    "path": "deps/c-agent/conanfile.txt",
+    "path": "deps/c-agent/CMakeLists.txt",
     "line": 1,
     "priority": 50,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -4803,7 +4797,7 @@
     "id": "QCI-0417",
     "family": "openssl",
     "status": "vulnerable",
-    "path": "deps/c-agent/conanfile.txt",
+    "path": "deps/c-agent/CMakeLists.txt",
     "line": 1,
     "priority": 50,
     "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
@@ -4814,6 +4808,32 @@
   },
   {
     "id": "QCI-0418",
+    "family": "libsodium",
+    "status": "vulnerable",
+    "path": "deps/c-agent/conanfile.txt",
+    "line": 1,
+    "priority": 50,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0419",
+    "family": "openssl",
+    "status": "vulnerable",
+    "path": "deps/c-agent/conanfile.txt",
+    "line": 1,
+    "priority": 50,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0420",
     "family": "circl",
     "status": "vulnerable",
     "path": "deps/go-service/go.mod",
@@ -4826,7 +4846,7 @@
     ]
   },
   {
-    "id": "QCI-0419",
+    "id": "QCI-0421",
     "family": "github.com/golang-jwt/jwt",
     "status": "vulnerable",
     "path": "deps/go-service/go.mod",
@@ -4839,7 +4859,7 @@
     ]
   },
   {
-    "id": "QCI-0420",
+    "id": "QCI-0422",
     "family": "golang.org/x/crypto",
     "status": "vulnerable",
     "path": "deps/go-service/go.mod",
@@ -4852,7 +4872,7 @@
     ]
   },
   {
-    "id": "QCI-0421",
+    "id": "QCI-0423",
     "family": "jjwt",
     "status": "vulnerable",
     "path": "deps/java-gateway/pom.xml",
@@ -4865,7 +4885,7 @@
     ]
   },
   {
-    "id": "QCI-0422",
+    "id": "QCI-0424",
     "family": "nimbus-jose-jwt",
     "status": "vulnerable",
     "path": "deps/java-gateway/pom.xml",
@@ -4878,7 +4898,7 @@
     ]
   },
   {
-    "id": "QCI-0423",
+    "id": "QCI-0425",
     "family": "bouncycastle",
     "status": "vulnerable",
     "path": "deps/java-pq/build.gradle",
@@ -4891,7 +4911,7 @@
     ]
   },
   {
-    "id": "QCI-0424",
+    "id": "QCI-0426",
     "family": "@noble/curves",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
@@ -4904,7 +4924,7 @@
     ]
   },
   {
-    "id": "QCI-0425",
+    "id": "QCI-0427",
     "family": "@noble/hashes",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
@@ -4917,34 +4937,8 @@
     ]
   },
   {
-    "id": "QCI-0426",
-    "family": "@noble/post-quantum",
-    "status": "vulnerable",
-    "path": "deps/node-api/package-lock.json",
-    "line": 1,
-    "priority": 65,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
-    "id": "QCI-0427",
-    "family": "bcrypt",
-    "status": "vulnerable",
-    "path": "deps/node-api/package-lock.json",
-    "line": 1,
-    "priority": 65,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
     "id": "QCI-0428",
-    "family": "bcryptjs",
+    "family": "@noble/post-quantum",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -4957,7 +4951,7 @@
   },
   {
     "id": "QCI-0429",
-    "family": "crypto-js",
+    "family": "bcrypt",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -4970,7 +4964,7 @@
   },
   {
     "id": "QCI-0430",
-    "family": "jsonwebtoken",
+    "family": "bcryptjs",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -4983,7 +4977,7 @@
   },
   {
     "id": "QCI-0431",
-    "family": "jwa",
+    "family": "crypto-js",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -4996,7 +4990,7 @@
   },
   {
     "id": "QCI-0432",
-    "family": "jws",
+    "family": "jsonwebtoken",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -5009,7 +5003,7 @@
   },
   {
     "id": "QCI-0433",
-    "family": "node-forge",
+    "family": "jwa",
     "status": "vulnerable",
     "path": "deps/node-api/package-lock.json",
     "line": 1,
@@ -5022,6 +5016,32 @@
   },
   {
     "id": "QCI-0434",
+    "family": "jws",
+    "status": "vulnerable",
+    "path": "deps/node-api/package-lock.json",
+    "line": 1,
+    "priority": 65,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0435",
+    "family": "node-forge",
+    "status": "vulnerable",
+    "path": "deps/node-api/package-lock.json",
+    "line": 1,
+    "priority": 65,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0436",
     "family": "@noble/post-quantum",
     "status": "vulnerable",
     "path": "deps/node-api/package.json",
@@ -5034,34 +5054,8 @@
     ]
   },
   {
-    "id": "QCI-0435",
-    "family": "bcrypt",
-    "status": "vulnerable",
-    "path": "deps/node-api/package.json",
-    "line": 1,
-    "priority": 65,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
-    "id": "QCI-0436",
-    "family": "bcryptjs",
-    "status": "vulnerable",
-    "path": "deps/node-api/package.json",
-    "line": 1,
-    "priority": 65,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
     "id": "QCI-0437",
-    "family": "crypto-js",
+    "family": "bcrypt",
     "status": "vulnerable",
     "path": "deps/node-api/package.json",
     "line": 1,
@@ -5074,7 +5068,7 @@
   },
   {
     "id": "QCI-0438",
-    "family": "jsonwebtoken",
+    "family": "bcryptjs",
     "status": "vulnerable",
     "path": "deps/node-api/package.json",
     "line": 1,
@@ -5087,7 +5081,7 @@
   },
   {
     "id": "QCI-0439",
-    "family": "node-forge",
+    "family": "crypto-js",
     "status": "vulnerable",
     "path": "deps/node-api/package.json",
     "line": 1,
@@ -5100,6 +5094,32 @@
   },
   {
     "id": "QCI-0440",
+    "family": "jsonwebtoken",
+    "status": "vulnerable",
+    "path": "deps/node-api/package.json",
+    "line": 1,
+    "priority": 65,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0441",
+    "family": "node-forge",
+    "status": "vulnerable",
+    "path": "deps/node-api/package.json",
+    "line": 1,
+    "priority": 65,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0442",
     "family": "bcrypt",
     "status": "vulnerable",
     "path": "deps/python-billing/requirements.txt",
@@ -5112,34 +5132,8 @@
     ]
   },
   {
-    "id": "QCI-0441",
-    "family": "cryptography",
-    "status": "vulnerable",
-    "path": "deps/python-billing/requirements.txt",
-    "line": 1,
-    "priority": 50,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
-    "id": "QCI-0442",
-    "family": "paramiko",
-    "status": "vulnerable",
-    "path": "deps/python-billing/requirements.txt",
-    "line": 1,
-    "priority": 50,
-    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)"
-    ]
-  },
-  {
     "id": "QCI-0443",
-    "family": "pycryptodome",
+    "family": "cryptography",
     "status": "vulnerable",
     "path": "deps/python-billing/requirements.txt",
     "line": 1,
@@ -5152,7 +5146,7 @@
   },
   {
     "id": "QCI-0444",
-    "family": "pyjwt",
+    "family": "paramiko",
     "status": "vulnerable",
     "path": "deps/python-billing/requirements.txt",
     "line": 1,
@@ -5165,7 +5159,7 @@
   },
   {
     "id": "QCI-0445",
-    "family": "pyopenssl",
+    "family": "pycryptodome",
     "status": "vulnerable",
     "path": "deps/python-billing/requirements.txt",
     "line": 1,
@@ -5178,6 +5172,32 @@
   },
   {
     "id": "QCI-0446",
+    "family": "pyjwt",
+    "status": "vulnerable",
+    "path": "deps/python-billing/requirements.txt",
+    "line": 1,
+    "priority": 50,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0447",
+    "family": "pyopenssl",
+    "status": "vulnerable",
+    "path": "deps/python-billing/requirements.txt",
+    "line": 1,
+    "priority": 50,
+    "recommendation": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)"
+    ]
+  },
+  {
+    "id": "QCI-0448",
     "family": "cryptography",
     "status": "vulnerable",
     "path": "deps/python-signer/pyproject.toml",
@@ -5190,7 +5210,7 @@
     ]
   },
   {
-    "id": "QCI-0447",
+    "id": "QCI-0449",
     "family": "liboqs",
     "status": "vulnerable",
     "path": "deps/python-signer/pyproject.toml",
@@ -5203,7 +5223,7 @@
     ]
   },
   {
-    "id": "QCI-0448",
+    "id": "QCI-0450",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "mixed/c/audit_daemon.c",
@@ -5213,7 +5233,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0449",
+    "id": "QCI-0451",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/c/audit_daemon.c",
@@ -5223,7 +5243,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0450",
+    "id": "QCI-0452",
     "family": "3DES",
     "status": "weak",
     "path": "mixed/c/audit_daemon.c",
@@ -5233,7 +5253,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0451",
+    "id": "QCI-0453",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/c/audit_daemon.c",
@@ -5243,7 +5263,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0452",
+    "id": "QCI-0454",
     "family": "DH",
     "status": "vulnerable",
     "path": "mixed/c/audit_daemon.c",
@@ -5257,7 +5277,7 @@
     ]
   },
   {
-    "id": "QCI-0453",
+    "id": "QCI-0455",
     "family": "SHA-1",
     "status": "weak",
     "path": "mixed/c/device_daemon.c",
@@ -5267,7 +5287,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0454",
+    "id": "QCI-0456",
     "family": "MD5",
     "status": "weak",
     "path": "mixed/c/device_daemon.c",
@@ -5277,7 +5297,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0455",
+    "id": "QCI-0457",
     "family": "X25519",
     "status": "vulnerable",
     "path": "mixed/c/device_daemon.c",
@@ -5291,7 +5311,7 @@
     ]
   },
   {
-    "id": "QCI-0456",
+    "id": "QCI-0458",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/c/device_daemon.c",
@@ -5301,7 +5321,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0457",
+    "id": "QCI-0459",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/c/device_daemon.c",
@@ -5311,7 +5331,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0458",
+    "id": "QCI-0460",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/c/device_daemon.c",
@@ -5326,7 +5346,7 @@
     ]
   },
   {
-    "id": "QCI-0459",
+    "id": "QCI-0461",
     "family": "3DES",
     "status": "weak",
     "path": "mixed/c/policy_agent.c",
@@ -5336,7 +5356,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0460",
+    "id": "QCI-0462",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5350,7 +5370,7 @@
     ]
   },
   {
-    "id": "QCI-0461",
+    "id": "QCI-0463",
     "family": "RC4",
     "status": "weak",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5360,7 +5380,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0462",
+    "id": "QCI-0464",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5375,7 +5395,7 @@
     ]
   },
   {
-    "id": "QCI-0463",
+    "id": "QCI-0465",
     "family": "RC4",
     "status": "weak",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5385,7 +5405,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0464",
+    "id": "QCI-0466",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5395,7 +5415,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0465",
+    "id": "QCI-0467",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5410,7 +5430,7 @@
     ]
   },
   {
-    "id": "QCI-0466",
+    "id": "QCI-0468",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5420,7 +5440,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0467",
+    "id": "QCI-0469",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5430,7 +5450,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0468",
+    "id": "QCI-0470",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5444,7 +5464,7 @@
     ]
   },
   {
-    "id": "QCI-0469",
+    "id": "QCI-0471",
     "family": "SHA-1",
     "status": "weak",
     "path": "mixed/go/invoice_gateway/main.go",
@@ -5454,7 +5474,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0470",
+    "id": "QCI-0472",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/go/payload_worker/main.go",
@@ -5469,7 +5489,7 @@
     ]
   },
   {
-    "id": "QCI-0471",
+    "id": "QCI-0473",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "mixed/go/payload_worker/main.go",
@@ -5479,7 +5499,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0472",
+    "id": "QCI-0474",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "mixed/go/payload_worker/main.go",
@@ -5489,7 +5509,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0473",
+    "id": "QCI-0475",
     "family": "ML-KEM-768",
     "status": "pqc",
     "path": "mixed/go/payload_worker/main.go",
@@ -5499,7 +5519,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0474",
+    "id": "QCI-0476",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/go/payload_worker/main.go",
@@ -5509,7 +5529,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0475",
+    "id": "QCI-0477",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/go/payload_worker/main.go",
@@ -5524,7 +5544,7 @@
     ]
   },
   {
-    "id": "QCI-0476",
+    "id": "QCI-0478",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/go/payload_worker/main.go",
@@ -5539,7 +5559,7 @@
     ]
   },
   {
-    "id": "QCI-0477",
+    "id": "QCI-0479",
     "family": "3DES",
     "status": "weak",
     "path": "mixed/go/report_gateway/main.go",
@@ -5549,7 +5569,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0478",
+    "id": "QCI-0480",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "mixed/go/report_gateway/main.go",
@@ -5559,7 +5579,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0479",
+    "id": "QCI-0481",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/go/report_gateway/main.go",
@@ -5569,7 +5589,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0480",
+    "id": "QCI-0482",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "mixed/go/report_gateway/main.go",
@@ -5579,7 +5599,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0481",
+    "id": "QCI-0483",
     "family": "DES",
     "status": "weak",
     "path": "mixed/go/report_gateway/main.go",
@@ -5589,7 +5609,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0482",
+    "id": "QCI-0484",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/go/report_gateway/main.go",
@@ -5599,7 +5619,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0483",
+    "id": "QCI-0485",
     "family": "SHA-1",
     "status": "weak",
     "path": "mixed/go/report_gateway/main.go",
@@ -5609,7 +5629,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0484",
+    "id": "QCI-0486",
     "family": "3DES",
     "status": "weak",
     "path": "mixed/go/report_gateway/main.go",
@@ -5619,7 +5639,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0485",
+    "id": "QCI-0487",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "mixed/java/BookingOptionsModule.java",
@@ -5629,7 +5649,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0486",
+    "id": "QCI-0488",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/java/BookingOptionsModule.java",
@@ -5639,7 +5659,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0487",
+    "id": "QCI-0489",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "mixed/java/BookingOptionsModule.java",
@@ -5649,7 +5669,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0488",
+    "id": "QCI-0490",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/java/BookingOptionsModule.java",
@@ -5659,7 +5679,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0489",
+    "id": "QCI-0491",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/java/BookingOptionsModule.java",
@@ -5669,7 +5689,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0490",
+    "id": "QCI-0492",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "mixed/java/OrderDefaultsModule.java",
@@ -5679,7 +5699,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0491",
+    "id": "QCI-0493",
     "family": "DESede",
     "status": "weak",
     "path": "mixed/java/OrderDefaultsModule.java",
@@ -5689,7 +5709,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0492",
+    "id": "QCI-0494",
     "family": "3DES",
     "status": "weak",
     "path": "mixed/java/OrderDefaultsModule.java",
@@ -5699,7 +5719,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0493",
+    "id": "QCI-0495",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/java/OrderDefaultsModule.java",
@@ -5709,7 +5729,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0494",
+    "id": "QCI-0496",
     "family": "DESede",
     "status": "weak",
     "path": "mixed/java/OrderDefaultsModule.java",
@@ -5719,7 +5739,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0495",
+    "id": "QCI-0497",
     "family": "DH",
     "status": "vulnerable",
     "path": "mixed/java/VoucherProfileModule.java",
@@ -5733,7 +5753,7 @@
     ]
   },
   {
-    "id": "QCI-0496",
+    "id": "QCI-0498",
     "family": "DH",
     "status": "vulnerable",
     "path": "mixed/java/VoucherProfileModule.java",
@@ -5747,7 +5767,7 @@
     ]
   },
   {
-    "id": "QCI-0497",
+    "id": "QCI-0499",
     "family": "SHA-1",
     "status": "weak",
     "path": "mixed/java/VoucherProfileModule.java",
@@ -5757,7 +5777,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0498",
+    "id": "QCI-0500",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "mixed/java/VoucherProfileModule.java",
@@ -5767,7 +5787,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0499",
+    "id": "QCI-0501",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "mixed/javascript/device_session.js",
@@ -5780,7 +5800,7 @@
     ]
   },
   {
-    "id": "QCI-0500",
+    "id": "QCI-0502",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/javascript/device_session.js",
@@ -5790,7 +5810,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0501",
+    "id": "QCI-0503",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/javascript/device_session.js",
@@ -5800,7 +5820,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0502",
+    "id": "QCI-0504",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/javascript/device_session.js",
@@ -5815,7 +5835,7 @@
     ]
   },
   {
-    "id": "QCI-0503",
+    "id": "QCI-0505",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/javascript/device_session.js",
@@ -5830,7 +5850,7 @@
     ]
   },
   {
-    "id": "QCI-0504",
+    "id": "QCI-0506",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/javascript/device_session.js",
@@ -5840,7 +5860,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0505",
+    "id": "QCI-0507",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/javascript/partner_routes.js",
@@ -5850,7 +5870,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0506",
+    "id": "QCI-0508",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "mixed/javascript/partner_routes.js",
@@ -5863,7 +5883,7 @@
     ]
   },
   {
-    "id": "QCI-0507",
+    "id": "QCI-0509",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/javascript/partner_routes.js",
@@ -5873,7 +5893,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0508",
+    "id": "QCI-0510",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/javascript/partner_routes.js",
@@ -5883,7 +5903,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0509",
+    "id": "QCI-0511",
     "family": "DH",
     "status": "vulnerable",
     "path": "mixed/python/invoice_service.py",
@@ -5897,7 +5917,7 @@
     ]
   },
   {
-    "id": "QCI-0510",
+    "id": "QCI-0512",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/python/invoice_service.py",
@@ -5907,7 +5927,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0511",
+    "id": "QCI-0513",
     "family": "DH",
     "status": "vulnerable",
     "path": "mixed/python/invoice_service.py",
@@ -5921,7 +5941,7 @@
     ]
   },
   {
-    "id": "QCI-0512",
+    "id": "QCI-0514",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "mixed/python/invoice_service.py",
@@ -5931,7 +5951,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0513",
+    "id": "QCI-0515",
     "family": "ML-DSA",
     "status": "pqc",
     "path": "mixed/python/invoice_service.py",
@@ -5941,7 +5961,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0514",
+    "id": "QCI-0516",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
@@ -5951,32 +5971,12 @@
     "timeline": []
   },
   {
-    "id": "QCI-0515",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "mixed/python/metric_service.py",
-    "line": 39,
-    "priority": 0,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0516",
-    "family": "PBKDF2",
-    "status": "safe_symmetric",
-    "path": "mixed/python/metric_service.py",
-    "line": 39,
-    "priority": 0,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0517",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
-    "line": 83,
-    "priority": 10,
+    "line": 39,
+    "priority": 0,
     "recommendation": "",
     "timeline": []
   },
@@ -5985,14 +5985,14 @@
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
-    "line": 83,
-    "priority": 10,
+    "line": 39,
+    "priority": 0,
     "recommendation": "",
     "timeline": []
   },
   {
     "id": "QCI-0519",
-    "family": "SHA-256",
+    "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
     "line": 83,
@@ -6002,6 +6002,26 @@
   },
   {
     "id": "QCI-0520",
+    "family": "PBKDF2",
+    "status": "safe_symmetric",
+    "path": "mixed/python/metric_service.py",
+    "line": 83,
+    "priority": 10,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0521",
+    "family": "SHA-256",
+    "status": "safe_symmetric",
+    "path": "mixed/python/metric_service.py",
+    "line": 83,
+    "priority": 10,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0522",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
@@ -6011,7 +6031,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0521",
+    "id": "QCI-0523",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "mixed/python/metric_service.py",
@@ -6021,7 +6041,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0522",
+    "id": "QCI-0524",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "mixed/python/order_jobs.py",
@@ -6031,7 +6051,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0523",
+    "id": "QCI-0525",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/python/order_jobs.py",
@@ -6046,7 +6066,7 @@
     ]
   },
   {
-    "id": "QCI-0524",
+    "id": "QCI-0526",
     "family": "SHA-1",
     "status": "weak",
     "path": "mixed/python/order_jobs.py",
@@ -6056,7 +6076,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0525",
+    "id": "QCI-0527",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/python/order_jobs.py",
@@ -6071,7 +6091,7 @@
     ]
   },
   {
-    "id": "QCI-0526",
+    "id": "QCI-0528",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/python/order_jobs.py",
@@ -6081,7 +6101,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0527",
+    "id": "QCI-0529",
     "family": "RSA",
     "status": "vulnerable",
     "path": "mixed/typescript/voucher_service.ts",
@@ -6096,7 +6116,7 @@
     ]
   },
   {
-    "id": "QCI-0528",
+    "id": "QCI-0530",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "mixed/typescript/voucher_service.ts",
@@ -6111,7 +6131,7 @@
     ]
   },
   {
-    "id": "QCI-0529",
+    "id": "QCI-0531",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "mixed/typescript/voucher_service.ts",
@@ -6121,7 +6141,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0530",
+    "id": "QCI-0532",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "negatives/assets/upload_validator_fake.pem",
@@ -6131,7 +6151,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0531",
+    "id": "QCI-0533",
     "family": "ML-DSA-87",
     "status": "pqc",
     "path": "pqc/assets/certs/firmware_signing.pem",
@@ -6141,7 +6161,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0532",
+    "id": "QCI-0534",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "pqc/assets/certs/firmware_signing.pem",
@@ -6151,7 +6171,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0533",
+    "id": "QCI-0535",
     "family": "ML-DSA-65",
     "status": "pqc",
     "path": "pqc/assets/certs/migrated_leaf.pem",
@@ -6161,7 +6181,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0534",
+    "id": "QCI-0536",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "pqc/assets/certs/migrated_leaf.pem",
@@ -6171,7 +6191,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0535",
+    "id": "QCI-0537",
     "family": "sha256WithRSAEncryption",
     "status": "vulnerable",
     "path": "pqc/assets/certs/migrated_leaf.pem",
@@ -6185,7 +6205,7 @@
     ]
   },
   {
-    "id": "QCI-0536",
+    "id": "QCI-0538",
     "family": "ML-DSA-65",
     "status": "pqc",
     "path": "pqc/assets/certs/release_root_mldsa.pem",
@@ -6195,7 +6215,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0537",
+    "id": "QCI-0539",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "pqc/assets/certs/release_root_mldsa.pem",
@@ -6205,7 +6225,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0538",
+    "id": "QCI-0540",
     "family": "ML-DSA-44",
     "status": "pqc",
     "path": "pqc/assets/keys/attestation_signer.pem",
@@ -6215,7 +6235,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0539",
+    "id": "QCI-0541",
     "family": "PKCS8",
     "status": "unknown",
     "path": "pqc/assets/keys/attestation_signer.pem",
@@ -6225,7 +6245,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0540",
+    "id": "QCI-0542",
     "family": "ML-KEM-768",
     "status": "pqc",
     "path": "pqc/assets/keys/kem_recipient_pub.pem",
@@ -6235,7 +6255,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0541",
+    "id": "QCI-0543",
     "family": "SSH-Ed25519-HostKey",
     "status": "vulnerable",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6249,7 +6269,7 @@
     ]
   },
   {
-    "id": "QCI-0542",
+    "id": "QCI-0544",
     "family": "Named-Hybrid",
     "status": "hybrid",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6259,7 +6279,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0543",
+    "id": "QCI-0545",
     "family": "SSH-Classical-Kex",
     "status": "vulnerable",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6273,7 +6293,7 @@
     ]
   },
   {
-    "id": "QCI-0544",
+    "id": "QCI-0546",
     "family": "SSH-PQC-Kex",
     "status": "hybrid",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6283,7 +6303,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0545",
+    "id": "QCI-0547",
     "family": "X25519",
     "status": "vulnerable",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6297,7 +6317,7 @@
     ]
   },
   {
-    "id": "QCI-0546",
+    "id": "QCI-0548",
     "family": "X25519MLKEM768",
     "status": "hybrid",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6307,7 +6327,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0547",
+    "id": "QCI-0549",
     "family": "sntrup761x25519",
     "status": "hybrid",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6317,7 +6337,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0548",
+    "id": "QCI-0550",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6327,7 +6347,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0549",
+    "id": "QCI-0551",
     "family": "SSH-Modern-Cipher",
     "status": "safe_symmetric",
     "path": "pqc/assets/ssh/sshd_config_pq",
@@ -6337,7 +6357,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0550",
+    "id": "QCI-0552",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "pqc/assets/tls/nginx_pq.conf",
@@ -6347,7 +6367,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0551",
+    "id": "QCI-0553",
     "family": "TLS-1.3",
     "status": "safe_symmetric",
     "path": "pqc/assets/tls/nginx_pq.conf",
@@ -6357,7 +6377,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0552",
+    "id": "QCI-0554",
     "family": "Hybrid-Named",
     "status": "hybrid",
     "path": "pqc/assets/tls/nginx_pq.conf",
@@ -6367,7 +6387,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0553",
+    "id": "QCI-0555",
     "family": "X25519",
     "status": "vulnerable",
     "path": "pqc/assets/tls/nginx_pq.conf",
@@ -6381,7 +6401,7 @@
     ]
   },
   {
-    "id": "QCI-0554",
+    "id": "QCI-0556",
     "family": "X25519MLKEM768",
     "status": "hybrid",
     "path": "pqc/assets/tls/nginx_pq.conf",
@@ -6391,7 +6411,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0555",
+    "id": "QCI-0557",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "pqc/assets/tls/nginx_pq_washing.conf",
@@ -6401,7 +6421,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0556",
+    "id": "QCI-0558",
     "family": "TLS-1.3",
     "status": "safe_symmetric",
     "path": "pqc/assets/tls/nginx_pq_washing.conf",
@@ -6411,7 +6431,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0557",
+    "id": "QCI-0559",
     "family": "ECC-P-256",
     "status": "vulnerable",
     "path": "pqc/assets/tls/nginx_pq_washing.conf",
@@ -6425,7 +6445,7 @@
     ]
   },
   {
-    "id": "QCI-0558",
+    "id": "QCI-0560",
     "family": "X25519",
     "status": "vulnerable",
     "path": "pqc/assets/tls/nginx_pq_washing.conf",
@@ -6439,7 +6459,7 @@
     ]
   },
   {
-    "id": "QCI-0559",
+    "id": "QCI-0561",
     "family": "TLS-1.3",
     "status": "safe_symmetric",
     "path": "pqc/assets/tls/openssl_pq.cnf",
@@ -6449,7 +6469,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0560",
+    "id": "QCI-0562",
     "family": "ECC-P-384",
     "status": "vulnerable",
     "path": "pqc/assets/tls/openssl_pq.cnf",
@@ -6463,7 +6483,7 @@
     ]
   },
   {
-    "id": "QCI-0561",
+    "id": "QCI-0563",
     "family": "Hybrid-Named",
     "status": "hybrid",
     "path": "pqc/assets/tls/openssl_pq.cnf",
@@ -6473,7 +6493,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0562",
+    "id": "QCI-0564",
     "family": "Named-Hybrid",
     "status": "hybrid",
     "path": "pqc/assets/tls/openssl_pq.cnf",
@@ -6483,7 +6503,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0563",
+    "id": "QCI-0565",
     "family": "X25519MLKEM768",
     "status": "hybrid",
     "path": "pqc/assets/tls/openssl_pq.cnf",
@@ -6493,7 +6513,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0564",
+    "id": "QCI-0566",
     "family": "ML-KEM-1024",
     "status": "pqc",
     "path": "pqc/go/mlkem/main.go",
@@ -6503,7 +6523,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0565",
+    "id": "QCI-0567",
     "family": "TLS",
     "status": "weak",
     "path": "pqc/go/tls_hybrid/main.go",
@@ -6513,7 +6533,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0566",
+    "id": "QCI-0568",
     "family": "PQC-Dependency",
     "status": "pqc",
     "path": "pqc/java/FirmwareSignLms.java",
@@ -6523,7 +6543,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0567",
+    "id": "QCI-0569",
     "family": "ML-KEM-1024",
     "status": "pqc",
     "path": "pqc/java/PqKem.java",
@@ -6533,7 +6553,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0568",
+    "id": "QCI-0570",
     "family": "Java-PQC",
     "status": "pqc",
     "path": "pqc/java/PqParamSpec.java",
@@ -6543,7 +6563,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0569",
+    "id": "QCI-0571",
     "family": "ML-DSA",
     "status": "pqc",
     "path": "pqc/java/PqParamSpec.java",
@@ -6553,7 +6573,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0570",
+    "id": "QCI-0572",
     "family": "ML-DSA",
     "status": "pqc",
     "path": "pqc/java/PqSignature.java",
@@ -6563,7 +6583,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0571",
+    "id": "QCI-0573",
     "family": "ML-DSA-87",
     "status": "pqc",
     "path": "pqc/java/PqSignature.java",
@@ -6573,7 +6593,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0572",
+    "id": "QCI-0574",
     "family": "Java-PQC",
     "status": "pqc",
     "path": "pqc/java/PqSignature.java",
@@ -6583,7 +6603,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0573",
+    "id": "QCI-0575",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "pqc/java/PqWashing.java",
@@ -6598,7 +6618,7 @@
     ]
   },
   {
-    "id": "QCI-0574",
+    "id": "QCI-0576",
     "family": "PQC-Dependency",
     "status": "pqc",
     "path": "pqc/java/UpdateSignXmss.java",
@@ -6608,7 +6628,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0575",
+    "id": "QCI-0577",
     "family": "X25519",
     "status": "vulnerable",
     "path": "pqc/python/pq_hybrid_kem.py",
@@ -6622,7 +6642,7 @@
     ]
   },
   {
-    "id": "QCI-0576",
+    "id": "QCI-0578",
     "family": "ML-KEM",
     "status": "pqc",
     "path": "pqc/python/pq_hybrid_kem.py",
@@ -6632,7 +6652,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0577",
+    "id": "QCI-0579",
     "family": "X25519",
     "status": "vulnerable",
     "path": "pqc/python/pq_hybrid_kem.py",
@@ -6646,7 +6666,7 @@
     ]
   },
   {
-    "id": "QCI-0578",
+    "id": "QCI-0580",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "pqc/python/pq_hybrid_kem.py",
@@ -6656,7 +6676,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0579",
+    "id": "QCI-0581",
     "family": "ML-KEM",
     "status": "pqc",
     "path": "pqc/python/pq_kem.py",
@@ -6666,7 +6686,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0580",
+    "id": "QCI-0582",
     "family": "ML-KEM-1024",
     "status": "pqc",
     "path": "pqc/python/pq_level_constant.py",
@@ -6676,7 +6696,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0581",
+    "id": "QCI-0583",
     "family": "ML-DSA",
     "status": "pqc",
     "path": "pqc/python/pq_signature.py",
@@ -6686,7 +6706,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0582",
+    "id": "QCI-0584",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "pqc/python/pq_washing.py",
@@ -6701,7 +6721,7 @@
     ]
   },
   {
-    "id": "QCI-0583",
+    "id": "QCI-0585",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6711,7 +6731,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0584",
+    "id": "QCI-0586",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6721,7 +6741,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0585",
+    "id": "QCI-0587",
     "family": "TLS-1.2",
     "status": "safe_symmetric",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6731,7 +6751,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0586",
+    "id": "QCI-0588",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6741,7 +6761,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0587",
+    "id": "QCI-0589",
     "family": "SSH-Modern-Cipher",
     "status": "safe_symmetric",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6751,7 +6771,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0588",
+    "id": "QCI-0590",
     "family": "TLS-Classical-Cipher",
     "status": "vulnerable",
     "path": "system/payments-platform/edge/nginx/gateway.conf",
@@ -6764,7 +6784,7 @@
     ]
   },
   {
-    "id": "QCI-0589",
+    "id": "QCI-0591",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/edge/nginx/tls/gateway.crt",
@@ -6779,7 +6799,7 @@
     ]
   },
   {
-    "id": "QCI-0590",
+    "id": "QCI-0592",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "system/payments-platform/edge/nginx/tls/gateway.crt",
@@ -6789,7 +6809,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0591",
+    "id": "QCI-0593",
     "family": "Private-Key",
     "status": "vulnerable",
     "path": "system/payments-platform/edge/nginx/tls/gateway.key",
@@ -6803,7 +6823,7 @@
     ]
   },
   {
-    "id": "QCI-0592",
+    "id": "QCI-0594",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/edge/nginx/tls/gateway.key",
@@ -6818,7 +6838,7 @@
     ]
   },
   {
-    "id": "QCI-0593",
+    "id": "QCI-0595",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/infra/terraform/kms.tf",
@@ -6833,7 +6853,7 @@
     ]
   },
   {
-    "id": "QCI-0594",
+    "id": "QCI-0596",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "system/payments-platform/infra/terraform/kms.tf",
@@ -6847,7 +6867,7 @@
     ]
   },
   {
-    "id": "QCI-0595",
+    "id": "QCI-0597",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/infra/terraform/kms.tf",
@@ -6862,7 +6882,7 @@
     ]
   },
   {
-    "id": "QCI-0596",
+    "id": "QCI-0598",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/infra/terraform/kms.tf",
@@ -6877,7 +6897,7 @@
     ]
   },
   {
-    "id": "QCI-0597",
+    "id": "QCI-0599",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/infra/terraform/kms.tf",
@@ -6892,36 +6912,11 @@
     ]
   },
   {
-    "id": "QCI-0598",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
-    "line": 8,
-    "priority": 50,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0599",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
-    "line": 10,
-    "priority": 0,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
     "id": "QCI-0600",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
-    "line": 44,
+    "line": 8,
     "priority": 50,
     "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
     "timeline": [
@@ -6936,13 +6931,38 @@
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
-    "line": 48,
+    "line": 10,
     "priority": 0,
     "recommendation": "",
     "timeline": []
   },
   {
     "id": "QCI-0602",
+    "family": "RSA",
+    "status": "vulnerable",
+    "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+    "line": 44,
+    "priority": 50,
+    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
+    "timeline": [
+      "Deprecated after 2030 (IR 8547)",
+      "Disallowed after 2035 (IR 8547)",
+      "Federal high-value key establishment: 31 Dec 2030",
+      "Federal high-value signatures: 31 Dec 2031"
+    ]
+  },
+  {
+    "id": "QCI-0603",
+    "family": "SHA-256",
+    "status": "safe_symmetric",
+    "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+    "line": 48,
+    "priority": 0,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0604",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
@@ -6952,7 +6972,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0603",
+    "id": "QCI-0605",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "system/payments-platform/libs/cryptokit/java/com/acme/cryptokit/CryptoKit.java",
@@ -6967,7 +6987,7 @@
     ]
   },
   {
-    "id": "QCI-0604",
+    "id": "QCI-0606",
     "family": "SHA-1",
     "status": "weak",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
@@ -6977,7 +6997,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0605",
+    "id": "QCI-0607",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
@@ -6987,7 +7007,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0606",
+    "id": "QCI-0608",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
@@ -6997,7 +7017,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0607",
+    "id": "QCI-0609",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
@@ -7007,7 +7027,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0608",
+    "id": "QCI-0610",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
@@ -7017,760 +7037,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0609",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 348,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0610",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 1461,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
     "id": "QCI-0611",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 1912,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0612",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 4654,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0613",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 4675,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0614",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5013,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0615",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5218,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0616",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5235,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0617",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5239,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0618",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5249,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0619",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 5264,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0620",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 6065,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0621",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 7065,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0622",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 7072,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0623",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 10688,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0624",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 10945,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0625",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 11763,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0626",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 12417,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0627",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 12746,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0628",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 12895,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0629",
-    "family": "SHA3-384",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 12895,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0630",
-    "family": "SHA3-512",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 12895,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0631",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13070,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0632",
-    "family": "SHA-1",
-    "status": "weak",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13226,
-    "priority": 35,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0633",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13300,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0634",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13514,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0635",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13514,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0636",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 13521,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0637",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14665,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0638",
-    "family": "SHA3-384",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14666,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0639",
-    "family": "SHA3-512",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14666,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0640",
-    "family": "RIPEMD-160",
-    "status": "weak",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14670,
-    "priority": 35,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0641",
-    "family": "SHAKE128",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14670,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0642",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14672,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0643",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14675,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0644",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14684,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0645",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14686,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0646",
-    "family": "AES",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14691,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0647",
-    "family": "AES",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14693,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0648",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14693,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0649",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14699,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0650",
-    "family": "SHA-1",
-    "status": "weak",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14700,
-    "priority": 35,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0651",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14702,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0652",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14702,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0653",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14708,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0654",
-    "family": "AES",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14709,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0655",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 14709,
-    "priority": 15,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0656",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0657",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0658",
-    "family": "SHA-1",
-    "status": "weak",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 65,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0659",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0660",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0661",
-    "family": "SHA-512",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0662",
-    "family": "SHAKE128",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16796,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0663",
-    "family": "HMAC",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16986,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0664",
-    "family": "RSA",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16986,
-    "priority": 95,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030",
-      "Federal high-value signatures: 31 Dec 2031"
-    ]
-  },
-  {
-    "id": "QCI-0665",
-    "family": "SHA-1",
-    "status": "weak",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16986,
-    "priority": 65,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0666",
-    "family": "SHA-256",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16986,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0667",
-    "family": "SHA-3",
-    "status": "safe_symmetric",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 16986,
-    "priority": 45,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0668",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 49070,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0669",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 50098,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0670",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "line": 53217,
-    "priority": 65,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0671",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "system/payments-platform/services/api-gateway/main.go",
@@ -7780,7 +7047,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0672",
+    "id": "QCI-0612",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "system/payments-platform/services/api-gateway/main.go",
@@ -7790,7 +7057,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0673",
+    "id": "QCI-0613",
     "family": "bouncycastle",
     "status": "vulnerable",
     "path": "system/payments-platform/services/ledger-service/build.gradle",
@@ -7803,7 +7070,7 @@
     ]
   },
   {
-    "id": "QCI-0674",
+    "id": "QCI-0614",
     "family": "SHA-1",
     "status": "weak",
     "path": "system/payments-platform/services/ledger-service/src/main/java/com/acme/ledger/LedgerService.java",
@@ -7813,7 +7080,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0675",
+    "id": "QCI-0615",
     "family": "RSA",
     "status": "vulnerable",
     "path": "system/payments-platform/services/settlement-worker/partner_ca.py",
@@ -7828,7 +7095,7 @@
     ]
   },
   {
-    "id": "QCI-0676",
+    "id": "QCI-0616",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "system/payments-platform/services/settlement-worker/partner_ca.py",
@@ -7838,7 +7105,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0677",
+    "id": "QCI-0617",
     "family": "cryptography",
     "status": "vulnerable",
     "path": "system/payments-platform/services/settlement-worker/requirements.txt",
@@ -7851,7 +7118,7 @@
     ]
   },
   {
-    "id": "QCI-0678",
+    "id": "QCI-0618",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_aes_ecb.c",
@@ -7861,7 +7128,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0679",
+    "id": "QCI-0619",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_aes_gcm.c",
@@ -7871,7 +7138,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0680",
+    "id": "QCI-0620",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_chacha.c",
@@ -7881,7 +7148,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0681",
+    "id": "QCI-0621",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier1/c/t1_dh.c",
@@ -7895,7 +7162,7 @@
     ]
   },
   {
-    "id": "QCI-0682",
+    "id": "QCI-0622",
     "family": "MD5",
     "status": "weak",
     "path": "tier1/c/t1_digests.c",
@@ -7905,7 +7172,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0683",
+    "id": "QCI-0623",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/c/t1_digests.c",
@@ -7915,7 +7182,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0684",
+    "id": "QCI-0624",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_digests.c",
@@ -7925,7 +7192,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0685",
+    "id": "QCI-0625",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_digests.c",
@@ -7935,7 +7202,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0686",
+    "id": "QCI-0626",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/c/t1_ec.c",
@@ -7950,7 +7217,7 @@
     ]
   },
   {
-    "id": "QCI-0687",
+    "id": "QCI-0627",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_ec.c",
@@ -7960,7 +7227,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0688",
+    "id": "QCI-0628",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_mac_kdf.c",
@@ -7970,7 +7237,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0689",
+    "id": "QCI-0629",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_mac_kdf.c",
@@ -7980,7 +7247,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0690",
+    "id": "QCI-0630",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_mac_kdf.c",
@@ -7990,7 +7257,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0691",
+    "id": "QCI-0631",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/c/t1_mac_kdf.c",
@@ -8000,7 +7267,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0692",
+    "id": "QCI-0632",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/c/t1_mac_kdf.c",
@@ -8010,7 +7277,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0693",
+    "id": "QCI-0633",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier1/c/t1_modern_curves.c",
@@ -8024,7 +7291,7 @@
     ]
   },
   {
-    "id": "QCI-0694",
+    "id": "QCI-0634",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/c/t1_rsa_evp.c",
@@ -8039,7 +7306,7 @@
     ]
   },
   {
-    "id": "QCI-0695",
+    "id": "QCI-0635",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/c/t1_rsa_legacy.c",
@@ -8054,7 +7321,7 @@
     ]
   },
   {
-    "id": "QCI-0696",
+    "id": "QCI-0636",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/c/t1_triple_des.c",
@@ -8064,7 +7331,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0697",
+    "id": "QCI-0637",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/csharp/AesCbc/Program.cs",
@@ -8074,7 +7341,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0698",
+    "id": "QCI-0638",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/csharp/AesGcmSeal/Program.cs",
@@ -8084,7 +7351,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0699",
+    "id": "QCI-0639",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/csharp/DsaLegacy/Program.cs",
@@ -8099,7 +7366,7 @@
     ]
   },
   {
-    "id": "QCI-0700",
+    "id": "QCI-0640",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/csharp/EcdsaSign/Program.cs",
@@ -8113,7 +7380,7 @@
     ]
   },
   {
-    "id": "QCI-0701",
+    "id": "QCI-0641",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/csharp/Hashes/Program.cs",
@@ -8123,7 +7390,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0702",
+    "id": "QCI-0642",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/csharp/KeyAgreement/Program.cs",
@@ -8137,7 +7404,7 @@
     ]
   },
   {
-    "id": "QCI-0703",
+    "id": "QCI-0643",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/csharp/MacKdf/Program.cs",
@@ -8147,7 +7414,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0704",
+    "id": "QCI-0644",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/csharp/RsaSign/Program.cs",
@@ -8162,7 +7429,7 @@
     ]
   },
   {
-    "id": "QCI-0705",
+    "id": "QCI-0645",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/csharp/TripleDesLegacy/Program.cs",
@@ -8172,7 +7439,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0706",
+    "id": "QCI-0646",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/go/aes_cbc/main.go",
@@ -8182,7 +7449,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0707",
+    "id": "QCI-0647",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/go/aes_cbc/main.go",
@@ -8192,7 +7459,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0708",
+    "id": "QCI-0648",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/go/aes_gcm/main.go",
@@ -8202,7 +7469,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0709",
+    "id": "QCI-0649",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/go/aes_gcm/main.go",
@@ -8212,7 +7479,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0710",
+    "id": "QCI-0650",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/go/des/main.go",
@@ -8222,7 +7489,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0711",
+    "id": "QCI-0651",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/go/des/main.go",
@@ -8232,7 +7499,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0712",
+    "id": "QCI-0652",
     "family": "DES",
     "status": "weak",
     "path": "tier1/go/des/main.go",
@@ -8242,7 +7509,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0713",
+    "id": "QCI-0653",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/go/dsa/main.go",
@@ -8257,7 +7524,7 @@
     ]
   },
   {
-    "id": "QCI-0714",
+    "id": "QCI-0654",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/go/dsa/main.go",
@@ -8272,7 +7539,7 @@
     ]
   },
   {
-    "id": "QCI-0715",
+    "id": "QCI-0655",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/ecdsa/main.go",
@@ -8282,7 +7549,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0716",
+    "id": "QCI-0656",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/go/ecdsa/main.go",
@@ -8296,7 +7563,7 @@
     ]
   },
   {
-    "id": "QCI-0717",
+    "id": "QCI-0657",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/ecdsa/main.go",
@@ -8306,7 +7573,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0718",
+    "id": "QCI-0658",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier1/go/ed25519/main.go",
@@ -8320,7 +7587,7 @@
     ]
   },
   {
-    "id": "QCI-0719",
+    "id": "QCI-0659",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier1/go/ed25519/main.go",
@@ -8334,7 +7601,7 @@
     ]
   },
   {
-    "id": "QCI-0720",
+    "id": "QCI-0660",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/hashes/main.go",
@@ -8344,7 +7611,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0721",
+    "id": "QCI-0661",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/go/hashes/main.go",
@@ -8354,7 +7621,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0722",
+    "id": "QCI-0662",
     "family": "MD5",
     "status": "weak",
     "path": "tier1/go/hashes/main.go",
@@ -8364,7 +7631,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0723",
+    "id": "QCI-0663",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/go/hashes/main.go",
@@ -8374,7 +7641,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0724",
+    "id": "QCI-0664",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/hashes/main.go",
@@ -8384,7 +7651,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0725",
+    "id": "QCI-0665",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/go/hashes/main.go",
@@ -8394,7 +7661,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0726",
+    "id": "QCI-0666",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/mac_kdf/main.go",
@@ -8404,7 +7671,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0727",
+    "id": "QCI-0667",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "tier1/go/mac_kdf/main.go",
@@ -8414,7 +7681,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0728",
+    "id": "QCI-0668",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/go/mac_kdf/main.go",
@@ -8424,7 +7691,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0729",
+    "id": "QCI-0669",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/go/mac_kdf/main.go",
@@ -8434,7 +7701,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0730",
+    "id": "QCI-0670",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "tier1/go/mac_kdf/main.go",
@@ -8444,7 +7711,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0731",
+    "id": "QCI-0671",
     "family": "RC4",
     "status": "weak",
     "path": "tier1/go/rc4/main.go",
@@ -8454,7 +7721,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0732",
+    "id": "QCI-0672",
     "family": "RC4",
     "status": "weak",
     "path": "tier1/go/rc4/main.go",
@@ -8464,7 +7731,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0733",
+    "id": "QCI-0673",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/go/rsa/main.go",
@@ -8479,7 +7746,7 @@
     ]
   },
   {
-    "id": "QCI-0734",
+    "id": "QCI-0674",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/rsa/main.go",
@@ -8489,7 +7756,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0735",
+    "id": "QCI-0675",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/go/rsa/main.go",
@@ -8499,7 +7766,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0736",
+    "id": "QCI-0676",
     "family": "TLS",
     "status": "weak",
     "path": "tier1/go/tls_config/main.go",
@@ -8509,7 +7776,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0737",
+    "id": "QCI-0677",
     "family": "TLS",
     "status": "weak",
     "path": "tier1/go/tls_config/main.go",
@@ -8519,7 +7786,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0738",
+    "id": "QCI-0678",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier1/go/x25519/main.go",
@@ -8533,7 +7800,7 @@
     ]
   },
   {
-    "id": "QCI-0739",
+    "id": "QCI-0679",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/java/T1AesEcb.java",
@@ -8543,7 +7810,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0740",
+    "id": "QCI-0680",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/java/T1AesGcm.java",
@@ -8553,7 +7820,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0741",
+    "id": "QCI-0681",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/java/T1AesGcm.java",
@@ -8563,7 +7830,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0742",
+    "id": "QCI-0682",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier1/java/T1Dh.java",
@@ -8577,7 +7844,7 @@
     ]
   },
   {
-    "id": "QCI-0743",
+    "id": "QCI-0683",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier1/java/T1Dh.java",
@@ -8591,7 +7858,7 @@
     ]
   },
   {
-    "id": "QCI-0744",
+    "id": "QCI-0684",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/java/T1Dsa.java",
@@ -8606,7 +7873,7 @@
     ]
   },
   {
-    "id": "QCI-0745",
+    "id": "QCI-0685",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/java/T1Dsa.java",
@@ -8621,7 +7888,7 @@
     ]
   },
   {
-    "id": "QCI-0746",
+    "id": "QCI-0686",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/java/T1Ecdsa.java",
@@ -8636,7 +7903,7 @@
     ]
   },
   {
-    "id": "QCI-0747",
+    "id": "QCI-0687",
     "family": "MD5",
     "status": "weak",
     "path": "tier1/java/T1Hashes.java",
@@ -8646,7 +7913,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0748",
+    "id": "QCI-0688",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/java/T1Hashes.java",
@@ -8656,7 +7923,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0749",
+    "id": "QCI-0689",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/java/T1Hashes.java",
@@ -8666,7 +7933,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0750",
+    "id": "QCI-0690",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/java/T1Hashes.java",
@@ -8676,7 +7943,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0751",
+    "id": "QCI-0691",
     "family": "DES",
     "status": "weak",
     "path": "tier1/java/T1LegacyCiphers.java",
@@ -8686,7 +7953,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0752",
+    "id": "QCI-0692",
     "family": "DESede",
     "status": "weak",
     "path": "tier1/java/T1LegacyCiphers.java",
@@ -8696,7 +7963,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0753",
+    "id": "QCI-0693",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/java/T1LegacyCiphers.java",
@@ -8706,7 +7973,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0754",
+    "id": "QCI-0694",
     "family": "DESEDE",
     "status": "weak",
     "path": "tier1/java/T1LegacyCiphers.java",
@@ -8716,7 +7983,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0755",
+    "id": "QCI-0695",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/java/T1MacKdf.java",
@@ -8726,7 +7993,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0756",
+    "id": "QCI-0696",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/java/T1MacKdf.java",
@@ -8736,7 +8003,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0757",
+    "id": "QCI-0697",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier1/java/T1ModernCurves.java",
@@ -8750,7 +8017,7 @@
     ]
   },
   {
-    "id": "QCI-0758",
+    "id": "QCI-0698",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier1/java/T1ModernCurves.java",
@@ -8764,7 +8031,7 @@
     ]
   },
   {
-    "id": "QCI-0759",
+    "id": "QCI-0699",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/java/T1Rsa.java",
@@ -8779,7 +8046,7 @@
     ]
   },
   {
-    "id": "QCI-0760",
+    "id": "QCI-0700",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_aes_cbc.js",
@@ -8792,7 +8059,7 @@
     ]
   },
   {
-    "id": "QCI-0761",
+    "id": "QCI-0701",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_aes_cbc.js",
@@ -8802,7 +8069,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0762",
+    "id": "QCI-0702",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_aes_gcm.js",
@@ -8815,7 +8082,7 @@
     ]
   },
   {
-    "id": "QCI-0763",
+    "id": "QCI-0703",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_aes_gcm.js",
@@ -8825,7 +8092,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0764",
+    "id": "QCI-0704",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_chacha.js",
@@ -8838,7 +8105,7 @@
     ]
   },
   {
-    "id": "QCI-0765",
+    "id": "QCI-0705",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_chacha.js",
@@ -8848,7 +8115,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0766",
+    "id": "QCI-0706",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_dh.js",
@@ -8861,7 +8128,7 @@
     ]
   },
   {
-    "id": "QCI-0767",
+    "id": "QCI-0707",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_dh.js",
@@ -8875,7 +8142,7 @@
     ]
   },
   {
-    "id": "QCI-0768",
+    "id": "QCI-0708",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_ec.js",
@@ -8888,7 +8155,7 @@
     ]
   },
   {
-    "id": "QCI-0769",
+    "id": "QCI-0709",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_ec.js",
@@ -8903,7 +8170,7 @@
     ]
   },
   {
-    "id": "QCI-0770",
+    "id": "QCI-0710",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_hashes.js",
@@ -8916,7 +8183,17 @@
     ]
   },
   {
-    "id": "QCI-0771",
+    "id": "QCI-0711",
+    "family": "SHA-1",
+    "status": "weak",
+    "path": "tier1/javascript/t1_hashes.js",
+    "line": 6,
+    "priority": 20,
+    "recommendation": "",
+    "timeline": []
+  },
+  {
+    "id": "QCI-0712",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_hashes.js",
@@ -8926,7 +8203,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0772",
+    "id": "QCI-0713",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_hashes.js",
@@ -8936,7 +8213,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0773",
+    "id": "QCI-0714",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_mac_kdf.js",
@@ -8946,7 +8223,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0774",
+    "id": "QCI-0715",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_mac_kdf.js",
@@ -8959,7 +8236,7 @@
     ]
   },
   {
-    "id": "QCI-0775",
+    "id": "QCI-0716",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/javascript/t1_mac_kdf.js",
@@ -8969,7 +8246,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0776",
+    "id": "QCI-0717",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_modern_curves.js",
@@ -8982,7 +8259,7 @@
     ]
   },
   {
-    "id": "QCI-0777",
+    "id": "QCI-0718",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_modern_curves.js",
@@ -8996,7 +8273,7 @@
     ]
   },
   {
-    "id": "QCI-0778",
+    "id": "QCI-0719",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_modern_curves.js",
@@ -9010,7 +8287,7 @@
     ]
   },
   {
-    "id": "QCI-0779",
+    "id": "QCI-0720",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_rsa.js",
@@ -9023,7 +8300,7 @@
     ]
   },
   {
-    "id": "QCI-0780",
+    "id": "QCI-0721",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_rsa.js",
@@ -9038,7 +8315,7 @@
     ]
   },
   {
-    "id": "QCI-0781",
+    "id": "QCI-0722",
     "family": "Node-crypto",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_triple_des.js",
@@ -9051,7 +8328,7 @@
     ]
   },
   {
-    "id": "QCI-0782",
+    "id": "QCI-0723",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/javascript/t1_triple_des.js",
@@ -9061,7 +8338,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0783",
+    "id": "QCI-0724",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/javascript/t1_webcrypto.mjs",
@@ -9071,7 +8348,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0784",
+    "id": "QCI-0725",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/javascript/t1_webcrypto.mjs",
@@ -9086,7 +8363,7 @@
     ]
   },
   {
-    "id": "QCI-0785",
+    "id": "QCI-0726",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_aes_ecb.py",
@@ -9096,7 +8373,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0786",
+    "id": "QCI-0727",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_aes_gcm.py",
@@ -9106,7 +8383,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0787",
+    "id": "QCI-0728",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_chacha.py",
@@ -9116,7 +8393,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0788",
+    "id": "QCI-0729",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier1/python/t1_dh.py",
@@ -9130,7 +8407,7 @@
     ]
   },
   {
-    "id": "QCI-0789",
+    "id": "QCI-0730",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier1/python/t1_dsa.py",
@@ -9145,7 +8422,7 @@
     ]
   },
   {
-    "id": "QCI-0790",
+    "id": "QCI-0731",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_dsa.py",
@@ -9155,7 +8432,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0791",
+    "id": "QCI-0732",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier1/python/t1_ecdsa.py",
@@ -9170,7 +8447,7 @@
     ]
   },
   {
-    "id": "QCI-0792",
+    "id": "QCI-0733",
     "family": "MD5",
     "status": "weak",
     "path": "tier1/python/t1_hashes.py",
@@ -9180,7 +8457,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0793",
+    "id": "QCI-0734",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier1/python/t1_hashes.py",
@@ -9190,7 +8467,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0794",
+    "id": "QCI-0735",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_hashes.py",
@@ -9200,7 +8477,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0795",
+    "id": "QCI-0736",
     "family": "SHA-3",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_hashes.py",
@@ -9210,7 +8487,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0796",
+    "id": "QCI-0737",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_mac_kdf.py",
@@ -9220,7 +8497,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0797",
+    "id": "QCI-0738",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_mac_kdf.py",
@@ -9230,7 +8507,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0798",
+    "id": "QCI-0739",
     "family": "PBKDF2",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_mac_kdf.py",
@@ -9240,7 +8517,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0799",
+    "id": "QCI-0740",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier1/python/t1_modern_curves.py",
@@ -9254,7 +8531,7 @@
     ]
   },
   {
-    "id": "QCI-0800",
+    "id": "QCI-0741",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier1/python/t1_modern_curves.py",
@@ -9268,7 +8545,7 @@
     ]
   },
   {
-    "id": "QCI-0801",
+    "id": "QCI-0742",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier1/python/t1_rsa.py",
@@ -9283,7 +8560,7 @@
     ]
   },
   {
-    "id": "QCI-0802",
+    "id": "QCI-0743",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier1/python/t1_rsa.py",
@@ -9293,7 +8570,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0803",
+    "id": "QCI-0744",
     "family": "3DES",
     "status": "weak",
     "path": "tier1/python/t1_triple_des.py",
@@ -9303,7 +8580,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0804",
+    "id": "QCI-0745",
     "family": "3DES",
     "status": "weak",
     "path": "tier2/c/t2_cipher_struct.c",
@@ -9313,7 +8590,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0805",
+    "id": "QCI-0746",
     "family": "MD5",
     "status": "weak",
     "path": "tier2/c/t2_func_ptr.c",
@@ -9323,7 +8600,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0806",
+    "id": "QCI-0747",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier2/c/t2_func_ptr.c",
@@ -9333,7 +8610,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0807",
+    "id": "QCI-0748",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/csharp/ConfigCipher/Program.cs",
@@ -9343,7 +8620,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0808",
+    "id": "QCI-0749",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/csharp/ConfigCipher/Program.cs",
@@ -9353,7 +8630,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0809",
+    "id": "QCI-0750",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier2/csharp/CurveSwitch/Program.cs",
@@ -9367,7 +8644,7 @@
     ]
   },
   {
-    "id": "QCI-0810",
+    "id": "QCI-0751",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier2/csharp/DispatchTable/Program.cs",
@@ -9377,7 +8654,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0811",
+    "id": "QCI-0752",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/csharp/KeyFactory/Program.cs",
@@ -9392,7 +8669,7 @@
     ]
   },
   {
-    "id": "QCI-0812",
+    "id": "QCI-0753",
     "family": "3DES",
     "status": "weak",
     "path": "tier2/go/block_factory/main.go",
@@ -9402,7 +8679,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0813",
+    "id": "QCI-0754",
     "family": "3DES",
     "status": "weak",
     "path": "tier2/go/block_factory/main.go",
@@ -9412,7 +8689,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0814",
+    "id": "QCI-0755",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier2/go/hash_enum/main.go",
@@ -9422,7 +8699,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0815",
+    "id": "QCI-0756",
     "family": "MD5",
     "status": "weak",
     "path": "tier2/go/hmac_func_value/main.go",
@@ -9432,7 +8709,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0816",
+    "id": "QCI-0757",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier2/go/hmac_func_value/main.go",
@@ -9442,7 +8719,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0817",
+    "id": "QCI-0758",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/go/key_bits/main.go",
@@ -9457,7 +8734,7 @@
     ]
   },
   {
-    "id": "QCI-0818",
+    "id": "QCI-0759",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/go/key_bits/main.go",
@@ -9472,7 +8749,7 @@
     ]
   },
   {
-    "id": "QCI-0819",
+    "id": "QCI-0760",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/go/key_len/main.go",
@@ -9482,7 +8759,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0820",
+    "id": "QCI-0761",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/go/key_len/main.go",
@@ -9492,7 +8769,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0821",
+    "id": "QCI-0762",
     "family": "3DES",
     "status": "weak",
     "path": "tier2/java/T2ConcatTransform.java",
@@ -9502,7 +8779,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0822",
+    "id": "QCI-0763",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier2/java/T2CurveConstant.java",
@@ -9517,7 +8794,7 @@
     ]
   },
   {
-    "id": "QCI-0823",
+    "id": "QCI-0764",
     "family": "DSA",
     "status": "vulnerable",
     "path": "tier2/java/T2DsaConstant.java",
@@ -9532,7 +8809,7 @@
     ]
   },
   {
-    "id": "QCI-0824",
+    "id": "QCI-0765",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/java/T2SysProp.java",
@@ -9542,7 +8819,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0825",
+    "id": "QCI-0766",
     "family": "MD5",
     "status": "weak",
     "path": "tier2/java/T2Wrapper.java",
@@ -9552,7 +8829,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0826",
+    "id": "QCI-0767",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/java/config/crypto.properties",
@@ -9567,7 +8844,7 @@
     ]
   },
   {
-    "id": "QCI-0827",
+    "id": "QCI-0768",
     "family": "AES-128-CBC",
     "status": "safe_symmetric",
     "path": "tier2/python/config/cipher.json",
@@ -9577,7 +8854,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0828",
+    "id": "QCI-0769",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/python/config/cipher.json",
@@ -9587,7 +8864,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0829",
+    "id": "QCI-0770",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/python/t2_alias_import.py",
@@ -9602,7 +8879,7 @@
     ]
   },
   {
-    "id": "QCI-0830",
+    "id": "QCI-0771",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier2/python/t2_constant_hash.py",
@@ -9612,7 +8889,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0831",
+    "id": "QCI-0772",
     "family": "SHA-384",
     "status": "safe_symmetric",
     "path": "tier2/python/t2_curve_variable.py",
@@ -9622,7 +8899,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0832",
+    "id": "QCI-0773",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier2/python/t2_curve_variable.py",
@@ -9637,7 +8914,7 @@
     ]
   },
   {
-    "id": "QCI-0833",
+    "id": "QCI-0774",
     "family": "MD5",
     "status": "weak",
     "path": "tier2/python/t2_dispatch_table.py",
@@ -9647,7 +8924,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0834",
+    "id": "QCI-0775",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier2/python/t2_dispatch_table.py",
@@ -9657,7 +8934,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0835",
+    "id": "QCI-0776",
     "family": "HMAC",
     "status": "weak",
     "path": "tier2/python/t2_partial.py",
@@ -9667,7 +8944,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0836",
+    "id": "QCI-0777",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier2/python/t2_partial.py",
@@ -9677,7 +8954,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0837",
+    "id": "QCI-0778",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier2/python/t2_wrapper.py",
@@ -9687,7 +8964,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0838",
+    "id": "QCI-0779",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier2/typescript/t2_curve_table.ts",
@@ -9702,7 +8979,7 @@
     ]
   },
   {
-    "id": "QCI-0839",
+    "id": "QCI-0780",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier2/typescript/t2_env_default.ts",
@@ -9717,7 +8994,7 @@
     ]
   },
   {
-    "id": "QCI-0840",
+    "id": "QCI-0781",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier2/typescript/t2_hmac_const.ts",
@@ -9727,7 +9004,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0841",
+    "id": "QCI-0782",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier3/java/cross_class_constant/src/com/acme/keys/KeyIssuer.java",
@@ -9742,7 +9019,7 @@
     ]
   },
   {
-    "id": "QCI-0842",
+    "id": "QCI-0783",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier3/java/cross_class_constant/src/com/acme/session/SessionCrypto.java",
@@ -9752,7 +9029,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0843",
+    "id": "QCI-0784",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier3/java/cross_class_constant/src/com/acme/tokens/Fingerprint.java",
@@ -9762,7 +9039,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0844",
+    "id": "QCI-0785",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier3/java/strategy_factory/src/com/acme/crypto/AesCbcCipher.java",
@@ -9772,7 +9049,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0845",
+    "id": "QCI-0786",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier3/java/strategy_factory/src/com/acme/crypto/AesCbcCipher.java",
@@ -9782,7 +9059,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0846",
+    "id": "QCI-0787",
     "family": "DESede",
     "status": "weak",
     "path": "tier3/java/strategy_factory/src/com/acme/crypto/LegacyDesedeCipher.java",
@@ -9792,7 +9069,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0847",
+    "id": "QCI-0788",
     "family": "3DES",
     "status": "weak",
     "path": "tier3/java/strategy_factory/src/com/acme/crypto/LegacyDesedeCipher.java",
@@ -9802,7 +9079,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0848",
+    "id": "QCI-0789",
     "family": "DESEDE",
     "status": "weak",
     "path": "tier3/java/strategy_factory/src/com/acme/crypto/LegacyDesedeCipher.java",
@@ -9812,7 +9089,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0849",
+    "id": "QCI-0790",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier3/python/cross_module_constant/keys/issuer.py",
@@ -9827,7 +9104,7 @@
     ]
   },
   {
-    "id": "QCI-0850",
+    "id": "QCI-0791",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier3/python/cross_module_constant/sessions/crypto.py",
@@ -9837,7 +9114,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0851",
+    "id": "QCI-0792",
     "family": "SHA-256",
     "status": "safe_symmetric",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
@@ -9847,7 +9124,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0852",
+    "id": "QCI-0793",
     "family": "SHA-384",
     "status": "safe_symmetric",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
@@ -9857,7 +9134,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0853",
+    "id": "QCI-0794",
     "family": "SHA-512",
     "status": "safe_symmetric",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
@@ -9867,7 +9144,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0854",
+    "id": "QCI-0795",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/signer.py",
@@ -9877,7 +9154,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0855",
+    "id": "QCI-0796",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier3/python/registry_strategy/suites/builtin.py",
@@ -9887,7 +9164,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0856",
+    "id": "QCI-0797",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier3/python/registry_strategy/suites/builtin.py",
@@ -9897,7 +9174,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0857",
+    "id": "QCI-0798",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier3/python/wrapper_two_callers/seclib/keys.py",
@@ -9912,7 +9189,7 @@
     ]
   },
   {
-    "id": "QCI-0858",
+    "id": "QCI-0799",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/certs/api_gateway.pem",
@@ -9927,7 +9204,7 @@
     ]
   },
   {
-    "id": "QCI-0859",
+    "id": "QCI-0800",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/api_gateway.pem",
@@ -9937,7 +9214,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0860",
+    "id": "QCI-0801",
     "family": "Ed25519",
     "status": "vulnerable",
     "path": "tier4/assets/certs/device_ed25519.pem",
@@ -9950,7 +9227,7 @@
     ]
   },
   {
-    "id": "QCI-0861",
+    "id": "QCI-0802",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/device_ed25519.pem",
@@ -9960,7 +9237,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0862",
+    "id": "QCI-0803",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/certs/payments_legacy.crt",
@@ -9975,7 +9252,7 @@
     ]
   },
   {
-    "id": "QCI-0863",
+    "id": "QCI-0804",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/payments_legacy.crt",
@@ -9985,7 +9262,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0864",
+    "id": "QCI-0805",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier4/assets/certs/portal_fullchain.pem",
@@ -9999,7 +9276,7 @@
     ]
   },
   {
-    "id": "QCI-0865",
+    "id": "QCI-0806",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/certs/portal_fullchain.pem",
@@ -10014,7 +9291,7 @@
     ]
   },
   {
-    "id": "QCI-0866",
+    "id": "QCI-0807",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/portal_fullchain.pem",
@@ -10024,7 +9301,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0867",
+    "id": "QCI-0808",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/portal_fullchain.pem",
@@ -10034,7 +9311,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0868",
+    "id": "QCI-0809",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier4/assets/certs/telemetry_ecdsa.pem",
@@ -10048,7 +9325,7 @@
     ]
   },
   {
-    "id": "QCI-0869",
+    "id": "QCI-0810",
     "family": "X509-Cert",
     "status": "unknown",
     "path": "tier4/assets/certs/telemetry_ecdsa.pem",
@@ -10058,7 +9335,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0870",
+    "id": "QCI-0811",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier4/assets/ipsec/ipsec.conf",
@@ -10068,7 +9345,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0871",
+    "id": "QCI-0812",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier4/assets/ipsec/swanctl.conf",
@@ -10078,7 +9355,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0872",
+    "id": "QCI-0813",
     "family": "PKCS8",
     "status": "unknown",
     "path": "tier4/assets/keys/billing_service.pem",
@@ -10088,7 +9365,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0873",
+    "id": "QCI-0814",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/keys/billing_service.pem",
@@ -10103,7 +9380,7 @@
     ]
   },
   {
-    "id": "QCI-0874",
+    "id": "QCI-0815",
     "family": "ECC-P-256",
     "status": "vulnerable",
     "path": "tier4/assets/keys/jwks.json",
@@ -10117,7 +9394,7 @@
     ]
   },
   {
-    "id": "QCI-0875",
+    "id": "QCI-0816",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/keys/jwks.json",
@@ -10132,7 +9409,7 @@
     ]
   },
   {
-    "id": "QCI-0876",
+    "id": "QCI-0817",
     "family": "ECC-P-256",
     "status": "vulnerable",
     "path": "tier4/assets/keys/jwks.json",
@@ -10146,7 +9423,7 @@
     ]
   },
   {
-    "id": "QCI-0877",
+    "id": "QCI-0818",
     "family": "ECC-P-256",
     "status": "vulnerable",
     "path": "tier4/assets/keys/jwks.json",
@@ -10160,7 +9437,7 @@
     ]
   },
   {
-    "id": "QCI-0878",
+    "id": "QCI-0819",
     "family": "ECDSA",
     "status": "vulnerable",
     "path": "tier4/assets/keys/treasury_hot_wallet.key",
@@ -10175,7 +9452,7 @@
     ]
   },
   {
-    "id": "QCI-0879",
+    "id": "QCI-0820",
     "family": "Private-Key",
     "status": "vulnerable",
     "path": "tier4/assets/keys/treasury_hot_wallet.key",
@@ -10189,7 +9466,7 @@
     ]
   },
   {
-    "id": "QCI-0880",
+    "id": "QCI-0821",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10204,7 +9481,7 @@
     ]
   },
   {
-    "id": "QCI-0881",
+    "id": "QCI-0822",
     "family": "SSH-Classical-HostKey",
     "status": "vulnerable",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10218,7 +9495,7 @@
     ]
   },
   {
-    "id": "QCI-0882",
+    "id": "QCI-0823",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10232,7 +9509,7 @@
     ]
   },
   {
-    "id": "QCI-0883",
+    "id": "QCI-0824",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10242,7 +9519,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0884",
+    "id": "QCI-0825",
     "family": "SSH-Classical-Kex",
     "status": "vulnerable",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10256,7 +9533,7 @@
     ]
   },
   {
-    "id": "QCI-0885",
+    "id": "QCI-0826",
     "family": "SSH-Weak-Kex",
     "status": "weak",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10266,7 +9543,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0886",
+    "id": "QCI-0827",
     "family": "X25519",
     "status": "vulnerable",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10280,7 +9557,7 @@
     ]
   },
   {
-    "id": "QCI-0887",
+    "id": "QCI-0828",
     "family": "ChaCha20-Poly1305",
     "status": "safe_symmetric",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10290,7 +9567,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0888",
+    "id": "QCI-0829",
     "family": "SSH-Modern-Cipher",
     "status": "safe_symmetric",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10300,7 +9577,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0889",
+    "id": "QCI-0830",
     "family": "SSH-Weak-Cipher",
     "status": "weak",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10310,7 +9587,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0890",
+    "id": "QCI-0831",
     "family": "HMAC",
     "status": "safe_symmetric",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10320,7 +9597,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0891",
+    "id": "QCI-0832",
     "family": "SSH-Weak-MAC",
     "status": "weak",
     "path": "tier4/assets/ssh/sshd_config",
@@ -10330,7 +9607,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0892",
+    "id": "QCI-0833",
     "family": "TLS",
     "status": "weak",
     "path": "tier4/assets/tls/application.yml",
@@ -10340,7 +9617,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0893",
+    "id": "QCI-0834",
     "family": "DH",
     "status": "vulnerable",
     "path": "tier4/assets/tls/haproxy.cfg",
@@ -10354,7 +9631,7 @@
     ]
   },
   {
-    "id": "QCI-0894",
+    "id": "QCI-0835",
     "family": "SSH-Modern-Cipher",
     "status": "safe_symmetric",
     "path": "tier4/assets/tls/haproxy.cfg",
@@ -10364,7 +9641,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0895",
+    "id": "QCI-0836",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "tier4/assets/tls/httpd-ssl.conf",
@@ -10374,7 +9651,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0896",
+    "id": "QCI-0837",
     "family": "TLS-Weak-Protocol",
     "status": "weak",
     "path": "tier4/assets/tls/httpd-ssl.conf",
@@ -10384,7 +9661,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0897",
+    "id": "QCI-0838",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10394,7 +9671,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0898",
+    "id": "QCI-0839",
     "family": "TLS-Cert-Config",
     "status": "unknown",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10404,7 +9681,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0899",
+    "id": "QCI-0840",
     "family": "TLS-1.0",
     "status": "vulnerable",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10417,7 +9694,7 @@
     ]
   },
   {
-    "id": "QCI-0900",
+    "id": "QCI-0841",
     "family": "TLS-1.1",
     "status": "vulnerable",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10430,7 +9707,7 @@
     ]
   },
   {
-    "id": "QCI-0901",
+    "id": "QCI-0842",
     "family": "TLS-1.2",
     "status": "safe_symmetric",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10440,7 +9717,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0902",
+    "id": "QCI-0843",
     "family": "TLS-Weak-Protocol",
     "status": "weak",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10450,7 +9727,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0903",
+    "id": "QCI-0844",
     "family": "TLS1.0/1.1",
     "status": "weak",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10460,7 +9737,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0904",
+    "id": "QCI-0845",
     "family": "3DES",
     "status": "weak",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10470,7 +9747,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0905",
+    "id": "QCI-0846",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10480,7 +9757,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0906",
+    "id": "QCI-0847",
     "family": "SSH-Modern-Cipher",
     "status": "safe_symmetric",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10490,7 +9767,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0907",
+    "id": "QCI-0848",
     "family": "TLS-Classical-Cipher",
     "status": "vulnerable",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10503,7 +9780,7 @@
     ]
   },
   {
-    "id": "QCI-0908",
+    "id": "QCI-0849",
     "family": "TLS-Weak-Cipher",
     "status": "weak",
     "path": "tier4/assets/tls/nginx.conf",
@@ -10513,7 +9790,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0909",
+    "id": "QCI-0850",
     "family": "TLS-1.0",
     "status": "weak",
     "path": "tier4/assets/tls/openssl.cnf",
@@ -10523,7 +9800,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0910",
+    "id": "QCI-0851",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier4/assets/tls/openssl.cnf",
@@ -10533,41 +9810,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0911",
-    "family": "3DES",
-    "status": "weak",
-    "path": "tier5/c/bin/meterd",
-    "line": 8,
-    "priority": 20,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0912",
-    "family": "MD5",
-    "status": "weak",
-    "path": "tier5/c/bin/meterd",
-    "line": 8,
-    "priority": 20,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0913",
-    "family": "DH",
-    "status": "vulnerable",
-    "path": "tier5/c/bin/meterd",
-    "line": 65,
-    "priority": 50,
-    "recommendation": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
-    "timeline": [
-      "Deprecated after 2030 (IR 8547)",
-      "Disallowed after 2035 (IR 8547)",
-      "Federal high-value key establishment: 31 Dec 2030"
-    ]
-  },
-  {
-    "id": "QCI-0914",
+    "id": "QCI-0852",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier5/java/compiled/billing-core.jar",
@@ -10577,7 +9820,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0915",
+    "id": "QCI-0853",
     "family": "RSA",
     "status": "vulnerable",
     "path": "tier5/java/compiled/billing-core.jar",
@@ -10591,17 +9834,7 @@
     ]
   },
   {
-    "id": "QCI-0916",
-    "family": "SHA-1",
-    "status": "weak",
-    "path": "tier5/python/compiled/ledger_sync.pyc",
-    "line": 10,
-    "priority": 20,
-    "recommendation": "",
-    "timeline": []
-  },
-  {
-    "id": "QCI-0917",
+    "id": "QCI-0854",
     "family": "AES",
     "status": "safe_symmetric",
     "path": "tier5/python/t5_char_codes.py",
@@ -10611,7 +9844,7 @@
     "timeline": []
   },
   {
-    "id": "QCI-0918",
+    "id": "QCI-0855",
     "family": "SHA-1",
     "status": "weak",
     "path": "tier5/python/t5_string_assembly.py",

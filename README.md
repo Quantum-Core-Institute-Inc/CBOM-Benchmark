@@ -1,204 +1,225 @@
 # QCI CBOM Benchmark
 
-A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners. Scores a scanner's CycloneDX 1.6 output against 393 known findings. Not a certification.
+> A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners. It scores a scanner's CycloneDX 1.6 output against 393 known findings. Not a certification.
 
-**Version:** 2.4.0
+[![testbench](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/testbench.yml/badge.svg)](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/testbench.yml)
+[![image](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/image.yml/badge.svg)](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/image.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Methodology 2.3](https://img.shields.io/badge/methodology-2.3-informational.svg)](METHODOLOGY.md)
 
-2.4.0 adds C#, LMS and XMSS, a minified bundle, an obfuscated jar and a stripped binary, and Apache, HAProxy and IPsec configs. Release notes: [CHANGELOG.md](CHANGELOG.md).
+**Version:** 2.4.1 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
 
-**Author:** Quantum Core Institute
+2.4.1 publishes one QCI scanner release (v2.3.4.1), remeasures every holdout number on generator 1.2 and reorganises this README. The corpus and answer key are those of 2.4.0.
 
-**License:** Apache-2.0 (see [LICENSE](LICENSE))
+[Release notes](CHANGELOG.md) · [Methodology](METHODOLOGY.md) · [Results](reports/comparison.md) · [Evidence](evidence/) · [Holdout sets](HOLDOUT.md) · [Bring your own code](BYOC.md)
 
 ## What it does
 
-Point a scanner at `corpus/`, feed its CycloneDX 1.6 output to `tools/score.py`, and you get a
-scorecard that says *where* it fails: which tier, which language, which algorithm, whether it
-got the key size right, and how much noise it generated on files that contain no crypto at all.
+Point a scanner at `corpus/`, feed its CycloneDX 1.6 output to the scorer, and you get a scorecard
+that says *where* it fails: which tier, which language, which algorithm, whether it got the key size
+right, and how much noise it made on files that contain no crypto at all. Every expected finding is
+dated against NIST, EO 14412 and CNSA 2.0 transition deadlines, and every detected finding is checked
+for whether an engineer could open a ticket from it. Because a public corpus gets learned, the
+benchmark also generates private holdout sets that show whether a published score still predicts
+performance on unseen code.
 
-QCI also publishes a scanner that this benchmark grades. The benchmark is kept in its own repository
-with its own versioned methodology, its results for that scanner are published as measured (it
-currently fails three gates), and every published number has an evidence bundle anyone can re-derive.
-Earlier releases were called the CBOM Testbench, and the tools and documents still use "testbench"
-for the harness itself.
+- **393 findings in seven languages** (Python, Java, Go, JavaScript/TypeScript, C/OpenSSL, C#/.NET)
+  plus certificates, keys, keystores, configs and compiled artifacts. Every code case runs and every
+  asset parses.
+- **Five tiers of difficulty**, from a literal `hashlib.md5()` to a stripped binary, plus a
+  post-quantum category, realistic mixed files, dead code, a multi-service system fixture and
+  negative controls.
+- **Scores that can be checked.** A run produces an evidence bundle; anyone can re-derive every
+  number in it from the scanner's raw output.
+- **Your own code as scored cases**, kept apart from the shipped answer key.
+- **Gates for CI**, stamped to the exact release they were measured on.
 
-Version 2.4.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **seven languages**: 393 shipped findings, each
-dated against NIST, the federal EO 14412 and NSA CNSA 2.0 transition deadlines. It scores whether
-each reported finding is **actionable**, not just whether it was found, and it lets you **add your
-own code** as scored cases; see [BYOC.md](BYOC.md). It ships wired to the **QCI PQC Readiness
-Scanner** (`qci-pqc-scan`): one command installs it, scans the corpus and gates its CI; see
-[integrations/qci-pqc/FINDINGS.md](integrations/qci-pqc/FINDINGS.md). And because a public corpus gets
-learned, it generates **private holdout sets** that show whether a published score still predicts
-performance on unseen code; see [HOLDOUT.md](HOLDOUT.md).
+QCI also publishes a scanner that this benchmark grades (`qci-pqc-scan`, currently v2.3.4.1). The
+benchmark lives in its own repository with its own versioned methodology, and that scanner's results
+are published as measured, gate failures included: see
+[reports/qci-pqc/SUMMARY.md](reports/qci-pqc/SUMMARY.md) and
+[integrations/qci-pqc/FINDINGS.md](integrations/qci-pqc/FINDINGS.md). Earlier releases were called
+the CBOM Testbench, and the tools still use "testbench" for the harness itself.
 
-- Tiers 1 and 2 are code in Python, Java, Go, JavaScript/TypeScript, C/OpenSSL and C#/.NET: 104
-  single-file cases. Tier 3 adds 9 multi-file Python and Java projects.
-- Tier 4 is 23 non-code assets: certificates, private keys, keystores, SSH material, a JWKS,
-  TLS configs for nginx, Apache httpd and HAProxy, two IPsec configs and a Kubernetes secret.
-- Tier 5 is adversarial: 9 obfuscated or hand-rolled source files, plus five artifacts shipped
-  without their source: a `.pyc`, a `.jar`, a ProGuard-obfuscated `.jar`, a minified JavaScript
-  bundle and a stripped native binary.
-- The PQC category checks that a scanner recognizes post-quantum cryptography that is already
-  deployed: ML-KEM and ML-DSA in Python, Java and Go, LMS and XMSS firmware signing (the stateful
-  schemes of SP 800-208) in Java, a signing policy and two public keys, ML-DSA certificates and keys, and hybrid key
-  exchange in TLS and SSH configs and in Go's `tls.Config`. It also contains "PQC-washing" decoys that claim PQ and aren't.
-- Dependency manifests for seven applications (pip, PEP 621, Maven, Gradle, npm with a real
-  lockfile, Go modules, Conan) declare 26 crypto libraries, scored for whether a scanner names the
-  library, the right manifest and the right version. See [Crypto libraries](#crypto-libraries).
-- Mixed files: 15 realistic-size modules (220 to 520 lines) with three to five crypto uses each, often
-  one algorithm twice with different parameters, among ordinary code and log messages that name
-  algorithms the file doesn't use. 62 site findings.
-- 12 negative-control files contain no crypto at all.
-- A calibration set of 304 generated Tier 1-2 cases tops each hand-written cell up to four cases, so
-  the holdout's overfit gap has something to compare against. They're scored but kept out of every
-  headline number. See [HOLDOUT.md](HOLDOUT.md).
+## Requirements
 
-Every code case executes, every Tier 4 asset parses with standard tooling, and every hand-rolled
-Tier 5 algorithm is checked against a reference implementation.
+| To do this | You need |
+|---|---|
+| Score a CBOM, run the tests, build bundles | Python 3.11+ and `pip install -r requirements.txt` (pinned: `cryptography`, the CycloneDX validator, `packaging`) |
+| Run every corpus case (`verify_corpus.py --strict`) | Also `requirements-verify.txt` (a Java 25 runtime for the PQC Java cases), Go 1.24+, Node 22.18+, JDK 21, the .NET 8 SDK, Bouncy Castle's provider jar (`apt install libbcprov-java`, or set `BCPROV_JAR`), a C compiler with OpenSSL 3 headers, and Python 3.13 for the shipped `.pyc` |
+| Run a scanner in the sandbox with full isolation | Linux with unprivileged user namespaces, or Docker for the container lane |
+| Skip all of that | The pinned image (`Dockerfile`), which carries every toolchain and verifies the corpus at build time |
 
 ## Quick start
 
 ```bash
-# Python 3.11+ (the tools refuse to start on anything older).
-pip install -r requirements.txt              # pinned: cryptography, the CycloneDX validator, packaging
-pip install -r requirements-verify.txt       # adds a Java 25 runtime (jdk4py) for the PQC Java cases
-# To run every corpus case you also need Go 1.24+, Node 22.18+ (runs .ts directly), JDK 21, the
-# .NET 8 SDK, Bouncy Castle's provider jar (apt install libbcprov-java, or set BCPROV_JAR), and a C
-# compiler with OpenSSL 3 headers (libssl-dev). verify_corpus.py counts pass / fail / skip per area;
-# --strict turns any skip into a failure (exit 4), which is what a release check uses.
-python tools/verify_corpus.py --strict       # runs every code case, parses every Tier 4 asset
-python tools/build_expected.py               # resolves ground truth, writes expected/expected.cdx.json
-python tools/bench.py checks                 # every required check: strict corpus run, reproducible
-                                             # answer key, all test suites, 100% reference replay, docs
+pip install -r requirements.txt
 
-# Score your scanner
+# 1. Check the benchmark itself (needs the toolchains above)
+pip install -r requirements-verify.txt
+python tools/verify_corpus.py --strict     # runs every code case, parses every asset; a skip is a failure
+python tools/build_expected.py             # resolves the answer key, writes expected/expected.cdx.json
+python tools/bench.py checks               # every required check: corpus, answer key, tests, docs
+
+# 2. Score your scanner
 your-scanner --format cyclonedx-1.6 corpus/ > reports/scanner-x.cdx.json
-python tools/score.py reports/scanner-x.cdx.json --name "Scanner X" [--policy nist|eo14412-hva|cnsa2]
-# -> reports/scanner-x.md (scorecard) and reports/scanner-x.json
+python tools/score.py reports/scanner-x.cdx.json --name "Scanner X"
+#   -> reports/scanner-x.md and reports/scanner-x.json
 
-# Add your organization's own patterns as scored cases (walkthrough in BYOC.md)
-python tools/byoc.py new my_case --lang python && python tools/byoc.py check
-python tools/score.py reports/scanner-x.cdx.json --only-custom      # your cases only
-python tools/score.py reports/scanner-x.cdx.json --exclude-custom   # shipped benchmark only, comparable
+# 3. Or do it in one step, in the sandbox, with an evidence bundle
+python tools/bench.py run --name "Scanner X" \
+    --scanner-cmd "scanx {corpus} -o {out}/cbom.json" --bundle bundles/scanner-x
+python tools/bench.py verify bundles/scanner-x
 
-# Date any CBOM, including your own estate's, against one or more policies
-python tools/policy_report.py your-scan.cdx.json --policy nist --policy cnsa2 [--use-map uses.json]
-# -> reports/your-scan-deadlines.md / .csv / .json
+# 4. Date any CBOM, including your own estate's, against one or more policies
+python tools/policy_report.py your-scan.cdx.json --policy nist --policy cnsa2
 ```
 
-Two calibration points ship with it:
+## Usage
 
-<!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
-| Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
-|---|---|---|---|---|---|---|---|---|---|
-| `expected/expected.cdx.json` (the answer key) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
-| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
-| `tools/baseline_grep.py` (naive regex) | 393 | 67.4% | 63.6% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.4% |
+### Scoring a scanner
 
-Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
-<!-- /generated:calibration-points -->
+`tools/score.py` takes a CycloneDX 1.6 CBOM and writes a scorecard. It is the quick path: no sandbox,
+no bundle.
 
-Grep by tier, which is the shape you should expect a weak scanner to have:
+| Option | What it does |
+|---|---|
+| `--name NAME` | Scanner name for the report title |
+| `--policy nist\|eo14412-hva\|cnsa2` | Which deadline policy dates the findings (default `nist`) |
+| `--scope FILE` | Declared scope: findings the scanner says it doesn't cover are listed, not scored |
+| `--exclude-custom` / `--only-custom` | The shipped benchmark only (comparable with anyone's), or your own cases only |
+| `--tolerance N` | Line-number tolerance (default 1) |
+| `--as-of DATE` | The date deadlines are judged from |
+| `--out PREFIX` | Output path prefix (default `reports/<cbom stem>`) |
 
-<!-- generated:grep-by-tier (tools/render_docs.py; edit the scorecards, not this table) -->
-| Tier | Findings | Recall | At primary site | Params correct |
-|---|---|---|---|---|
-| 1. Direct, Python and Java | 32 | 100% | 100% | 56.2–75% |
-| 1. Direct, Go / JavaScript / C | 57 | 65–82.4% | 65–82.4% | 42.9–85.7% |
-| 1. Direct, C# | 13 | 92.3% | 92.3% | 58.3% |
-| 2. Indirection, Python and Java | 17 | 100% | 87.5–88.9% | 50–55.6% |
-| 2. Indirection, Go / TypeScript / C | 19 | 83.3–100% | 83.3–100% | 33.3–60% |
-| 2. Indirection, C# | 6 | 83.3% | 83.3% | 40% |
-| 3. Cross-file | 16 | 100% | 42.9–55.6% | 33.3–42.9% |
-| 4. Non-code assets | 66 | 34.8% | 34.8% | 69.6% |
-| 5. Adversarial, source and bytecode | 20 | 0% | 0% | n/a |
-| 5. Adversarial, minified JS and native binary | 6 | 66.7–100% | 66.7–100% | 50–100% |
-| PQC, code | 16 | 50–100% | 50–100% | 25–50% |
-| PQC, assets | 27 | 37% | 37% | 90% |
-| Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
-| System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |
-| Dead code | 10 | 50–100% | 50–100% | 100% |
+A scanner whose native format isn't CycloneDX 1.6 needs an adapter in `tools/adapters/`; two ship
+(`qci-pqc`, `cdxgen`). `tools/compare.py` puts scorecards side by side and refuses ones measured on
+different releases.
 
-Ranges run across the languages in each row.
-<!-- /generated:grep-by-tier -->
+### Reproducible runs and evidence bundles
 
-The reference run proves the scorer agrees with the ground truth. The grep run is the floor.
-A commercial scanner that can't beat it on parameters and precision is a grep with a logo.
+For a score someone else has to trust, use `tools/bench.py`. `run` scans in the sandbox, scores and
+writes a bundle; `verify` re-derives every number in a bundle; `checks` runs the benchmark's own
+required checks; `perf` times a scanner on a large generated tree.
 
-## Reproducible runs and evidence bundles
+| Option (`bench.py run`) | What it does |
+|---|---|
+| `--scanner-cmd "..."` | The command line; `{corpus}` and `{out}` are filled in |
+| `--bundle DIR` | Where the evidence bundle goes |
+| `--adapter qci-pqc\|cdxgen` | Translate the scanner's native output first |
+| `--scope FILE`, `--gates FILE` | Declared scope; gates to evaluate (exit 1 fail, 3 not evaluated) |
+| `--remediation` | Also apply the ten reference migrations, rescan, and score verified remediation |
+| `--require-isolation` | Refuse to run without both the network cut and the filesystem boundary |
+| `--allow-path PATH` | A path the scanner may read although it sits in a hidden location (recorded) |
+| `--scanner-image IMAGE` | Run the scanner in its own container: the strongest lane |
+| `--version-cmd`, `--scanner-version` | How the scanner's version gets into the bundle |
+| `--without-holdout` | No holdout on purpose: the holdout gates are recorded as skipped, not missing |
 
-For a score someone else has to trust, use the runner instead of `score.py`. One command scans in
-the sandbox, scores, and writes an evidence bundle:
+- **The sandbox** (`tools/sandbox.py`) gives the scanner a private copy of the corpus, read-only
+  where the host allows, hashed before and after: a scanner that changes its input isn't scored. The
+  environment is scrubbed (no credentials, never the holdout seed), the network is cut, and
+  wall-clock, CPU, memory and file-size limits apply.
+- **The filesystem boundary** hides home and temp directories, the whole benchmark tree (answer key,
+  evidence, reports) and any holdout set behind empty mounts. It needs a mount namespace; without
+  one the run is recorded as "not confined" and `--require-isolation` refuses.
+- **The container lane** is for a scanner you don't trust at all. It runs in an image that holds only
+  the scanner (`integrations/scanner-image.Dockerfile` builds one from wheels), with no network, a
+  read-only root, no capabilities, the corpus mounted read-only and one output directory.
+- **The build step isn't sandboxed**: `pip install` runs the scanner's code and needs the network.
+  For someone else's scanner, build in a job with no secrets and score in another;
+  `integrations/qci-pqc/github-workflow.yml` does that, and
+  `.github/workflows/third-party-scanners.yml` runs three open-source scanners with no secrets at all.
+- **The bundle** holds the scanner's raw output, the adapted CBOM, the scorecards, a manifest (the
+  release stamp, the hash of every file that decides a score, the scanner's command and version, the
+  sandbox record) and `SHA256SUMS`. `bench.py verify` re-derives every scorecard section from the raw
+  CBOM, so a doctored number fails even with recomputed checksums. The one thing a bundle can't prove
+  alone is the holdout result, because the seed is private; verify says so, and re-derives it once
+  the seed is revealed.
+- **Big trees.** `bench.py perf` generates 600, 3,000 or 12,000 code files with Tier 1 uses planted
+  evenly, gives the scanner a time budget, and reports time, memory, throughput and recall by
+  quarter of the tree. A scanner that gives up partway shows it as a drop in the last quarter.
+- **The image** (`Dockerfile`) pins every toolchain and verifies the corpus at build time.
+  `.github/workflows/image.yml` builds it from the real base images on pull requests that touch it;
+  on a version tag, `release.yml` builds it, runs the required checks inside with no network, and
+  attaches the evidence to the GitHub release.
 
-```bash
-python tools/bench.py run --name "Scanner X" --scanner-cmd "scanx {corpus} -o {out}/cbom.json" \
-    --bundle bundles/scanner-x [--adapter qci-pqc|cdxgen] [--scope scope.json] [--gates gates.json]
-python tools/bench.py verify bundles/scanner-x      # anyone can re-derive every number
-python tools/bench.py checks --out checks.json      # the testbench's own required checks
-```
+### Policies and deadlines
 
-**The sandbox** (`tools/sandbox.py`) gives the scanner a private copy of the corpus, read-only where
-the host can make a mount namespace, and hashes it before and after: a scanner that changes its
-input isn't scored. The environment is scrubbed (no credentials, never the holdout seed), the
-network is cut (a network namespace, or the container run with `--network none`), and wall-clock,
-CPU, memory and file-size limits apply. Exit status, wall time, CPU time and peak memory are
-recorded. BYOC run commands, holdout scans and the scanner's `--version` call go through the same
-sandbox.
+Detection rates treat a missed MD5 checksum the same as a missed key exchange that has to be gone by
+2030. Organizations don't, so every expected finding is dated under a transition policy, and the
+scorecard adds recall by due date, a deadline-weighted recall, and the list of findings due by 2030
+that the scanner missed. `tools/policy_report.py` does the same for any CycloneDX 1.6 CBOM, not just
+this corpus.
 
-It also puts a filesystem boundary around the run. Home directories, temp directories, `/mnt`,
-`/run`, the whole testbench tree (answer key, evidence, reports) and any holdout set are replaced
-by empty mounts; what stays visible under them is the work directory, the toolchain directories on
-PATH, and anything you name with `--allow-path` (recorded in the bundle). System directories stay
-readable, because the scanner needs them to run. This needs a mount namespace: on a host or
-container that can't make one the run is recorded as "not confined", and `--require-isolation`
-refuses to run unless both the network cut and the boundary are in place.
+| Option (`policy_report.py`) | What it does |
+|---|---|
+| `--policy ID` | Policy in `policies/` (repeatable; default `nist`) |
+| `--use-map FILE` | `[glob, use]` pairs for CNSA 2.0, whose dates depend on system type (firmware-signing, networking, web, os, niche, custom) |
+| `--as-of DATE` | The date deadlines are judged from |
+| `--name`, `--out` | Report title and output prefix (writes `.md`, `.csv`, `.json`) |
 
-**The container lane.** The boundary above is a deny-list with exceptions, and system directories
-stay readable. For a scanner you don't trust at all, give it its own container:
-`bench.py run --scanner-image my-scanner:1.0 --scanner-cmd "..."`. The scanner then runs in an image
-that holds only the scanner (`integrations/scanner-image.Dockerfile` builds one from wheels), with
-no network, a read-only root, no capabilities, the corpus mounted read-only and one writable output
-directory. No testbench file, answer key, holdout set or host file exists inside it. Time and memory
-limits apply and are recorded; the image id goes in the bundle. QCI v2.3.4 scores identically in
-both lanes (`evidence/qci-v2.3.4-container/`).
+| Policy | Covers | Key dates |
+|---|---|---|
+| `nist` (default) | NIST IR 8547 **final** (Oct 27, 2026), SP 800-131A Rev. 2, FIPS 186-5, SP 800-52 Rev. 2, NIST's 2022 SHA-1 notice | All quantum-vulnerable public-key crypto deprecated after 2030, disallowed after 2035, at any key size. SHA-1 ends Dec 31, 2030. RSA/DH below 2048, DSA signing, 3DES, MD5, TLS < 1.2 are already out. |
+| `eo14412-hva` | Executive Order 14412 (June 22, 2026) for federal high value assets and high impact systems; inherits `nist` | PQC key establishment by Dec 31, 2030; PQC signatures by Dec 31, 2031. |
+| `cnsa2` | NSA CNSA 2.0 | Only AES-256, ML-KEM-1024, ML-DSA-87, SHA-384/512 (and LMS/XMSS). CNSA 1.0 strengths (RSA-3072+, P-384) until the system type's exclusive-use date: 2030 for firmware signing and networking, 2033 for web/cloud, OS, niche and custom. |
 
-What the sandbox can't cover is the scanner's build. `pip install` runs the scanner's own code and
-needs the network. `run_qci_pqc.py` strips the seed and anything credential-shaped from that
-step's environment, which is enough for your own scanner. For someone else's, build in a job with
-no secrets and score in another: `integrations/qci-pqc/github-workflow.yml` does exactly that,
-handing wheels and their hashes from one job to the next.
+- **The final IR 8547 is stricter than the draft.** The November 2024 draft let 128-bit-and-up keys
+  (RSA-3072, P-256, Ed25519) run to 2035 while 112-bit keys stopped in 2030. The final deprecates
+  all of them after 2030. Tools and slide decks built on the draft are now wrong.
+- **Overlays only tighten.** `eo14412-hva` inherits `nist`, and the stricter verdict wins, so DSA
+  stays disallowed since 2023 even though the order's signature date is 2031.
+- **The same scan reads very differently by policy.** Grep misses 28 findings due by 2030 under
+  `nist`, 48 under `eo14412-hva`, and 60 under `cnsa2`, where nearly everything that isn't CNSA
+  grade is non-compliant today.
+- **CNSA dates depend on system type.** `policy_report.py --use-map` takes `[glob, use]` pairs;
+  the default guesses from the path (`*/ssh/*` → networking, `*firmware*` → firmware signing).
+  Uses are firmware-signing, networking, web, os, niche and custom.
+- **Missing parameters are judged honestly.** An RSA key of unknown size is dated as quantum-vulnerable
+  under NIST, but can't be shown CNSA 1.0-strong, so CNSA marks it non-compliant. A scanner that
+  doesn't report key sizes pays for it here.
+- **What's deliberately not encoded**: SP 800-131A Rev. 3 is still a draft, so its proposals (retire
+  ECB, SHA-224, 112-bit security) appear only as notes. ChaCha20-Poly1305 is "not approved" under
+  NIST; that's a FIPS-scope finding, not a security one.
 
-**The bundle** holds the scanner's raw output, the adapted CBOM, the scorecards, a manifest
-(testbench release, methodology version, the release stamp, the sha256 of every file that decides a
-score, the scanner's command, version and executable hash, the image digest, toolchain versions,
-the sandbox record, the required-check status) and `SHA256SUMS`. With a holdout seed it adds the
-overfit and negative-control gaps and a commitment to the seed, never the seed itself.
-`bench.py verify` checks the sums, checks that the tree it runs on is the release the bundle was
-scored on (and lists any file that differs), and re-derives every section of every scorecard from
-the raw CBOM: results, false positives, libraries, linkage, deadlines, actionability. It re-derives
-the fix-and-rescan result from the second raw CBOM and the gate verdict from the bundled gates
-file. A doctored number fails even with recomputed checksums, and so does a bundle missing an
-artifact its claims rest on: a scored bundle without its raw CBOM doesn't verify. The one thing a
-bundle can't prove alone is the holdout result, because the seed is private; verify says so, and
-`verify --holdout-seed N --holdout-cbom FILE` re-derives it once the seed is revealed
-(`run --keep-holdout-cbom` keeps the file on the evaluator's side).
+Policies are data in `policies/*.json`. Every rule names its source document, revision and section,
+and `tools/test_policy.py` enforces that. `reports/corpus-deadlines.md` is a sample run on the whole
+corpus.
 
-Inside the testbench's own image the namespace boundary needs `--cap-add SYS_ADMIN` (tested: without
-it the run is "not confined" and `--require-isolation` refuses; with it the answer key is hidden).
+### BYOC
 
-**The image** (`Dockerfile`) pins Python 3.13 (the corpus ships 3.13 bytecode), Go 1.24, Node 22.18, JDK 21, a Java 25 runtime and
-OpenSSL 3 headers, verifies the whole corpus at build time, and records the toolchain versions. To
-score a scanner in it, build `FROM` the testbench image, install the scanner, and run
-`bench.py run` with `--network none`. On a version tag, `.github/workflows/release.yml` builds the
-image, runs the required checks inside it with no network, produces the answer-key and grep
-bundles, and attaches them to the GitHub release; pushing and cosign signing are switches for the
-repository owner. `evidence/` in this release holds a bundle for every published scorecard.
+The shipped corpus measures crypto in general. `tools/byoc.py` adds your organization's own patterns
+(in-house wrappers, vendor SDK usage, framework configs) as scored cases, kept in `corpus/custom/`
+and `expected/custom/` so upgrades never collide. Walkthrough in [BYOC.md](BYOC.md).
 
-**The rules** are in [METHODOLOGY.md](METHODOLOGY.md), versioned separately from the testbench.
-Every scorecard records the methodology version it was produced under, and scorecards from
-different versions are never compared.
+| Command | What it does |
+|---|---|
+| `byoc.py new CASE --lang LANG` | Scaffolds a runnable case and its answer key |
+| `byoc.py draft CASE [--write]` | Proposes candidate findings from a naive scan, marked unconfirmed |
+| `byoc.py add CASE --file F --alg RSA-2048 --anchor TEXT [--confirm]` | Records a finding by its ordinary name; rejects ambiguous anchors and duplicates |
+| `byoc.py check [CASE...]` | Runs each case and lints for credentials, real hostnames, and comments that name the algorithm |
+| `byoc.py list` | Lists your cases |
+
+Nothing is scored until a person confirms it. A worked example ships in
+`corpus/custom/example_envelope/`: an in-house envelope library where application code picks
+`profile="LEGACY_COMPAT"` and never names an algorithm.
+
+## Outputs
+
+| File | Written by | What it is |
+|---|---|---|
+| `reports/<name>.md`, `.json` | `score.py` | The scorecard: recall, primary-site recall, parameters, precision, PQC over-claims, actionability, deadlines, libraries, per bucket with 95% intervals |
+| `<bundle>/` | `bench.py run` | Evidence bundle: raw output, adapted CBOM, scorecards, `manifest.json`, `SHA256SUMS`, and `remediation.*`, `gates.*`, `checks.json` when asked for |
+| `<bundle>/gates.md`, `gates-result.json` | `bench.py run --gates` | Gate verdict: pass, fail, or not evaluated, with every gate listed |
+| `reports/comparison.md`, `.json` | `compare.py`, `render_docs.py` | Scanners side by side on one denominator |
+| `reports/<name>-deadlines.md`, `.csv`, `.json` | `policy_report.py` | Every finding dated under each policy |
+| `checks.json` | `bench.py checks` | The benchmark's own required checks, pass or fail |
+| `expected/expected.cdx.json` | `build_expected.py` | The reference CBOM: what a perfect scanner would produce |
 
 ## What the tiers test
+
+Each tier removes something a scanner could lean on: first the literal at the call site, then the
+file boundary, then source code altogether, then the name itself.
 
 | Tier | What it tests | Findings |
 |---|---|---|
@@ -222,32 +243,11 @@ held in a constant"), never which algorithm or size it uses. Earlier versions di
 reading key sizes out of comments: cleaning them up dropped its Tier 1 Java parameter score from
 87.5% to 56.2%. Case descriptions live in this README and in the ground truth's `note` fields.
 
-### An honest note on recall
-
-Grep scores 100% recall through Tier 3 in Python and Java. That isn't a corpus bug. Somewhere in every project the
-algorithm name is a string, usually in a config or constants file, and text search finds strings.
-That's why the scorecard has two recall numbers:
-
-- **Recall** gives credit for reporting the finding anywhere acceptable, including the config file
-  that names it.
-- **At primary site** gives credit only when the finding lands in the file the ground truth
-  anchors it to: the crypto call itself or, for a shared wrapper, the caller that binds the
-  parameters.
-
-An inventory that says "SHA-1, somewhere in `settings.py`" is technically correct and useless to the
-engineer who has to fix it. Through Tier 3, primary-site recall and parameter accuracy are what
-separate real analysis from text search. In Tier 4, recall itself collapses, because certificates
-and keys are base64-encoded and contain no algorithm names at all. In Tier 5 it hits zero: the
-names are broken up, encoded, compiled away, or never existed because nobody called a library.
-
-Three Tier 3 cases are built specifically to punish name-only matching:
-
-- `wrapper_two_callers`: one RSA wrapper, called with 1024 and 3072. Reporting "RSA" once at the
-  wrapper without sizes hides the weak key.
-- `cross_class_constant/SessionCrypto.java`: no algorithm string in the file at all. The
-  transformation and key length both come from `CryptoConfig`.
-- `jwt_alg_mapping`: `Mac.getInstance(macName)`. The algorithm is only resolvable by following
-  config → lookup table → call.
+Coverage: MD5, SHA-1, SHA-256, SHA3-256, RSA, DSA, ECDSA, Ed25519, X25519, DH, AES, 3DES, HMAC and
+PBKDF2 have at least one case in each code language. 141 of the 393 findings are Shor-vulnerable, 92
+are classically broken, and 27 are post-quantum (6 hybrids, 6 stateful). 304 generated calibration
+cases top up the Tier 1-2 cells for the overfit gap; they are scored but kept out of every headline
+number.
 
 ### Tier 4 cases worth knowing about
 
@@ -345,212 +345,22 @@ JDK has neither. Both are stateful: each signature spends a one-time key, and si
 same state breaks the scheme. That is the reason to inventory them separately from ML-DSA, and why the
 corpus ships their public keys only.
 
-## Your own code
-
-The shipped corpus measures crypto in general. [BYOC.md](BYOC.md) walks an organization through
-adding its own patterns (in-house wrappers, vendor SDK usage, framework configs) as scored cases:
-
-- `tools/byoc.py new` scaffolds a runnable case in `corpus/custom/<case>/` and its answer key in
-  `expected/custom/<case>.json`, kept apart from the shipped ground truth so upgrades never collide.
-- `byoc.py add` records findings using ordinary names (`RSA-2048`, `AES-128-CBC`, `ML-KEM-768`) and
-  rejects ambiguous anchors and duplicates. `byoc.py draft` proposes candidates from a naive scan,
-  marked unconfirmed; nothing is scored until a person confirms it.
-- `byoc.py check` runs each case and lints for what people get wrong when pasting real code:
-  credentials (error), real hostnames, emails and public IPs (warnings), and comments that name the
-  algorithm, which leak the answer.
-- `score.py --only-custom` gives a number about your estate; `--exclude-custom` keeps the shipped
-  benchmark comparable with anyone else's. By default each case is its own scorecard row.
-
-A worked example ships in `corpus/custom/example_envelope/`: an in-house envelope library where
-application code picks `profile="LEGACY_COMPAT"` and never names an algorithm. Grep finds its
-algorithms (they're named in the profile table) but misses both AES key sizes.
-
-## Crypto libraries
-
-The first question a CISO asks is often not "where is SHA-1 called" but "which applications ship
-which crypto library, at which version, and which of those can't do ML-KEM". `corpus/deps/` holds
-manifests for seven applications, and `expected/libraries.json` lists the 26 crypto libraries they
-declare:
-
-| Manifest | What it tests |
-|---|---|
-| `python-billing/requirements.txt` | Six pinned crypto libraries (cryptography 41.0.7, PyCryptodome, pyOpenSSL, PyJWT[crypto], Paramiko, bcrypt), a commented-out `pycrypto` line, and `hashids`, which sounds like crypto and isn't |
-| `python-signer/pyproject.toml` | PEP 621 dependencies: a version *range* (`cryptography>=48,<51`) and liboqs-python |
-| `java-gateway/pom.xml` | Bouncy Castle 1.70 through a `${bc.version}` property, on the superseded `-jdk15on` artifacts; Nimbus JOSE+JWT; JJWT; Jasypt inside an XML comment |
-| `java-pq/build.gradle` | Bouncy Castle 1.80 (`-jdk18on`), which has the final ML-KEM and ML-DSA |
-| `node-api/package.json` + `package-lock.json` | jsonwebtoken, crypto-js (discontinued upstream), node-forge, bcryptjs, @noble/post-quantum; and four *transitive* crypto libraries that only the lockfile shows. The lockfile was generated by npm, not typed |
-| `go-service/go.mod` | golang.org/x/crypto, Cloudflare CIRCL, golang-jwt |
-| `c-agent/conanfile.txt` + `CMakeLists.txt` | OpenSSL 1.1.1w (end of life since 2023-09-11) and libsodium |
-
-Each entry says whether that version ships ML-KEM/ML-DSA (`pq_capable`) and, where a primary source
-says so, its support status. Those facts are cited in the file's `sources` block: the
-pyca/cryptography changelog (ML-KEM and ML-DSA in the wheels from 48.0.0), Bouncy Castle's release
-notes (1.78 had the FIPS 203 draft, 1.79 the final standards), CIRCL's releases (ML-KEM from 1.4.0,
-ML-DSA from 1.5.0), crypto-js's README, and OpenSSL's own end-of-life and 3.5 announcements. Every
-pinned version was checked against PyPI, npm, Maven Central or the project's Git tags.
-
-`score.py` adds a section to every scorecard: libraries found in the right manifest, found anywhere
-(an inventory that can't say which application isn't much use, so it's reported separately),
-transitive coverage, version accuracy (a found library with no version counts as not correct), and,
-when a scanner states whether a library is post-quantum capable, whether that verdict is right. False
-positives are a commented-out dependency reported, a look-alike reported *as cryptography*, or a
-crypto library attributed to a manifest that doesn't declare it. `verify_corpus.py` checks every
-manifest parses with its ecosystem's rules and lists what the answer key says it lists.
-
-## The system fixture
-
-`corpus/system/payments-platform/` is one application instead of one file: a Go API, a Python
-worker and a Java service that all get their crypto from a shared wrapper (`libs/cryptokit`, in
-three languages) driven by one config file. Around them: lockfiles, a built JAR and a stripped Go
-binary, nginx TLS termination with its certificate and key, a Kubernetes TLS secret, KMS keys in
-Terraform (one with no key spec, which AWS defaults to AES-256-GCM), a partner CA certificate
-pasted into Python source, and a CODEOWNERS file. 26 findings, scored like any other.
-
-Two numbers only a system can produce:
-
-- **Routable.** Each finding's owner comes from CODEOWNERS. When the wrapper and config decide the
-  algorithm, the answer key's file is the service's call site and the wrapper and config are alt
-  files: a scanner that reports only the wrapper still gets the detection, but the ticket goes to
-  platform-security instead of the team that has to change its code. The config line for webhook
-  signatures is shared by two services, so one report there routes neither.
-- **Asset links.** Does the CBOM connect the nginx config to the certificate it serves, and the
-  certificate to its private key? Found when a component in one file references a component in the
-  other (a CycloneDX `*Ref`, a suite's `algorithms`, or a `dependencies` entry).
-
-`tools/build_system.py` regenerates the keys and certificates and rebuilds the binary and JAR from
-the fixture's own source; `verify_corpus.py` runs every service, both artifacts, and parses every
-key. Grep's result is the point: it finds the wrapper-decided findings through the config and routes
-every one of them to the wrong team.
-
-## Big trees
-
-`bench.py perf` generates a tree from a public seed (600, 3,000 or 12,000 code files in five
-languages plus large CSV exports) with Tier 1 uses planted evenly through it, runs the scanner in
-the sandbox under a time budget, and reports whether it finished, wall and CPU time, peak memory,
-throughput, and how many planted uses it found by quarter of the tree. A scanner that gives up
-partway shows it as a drop in the last quarter. The bundle re-verifies: the fixture regenerates
-from its seed and the result re-derives from the raw CBOM.
-
-Every scorecard bucket now carries a 95% interval on recall, and buckets with fewer than ten
-findings are marked thin. Every result also records the rule that decided it, so a disputed point
-traces to METHODOLOGY.md.
-
-## Holdout sets and the overfit gap
-
-A public corpus gets learned. `tools/holdout.py` generates fresh, executable variants of the Tier 1-3,
-PQC and mixed-file patterns in every corpus language, plus negative controls and dependency manifests, from a
-private seed (new code, same APIs and kinds of indirection), scores a scanner on them, and reports
-the **overfit gap**: published recall minus holdout recall, cell by cell, with a
-95% interval. A broad set adds API spellings the corpus doesn't use and reports coverage on its own.
-
-Two more gaps ride along: false positives per negative file (gated at +0.5) and crypto libraries
-found in the right manifest (reported only; six manifests a seed is too few to gate on).
-
-Since 2.1 the holdout also generates certificates, keys, keystores, TLS and SSH configs and compiled
-`.pyc` and `.jar` files, so Tier 4, Tier 5 and PQC-asset cells are in the gap too. Generator 1.2 adds
-C#, Apache, HAProxy and IPsec configs, firmware signing policies naming LMS and XMSS, minified
-JavaScript and stripped native binaries.
-
-Calibrated before trusting it: the reference CBOM reads 0 and a memorizer +100. On 2.4.0 with
-generator 1.2, over five seeds, grep reads -4.0 to -2.2 and QCI v0.7, v2.2 and v2.3.4 between -3.1
-and +1.0, never significant. On the negatives, grep and v2.3.4 stay between 0 and +0.36 per file
-and v0.7 and v2.2 read +0.6 to +0.9, over the 0.5 limit as before. Details, and the limits, in [HOLDOUT.md](HOLDOUT.md).
-
-## Is the CBOM actionable?
-
-Detection asks whether the scanner found it. Actionability asks whether an engineer could open a
-migration ticket from what it reported. Every detected finding is checked against
-`rubric/actionability.json`:
-
-| Must have (no ticket without it) | Should have (the ticket bounces back without it) |
-|---|---|
-| Exact location: the line for code, the file for assets | OID |
-| Correct parameters | Crypto functions (`sign`, `encrypt`, `keyderive`...) |
-| Primitive, where the family is ambiguous (RSA: ML-KEM or ML-DSA replacement? EC: ECDH or ECDSA?) | Correct quantum security level |
-| Certificates: **correct** expiry date and subject | Code context (`symbol` or `additionalContext`) |
-| Keys: key material type (private or public) | Providing library (`dependencies[].provides`) |
-| Protocols: version | Certificate issuer, start date, key and signature both linked; key format; suites inside a protocol |
-
-Certificate facts are **checked against the real files**. `tools/assetfacts.py` reads subject,
-issuer and validity out of every certificate at build time, including the one inside the PKCS#12,
-the one in the JKS (via `keytool`) and the one base64-encoded in the Kubernetes secret. A scanner that
-reports the wrong expiry date fails, which is right: a wrong date is worse than none.
-
-The scorecard reports:
-
-- **Ticket-ready**: share of detected findings with every must-have present and correct.
-- **Actionable recall**: share of *all* expected findings that were both found and ticket-ready.
-  This is the closest single number to "how much of the migration backlog would this tool hand me".
-- **Field completeness**: share of all applicable checks passed, plus a per-check table showing
-  exactly which fields a scanner leaves empty.
-
-The calibration rows make the point. `reference-names-only` is the answer key with OIDs, functions,
-quantum levels, code context, library links and certificate metadata stripped. It finds
-everything, and a quarter of what it finds can't become a ticket: no certificate has an expiry date,
-and no RSA or EC key says whether it's for key exchange or signing. Grep's actionable
-recall is about half its recall (see the calibration table under Quick start).
-
-## Deadlines and policies
-
-Detection rates treat a missed MD5 checksum the same as a missed key exchange that has to be gone
-by 2030. Organizations don't, so every expected finding is also dated under a transition policy,
-and the scorecard adds a deadline view:
-
-- **Recall by when it's due**: due now, by end of 2030, 2031–2033, 2034–2035, no deadline.
-- **Deadline-weighted recall**: misses weigh 5 if due now, 4 by 2030, 3 for 2031–2033, 2 for
-  2034–2035, 1 with no deadline.
-- **Findings due by end of 2030 that the scanner missed**, listed by name. This is the number a
-  CISO can take to a board.
-
-Three policies ship, as data in `policies/*.json`:
-
-| Policy | Covers | Key dates |
-|---|---|---|
-| `nist` (default) | NIST IR 8547 **final** (Oct 27, 2026), SP 800-131A Rev. 2, FIPS 186-5, SP 800-52 Rev. 2, NIST's 2022 SHA-1 notice | All quantum-vulnerable public-key crypto deprecated after 2030, disallowed after 2035, at any key size. SHA-1 ends Dec 31, 2030. RSA/DH below 2048, DSA signing, 3DES, MD5, TLS < 1.2 are already out. |
-| `eo14412-hva` | Executive Order 14412 (June 22, 2026) for federal high value assets and high impact systems; inherits `nist` | PQC key establishment by Dec 31, 2030; PQC signatures by Dec 31, 2031. |
-| `cnsa2` | NSA CNSA 2.0 | Only AES-256, ML-KEM-1024, ML-DSA-87, SHA-384/512 (and LMS/XMSS). CNSA 1.0 strengths (RSA-3072+, P-384) until the system type's exclusive-use date: 2030 for firmware signing and networking, 2033 for web/cloud, OS, niche and custom. |
-
-Things worth knowing:
-
-- **The final IR 8547 is stricter than the draft.** The November 2024 draft let 128-bit-and-up keys
-  (RSA-3072, P-256, Ed25519) run to 2035 while 112-bit keys stopped in 2030. The final deprecates
-  all of them after 2030. Tools and slide decks built on the draft are now wrong.
-- **Overlays only tighten.** `eo14412-hva` inherits `nist`, and the stricter verdict wins, so DSA
-  stays disallowed since 2023 even though the order's signature date is 2031.
-- **The same scan reads very differently by policy.** Grep misses 28 findings due by 2030 under
-  `nist`, 48 under `eo14412-hva`, and 60 under `cnsa2`, where nearly everything that isn't CNSA
-  grade is non-compliant today.
-- **CNSA dates depend on system type.** `policy_report.py --use-map` takes `[glob, use]` pairs;
-  the default guesses from the path (`*/ssh/*` → networking, `*firmware*` → firmware signing).
-  Uses are firmware-signing, networking, web, os, niche and custom.
-- **Missing parameters are judged honestly.** An RSA key of unknown size is dated as quantum-vulnerable
-  under NIST, but can't be shown CNSA 1.0-strong, so CNSA marks it non-compliant. A scanner that
-  doesn't report key sizes pays for it here.
-- **What's deliberately not encoded**: SP 800-131A Rev. 3 is still a draft, so its proposals (retire
-  ECB, SHA-224, 112-bit security) appear only as notes. ChaCha20-Poly1305 is "not approved" under
-  NIST; that's a FIPS-scope finding, not a security one.
-
-`policy_report.py` works on any CycloneDX 1.6 CBOM, not just this corpus. Run it on a real scan and
-you get the same three views of your own estate, plus a CSV to load into a tracker.
-`reports/corpus-deadlines.md` is a sample, run on the complete corpus inventory.
-
-When a standard changes, edit the rule in its JSON file and rerun `test_policy.py`; every rule
-names its source document, and every source carries its retrieval date.
-
-## Coverage
-
-Algorithms with at least one case in each code language: MD5, SHA-1, SHA-256, SHA3-256, RSA, DSA,
-ECDSA (P-256, P-384), Ed25519, X25519, DH, AES, 3DES, HMAC, PBKDF2. Python adds ChaCha20-Poly1305 and
-AES-128-CBC / AES-192-CBC; Java adds single DES. Tier 4 adds secp256k1, SHA-384 and SHA-512
-certificate signatures, TLS 1.0–1.2, five cipher suites, and SSH key exchange, cipher and MAC names.
-Tier 5 adds RC4, TEA and HMAC-MD5. The PQC category adds ML-KEM-768/1024, ML-DSA-44/65/87, four
-hybrid key-exchange groups, TLS 1.3, and the stateful hash-based signatures LMS and XMSS.
-
-Quantum-relevant split: 141 of 393 findings are Shor-vulnerable (RSA, DSA, EC, DH, Ed25519, X25519,
-and TLS suites with RSA or ECDHE key exchange); 92 are classically broken (MD5, SHA-1, DES, 3DES,
-RC4, and HMAC over SHA-1 or MD5); 27 are post-quantum, 6 of them hybrids and 6 stateful (LMS, XMSS).
-
 ## How scoring works
+
+The normative rules are in [METHODOLOGY.md](METHODOLOGY.md), versioned separately from the
+benchmark. Every scorecard records the version it was produced under, and scorecards from different
+versions are never compared.
+
+> **Recall is not the number to trust. Primary-site recall is.**
+> Grep scores 100% recall through Tier 3 in Python and Java. That isn't a corpus bug: somewhere in
+> every project the algorithm name is a string, and text search finds strings. So the scorecard has
+> two recall numbers. **Recall** gives credit for reporting the finding anywhere acceptable,
+> including the config file that names it. **At primary site** gives credit only when it lands in
+> the file the answer key anchors it to: the crypto call, or for a shared wrapper, the caller that
+> binds the parameters. "SHA-1, somewhere in `settings.py`" is correct and useless to the engineer
+> who has to fix it. Three Tier 3 cases exist to punish name-only matching: `wrapper_two_callers`
+> (one RSA wrapper called with 1024 and 3072), `cross_class_constant` (no algorithm string in the
+> file at all) and `jwt_alg_mapping` (resolvable only by following config, lookup table, call).
 
 - **Detected:** the scanner reports the same algorithm *family* in the expected file. For config-
   driven and cross-file cases, reporting it in a listed `alt_files` location also counts. Names are
@@ -611,93 +421,164 @@ a `jar:file:` prefix) are attributed to the archive file.
 Duplicates don't hurt: five occurrences of HMAC in one file collapse to one finding (in a mixed
 file, to one finding per site).
 
+### Actionability
+
+Detection asks whether the scanner found it. Actionability asks whether an engineer could open a
+migration ticket from what it reported. Every detected finding is checked against
+`rubric/actionability.json`:
+
+| Must have (no ticket without it) | Should have (the ticket bounces back without it) |
+|---|---|
+| Exact location: the line for code, the file for assets | OID |
+| Correct parameters | Crypto functions (`sign`, `encrypt`, `keyderive`...) |
+| Primitive, where the family is ambiguous (RSA: ML-KEM or ML-DSA replacement? EC: ECDH or ECDSA?) | Correct quantum security level |
+| Certificates: **correct** expiry date and subject | Code context (`symbol` or `additionalContext`) |
+| Keys: key material type (private or public) | Providing library (`dependencies[].provides`) |
+| Protocols: version | Certificate issuer, start date, key and signature both linked; key format; suites inside a protocol |
+
+Certificate facts are checked against the real files, not for presence: a wrong expiry date fails.
+The scorecard reports **ticket-ready** (every must-have present and correct), **actionable recall**
+(found and ticket-ready, over all expected findings) and **field completeness**. The rubric is
+proposed, not official: no official minimum CBOM elements exist yet.
+
+## Calibration / baseline
+
+Three runs ship with every release, so a new scorecard has something to be read against:
+
+<!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
+| Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
+|---|---|---|---|---|---|---|---|---|---|
+| `expected/expected.cdx.json` (the answer key) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
+| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
+| `tools/baseline_grep.py` (naive regex) | 393 | 67.4% | 63.6% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.4% |
+
+Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
+<!-- /generated:calibration-points -->
+
+Grep by tier, which is the shape to expect from a weak scanner:
+
+<!-- generated:grep-by-tier (tools/render_docs.py; edit the scorecards, not this table) -->
+| Tier | Findings | Recall | At primary site | Params correct |
+|---|---|---|---|---|
+| 1. Direct, Python and Java | 32 | 100% | 100% | 56.2–75% |
+| 1. Direct, Go / JavaScript / C | 57 | 65–82.4% | 65–82.4% | 42.9–85.7% |
+| 1. Direct, C# | 13 | 92.3% | 92.3% | 58.3% |
+| 2. Indirection, Python and Java | 17 | 100% | 87.5–88.9% | 50–55.6% |
+| 2. Indirection, Go / TypeScript / C | 19 | 83.3–100% | 83.3–100% | 33.3–60% |
+| 2. Indirection, C# | 6 | 83.3% | 83.3% | 40% |
+| 3. Cross-file | 16 | 100% | 42.9–55.6% | 33.3–42.9% |
+| 4. Non-code assets | 66 | 34.8% | 34.8% | 69.6% |
+| 5. Adversarial, source and bytecode | 20 | 0% | 0% | n/a |
+| 5. Adversarial, minified JS and native binary | 6 | 66.7–100% | 66.7–100% | 50–100% |
+| PQC, code | 16 | 50–100% | 50–100% | 25–50% |
+| PQC, assets | 27 | 37% | 37% | 90% |
+| Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
+| System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |
+| Dead code | 10 | 50–100% | 50–100% | 100% |
+
+Ranges run across the languages in each row.
+<!-- /generated:grep-by-tier -->
+
+> **Grep is the floor.** The reference run proves the scorer agrees with the answer key. The grep
+> run is what regular expressions get with no analysis at all. A commercial scanner that can't beat
+> it on parameters and precision is a grep with a logo. The names-only row is the answer key with
+> OIDs, functions, quantum levels and certificate metadata stripped: it finds everything, and a
+> quarter of what it finds can't become a ticket.
+
+## Holdout and overfit gap
+
+`tools/holdout.py` generates fresh, executable variants of the published patterns from a private
+seed (new code, same APIs and kinds of indirection), scores a scanner on them, and reports the
+**overfit gap**: published recall minus holdout recall, cell by cell, with a 95% interval. A second
+gap compares false positives per negative-control file (gated at +0.5), which catches a scanner that
+suppressed false positives only until the published negatives were clean.
+
+Generator 1.2 covers every code language, certificates, keys, keystores, TLS, SSH and IPsec configs,
+firmware signing policies, and compiled, minified and native artifacts. Calibrated over five seeds on
+this release: the answer key reads 0 on every seed, a memorizer +100, grep -4.0 to -2.2 and QCI
+v2.3.4.1 -0.9 to +1.0, none significant. On the negative controls grep reads 0 to +0.36 per file and
+QCI 0 to +0.04. Details, the generator's limits and how to keep a seed private are in
+[HOLDOUT.md](HOLDOUT.md).
+
+## Crypto libraries / system fixture
+
+**Crypto libraries.** `corpus/deps/` holds dependency manifests for seven applications declaring 26
+crypto libraries; `expected/libraries.json` records each one's version, whether that version ships
+ML-KEM and ML-DSA, and the primary source that says so. The scorecard reports libraries found in the
+right manifest, version accuracy, transitive coverage and, where a scanner gives one, whether its
+post-quantum verdict is right.
+
+| Manifest | What it tests |
+|---|---|
+| `python-billing/requirements.txt` | Six pinned crypto libraries (cryptography 41.0.7, PyCryptodome, pyOpenSSL, PyJWT[crypto], Paramiko, bcrypt), a commented-out `pycrypto` line, and `hashids`, which sounds like crypto and isn't |
+| `python-signer/pyproject.toml` | PEP 621 dependencies: a version *range* (`cryptography>=48,<51`) and liboqs-python |
+| `java-gateway/pom.xml` | Bouncy Castle 1.70 through a `${bc.version}` property, on the superseded `-jdk15on` artifacts; Nimbus JOSE+JWT; JJWT; Jasypt inside an XML comment |
+| `java-pq/build.gradle` | Bouncy Castle 1.80 (`-jdk18on`), which has the final ML-KEM and ML-DSA |
+| `node-api/package.json` + `package-lock.json` | jsonwebtoken, crypto-js (discontinued upstream), node-forge, bcryptjs, @noble/post-quantum; and four *transitive* crypto libraries that only the lockfile shows. The lockfile was generated by npm, not typed |
+| `go-service/go.mod` | golang.org/x/crypto, Cloudflare CIRCL, golang-jwt |
+| `c-agent/conanfile.txt` + `CMakeLists.txt` | OpenSSL 1.1.1w (end of life since 2023-09-11) and libsodium |
+
+**The system fixture.** `corpus/system/payments-platform/` is one application instead of one file: a
+Go API, a Python worker and a Java service sharing a crypto wrapper and its config, with lockfiles,
+a built JAR and a stripped Go binary, nginx TLS termination, a Kubernetes TLS secret, KMS keys in
+Terraform, a certificate pasted into source, and CODEOWNERS. It adds two numbers only a system can
+produce: **routable** (a reported location resolves, through CODEOWNERS, to the team that owns the
+fix; reporting only the shared wrapper doesn't) and **asset links** (the CBOM connects the nginx
+config to its certificate and the certificate to its key). Definitions in
+[METHODOLOGY.md](METHODOLOGY.md) section 4a.
+
+## Documentation index
+
+| Document | What's in it |
+|---|---|
+| [METHODOLOGY.md](METHODOLOGY.md) | The scoring rules, versioned: matching, false positives, metrics, scope, gates, execution |
+| [CHANGELOG.md](CHANGELOG.md) | What changed in each release |
+| [HOLDOUT.md](HOLDOUT.md) | Holdout sets, the overfit and negative-control gaps, calibration, limits |
+| [BYOC.md](BYOC.md) | Adding your own code as scored cases |
+| [reports/comparison.md](reports/comparison.md) | Published results, scanners side by side |
+| [reports/qci-pqc/SUMMARY.md](reports/qci-pqc/SUMMARY.md) | QCI scanner v2.3.4.1: scorecard summary and gate verdict |
+| [integrations/qci-pqc/FINDINGS.md](integrations/qci-pqc/FINDINGS.md) | What the QCI scanner misses and gets wrong, for its team |
+| [integrations/cdxgen/NOTES.md](integrations/cdxgen/NOTES.md) | What cdxgen 12.9.1 finds, misses and gets wrong |
+| [integrations/third-party/README.md](integrations/third-party/README.md) | Open-source scanners run on GitHub, and what must be read before one is published |
+| [evidence/](evidence/) | An evidence bundle for every published scorecard; check one with `bench.py verify` |
+
 ## Layout
 
 ```
-corpus/
-  tier1/{python,java}/      direct, literal usage
-  tier2/{python,java}/      same-file indirection (+ config/ files)
-  tier1/{go,javascript,c}/  Go: one program per directory under a go.mod; Node .js/.mjs; C linked to OpenSSL 3
-  tier2/{go,typescript,c}/  same-file indirection in the other three languages
-  tier3/python/<case>/      multi-module projects, entry point main.py
-  tier3/java/<case>/        multi-package projects under src/, entry point com.acme.Main
-  tier4/assets/             certs/ keys/ keystores/ ssh/ tls/ k8s/
-  tier5/{python,java}/      obfuscated and hand-rolled code, plus compiled/ (.pyc, .jar)
-  pqc/{python,java}/        ML-KEM, ML-DSA, an app-level hybrid, PQC-washing decoys
-  pqc/go/                   crypto/mlkem and a hybrid-group tls.Config
-  pqc/assets/               certs/ keys/ tls/ ssh/ with ML-DSA certs and hybrid groups
-  calibration/tier{1,2}/    generated siblings of the Tier 1-2 cases for the overfit gap; not in headline numbers
-  mixed/<lang>/             realistic-size modules, several sites each (generated: tools/build_mixed.py)
-  deps/<app>/               dependency manifests: pip, PEP 621, Maven, Gradle, npm + lockfile, go.mod, Conan
-  custom/<case>/            your own cases (BYOC); example_envelope ships as a worked example
-  system/payments-platform/ one multi-service application: services, shared wrapper, artifacts, edge, deploy, infra
-  negatives/{python,java,go,javascript,c,assets}/  zero-crypto controls
-tier5-sources/              source of the compiled artifacts. Never scan this.
-expected/
-  ground_truth.json         the shipped answer key
-  libraries.json            crypto libraries per dependency manifest, with versions, PQC capability, sources
-  custom/<case>.json        answer keys for your own cases, one per case (BYOC)
-  ground_truth.resolved.json  generated, with line numbers
-  expected.cdx.json         generated reference CBOM, schema-valid CycloneDX 1.6
+corpus/                     what a scanner reads
+  tier1/ tier2/               single-file cases per language (C# is one project per case)
+  tier3/                      multi-file Python and Java projects
+  tier4/assets/               certs/ keys/ keystores/ ssh/ tls/ ipsec/ k8s/
+  tier5/                      obfuscated and hand-rolled source; compiled, minified and native artifacts
+  pqc/                        ML-KEM, ML-DSA, LMS, XMSS, hybrids, PQC-washing decoys; code and assets
+  mixed/ deadcode/            realistic-size modules with several sites; crypto that never runs
+  system/payments-platform/   one multi-service application
+  deps/                       dependency manifests for seven applications
+  negatives/                  zero-crypto controls
+  calibration/                generated siblings of Tier 1-2 cases; not in headline numbers
+  custom/                     your own cases (BYOC)
+tier5-sources/              source of the Tier 5 artifacts. Never scan this.
+expected/                   ground_truth.json (the answer key), libraries.json, custom/, generated reference CBOM
 tools/
-  cbomlib.py                normalizer, family tables, CycloneDX I/O
-  build_expected.py         anchors -> lines -> reference CBOM
-  score.py                  the scorer
-  baseline_grep.py          naive regex scanner for calibration
-  verify_corpus.py          runs every code case, parses every asset
-  generate_tier4_assets.py  regenerates Tier 4 keys, certs and keystores
-  build_tier5_compiled.py   rebuilds the Tier 5 .pyc and .jar from tier5-sources/
-  generate_pqc_assets.py    regenerates the PQC certificates and key files
-  policy.py                 deadline engine: rules, inheritance, buckets
-  policy_report.py          date any CBOM against one or more policies (md, csv, json)
-  test_policy.py            pins each deadline to its source; checks every rule cites a primary source, revision and section
-  truth.py                  loads the shipped answer key plus confirmed BYOC cases
-  actionability.py          checks reported fields against the rubric (ticket-ready, completeness)
-  assetfacts.py             reads real certificate subject/issuer/validity and key formats from the corpus
-  byoc.py                   bring your own code: new, draft, add, check, list
-  libraries.py              dependency scoring: library names, manifests, versions, PQC verdicts
-  run_qci_pqc.py            install, scan, score and gate the QCI PQC scanner in one command
-  holdout.py                generate, verify and score private holdout sets; the overfit gap
-  mixed.py                  ordinary-code templates and site picking for mixed files
-  build_mixed.py            writes corpus/mixed/ and its ground truth from a fixed seed; --check
-  release.py                the release stamp: answer key, corpus, scorer, policy and adapter hashes
-  compare.py                side-by-side scorecards; refuses ones measured on different things
-  render_docs.py            fills the README's generated tables from the release scorecards; --check
-  rebaseline.py             resets gate floors from scored runs and stamps them for this release
-  bench.py                  the one command: sandboxed scan, score, evidence bundle; verify; checks
-  sandbox.py                the secure lane: scrubbed env, private read-only corpus, no network, limits
-  linkage.py                system fixture: CODEOWNERS routing and asset links
-  remediate.py              fix and rescan: apply the reference migrations, score verified remediation
-  perf.py                   the large-repository fixture: generate, score by quarter of the tree
-  holdout_assets.py         holdout certificates, keys, keystores, configs and compiled artifacts
-  build_system.py           regenerates the system fixture's keys, certificates, binary and JAR
-  make_names_only.py        regenerates reports/reference-names-only.cdx.json
-  test_gates.py             gate enforcement: stale baselines, exit codes, report-only
-  build_calibration.py      writes corpus/calibration/ (Tier 1-2 cells topped up to four); --check
-  test_holdout.py           determinism, no answer leaks, metric extremes, every file runs
-  adapters/qci_pqc.py       translates qci-pqc's CBOM; scores its risk categories as signals
-  adapters/cdxgen.py        translates cdxgen's CBOM; HMAC/PBKDF2 context, crypto-file entries as signals
-  adapters/common.py        signal coverage shared by adapters
-  run_cdxgen.py             install, run and score cdxgen's CBOM mode
-  compare.py                side-by-side comparison of any scorecards on one denominator
-  test_normalize.py         108 naming-variant regression tests
-  test_scorer.py            17 scorer credit/penalty tests
-  test_qci_adapter.py       5 adapter checks (categories never leak into the strict score)
-  test_cdxgen_adapter.py    filenames never read as algorithms; HMAC/PBKDF2 renames; unlocated left alone
-  test_libraries.py         dependency scoring: decoys, look-alikes, versions, lockfile alt files, PQC verdicts
-integrations/qci-pqc/       scope.json, gates.json, github-workflow.yml, FINDINGS.md
-integrations/cdxgen/        NOTES.md: what cdxgen 12.9.1 finds, misses and gets wrong
-policies/                   nist.json, eo14412-hva.json, cnsa2.json: rules, dates, sources
-rubric/actionability.json   what a ticket needs: must/should checks mapped to CycloneDX fields
-reports/                    scorecards and deadline reports land here
-evidence/                   an evidence bundle per published scorecard (with fix-and-rescan), a perf bundle per
-                            scanner, and checks.json (bench.py verify <dir>)
-remediation/                migrations.json and after/: the reference migrations for fix-and-rescan
-METHODOLOGY.md              the scoring rules, versioned; every scorecard records which version
-Dockerfile                  the pinned environment; .github/workflows/ has CI and the release build
+  score.py  bench.py          the scorer; sandboxed run, verify, checks, perf
+  cbomlib.py  truth.py        normalizer and family tables; answer-key loading
+  sandbox.py  release.py      the secure lane; the release stamp
+  policy.py  policy_report.py deadline engine and report
+  byoc.py  compare.py         your own cases; side-by-side scorecards
+  holdout*.py                 private holdout sets and the overfit gap
+  build_*.py  generate_*.py   regenerate the answer key, assets, artifacts, mixed and calibration cases
+  verify_corpus.py            runs every code case, parses every asset
+  adapters/                   translations for scanners that don't emit plain CycloneDX 1.6
+  test_*.py                   regression suites (bench.py checks runs them all)
+policies/                   nist.json, eo14412-hva.json, cnsa2.json
+rubric/actionability.json   what a ticket needs
+remediation/                the ten reference migrations for fix-and-rescan
+integrations/               qci-pqc/, cdxgen/, third-party/, scanner-image.Dockerfile
+reports/  evidence/         published scorecards; a verifiable bundle for each
+.github/workflows/          testbench (CI), image, release, third-party scanners
 ```
 
-## Adding a case
+## Adding a case / Contributing
 
 1. Write the file under `corpus/tierN/...`. Code must run, and assets must parse;
    `verify_corpus.py` checks both. Multi-file cases go in their own directory under `tier3/`
@@ -715,6 +596,11 @@ Dockerfile                  the pinned environment; .github/workflows/ has CI an
 Tier 4 key material is regenerated by `generate_tier4_assets.py`. Key bytes change on every run;
 the ground truth doesn't depend on them. SHA-1 certificates are built by re-signing the TBS bytes,
 because modern `cryptography` (correctly) refuses to sign with SHA-1.
+
+Before opening a pull request, run `python tools/bench.py checks`: it is what CI runs. A change to
+the corpus, the answer key, the scorer or a policy changes the release stamp, which means every
+published scorecard has to be rescored and the gates rebaselined in the same change; a change to
+anything else doesn't. Rules that can move a score belong in METHODOLOGY.md with a version bump.
 
 ## License
 

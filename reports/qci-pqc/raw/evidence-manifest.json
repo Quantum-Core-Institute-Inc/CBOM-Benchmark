@@ -1,24 +1,24 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "442847f1e5b0ac8c2fc0515af2d7fc86d3d42f118b52b8f183972bd5ebc97c35",
-      "size": 2108218
+      "sha256": "82f42589e9bf6309d92938c59dd085f6af87ff6b86a8bd009105cd2b68eb999f",
+      "size": 1972776
     },
     "findings.json": {
-      "sha256": "e6cdd94ba156363655fe471f4ea3609186f4d2373580a75451b89c5b2c0bbb97",
-      "size": 287696
+      "sha256": "a9978e399427a008374fd6982362efe839a1d45d84f708faad01ada2a9654db3",
+      "size": 264114
     },
     "graph.json": {
-      "sha256": "1eee58ca25dac451c817ee1e4e1d241d1ffe781388f7d8e16c804b2205dcf76c",
-      "size": 144224
+      "sha256": "e607bb1f33c0ce1983858eb9b0073bc443b6492a6ad78257e2f38453ae2aa0d9",
+      "size": 134358
     },
     "report.html": {
-      "sha256": "404ad1bbb6d5b88da9bff5376b3ab69e40ee83736adb491ca3b665cacfc7269e",
-      "size": 489678
+      "sha256": "4da24c92dd2d4d7726cd618b5b331e0d304fb8cda92d004f61e1595941e16607",
+      "size": 453147
     },
     "results.sarif": {
-      "sha256": "9cbd6ed32699dfa43eba6447b5be26febf94cc9a0461530d6f24b61a9938b77e",
-      "size": 449501
+      "sha256": "27008c5939e22e34015c9f01b29202122921c9af3f5a8b62f2dfce0250b0cd59",
+      "size": 417416
     },
     "scan-coverage.json": {
       "sha256": "a5a8c74f81de43128cc0794c4f1237954afa9221a351bc42334b9cdeb83022e9",
@@ -30,27 +30,27 @@
   "policy": {},
   "reproducible": true,
   "ruleset_hash": "ab09bbe5e792533c",
-  "scanner_build": "2.3.4",
-  "scanner_version": "2.3.4",
+  "scanner_build": "2.3.4.1",
+  "scanner_version": "2.3.4.1",
   "summary": {
     "baseline_diff": null,
     "breakdown": {
       "bonus_pqc": 40,
       "formula": "100 - (vulnerable\u00d715) - (weak\u00d75). PQC is recorded, not added.",
-      "penalty_vulnerable": 5265,
-      "penalty_weak": 945,
+      "penalty_vulnerable": 4785,
+      "penalty_weak": 920,
       "pqc_count": 20,
-      "raw": -6110.0,
+      "raw": -5605.0,
       "scored": true,
-      "vulnerable_count": 351,
-      "weak_count": 189
+      "vulnerable_count": 319,
+      "weak_count": 184
     },
-    "findings": 918,
+    "findings": 855,
     "ignored": 0,
     "outputs": {
-      "cbom": "/tmp/cbom-sandbox-54l0cjd2/out/cbom.json",
-      "report": "/tmp/cbom-sandbox-54l0cjd2/out/report.html",
-      "sarif": "/tmp/cbom-sandbox-54l0cjd2/out/results.sarif"
+      "cbom": "/tmp/cbom-sandbox-1aytbqbs/out/cbom.json",
+      "report": "/tmp/cbom-sandbox-1aytbqbs/out/report.html",
+      "sarif": "/tmp/cbom-sandbox-1aytbqbs/out/results.sarif"
     },
     "project": "corpus",
     "readiness_score": 0.0,
