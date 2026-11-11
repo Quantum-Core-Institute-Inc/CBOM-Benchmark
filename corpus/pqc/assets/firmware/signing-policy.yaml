@@ -1,0 +1,23 @@
+# Firmware signing policy for the meter fleet. Read by the build farm's signing service.
+# Stateful hash-based signatures (NIST SP 800-208) for everything new; the P-384 entry stays
+# until the last gen-2 meters, which can't verify anything else, are retired.
+version: 3
+signers:
+  bootloader:
+    algorithm: LMS_SHA256_M32_H10
+    ots: LMOTS_SHA256_N32_W8
+    hsm_slot: 4
+    public_key: keys/bootloader_lms_pub.pem
+    state: hsm-only            # the counter never leaves the module
+  application:
+    algorithm: XMSS-SHA2_10_256
+    hsm_slot: 5
+    public_key: keys/update_xmss_pub.pem
+    state: hsm-only
+  gen2-legacy:
+    algorithm: ecdsa-p384
+    hsm_slot: 2
+    retire_by: 2028-06-30
+verify:
+  require_monotonic_index: true
+  reject_reused_index: true

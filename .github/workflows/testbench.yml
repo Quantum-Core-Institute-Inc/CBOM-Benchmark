@@ -33,8 +33,11 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - name: C toolchain and OpenSSL 3 headers
-        run: sudo apt-get update && sudo apt-get install -y build-essential libssl-dev
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: C toolchain, OpenSSL 3 headers, and Bouncy Castle for the LMS and XMSS cases
+        run: sudo apt-get update && sudo apt-get install -y build-essential libssl-dev libbcprov-java
 
       - name: Python dependencies (pinned)
         run: pip install -r requirements-verify.txt

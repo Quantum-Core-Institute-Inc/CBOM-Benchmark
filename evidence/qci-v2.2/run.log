@@ -1,15 +1,15 @@
 {
   "project": "corpus",
-  "findings": 904,
+  "findings": 931,
   "readiness_score": 0.0,
   "breakdown": {
-    "vulnerable_count": 322,
-    "weak_count": 183,
-    "pqc_count": 36,
-    "penalty_vulnerable": 4830,
-    "penalty_weak": 915,
-    "bonus_pqc": 72,
-    "raw": -5573.0,
+    "vulnerable_count": 329,
+    "weak_count": 194,
+    "pqc_count": 38,
+    "penalty_vulnerable": 4935,
+    "penalty_weak": 970,
+    "bonus_pqc": 76,
+    "raw": -5729.0,
     "formula": "100 - (vulnerable\u00d715) - (weak\u00d75) + (pqc\u00d72)"
   },
   "scanners": [
@@ -18,17 +18,17 @@
   "ignored": 0,
   "baseline_diff": null,
   "outputs": {
-    "report": "/tmp/cbom-sandbox-jkez59fh/out/report.html",
-    "cbom": "/tmp/cbom-sandbox-jkez59fh/out/cbom.json",
-    "sarif": "/tmp/cbom-sandbox-jkez59fh/out/results.sarif"
+    "report": "/tmp/cbom-sandbox-5wl6cwri/out/report.html",
+    "cbom": "/tmp/cbom-sandbox-5wl6cwri/out/cbom.json",
+    "sarif": "/tmp/cbom-sandbox-5wl6cwri/out/results.sarif"
   }
 }
 
 --- stderr ---
-Scanning /tmp/cbom-sandbox-jkez59fh/corpus with adapter(s): internal ...
-  qci-pattern: 1368 raw findings
-Deduplicated: 1368 → 904 findings
-Source findings: 903
+Scanning /tmp/cbom-sandbox-5wl6cwri/corpus with adapter(s): internal ...
+  qci-pattern: 1417 raw findings
+Deduplicated: 1417 → 931 findings
+Source findings: 930
 Artifact findings: 1
 Scores are not blended.
-Dependency graph: 904 edges
+Dependency graph: 931 edges

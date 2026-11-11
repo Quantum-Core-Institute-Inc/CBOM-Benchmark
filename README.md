@@ -12,7 +12,7 @@ Point a scanner at `corpus/`, feed its CycloneDX 1.6 output to `tools/score.py`,
 scorecard that says *where* it fails: which tier, which language, which algorithm, whether it
 got the key size right, and how much noise it generated on files that contain no crypto at all.
 
-Version 2.3.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **six languages**: 338 shipped findings, each
+Version 2.4.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **seven languages**: 393 shipped findings, each
 dated against NIST, the federal EO 14412 and NSA CNSA 2.0 transition deadlines. It scores whether
 each reported finding is **actionable**, not just whether it was found, and it lets you **add your
 own code** as scored cases; see [BYOC.md](BYOC.md). It ships wired to the **QCI PQC Readiness
@@ -21,14 +21,16 @@ Scanner** (`qci-pqc-scan`): one command installs it, scans the corpus and gates 
 learned, it generates **private holdout sets** that show whether a published score still predicts
 performance on unseen code; see [HOLDOUT.md](HOLDOUT.md).
 
-- Tiers 1 and 2 are code in Python, Java, Go, JavaScript/TypeScript and C/OpenSSL: 90 single-file
-  cases. Tier 3 adds 9 multi-file Python and Java projects.
-- Tier 4 is 19 non-code assets: certificates, private keys, keystores, SSH material, a JWKS,
-  TLS server configs and a Kubernetes secret.
-- Tier 5 is adversarial: 9 obfuscated or hand-rolled source files, plus a `.pyc` and a `.jar`
-  shipped without their source.
+- Tiers 1 and 2 are code in Python, Java, Go, JavaScript/TypeScript, C/OpenSSL and C#/.NET: 104
+  single-file cases. Tier 3 adds 9 multi-file Python and Java projects.
+- Tier 4 is 23 non-code assets: certificates, private keys, keystores, SSH material, a JWKS,
+  TLS configs for nginx, Apache httpd and HAProxy, two IPsec configs and a Kubernetes secret.
+- Tier 5 is adversarial: 9 obfuscated or hand-rolled source files, plus five artifacts shipped
+  without their source: a `.pyc`, a `.jar`, a ProGuard-obfuscated `.jar`, a minified JavaScript
+  bundle and a stripped native binary.
 - The PQC category checks that a scanner recognizes post-quantum cryptography that is already
-  deployed: ML-KEM and ML-DSA in Python, Java and Go, ML-DSA certificates and keys, and hybrid key
+  deployed: ML-KEM and ML-DSA in Python, Java and Go, LMS and XMSS firmware signing (the stateful
+  schemes of SP 800-208) in Java, a signing policy and two public keys, ML-DSA certificates and keys, and hybrid key
   exchange in TLS and SSH configs and in Go's `tls.Config`. It also contains "PQC-washing" decoys that claim PQ and aren't.
 - Dependency manifests for seven applications (pip, PEP 621, Maven, Gradle, npm with a real
   lockfile, Go modules, Conan) declare 26 crypto libraries, scored for whether a scanner names the
@@ -50,7 +52,8 @@ Tier 5 algorithm is checked against a reference implementation.
 # Python 3.11+ (the tools refuse to start on anything older).
 pip install -r requirements.txt              # pinned: cryptography, the CycloneDX validator, packaging
 pip install -r requirements-verify.txt       # adds a Java 25 runtime (jdk4py) for the PQC Java cases
-# To run every corpus case you also need Go 1.24+, Node 22.18+ (runs .ts directly), JDK 21, and a C
+# To run every corpus case you also need Go 1.24+, Node 22.18+ (runs .ts directly), JDK 21, the
+# .NET 8 SDK, Bouncy Castle's provider jar (apt install libbcprov-java, or set BCPROV_JAR), and a C
 # compiler with OpenSSL 3 headers (libssl-dev). verify_corpus.py counts pass / fail / skip per area;
 # --strict turns any skip into a failure (exit 4), which is what a release check uses.
 python tools/verify_corpus.py --strict       # runs every code case, parses every Tier 4 asset
@@ -78,9 +81,9 @@ Two calibration points ship with it:
 <!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
 | Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
 |---|---|---|---|---|---|---|---|---|---|
-| `expected/expected.cdx.json` (the answer key) | 330 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
-| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 330 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 72.7% | 72.7% |
-| `tools/baseline_grep.py` (naive regex) | 330 | 68.8% | 64.2% | 53.7% | 157 | 59.1% | 28 | 49.3% | 33.9% |
+| `expected/expected.cdx.json` (the answer key) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
+| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
+| `tools/baseline_grep.py` (naive regex) | 393 | 67.4% | 63.6% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.4% |
 
 Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
 <!-- /generated:calibration-points -->
@@ -92,15 +95,19 @@ Grep by tier, which is the shape you should expect a weak scanner to have:
 |---|---|---|---|---|
 | 1. Direct, Python and Java | 32 | 100% | 100% | 56.2–75% |
 | 1. Direct, Go / JavaScript / C | 57 | 65–82.4% | 65–82.4% | 42.9–85.7% |
+| 1. Direct, C# | 13 | 92.3% | 92.3% | 58.3% |
 | 2. Indirection, Python and Java | 17 | 100% | 87.5–88.9% | 50–55.6% |
 | 2. Indirection, Go / TypeScript / C | 19 | 83.3–100% | 83.3–100% | 33.3–60% |
+| 2. Indirection, C# | 6 | 83.3% | 83.3% | 40% |
 | 3. Cross-file | 16 | 100% | 42.9–55.6% | 33.3–42.9% |
-| 4. Non-code assets | 48 | 31.2% | 31.2% | 66.7% |
-| 5. Adversarial | 17 | 0% | 0% | n/a |
-| PQC, code | 14 | 50–100% | 50–100% | 25–50% |
-| PQC, assets | 22 | 40.9% | 40.9% | 100% |
+| 4. Non-code assets | 66 | 34.8% | 34.8% | 69.6% |
+| 5. Adversarial, source and bytecode | 20 | 0% | 0% | n/a |
+| 5. Adversarial, minified JS and native binary | 6 | 66.7–100% | 66.7–100% | 50–100% |
+| PQC, code | 16 | 50–100% | 50–100% | 25–50% |
+| PQC, assets | 27 | 37% | 37% | 90% |
 | Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
 | System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |
+| Dead code | 10 | 50–100% | 50–100% | 100% |
 
 Ranges run across the languages in each row.
 <!-- /generated:grep-by-tier -->
@@ -185,12 +192,12 @@ different versions are never compared.
 
 | Tier | What it tests | Findings |
 |---|---|---|
-| **1. Direct** | Algorithm and parameters are literals at the call site. `hashlib.md5()`, `Cipher.getInstance("AES/ECB/PKCS5Padding")`, `kpg.initialize(3072)`, Go's `md5.Sum` and `rsa.GenerateKey(rand.Reader, 2048)`, Node's `createCipheriv("des-ede3-cbc", ...)` and Web Crypto, OpenSSL's `EVP_aes_128_ecb()`, the pre-3.0 `RSA_generate_key_ex`, and TLS versions and suites set in code (`tls.Config`, `SSL_CTX_set_cipher_list`). | 89 (16 Python, 16 Java, 20 Go, 17 JavaScript, 20 C) |
-| **2. Indirection** | Same file, but the algorithm or its parameters arrive via a constant, alias import, config file, env var or system property default, wrapper function, dispatch table, enum, `functools.partial`, or string concatenation. Go adds a `crypto.Hash` value in a variable and constructors passed as function values; TypeScript adds `as const` config objects and template literals; C adds macros, OpenSSL 3 `EVP_CIPHER_fetch` by name, function pointers and constructor tables. | 36 (9 Python, 8 Java, 6 Go, 7 TypeScript, 6 C) |
+| **1. Direct** | Algorithm and parameters are literals at the call site. `hashlib.md5()`, `Cipher.getInstance("AES/ECB/PKCS5Padding")`, `kpg.initialize(3072)`, Go's `md5.Sum` and `rsa.GenerateKey(rand.Reader, 2048)`, Node's `createCipheriv("des-ede3-cbc", ...)` and Web Crypto, .NET's `MD5.HashData`, `RSA.Create(2048)` and `new AesGcm(key, 16)`, OpenSSL's `EVP_aes_128_ecb()`, the pre-3.0 `RSA_generate_key_ex`, and TLS versions and suites set in code (`tls.Config`, `SSL_CTX_set_cipher_list`). | 102 (16 Python, 16 Java, 20 Go, 17 JavaScript, 20 C, 13 C#) |
+| **2. Indirection** | Same file, but the algorithm or its parameters arrive via a constant, alias import, config file, env var or system property default, wrapper function, dispatch table, enum, `functools.partial`, or string concatenation. Go adds a `crypto.Hash` value in a variable and constructors passed as function values; TypeScript adds `as const` config objects and template literals; C adds macros, OpenSSL 3 `EVP_CIPHER_fetch` by name, function pointers and constructor tables. C# adds `const` settings, `IncrementalHash` by name, a `Func<HashAlgorithm>` table and a curve chosen by a helper. | 42 (9 Python, 8 Java, 6 Go, 7 TypeScript, 6 C, 6 C#) |
 | **3. Cross-file flow** | Multi-file projects. Algorithm names and key sizes defined in one module and used in another; a shared wrapper called with two different key sizes; decorator registries and strategy factories; constructor dependency injection; JWT `alg` read from `.ini` / `.properties` and resolved through a lookup table. | 16 (9 Python in 5 projects, 7 Java in 4 projects) |
-| **4. Non-code assets** | X.509 certificates (PEM, DER, a two-cert chain, one SHA-1-signed); private keys (PKCS#8, SEC1 on secp256k1, password-encrypted PKCS#8); a JWKS; a PKCS#12 keystore and a JKS truststore; an sshd_config, an SSH host public key and an OpenSSH private key; nginx, Spring Boot and OpenSSL TLS configs; a Kubernetes TLS secret with the certificate base64-encoded inside YAML. | 48 |
-| **5. Adversarial** | Names assembled at runtime (fragments, base64, `chr()` codes, reversed strings, char arrays); `importlib` and Java reflection; hand-rolled RC4, SHA-256, TEA and textbook RSA with no crypto library call at all; a `.pyc` and a `.jar` with no source. | 17 (9 Python, 8 Java) |
-| **PQC** | ML-KEM-768/1024 and ML-DSA-44/65/87 via `cryptography`, the JDK 24+ JCA and Go's `crypto/mlkem`; Go `tls.Config` preferring `X25519MLKEM768` with an X25519 fallback; including a parameter set passed through a constant or `NamedParameterSpec`; an application-level X25519 + ML-KEM hybrid; ML-DSA certificates, one PQ key signed by a classical RSA CA; ML-KEM and ML-DSA key files; hybrid groups (`X25519MLKEM768`, `SecP384r1MLKEM1024`) in nginx and OpenSSL configs; `mlkem768x25519-sha256` and `sntrup761x25519` in sshd_config; and two PQC-washing decoys plus a washing config. | 36 (6 Python, 4 Java, 4 Go, 22 assets) |
+| **4. Non-code assets** | X.509 certificates (PEM, DER, a two-cert chain, one SHA-1-signed); private keys (PKCS#8, SEC1 on secp256k1, password-encrypted PKCS#8); a JWKS; a PKCS#12 keystore and a JKS truststore; an sshd_config, an SSH host public key and an OpenSSH private key; nginx, Apache httpd, HAProxy, Spring Boot and OpenSSL TLS configs (HAProxy sets its DH group size on a tuning line, away from the ciphers); strongSwan IPsec proposals in both `swanctl.conf` and legacy `ipsec.conf` spelling (`aes256-sha256-modp2048`); a Kubernetes TLS secret with the certificate base64-encoded inside YAML. | 68 |
+| **5. Adversarial** | Names assembled at runtime (fragments, base64, `chr()` codes, reversed strings, char arrays); `importlib` and Java reflection; hand-rolled RC4, SHA-256, TEA and textbook RSA with no crypto library call at all; a `.pyc` and a `.jar` with no source; a ProGuard-obfuscated `.jar` (every name replaced, algorithm strings intact); a minified JavaScript bundle (one line, the cipher name hoisted into a one-letter constant); a stripped ELF binary whose only trace of MD5 and 3DES is two imported libcrypto symbols, and whose RSA key size is an immediate operand. | 26 (9 Python, 11 Java, 3 JavaScript, 3 C) |
+| **PQC** | ML-KEM-768/1024 and ML-DSA-44/65/87 via `cryptography`, the JDK 24+ JCA and Go's `crypto/mlkem`; Go `tls.Config` preferring `X25519MLKEM768` with an X25519 fallback; including a parameter set passed through a constant or `NamedParameterSpec`; an application-level X25519 + ML-KEM hybrid; ML-DSA certificates, one PQ key signed by a classical RSA CA; ML-KEM and ML-DSA key files; hybrid groups (`X25519MLKEM768`, `SecP384r1MLKEM1024`) in nginx and OpenSSL configs; `mlkem768x25519-sha256` and `sntrup761x25519` in sshd_config; two PQC-washing decoys plus a washing config; and LMS and XMSS: Bouncy Castle signing code, HSS/LMS and XMSS public keys identified only by OID, and a firmware signing policy that names both next to the P-384 signer it keeps for old devices. | 43 (6 Python, 6 Java, 4 Go, 27 assets) |
 | **Mixed** | Realistic-size modules, 220 to 520 lines, with three to five crypto uses spread through ordinary code: CSV parsing, pagination, retries, money formatting, logging. Most files use one family twice with different parameters (AES-128-CBC and AES-256-CTR, HMAC-MD5 and HMAC-SHA512, P-256 and P-521); the surrounding code has numbers a guesser will grab (page sizes of 256, buffers of 32 bytes, `bit_length()`); log lines and note dictionaries name algorithms the file doesn't use, including PQC claims. Scored per site, not per file. | 62 sites in 15 files (3 Python, 3 Java, 3 Go, 2 JavaScript, 1 TypeScript, 3 C) |
 | **Dead code** | Crypto that ships and never runs: a function nothing calls, a branch behind a constant that is always false, statements after a `return`. It counts, because it's in the artifact an auditor will read and one config flip away from running. A scanner that prunes unreachable code misses all of it. | 10 (2 each in Python, Java, Go, JavaScript, C) |
 | **Negatives** | Algorithm names in docstrings, comments, UI labels, log messages, identifiers and a Markdown runbook; known-answer test vectors; CRC32, Adler32, Base64, `hash()`; a file with valid PEM armor around base64 that isn't a certificate; and code that reuses crypto's constants and math for other jobs (Fibonacci hashing with TEA's constant, `pow()` for an IBAN check, `modPow` in a primality test); in Go, JavaScript and C, algorithm names in string tables, display labels and changelog comments next to FNV, CRC32 and djb2. Zero real crypto. | 12 files |
@@ -322,6 +329,11 @@ The Java PQC cases use the standard JCA names that arrived in JDK 24 (`KeyPairGe
 `KEM`, `Signature.getInstance("ML-DSA")`). They compile on JDK 21 and fail at runtime without a 24+
 runtime; `verify_corpus.py` uses `jdk4py`'s Java 25 runtime when the system Java is older, and skips
 them with a note when neither is available.
+
+The LMS and XMSS cases use Bouncy Castle (`KeyPairGenerator.getInstance("LMS", "BCPQC")`), because the
+JDK has neither. Both are stateful: each signature spends a one-time key, and signing twice from the
+same state breaks the scheme. That is the reason to inventory them separately from ML-DSA, and why the
+corpus ships their public keys only.
 
 ## Your own code
 
@@ -520,11 +532,11 @@ ECDSA (P-256, P-384), Ed25519, X25519, DH, AES, 3DES, HMAC, PBKDF2. Python adds 
 AES-128-CBC / AES-192-CBC; Java adds single DES. Tier 4 adds secp256k1, SHA-384 and SHA-512
 certificate signatures, TLS 1.0–1.2, five cipher suites, and SSH key exchange, cipher and MAC names.
 Tier 5 adds RC4, TEA and HMAC-MD5. The PQC category adds ML-KEM-768/1024, ML-DSA-44/65/87, four
-hybrid key-exchange groups and TLS 1.3.
+hybrid key-exchange groups, TLS 1.3, and the stateful hash-based signatures LMS and XMSS.
 
-Quantum-relevant split: 122 of 338 findings are Shor-vulnerable (RSA, DSA, EC, DH, Ed25519, X25519,
-and TLS suites with RSA or ECDHE key exchange); 80 are classically broken (MD5, SHA-1, DES, 3DES,
-RC4, and HMAC over SHA-1 or MD5); 21 are post-quantum, 6 of them hybrids.
+Quantum-relevant split: 141 of 393 findings are Shor-vulnerable (RSA, DSA, EC, DH, Ed25519, X25519,
+and TLS suites with RSA or ECDHE key exchange); 92 are classically broken (MD5, SHA-1, DES, 3DES,
+RC4, and HMAC over SHA-1 or MD5); 27 are post-quantum, 6 of them hybrids and 6 stateful (LMS, XMSS).
 
 ## How scoring works
 

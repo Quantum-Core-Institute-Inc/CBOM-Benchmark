@@ -938,6 +938,64 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "M-pq-lms-pub",
+      "name": "public-key bootloader_lms_pub.pem",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "M-pq-lms-pub-alg",
+          "format": "SPKI PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/keys/bootloader_lms_pub.pem"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-lms-pub-alg",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-xmss-pub",
+      "name": "public-key update_xmss_pub.pem",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "M-pq-xmss-pub-alg",
+          "format": "SPKI PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/keys/update_xmss_pub.pem"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-xmss-pub-alg",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T1-PY-01",
       "name": "MD5",
       "cryptoProperties": {
@@ -2333,6 +2391,186 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-59",
+      "name": "DH-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-60",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "256"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-61",
+      "name": "HMAC-SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-62",
+      "name": "DH-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "2048"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-63",
+      "name": "ChaCha20-Poly1305",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-64",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-65",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-66",
+      "name": "HMAC-SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-67",
+      "name": "DH-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-68",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "128"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T5-PY-01",
       "name": "SHA-1",
       "cryptoProperties": {
@@ -2635,6 +2873,166 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-09",
+      "name": "DES-ECB",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "ecb"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-10",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-11",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-256"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-02",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "128",
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-03",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-03",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "PQ-PY-01",
       "name": "ML-KEM-768",
       "cryptoProperties": {
@@ -2817,6 +3215,40 @@
           {
             "location": "corpus/pqc/java/PqWashing.java",
             "line": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-JV-05",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/java/FirmwareSignLms.java",
+            "line": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-JV-06",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/java/UpdateSignXmss.java",
+            "line": 16
           }
         ]
       }
@@ -3025,6 +3457,59 @@
           {
             "location": "corpus/pqc/assets/tls/nginx_pq_washing.conf",
             "line": 16
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-25",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-26",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-27",
+      "name": "ECC-P-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-384"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 18
           }
         ]
       }
@@ -4207,6 +4692,243 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-03",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-04",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-05",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "2048"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/RsaSign/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-06",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-256"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-07",
+      "name": "ECC-P-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-384"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/KeyAgreement/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-08",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "128",
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-09",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "256",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesGcmSeal/Program.cs",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-10",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/TripleDesLegacy/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-11",
+      "name": "HMAC-SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-12",
+      "name": "PBKDF2-HMAC-SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-13",
+      "name": "DSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "2048"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T2-C-01",
       "name": "AES-192-CBC",
       "cryptoProperties": {
@@ -4312,6 +5034,115 @@
           {
             "location": "corpus/tier2/c/t2_cipher_struct.c",
             "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-01",
+      "name": "AES-192-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "192",
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/HashByName/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-03",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/DispatchTable/Program.cs",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-04",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/DispatchTable/Program.cs",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-05",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-06",
+      "name": "ECC-P-521",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-521"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/CurveSwitch/Program.cs",
+            "line": 12
           }
         ]
       }
@@ -11190,6 +12021,184 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-02",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-01",
+      "name": "DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-02",
+      "name": "RC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 18
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "C-example_envelope-01",
       "name": "RSA-2048",
       "cryptoProperties": {
@@ -11530,7 +12539,119 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.0",
+      "bom-ref": "proto-8-TLS-1.1",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_256_CBC_SHA"
+            },
+            {
+              "name": "TLS_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_CHACHA20_POLY1305_SHA256"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 6
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 7
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-9-TLS-1.1",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_128_CBC_SHA"
+            },
+            {
+              "name": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          },
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-9-TLS-1.2",
+      "name": "TLS-1.2",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.2",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_128_CBC_SHA"
+            },
+            {
+              "name": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          },
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-10-TLS-1.0",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -11565,7 +12686,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.1",
+      "bom-ref": "proto-10-TLS-1.1",
       "name": "TLS-1.1",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -11600,7 +12721,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.2",
+      "bom-ref": "proto-10-TLS-1.2",
       "name": "TLS-1.2",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -11635,7 +12756,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-9-TLS-1.0",
+      "bom-ref": "proto-11-TLS-1.0",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "protocol",

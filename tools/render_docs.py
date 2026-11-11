@@ -68,6 +68,9 @@ def operations_block() -> str:
             "Large repo: planted uses found": [], "Large repo: found, first vs last quarter of the tree": []}
     sizes = set()
     for name, run_b, perf_b in OPS:
+        for b in (run_b, perf_b):  # a bundle that is missing or half-written is a stale doc, not a crash
+            if not (ROOT / b / "manifest.json").is_file():
+                raise Stale(f"{b} has no manifest.json: rebuild the bundle (bench.py run / perf --bundle {b})")
         m = json.loads((ROOT / run_b / "manifest.json").read_text())
         rem = m.get("remediation") or {}
         if rem.get("verdict") == "scored":
@@ -135,11 +138,14 @@ def evidence_problems() -> list[str]:
 GREP_GROUPS = [
     ("1. Direct, Python and Java", ["1/python", "1/java"]),
     ("1. Direct, Go / JavaScript / C", ["1/go", "1/javascript", "1/c"]),
+    ("1. Direct, C#", ["1/csharp"]),
     ("2. Indirection, Python and Java", ["2/python", "2/java"]),
     ("2. Indirection, Go / TypeScript / C", ["2/go", "2/typescript", "2/c"]),
+    ("2. Indirection, C#", ["2/csharp"]),
     ("3. Cross-file", ["3/python", "3/java"]),
     ("4. Non-code assets", ["4/assets"]),
-    ("5. Adversarial", ["5/python", "5/java"]),
+    ("5. Adversarial, source and bytecode", ["5/python", "5/java"]),
+    ("5. Adversarial, minified JS and native binary", ["5/javascript", "5/c"]),
     ("PQC, code", ["pqc/python", "pqc/java", "pqc/go"]),
     ("PQC, assets", ["pqc/assets"]),
     ("Mixed files", ["mixed/python", "mixed/java", "mixed/go", "mixed/javascript", "mixed/typescript", "mixed/c"]),

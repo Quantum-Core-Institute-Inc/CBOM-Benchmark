@@ -15,4 +15,4 @@
 | nginx: drop TLS 1.0/1.1, 3DES and RSA key transport; add TLS 1.3 and X25519MLKEM768 | not eligible | none | yes/yes, yes/yes, yes/yes | none |
 | sshd: ssh-rsa, group14-sha1, AES-CBC and HMAC-SHA1 out; Ed25519, ML-KEM hybrid, AES-GCM, HMAC-SHA512 in | not eligible | none | yes/yes, yes/yes, no/no, yes/no | none |
 
-Outside the migrated files: 0 finding(s) lost, 0 gained, false positives 20 -> 20. Any change here is the scanner being non-deterministic or reacting to files it shouldn't.
+Outside the migrated files: 0 finding(s) lost, 0 gained, false positives 22 -> 22. Any change here is the scanner being non-deterministic or reacting to files it shouldn't.

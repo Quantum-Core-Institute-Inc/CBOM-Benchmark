@@ -2905,6 +2905,90 @@
     "implemented_by": ""
   },
   {
+    "finding": "MD5",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "DES",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "CBC"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "Node-crypto",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RSA",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
     "finding": "OpenSSL",
     "path": "deps/c-agent/CMakeLists.txt",
     "app": "corpus",
@@ -4025,6 +4109,13 @@
     "implemented_by": "ML-KEM-1024"
   },
   {
+    "finding": "PQC-Dependency",
+    "path": "pqc/java/FirmwareSignLms.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "ML-KEM-1024",
     "path": "pqc/java/PqKem.java",
     "app": "corpus",
@@ -4086,6 +4177,13 @@
     "app": "corpus",
     "library": "",
     "implemented_by": "P-384"
+  },
+  {
+    "finding": "PQC-Dependency",
+    "path": "pqc/java/UpdateSignXmss.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
   },
   {
     "finding": "X25519",
@@ -4942,6 +5040,27 @@
     "implemented_by": "3DES"
   },
   {
+    "finding": "DSA",
+    "path": "tier1/csharp/DsaLegacy/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "PBKDF2",
+    "path": "tier1/csharp/MacKdf/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-256"
+  },
+  {
+    "finding": "3DES",
+    "path": "tier1/csharp/TripleDesLegacy/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "DES",
     "path": "tier1/go/des/main.go",
     "app": "corpus",
@@ -5038,13 +5157,6 @@
     "app": "corpus",
     "library": "",
     "implemented_by": ""
-  },
-  {
-    "finding": "RC4",
-    "path": "tier1/go/rc4/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "RC4"
   },
   {
     "finding": "RC4",
@@ -5586,6 +5698,48 @@
     "implemented_by": ""
   },
   {
+    "finding": "AES",
+    "path": "tier2/csharp/ConfigCipher/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "AES"
+  },
+  {
+    "finding": "AES",
+    "path": "tier2/csharp/ConfigCipher/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "AES"
+  },
+  {
+    "finding": "ECDSA",
+    "path": "tier2/csharp/CurveSwitch/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-256",
+    "path": "tier2/csharp/DispatchTable/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier2/csharp/HashByName/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RSA",
+    "path": "tier2/csharp/KeyFactory/Program.cs",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "3DES",
     "path": "tier2/go/block_factory/main.go",
     "app": "corpus",
@@ -5602,20 +5756,6 @@
   {
     "finding": "SHA-1",
     "path": "tier2/go/hash_enum/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "MD5",
-    "path": "tier2/go/hmac_func_value/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "MD5",
-    "path": "tier2/go/hmac_func_value/main.go",
     "app": "corpus",
     "library": "",
     "implemented_by": ""
@@ -6055,6 +6195,20 @@
     "implemented_by": "ECDSA-256"
   },
   {
+    "finding": "SHA-1",
+    "path": "tier4/assets/ipsec/ipsec.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "ChaCha20-Poly1305",
+    "path": "tier4/assets/ipsec/swanctl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "PKCS8",
     "path": "tier4/assets/keys/billing_service.pem",
     "app": "corpus",
@@ -6188,6 +6342,34 @@
     "implemented_by": "TLS"
   },
   {
+    "finding": "DH",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SSH-Modern-Cipher",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SSH-Modern-Cipher"
+  },
+  {
+    "finding": "TLS-Cert-Config",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "TLS-Weak-Protocol",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS-Weak-Protocol"
+  },
+  {
     "finding": "TLS-Cert-Config",
     "path": "tier4/assets/tls/nginx.conf",
     "app": "corpus",
@@ -6281,6 +6463,13 @@
   {
     "finding": "SHA-1",
     "path": "tier4/assets/tls/openssl.cnf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "DH",
+    "path": "tier5/c/bin/meterd",
     "app": "corpus",
     "library": "",
     "implemented_by": ""

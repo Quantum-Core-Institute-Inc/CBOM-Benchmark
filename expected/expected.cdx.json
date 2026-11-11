@@ -53,6 +53,19 @@
       "purl": "pkg:generic/openjdk"
     },
     {
+      "type": "library",
+      "bom-ref": "lib-bouncycastle",
+      "name": "Bouncy Castle provider (bcprov)",
+      "group": "org.bouncycastle",
+      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk18on"
+    },
+    {
+      "type": "library",
+      "bom-ref": "lib-dotnet",
+      "name": ".NET base class library (System.Security.Cryptography)",
+      "purl": "pkg:generic/dotnet"
+    },
+    {
       "type": "cryptographic-asset",
       "bom-ref": "M-cert-api",
       "name": "certificate api_gateway.pem",
@@ -1365,6 +1378,78 @@
           "nistQuantumSecurityLevel": 0
         },
         "oid": "1.2.840.10045.4.3.3"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-lms-pub",
+      "name": "public-key bootloader_lms_pub.pem",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "M-pq-lms-pub-alg",
+          "format": "SPKI PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/keys/bootloader_lms_pub.pem"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-lms-pub-alg",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-xmss-pub",
+      "name": "public-key update_xmss_pub.pem",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "M-pq-xmss-pub-alg",
+          "format": "SPKI PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/keys/update_xmss_pub.pem"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "M-pq-xmss-pub-alg",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
       }
     },
     {
@@ -3404,6 +3489,267 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-59",
+      "name": "DH-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.3.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 5,
+            "additionalContext": "tune.ssl.default-dh-param 1024"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-60",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7,
+            "additionalContext": "proposals = aes256-sha256-modp2048"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-61",
+      "name": "HMAC-SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "cryptoFunctions": [
+            "tag"
+          ],
+          "nistQuantumSecurityLevel": 2
+        },
+        "oid": "1.2.840.113549.2.9"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7,
+            "additionalContext": "proposals = aes256-sha256-modp2048"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-62",
+      "name": "DH-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen",
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.3.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 7,
+            "additionalContext": "proposals = aes256-sha256-modp2048"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-63",
+      "name": "ChaCha20-Poly1305",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "1.2.840.113549.1.9.16.3.18"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21,
+            "additionalContext": "esp_proposals = chacha20poly1305-x25519"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-64",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "cryptoFunctions": [
+            "keygen",
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.101.110"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/swanctl.conf",
+            "line": 21,
+            "additionalContext": "esp_proposals = chacha20poly1305-x25519"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-65",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12,
+            "additionalContext": "ike=3des-sha1-modp1024!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-66",
+      "name": "HMAC-SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "cryptoFunctions": [
+            "tag"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12,
+            "additionalContext": "ike=3des-sha1-modp1024!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-67",
+      "name": "DH-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.3.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 12,
+            "additionalContext": "ike=3des-sha1-modp1024!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T4-AS-68",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/ipsec/ipsec.conf",
+            "line": 13,
+            "additionalContext": "esp=aes128-sha1!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T5-PY-01",
       "name": "SHA-1",
       "cryptoProperties": {
@@ -3842,6 +4188,235 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-09",
+      "name": "DES-ECB",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "ecb",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-10",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.26"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JV-11",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "P-256",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10045.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/java/compiled/token-vault.jar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1,
+            "additionalContext": "\"use strict\";const e=require(\"node:crypto\"),r=\"aes-128-cbc\";function t(r,t){return e.createHash(\"md5\").update(`${r}:${t}`).digest(\"hex\")}function n(t,n){const o=e.randomBytes(16),i=e.createCipheriv(r,"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-02",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        },
+        "oid": "2.16.840.1.101.3.4.1.2"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1,
+            "additionalContext": "\"use strict\";const e=require(\"node:crypto\"),r=\"aes-128-cbc\";function t(r,t){return e.createHash(\"md5\").update(`${r}:${t}`).digest(\"hex\")}function n(t,n){const o=e.randomBytes(16),i=e.createCipheriv(r,"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-03",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1,
+            "additionalContext": "\"use strict\";const e=require(\"node:crypto\"),r=\"aes-128-cbc\";function t(r,t){return e.createHash(\"md5\").update(`${r}:${t}`).digest(\"hex\")}function n(t,n){const o=e.randomBytes(16),i=e.createCipheriv(r,"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-03",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "PQ-PY-01",
       "name": "ML-KEM-768",
       "cryptoProperties": {
@@ -4114,6 +4689,56 @@
             "location": "corpus/pqc/java/PqWashing.java",
             "line": 19,
             "additionalContext": "kpg.initialize(new ECGenParameterSpec(\"secp384r1\"));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-JV-05",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/java/FirmwareSignLms.java",
+            "line": 19,
+            "additionalContext": "KeyPairGenerator generator = KeyPairGenerator.getInstance(\"LMS\", \"BCPQC\");"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-JV-06",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/java/UpdateSignXmss.java",
+            "line": 16,
+            "additionalContext": "KeyPairGenerator generator = KeyPairGenerator.getInstance(\"XMSS\", \"BCPQC\");"
           }
         ]
       }
@@ -4430,6 +5055,84 @@
             "location": "corpus/pqc/assets/tls/nginx_pq_washing.conf",
             "line": 16,
             "additionalContext": "ssl_ecdh_curve X25519:prime256v1;"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-25",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 7,
+            "additionalContext": "algorithm: LMS_SHA256_M32_H10"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-26",
+      "name": "XMSS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 13,
+            "additionalContext": "algorithm: XMSS-SHA2_10_256"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "PQ-AS-27",
+      "name": "ECC-P-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "P-384",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10045.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/assets/firmware/signing-policy.yaml",
+            "line": 18,
+            "additionalContext": "algorithm: ecdsa-p384"
           }
         ]
       }
@@ -6159,6 +6862,351 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 9,
+            "additionalContext": "string legacy = Convert.ToHexString(MD5.HashData(payload));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.26"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 10,
+            "additionalContext": "string gitStyle = Convert.ToHexString(SHA1.HashData(payload));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-03",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 2
+        },
+        "oid": "2.16.840.1.101.3.4.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 11,
+            "additionalContext": "string content = Convert.ToHexString(SHA256.HashData(payload));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-04",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 2
+        },
+        "oid": "2.16.840.1.101.3.4.2.8"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/Hashes/Program.cs",
+            "line": 12,
+            "additionalContext": "string sponge = Convert.ToHexString(SHA3_256.HashData(payload));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-05",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/RsaSign/Program.cs",
+            "line": 8,
+            "additionalContext": "using RSA rsa = RSA.Create(2048);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-06",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "P-256",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10045.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/EcdsaSign/Program.cs",
+            "line": 8,
+            "additionalContext": "using ECDsa signer = ECDsa.Create(ECCurve.NamedCurves.nistP256);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-07",
+      "name": "ECC-P-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "P-384",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10045.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/KeyAgreement/Program.cs",
+            "line": 8,
+            "additionalContext": "using ECDiffieHellman alice = ECDiffieHellman.Create(ECCurve.NamedCurves.nistP384);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-08",
+      "name": "AES-128-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        },
+        "oid": "2.16.840.1.101.3.4.1.2"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesCbc/Program.cs",
+            "line": 8,
+            "additionalContext": "using Aes aes = Aes.Create();"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-09",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "2.16.840.1.101.3.4.1.46"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/AesGcmSeal/Program.cs",
+            "line": 13,
+            "additionalContext": "using AesGcm gcm = new AesGcm(key, 16);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-10",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/TripleDesLegacy/Program.cs",
+            "line": 8,
+            "additionalContext": "using TripleDES tdes = TripleDES.Create();"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-11",
+      "name": "HMAC-SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "cryptoFunctions": [
+            "tag"
+          ],
+          "nistQuantumSecurityLevel": 2
+        },
+        "oid": "1.2.840.113549.2.9"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 8,
+            "additionalContext": "using HMACSHA256 mac = new HMACSHA256(Encoding.UTF8.GetBytes(\"webhook-secret\"));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-12",
+      "name": "PBKDF2-HMAC-SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "cryptoFunctions": [
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "1.2.840.113549.1.5.12"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/MacKdf/Program.cs",
+            "line": 10,
+            "additionalContext": "byte[] key = Rfc2898DeriveBytes.Pbkdf2(\"correct horse\", Encoding.UTF8.GetBytes(\"per-user-salt\"), 100000, HashAlgorithmName.SHA512, 32);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T1-CS-13",
+      "name": "DSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10040.4.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier1/csharp/DsaLegacy/Program.cs",
+            "line": 8,
+            "additionalContext": "using DSA dsa = DSA.Create(2048);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T2-C-01",
       "name": "AES-192-CBC",
       "cryptoProperties": {
@@ -6314,6 +7362,165 @@
             "location": "corpus/tier2/c/t2_cipher_struct.c",
             "line": 10,
             "additionalContext": "static const struct link_config TERMINAL = {\"pin-block\", EVP_des_ede3_ecb};"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-01",
+      "name": "AES-192-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "192",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 3
+        },
+        "oid": "2.16.840.1.101.3.4.1.22"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/ConfigCipher/Program.cs",
+            "line": 11,
+            "additionalContext": "using Aes aes = Aes.Create();"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.26"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/HashByName/Program.cs",
+            "line": 10,
+            "additionalContext": "using IncrementalHash hasher = IncrementalHash.CreateHash(new HashAlgorithmName(Fingerprint));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-03",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/DispatchTable/Program.cs",
+            "line": 9,
+            "additionalContext": "[\"legacy\"] = MD5.Create,"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-04",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "2.16.840.1.101.3.4.2.3"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/DispatchTable/Program.cs",
+            "line": 10,
+            "additionalContext": "[\"modern\"] = SHA512.Create,"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-05",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/KeyFactory/Program.cs",
+            "line": 12,
+            "additionalContext": "return RSA.Create(bits);"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T2-CS-06",
+      "name": "ECC-P-521",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "P-521",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.10045.2.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier2/csharp/CurveSwitch/Program.cs",
+            "line": 12,
+            "additionalContext": "using ECDsa signer = ECDsa.Create(Pick(\"high\"));"
           }
         ]
       }
@@ -17024,7 +18231,119 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.0",
+      "bom-ref": "proto-8-TLS-1.1",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_256_CBC_SHA"
+            },
+            {
+              "name": "TLS_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_CHACHA20_POLY1305_SHA256"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 6
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 7
+          },
+          {
+            "location": "corpus/tier4/assets/tls/haproxy.cfg",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-9-TLS-1.1",
+      "name": "TLS-1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_128_CBC_SHA"
+            },
+            {
+              "name": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          },
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-9-TLS-1.2",
+      "name": "TLS-1.2",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.2",
+          "cipherSuites": [
+            {
+              "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+            },
+            {
+              "name": "TLS_RSA_WITH_AES_128_CBC_SHA"
+            },
+            {
+              "name": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 14
+          },
+          {
+            "location": "corpus/tier4/assets/tls/httpd-ssl.conf",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "proto-10-TLS-1.0",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -17059,7 +18378,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.1",
+      "bom-ref": "proto-10-TLS-1.1",
       "name": "TLS-1.1",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -17094,7 +18413,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-8-TLS-1.2",
+      "bom-ref": "proto-10-TLS-1.2",
       "name": "TLS-1.2",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -17129,7 +18448,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "proto-9-TLS-1.0",
+      "bom-ref": "proto-11-TLS-1.0",
       "name": "TLS-1.0",
       "cryptoProperties": {
         "assetType": "protocol",
@@ -17546,6 +18865,13 @@
   ],
   "dependencies": [
     {
+      "ref": "lib-bouncycastle",
+      "provides": [
+        "PQ-JV-05",
+        "PQ-JV-06"
+      ]
+    },
+    {
       "ref": "lib-cpython",
       "provides": [
         "T1-PY-01",
@@ -17587,6 +18913,30 @@
         "CAL-T2-PY-017",
         "CAL-T2-PY-019",
         "DC-PY-01"
+      ]
+    },
+    {
+      "ref": "lib-dotnet",
+      "provides": [
+        "T1-CS-01",
+        "T1-CS-02",
+        "T1-CS-03",
+        "T1-CS-04",
+        "T1-CS-05",
+        "T1-CS-06",
+        "T1-CS-07",
+        "T1-CS-08",
+        "T1-CS-09",
+        "T1-CS-10",
+        "T1-CS-11",
+        "T1-CS-12",
+        "T1-CS-13",
+        "T2-CS-01",
+        "T2-CS-02",
+        "T2-CS-03",
+        "T2-CS-04",
+        "T2-CS-05",
+        "T2-CS-06"
       ]
     },
     {
@@ -17701,6 +19051,9 @@
     {
       "ref": "lib-node-crypto",
       "provides": [
+        "T5-JS-01",
+        "T5-JS-02",
+        "T5-JS-03",
         "T1-JS-01",
         "T1-JS-02",
         "T1-JS-03",
@@ -17837,6 +19190,9 @@
         "T5-JV-06",
         "T5-JV-07",
         "T5-JV-08",
+        "T5-JV-09",
+        "T5-JV-10",
+        "T5-JV-11",
         "PQ-JV-01",
         "PQ-JV-02",
         "PQ-JV-03",
@@ -17930,6 +19286,9 @@
     {
       "ref": "lib-openssl",
       "provides": [
+        "T5-C-01",
+        "T5-C-02",
+        "T5-C-03",
         "T1-C-01",
         "T1-C-02",
         "T1-C-03",

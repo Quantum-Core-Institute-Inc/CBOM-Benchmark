@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cbomlib import FAMILIES  # noqa: E402
 
 LANGS = [("Python", {"python"}), ("Java", {"java"}), ("Go", {"go"}), ("JavaScript / TypeScript", {"javascript", "typescript"}),
-         ("C / OpenSSL", {"c"}), ("Certificates, keys, configs", {"assets"}), ("Built artifacts (system fixture)", {"artifacts"})]
+         ("C / OpenSSL", {"c"}), ("C# / .NET", {"csharp"}), ("Certificates, keys, configs", {"assets"}), ("Built artifacts (system fixture)", {"artifacts"})]
 TIERS = [("1. Direct", {1}), ("2. Indirection", {2}), ("3. Cross-file", {3}), ("4. Non-code assets", {4}),
          ("5. Adversarial", {5}), ("Post-quantum", {"pqc"}),
          ("Mixed files", {"mixed"}), ("System fixture", {"system"}), ("Dead code", {"deadcode"})]

@@ -31,7 +31,7 @@ env:
   TESTBENCH_REPO: Quantum-Core-Institute-Inc/CBOM-Benchmark
   # Pin a testbench release (tag). gates.json is stamped with the release, methodology, answer key,
   # corpus, scorer, policy and adapter it was set on; anything else exits 3.
-  TESTBENCH_REF: v2.3.0
+  TESTBENCH_REF: v2.4.0
 
 permissions:
   contents: read

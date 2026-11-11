@@ -1,9 +1,43 @@
 # qci-pqc-scan on the CBOM Testbench: findings for the scanner team
 
-Five reviews in this file, newest first: **v2.3.4** (2026-11-11), **v2.3.0**, **v2.2.0**, **v0.7.0**, and the
+Five reviews in this file, newest first, under a note on how v2.3.4 does on the cases added in benchmark 2.4.0: **v2.3.4** (2026-11-11), **v2.3.0**, **v2.2.0**, **v0.7.0**, and the
 original **0.3.0** analysis, kept as the record of what was asked for. Run: `python tools/run_qci_pqc.py
 --scanner <checkout>` with `CBOM_HOLDOUT_SEED` set, adapter 1.1, NIST policy, testbench v1.16 (304
 findings; mixed files and calibration cases included); rescored on 1.17, see below.
+
+## v2.3.4 on benchmark 2.4.0: the 55 new findings
+
+Same scanner, bigger corpus. In declared scope, recall goes from 74.7% to 68.6%, parameters from
+56.8% to 55.0%, and precision from 99.6% to 98.8% (one false positive becomes three). Nothing in the
+scanner changed; these are things it was never asked about. It fails three gates: parameters,
+ticket-ready and its own CBOM's schema.
+
+| New area | Found | What happened |
+|---|---|---|
+| C#, direct (13) | 9 | Misses `MD5.HashData`, `SHA256.HashData` and `SHA3_256.HashData` in a file where it finds `SHA1.HashData`, and `new HMACSHA256(...)`. Of the nine it finds, only SHA-1 has its parameters right: `RSA.Create(2048)` comes back with no key size, `new AesGcm(key, 16)` with no mode. |
+| C#, indirection (6) | 3 | Finds the three where a type name sits at the call (`Aes.Create()`, `RSA.Create(bits)`, `ECDsa.Create(...)`), none with parameters. Misses `IncrementalHash.CreateHash(new HashAlgorithmName(Fingerprint))` and both entries of the `Func<HashAlgorithm>` table. |
+| Apache httpd (5) | 0 | `SSLProtocol` and `SSLCipherSuite` aren't read. The nginx equivalents are. |
+| HAProxy (6) | 1 | Finds the DH group from `tune.ssl.default-dh-param 1024` but drops the 1024. Misses `ssl-min-ver` and both cipher lines. |
+| IPsec (9) | 1 | Finds `chacha20poly1305` in `swanctl.conf`. Nothing else in either file: `aes256-sha256-modp2048` and `3des-sha1-modp1024!` aren't parsed. |
+| LMS and XMSS (7) | 0 | Not in Bouncy Castle code, not by OID in the two public keys, not by name in the signing policy. The P-384 signer in that policy is missed too. |
+| Minified JavaScript (3) | 0 | `e.createHash("md5")` on a one-line bundle. The same call is found in ordinary source. |
+| Stripped binary (3) | 2 | Finds MD5 and 3DES from the imported symbols, 3DES without its mode. Misses the RSA key size, which is an immediate operand. |
+| Obfuscated jar (3) | out of scope | `*.jar` is in the declared scope file, so these aren't scored. |
+
+Two new false positives, both worth a look:
+
+- **SHA-256 reported for `SHA512.Create`** (`corpus/tier2/csharp/DispatchTable/Program.cs`, line 10).
+  The file has no SHA-256 in it. Something maps a SHA-2 constructor reference to the default member
+  of the family.
+- **DH reported in the stripped binary** (`corpus/tier5/c/bin/meterd`). The binary imports no DH
+  symbol and never calls one. It is the same false positive as the one already on record for the
+  Go binary in the system fixture, so the rule that reads binaries is matching the letters, not a symbol.
+
+Where to spend effort, in order of findings per unit of work: the Apache and HAProxy directives (11
+findings, and the parser for nginx is already there), IPsec proposal strings (9, one small grammar),
+then C# one-shot `HashData` calls and key sizes (the detections exist; the parameters don't).
+LMS and XMSS are only seven findings here, but they are the first thing a CNSA 2.0 firmware-signing
+audit asks about, and a scanner that can't name them reports that estate as empty.
 
 ## v2.3.4 review (testbench 2.1; numbers re-run on 2.2, see CHANGELOG)
 
