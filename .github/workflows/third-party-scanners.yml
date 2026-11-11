@@ -68,7 +68,11 @@ jobs:
             python -m venv "$SCANNER_HOME"
             "$SCANNER_HOME/bin/pip" install --no-input "${{ matrix.package }}"
             "$SCANNER_HOME/bin/pip" freeze > scanner-packages.txt
-            echo "$SCANNER_HOME/bin" >> "$GITHUB_PATH"
+            # Only the scanner's own command goes on PATH. Putting the whole venv there would also
+            # replace `python` for the benchmark, which has its own pinned dependencies.
+            mkdir -p "$RUNNER_TEMP/scanner-bin"
+            ln -s "$SCANNER_HOME/bin/${{ matrix.id }}" "$RUNNER_TEMP/scanner-bin/${{ matrix.id }}"
+            echo "$RUNNER_TEMP/scanner-bin" >> "$GITHUB_PATH"
           else
             mkdir -p "$SCANNER_HOME" && cd "$SCANNER_HOME"
             npm install --no-audit --no-fund --ignore-scripts "${{ matrix.package }}"
@@ -84,7 +88,7 @@ jobs:
         run: |
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
             --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 \
-            --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" \
+            --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
       - name: The bundle re-derives

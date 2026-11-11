@@ -10,9 +10,10 @@ Open-source CBOM scanners that QCI doesn't maintain, run against the corpus by
 | pqcheck | 0.1.0 | PyPI | `pqcheck scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
 | quantascan | 1.0.1 | npm | `quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json` | CycloneDX 1.6 CBOM |
 
-The commands were written from each package's command-line definition, not from a run: none of
-these has been executed against the corpus yet. The first run of the workflow is the test of this
-table. If a command is wrong the job fails and `run.log` in the uploaded bundle says why.
+The commands were written from each package's command-line definition. All three ran to completion
+(exit 0) on the workflow's first run. Only quantascan's bundle has been scored so far, and nobody
+has read it yet: its first number was 15.3% recall at 70.6% precision on 393 findings, which is a
+raw result, before the steps below.
 
 ## Why they aren't in the comparison yet
 
