@@ -1,16 +1,26 @@
 # QCI CBOM Benchmark
 
-A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners, maintained by the
-Quantum Core Institute. Earlier releases were called the CBOM Testbench, and the tools and documents
-still use "testbench" for the harness itself.
+A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners. Scores a scanner's CycloneDX 1.6 output against 393 known findings. Not a certification.
 
-QCI also publishes a scanner that this benchmark grades. The benchmark is kept in its own repository
-with its own versioned methodology, its results for that scanner are published as measured (it
-currently fails four gates), and every published number has an evidence bundle anyone can re-derive.
+**Version:** 2.4.0
+
+2.4.0 adds C#, LMS and XMSS, a minified bundle, an obfuscated jar and a stripped binary, and Apache, HAProxy and IPsec configs. Release notes: [CHANGELOG.md](CHANGELOG.md).
+
+**Author:** Quantum Core Institute
+
+**License:** Apache-2.0 (see [LICENSE](LICENSE))
+
+## What it does
 
 Point a scanner at `corpus/`, feed its CycloneDX 1.6 output to `tools/score.py`, and you get a
 scorecard that says *where* it fails: which tier, which language, which algorithm, whether it
 got the key size right, and how much noise it generated on files that contain no crypto at all.
+
+QCI also publishes a scanner that this benchmark grades. The benchmark is kept in its own repository
+with its own versioned methodology, its results for that scanner are published as measured (it
+currently fails three gates), and every published number has an evidence bundle anyone can re-derive.
+Earlier releases were called the CBOM Testbench, and the tools and documents still use "testbench"
+for the harness itself.
 
 Version 2.4.0 covers **all five tiers, a post-quantum category, realistic mixed files and a multi-service system fixture** in **seven languages**: 393 shipped findings, each
 dated against NIST, the federal EO 14412 and NSA CNSA 2.0 transition deadlines. It scores whether
