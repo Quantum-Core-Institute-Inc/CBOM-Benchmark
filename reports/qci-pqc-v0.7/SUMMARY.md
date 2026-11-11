@@ -3,26 +3,26 @@
 - Scanner: **qci-pqc, version 0.7.0**, adapter(s) `internal`
 - Scanner's own CBOM: INVALID: '2027-02-02' is not a 'date-time'
 
-Failed validating 'format' in schema['properties']['components']['items']['properties']['cryptoProperties']['properties']['certificateProperties']['properties']['not; 770 components
+Failed validating 'format' in schema['properties']['components']['items']['properties']['cryptoProperties']['properties']['certificateProperties']['properties']['not; 775 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-11 15:13 UTC
+- Run: 2026-11-11 18:26 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
-| Recall | 60.9% | 57.3% |
-| At primary site | 57.2% | 53.9% |
-| Parameters correct | 67.0% | 67.2% |
-| Precision | 86.9% | 87.1% |
+| Recall | 60.5% | 57.4% |
+| At primary site | 57.0% | 54.1% |
+| Parameters correct | 67.9% | 68.0% |
+| Precision | 87.2% | 87.4% |
 | False positives | 28 | 28 |
 |   of which in negative controls | 4 | 4 |
 | PQC over-claims | 13 | 13 |
 | PQC by standard name (of detected PQC) | 100.0% | 100.0% |
 | System fixture: routable (of detected) | 64.3% | 64.3% |
-| Ticket-ready (of detected) | 55.1% | 54.5% |
-| Actionable recall | 33.6% | 31.2% |
+| Ticket-ready (of detected) | 56.3% | 55.7% |
+| Actionable recall | 34.1% | 32.0% |
 | Field completeness | 46.7% | 46.3% |
-| Deadline-weighted recall (nist) | 60.1% | 57.2% |
-| Missed findings due by 2030 | 37 | 44 |
+| Deadline-weighted recall (nist) | 59.5% | 56.9% |
+| Missed findings due by 2030 | 42 | 49 |
 | Crypto libraries, right manifest | 25.0% | 25.0% |
 | Library PQC verdicts right | 66.7% | 66.7% |
 | Matched holdout recall | 65.0% | n/a |
@@ -33,7 +33,7 @@ Failed validating 'format' in schema['properties']['components']['items']['prope
 | Holdout crypto libraries, right manifest | 18.8% | n/a |
 | Library gap (points, not gated) | 6.0 | n/a |
 
-Risk-signal coverage (in scope): strict 185/304, plus 9 covered only by a QCI category signal, combined **63.8%**.
+Risk-signal coverage (in scope): strict 190/314, plus 9 covered only by a QCI category signal, combined **63.4%**.
 
 | Bucket | Detected | Recall | At primary site | Params |
 |---|---|---|---|---|
@@ -52,6 +52,11 @@ Risk-signal coverage (in scope): strict 185/304, plus 9 covered only by a QCI ca
 | 4/assets | 19/34 | 55.9% | 55.9% | 84.2% |
 | 5/java | 0/5 | 0.0% | 0.0% | n/a |
 | 5/python | 0/7 | 0.0% | 0.0% | n/a |
+| deadcode/c | 1/2 | 50.0% | 50.0% | 100.0% |
+| deadcode/go | 0/2 | 0.0% | 0.0% | n/a |
+| deadcode/java | 2/2 | 100.0% | 100.0% | 100.0% |
+| deadcode/javascript | 0/2 | 0.0% | 0.0% | n/a |
+| deadcode/python | 2/2 | 100.0% | 100.0% | 100.0% |
 | mixed/c | 5/13 | 38.5% | 38.5% | 40.0% |
 | mixed/go | 9/12 | 75.0% | 75.0% | 22.2% |
 | mixed/java | 10/13 | 76.9% | 76.9% | 60.0% |
@@ -151,16 +156,16 @@ Direct dependencies found in the right manifest: published 24.7% (weighted to th
 
 ## Gates
 
-Testbench 2.2.0; stamp `{"release": "2.2.0", "methodology": "2.2", "findings": 330, "answer_key": "0c7489f223e2060d", "corpus": "19f42a26eeadb7dd", "scorer": "a28229a0c1833b03", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
+Testbench 2.3.0; stamp `{"release": "2.3.0", "methodology": "2.3", "findings": 338, "answer_key": "9e3fdc9bed8b4bf4", "corpus": "069efaeef382b6bd", "scorer": "09d445faf1a63801", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
 
 **FAILED** (10):
 
-- recall = 60.9 is below the gate minimum 74.7
-- primary_site_recall = 57.2 is below the gate minimum 71.7
-- precision = 86.9 is below the gate minimum 99.6
+- recall = 60.5 is below the gate minimum 74.8
+- primary_site_recall = 57.0 is below the gate minimum 72.0
+- precision = 87.2 is below the gate minimum 99.6
 - negative_control_fps = 4 is above the gate maximum 0
 - pqc_overclaims = 13 is above the gate maximum 0
-- deadline_weighted_recall = 60.1 is below the gate minimum 76.3
+- deadline_weighted_recall = 59.5 is below the gate minimum 76.5
 - library_recall = 25.0 is below the gate minimum 96.4
 - library_pq_verdict_accuracy = 66.7 is below the gate minimum 71.4
 - negative_fp_gap = 1.18 is above the gate maximum 0.5

@@ -11190,6 +11190,184 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-02",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-01",
+      "name": "DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-02",
+      "name": "RC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 18
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "C-example_envelope-01",
       "name": "RSA-2048",
       "cryptoProperties": {

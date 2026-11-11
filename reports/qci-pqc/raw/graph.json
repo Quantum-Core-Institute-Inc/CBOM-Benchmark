@@ -2814,6 +2814,83 @@
     "implemented_by": ""
   },
   {
+    "finding": "MD5",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "DES",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "CBC"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "Node-crypto",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RSA",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
     "finding": "openssl",
     "path": "deps/c-agent/CMakeLists.txt",
     "app": "corpus",

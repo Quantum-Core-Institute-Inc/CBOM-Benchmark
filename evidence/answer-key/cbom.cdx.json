@@ -16390,6 +16390,266 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 10,
+            "additionalContext": "return hashlib.md5(data).hexdigest()"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-PY-02",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/python/dead_export.py",
+            "line": 15,
+            "additionalContext": "return rsa.generate_private_key(public_exponent=65537, key_size=1024)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-01",
+      "name": "DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 9,
+            "additionalContext": "return Cipher.getInstance(\"DES/CBC/PKCS5Padding\");"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JV-02",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.14.3.2.26"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/java/DeadLegacy.java",
+            "line": 14,
+            "additionalContext": "System.out.println(MessageDigest.getInstance(\"SHA-1\").getAlgorithm());"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 13,
+            "additionalContext": "return md5.Sum(data)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-GO-02",
+      "name": "RC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.4"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/go/legacy/main.go",
+            "line": 18,
+            "additionalContext": "c, _ := rc4.NewCipher([]byte(\"0123456789abcdef\"))"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 5,
+            "additionalContext": "return createHash(\"md5\").update(body).digest(\"hex\");"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-JS-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/javascript/dead_paths.js",
+            "line": 10,
+            "additionalContext": "const cipher = createCipheriv(\"des-ede3-cbc\", randomBytes(24), randomBytes(8));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-01",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.2.5"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 6,
+            "additionalContext": "return EVP_md5();"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "DC-C-02",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.2.840.113549.3.7"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/deadcode/c/dead_branches.c",
+            "line": 11,
+            "additionalContext": "printf(\"%d\\n\", EVP_CIPHER_get_key_length(EVP_des_ede3_cbc()));"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "C-example_envelope-01",
       "name": "RSA-2048",
       "cryptoProperties": {
@@ -17325,7 +17585,8 @@
         "CAL-T2-PY-010",
         "CAL-T2-PY-015",
         "CAL-T2-PY-017",
-        "CAL-T2-PY-019"
+        "CAL-T2-PY-019",
+        "DC-PY-01"
       ]
     },
     {
@@ -17432,7 +17693,9 @@
         "CAL-T2-GO-018",
         "SYS-GO-01",
         "SYS-GO-02",
-        "SYS-GO-03"
+        "SYS-GO-03",
+        "DC-GO-01",
+        "DC-GO-02"
       ]
     },
     {
@@ -17529,7 +17792,9 @@
         "CAL-T2-TS-014",
         "CAL-T2-TS-015",
         "CAL-T2-TS-016",
-        "CAL-T2-TS-017"
+        "CAL-T2-TS-017",
+        "DC-JS-01",
+        "DC-JS-02"
       ]
     },
     {
@@ -17657,7 +17922,9 @@
         "SYS-JV-01",
         "SYS-JV-02",
         "SYS-AR-01",
-        "SYS-AR-02"
+        "SYS-AR-02",
+        "DC-JV-01",
+        "DC-JV-02"
       ]
     },
     {
@@ -17755,7 +18022,9 @@
         "CAL-T2-C-015",
         "CAL-T2-C-016",
         "CAL-T2-C-017",
-        "CAL-T2-C-018"
+        "CAL-T2-C-018",
+        "DC-C-01",
+        "DC-C-02"
       ]
     },
     {
@@ -17846,6 +18115,7 @@
         "CAL-T2-PY-018",
         "SYS-PY-01",
         "SYS-PY-02",
+        "DC-PY-02",
         "C-example_envelope-01",
         "C-example_envelope-02",
         "C-example_envelope-03",

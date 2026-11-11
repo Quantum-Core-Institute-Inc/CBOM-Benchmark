@@ -1,9 +1,9 @@
 {
   "status": "fail",
   "fails": [
-    "params_accuracy = 56.8 is below the gate minimum 64.6",
-    "ticket_ready_pct = 47.6 is below the gate minimum 54.9",
-    "deadline_weighted_recall = 75.0 is below the gate minimum 76.3",
+    "params_accuracy = 57.4 is below the gate minimum 65.0",
+    "ticket_ready_pct = 48.5 is below the gate minimum 55.6",
+    "deadline_weighted_recall = 75.3 is below the gate minimum 76.5",
     "cbom_schema_valid = 0 is below the gate minimum 1"
   ],
   "missing": [],
@@ -16,12 +16,12 @@
   "why": "",
   "report_only": false,
   "stamp": {
-    "release": "2.2.0",
-    "methodology": "2.2",
-    "findings": 330,
-    "answer_key": "0c7489f223e2060d",
-    "corpus": "19f42a26eeadb7dd",
-    "scorer": "a28229a0c1833b03",
+    "release": "2.3.0",
+    "methodology": "2.3",
+    "findings": 338,
+    "answer_key": "9e3fdc9bed8b4bf4",
+    "corpus": "069efaeef382b6bd",
+    "scorer": "09d445faf1a63801",
     "policy": "nist:732cd8a8d8f317e9",
     "adapter": "55035867d66228df"
   }

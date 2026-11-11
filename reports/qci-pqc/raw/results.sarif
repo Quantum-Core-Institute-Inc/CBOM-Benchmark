@@ -7649,6 +7649,215 @@
           ]
         },
         {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/c/dead_branches.c"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/3DES",
+          "level": "warning",
+          "message": {
+            "text": "3DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/c/dead_branches.c"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RC4",
+          "level": "warning",
+          "message": {
+            "text": "RC4 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/go/legacy/main.go"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/go/legacy/main.go"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RC4",
+          "level": "warning",
+          "message": {
+            "text": "RC4 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/go/legacy/main.go"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DES",
+          "level": "warning",
+          "message": {
+            "text": "DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/java/DeadLegacy.java"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/java/DeadLegacy.java"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/Node-crypto",
+          "level": "error",
+          "message": {
+            "text": "Node-crypto (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/javascript/dead_paths.js"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/3DES",
+          "level": "warning",
+          "message": {
+            "text": "3DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/javascript/dead_paths.js"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/python/dead_export.py"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RSA",
+          "level": "error",
+          "message": {
+            "text": "RSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/python/dead_export.py"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/libsodium",
           "level": "error",
           "message": {

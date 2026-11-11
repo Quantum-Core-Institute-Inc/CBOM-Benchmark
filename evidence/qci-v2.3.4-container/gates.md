@@ -2,9 +2,9 @@
 
 **FAILED** (4):
 
-- params_accuracy = 56.8 is below the gate minimum 64.6
-- ticket_ready_pct = 47.6 is below the gate minimum 54.9
-- deadline_weighted_recall = 75.0 is below the gate minimum 76.3
+- params_accuracy = 57.4 is below the gate minimum 65.0
+- ticket_ready_pct = 48.5 is below the gate minimum 55.6
+- deadline_weighted_recall = 75.3 is below the gate minimum 76.5
 - cbom_schema_valid = 0 is below the gate minimum 1
 
 Skipped:

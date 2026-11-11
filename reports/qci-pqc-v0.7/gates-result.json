@@ -1,12 +1,12 @@
 {
   "status": "fail",
   "fails": [
-    "recall = 60.9 is below the gate minimum 74.7",
-    "primary_site_recall = 57.2 is below the gate minimum 71.7",
-    "precision = 86.9 is below the gate minimum 99.6",
+    "recall = 60.5 is below the gate minimum 74.8",
+    "primary_site_recall = 57.0 is below the gate minimum 72.0",
+    "precision = 87.2 is below the gate minimum 99.6",
     "negative_control_fps = 4 is above the gate maximum 0",
     "pqc_overclaims = 13 is above the gate maximum 0",
-    "deadline_weighted_recall = 60.1 is below the gate minimum 76.3",
+    "deadline_weighted_recall = 59.5 is below the gate minimum 76.5",
     "library_recall = 25.0 is below the gate minimum 96.4",
     "library_pq_verdict_accuracy = 66.7 is below the gate minimum 71.4",
     "negative_fp_gap = 1.18 is above the gate maximum 0.5",
@@ -17,12 +17,12 @@
   "why": "",
   "report_only": false,
   "stamp": {
-    "release": "2.2.0",
-    "methodology": "2.2",
-    "findings": 330,
-    "answer_key": "0c7489f223e2060d",
-    "corpus": "19f42a26eeadb7dd",
-    "scorer": "a28229a0c1833b03",
+    "release": "2.3.0",
+    "methodology": "2.3",
+    "findings": 338,
+    "answer_key": "9e3fdc9bed8b4bf4",
+    "corpus": "069efaeef382b6bd",
+    "scorer": "09d445faf1a63801",
     "policy": "nist:732cd8a8d8f317e9",
     "adapter": "55035867d66228df"
   }

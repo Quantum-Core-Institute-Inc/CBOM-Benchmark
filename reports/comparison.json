@@ -1,10 +1,10 @@
 {
   "QCI v2.3.4": {
-    "Findings": 330,
-    "Recall": 70.3,
-    "Recall incl. signals": 73.6,
-    "At primary site": 67.6,
-    "Parameters correct (of detected)": 56.9,
+    "Findings": 338,
+    "Recall": 71.0,
+    "Recall incl. signals": 74.3,
+    "At primary site": 68.3,
+    "Parameters correct (of detected)": 57.5,
     "False positives": 1,
     "  in negative controls": 0,
     "Precision": 99.6,
@@ -15,9 +15,9 @@
       0,
       2
     ],
-    "Ticket-ready (of detected)": 47.0,
-    "Actionable recall": 33.0,
-    "Detected, due by 2030 (NIST)": "55/73",
+    "Ticket-ready (of detected)": 47.9,
+    "Actionable recall": 34.0,
+    "Detected, due by 2030 (NIST)": "59/77",
     "lib:Crypto libraries, in the right manifest": [
       27,
       28
@@ -31,28 +31,28 @@
     "lib:PQC verdicts right": "none given",
     "lib:False positives": 2,
     "lang:Python": [
-      54,
-      65
+      56,
+      67
     ],
     "lang:Java": [
-      45,
-      58
+      47,
+      60
     ],
     "lang:Go": [
-      34,
-      45
+      35,
+      47
     ],
     "lang:JavaScript / TypeScript": [
-      24,
-      36
+      25,
+      38
     ],
     "lang:C / OpenSSL": [
-      25,
-      39
+      27,
+      41
     ],
     "lang:Certificates, keys, configs": [
       46,
-      81
+      79
     ],
     "lang:Built artifacts (system fixture)": [
       4,
@@ -72,7 +72,7 @@
     ],
     "tier:4. Non-code assets": [
       20,
-      48
+      46
     ],
     "tier:5. Adversarial": [
       5,
@@ -89,17 +89,21 @@
     "tier:System fixture": [
       17,
       26
+    ],
+    "tier:Dead code": [
+      8,
+      10
     ]
   },
   "QCI v2.2": {
-    "Findings": 330,
-    "Recall": 69.7,
-    "Recall incl. signals": 73.0,
-    "At primary site": 66.4,
-    "Parameters correct (of detected)": 64.8,
+    "Findings": 338,
+    "Recall": 70.4,
+    "Recall incl. signals": 73.7,
+    "At primary site": 67.2,
+    "Parameters correct (of detected)": 65.1,
     "False positives": 20,
     "  in negative controls": 0,
-    "Precision": 92.0,
+    "Precision": 92.2,
     "PQC over-claims": 7,
     "PQC by standard name (of detected PQC)": 100.0,
     "System fixture: routable (of detected)": 70.6,
@@ -107,9 +111,9 @@
       0,
       2
     ],
-    "Ticket-ready (of detected)": 54.3,
-    "Actionable recall": 37.9,
-    "Detected, due by 2030 (NIST)": "57/73",
+    "Ticket-ready (of detected)": 55.0,
+    "Actionable recall": 38.8,
+    "Detected, due by 2030 (NIST)": "61/77",
     "lib:Crypto libraries, in the right manifest": [
       8,
       28
@@ -123,28 +127,28 @@
     "lib:PQC verdicts right": "71.4% of 7",
     "lib:False positives": 0,
     "lang:Python": [
-      55,
-      65
+      57,
+      67
     ],
     "lang:Java": [
-      47,
-      58
+      49,
+      60
     ],
     "lang:Go": [
-      28,
-      45
+      29,
+      47
     ],
     "lang:JavaScript / TypeScript": [
-      26,
-      36
+      27,
+      38
     ],
     "lang:C / OpenSSL": [
-      24,
-      39
+      26,
+      41
     ],
     "lang:Certificates, keys, configs": [
       46,
-      81
+      79
     ],
     "lang:Built artifacts (system fixture)": [
       4,
@@ -164,7 +168,7 @@
     ],
     "tier:4. Non-code assets": [
       20,
-      48
+      46
     ],
     "tier:5. Adversarial": [
       6,
@@ -181,17 +185,21 @@
     "tier:System fixture": [
       17,
       26
+    ],
+    "tier:Dead code": [
+      8,
+      10
     ]
   },
   "QCI v0.7": {
-    "Findings": 330,
-    "Recall": 57.3,
-    "Recall incl. signals": 60.0,
-    "At primary site": 53.9,
-    "Parameters correct (of detected)": 67.2,
+    "Findings": 338,
+    "Recall": 57.4,
+    "Recall incl. signals": 60.1,
+    "At primary site": 54.1,
+    "Parameters correct (of detected)": 68.0,
     "False positives": 28,
     "  in negative controls": 4,
-    "Precision": 87.1,
+    "Precision": 87.4,
     "PQC over-claims": 13,
     "PQC by standard name (of detected PQC)": 100.0,
     "System fixture: routable (of detected)": 64.3,
@@ -199,9 +207,9 @@
       0,
       2
     ],
-    "Ticket-ready (of detected)": 54.5,
-    "Actionable recall": 31.2,
-    "Detected, due by 2030 (NIST)": "48/73",
+    "Ticket-ready (of detected)": 55.7,
+    "Actionable recall": 32.0,
+    "Detected, due by 2030 (NIST)": "50/77",
     "lib:Crypto libraries, in the right manifest": [
       7,
       28
@@ -215,28 +223,28 @@
     "lib:PQC verdicts right": "66.7% of 6",
     "lib:False positives": 0,
     "lang:Python": [
-      53,
-      65
+      55,
+      67
     ],
     "lang:Java": [
-      43,
-      58
+      45,
+      60
     ],
     "lang:Go": [
       22,
-      45
+      47
     ],
     "lang:JavaScript / TypeScript": [
       8,
-      36
+      38
     ],
     "lang:C / OpenSSL": [
-      16,
-      39
+      17,
+      41
     ],
     "lang:Certificates, keys, configs": [
       43,
-      81
+      79
     ],
     "lang:Built artifacts (system fixture)": [
       4,
@@ -256,7 +264,7 @@
     ],
     "tier:4. Non-code assets": [
       19,
-      48
+      46
     ],
     "tier:5. Adversarial": [
       2,
@@ -273,14 +281,18 @@
     "tier:System fixture": [
       14,
       26
+    ],
+    "tier:Dead code": [
+      5,
+      10
     ]
   },
   "cdxgen 12.9.1": {
-    "Findings": 330,
-    "Recall": 4.2,
-    "Recall incl. signals": 11.5,
-    "At primary site": 4.2,
-    "Parameters correct (of detected)": 78.6,
+    "Findings": 338,
+    "Recall": 4.4,
+    "Recall incl. signals": 10.9,
+    "At primary site": 4.4,
+    "Parameters correct (of detected)": 80.0,
     "False positives": 0,
     "  in negative controls": 0,
     "Precision": 100.0,
@@ -291,9 +303,9 @@
       0,
       2
     ],
-    "Ticket-ready (of detected)": 78.6,
-    "Actionable recall": 3.3,
-    "Detected, due by 2030 (NIST)": "2/73",
+    "Ticket-ready (of detected)": 80.0,
+    "Actionable recall": 3.6,
+    "Detected, due by 2030 (NIST)": "2/77",
     "lib:Crypto libraries, in the right manifest": [
       21,
       28
@@ -308,27 +320,27 @@
     "lib:False positives": 0,
     "lang:Python": [
       0,
-      65
+      67
     ],
     "lang:Java": [
       0,
-      58
+      60
     ],
     "lang:Go": [
       0,
-      45
+      47
     ],
     "lang:JavaScript / TypeScript": [
-      14,
-      36
+      15,
+      38
     ],
     "lang:C / OpenSSL": [
       0,
-      39
+      41
     ],
     "lang:Certificates, keys, configs": [
       0,
-      81
+      79
     ],
     "lang:Built artifacts (system fixture)": [
       0,
@@ -348,7 +360,7 @@
     ],
     "tier:4. Non-code assets": [
       0,
-      48
+      46
     ],
     "tier:5. Adversarial": [
       0,
@@ -365,17 +377,21 @@
     "tier:System fixture": [
       0,
       26
+    ],
+    "tier:Dead code": [
+      1,
+      10
     ]
   },
   "grep baseline": {
-    "Findings": 330,
-    "Recall": 68.8,
+    "Findings": 338,
+    "Recall": 69.2,
     "Recall incl. signals": null,
-    "At primary site": 64.2,
-    "Parameters correct (of detected)": 53.7,
-    "False positives": 157,
+    "At primary site": 64.8,
+    "Parameters correct (of detected)": 55.1,
+    "False positives": 159,
     "  in negative controls": 52,
-    "Precision": 59.1,
+    "Precision": 59.5,
     "PQC over-claims": 28,
     "PQC by standard name (of detected PQC)": 100.0,
     "System fixture: routable (of detected)": 61.5,
@@ -383,9 +399,9 @@
       0,
       2
     ],
-    "Ticket-ready (of detected)": 49.3,
-    "Actionable recall": 33.9,
-    "Detected, due by 2030 (NIST)": "52/73",
+    "Ticket-ready (of detected)": 50.9,
+    "Actionable recall": 35.2,
+    "Detected, due by 2030 (NIST)": "54/77",
     "lib:Crypto libraries, in the right manifest": [
       0,
       28
@@ -399,28 +415,28 @@
     "lib:PQC verdicts right": "none given",
     "lib:False positives": 0,
     "lang:Python": [
-      54,
-      65
+      56,
+      67
     ],
     "lang:Java": [
-      49,
-      58
+      51,
+      60
     ],
     "lang:Go": [
-      36,
-      45
+      37,
+      47
     ],
     "lang:JavaScript / TypeScript": [
-      31,
-      36
+      32,
+      38
     ],
     "lang:C / OpenSSL": [
-      27,
-      39
+      28,
+      41
     ],
     "lang:Certificates, keys, configs": [
       26,
-      81
+      79
     ],
     "lang:Built artifacts (system fixture)": [
       4,
@@ -440,7 +456,7 @@
     ],
     "tier:4. Non-code assets": [
       15,
-      48
+      46
     ],
     "tier:5. Adversarial": [
       0,
@@ -457,6 +473,10 @@
     "tier:System fixture": [
       13,
       26
+    ],
+    "tier:Dead code": [
+      7,
+      10
     ]
   }
 }

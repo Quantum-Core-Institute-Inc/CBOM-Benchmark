@@ -1,8 +1,10 @@
 # CBOM Testbench Scorecard: CycloneDX Generator 12.9.1 (adapter 1.0)
 
-**Overall:** 14/330 findings detected (4.2% recall), 0 false positives (100.0% precision), parameters correct on 78.6% of detections.
+**Overall:** 15/338 findings detected (4.4% recall), 0 false positives (100.0% precision), parameters correct on 80.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 29/304 detected (9.5%), 0 false positives.
+
+Password-gated findings (readable only by trying a well-known default password; scored separately, not in any number below): 0/2 detected.
 
 | Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
 |---|---|---|---|---|---|---|---|---|---|
@@ -18,9 +20,14 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 2 typescript | 2/7 | 28.6% | 8.2–64.1% (thin) | 28.6% | 50.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 3 java | 0/7 | 0.0% | 0.0–35.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 3 python | 0/9 | 0.0% | 0.0–29.9% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| Tier 4 assets | 0/48 | 0.0% | 0.0–7.4% | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Tier 4 assets | 0/46 | 0.0% | 0.0–7.7% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 java | 0/8 | 0.0% | 0.0–32.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 python | 0/9 | 0.0% | 0.0–29.9% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Dead code c | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Dead code go | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Dead code java | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Dead code javascript | 1/2 | 50.0% | 9.5–90.5% (thin) | 50.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code python | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Mixed files c | 0/13 | 0.0% | 0.0–22.8% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Mixed files go | 0/12 | 0.0% | 0.0–24.3% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Mixed files java | 0/13 | 0.0% | 0.0–22.8% | 0.0% | n/a | n/a | n/a | 0 | n/a |
@@ -36,10 +43,10 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | System fixture go | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture java | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture python | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| **Total** | 14/330 | 4.2% | 2.5–7.0% | 4.2% | 78.6% | 100.0% | n/a | 0 | 100.0% |
+| **Total** | 15/338 | 4.4% | 2.7–7.2% | 4.4% | 80.0% | 100.0% | n/a | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 
-Intervals are 95% Wilson intervals on recall. 18 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -62,15 +69,15 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 3.9%** (at primary site: 3.9%). **Findings due by end of 2030 that this scanner missed: 103.**
+**Deadline-weighted recall: 4.3%** (at primary site: 4.3%). **Findings due by end of 2030 that this scanner missed: 112.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 3/73 | 4.1% | 4.1% |
-| Due by end of 2030 | 4 | 1/34 | 2.9% | 2.9% |
+| Due now (not approved or past its date) | 5 | 4/82 | 4.9% | 4.9% |
+| Due by end of 2030 | 4 | 1/35 | 2.9% | 2.9% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 3/96 | 3.1% | 3.1% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 7/127 | 5.5% | 5.5% |
+| Due 2034 to 2035 | 2 | 3/95 | 3.2% | 3.2% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 7/126 | 5.6% | 5.6% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -177,25 +184,34 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | SYS-JV-02 | SHA-1 | 2030-12-31 | `corpus/system/payments-platform/services/ledger-service/src/main/java/com/acme/ledger/LedgerService.java` |
 | SYS-AR-02 | SHA-1 | 2030-12-31 | `corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar` |
 | SYS-AR-05 | SHA-1 | 2030-12-31 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` |
+| DC-PY-01 | MD5 | **now** | `corpus/deadcode/python/dead_export.py` |
+| DC-PY-02 | RSA-1024 | 2013-12-31 | `corpus/deadcode/python/dead_export.py` |
+| DC-JV-01 | DES-CBC | **now** | `corpus/deadcode/java/DeadLegacy.java` |
+| DC-JV-02 | SHA-1 | 2030-12-31 | `corpus/deadcode/java/DeadLegacy.java` |
+| DC-GO-01 | MD5 | **now** | `corpus/deadcode/go/legacy/main.go` |
+| DC-GO-02 | RC4 | **now** | `corpus/deadcode/go/legacy/main.go` |
+| DC-JS-02 | 3DES-CBC | 2023-12-31 | `corpus/deadcode/javascript/dead_paths.js` |
+| DC-C-01 | MD5 | **now** | `corpus/deadcode/c/dead_branches.c` |
+| DC-C-02 | 3DES-CBC | 2023-12-31 | `corpus/deadcode/c/dead_branches.c` |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 11/14 detected findings (78.6%)**, meaning every must-have is present and correct. **Actionable recall: 3.3%** of all 330 expected findings were both found and ticket-ready. Field completeness across all checks: 35.8%.
+**Ticket-ready: 12/15 detected findings (80.0%)**, meaning every must-have is present and correct. **Actionable recall: 3.6%** of all 338 expected findings were both found and ticket-ready. Field completeness across all checks: 36.6%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 14 | 14 | 100.0% |
+| Exact location | must | 15 | 15 | 100.0% |
 | Correct parameters | must | 8 | 5 | 62.5% |
 | Primitive, where the family is ambiguous | must | 3 | 0 | 0.0% |
 | Certificate expiry (correct) | must | 0 | 0 | n/a |
 | Certificate subject (correct) | must | 0 | 0 | n/a |
 | Key material type | must | 0 | 0 | n/a |
 | Protocol version | must | 0 | 0 | n/a |
-| OID | should | 14 | 5 | 35.7% |
-| Crypto functions | should | 14 | 0 | 0.0% |
-| Quantum security level (correct) | should | 14 | 0 | 0.0% |
+| OID | should | 15 | 6 | 40.0% |
+| Crypto functions | should | 15 | 0 | 0.0% |
+| Quantum security level (correct) | should | 15 | 0 | 0.0% |
 | Code context | should | 0 | 0 | n/a |
 | Providing library | should | 0 | 0 | n/a |
 | Certificate issuer | should | 0 | 0 | n/a |
@@ -302,8 +318,6 @@ Detected but not ticket-ready (3), first 25:
 | T4-AS-19 | `corpus/tier4/assets/keys/jwks.json` | EC {'curve': 'P-256'} | 15 |
 | T4-AS-20 | `corpus/tier4/assets/keystores/orders_keystore.p12` | AES {'key_size': 256, 'mode': 'CBC'} | file |
 | T4-AS-21 | `corpus/tier4/assets/keystores/orders_keystore.p12` | PBKDF2 {'hash': 'SHA-256'} | file |
-| T4-AS-22 | `corpus/tier4/assets/keystores/orders_keystore.p12` | RSA {'key_size': 2048} | file |
-| T4-AS-23 | `corpus/tier4/assets/keystores/orders_keystore.p12` | SHA-256  | file |
 | T4-AS-24 | `corpus/tier4/assets/keystores/partner_truststore.jks` | RSA {'key_size': 1024} | file |
 | T4-AS-25 | `corpus/tier4/assets/keystores/partner_truststore.jks` | SHA-1  | file |
 | T4-AS-26 | `corpus/tier4/assets/ssh/sshd_config` | RSA  | 8 |
@@ -532,6 +546,15 @@ Detected but not ticket-ready (3), first 25:
 | SYS-AS-09 | `corpus/system/payments-platform/infra/terraform/kms.tf` | EC {'curve': 'P-256'} | 6 |
 | SYS-AS-10 | `corpus/system/payments-platform/infra/terraform/kms.tf` | RSA {'key_size': 2048} | 12 |
 | SYS-AS-11 | `corpus/system/payments-platform/infra/terraform/kms.tf` | AES {'key_size': 256, 'mode': 'GCM'} | 15 |
+| DC-PY-01 | `corpus/deadcode/python/dead_export.py` | MD5  | 10 |
+| DC-PY-02 | `corpus/deadcode/python/dead_export.py` | RSA {'key_size': 1024} | 15 |
+| DC-JV-01 | `corpus/deadcode/java/DeadLegacy.java` | DES {'mode': 'CBC'} | 9 |
+| DC-JV-02 | `corpus/deadcode/java/DeadLegacy.java` | SHA-1  | 14 |
+| DC-GO-01 | `corpus/deadcode/go/legacy/main.go` | MD5  | 13 |
+| DC-GO-02 | `corpus/deadcode/go/legacy/main.go` | RC4  | 18 |
+| DC-JS-02 | `corpus/deadcode/javascript/dead_paths.js` | 3DES {'mode': 'CBC'} | 10 |
+| DC-C-01 | `corpus/deadcode/c/dead_branches.c` | MD5  | 6 |
+| DC-C-02 | `corpus/deadcode/c/dead_branches.c` | 3DES {'mode': 'CBC'} | 11 |
 
 ## Detected with wrong or missing parameters
 
@@ -676,8 +699,6 @@ Missed, and the declared version has no ML-KEM/ML-DSA: org.bouncycastle:bcprov-j
 | T4-AS-19 | EC | NO | NO | n/a | n/a | n/a |
 | T4-AS-20 | AES | NO | NO | n/a | n/a | n/a |
 | T4-AS-21 | PBKDF2 | NO | NO | n/a | n/a | n/a |
-| T4-AS-22 | RSA | NO | NO | n/a | n/a | n/a |
-| T4-AS-23 | SHA-256 | NO | NO | n/a | n/a | n/a |
 | T4-AS-24 | RSA | NO | NO | n/a | n/a | n/a |
 | T4-AS-25 | SHA-1 | NO | NO | n/a | n/a | n/a |
 | T4-AS-26 | RSA | NO | NO | n/a | n/a | n/a |
@@ -920,5 +941,15 @@ Missed, and the declared version has no ML-KEM/ML-DSA: org.bouncycastle:bcprov-j
 | SYS-AS-09 | EC | NO | NO | n/a | n/a | n/a |
 | SYS-AS-10 | RSA | NO | NO | n/a | n/a | n/a |
 | SYS-AS-11 | AES | NO | NO | n/a | n/a | n/a |
+| DC-PY-01 | MD5 | NO | NO | n/a | n/a | n/a |
+| DC-PY-02 | RSA | NO | NO | n/a | n/a | n/a |
+| DC-JV-01 | DES | NO | NO | n/a | n/a | n/a |
+| DC-JV-02 | SHA-1 | NO | NO | n/a | n/a | n/a |
+| DC-GO-01 | MD5 | NO | NO | n/a | n/a | n/a |
+| DC-GO-02 | RC4 | NO | NO | n/a | n/a | n/a |
+| DC-JS-01 | MD5 | yes | yes | yes | yes | n/a |
+| DC-JS-02 | 3DES | NO | NO | n/a | n/a | n/a |
+| DC-C-01 | MD5 | NO | NO | n/a | n/a | n/a |
+| DC-C-02 | 3DES | NO | NO | n/a | n/a | n/a |
 
 _Ignored: 0 occurrences outside the corpus, 6 components with no location evidence._

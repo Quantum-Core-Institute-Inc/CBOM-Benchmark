@@ -3987,54 +3987,6 @@
       "actionability": {}
     },
     {
-      "id": "T4-AS-22",
-      "tier": 4,
-      "lang": "assets",
-      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
-      "family": "RSA",
-      "expected_params": {
-        "key_size": 2048
-      },
-      "expected_line": null,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
-      "due": "2035-12-31",
-      "due_bucket": "2034-2035",
-      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
-      "algorithm": "RSA-2048",
-      "actionability": {}
-    },
-    {
-      "id": "T4-AS-23",
-      "tier": 4,
-      "lang": "assets",
-      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
-      "family": "SHA-256",
-      "expected_params": {},
-      "expected_line": null,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
-      "due": null,
-      "due_bucket": "none",
-      "due_note": "",
-      "algorithm": "SHA-256",
-      "actionability": {}
-    },
-    {
       "id": "T4-AS-24",
       "tier": 4,
       "lang": "assets",
@@ -14586,6 +14538,460 @@
       "due_note": "",
       "algorithm": "AES-256-GCM",
       "actionability": {}
+    },
+    {
+      "id": "DC-PY-01",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 10,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        10
+      ],
+      "reported_files": [
+        "corpus/deadcode/python/dead_export.py"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": false,
+        "provenance": false
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-PY-02",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "RSA",
+      "expected_params": {
+        "key_size": 1024
+      },
+      "expected_line": 15,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "key_size": 1024
+        }
+      ],
+      "reported_lines": [
+        15
+      ],
+      "reported_files": [
+        "corpus/deadcode/python/dead_export.py"
+      ],
+      "rule": "file+family",
+      "due": "2013-12-31",
+      "due_bucket": "now",
+      "due_note": "Below 112-bit security; disallowed since 2014.",
+      "algorithm": "RSA-1024",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": true,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": false,
+        "provenance": false
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JV-01",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 9,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "mode": "CBC"
+        }
+      ],
+      "reported_lines": [
+        9
+      ],
+      "reported_files": [
+        "corpus/deadcode/java/DeadLegacy.java"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Single DES; FIPS 46-3 was withdrawn in 2005.",
+      "algorithm": "DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": false,
+        "provenance": false
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JV-02",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "SHA-1",
+      "expected_params": {},
+      "expected_line": 14,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        14
+      ],
+      "reported_files": [
+        "corpus/deadcode/java/DeadLegacy.java"
+      ],
+      "rule": "file+family",
+      "due": "2030-12-31",
+      "due_bucket": "by-2030",
+      "due_note": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation.",
+      "algorithm": "SHA-1",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": false,
+        "provenance": false
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-GO-01",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 13,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        13
+      ],
+      "reported_files": [
+        "corpus/deadcode/go/legacy/main.go"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-GO-02",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "RC4",
+      "expected_params": {},
+      "expected_line": 18,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "RC4",
+      "actionability": {}
+    },
+    {
+      "id": "DC-JS-01",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 5,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {}
+    },
+    {
+      "id": "DC-JS-02",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "3DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 10,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        10
+      ],
+      "reported_files": [
+        "corpus/deadcode/javascript/dead_paths.js"
+      ],
+      "rule": "file+family",
+      "due": "2023-12-31",
+      "due_bucket": "now",
+      "due_note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "algorithm": "3DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
+    },
+    {
+      "id": "DC-C-01",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 6,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        6
+      ],
+      "reported_files": [
+        "corpus/deadcode/c/dead_branches.c"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-C-02",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "3DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 11,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        11
+      ],
+      "reported_files": [
+        "corpus/deadcode/c/dead_branches.c"
+      ],
+      "rule": "file+family",
+      "due": "2023-12-31",
+      "due_bucket": "now",
+      "due_note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "algorithm": "3DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
     }
   ],
   "false_positives": [
@@ -14937,368 +15343,383 @@
       "line": 17
     },
     {
-      "file": "corpus/mixed/c/audit_daemon.c",
+      "file": "corpus/deadcode/go/legacy/main.go",
       "name": "qci-category-64",
+      "line": 6
+    },
+    {
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "name": "qci-category-65",
+      "line": 18
+    },
+    {
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "name": "qci-category-66",
+      "line": 2
+    },
+    {
+      "file": "corpus/mixed/c/audit_daemon.c",
+      "name": "qci-category-67",
       "line": 218
     },
     {
       "file": "corpus/mixed/c/audit_daemon.c",
-      "name": "qci-category-65",
+      "name": "qci-category-68",
       "line": 315
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-66",
+      "name": "qci-category-69",
       "line": 8
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-67",
+      "name": "qci-category-70",
       "line": 198
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-68",
+      "name": "qci-category-71",
       "line": 207
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-69",
+      "name": "qci-category-72",
       "line": 230
     },
     {
       "file": "corpus/mixed/javascript/device_session.js",
-      "name": "qci-category-70",
+      "name": "qci-category-73",
       "line": 2
     },
     {
       "file": "corpus/mixed/javascript/device_session.js",
-      "name": "qci-category-71",
+      "name": "qci-category-74",
       "line": 94
     },
     {
       "file": "corpus/mixed/javascript/partner_routes.js",
-      "name": "qci-category-72",
+      "name": "qci-category-75",
       "line": 2
     },
     {
       "file": "corpus/mixed/javascript/partner_routes.js",
-      "name": "qci-category-73",
+      "name": "qci-category-76",
       "line": 263
     },
     {
       "file": "corpus/mixed/python/invoice_service.py",
-      "name": "qci-category-74",
+      "name": "qci-category-77",
       "line": 52
     },
     {
       "file": "corpus/mixed/python/order_jobs.py",
-      "name": "qci-category-75",
+      "name": "qci-category-78",
       "line": 33
     },
     {
       "file": "corpus/pqc/assets/keys/attestation_signer.pem",
-      "name": "qci-category-80",
-      "line": 1
-    },
-    {
-      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-81",
-      "line": 6
-    },
-    {
-      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-82",
-      "line": 6
-    },
-    {
-      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
       "name": "qci-category-83",
-      "line": 6
+      "line": 1
     },
     {
       "file": "corpus/pqc/assets/ssh/sshd_config_pq",
       "name": "qci-category-84",
+      "line": 6
+    },
+    {
+      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
+      "name": "qci-category-85",
+      "line": 6
+    },
+    {
+      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
+      "name": "qci-category-86",
+      "line": 6
+    },
+    {
+      "file": "corpus/pqc/assets/ssh/sshd_config_pq",
+      "name": "qci-category-87",
       "line": 7
     },
     {
       "file": "corpus/pqc/assets/tls/nginx_pq.conf",
-      "name": "qci-category-86",
+      "name": "qci-category-89",
       "line": 14
     },
     {
       "file": "corpus/pqc/assets/tls/openssl_pq.cnf",
-      "name": "qci-category-88",
+      "name": "qci-category-91",
       "line": 13
     },
     {
       "file": "corpus/pqc/assets/tls/openssl_pq.cnf",
-      "name": "qci-category-89",
+      "name": "qci-category-92",
       "line": 13
     },
     {
       "file": "corpus/pqc/go/tls_hybrid/main.go",
-      "name": "qci-category-90",
+      "name": "qci-category-93",
       "line": 10
     },
     {
       "file": "corpus/pqc/java/PqParamSpec.java",
-      "name": "qci-category-91",
+      "name": "qci-category-94",
       "line": 9
     },
     {
       "file": "corpus/pqc/java/PqSignature.java",
-      "name": "qci-category-92",
+      "name": "qci-category-95",
       "line": 11
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/gateway.conf",
-      "name": "qci-category-95",
+      "name": "qci-category-98",
       "line": 9
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/gateway.conf",
-      "name": "qci-category-96",
+      "name": "qci-category-99",
       "line": 9
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/tls/gateway.key",
-      "name": "qci-category-98",
-      "line": 1
-    },
-    {
-      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
-      "name": "qci-category-99",
-      "line": 12895
-    },
-    {
-      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
-      "name": "qci-category-100",
-      "line": 12895
-    },
-    {
-      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-101",
-      "line": 12895
+      "line": 1
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-102",
-      "line": 13300
+      "line": 12895
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-103",
-      "line": 13514
+      "line": 12895
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-104",
-      "line": 14665
+      "line": 12895
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-105",
-      "line": 14666
+      "line": 13300
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-106",
-      "line": 14666
+      "line": 13514
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-107",
-      "line": 14670
+      "line": 14665
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-108",
-      "line": 14670
+      "line": 14666
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-109",
-      "line": 16796
+      "line": 14666
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-110",
-      "line": 16796
+      "line": 14670
     },
     {
       "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
       "name": "qci-category-111",
+      "line": 14670
+    },
+    {
+      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
+      "name": "qci-category-112",
+      "line": 16796
+    },
+    {
+      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
+      "name": "qci-category-113",
+      "line": 16796
+    },
+    {
+      "file": "corpus/system/payments-platform/services/api-gateway/bin/api-gateway",
+      "name": "qci-category-114",
       "line": 16986
     },
     {
       "file": "corpus/tier1/c/t1_digests.c",
-      "name": "qci-category-113",
+      "name": "qci-category-116",
       "line": 18
     },
     {
       "file": "corpus/tier1/go/hashes/main.go",
-      "name": "qci-category-114",
+      "name": "qci-category-117",
       "line": 8
     },
     {
       "file": "corpus/tier1/go/hashes/main.go",
-      "name": "qci-category-115",
+      "name": "qci-category-118",
       "line": 17
     },
     {
       "file": "corpus/tier1/go/rc4/main.go",
-      "name": "qci-category-116",
+      "name": "qci-category-119",
       "line": 5
     },
     {
       "file": "corpus/tier1/go/rc4/main.go",
-      "name": "qci-category-117",
+      "name": "qci-category-120",
       "line": 10
     },
     {
       "file": "corpus/tier1/go/tls_config/main.go",
-      "name": "qci-category-118",
+      "name": "qci-category-121",
       "line": 10
     },
     {
       "file": "corpus/tier1/go/tls_config/main.go",
-      "name": "qci-category-119",
+      "name": "qci-category-122",
       "line": 14
     },
     {
       "file": "corpus/tier1/java/T1Hashes.java",
-      "name": "qci-category-120",
+      "name": "qci-category-123",
       "line": 13
     },
     {
       "file": "corpus/tier1/javascript/t1_aes_cbc.js",
-      "name": "qci-category-121",
-      "line": 2
-    },
-    {
-      "file": "corpus/tier1/javascript/t1_aes_gcm.js",
-      "name": "qci-category-122",
-      "line": 2
-    },
-    {
-      "file": "corpus/tier1/javascript/t1_chacha.js",
-      "name": "qci-category-123",
-      "line": 2
-    },
-    {
-      "file": "corpus/tier1/javascript/t1_dh.js",
       "name": "qci-category-124",
       "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_ec.js",
+      "file": "corpus/tier1/javascript/t1_aes_gcm.js",
       "name": "qci-category-125",
       "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_hashes.js",
+      "file": "corpus/tier1/javascript/t1_chacha.js",
       "name": "qci-category-126",
       "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_hashes.js",
+      "file": "corpus/tier1/javascript/t1_dh.js",
       "name": "qci-category-127",
-      "line": 8
+      "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_mac_kdf.js",
+      "file": "corpus/tier1/javascript/t1_ec.js",
       "name": "qci-category-128",
       "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_modern_curves.js",
+      "file": "corpus/tier1/javascript/t1_hashes.js",
       "name": "qci-category-129",
       "line": 2
     },
     {
-      "file": "corpus/tier1/javascript/t1_rsa.js",
+      "file": "corpus/tier1/javascript/t1_hashes.js",
       "name": "qci-category-130",
-      "line": 2
+      "line": 8
     },
     {
-      "file": "corpus/tier1/javascript/t1_triple_des.js",
+      "file": "corpus/tier1/javascript/t1_mac_kdf.js",
       "name": "qci-category-131",
       "line": 2
     },
     {
-      "file": "corpus/tier1/python/t1_hashes.py",
+      "file": "corpus/tier1/javascript/t1_modern_curves.js",
       "name": "qci-category-132",
+      "line": 2
+    },
+    {
+      "file": "corpus/tier1/javascript/t1_rsa.js",
+      "name": "qci-category-133",
+      "line": 2
+    },
+    {
+      "file": "corpus/tier1/javascript/t1_triple_des.js",
+      "name": "qci-category-134",
+      "line": 2
+    },
+    {
+      "file": "corpus/tier1/python/t1_hashes.py",
+      "name": "qci-category-135",
       "line": 9
     },
     {
       "file": "corpus/tier4/assets/keys/billing_service.pem",
-      "name": "qci-category-139",
+      "name": "qci-category-142",
       "line": 1
     },
     {
       "file": "corpus/tier4/assets/keys/treasury_hot_wallet.key",
-      "name": "qci-category-140",
+      "name": "qci-category-143",
       "line": 1
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-141",
+      "name": "qci-category-144",
       "line": 8
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-142",
-      "line": 9
-    },
-    {
-      "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-143",
-      "line": 9
-    },
-    {
-      "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-144",
-      "line": 10
-    },
-    {
-      "file": "corpus/tier4/assets/ssh/sshd_config",
       "name": "qci-category-145",
-      "line": 10
+      "line": 9
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
       "name": "qci-category-146",
+      "line": 9
+    },
+    {
+      "file": "corpus/tier4/assets/ssh/sshd_config",
+      "name": "qci-category-147",
+      "line": 10
+    },
+    {
+      "file": "corpus/tier4/assets/ssh/sshd_config",
+      "name": "qci-category-148",
+      "line": 10
+    },
+    {
+      "file": "corpus/tier4/assets/ssh/sshd_config",
+      "name": "qci-category-149",
       "line": 11
     },
     {
       "file": "corpus/tier4/assets/tls/application.yml",
-      "name": "qci-category-147",
+      "name": "qci-category-150",
       "line": 15
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-150",
-      "line": 20
-    },
-    {
-      "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-151",
-      "line": 20
-    },
-    {
-      "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-152",
-      "line": 21
-    },
-    {
-      "file": "corpus/tier4/assets/tls/nginx.conf",
       "name": "qci-category-153",
-      "line": 21
+      "line": 20
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
       "name": "qci-category-154",
+      "line": 20
+    },
+    {
+      "file": "corpus/tier4/assets/tls/nginx.conf",
+      "name": "qci-category-155",
+      "line": 21
+    },
+    {
+      "file": "corpus/tier4/assets/tls/nginx.conf",
+      "name": "qci-category-156",
+      "line": 21
+    },
+    {
+      "file": "corpus/tier4/assets/tls/nginx.conf",
+      "name": "qci-category-157",
       "line": 21
     }
   ],
@@ -15511,15 +15932,15 @@
       "precision": 100.0
     },
     "4/assets": {
-      "expected": 48,
+      "expected": 46,
       "detected": 20,
-      "recall": 41.7,
+      "recall": 43.5,
       "recall_ci95": [
-        28.8,
-        55.7
+        30.2,
+        57.8
       ],
       "thin": false,
-      "usage_site_recall": 41.7,
+      "usage_site_recall": 43.5,
       "params_correct": 17,
       "params_accuracy": 85.0,
       "line_accuracy": 91.7,
@@ -15556,6 +15977,91 @@
       "usage_site_recall": 33.3,
       "params_correct": 2,
       "params_accuracy": 66.7,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/c": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 1,
+      "params_accuracy": 50.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/go": {
+      "expected": 2,
+      "detected": 1,
+      "recall": 50.0,
+      "recall_ci95": [
+        9.5,
+        90.5
+      ],
+      "thin": true,
+      "usage_site_recall": 50.0,
+      "params_correct": 1,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/java": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/javascript": {
+      "expected": 2,
+      "detected": 1,
+      "recall": 50.0,
+      "recall_ci95": [
+        9.5,
+        90.5
+      ],
+      "thin": true,
+      "usage_site_recall": 50.0,
+      "params_correct": 0,
+      "params_accuracy": 0.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/python": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -15817,18 +16323,18 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 330,
-      "detected": 232,
-      "recall": 70.3,
+      "expected": 338,
+      "detected": 240,
+      "recall": 71.0,
       "recall_ci95": [
-        65.2,
-        75.0
+        66.0,
+        75.6
       ],
       "thin": false,
-      "usage_site_recall": 67.6,
-      "params_correct": 132,
-      "params_accuracy": 56.9,
-      "line_accuracy": 97.1,
+      "usage_site_recall": 68.3,
+      "params_correct": 138,
+      "params_accuracy": 57.5,
+      "line_accuracy": 97.2,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 1,
       "precision": 99.6
@@ -15916,18 +16422,18 @@
       "now": {
         "label": "Due now (not approved or past its date)",
         "weight": 5,
-        "expected": 73,
-        "detected": 53,
-        "recall": 72.6,
-        "primary_site_recall": 69.9
+        "expected": 82,
+        "detected": 60,
+        "recall": 73.2,
+        "primary_site_recall": 70.7
       },
       "by-2030": {
         "label": "Due by end of 2030",
         "weight": 4,
-        "expected": 34,
-        "detected": 23,
-        "recall": 67.6,
-        "primary_site_recall": 61.8
+        "expected": 35,
+        "detected": 24,
+        "recall": 68.6,
+        "primary_site_recall": 62.9
       },
       "2031-2033": {
         "label": "Due 2031 to 2033",
@@ -15940,22 +16446,22 @@
       "2034-2035": {
         "label": "Due 2034 to 2035",
         "weight": 2,
-        "expected": 96,
+        "expected": 95,
         "detected": 70,
-        "recall": 72.9,
-        "primary_site_recall": 69.8
+        "recall": 73.7,
+        "primary_site_recall": 70.5
       },
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 127,
+        "expected": 126,
         "detected": 86,
-        "recall": 67.7,
-        "primary_site_recall": 66.1
+        "recall": 68.3,
+        "primary_site_recall": 66.7
       }
     },
-    "weighted_recall": 71.1,
-    "weighted_primary_site_recall": 67.9,
+    "weighted_recall": 71.8,
+    "weighted_primary_site_recall": 68.8,
     "missed_due_by_2030": [
       {
         "id": "T2-PY-04",
@@ -16173,39 +16679,53 @@
         "file": "corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar",
         "due": "2030-12-31",
         "why": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation."
+      },
+      {
+        "id": "DC-GO-02",
+        "algorithm": "RC4",
+        "file": "corpus/deadcode/go/legacy/main.go",
+        "due": "now",
+        "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
+      },
+      {
+        "id": "DC-JS-01",
+        "algorithm": "MD5",
+        "file": "corpus/deadcode/javascript/dead_paths.js",
+        "due": "now",
+        "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
       }
     ]
   },
   "actionability": {
     "rubric": "cbom-actionability-v1",
     "rubric_status": "proposed",
-    "detected": 232,
-    "ticket_ready": 109,
-    "ticket_ready_pct": 47.0,
-    "actionable_recall": 33.0,
-    "expected": 330,
-    "completeness_pct": 55.7,
+    "detected": 240,
+    "ticket_ready": 115,
+    "ticket_ready_pct": 47.9,
+    "actionable_recall": 34.0,
+    "expected": 338,
+    "completeness_pct": 56.0,
     "checks": {
       "location": {
         "label": "Exact location",
         "tier": "must",
-        "applicable": 232,
-        "passed": 230,
-        "pct": 99.1
+        "applicable": 240,
+        "passed": 238,
+        "pct": 99.2
       },
       "parameters": {
         "label": "Correct parameters",
         "tier": "must",
-        "applicable": 158,
-        "passed": 58,
-        "pct": 36.7
+        "applicable": 162,
+        "passed": 60,
+        "pct": 37.0
       },
       "primitive": {
         "label": "Primitive, where the family is ambiguous",
         "tier": "must",
-        "applicable": 56,
-        "passed": 44,
-        "pct": 78.6
+        "applicable": 57,
+        "passed": 45,
+        "pct": 78.9
       },
       "cert_expiry": {
         "label": "Certificate expiry (correct)",
@@ -16238,35 +16758,35 @@
       "oid": {
         "label": "OID",
         "tier": "should",
-        "applicable": 215,
-        "passed": 70,
-        "pct": 32.6
+        "applicable": 223,
+        "passed": 71,
+        "pct": 31.8
       },
       "functions": {
         "label": "Crypto functions",
         "tier": "should",
-        "applicable": 222,
-        "passed": 222,
+        "applicable": 230,
+        "passed": 230,
         "pct": 100.0
       },
       "quantum_level": {
         "label": "Quantum security level (correct)",
         "tier": "should",
-        "applicable": 220,
-        "passed": 138,
-        "pct": 62.7
+        "applicable": 228,
+        "passed": 146,
+        "pct": 64.0
       },
       "code_context": {
         "label": "Code context",
         "tier": "should",
-        "applicable": 95,
+        "applicable": 99,
         "passed": 0,
         "pct": 0.0
       },
       "provenance": {
         "label": "Providing library",
         "tier": "should",
-        "applicable": 98,
+        "applicable": 102,
         "passed": 0,
         "pct": 0.0
       },
@@ -30327,30 +30847,80 @@
       "family": "3DES"
     }
   ],
+  "password_gated_results": [
+    {
+      "id": "T4-AS-22",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
+      "family": "RSA",
+      "expected_params": {
+        "key_size": 2048
+      },
+      "expected_line": null,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "RSA-2048",
+      "actionability": {}
+    },
+    {
+      "id": "T4-AS-23",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
+      "family": "SHA-256",
+      "expected_params": {},
+      "expected_line": null,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "",
+      "algorithm": "SHA-256",
+      "actionability": {}
+    }
+  ],
   "manifest": {
-    "release": "2.2.0",
-    "methodology": "2.2",
-    "findings": 330,
-    "answer_key": "0c7489f223e2060d",
-    "corpus": "19f42a26eeadb7dd",
-    "scorer": "a28229a0c1833b03",
+    "release": "2.3.0",
+    "methodology": "2.3",
+    "findings": 338,
+    "answer_key": "9e3fdc9bed8b4bf4",
+    "corpus": "069efaeef382b6bd",
+    "scorer": "09d445faf1a63801",
     "policy": "nist:732cd8a8d8f317e9",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 330,
-    "finding_set": "829850c33b1786e7",
+    "scored_findings": 338,
+    "finding_set": "097cb4d4761a50e0",
     "scope": null,
     "scanner": "qci-pqc, version 2.3.4",
     "adapter": "qci_pqc 1.1",
     "adapter_sha": "55035867d66228df"
   },
   "signal_coverage": {
-    "expected": 330,
-    "strict_detected": 232,
+    "expected": 338,
+    "strict_detected": 240,
     "signal_only": 11,
-    "combined": 243,
-    "strict_recall": 70.3,
-    "combined_recall": 73.6,
+    "combined": 251,
+    "strict_recall": 71.0,
+    "combined_recall": 74.3,
     "signal_only_ids": [
       "MX-JS-2a",
       "PQ-AS-11",
@@ -30498,103 +31068,103 @@
         "category": "SHA-3",
         "location": "mixed/c/audit_daemon.c",
         "line": 218,
-        "ref": "QCI-0438"
+        "ref": "QCI-0449"
       },
       {
         "category": "SHA-3",
         "location": "mixed/c/audit_daemon.c",
         "line": 315,
-        "ref": "QCI-0440"
+        "ref": "QCI-0451"
       },
       {
         "category": "SHA-3",
         "location": "mixed/go/invoice_gateway/main.go",
         "line": 207,
-        "ref": "QCI-0453"
+        "ref": "QCI-0464"
       },
       {
         "category": "SHA-3",
         "location": "mixed/go/invoice_gateway/main.go",
         "line": 230,
-        "ref": "QCI-0455"
+        "ref": "QCI-0466"
       },
       {
         "category": "SHA-3",
         "location": "mixed/javascript/partner_routes.js",
         "line": 263,
-        "ref": "QCI-0497"
+        "ref": "QCI-0508"
       },
       {
         "category": "SHA-3",
         "location": "mixed/python/invoice_service.py",
         "line": 52,
-        "ref": "QCI-0499"
+        "ref": "QCI-0510"
       },
       {
         "category": "SHA-3",
         "location": "mixed/python/order_jobs.py",
         "line": 33,
-        "ref": "QCI-0511"
+        "ref": "QCI-0522"
       },
       {
         "category": "X509-Cert",
         "location": "negatives/assets/upload_validator_fake.pem",
         "line": 1,
-        "ref": "QCI-0519"
+        "ref": "QCI-0530"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "system/payments-platform/edge/nginx/gateway.conf",
         "line": 9,
-        "ref": "QCI-0574"
+        "ref": "QCI-0585"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 12895,
-        "ref": "QCI-0615"
+        "ref": "QCI-0626"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 13300,
-        "ref": "QCI-0620"
+        "ref": "QCI-0631"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 13514,
-        "ref": "QCI-0622"
+        "ref": "QCI-0633"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 14665,
-        "ref": "QCI-0624"
+        "ref": "QCI-0635"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 16796,
-        "ref": "QCI-0647"
+        "ref": "QCI-0658"
       },
       {
         "category": "SHA-3",
         "location": "system/payments-platform/services/api-gateway/bin/api-gateway",
         "line": 16986,
-        "ref": "QCI-0654"
+        "ref": "QCI-0665"
       },
       {
         "category": "SHA-3",
         "location": "tier1/go/hashes/main.go",
         "line": 8,
-        "ref": "QCI-0699"
+        "ref": "QCI-0710"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "tier4/assets/tls/nginx.conf",
         "line": 21,
-        "ref": "QCI-0873"
+        "ref": "QCI-0884"
       }
     ]
   }

@@ -1,8 +1,10 @@
 # CBOM Testbench Scorecard: reference, names only
 
-**Overall:** 330/330 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
+**Overall:** 338/338 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 304/304 detected (100.0%), 0 false positives.
+
+Password-gated findings (readable only by trying a well-known default password; scored separately, not in any number below): 2/2 detected.
 
 | Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
 |---|---|---|---|---|---|---|---|---|---|
@@ -18,9 +20,14 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 2 typescript | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 3 java | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 3 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
-| Tier 4 assets | 48/48 | 100.0% | 92.6–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Tier 4 assets | 46/46 | 100.0% | 92.3–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 5 java | 8/8 | 100.0% | 67.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 5 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code c | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code go | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code javascript | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Dead code python | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Mixed files c | 13/13 | 100.0% | 77.2–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Mixed files go | 12/12 | 100.0% | 75.7–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Mixed files java | 13/13 | 100.0% | 77.2–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
@@ -36,10 +43,10 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | System fixture python | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
-| **Total** | 330/330 | 100.0% | 98.8–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| **Total** | 338/338 | 100.0% | 98.9–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 
-Intervals are 95% Wilson intervals on recall. 18 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -68,39 +75,39 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 73/73 | 100.0% | 100.0% |
-| Due by end of 2030 | 4 | 34/34 | 100.0% | 100.0% |
+| Due now (not approved or past its date) | 5 | 82/82 | 100.0% | 100.0% |
+| Due by end of 2030 | 4 | 35/35 | 100.0% | 100.0% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 96/96 | 100.0% | 100.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 127/127 | 100.0% | 100.0% |
+| Due 2034 to 2035 | 2 | 95/95 | 100.0% | 100.0% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 126/126 | 100.0% | 100.0% |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 240/330 detected findings (72.7%)**, meaning every must-have is present and correct. **Actionable recall: 72.7%** of all 330 expected findings were both found and ticket-ready. Field completeness across all checks: 31.8%.
+**Ticket-ready: 249/338 detected findings (73.7%)**, meaning every must-have is present and correct. **Actionable recall: 73.7%** of all 338 expected findings were both found and ticket-ready. Field completeness across all checks: 31.7%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 330 | 330 | 100.0% |
-| Correct parameters | must | 193 | 193 | 100.0% |
+| Exact location | must | 338 | 338 | 100.0% |
+| Correct parameters | must | 196 | 196 | 100.0% |
 | Primitive, where the family is ambiguous | must | 72 | 0 | 0.0% |
-| Certificate expiry (correct) | must | 30 | 0 | 0.0% |
-| Certificate subject (correct) | must | 30 | 0 | 0.0% |
+| Certificate expiry (correct) | must | 28 | 0 | 0.0% |
+| Certificate subject (correct) | must | 28 | 0 | 0.0% |
 | Key material type | must | 9 | 9 | 100.0% |
 | Protocol version | must | 13 | 13 | 100.0% |
-| OID | should | 278 | 0 | 0.0% |
-| Crypto functions | should | 290 | 0 | 0.0% |
-| Quantum security level (correct) | should | 287 | 0 | 0.0% |
-| Code context | should | 116 | 0 | 0.0% |
-| Providing library | should | 118 | 0 | 0.0% |
-| Certificate issuer | should | 30 | 0 | 0.0% |
-| Certificate start date | should | 30 | 0 | 0.0% |
-| Certificate key and signature linked | should | 30 | 30 | 100.0% |
+| OID | should | 287 | 0 | 0.0% |
+| Crypto functions | should | 299 | 0 | 0.0% |
+| Quantum security level (correct) | should | 296 | 0 | 0.0% |
+| Code context | should | 120 | 0 | 0.0% |
+| Providing library | should | 122 | 0 | 0.0% |
+| Certificate issuer | should | 28 | 0 | 0.0% |
+| Certificate start date | should | 28 | 0 | 0.0% |
+| Certificate key and signature linked | should | 28 | 28 | 100.0% |
 | Key format | should | 9 | 9 | 100.0% |
 | Cipher suite in a protocol | should | 13 | 13 | 100.0% |
 
-Detected but not ticket-ready (90), first 25:
+Detected but not ticket-ready (89), first 25:
 
 | ID | Algorithm | Missing must-haves |
 |---|---|---|
@@ -275,8 +282,6 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T4-AS-19 | EC | yes | yes | yes | n/a | n/a |
 | T4-AS-20 | AES | yes | yes | yes | n/a | n/a |
 | T4-AS-21 | PBKDF2 | yes | yes | yes | n/a | n/a |
-| T4-AS-22 | RSA | yes | yes | yes | n/a | n/a |
-| T4-AS-23 | SHA-256 | yes | yes | yes | n/a | n/a |
 | T4-AS-24 | RSA | yes | yes | yes | n/a | n/a |
 | T4-AS-25 | SHA-1 | yes | yes | yes | n/a | n/a |
 | T4-AS-26 | RSA | yes | yes | yes | yes | n/a |
@@ -519,3 +524,13 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | SYS-AS-09 | EC | yes | yes | yes | yes | n/a |
 | SYS-AS-10 | RSA | yes | yes | yes | yes | n/a |
 | SYS-AS-11 | AES | yes | yes | yes | yes | n/a |
+| DC-PY-01 | MD5 | yes | yes | yes | yes | n/a |
+| DC-PY-02 | RSA | yes | yes | yes | yes | n/a |
+| DC-JV-01 | DES | yes | yes | yes | yes | n/a |
+| DC-JV-02 | SHA-1 | yes | yes | yes | yes | n/a |
+| DC-GO-01 | MD5 | yes | yes | yes | yes | n/a |
+| DC-GO-02 | RC4 | yes | yes | yes | yes | n/a |
+| DC-JS-01 | MD5 | yes | yes | yes | yes | n/a |
+| DC-JS-02 | 3DES | yes | yes | yes | yes | n/a |
+| DC-C-01 | MD5 | yes | yes | yes | yes | n/a |
+| DC-C-02 | 3DES | yes | yes | yes | yes | n/a |

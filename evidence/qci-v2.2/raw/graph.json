@@ -2905,6 +2905,90 @@
     "implemented_by": ""
   },
   {
+    "finding": "MD5",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/c/dead_branches.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RC4",
+    "path": "deadcode/go/legacy/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "RC4"
+  },
+  {
+    "finding": "DES",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "CBC"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "deadcode/java/DeadLegacy.java",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "Node-crypto",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "3DES",
+    "path": "deadcode/javascript/dead_paths.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "3DES"
+  },
+  {
+    "finding": "MD5",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "RSA",
+    "path": "deadcode/python/dead_export.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
     "finding": "OpenSSL",
     "path": "deps/c-agent/CMakeLists.txt",
     "app": "corpus",
@@ -5047,13 +5131,6 @@
     "implemented_by": "RC4"
   },
   {
-    "finding": "RC4",
-    "path": "tier1/go/rc4/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "RC4"
-  },
-  {
     "finding": "SHA-256",
     "path": "tier1/go/rsa/main.go",
     "app": "corpus",
@@ -5602,20 +5679,6 @@
   {
     "finding": "SHA-1",
     "path": "tier2/go/hash_enum/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "MD5",
-    "path": "tier2/go/hmac_func_value/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "MD5",
-    "path": "tier2/go/hmac_func_value/main.go",
     "app": "corpus",
     "library": "",
     "implemented_by": ""

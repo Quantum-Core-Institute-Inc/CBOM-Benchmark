@@ -1,20 +1,20 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "6a9bd835b133ce193d2c68e95af8a3b9cef4e28b628164f953d97a96550dcee7",
-      "size": 2153441
+      "sha256": "36f72116d9a77c9a1443b27713a8f2afb3b03eff25d5f30bf34fa377dca3e55b",
+      "size": 2174194
     },
     "findings.json": {
-      "sha256": "fd3dc5031f6f96804706ac820d1279205ca73b4ba5a146605ce816978c264665",
-      "size": 281131
+      "sha256": "2c1940ceb8b3533ba38a4d6f95722c2b1708e8592d41949cf51ddbe6574c5a10",
+      "size": 283403
     },
     "report.html": {
-      "sha256": "c4e3c0ea08900ab25d1cc6a437c1b15a544150e19730630a6fec2ae46b6b37b5",
-      "size": 452072
+      "sha256": "72b017dcd3746da34437109bb014d0d8250efd468276f97f9220fe996c2ec51f",
+      "size": 455580
     },
     "results.sarif": {
-      "sha256": "4c1656e0e22dad34c2b37f5e8a9d0e3ddda1143a0565f73c462cb4746507d2fb",
-      "size": 443377
+      "sha256": "5c9b9bddc1b14404236e5e095b3b3326dbdc1bc536c1629867226d3b349a10dd",
+      "size": 447613
     }
   },
   "generated": null,
@@ -22,7 +22,7 @@
   "ruleset_hash": "887f6aba136c74ea",
   "scanner_version": "2.2.0",
   "summary": {
-    "findings": 904,
+    "findings": 913,
     "project": "corpus",
     "readiness_score": 0.0,
     "reproducible": true,

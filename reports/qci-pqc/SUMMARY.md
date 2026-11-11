@@ -5,26 +5,26 @@
 
 Failed validating 'type' in schema['properties']['components']['items']['properties']['version']:
     {'description': 'A single disjunctive version identifier, for a '
-  ; 882 components
+  ; 893 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-11 15:13 UTC
+- Run: 2026-11-11 18:26 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
-| Recall | 74.7% | 70.3% |
-| At primary site | 71.7% | 67.6% |
-| Parameters correct | 56.8% | 56.9% |
+| Recall | 74.8% | 71.0% |
+| At primary site | 72.0% | 68.3% |
+| Parameters correct | 57.4% | 57.5% |
 | Precision | 99.6% | 99.6% |
 | False positives | 1 | 1 |
 |   of which in negative controls | 0 | 0 |
 | PQC over-claims | 0 | 0 |
 | PQC by standard name (of detected PQC) | 100.0% | 100.0% |
 | System fixture: routable (of detected) | 70.6% | 70.6% |
-| Ticket-ready (of detected) | 47.6% | 47.0% |
-| Actionable recall | 35.5% | 33.0% |
-| Field completeness | 56.1% | 55.7% |
-| Deadline-weighted recall (nist) | 75.0% | 71.1% |
-| Missed findings due by 2030 | 24 | 31 |
+| Ticket-ready (of detected) | 48.5% | 47.9% |
+| Actionable recall | 36.3% | 34.0% |
+| Field completeness | 56.3% | 56.0% |
+| Deadline-weighted recall (nist) | 75.3% | 71.8% |
+| Missed findings due by 2030 | 26 | 33 |
 | Crypto libraries, right manifest | 96.4% | 96.4% |
 | Library PQC verdicts right | n/a | n/a |
 | Matched holdout recall | 74.8% | n/a |
@@ -35,7 +35,7 @@ Failed validating 'type' in schema['properties']['components']['items']['propert
 | Holdout crypto libraries, right manifest | 87.5% | n/a |
 | Library gap (points, not gated) | 5.0 | n/a |
 
-Risk-signal coverage (in scope): strict 227/304, plus 11 covered only by a QCI category signal, combined **78.3%**.
+Risk-signal coverage (in scope): strict 235/314, plus 11 covered only by a QCI category signal, combined **78.3%**.
 
 | Bucket | Detected | Recall | At primary site | Params |
 |---|---|---|---|---|
@@ -54,6 +54,11 @@ Risk-signal coverage (in scope): strict 227/304, plus 11 covered only by a QCI c
 | 4/assets | 20/34 | 58.8% | 58.8% | 85.0% |
 | 5/java | 0/5 | 0.0% | 0.0% | n/a |
 | 5/python | 2/7 | 28.6% | 28.6% | 50.0% |
+| deadcode/c | 2/2 | 100.0% | 100.0% | 50.0% |
+| deadcode/go | 1/2 | 50.0% | 50.0% | 100.0% |
+| deadcode/java | 2/2 | 100.0% | 100.0% | 100.0% |
+| deadcode/javascript | 1/2 | 50.0% | 50.0% | 0.0% |
+| deadcode/python | 2/2 | 100.0% | 100.0% | 100.0% |
 | mixed/c | 9/13 | 69.2% | 69.2% | 22.2% |
 | mixed/go | 11/12 | 91.7% | 91.7% | 27.3% |
 | mixed/java | 11/13 | 84.6% | 84.6% | 54.5% |
@@ -153,13 +158,13 @@ Direct dependencies found in the right manifest: published 92.5% (weighted to th
 
 ## Gates
 
-Testbench 2.2.0; stamp `{"release": "2.2.0", "methodology": "2.2", "findings": 330, "answer_key": "0c7489f223e2060d", "corpus": "19f42a26eeadb7dd", "scorer": "a28229a0c1833b03", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
+Testbench 2.3.0; stamp `{"release": "2.3.0", "methodology": "2.3", "findings": 338, "answer_key": "9e3fdc9bed8b4bf4", "corpus": "069efaeef382b6bd", "scorer": "09d445faf1a63801", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
 
 **FAILED** (4):
 
-- params_accuracy = 56.8 is below the gate minimum 64.6
-- ticket_ready_pct = 47.6 is below the gate minimum 54.9
-- deadline_weighted_recall = 75.0 is below the gate minimum 76.3
+- params_accuracy = 57.4 is below the gate minimum 65.0
+- ticket_ready_pct = 48.5 is below the gate minimum 55.6
+- deadline_weighted_recall = 75.3 is below the gate minimum 76.5
 - cbom_schema_valid = 0 is below the gate minimum 1
 
 Skipped:

@@ -78,9 +78,9 @@ Two calibration points ship with it:
 <!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
 | Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
 |---|---|---|---|---|---|---|---|---|---|
-| `expected/expected.cdx.json` (the answer key) | 330 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
-| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 330 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 72.7% | 72.7% |
-| `tools/baseline_grep.py` (naive regex) | 330 | 68.8% | 64.2% | 53.7% | 157 | 59.1% | 28 | 49.3% | 33.9% |
+| `expected/expected.cdx.json` (the answer key) | 338 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
+| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 338 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 73.7% | 73.7% |
+| `tools/baseline_grep.py` (naive regex) | 338 | 69.2% | 64.8% | 55.1% | 159 | 59.5% | 28 | 50.9% | 35.2% |
 
 Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
 <!-- /generated:calibration-points -->
@@ -95,12 +95,13 @@ Grep by tier, which is the shape you should expect a weak scanner to have:
 | 2. Indirection, Python and Java | 17 | 100% | 87.5–88.9% | 50–55.6% |
 | 2. Indirection, Go / TypeScript / C | 19 | 83.3–100% | 83.3–100% | 33.3–60% |
 | 3. Cross-file | 16 | 100% | 42.9–55.6% | 33.3–42.9% |
-| 4. Non-code assets | 48 | 31.2% | 31.2% | 66.7% |
+| 4. Non-code assets | 46 | 32.6% | 32.6% | 66.7% |
 | 5. Adversarial | 17 | 0% | 0% | n/a |
 | PQC, code | 14 | 50–100% | 50–100% | 25–50% |
 | PQC, assets | 22 | 40.9% | 40.9% | 100% |
 | Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
 | System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |
+| Dead code | 10 | 50–100% | 50–100% | 100% |
 
 Ranges run across the languages in each row.
 <!-- /generated:grep-by-tier -->

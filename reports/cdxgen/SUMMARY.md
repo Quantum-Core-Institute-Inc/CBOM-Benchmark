@@ -5,22 +5,22 @@
 
 | Metric | Value |
 |---|---|
-| recall | 4.2 |
-| primary site recall | 4.2 |
-| params accuracy | 78.6 |
+| recall | 4.4 |
+| primary site recall | 4.4 |
+| params accuracy | 80.0 |
 | precision | 100.0 |
 | false positives | 0 |
 | negative control fps | 0 |
 | pqc overclaims | 0 |
 | pqc standard name pct | None |
 | system routable pct | None |
-| ticket ready pct | 78.6 |
-| actionable recall | 3.3 |
-| field completeness | 35.8 |
-| deadline weighted recall | 3.9 |
-| missed due by 2030 | 103 |
+| ticket ready pct | 80.0 |
+| actionable recall | 3.6 |
+| field completeness | 36.6 |
+| deadline weighted recall | 4.3 |
+| missed due by 2030 | 112 |
 | library recall | 75.0 |
 | library pq verdict accuracy | None |
 
-Signal coverage: crypto-file entries cover 24 more expected findings (combined 38/330, 11.5%).
+Signal coverage: crypto-file entries cover 22 more expected findings (combined 37/338, 10.9%).
 

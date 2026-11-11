@@ -3,13 +3,13 @@
   "note": "Ratchet gates (everything except the policy limits below) are floors: on testbench 1.17 each is the better of QCI v2.2 and v2.3, measured on the stamped release, so a ratchet never moves down because a later release regressed; raise them when a release improves a number. cbom_schema_valid (the scanner's own cbom.json must validate against CycloneDX 1.6) and the two holdout gates are fixed policy limits that --rebaseline never moves: overfit_gap_ci_low fails when the published score beats a private holdout by more than sampling noise; negative_fp_gap fails when freshly generated negative controls draw more than 0.5 extra false positives per file than the published ones (calibrated on 24 negatives in six languages, five seeds: grep -0.01 to +0.24, QCI 0.3.0 -0.27 to +0.15, v0.7 +0.72 to +1.18). Both apply only when CBOM_HOLDOUT_SEED is set. Every gate is a required measurement: one that is absent makes the run 'not evaluated' (exit 3), unless the gate carries when_missing: skip with a reason, or the run was made with --without-holdout, in which case it is listed as skipped.",
   "gates": {
     "recall": {
-      "min": 74.7
+      "min": 74.8
     },
     "primary_site_recall": {
-      "min": 71.7
+      "min": 72.0
     },
     "params_accuracy": {
-      "min": 64.6
+      "min": 65.0
     },
     "precision": {
       "min": 99.6
@@ -21,10 +21,10 @@
       "max": 0
     },
     "ticket_ready_pct": {
-      "min": 54.9
+      "min": 55.6
     },
     "deadline_weighted_recall": {
-      "min": 76.3
+      "min": 76.5
     },
     "overfit_gap_ci_low": {
       "max": 0
@@ -46,12 +46,12 @@
   },
   "set_on": "2026-11-11",
   "stamp": {
-    "release": "2.2.0",
-    "methodology": "2.2",
-    "findings": 330,
-    "answer_key": "0c7489f223e2060d",
-    "corpus": "19f42a26eeadb7dd",
-    "scorer": "a28229a0c1833b03",
+    "release": "2.3.0",
+    "methodology": "2.3",
+    "findings": 338,
+    "answer_key": "9e3fdc9bed8b4bf4",
+    "corpus": "069efaeef382b6bd",
+    "scorer": "09d445faf1a63801",
     "policy": "nist:732cd8a8d8f317e9",
     "adapter": "55035867d66228df"
   },

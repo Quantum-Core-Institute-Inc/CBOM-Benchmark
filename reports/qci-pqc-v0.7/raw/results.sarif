@@ -5559,6 +5559,101 @@
           ]
         },
         {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/c/dead_branches.c"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DES",
+          "level": "warning",
+          "message": {
+            "text": "DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/java/DeadLegacy.java"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/java/DeadLegacy.java"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/python/dead_export.py"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RSA",
+          "level": "error",
+          "message": {
+            "text": "RSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deadcode/python/dead_export.py"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/Go-CIRCL",
           "level": "warning",
           "message": {

@@ -1,15 +1,15 @@
 {
   "project": "corpus",
-  "findings": 882,
+  "findings": 893,
   "readiness_score": 0.0,
   "breakdown": {
-    "vulnerable_count": 341,
-    "weak_count": 174,
+    "vulnerable_count": 343,
+    "weak_count": 183,
     "pqc_count": 18,
-    "penalty_vulnerable": 5115,
-    "penalty_weak": 870,
+    "penalty_vulnerable": 5145,
+    "penalty_weak": 915,
     "bonus_pqc": 36,
-    "raw": -5885.0,
+    "raw": -5960.0,
     "scored": true,
     "formula": "100 - (vulnerable\u00d715) - (weak\u00d75). PQC is recorded, not added."
   },
@@ -27,9 +27,9 @@
 
 --- stderr ---
 Scanning /in/corpus with adapter(s): internal ...
-  qci-pattern: 1311 raw findings
-Deduplicated: 1311 → 882 findings
-Source findings: 880
+  qci-pattern: 1324 raw findings
+Deduplicated: 1324 → 893 findings
+Source findings: 891
 Artifact findings: 2 (2 with a parameter)
-Not blended: 882
-Dependency graph: 882 edges
+Not blended: 893
+Dependency graph: 893 edges

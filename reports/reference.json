@@ -4434,107 +4434,6 @@
       "ticket_ready": true
     },
     {
-      "id": "T4-AS-22",
-      "tier": 4,
-      "lang": "assets",
-      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
-      "family": "RSA",
-      "expected_params": {
-        "key_size": 2048
-      },
-      "expected_line": null,
-      "detected": true,
-      "at_usage_site": true,
-      "params_ok": true,
-      "line_ok": null,
-      "quantum_ok": true,
-      "reported_params": [
-        {
-          "key_size": 2048
-        },
-        {
-          "hash": "SHA-256"
-        }
-      ],
-      "reported_lines": [],
-      "reported_files": [
-        "corpus/tier4/assets/keystores/orders_keystore.p12"
-      ],
-      "rule": "file+family",
-      "due": "2035-12-31",
-      "due_bucket": "2034-2035",
-      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
-      "algorithm": "RSA-2048",
-      "actionability": {
-        "location": true,
-        "parameters": true,
-        "primitive": true,
-        "cert_expiry": true,
-        "cert_subject": true,
-        "cert_issuer": true,
-        "cert_validity_start": true,
-        "cert_refs": true,
-        "key_type": null,
-        "key_format": null,
-        "protocol_version": null,
-        "suite_listed": null,
-        "oid": true,
-        "functions": true,
-        "quantum_level": true,
-        "code_context": null,
-        "provenance": null
-      },
-      "missing_must": [],
-      "ticket_ready": true
-    },
-    {
-      "id": "T4-AS-23",
-      "tier": 4,
-      "lang": "assets",
-      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
-      "family": "SHA-256",
-      "expected_params": {},
-      "expected_line": null,
-      "detected": true,
-      "at_usage_site": true,
-      "params_ok": true,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [
-        {}
-      ],
-      "reported_lines": [],
-      "reported_files": [
-        "corpus/tier4/assets/keystores/orders_keystore.p12"
-      ],
-      "rule": "file+family",
-      "due": null,
-      "due_bucket": "none",
-      "due_note": "",
-      "algorithm": "SHA-256",
-      "actionability": {
-        "location": true,
-        "parameters": null,
-        "primitive": null,
-        "cert_expiry": true,
-        "cert_subject": true,
-        "cert_issuer": true,
-        "cert_validity_start": true,
-        "cert_refs": true,
-        "key_type": null,
-        "key_format": null,
-        "protocol_version": null,
-        "suite_listed": null,
-        "oid": null,
-        "functions": null,
-        "quantum_level": null,
-        "code_context": null,
-        "provenance": null
-      },
-      "missing_must": [],
-      "ticket_ready": true
-    },
-    {
       "id": "T4-AS-24",
       "tier": 4,
       "lang": "assets",
@@ -17036,6 +16935,512 @@
       },
       "missing_must": [],
       "ticket_ready": true
+    },
+    {
+      "id": "DC-PY-01",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 10,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        10
+      ],
+      "reported_files": [
+        "corpus/deadcode/python/dead_export.py"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": true,
+        "provenance": true
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-PY-02",
+      "tier": "deadcode",
+      "lang": "python",
+      "file": "corpus/deadcode/python/dead_export.py",
+      "family": "RSA",
+      "expected_params": {
+        "key_size": 1024
+      },
+      "expected_line": 15,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "key_size": 1024
+        }
+      ],
+      "reported_lines": [
+        15
+      ],
+      "reported_files": [
+        "corpus/deadcode/python/dead_export.py"
+      ],
+      "rule": "file+family",
+      "due": "2013-12-31",
+      "due_bucket": "now",
+      "due_note": "Below 112-bit security; disallowed since 2014.",
+      "algorithm": "RSA-1024",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": true,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": true,
+        "provenance": true
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JV-01",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 9,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "mode": "CBC"
+        }
+      ],
+      "reported_lines": [
+        9
+      ],
+      "reported_files": [
+        "corpus/deadcode/java/DeadLegacy.java"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Single DES; FIPS 46-3 was withdrawn in 2005.",
+      "algorithm": "DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": true,
+        "provenance": true
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JV-02",
+      "tier": "deadcode",
+      "lang": "java",
+      "file": "corpus/deadcode/java/DeadLegacy.java",
+      "family": "SHA-1",
+      "expected_params": {},
+      "expected_line": 14,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        14
+      ],
+      "reported_files": [
+        "corpus/deadcode/java/DeadLegacy.java"
+      ],
+      "rule": "file+family",
+      "due": "2030-12-31",
+      "due_bucket": "by-2030",
+      "due_note": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation.",
+      "algorithm": "SHA-1",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": true,
+        "provenance": true
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-GO-01",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 13,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        13
+      ],
+      "reported_files": [
+        "corpus/deadcode/go/legacy/main.go"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-GO-02",
+      "tier": "deadcode",
+      "lang": "go",
+      "file": "corpus/deadcode/go/legacy/main.go",
+      "family": "RC4",
+      "expected_params": {},
+      "expected_line": 18,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        18
+      ],
+      "reported_files": [
+        "corpus/deadcode/go/legacy/main.go"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "RC4",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JS-01",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 5,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        5
+      ],
+      "reported_files": [
+        "corpus/deadcode/javascript/dead_paths.js"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-JS-02",
+      "tier": "deadcode",
+      "lang": "javascript",
+      "file": "corpus/deadcode/javascript/dead_paths.js",
+      "family": "3DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 10,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "mode": "CBC"
+        }
+      ],
+      "reported_lines": [
+        10
+      ],
+      "reported_files": [
+        "corpus/deadcode/javascript/dead_paths.js"
+      ],
+      "rule": "file+family",
+      "due": "2023-12-31",
+      "due_bucket": "now",
+      "due_note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "algorithm": "3DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-C-01",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "MD5",
+      "expected_params": {},
+      "expected_line": 6,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        6
+      ],
+      "reported_files": [
+        "corpus/deadcode/c/dead_branches.c"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
+      "algorithm": "MD5",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "DC-C-02",
+      "tier": "deadcode",
+      "lang": "c",
+      "file": "corpus/deadcode/c/dead_branches.c",
+      "family": "3DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 11,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "mode": "CBC"
+        }
+      ],
+      "reported_lines": [
+        11
+      ],
+      "reported_files": [
+        "corpus/deadcode/c/dead_branches.c"
+      ],
+      "rule": "file+family",
+      "due": "2023-12-31",
+      "due_bucket": "now",
+      "due_note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "algorithm": "3DES-CBC",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     }
   ],
   "false_positives": [],
@@ -17249,16 +17654,16 @@
       "precision": 100.0
     },
     "4/assets": {
-      "expected": 48,
-      "detected": 48,
+      "expected": 46,
+      "detected": 46,
       "recall": 100.0,
       "recall_ci95": [
-        92.6,
+        92.3,
         100.0
       ],
       "thin": false,
       "usage_site_recall": 100.0,
-      "params_correct": 48,
+      "params_correct": 46,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -17293,6 +17698,91 @@
       "thin": true,
       "usage_site_recall": 100.0,
       "params_correct": 9,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/c": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/go": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/java": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/javascript": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
+      "line_accuracy": 100.0,
+      "quantum_flag_accuracy": 100.0,
+      "false_positives": 0,
+      "precision": 100.0
+    },
+    "deadcode/python": {
+      "expected": 2,
+      "detected": 2,
+      "recall": 100.0,
+      "recall_ci95": [
+        34.2,
+        100.0
+      ],
+      "thin": true,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -17555,16 +18045,16 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 330,
-      "detected": 330,
+      "expected": 338,
+      "detected": 338,
       "recall": 100.0,
       "recall_ci95": [
-        98.8,
+        98.9,
         100.0
       ],
       "thin": false,
       "usage_site_recall": 100.0,
-      "params_correct": 330,
+      "params_correct": 338,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -17618,16 +18108,16 @@
       "now": {
         "label": "Due now (not approved or past its date)",
         "weight": 5,
-        "expected": 73,
-        "detected": 73,
+        "expected": 82,
+        "detected": 82,
         "recall": 100.0,
         "primary_site_recall": 100.0
       },
       "by-2030": {
         "label": "Due by end of 2030",
         "weight": 4,
-        "expected": 34,
-        "detected": 34,
+        "expected": 35,
+        "detected": 35,
         "recall": 100.0,
         "primary_site_recall": 100.0
       },
@@ -17642,16 +18132,16 @@
       "2034-2035": {
         "label": "Due 2034 to 2035",
         "weight": 2,
-        "expected": 96,
-        "detected": 96,
+        "expected": 95,
+        "detected": 95,
         "recall": 100.0,
         "primary_site_recall": 100.0
       },
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 127,
-        "detected": 127,
+        "expected": 126,
+        "detected": 126,
         "recall": 100.0,
         "primary_site_recall": 100.0
       }
@@ -17663,25 +18153,25 @@
   "actionability": {
     "rubric": "cbom-actionability-v1",
     "rubric_status": "proposed",
-    "detected": 330,
-    "ticket_ready": 330,
+    "detected": 338,
+    "ticket_ready": 338,
     "ticket_ready_pct": 100.0,
     "actionable_recall": 100.0,
-    "expected": 330,
+    "expected": 338,
     "completeness_pct": 100.0,
     "checks": {
       "location": {
         "label": "Exact location",
         "tier": "must",
-        "applicable": 330,
-        "passed": 330,
+        "applicable": 338,
+        "passed": 338,
         "pct": 100.0
       },
       "parameters": {
         "label": "Correct parameters",
         "tier": "must",
-        "applicable": 193,
-        "passed": 193,
+        "applicable": 196,
+        "passed": 196,
         "pct": 100.0
       },
       "primitive": {
@@ -17694,15 +18184,15 @@
       "cert_expiry": {
         "label": "Certificate expiry (correct)",
         "tier": "must",
-        "applicable": 30,
-        "passed": 30,
+        "applicable": 28,
+        "passed": 28,
         "pct": 100.0
       },
       "cert_subject": {
         "label": "Certificate subject (correct)",
         "tier": "must",
-        "applicable": 30,
-        "passed": 30,
+        "applicable": 28,
+        "passed": 28,
         "pct": 100.0
       },
       "key_type": {
@@ -17722,57 +18212,57 @@
       "oid": {
         "label": "OID",
         "tier": "should",
-        "applicable": 278,
-        "passed": 278,
+        "applicable": 287,
+        "passed": 287,
         "pct": 100.0
       },
       "functions": {
         "label": "Crypto functions",
         "tier": "should",
-        "applicable": 290,
-        "passed": 290,
+        "applicable": 299,
+        "passed": 299,
         "pct": 100.0
       },
       "quantum_level": {
         "label": "Quantum security level (correct)",
         "tier": "should",
-        "applicable": 287,
-        "passed": 287,
+        "applicable": 296,
+        "passed": 296,
         "pct": 100.0
       },
       "code_context": {
         "label": "Code context",
         "tier": "should",
-        "applicable": 116,
-        "passed": 116,
+        "applicable": 120,
+        "passed": 120,
         "pct": 100.0
       },
       "provenance": {
         "label": "Providing library",
         "tier": "should",
-        "applicable": 118,
-        "passed": 118,
+        "applicable": 122,
+        "passed": 122,
         "pct": 100.0
       },
       "cert_issuer": {
         "label": "Certificate issuer",
         "tier": "should",
-        "applicable": 30,
-        "passed": 30,
+        "applicable": 28,
+        "passed": 28,
         "pct": 100.0
       },
       "cert_validity_start": {
         "label": "Certificate start date",
         "tier": "should",
-        "applicable": 30,
-        "passed": 30,
+        "applicable": 28,
+        "passed": 28,
         "pct": 100.0
       },
       "cert_refs": {
         "label": "Certificate key and signature linked",
         "tier": "should",
-        "applicable": 30,
-        "passed": 30,
+        "applicable": 28,
+        "passed": 28,
         "pct": 100.0
       },
       "key_format": {
@@ -33396,18 +33886,117 @@
     }
   ],
   "calibration_false_positives": [],
+  "password_gated_results": [
+    {
+      "id": "T4-AS-22",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
+      "family": "RSA",
+      "expected_params": {
+        "key_size": 2048
+      },
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": null,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "key_size": 2048
+        },
+        {
+          "hash": "SHA-256"
+        }
+      ],
+      "reported_lines": [],
+      "reported_files": [
+        "corpus/tier4/assets/keystores/orders_keystore.p12"
+      ],
+      "rule": "file+family",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "RSA-2048",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": true,
+        "cert_expiry": true,
+        "cert_subject": true,
+        "cert_issuer": true,
+        "cert_validity_start": true,
+        "cert_refs": true,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": true,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      }
+    },
+    {
+      "id": "T4-AS-23",
+      "tier": 4,
+      "lang": "assets",
+      "file": "corpus/tier4/assets/keystores/orders_keystore.p12",
+      "family": "SHA-256",
+      "expected_params": {},
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [],
+      "reported_files": [
+        "corpus/tier4/assets/keystores/orders_keystore.p12"
+      ],
+      "rule": "file+family",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "",
+      "algorithm": "SHA-256",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": true,
+        "cert_subject": true,
+        "cert_issuer": true,
+        "cert_validity_start": true,
+        "cert_refs": true,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": null,
+        "functions": null,
+        "quantum_level": null,
+        "code_context": null,
+        "provenance": null
+      }
+    }
+  ],
   "manifest": {
-    "release": "2.2.0",
-    "methodology": "2.2",
-    "findings": 330,
-    "answer_key": "0c7489f223e2060d",
-    "corpus": "19f42a26eeadb7dd",
-    "scorer": "a28229a0c1833b03",
+    "release": "2.3.0",
+    "methodology": "2.3",
+    "findings": 338,
+    "answer_key": "9e3fdc9bed8b4bf4",
+    "corpus": "069efaeef382b6bd",
+    "scorer": "09d445faf1a63801",
     "policy": "nist:732cd8a8d8f317e9",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 330,
-    "finding_set": "829850c33b1786e7",
+    "scored_findings": 338,
+    "finding_set": "097cb4d4761a50e0",
     "scope": null,
     "scanner": "reference"
   }

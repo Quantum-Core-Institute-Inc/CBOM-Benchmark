@@ -13,10 +13,10 @@
   "exit_code": 0,
   "signal": null,
   "timed_out": false,
-  "wall_s": 54.76,
-  "cpu_user_s": 36.33,
+  "wall_s": 62.09,
+  "cpu_user_s": 39.24,
   "cpu_sys_s": 0.12,
-  "peak_rss_mb": 58.6,
+  "peak_rss_mb": 58.2,
   "isolation": {
     "environment": "scrubbed",
     "seed_withheld": true,

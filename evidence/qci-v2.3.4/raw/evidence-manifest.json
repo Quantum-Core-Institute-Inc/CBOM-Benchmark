@@ -1,27 +1,27 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "5b9c6abbb616f5f222d164e61cd5098335d711528f9895c63e26c4fb53786375",
-      "size": 2023985
+      "sha256": "c92bb993b9d1f034134c97e977aea9a44d308bd02d542ffeedf581cbe5b8e8c1",
+      "size": 2049095
     },
     "findings.json": {
-      "sha256": "7beb17f0de743e7d9e902a411b7eb8e95c3f2ad09cfba94c93cc9965c9823f4a",
-      "size": 277673
+      "sha256": "a8fd4bda7cb7ead31441b3018e7cb18e77643f6c37cb939c8ca4c6de5117735c",
+      "size": 280344
     },
     "graph.json": {
-      "sha256": "4291a24389fc868dcbb38ad132c2615925ffd52d9a049c618229c0e32d4f628c",
-      "size": 138937
+      "sha256": "bd9881f645f4c248efd3e32a7a989985156b09599aef287187c4c36f9f6b08fd",
+      "size": 140521
     },
     "report.html": {
-      "sha256": "6652df11b6d41ccc53af1a274964909008c2b86cabdd8e98181fe140fadef132",
-      "size": 474060
+      "sha256": "42d0ef2430c05f1467c46ca68f75e8034586a30a45f475a84147f9fbbcef7ca7",
+      "size": 478389
     },
     "results.sarif": {
-      "sha256": "6a76e92e25d732ac395631b586d1030f59c9e7038c9f9753738f5c0561e4404b",
-      "size": 432305
+      "sha256": "92f90ff0e22dd4808a5f9f9ded685f34506a5f8e2ad61f478bfe8fe764154e2f",
+      "size": 437476
     },
     "scan-coverage.json": {
-      "sha256": "0252e56ce2fe7c4a87eb589e23793b6d69346babd3ca14d2f4d32a6a30a469cc",
+      "sha256": "416956f8d21215644c06498a9ef612438391ad545485dce6a59b4f0810315a88",
       "size": 110
     }
   },
@@ -37,20 +37,20 @@
     "breakdown": {
       "bonus_pqc": 36,
       "formula": "100 - (vulnerable\u00d715) - (weak\u00d75). PQC is recorded, not added.",
-      "penalty_vulnerable": 5115,
-      "penalty_weak": 870,
+      "penalty_vulnerable": 5145,
+      "penalty_weak": 915,
       "pqc_count": 18,
-      "raw": -5885.0,
+      "raw": -5960.0,
       "scored": true,
-      "vulnerable_count": 341,
-      "weak_count": 174
+      "vulnerable_count": 343,
+      "weak_count": 183
     },
-    "findings": 882,
+    "findings": 893,
     "ignored": 0,
     "outputs": {
-      "cbom": "/tmp/cbom-sandbox-kmaz3zdd/out/cbom.json",
-      "report": "/tmp/cbom-sandbox-kmaz3zdd/out/report.html",
-      "sarif": "/tmp/cbom-sandbox-kmaz3zdd/out/results.sarif"
+      "cbom": "/tmp/cbom-sandbox-4c3nlp4t/out/cbom.json",
+      "report": "/tmp/cbom-sandbox-4c3nlp4t/out/report.html",
+      "sarif": "/tmp/cbom-sandbox-4c3nlp4t/out/results.sarif"
     },
     "project": "corpus",
     "readiness_score": 0.0,

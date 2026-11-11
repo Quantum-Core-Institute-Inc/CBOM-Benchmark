@@ -1,26 +1,26 @@
 # QCI PQC Scanner on the CBOM Testbench
 
 - Scanner: **qci-pqc, version 2.2.0**, adapter(s) `internal`
-- Scanner's own CBOM: valid CycloneDX 1.6; 904 components
+- Scanner's own CBOM: valid CycloneDX 1.6; 913 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-11 15:13 UTC
+- Run: 2026-11-11 18:26 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
-| Recall | 74.3% | 69.7% |
-| At primary site | 70.7% | 66.4% |
-| Parameters correct | 64.6% | 64.8% |
-| Precision | 91.9% | 92.0% |
+| Recall | 74.5% | 70.4% |
+| At primary site | 71.0% | 67.2% |
+| Parameters correct | 65.0% | 65.1% |
+| Precision | 92.1% | 92.2% |
 | False positives | 20 | 20 |
 |   of which in negative controls | 0 | 0 |
 | PQC over-claims | 7 | 7 |
 | PQC by standard name (of detected PQC) | 100.0% | 100.0% |
 | System fixture: routable (of detected) | 70.6% | 70.6% |
-| Ticket-ready (of detected) | 54.9% | 54.3% |
-| Actionable recall | 40.8% | 37.9% |
-| Field completeness | 57.5% | 57.0% |
-| Deadline-weighted recall (nist) | 76.3% | 71.7% |
-| Missed findings due by 2030 | 20 | 28 |
+| Ticket-ready (of detected) | 55.6% | 55.0% |
+| Actionable recall | 41.4% | 38.8% |
+| Field completeness | 57.6% | 57.2% |
+| Deadline-weighted recall (nist) | 76.5% | 72.4% |
+| Missed findings due by 2030 | 22 | 30 |
 | Crypto libraries, right manifest | 28.6% | 28.6% |
 | Library PQC verdicts right | 71.4% | 71.4% |
 | Matched holdout recall | 76.9% | n/a |
@@ -31,7 +31,7 @@
 | Holdout crypto libraries, right manifest | 18.8% | n/a |
 | Library gap (points, not gated) | 6.0 | n/a |
 
-Risk-signal coverage (in scope): strict 226/304, plus 11 covered only by a QCI category signal, combined **78.0%**.
+Risk-signal coverage (in scope): strict 234/314, plus 11 covered only by a QCI category signal, combined **78.0%**.
 
 | Bucket | Detected | Recall | At primary site | Params |
 |---|---|---|---|---|
@@ -50,6 +50,11 @@ Risk-signal coverage (in scope): strict 226/304, plus 11 covered only by a QCI c
 | 4/assets | 20/34 | 58.8% | 58.8% | 85.0% |
 | 5/java | 1/5 | 20.0% | 20.0% | 100.0% |
 | 5/python | 3/7 | 42.9% | 42.9% | 66.7% |
+| deadcode/c | 2/2 | 100.0% | 100.0% | 50.0% |
+| deadcode/go | 1/2 | 50.0% | 50.0% | 100.0% |
+| deadcode/java | 2/2 | 100.0% | 100.0% | 100.0% |
+| deadcode/javascript | 1/2 | 50.0% | 50.0% | 0.0% |
+| deadcode/python | 2/2 | 100.0% | 100.0% | 100.0% |
 | mixed/c | 8/13 | 61.5% | 61.5% | 25.0% |
 | mixed/go | 11/12 | 91.7% | 91.7% | 27.3% |
 | mixed/java | 11/13 | 84.6% | 84.6% | 63.6% |
@@ -149,13 +154,13 @@ Direct dependencies found in the right manifest: published 24.7% (weighted to th
 
 ## Gates
 
-Testbench 2.2.0; stamp `{"release": "2.2.0", "methodology": "2.2", "findings": 330, "answer_key": "0c7489f223e2060d", "corpus": "19f42a26eeadb7dd", "scorer": "a28229a0c1833b03", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
+Testbench 2.3.0; stamp `{"release": "2.3.0", "methodology": "2.3", "findings": 338, "answer_key": "9e3fdc9bed8b4bf4", "corpus": "069efaeef382b6bd", "scorer": "09d445faf1a63801", "policy": "nist:732cd8a8d8f317e9", "adapter": "55035867d66228df"}`.
 
 **FAILED** (6):
 
-- recall = 74.3 is below the gate minimum 74.7
-- primary_site_recall = 70.7 is below the gate minimum 71.7
-- precision = 91.9 is below the gate minimum 99.6
+- recall = 74.5 is below the gate minimum 74.8
+- primary_site_recall = 71.0 is below the gate minimum 72.0
+- precision = 92.1 is below the gate minimum 99.6
 - pqc_overclaims = 7 is above the gate maximum 0
 - library_recall = 28.6 is below the gate minimum 96.4
 - negative_fp_gap = 0.88 is above the gate maximum 0.5
