@@ -50,6 +50,7 @@ ADAPTERS = {
     "none": {"files": (), "module": None},
     "qci-pqc": {"files": ("tools/adapters/qci_pqc.py", "tools/adapters/common.py"), "module": "adapters.qci_pqc"},
     "cdxgen": {"files": ("tools/adapters/cdxgen.py", "tools/adapters/common.py"), "module": "adapters.cdxgen"},
+    "qscan": {"files": ("tools/adapters/qscan.py",), "module": "adapters.qscan"},
 }
 
 

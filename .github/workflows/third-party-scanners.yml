@@ -61,6 +61,7 @@ jobs:
             ecosystem: npm
             package: "@quantakrypto/qscan@0.12.0"
             cmd: "qscan {corpus} --cbom -o {out}/cbom.json"
+            adapter: qscan      # strips the "(primitive)" suffix from names; see tools/adapters/qscan.py
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -111,7 +112,7 @@ jobs:
       - name: Scan, score and bundle, in the sandbox
         run: |
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
-            --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 \
+            --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 --adapter "${{ matrix.adapter || 'none' }}" \
             --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
@@ -142,7 +143,7 @@ jobs:
               print(path, "|", bom.get("bomFormat"), bom.get("specVersion"), "| components:", len(comps), "| with a location:", located,
                     "| types:", dict(collections.Counter(c.get("type") for c in comps)))
               for c in comps[:3]:
-                  print("   ", json.dumps(c)[:300])
+                  print("   ", json.dumps(c)[:900])
           PY
 
       - uses: actions/upload-artifact@v4
