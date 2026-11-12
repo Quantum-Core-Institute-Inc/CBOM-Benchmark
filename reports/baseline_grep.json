@@ -36165,7 +36165,7 @@
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "4449df0c3850c51f",
+    "scorer": "08c38c88e193228d",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
