@@ -13,7 +13,7 @@ For TLS, SSH, IPsec and related config findings, a report is **config-complete**
 
 Missing any of these is scored under **config completeness**, not under raw algorithm recall.
 
-## Current gaps (2.6.0)
+## Current gaps (2.6.0 / 2.6.1)
 
 | Format | Findings | Typical miss |
 |--------|----------|--------------|
