@@ -37748,7 +37748,7 @@
     }
   ],
   "manifest": {
-    "release": "2.6.0",
+    "release": "2.6.1",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
