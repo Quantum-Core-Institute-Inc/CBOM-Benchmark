@@ -33,3 +33,16 @@ Every scorecard and evidence bundle records a stamp (`tools/release.py`):
 ## Next release
 
 The next release is **2.6.1**. Subsequent ordinary work stays on the 2.6 line until a deliberate methodology or breaking change.
+
+## Restamping published artifacts
+
+A patch-level VERSION bump does not change the corpus, answer key, or scorer, but published
+scorecards, gates, and evidence manifests still carry the previous release in their stamp.
+`python tools/stamp.py` updates the release field in:
+
+- `reports/*/scorecard*.json`
+- `integrations/qci-pqc/gates.json`
+- every `evidence/*/manifest.json`
+
+Run it after editing `VERSION`, then commit the result. `python tools/stamp.py --check` exits 1
+if any file still carries an older release (useful in CI).
