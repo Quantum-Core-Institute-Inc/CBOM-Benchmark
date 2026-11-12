@@ -52,7 +52,8 @@ jobs:
             name: cryptoscan 1.5.0
             version: "1.5.0"
             ecosystem: go
-            package: github.com/csnp/qramm-cryptoscan/cmd/cryptoscan@v1.5.0
+            # The repository is csnp/qramm-cryptoscan; the module still declares its old path.
+            package: github.com/csnp/cryptoscan/cmd/cryptoscan@v1.5.0
             cmd: "cryptoscan scan {corpus} --format cbom --output {out}/cbom.json"
           - id: qscan
             name: qScan 0.12.0
@@ -125,6 +126,24 @@ jobs:
             echo "## ${{ matrix.name }}"
             if [ -f "$B/scorecard.md" ]; then sed -n '1,60p' "$B/scorecard.md"; else echo "No scorecard: see run.log in the artifact."; fi
           } >> "$GITHUB_STEP_SUMMARY"
+          # What the scanner itself said and produced, in the job log: a score of zero means nothing
+          # until you know whether it scanned anything.
+          echo "--- scanner output (last 40 lines of run.log)"; tail -n 40 "$B/run.log" 2>/dev/null || echo "(no run.log)"
+          echo "--- raw output files"; ls -la "$B/raw" 2>/dev/null || echo "(no raw directory)"
+          python3 - "$B" <<'PY'
+          import collections, glob, json, sys
+          for path in sorted(glob.glob(sys.argv[1] + "/raw/*.json")):
+              try:
+                  bom = json.load(open(path))
+              except Exception as e:
+                  print(path, "is not JSON:", e); continue
+              comps = bom.get("components") or []
+              located = sum(1 for c in comps if (c.get("evidence") or {}).get("occurrences"))
+              print(path, "|", bom.get("bomFormat"), bom.get("specVersion"), "| components:", len(comps), "| with a location:", located,
+                    "| types:", dict(collections.Counter(c.get("type") for c in comps)))
+              for c in comps[:3]:
+                  print("   ", json.dumps(c)[:300])
+          PY
 
       - uses: actions/upload-artifact@v4
         if: always()
