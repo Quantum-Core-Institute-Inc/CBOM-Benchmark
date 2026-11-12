@@ -42,6 +42,15 @@
     },
     "cbom_schema_valid": {
       "min": 1
+    },
+    "parameter_recovery": {
+      "min": 54.5,
+      "note": "parameters correct among detected findings; matches params_accuracy floor"
+    },
+    "config_completeness": {
+      "min": 40.0,
+      "when_missing": "skip",
+      "reason": "no config-bearing findings detected"
     }
   },
   "set_on": "2026-11-12",
