@@ -1,20 +1,20 @@
 {
   "bundle_format": 1,
-  "testbench": "2.6.1",
+  "testbench": "2.6.4",
   "methodology": "2.3",
-  "created": "2026-11-12T13:27:36Z",
+  "created": "2026-11-12T23:43:55Z",
   "stamp": {
-    "release": "2.6.3",
+    "release": "2.6.4",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "4449df0c3850c51f",
+    "scorer": "0dead3635a2ae115",
     "policy": "nist:c78f618c306e7d48"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "6693435eadb673dda297a0652d241e293e361200bc40db949cf2501d18dd01ee",
+    "VERSION": "cbe892c63551904b7de297b049a93d839b763278e2a8ecd49e7c99cdecbb565e",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -26,12 +26,12 @@
     "tools/cbomlib.py": "257261685f859e19fe06ecd1d18743d401ff381ed391c00efe20e628e402938a",
     "tools/libraries.py": "4c6ca81358eb24b70861ce272eb9f041bee7a0ca5d3d966fbf20ebaa429d7bec",
     "tools/policy.py": "7133fe4cd6ef415f629669e575792593b415a14f771163e80ebbd3c9eb0fca87",
-    "tools/score.py": "39b376a5c9040f3a8ed222fe2cf2699a012f73b7d1bd8b351b9fc2100624da42",
+    "tools/score.py": "1facde469f1b5006eddb076ad8815399dc0ca06288d56ff037a4f6ace9e3da9a",
     "tools/truth.py": "c14278d5372445cb835c0a011f8c48fba19f3c0b97b6877f9857711a860612c3"
   },
   "scanner": {
     "name": "grep baseline",
-    "version": "benchmark 2.6.0",
+    "version": "benchmark 2.6.4",
     "cmd": [
       "python3",
       "baseline_grep.py",
@@ -72,9 +72,9 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 1.41,
-    "cpu_user_s": 1.33,
-    "cpu_sys_s": 0.05,
+    "wall_s": 1.07,
+    "cpu_user_s": 0.99,
+    "cpu_sys_s": 0.04,
     "peak_rss_mb": 32.1,
     "isolation": {
       "environment": "scrubbed",
@@ -122,9 +122,9 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 1.29,
-      "cpu_user_s": 1.2,
-      "cpu_sys_s": 0.07,
+      "wall_s": 1.14,
+      "cpu_user_s": 1.03,
+      "cpu_sys_s": 0.05,
       "peak_rss_mb": 73.7,
       "isolation": {
         "environment": "scrubbed",

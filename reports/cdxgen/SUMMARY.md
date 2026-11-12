@@ -20,6 +20,8 @@
 | deadline weighted recall | 5.8 |
 | missed due by 2030 | 135 |
 | library recall | 75.0 |
+| parameter recovery | 81.0 |
+| config completeness | None |
 | library pq verdict accuracy | None |
 
 Signal coverage: crypto-file entries cover 24 more expected findings (combined 45/410, 11.0%).

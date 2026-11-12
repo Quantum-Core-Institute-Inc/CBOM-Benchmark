@@ -9,6 +9,8 @@ Open-source CBOM scanners that QCI doesn't maintain, run against the corpus by
 | cbom-scan | 0.1.0 | PyPI | `cbom-scan scan {corpus} --format json --fail-on never --output {out}/cbom.json` | CycloneDX, declares spec 1.7 |
 | pqcheck | 0.1.0 | PyPI | `pqcheck scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
 | quantascan | 1.0.1 | npm | `quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json` | CycloneDX 1.6 CBOM |
+| cryptoscan | 1.5.0 | Go module `github.com/csnp/qramm-cryptoscan` | `cryptoscan scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
+| qScan | 0.12.0 | npm `@quantakrypto/qscan` | `qscan {corpus} --cbom -o {out}/cbom.json` | CycloneDX 1.6 CBOM |
 
 The commands were written from each package's command-line definition and all three run to
 completion in the sandbox. First results on benchmark 2.4.0 (393 findings, no adapter, no declared
@@ -23,6 +25,14 @@ scope, nobody has read the bundles yet):
 These are raw numbers, not published results. A scanner that names algorithms in a vocabulary the
 normalizer doesn't know scores low here for a reason an adapter would fix, and none of the three has
 been checked for that.
+
+cryptoscan and qScan are the two open scanners chosen for the leaderboard, next to QCI PQC (the
+reference product), cdxgen (existing baseline) and grep (calibration baseline). Both were added to the
+workflow in 2.6.4 and neither had been run when this was written: qScan's command comes from its
+package README, cryptoscan's from its repository README, and cryptoscan's version tag (v1.5.0) is
+taken from the adapter stub and not confirmed. `tools/adapters/cryptoscan.py` and `qscan.py` pass
+components through unchanged and aren't registered with `bench.py`; the workflow runs both scanners
+with no adapter until their output has been read.
 
 ## Why they aren't in the comparison yet
 

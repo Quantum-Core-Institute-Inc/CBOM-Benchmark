@@ -42,16 +42,25 @@
     },
     "cbom_schema_valid": {
       "min": 1
+    },
+    "parameter_recovery": {
+      "min": 54.5,
+      "note": "parameters correct among detected findings, from the scorecard's Parameter Recovery section; the same quantity as params_accuracy"
+    },
+    "config_completeness": {
+      "min": 83.3,
+      "when_missing": "skip",
+      "reason": "the scanner detected no finding in a configuration file, so there is nothing to judge"
     }
   },
   "set_on": "2026-11-12",
   "stamp": {
-    "release": "2.6.0",
+    "release": "2.6.4",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "4449df0c3850c51f",
+    "scorer": "0dead3635a2ae115",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"
   },

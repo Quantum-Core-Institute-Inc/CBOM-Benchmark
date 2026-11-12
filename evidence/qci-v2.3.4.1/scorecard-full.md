@@ -49,6 +49,59 @@ Password-gated findings (readable only by trying a well-known default password; 
 | System fixture python | 3/4 | 75.0% | 30.1–95.4% (thin) | 25.0% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | **Total** | 250/410 | 61.0% | 56.2–65.6% | 58.8% | 54.4% | 97.4% | 100.0% | 1 | 99.6% |
 | Negative controls | | | | | | | | 0 | |
+## Parameter Recovery
+
+Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for the fields required.
+
+| Bucket | Detected | Parameters correct | % |
+|---|---|---|---|
+| **Overall** | 250 | 136 | 54.4% |
+| Tier 1 | 82 | 45 | 54.9% |
+| Tier 2 | 27 | 13 | 48.1% |
+| Tier 3 | 12 | 3 | 25.0% |
+| Tier 4 | 22 | 18 | 81.8% |
+| Tier 5 | 4 | 1 | 25.0% |
+| Tier deadcode | 8 | 6 | 75.0% |
+| Tier mixed | 50 | 18 | 36.0% |
+| Tier pqc | 32 | 27 | 84.4% |
+| Tier system | 13 | 5 | 38.5% |
+| assets | 48 | 41 | 85.4% |
+| c | 27 | 9 | 33.3% |
+| csharp | 12 | 1 | 8.3% |
+| go | 35 | 13 | 37.1% |
+| java | 47 | 28 | 59.6% |
+| javascript | 20 | 8 | 40.0% |
+| python | 55 | 36 | 65.5% |
+| typescript | 6 | 0 | 0.0% |
+| RSA | 35 | 13 | 37.1% |
+| AES | 27 | 6 | 22.2% |
+| EC | 27 | 9 | 33.3% |
+| HMAC | 21 | 8 | 38.1% |
+| 3DES | 17 | 5 | 29.4% |
+| SHA-1 | 17 | 17 | 100.0% |
+| PBKDF2 | 14 | 5 | 35.7% |
+| DH | 11 | 2 | 18.2% |
+
+## Config Completeness
+
+Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, Terraform): how many were found, and of those, how many came with every expected parameter. The same findings count in recall and parameter accuracy; this isolates them. Asset links are in the linkage section.
+
+| Bucket | Expected | Detected | Recall | Config-complete | % of detected |
+|---|---|---|---|---|---|
+| Configuration files | 62 | 24 | 38.7% | 20 | 83.3% |
+
+## Binary Evidence Honesty
+
+Known stripped binaries must either produce findings or a recorded skip. An empty result without a skip is a coverage honesty failure.
+
+**Status:** FAIL (3 unrecorded empty binaries)
+
+| Path | Reason |
+|---|---|
+| `corpus/tier5/c/bin/meterd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/keyd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/fwcheck` | binary: no findings and no recorded skip |
+
 
 Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 

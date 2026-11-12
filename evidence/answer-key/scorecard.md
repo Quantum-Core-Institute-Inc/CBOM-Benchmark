@@ -49,6 +49,56 @@ Password-gated findings (readable only by trying a well-known default password; 
 | System fixture python | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | **Total** | 410/410 | 100.0% | 99.1–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
+## Parameter Recovery
+
+Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for the fields required.
+
+| Bucket | Detected | Parameters correct | % |
+|---|---|---|---|
+| **Overall** | 410 | 410 | 100.0% |
+| Tier 1 | 102 | 102 | 100.0% |
+| Tier 2 | 42 | 42 | 100.0% |
+| Tier 3 | 16 | 16 | 100.0% |
+| Tier 4 | 66 | 66 | 100.0% |
+| Tier 5 | 42 | 42 | 100.0% |
+| Tier deadcode | 10 | 10 | 100.0% |
+| Tier mixed | 62 | 62 | 100.0% |
+| Tier pqc | 44 | 44 | 100.0% |
+| Tier system | 26 | 26 | 100.0% |
+| artifacts | 6 | 6 | 100.0% |
+| assets | 104 | 104 | 100.0% |
+| c | 52 | 52 | 100.0% |
+| csharp | 19 | 19 | 100.0% |
+| go | 47 | 47 | 100.0% |
+| java | 65 | 65 | 100.0% |
+| javascript | 38 | 38 | 100.0% |
+| python | 68 | 68 | 100.0% |
+| typescript | 11 | 11 | 100.0% |
+| RSA | 47 | 47 | 100.0% |
+| AES | 46 | 46 | 100.0% |
+| EC | 37 | 37 | 100.0% |
+| SHA-1 | 33 | 33 | 100.0% |
+| HMAC | 29 | 29 | 100.0% |
+| 3DES | 23 | 23 | 100.0% |
+| MD5 | 19 | 19 | 100.0% |
+| PBKDF2 | 17 | 17 | 100.0% |
+
+## Config Completeness
+
+Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, Terraform): how many were found, and of those, how many came with every expected parameter. The same findings count in recall and parameter accuracy; this isolates them. Asset links are in the linkage section.
+
+| Bucket | Expected | Detected | Recall | Config-complete | % of detected |
+|---|---|---|---|---|---|
+| Configuration files | 62 | 62 | 100.0% | 62 | 100.0% |
+
+## Binary Evidence Honesty
+
+Known stripped binaries must either produce findings or a recorded skip. An empty result without a skip is a coverage honesty failure.
+
+**Status:** pass (0 unrecorded empty binaries)
+
+All known binaries either produced findings or were skipped with a record.
+
 
 Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 

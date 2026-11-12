@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.6.4 (2026-11-12): measured, not restamped
+
+A repair release. Methodology stays 2.3; the corpus and answer key are unchanged (410 findings).
+Releases 2.6.1 to 2.6.3 changed the scorer and the holdout generator and then rewrote the release
+field and scorer hash in the published scorecards and evidence manifests instead of rescanning. On
+2.6.3 as published, no evidence bundle verified, the docs check failed, and the holdout generator
+crashed. Everything here was rescanned and rebuilt on this release's code.
+
+- **Every published number measured again.** QCI v2.3.4.1, cdxgen and grep rescanned; gate floors
+  set from the scan; timing rerun; all evidence bundles rebuilt and verifying.
+- **`tools/release_run.sh`**: one command that does all of that. There was no committed way to
+  measure a release before, which is how restamping crept in.
+- **`tools/stamp.py` no longer rewrites anything.** It lists what was measured on another tree and
+  exits 1. The `--scorer` option, which overwrote the scorer hash in published evidence, is gone.
+- **Holdout generator 1.4.** The three 1.3 "hard cell" emitters are removed: they wrote stub files,
+  duplicated what generator 1.2 already builds for real, and crashed the generator on some seeds
+  (4242 among them). In their place, real HSS/LMS public keys identifiable only by OID, checked
+  against Bouncy Castle.
+- **Config completeness measures something.** Its definition matched no finding in the answer key,
+  so it reported zero for every scanner. It now covers the 62 findings in configuration files and
+  reports recall and parameter completeness on them. See CONFIG_COMPLETENESS.md.
+- **The two new gates are fed.** `parameter_recovery` and `config_completeness` were in the gates
+  file with hand-entered floors and no metric behind them. Both are now computed and their floors
+  measured.
+- **`tools/recalibrate.py`** replaces `recalibrate.sh`, which scored the scanner's raw output
+  without the adapter. It calibrates the answer key, grep and QCI over five seeds and fails if the
+  answer key doesn't read zero.
+- A leftover test file is removed.
+
 ## 2.6.3 (2026-11-12): hard holdout cells and leaderboard adapters
 
 Methodology stays 2.3. Patch release on the 2.6 line.

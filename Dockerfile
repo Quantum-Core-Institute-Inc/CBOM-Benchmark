@@ -1,7 +1,7 @@
 # CBOM Testbench: the pinned environment every published score is produced in.
 #
-#   docker build -t cbom-benchmark:2.6.0 .
-#   docker run --rm --network none cbom-benchmark:2.6.0 checks            # required checks
+#   docker build -t cbom-benchmark:2.6.4 .
+#   docker run --rm --network none cbom-benchmark:2.6.4 checks            # required checks
 #   docker run --rm --network none -v "$PWD/out:/out" my-scanner-image \
 #       run --name "Scanner X" --scanner-cmd "scanx {corpus} -o {out}/cbom.json" --bundle /out/bundle
 #
