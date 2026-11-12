@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.6.1 (2026-11-12): versioning discipline and parameter recovery
+
+Methodology stays 2.3. This is a patch release on the 2.6 line.
+
+- **Versioning policy.** Ordinary work (corpus, docs, tooling, additive metrics) stays on the 2.6 line as patch releases. A minor bump happens only when a scoring rule that can move existing numbers changes (and then the methodology version also changes). See [VERSIONING.md](VERSIONING.md).
+- **Parameter Recovery.** Scorecards now surface a dedicated Parameter Recovery section (overall and by tier/language/family). A [PARAMETER_CHEATSHEET.md](PARAMETER_CHEATSHEET.md) lists the exact CycloneDX fields required for a component to be parameter-complete.
+- **Binary / adversarial evidence.** Expected evidence sources for stripped ELF and Go binaries (dynsym symbols, `.rodata` strings, immediate operands) are documented. Scanners must either report from those sources or declare the files out of scope with a recorded skip. Holdout generator coverage for the new minified-JS and stripped-binary cells is planned.
+
 ## 2.6.0 (2026-11-12): deeper Tier 5
 
 Sixteen new findings, 410 in all; methodology 2.3. Everything rescanned, gates rebaselined, every
