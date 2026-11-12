@@ -60,6 +60,20 @@ assets, Tier 5 Python and Java, PQC assets); other families go to holdout-broad.
 fresh every run; the answer key for a seed is identical. The generator's leak checks don't apply to
 these files, which name algorithms by design: config syntax does.
 
+
+**Hard cells** (generator 1.3, own random stream). Three additional cells that sit outside the
+published Tier 1-2 patterns:
+
+| Cell | What it looks like | Evidence the scanner must use |
+|------|--------------------|-------------------------------|
+| Minified JavaScript | One-line bundle; algorithm name is a hoisted one-letter constant two hops from the call | Hoisted constant, destructured crypto call |
+| Stripped binary | ELF-shaped stub with no source | dynsym symbol name, `.rodata` string |
+| LMS / XMSS OID-only | PEM public key containing only the OID | OID `1.2.840.113549.1.9.16.3.17` (LMS) or `1.3.6.1.5.5.7.6.34` (XMSS) |
+
+These join the holdout answer key but are not yet part of the overfit gap. A scanner that reports
+nothing on the binary must record a skip; an unrecorded empty result is a coverage honesty failure.
+Recalibration on five seeds is still required before these cells enter the gap.
+
 **Generator 1.2** covers what benchmark 2.4.0 added. C# cases, one project per case with its own file
 name: one-shot `HashData`, `IncrementalHash` by name, a `Func<HashAlgorithm>` held in a field, a
 settings class, a table or a parameter, `RSA.Create`, `ECDsa` and `ECDiffieHellman` on named curves,
