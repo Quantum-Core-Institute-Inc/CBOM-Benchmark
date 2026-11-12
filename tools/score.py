@@ -347,6 +347,7 @@ def score(bom: dict, tolerance: int = 1, policy: str = "nist", as_of: dt.date = 
             "scope": {"name": scope.get("name"), "excluded": oos} if scope else None,
             "out_of_scope_occurrences": out_of_scope, "unlocated_components": unlocated,
             "summary": summarize(results, false_positives),
+            "parameter_recovery": parameter_recovery(results),
             "linkage": __import__("linkage").evaluate(results, gt, bom),
             "deadlines": summarize_deadlines(results, pol, as_of),
             "actionability": act.summarize(results, rubric),
@@ -470,6 +471,34 @@ def summarize(results, fps):
     return rows
 
 
+
+def parameter_recovery(results: list[dict]) -> dict:
+    """Breakdown of parameters correct among detected findings.
+
+    Returns overall + by tier, by language, and by family. Additive reporting only;
+    does not change any existing score.
+    """
+    det = [r for r in results if r["detected"]]
+    def bucket(sel):
+        d = [r for r in sel if r["detected"]]
+        ok = sum(1 for r in d if r["params_ok"])
+        return {"detected": len(d), "params_correct": ok, "pct": pct(ok, len(d))}
+
+    by_tier = {}
+    for t in sorted({r["tier"] for r in results}, key=lambda x: (not isinstance(x, int), str(x))):
+        by_tier[str(t)] = bucket([r for r in results if r["tier"] == t])
+
+    by_lang = {}
+    for lang in sorted({r["lang"] for r in results}):
+        by_lang[lang] = bucket([r for r in results if r["lang"] == lang])
+
+    by_family = {}
+    for fam in sorted({r["family"] for r in results}):
+        by_family[fam] = bucket([r for r in results if r["family"] == fam])
+
+    return {"overall": bucket(results), "by_tier": by_tier, "by_lang": by_lang, "by_family": by_family}
+
+
 def fmt(v, suffix="%"):
     return "n/a" if v is None else f"{v}{suffix}"
 
@@ -504,6 +533,29 @@ def to_markdown(name: str, rep: dict) -> str:
                    f"{fmt(v['params_accuracy'])} | {fmt(v['line_accuracy'])} | {fmt(v['quantum_flag_accuracy'])} | "
                    f"{v['false_positives']} | {fmt(v['precision'])} |")
     out.append(f"| Negative controls | | | | | | | | {s['negatives']['false_positives']} | |")
+    # Dedicated Parameter Recovery section (additive; does not change existing numbers)
+    pr = rep.get("parameter_recovery")
+    if pr:
+        out += ["## Parameter Recovery", "",
+                "Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for the fields required.",
+                "",
+                "| Bucket | Detected | Parameters correct | % |",
+                "|---|---|---|---|"]
+        ov = pr["overall"]
+        out.append(f"| **Overall** | {ov['detected']} | {ov['params_correct']} | {fmt(ov['pct'])} |")
+        for k, v in pr["by_tier"].items():
+            if v["detected"]:
+                out.append(f"| Tier {k} | {v['detected']} | {v['params_correct']} | {fmt(v['pct'])} |")
+        for k, v in pr["by_lang"].items():
+            if v["detected"]:
+                out.append(f"| {k} | {v['detected']} | {v['params_correct']} | {fmt(v['pct'])} |")
+        # Top families by volume
+        fams = sorted(pr["by_family"].items(), key=lambda kv: -kv[1]["detected"])[:8]
+        for k, v in fams:
+            if v["detected"]:
+                out.append(f"| {k} | {v['detected']} | {v['params_correct']} | {fmt(v['pct'])} |")
+        out.append("")
+
     out.append("")
     thin = [k for k, v in s.items() if isinstance(v, dict) and v.get("thin")]
     if thin:
