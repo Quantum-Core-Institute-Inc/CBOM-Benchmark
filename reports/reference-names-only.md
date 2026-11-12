@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: reference, names only
 
-**Overall:** 394/394 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
+**Overall:** 410/410 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 304/304 detected (100.0%), 0 false positives.
 
@@ -23,9 +23,9 @@ Password-gated findings (readable only by trying a well-known default password; 
 | Tier 3 java | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 3 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 4 assets | 66/66 | 100.0% | 94.5–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
-| Tier 5 c | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | n/a | n/a | 0 | 100.0% |
+| Tier 5 c | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | n/a | n/a | 0 | 100.0% |
 | Tier 5 java | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
-| Tier 5 javascript | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| Tier 5 javascript | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Tier 5 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Dead code c | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Dead code go | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
@@ -47,10 +47,10 @@ Password-gated findings (readable only by trying a well-known default password; 
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | System fixture python | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
-| **Total** | 394/394 | 100.0% | 99.0–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
+| **Total** | 410/410 | 100.0% | 99.1–100.0% | 100.0% | 100.0% | 100.0% | n/a | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 
-Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -79,30 +79,30 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 99/99 | 100.0% | 100.0% |
-| Due by end of 2030 | 4 | 39/39 | 100.0% | 100.0% |
+| Due now (not approved or past its date) | 5 | 103/103 | 100.0% | 100.0% |
+| Due by end of 2030 | 4 | 42/42 | 100.0% | 100.0% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 107/107 | 100.0% | 100.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 149/149 | 100.0% | 100.0% |
+| Due 2034 to 2035 | 2 | 112/112 | 100.0% | 100.0% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 153/153 | 100.0% | 100.0% |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 296/394 detected findings (75.1%)**, meaning every must-have is present and correct. **Actionable recall: 75.1%** of all 394 expected findings were both found and ticket-ready. Field completeness across all checks: 32.7%.
+**Ticket-ready: 310/410 detected findings (75.6%)**, meaning every must-have is present and correct. **Actionable recall: 75.6%** of all 410 expected findings were both found and ticket-ready. Field completeness across all checks: 32.7%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 394 | 394 | 100.0% |
-| Correct parameters | must | 222 | 222 | 100.0% |
-| Primitive, where the family is ambiguous | must | 81 | 0 | 0.0% |
+| Exact location | must | 410 | 410 | 100.0% |
+| Correct parameters | must | 233 | 233 | 100.0% |
+| Primitive, where the family is ambiguous | must | 83 | 0 | 0.0% |
 | Certificate expiry (correct) | must | 28 | 0 | 0.0% |
 | Certificate subject (correct) | must | 28 | 0 | 0.0% |
 | Key material type | must | 11 | 11 | 100.0% |
 | Protocol version | must | 16 | 16 | 100.0% |
-| OID | should | 324 | 0 | 0.0% |
-| Crypto functions | should | 345 | 0 | 0.0% |
-| Quantum security level (correct) | should | 335 | 0 | 0.0% |
+| OID | should | 340 | 0 | 0.0% |
+| Crypto functions | should | 361 | 0 | 0.0% |
+| Quantum security level (correct) | should | 351 | 0 | 0.0% |
 | Code context | should | 123 | 0 | 0.0% |
 | Providing library | should | 128 | 0 | 0.0% |
 | Certificate issuer | should | 28 | 0 | 0.0% |
@@ -111,7 +111,7 @@ Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each
 | Key format | should | 11 | 11 | 100.0% |
 | Cipher suite in a protocol | should | 20 | 20 | 100.0% |
 
-Detected but not ticket-ready (98), first 25:
+Detected but not ticket-ready (100), first 25:
 
 | ID | Algorithm | Missing must-haves |
 |---|---|---|
@@ -354,9 +354,25 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T5-JS-01 | MD5 | yes | yes | yes | yes | n/a |
 | T5-JS-02 | AES | yes | yes | yes | yes | n/a |
 | T5-JS-03 | RSA | yes | yes | yes | yes | n/a |
+| T5-JS-04 | SHA-1 | yes | yes | yes | yes | n/a |
+| T5-JS-05 | HMAC | yes | yes | yes | yes | n/a |
+| T5-JS-06 | 3DES | yes | yes | yes | yes | n/a |
+| T5-JS-07 | EC | yes | yes | yes | yes | n/a |
+| T5-JS-08 | PBKDF2 | yes | yes | yes | yes | n/a |
+| T5-JS-09 | AES | yes | yes | yes | yes | n/a |
+| T5-JS-10 | DH | yes | yes | yes | yes | n/a |
+| T5-JS-11 | Ed25519 | yes | yes | yes | yes | n/a |
 | T5-C-01 | MD5 | yes | yes | yes | n/a | n/a |
 | T5-C-02 | 3DES | yes | yes | yes | n/a | n/a |
 | T5-C-03 | RSA | yes | yes | yes | n/a | n/a |
+| T5-C-04 | SHA-1 | yes | yes | yes | n/a | n/a |
+| T5-C-05 | HMAC | yes | yes | yes | n/a | n/a |
+| T5-C-06 | AES | yes | yes | yes | n/a | n/a |
+| T5-C-07 | EC | yes | yes | yes | n/a | n/a |
+| T5-C-08 | SHA-512 | yes | yes | yes | n/a | n/a |
+| T5-C-09 | AES | yes | yes | yes | n/a | n/a |
+| T5-C-10 | DH | yes | yes | yes | n/a | n/a |
+| T5-C-11 | X25519 | yes | yes | yes | n/a | n/a |
 | PQ-PY-01 | ML-KEM | yes | yes | yes | yes | n/a |
 | PQ-PY-02 | ML-DSA | yes | yes | yes | yes | n/a |
 | PQ-PY-03 | X25519 | yes | yes | yes | yes | n/a |

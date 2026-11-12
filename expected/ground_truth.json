@@ -2074,6 +2074,115 @@
       "note": "minified bundle"
     },
     {
+      "id": "T5-JS-04",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "SHA-1",
+      "params": {},
+      "anchors": [
+        "n=\"sha1\""
+      ],
+      "note": "minified bundle; algorithm names were values of a config object, now four one-letter constants"
+    },
+    {
+      "id": "T5-JS-05",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "HMAC",
+      "params": {
+        "hash": "MD5"
+      },
+      "anchors": [
+        "e.createHmac(t,n)"
+      ],
+      "note": "minified bundle; the hash is one of the hoisted constants, two hops from the call"
+    },
+    {
+      "id": "T5-JS-06",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "3DES",
+      "params": {
+        "mode": "CBC"
+      },
+      "anchors": [
+        "r=\"des-ede3-cbc\""
+      ],
+      "note": "minified bundle"
+    },
+    {
+      "id": "T5-JS-07",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "EC",
+      "params": {
+        "curve": "P-256"
+      },
+      "anchors": [
+        "c=\"prime256v1\""
+      ],
+      "note": "minified bundle"
+    },
+    {
+      "id": "T5-JS-08",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "PBKDF2",
+      "params": {
+        "hash": "SHA-1"
+      },
+      "anchors": [
+        "r(e,t,1e3,32,\"sha1\")"
+      ],
+      "note": "minified bundle; crypto functions were destructured, so no call names its module"
+    },
+    {
+      "id": "T5-JS-09",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "AES",
+      "params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "anchors": [
+        "a=e(\"aes-256-gcm\",t,n)"
+      ],
+      "note": "minified bundle; createCipheriv is called as e()"
+    },
+    {
+      "id": "T5-JS-10",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "DH",
+      "params": {
+        "key_size": 1024
+      },
+      "anchors": [
+        "e=n(\"modp2\")"
+      ],
+      "note": "minified bundle; modp2 is Oakley group 2, 1024 bits"
+    },
+    {
+      "id": "T5-JS-11",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "Ed25519",
+      "params": {},
+      "anchors": [
+        "a(\"ed25519\")"
+      ],
+      "note": "minified bundle"
+    },
+    {
       "id": "T5-C-01",
       "tier": 5,
       "lang": "c",
@@ -2103,6 +2212,90 @@
         "key_size": 1024
       },
       "note": "stripped ELF; the key size is an immediate operand, not a string"
+    },
+    {
+      "id": "T5-C-04",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "SHA-1",
+      "params": {},
+      "note": "stripped ELF; imported symbol EVP_sha1"
+    },
+    {
+      "id": "T5-C-05",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "HMAC",
+      "params": {
+        "hash": "MD5"
+      },
+      "note": "stripped ELF; imported symbols HMAC and EVP_md5"
+    },
+    {
+      "id": "T5-C-06",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "AES",
+      "params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "note": "stripped ELF; imported symbol EVP_aes_256_gcm"
+    },
+    {
+      "id": "T5-C-07",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "EC",
+      "params": {
+        "curve": "P-256"
+      },
+      "note": "stripped ELF; the curve is a numeric id (NID 415) passed as an immediate operand"
+    },
+    {
+      "id": "T5-C-08",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "SHA-512",
+      "params": {},
+      "note": "stripped ELF; fetched by name, so the only trace is the string SHA2-512 in read-only data"
+    },
+    {
+      "id": "T5-C-09",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "AES",
+      "params": {
+        "key_size": 128,
+        "mode": "ECB"
+      },
+      "note": "stripped ELF; fetched by name (AES-128-ECB)"
+    },
+    {
+      "id": "T5-C-10",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "DH",
+      "params": {
+        "key_size": 2048
+      },
+      "note": "stripped ELF; named group ffdhe2048 passed as a parameter string"
+    },
+    {
+      "id": "T5-C-11",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "X25519",
+      "params": {},
+      "note": "stripped ELF; key type passed as a string"
     },
     {
       "id": "PQ-PY-01",
@@ -10890,6 +11083,28 @@
         "SHA-256"
       ],
       "note": "the hash LMS is built from"
+    },
+    {
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "families": [
+        "MD5"
+      ],
+      "note": "the hash inside the HMAC"
+    },
+    {
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "families": [
+        "SHA-1",
+        "HMAC"
+      ],
+      "note": "the PRF inside PBKDF2"
+    },
+    {
+      "file": "corpus/tier5/c/bin/keyd",
+      "families": [
+        "MD5"
+      ],
+      "note": "the hash inside the HMAC"
     }
   ],
   "decoys": {

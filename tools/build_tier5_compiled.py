@@ -4,8 +4,8 @@
   tier5-sources/python/ledger_sync.py                -> corpus/tier5/python/compiled/ledger_sync.pyc
   tier5-sources/java/com/acme/billing/Settlement.java -> corpus/tier5/java/compiled/billing-core.jar
   tier5-sources/java-obfuscated/                      -> corpus/tier5/java/compiled/token-vault.jar  (ProGuard)
-  tier5-sources/javascript/session_tokens.js          -> corpus/tier5/javascript/dist/session-tokens.min.js  (terser)
-  tier5-sources/c/meterd.c                            -> corpus/tier5/c/bin/meterd  (stripped ELF, links libcrypto)
+  tier5-sources/javascript/<name>.js                  -> corpus/tier5/javascript/dist/<name>.min.js  (terser)
+  tier5-sources/c/<name>.c                            -> corpus/tier5/c/bin/<name>  (stripped ELF, links libcrypto)
 
 The sources stay outside corpus/ so a scanner sees only bytecode. A .pyc is tied to the Python
 minor version that built it (its magic number), so rebuild if you run the corpus under another one.
@@ -75,10 +75,11 @@ def build_minified_js():
     if not terser:
         print("  terser not found (npm install terser@5.36.0, or set $TERSER): skipped session-tokens.min.js")
         return
-    out = ROOT / "corpus" / "tier5" / "javascript" / "dist" / "session-tokens.min.js"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run([terser, str(SRC / "javascript" / "session_tokens.js"), "--compress", "--mangle", "--toplevel", "-o", str(out)], check=True)
-    print(f"  {out.relative_to(ROOT)}  (terser --compress --mangle --toplevel)")
+    for src in sorted((SRC / "javascript").glob("*.js")):
+        out = ROOT / "corpus" / "tier5" / "javascript" / "dist" / (src.stem.replace("_", "-") + ".min.js")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run([terser, str(src), "--compress", "--mangle", "--toplevel", "-o", str(out)], check=True)
+        print(f"  {out.relative_to(ROOT)}  (terser --compress --mangle --toplevel)")
 
 
 def build_native():
@@ -86,11 +87,12 @@ def build_native():
     if not cc or not shutil.which("strip"):
         print("  cc/strip not found: skipped meterd")
         return
-    out = ROOT / "corpus" / "tier5" / "c" / "bin" / "meterd"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run([cc, "-O2", "-o", str(out), str(SRC / "c" / "meterd.c"), "-lcrypto"], check=True)
-    subprocess.run(["strip", str(out)], check=True)
-    print(f"  {out.relative_to(ROOT)}  (stripped, dynamically linked to libcrypto)")
+    for src in sorted((SRC / "c").glob("*.c")):
+        out = ROOT / "corpus" / "tier5" / "c" / "bin" / src.stem
+        out.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run([cc, "-O2", "-o", str(out), str(src), "-lcrypto"], check=True)
+        subprocess.run(["strip", str(out)], check=True)
+        print(f"  {out.relative_to(ROOT)}  (stripped, dynamically linked to libcrypto)")
 
 
 if __name__ == "__main__":

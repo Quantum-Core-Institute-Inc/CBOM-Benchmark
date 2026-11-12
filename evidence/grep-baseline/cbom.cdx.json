@@ -19993,6 +19993,126 @@
     {
       "type": "cryptographic-asset",
       "bom-ref": "grep-893",
+      "name": "AES-128-ECB",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "ecb",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck",
+            "line": 82
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-894",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck",
+            "line": 82
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-895",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-896",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-897",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-898",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-899",
       "name": "DES",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20012,7 +20132,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-894",
+      "bom-ref": "grep-900",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20032,7 +20152,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-895",
+      "bom-ref": "grep-901",
       "name": "RSA",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20056,7 +20176,87 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-896",
+      "bom-ref": "grep-902",
+      "name": "DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "mode": "cbc",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-903",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-904",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-905",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-906",
       "name": "AES-128-CBC",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20078,7 +20278,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-897",
+      "bom-ref": "grep-907",
       "name": "MD5",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20098,7 +20298,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-898",
+      "bom-ref": "grep-908",
       "name": "RSA-1024",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20119,7 +20319,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "grep-899",
+      "bom-ref": "grep-909",
       "name": "SHA-256",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -20132,6 +20332,87 @@
         "occurrences": [
           {
             "location": "corpus/tier5/javascript/dist/session-tokens.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-910",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "mode": "gcm",
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-911",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-912",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "grep-913",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
             "line": 1
           }
         ]

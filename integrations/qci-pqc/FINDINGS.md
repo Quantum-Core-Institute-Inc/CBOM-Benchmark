@@ -1,6 +1,6 @@
 # qci-pqc-scan v2.3.4.1 on the QCI CBOM Benchmark: findings for the scanner team
 
-Scanner: `qci-pqc-scan` 2.3.4.1, internal adapter, run in the sandbox. Benchmark 2.5.0 (394
+Scanner: `qci-pqc-scan` 2.3.4.1, internal adapter, run in the sandbox. Benchmark 2.6.0 (410
 findings, methodology 2.3, NIST policy), declared scope from `integrations/qci-pqc/scope.json`,
 holdout generator 1.2. Reproduce with `python tools/run_qci_pqc.py --scanner <checkout>` and
 `CBOM_HOLDOUT_SEED` set. Evidence: `evidence/qci-v2.3.4.1/` and `evidence/perf-qci-v2.3.4.1/`; the
@@ -10,15 +10,15 @@ numbers below are in `reports/qci-pqc/SUMMARY.md`.
 
 | | In declared scope | Everything |
 |---|---|---|
-| Recall | 67.0% | 63.5% |
-| At primary site | 64.6% | 61.2% |
+| Recall | 64.2% | 61.0% |
+| At primary site | 61.9% | 58.8% |
 | Parameters correct (of detected) | 54.5% | 54.4% |
 | Precision | 99.6% (1 false positive) | 99.6% |
 | Ticket-ready (of detected) | 45.9% | 45.2% |
-| Deadline-weighted recall | 68.3% | 64.6% |
-| Missed findings due by 2030 | 39 | 49 |
+| Deadline-weighted recall | 65.1% | 61.8% |
+| Missed findings due by 2030 | 46 | 56 |
 | Crypto libraries in the right manifest | 96.4% | |
-| Overfit gap | -0.8 (interval -5.8 to +4.3), not significant | |
+| Overfit gap | -0.8 (interval -5.9 to +4.3), not significant | |
 | Negative-control gap | 0.0 per file | |
 
 What works: precision is where it should be, with no false positives in negative controls and no
@@ -31,6 +31,8 @@ request, so it passes every gate by construction. What the old floors would have
 six findings this release no longer reports.
 
 ## 1. Binaries are read and nothing is reported from them
+
+The corpus now has three stripped binaries and a Go binary: 15 findings, none reported.
 
 Six findings that the scanner used to report are gone: MD5 and 3DES in the stripped binary
 (`corpus/tier5/c/bin/meterd`), and RSA, HMAC, SHA-1 and SHA-256 in the Go binary of the system
@@ -89,7 +91,8 @@ The same gap shows in the asset fields a ticket needs: certificate expiry and su
 | HAProxy (6) | 1 | Finds the DH group, without its size. Misses `ssl-min-ver` and both cipher lines. |
 | IPsec (9) | 1 | Finds `chacha20poly1305` in `swanctl.conf`. `aes256-sha256-modp2048` and `3des-sha1-modp1024!` aren't parsed. |
 | LMS and XMSS (8) | 0 | Not in Bouncy Castle code, not in the pure-Python implementation, not by OID in the two public keys, not by name in the signing policy. The P-384 signer in that policy is missed too. |
-| Minified JavaScript (3) | 0 | `e.createHash("md5")` on a one-line bundle. The same call is found in ordinary source. |
+| Minified JavaScript (11) | 0 | Three one-line bundles. `e.createHash("md5")` isn't found, though the same call is in ordinary source. cdxgen finds 6 of these 11 and grep 8. |
+| Stripped binaries (11) | 0 | See item 1. Grep finds 7 of 11 from symbol and name strings. |
 | C#, direct (13) | 9 | Misses `MD5.HashData`, `SHA256.HashData` and `SHA3_256.HashData` in a file where it finds `SHA1.HashData`, and `new HMACSHA256(...)`. |
 | C#, indirection (6) | 3 | Misses `IncrementalHash.CreateHash(new HashAlgorithmName(Fingerprint))` and both entries of a `Func<HashAlgorithm>` table. |
 | TypeScript and C, indirection | 3 of 7, 2 of 6 | `as const` config objects, template literals, macros and function pointers. |

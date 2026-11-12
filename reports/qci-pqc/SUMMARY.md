@@ -3,12 +3,12 @@
 - Scanner: **qci-pqc, version 2.3.4.1**, adapter(s) `internal`
 - Scanner's own CBOM: valid CycloneDX 1.6; 856 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-12 12:22 UTC
+- Run: 2026-11-12 12:51 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
-| Recall | 67.0% | 63.5% |
-| At primary site | 64.6% | 61.2% |
+| Recall | 64.2% | 61.0% |
+| At primary site | 61.9% | 58.8% |
 | Parameters correct | 54.5% | 54.4% |
 | Precision | 99.6% | 99.6% |
 | False positives | 1 | 1 |
@@ -17,21 +17,21 @@
 | PQC by standard name (of detected PQC) | 100.0% | 100.0% |
 | System fixture: routable (of detected) | 61.5% | 61.5% |
 | Ticket-ready (of detected) | 45.9% | 45.2% |
-| Actionable recall | 30.8% | 28.7% |
+| Actionable recall | 29.5% | 27.6% |
 | Field completeness | 56.5% | 56.2% |
-| Deadline-weighted recall (nist) | 68.3% | 64.6% |
-| Missed findings due by 2030 | 39 | 49 |
+| Deadline-weighted recall (nist) | 65.1% | 61.8% |
+| Missed findings due by 2030 | 46 | 56 |
 | Crypto libraries, right manifest | 96.4% | 96.4% |
 | Library PQC verdicts right | n/a | n/a |
-| Matched holdout recall | 67.3% | n/a |
-| Broad holdout recall | 65.4% | n/a |
+| Matched holdout recall | 66.5% | n/a |
+| Broad holdout recall | 68.8% | n/a |
 | Overfit gap (points) | -0.8 | n/a |
-|   lower 95% bound | -5.8 | n/a |
+|   lower 95% bound | -5.9 | n/a |
 | Negative-control gap (FPs per file) | 0.0 | n/a |
 | Holdout crypto libraries, right manifest | 86.7% | n/a |
 | Library gap (points, not gated) | 5.3 | n/a |
 
-Risk-signal coverage (in scope): strict 246/367, plus 14 covered only by a QCI category signal, combined **70.8%**.
+Risk-signal coverage (in scope): strict 246/383, plus 14 covered only by a QCI category signal, combined **67.9%**.
 
 | Bucket | Detected | Recall | At primary site | Params |
 |---|---|---|---|---|
@@ -50,9 +50,9 @@ Risk-signal coverage (in scope): strict 246/367, plus 14 covered only by a QCI c
 | 3/java | 5/7 | 71.4% | 71.4% | 40.0% |
 | 3/python | 7/9 | 77.8% | 55.6% | 14.3% |
 | 4/assets | 22/54 | 40.7% | 40.7% | 81.8% |
-| 5/c | 0/3 | 0.0% | 0.0% | n/a |
+| 5/c | 0/11 | 0.0% | 0.0% | n/a |
 | 5/java | 0/5 | 0.0% | 0.0% | n/a |
-| 5/javascript | 0/3 | 0.0% | 0.0% | n/a |
+| 5/javascript | 0/11 | 0.0% | 0.0% | n/a |
 | 5/python | 2/7 | 28.6% | 28.6% | 50.0% |
 | deadcode/c | 2/2 | 100.0% | 100.0% | 50.0% |
 | deadcode/go | 1/2 | 50.0% | 50.0% | 100.0% |
@@ -81,9 +81,9 @@ Risk-signal coverage (in scope): strict 246/367, plus 14 covered only by a QCI c
 
 ## Holdout (private seed)
 
-Holdout recall **67.3%** on 342 findings across 33 families (143 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **66.5%**.
+Holdout recall **66.5%** on 346 findings across 33 families (146 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **65.7%**.
 
-Overfit gap: **-0.8 points** (95% interval -5.8 to +4.3). Within sampling noise: the published score generalizes.
+Overfit gap: **-0.8 points** (95% interval -5.9 to +4.3). Within sampling noise: the published score generalizes.
 
 | | Published | Holdout | Holdout n |
 |---|---|---|---|
@@ -91,7 +91,7 @@ Overfit gap: **-0.8 points** (95% interval -5.8 to +4.3). Within sampling noise:
 | Tier 2 | 69.9% | 68.7% | 99 |
 | Tier 3 | 80.0% | 86.7% | 15 |
 | Tier 4 | 44.4% | 52.1% | 96 |
-| Tier 5 | 0.0% | 0.0% | 6 |
+| Tier 5 | 0.0% | 0.0% | 10 |
 | Tier pqc | 87.5% | 75.0% | 24 |
 | Tier mixed | 81.2% | 79.2% | 48 |
 
@@ -101,14 +101,14 @@ Holdout false positives: 13 (0 in negative controls), PQC over-claims: 0.
 |---|---|---|---|
 | TLS-1.3 | 100.0% (n=3) | 33.3% (n=3) | +66.7 |
 | TLS-1.0 | 100.0% (n=2) | 60.0% (n=5) | +40.0 |
+| 3DES | 74.2% (n=31) | 56.7% (n=30) | +17.5 |
 | ML-DSA | 100.0% (n=7) | 83.3% (n=6) | +16.7 |
 | MD5 | 52.6% (n=19) | 36.4% (n=11) | +16.3 |
-| 3DES | 76.7% (n=30) | 60.7% (n=28) | +16.0 |
 | SHA-256 | 88.9% (n=9) | 75.0% (n=4) | +13.9 |
 | SHA-1 | 70.6% (n=34) | 60.0% (n=20) | +10.6 |
 | DH | 88.9% (n=18) | 80.0% (n=15) | +8.9 |
 | TLS-1.2 | 33.3% (n=3) | 25.0% (n=4) | +8.3 |
-| HMAC | 92.5% (n=40) | 85.4% (n=41) | +7.1 |
+| HMAC | 90.2% (n=41) | 83.3% (n=42) | +6.9 |
 | PBKDF2 | 94.4% (n=18) | 87.5% (n=8) | +6.9 |
 | Ed25519 | 66.7% (n=15) | 63.6% (n=11) | +3.0 |
 | RSA | 86.3% (n=51) | 84.2% (n=38) | +2.1 |
@@ -129,11 +129,11 @@ Holdout false positives: 13 (0 in negative controls), PQC over-claims: 0.
 | X25519MLKEM768 | 100.0% (n=3) | 100.0% (n=4) | +0.0 |
 | XMSS | 0.0% (n=2) | 0.0% (n=2) | +0.0 |
 | AES | 60.9% (n=46) | 61.4% (n=44) | -0.5 |
-| EC | 69.2% (n=39) | 74.4% (n=43) | -5.2 |
+| EC | 67.5% (n=40) | 72.7% (n=44) | -5.2 |
 | X25519 | 92.9% (n=14) | 100.0% (n=10) | -7.1 |
 | TLS-1.1 | 25.0% (n=4) | 66.7% (n=6) | -41.7 |
 
-**Broad set:** 53/81 (65.4%) on API spellings, import styles and indirections the published corpus doesn't use. This measures coverage beyond the corpus; it isn't compared with anything.
+**Broad set:** 53/77 (68.8%) on API spellings, import styles and indirections the published corpus doesn't use. This measures coverage beyond the corpus; it isn't compared with anything.
 
 Not generated yet, so outside the comparison: TLS protocol versions and cipher suites configured in code.
 
@@ -163,7 +163,7 @@ Direct dependencies found in the right manifest: published 92.0% (weighted to th
 
 ## Gates
 
-Testbench 2.5.0; stamp `{"release": "2.5.0", "methodology": "2.3", "findings": 394, "answer_key": "a4ecdd86a8a593eb", "corpus": "ce56704b1418c9a2", "scorer": "4449df0c3850c51f", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
+Testbench 2.6.0; stamp `{"release": "2.6.0", "methodology": "2.3", "findings": 410, "answer_key": "b0867a4029ea0c56", "corpus": "9ecce20d59d14efb", "scorer": "4449df0c3850c51f", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
 
 **All gates passed.**
 

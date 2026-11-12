@@ -6420,6 +6420,340 @@
       "ticket_ready": true
     },
     {
+      "id": "T5-JS-04",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "SHA-1",
+      "expected_params": {},
+      "expected_line": 1,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        1
+      ],
+      "reported_files": [
+        "corpus/tier5/javascript/dist/payments-sdk.min.js"
+      ],
+      "rule": "file+family",
+      "due": "2030-12-31",
+      "due_bucket": "by-2030",
+      "due_note": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation.",
+      "algorithm": "SHA-1",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "T5-JS-05",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "HMAC",
+      "expected_params": {
+        "hash": "MD5"
+      },
+      "expected_line": 1,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": true,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        1
+      ],
+      "reported_files": [
+        "corpus/tier5/javascript/dist/payments-sdk.min.js"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "MD5 is not an approved hash function, in HMAC or otherwise.",
+      "algorithm": "HMAC-MD5",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": false,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
+    },
+    {
+      "id": "T5-JS-06",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "3DES",
+      "expected_params": {
+        "mode": "CBC"
+      },
+      "expected_line": 1,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2023-12-31",
+      "due_bucket": "now",
+      "due_note": "TDEA encryption disallowed after 2023; decryption of legacy data only.",
+      "algorithm": "3DES-CBC",
+      "actionability": {}
+    },
+    {
+      "id": "T5-JS-07",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "EC",
+      "expected_params": {
+        "curve": "P-256"
+      },
+      "expected_line": 1,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "ECC-P-256",
+      "actionability": {}
+    },
+    {
+      "id": "T5-JS-08",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "PBKDF2",
+      "expected_params": {
+        "hash": "SHA-1"
+      },
+      "expected_line": 1,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": true,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        1
+      ],
+      "reported_files": [
+        "corpus/tier5/javascript/dist/webhook-relay.min.js"
+      ],
+      "rule": "file+family",
+      "due": "2030-12-31",
+      "due_bucket": "by-2030",
+      "due_note": "All SHA-1 uses end Dec 31, 2030.",
+      "algorithm": "PBKDF2-HMAC-SHA-1",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": false,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
+    },
+    {
+      "id": "T5-JS-09",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "AES",
+      "expected_params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "expected_line": 1,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "key_size": 256,
+          "mode": "GCM"
+        }
+      ],
+      "reported_lines": [
+        1
+      ],
+      "reported_files": [
+        "corpus/tier5/javascript/dist/webhook-relay.min.js"
+      ],
+      "rule": "file+family",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "",
+      "algorithm": "AES-256-GCM",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "T5-JS-10",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "DH",
+      "expected_params": {
+        "key_size": 1024
+      },
+      "expected_line": 1,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2013-12-31",
+      "due_bucket": "now",
+      "due_note": "Below 112-bit security; disallowed since 2014.",
+      "algorithm": "DH-1024",
+      "actionability": {}
+    },
+    {
+      "id": "T5-JS-11",
+      "tier": 5,
+      "lang": "javascript",
+      "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+      "family": "Ed25519",
+      "expected_params": {},
+      "expected_line": 1,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        1
+      ],
+      "reported_files": [
+        "corpus/tier5/javascript/dist/webhook-relay.min.js"
+      ],
+      "rule": "file+family",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "Ed25519",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
       "id": "T5-C-01",
       "tier": 5,
       "lang": "c",
@@ -6547,6 +6881,339 @@
         "parameters"
       ],
       "ticket_ready": false
+    },
+    {
+      "id": "T5-C-04",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "SHA-1",
+      "expected_params": {},
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": null,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        9
+      ],
+      "reported_files": [
+        "corpus/tier5/c/bin/keyd"
+      ],
+      "rule": "file+family",
+      "due": "2030-12-31",
+      "due_bucket": "by-2030",
+      "due_note": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation.",
+      "algorithm": "SHA-1",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "T5-C-05",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "HMAC",
+      "expected_params": {
+        "hash": "MD5"
+      },
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        9
+      ],
+      "reported_files": [
+        "corpus/tier5/c/bin/keyd"
+      ],
+      "rule": "file+family",
+      "due": "now",
+      "due_bucket": "now",
+      "due_note": "MD5 is not an approved hash function, in HMAC or otherwise.",
+      "algorithm": "HMAC-MD5",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": false,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
+    },
+    {
+      "id": "T5-C-06",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "AES",
+      "expected_params": {
+        "key_size": 256,
+        "mode": "GCM"
+      },
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": false,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        9
+      ],
+      "reported_files": [
+        "corpus/tier5/c/bin/keyd"
+      ],
+      "rule": "file+family",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "",
+      "algorithm": "AES-256-GCM",
+      "actionability": {
+        "location": true,
+        "parameters": false,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": false,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [
+        "parameters"
+      ],
+      "ticket_ready": false
+    },
+    {
+      "id": "T5-C-07",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/keyd",
+      "family": "EC",
+      "expected_params": {
+        "curve": "P-256"
+      },
+      "expected_line": null,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "ECC-P-256",
+      "actionability": {}
+    },
+    {
+      "id": "T5-C-08",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "SHA-512",
+      "expected_params": {},
+      "expected_line": null,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "",
+      "algorithm": "SHA-512",
+      "actionability": {}
+    },
+    {
+      "id": "T5-C-09",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "AES",
+      "expected_params": {
+        "key_size": 128,
+        "mode": "ECB"
+      },
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": null,
+      "quantum_ok": true,
+      "reported_params": [
+        {
+          "key_size": 128,
+          "mode": "ECB"
+        }
+      ],
+      "reported_lines": [
+        82
+      ],
+      "reported_files": [
+        "corpus/tier5/c/bin/fwcheck"
+      ],
+      "rule": "file+family",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "Approved today. SP 800-131A Rev. 3 (draft) proposes retiring ECB as a confidentiality mode: a note, not a rule.",
+      "algorithm": "AES-128-ECB",
+      "actionability": {
+        "location": true,
+        "parameters": true,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
+      "id": "T5-C-10",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "DH",
+      "expected_params": {
+        "key_size": 2048
+      },
+      "expected_line": null,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "DH-2048",
+      "actionability": {}
+    },
+    {
+      "id": "T5-C-11",
+      "tier": 5,
+      "lang": "c",
+      "file": "corpus/tier5/c/bin/fwcheck",
+      "family": "X25519",
+      "expected_params": {},
+      "expected_line": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": null,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        82
+      ],
+      "reported_files": [
+        "corpus/tier5/c/bin/fwcheck"
+      ],
+      "rule": "file+family",
+      "due": "2035-12-31",
+      "due_bucket": "2034-2035",
+      "due_note": "Quantum-vulnerable public-key algorithm: deprecated after 2030 and disallowed after 2035, at any key size.",
+      "algorithm": "X25519",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": false,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-PY-01",
@@ -19017,6 +19684,15 @@
       "rule": "unmatched: no finding of this family in this file, not in also_ok"
     },
     {
+      "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+      "family": "DES",
+      "lines": [
+        1
+      ],
+      "negative_control": false,
+      "rule": "unmatched: no finding of this family in this file, not in also_ok"
+    },
+    {
       "file": "corpus/mixed/go/report_gateway/main.go",
       "family": "DES",
       "lines": [
@@ -19288,21 +19964,21 @@
       "precision": 85.2
     },
     "5/c": {
-      "expected": 3,
-      "detected": 2,
-      "recall": 66.7,
+      "expected": 11,
+      "detected": 7,
+      "recall": 63.6,
       "recall_ci95": [
-        20.8,
-        93.9
+        35.4,
+        84.8
       ],
-      "thin": true,
-      "usage_site_recall": 66.7,
-      "params_correct": 1,
-      "params_accuracy": 50.0,
+      "thin": false,
+      "usage_site_recall": 63.6,
+      "params_correct": 4,
+      "params_accuracy": 57.1,
       "line_accuracy": null,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 1,
-      "precision": 66.7
+      "precision": 87.5
     },
     "5/java": {
       "expected": 11,
@@ -19322,21 +19998,21 @@
       "precision": null
     },
     "5/javascript": {
-      "expected": 3,
-      "detected": 3,
-      "recall": 100.0,
+      "expected": 11,
+      "detected": 8,
+      "recall": 72.7,
       "recall_ci95": [
-        43.8,
-        100.0
+        43.4,
+        90.3
       ],
-      "thin": true,
-      "usage_site_recall": 100.0,
-      "params_correct": 3,
-      "params_accuracy": 100.0,
+      "thin": false,
+      "usage_site_recall": 72.7,
+      "params_correct": 6,
+      "params_accuracy": 75.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
-      "false_positives": 0,
-      "precision": 100.0
+      "false_positives": 1,
+      "precision": 88.9
     },
     "5/python": {
       "expected": 9,
@@ -19696,21 +20372,21 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 394,
-      "detected": 265,
-      "recall": 67.3,
+      "expected": 410,
+      "detected": 275,
+      "recall": 67.1,
       "recall_ci95": [
-        62.5,
-        71.7
+        62.4,
+        71.4
       ],
       "thin": false,
-      "usage_site_recall": 63.5,
-      "params_correct": 148,
-      "params_accuracy": 55.8,
+      "usage_site_recall": 63.4,
+      "params_correct": 154,
+      "params_accuracy": 56.0,
       "line_accuracy": 99.2,
       "quantum_flag_accuracy": 100.0,
-      "false_positives": 170,
-      "precision": 60.9
+      "false_positives": 171,
+      "precision": 61.7
     },
     "negatives": {
       "false_positives": 60
@@ -19817,18 +20493,18 @@
       "now": {
         "label": "Due now (not approved or past its date)",
         "weight": 5,
-        "expected": 99,
-        "detected": 66,
-        "recall": 66.7,
-        "primary_site_recall": 62.6
+        "expected": 103,
+        "detected": 68,
+        "recall": 66.0,
+        "primary_site_recall": 62.1
       },
       "by-2030": {
         "label": "Due by end of 2030",
         "weight": 4,
-        "expected": 39,
-        "detected": 30,
-        "recall": 76.9,
-        "primary_site_recall": 66.7
+        "expected": 42,
+        "detected": 33,
+        "recall": 78.6,
+        "primary_site_recall": 69.0
       },
       "2031-2033": {
         "label": "Due 2031 to 2033",
@@ -19841,21 +20517,21 @@
       "2034-2035": {
         "label": "Due 2034 to 2035",
         "weight": 2,
-        "expected": 107,
-        "detected": 64,
-        "recall": 59.8,
-        "primary_site_recall": 57.0
+        "expected": 112,
+        "detected": 66,
+        "recall": 58.9,
+        "primary_site_recall": 56.2
       },
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 149,
-        "detected": 105,
-        "recall": 70.5,
-        "primary_site_recall": 67.8
+        "expected": 153,
+        "detected": 108,
+        "recall": 70.6,
+        "primary_site_recall": 68.0
       }
     },
-    "weighted_recall": 67.4,
+    "weighted_recall": 67.2,
     "weighted_primary_site_recall": 62.8,
     "missed_due_by_2030": [
       {
@@ -20027,6 +20703,20 @@
         "why": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation."
       },
       {
+        "id": "T5-JS-06",
+        "algorithm": "3DES-CBC",
+        "file": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+        "due": "2023-12-31",
+        "why": "TDEA encryption disallowed after 2023; decryption of legacy data only."
+      },
+      {
+        "id": "T5-JS-10",
+        "algorithm": "DH-1024",
+        "file": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+        "due": "2013-12-31",
+        "why": "Below 112-bit security; disallowed since 2014."
+      },
+      {
         "id": "T5-C-02",
         "algorithm": "3DES-CBC",
         "file": "corpus/tier5/c/bin/meterd",
@@ -20157,26 +20847,26 @@
   "actionability": {
     "rubric": "cbom-actionability-v1",
     "rubric_status": "proposed",
-    "detected": 265,
-    "ticket_ready": 135,
-    "ticket_ready_pct": 50.9,
-    "actionable_recall": 34.3,
-    "expected": 394,
-    "completeness_pct": 36.8,
+    "detected": 275,
+    "ticket_ready": 141,
+    "ticket_ready_pct": 51.3,
+    "actionable_recall": 34.4,
+    "expected": 410,
+    "completeness_pct": 36.9,
     "checks": {
       "location": {
         "label": "Exact location",
         "tier": "must",
-        "applicable": 265,
-        "passed": 262,
+        "applicable": 275,
+        "passed": 272,
         "pct": 98.9
       },
       "parameters": {
         "label": "Correct parameters",
         "tier": "must",
-        "applicable": 161,
-        "passed": 44,
-        "pct": 27.3
+        "applicable": 167,
+        "passed": 46,
+        "pct": 27.5
       },
       "primitive": {
         "label": "Primitive, where the family is ambiguous",
@@ -20216,23 +20906,23 @@
       "oid": {
         "label": "OID",
         "tier": "should",
-        "applicable": 245,
+        "applicable": 255,
         "passed": 0,
         "pct": 0.0
       },
       "functions": {
         "label": "Crypto functions",
         "tier": "should",
-        "applicable": 252,
+        "applicable": 262,
         "passed": 0,
         "pct": 0.0
       },
       "quantum_level": {
         "label": "Quantum security level (correct)",
         "tier": "should",
-        "applicable": 251,
-        "passed": 179,
-        "pct": 71.3
+        "applicable": 261,
+        "passed": 185,
+        "pct": 70.9
       },
       "code_context": {
         "label": "Code context",
@@ -35470,20 +36160,20 @@
     }
   ],
   "manifest": {
-    "release": "2.5.0",
+    "release": "2.6.0",
     "methodology": "2.3",
-    "findings": 394,
-    "answer_key": "a4ecdd86a8a593eb",
-    "corpus": "ce56704b1418c9a2",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 394,
-    "finding_set": "1325a7abe7ee8c86",
+    "scored_findings": 410,
+    "finding_set": "3cb6b2e44bdc9776",
     "scope": null,
     "scanner": "grep baseline",
-    "scanner_version": "benchmark 2.5.0",
+    "scanner_version": "benchmark 2.6.0",
     "adapter": null
   }
 }

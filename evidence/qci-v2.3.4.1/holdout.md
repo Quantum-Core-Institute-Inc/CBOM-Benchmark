@@ -1,8 +1,8 @@
 ## Holdout and overfit gap
 
-Holdout recall **67.3%** on 342 findings across 33 families (143 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **66.5%**.
+Holdout recall **66.5%** on 346 findings across 33 families (146 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **65.7%**.
 
-Overfit gap: **-0.8 points** (95% interval -5.8 to +4.3). Within sampling noise: the published score generalizes.
+Overfit gap: **-0.8 points** (95% interval -5.9 to +4.3). Within sampling noise: the published score generalizes.
 
 | | Published | Holdout | Holdout n |
 |---|---|---|---|
@@ -10,7 +10,7 @@ Overfit gap: **-0.8 points** (95% interval -5.8 to +4.3). Within sampling noise:
 | Tier 2 | 69.9% | 68.7% | 99 |
 | Tier 3 | 80.0% | 86.7% | 15 |
 | Tier 4 | 44.4% | 52.1% | 96 |
-| Tier 5 | 0.0% | 0.0% | 6 |
+| Tier 5 | 0.0% | 0.0% | 10 |
 | Tier pqc | 87.5% | 75.0% | 24 |
 | Tier mixed | 81.2% | 79.2% | 48 |
 
@@ -20,14 +20,14 @@ Holdout false positives: 13 (0 in negative controls), PQC over-claims: 0.
 |---|---|---|---|
 | TLS-1.3 | 100.0% (n=3) | 33.3% (n=3) | +66.7 |
 | TLS-1.0 | 100.0% (n=2) | 60.0% (n=5) | +40.0 |
+| 3DES | 74.2% (n=31) | 56.7% (n=30) | +17.5 |
 | ML-DSA | 100.0% (n=7) | 83.3% (n=6) | +16.7 |
 | MD5 | 52.6% (n=19) | 36.4% (n=11) | +16.3 |
-| 3DES | 76.7% (n=30) | 60.7% (n=28) | +16.0 |
 | SHA-256 | 88.9% (n=9) | 75.0% (n=4) | +13.9 |
 | SHA-1 | 70.6% (n=34) | 60.0% (n=20) | +10.6 |
 | DH | 88.9% (n=18) | 80.0% (n=15) | +8.9 |
 | TLS-1.2 | 33.3% (n=3) | 25.0% (n=4) | +8.3 |
-| HMAC | 92.5% (n=40) | 85.4% (n=41) | +7.1 |
+| HMAC | 90.2% (n=41) | 83.3% (n=42) | +6.9 |
 | PBKDF2 | 94.4% (n=18) | 87.5% (n=8) | +6.9 |
 | Ed25519 | 66.7% (n=15) | 63.6% (n=11) | +3.0 |
 | RSA | 86.3% (n=51) | 84.2% (n=38) | +2.1 |
@@ -48,11 +48,11 @@ Holdout false positives: 13 (0 in negative controls), PQC over-claims: 0.
 | X25519MLKEM768 | 100.0% (n=3) | 100.0% (n=4) | +0.0 |
 | XMSS | 0.0% (n=2) | 0.0% (n=2) | +0.0 |
 | AES | 60.9% (n=46) | 61.4% (n=44) | -0.5 |
-| EC | 69.2% (n=39) | 74.4% (n=43) | -5.2 |
+| EC | 67.5% (n=40) | 72.7% (n=44) | -5.2 |
 | X25519 | 92.9% (n=14) | 100.0% (n=10) | -7.1 |
 | TLS-1.1 | 25.0% (n=4) | 66.7% (n=6) | -41.7 |
 
-**Broad set:** 53/81 (65.4%) on API spellings, import styles and indirections the published corpus doesn't use. This measures coverage beyond the corpus; it isn't compared with anything.
+**Broad set:** 53/77 (68.8%) on API spellings, import styles and indirections the published corpus doesn't use. This measures coverage beyond the corpus; it isn't compared with anything.
 
 Not generated yet, so outside the comparison: TLS protocol versions and cipher suites configured in code.
 

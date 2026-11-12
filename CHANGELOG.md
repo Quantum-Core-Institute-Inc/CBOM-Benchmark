@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.6.0 (2026-11-12): deeper Tier 5
+
+Sixteen new findings, 410 in all; methodology 2.3. Everything rescanned, gates rebaselined, every
+bundle rebuilt. The minified-JavaScript and native-binary rows had three findings each, too few to
+read a percentage from; each now has eleven.
+
+- **Two more minified bundles.** `payments-sdk.min.js` (SHA-1, HMAC-MD5, 3DES-CBC, P-256): algorithm
+  names that were values of a config object become four one-letter constants. `webhook-relay.min.js`
+  (PBKDF2-SHA-1, AES-256-GCM, DH group `modp2`, Ed25519): the crypto functions were destructured, so
+  no call site names its module.
+- **Two more stripped binaries.** `keyd` (SHA-1, HMAC-MD5, AES-256-GCM, P-256) shows algorithms as
+  imported symbols and its curve as a numeric id. `fwcheck` (SHA-512, AES-128-ECB, DH `ffdhe2048`,
+  X25519) fetches everything by name, so it imports no algorithm symbol and the evidence is strings
+  in read-only data.
+- `build_tier5_compiled.py` and `verify_corpus.py` handle every source under `tier5-sources/` and
+  every binary under `corpus/tier5/c/bin/` instead of one named file each.
+- The README's Tier 5 notes now describe the obfuscated jar, the bundles and the binaries.
+
 ## 2.5.0 (2026-11-12): LMS without a library
 
 One new finding, 394 in all; methodology 2.3. Everything rescanned, every bundle rebuilt.

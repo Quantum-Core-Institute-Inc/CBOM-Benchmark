@@ -13,7 +13,7 @@
 |                        |            |                          | e account.                                         |
 +------------------------+------------+--------------------------+----------------------------------------------------+
 [1;35mSECURE MODE: DO NOT run cdxgen with root privileges.[0m
-Executing 'mvn in /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/java-gateway
+Executing 'mvn in /tmp/cbom-sandbox-up1w4h7c/corpus/deps/java-gateway
 You can try the following remediation tips to resolve this error:
 
 1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
@@ -77,8 +77,8 @@ Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.445 s
-[INFO] Finished at: 2026-11-12T12:41:06Z
+[INFO] Total time:  0.507 s
+[INFO] Finished at: 2026-11-12T13:25:37Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] No plugin found for prefix 'dependency' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (/root/.m2/repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
 [ERROR] 
@@ -104,23 +104,23 @@ Ensure $HOME/.netrc file contains a valid username and password for the private 
 3. Alternatively, consider generating a post-build SBOM from the built binary using blint. Use the official container image and invoke cdxgen with the arguments `-t binary --lifecycle post-build`.
 Manually parsing go.mod files. The resultant BOM would be incomplete.
 Set the environment variable CDXGEN_GEM_HOME or GEM_HOME to collect the module names for installed gems.
-Unable to extract component information from /tmp/cbom-sandbox-f9aj7q0l/corpus/tier5/java/compiled/token-vault.jar. The SBOM won't include this artifact.
-Unable to extract component information from /tmp/cbom-sandbox-f9aj7q0l/corpus/tier5/java/compiled/billing-core.jar. The SBOM won't include this artifact.
-Unable to extract component information from /tmp/cbom-sandbox-f9aj7q0l/corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cbom-sandbox-up1w4h7c/corpus/tier5/java/compiled/token-vault.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cbom-sandbox-up1w4h7c/corpus/tier5/java/compiled/billing-core.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cbom-sandbox-up1w4h7c/corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar. The SBOM won't include this artifact.
 Dotnet SDK is not installed. Please use the cdxgen dotnet container images to analyze this project with dosai.
 Alternatively, download the dosai self-contained binary (-full suffix) from https://github.com/owasp-dep-scan/dosai/releases and set DOSAI_CMD to its location.
-About to collect jar dependencies for the path /tmp/cbom-sandbox-f9aj7q0l/corpus
-Executing 'mvn in /tmp/cbom-sandbox-f9aj7q0l/corpus
+About to collect jar dependencies for the path /tmp/cbom-sandbox-up1w4h7c/corpus
+Executing 'mvn in /tmp/cbom-sandbox-up1w4h7c/corpus
 You can try the following remediation tips to resolve this error:
 
 1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
 2. Perform 'mvn compile package' before invoking this command. Fix any errors found during this invocation.
 3. Ensure the temporary directory is available and has sufficient disk space to copy all the artifacts.
 About to collect jar dependencies from the gradle cache. This would take a while ...
-/tmp/cbom-sandbox-f9aj7q0l/.home/.gradle/caches/modules-2/files-2.1 did not contain any jars. Try building the project to improve the BOM precision.
+/tmp/cbom-sandbox-up1w4h7c/.home/.gradle/caches/modules-2/files-2.1 did not contain any jars. Try building the project to improve the BOM precision.
 To speed up successive re-runs, pass the argument --skip-maven-collector to evinse command.
-Creating reachables slice for /tmp/cbom-sandbox-f9aj7q0l/corpus. Please wait ...
-Creating usages slice for /tmp/cbom-sandbox-f9aj7q0l/corpus. Please wait ...
+Creating reachables slice for /tmp/cbom-sandbox-up1w4h7c/corpus. Please wait ...
+Creating usages slice for /tmp/cbom-sandbox-up1w4h7c/corpus. Please wait ...
 Use an official cdxgen container image to improve the precision of endpoints detection (for SaaSBOM).
 Unable to identify component evidence for the input SBOM based on the slices from atom. The slices are either empty or lack appropriate tags.
 
