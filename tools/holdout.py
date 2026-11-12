@@ -934,6 +934,15 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
     except Exception:
         pass
 
+    # LMS/XMSS OID-only hard cell. Own stream; additive.
+    try:
+        import holdout_emit_lms
+        hard_oid = holdout_emit_lms.emit_oid_only(random.Random(f"{seed}:hardoid"), out / "corpus")
+        hard_oid["file"] = hard_oid["file"].replace(str(out) + "/", "")
+        findings.append(hard_oid)
+    except Exception:
+        pass
+
     truth = {"schema": "cbom-testbench holdout truth", "generator": GENERATOR_VERSION, "asset_problems": asset_problems, "seed_sha256":
              hashlib.sha256(str(seed).encode()).hexdigest(), "findings": findings, "also_ok": also_ok,
              "decoys": {}, "materials": []}
