@@ -44,8 +44,9 @@ from cbomlib import FAMILIES, functions_for, load_json, make_bom, make_component
 from holdout_common import DOCS, VERBS, WORDS, Names, spec, sub  # noqa: E402,F401
 
 ROOT = Path(__file__).resolve().parent.parent
-GENERATOR_VERSION = "1.2"  # 1.1: certificates, keys, keystores, configs, compiled artifacts
-#                            1.2: C#, Apache/HAProxy/IPsec configs, LMS/XMSS policies, minified JS, native binaries
+GENERATOR_VERSION = "1.3"  # 1.1: certificates, keys, keystores, configs, compiled artifacts
+#                            1.2: C#,
+#                            1.3: hard cells (minified JS; stripped binaries and LMS/XMSS follow) Apache/HAProxy/IPsec configs, LMS/XMSS policies, minified JS, native binaries
 
 # ----------------------------------------------------------------------------------------------
 # Names. Domain words only: identifiers never name the algorithm (a grep for "md5" shouldn't win
@@ -914,6 +915,16 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
         findings += ha["findings"]
         also_ok += ha["also_ok"]
         asset_problems = ha["problems"]
+    # Hard cells (minified JS; stripped binaries and LMS/XMSS follow). Own stream so
+    # nothing above changes for a given seed.
+    try:
+        import holdout_emit_hard
+        hard = holdout_emit_hard.emit_minified_js(random.Random(f"{seed}:hard"), out / "corpus")
+        hard["file"] = hard["file"].replace(str(out) + "/", "")
+        findings.append(hard)
+    except Exception:
+        pass  # hard cells are additive; a failure here must not break the holdout
+
     truth = {"schema": "cbom-testbench holdout truth", "generator": GENERATOR_VERSION, "asset_problems": asset_problems, "seed_sha256":
              hashlib.sha256(str(seed).encode()).hexdigest(), "findings": findings, "also_ok": also_ok,
              "decoys": {}, "materials": []}
