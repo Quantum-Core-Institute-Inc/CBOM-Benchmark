@@ -925,6 +925,15 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
     except Exception:
         pass  # hard cells are additive; a failure here must not break the holdout
 
+    # Stripped-binary hard cell. Own stream; additive.
+    try:
+        import holdout_emit_binary
+        hard_bin = holdout_emit_binary.emit_stripped_binary(random.Random(f"{seed}:hardbin"), out / "corpus")
+        hard_bin["file"] = hard_bin["file"].replace(str(out) + "/", "")
+        findings.append(hard_bin)
+    except Exception:
+        pass
+
     truth = {"schema": "cbom-testbench holdout truth", "generator": GENERATOR_VERSION, "asset_problems": asset_problems, "seed_sha256":
              hashlib.sha256(str(seed).encode()).hexdigest(), "findings": findings, "also_ok": also_ok,
              "decoys": {}, "materials": []}
