@@ -348,6 +348,7 @@ def score(bom: dict, tolerance: int = 1, policy: str = "nist", as_of: dt.date = 
             "out_of_scope_occurrences": out_of_scope, "unlocated_components": unlocated,
             "summary": summarize(results, false_positives),
             "parameter_recovery": parameter_recovery(results),
+            "binary_honesty": binary_honesty(results),
             "linkage": __import__("linkage").evaluate(results, gt, bom),
             "deadlines": summarize_deadlines(results, pol, as_of),
             "actionability": act.summarize(results, rubric),
@@ -472,6 +473,34 @@ def summarize(results, fps):
 
 
 
+
+# Known stripped binaries. An empty result without a recorded skip is a coverage honesty failure.
+KNOWN_BINARIES = (
+    "corpus/tier5/c/bin/meterd",
+    "corpus/tier5/c/bin/keyd",
+    "corpus/tier5/c/bin/fwcheck",
+)
+
+
+def binary_honesty(results: list[dict], skips: list[dict] | None = None) -> dict:
+    """Flag known binaries that produced no findings and no recorded skip.
+
+    A scanner that reads a binary and reports nothing must declare a skip so coverage
+    cannot claim the file was inspected and clean. Additive; does not change existing scores.
+    """
+    skips = skips or []
+    skip_paths = {s.get("path") for s in skips}
+    findings_by_path = {}
+    for r in results:
+        if r["detected"] and r["file"] in KNOWN_BINARIES:
+            findings_by_path.setdefault(r["file"], []).append(r["id"])
+    failures = []
+    for path in KNOWN_BINARIES:
+        if path not in findings_by_path and path not in skip_paths:
+            failures.append({"path": path, "reason": "binary: no findings and no recorded skip"})
+    return {"known": list(KNOWN_BINARIES), "failures": failures, "ok": not failures}
+
+
 def parameter_recovery(results: list[dict]) -> dict:
     """Breakdown of parameters correct among detected findings.
 
@@ -555,6 +584,21 @@ def to_markdown(name: str, rep: dict) -> str:
             if v["detected"]:
                 out.append(f"| {k} | {v['detected']} | {v['params_correct']} | {fmt(v['pct'])} |")
         out.append("")
+
+    bh = rep.get("binary_honesty")
+    if bh:
+        out += ["## Binary Evidence Honesty", "",
+                "Known stripped binaries must either produce findings or a recorded skip. "
+                "An empty result without a skip is a coverage honesty failure.", "",
+                f"**Status:** {'pass' if bh['ok'] else 'FAIL'} ({len(bh['failures'])} unrecorded empty binaries)", ""]
+        if bh["failures"]:
+            out += ["| Path | Reason |", "|---|---|"]
+            for f in bh["failures"]:
+                out.append(f"| `{f['path']}` | {f['reason']} |")
+            out.append("")
+        else:
+            out.append("All known binaries either produced findings or were skipped with a record.")
+            out.append("")
 
     out.append("")
     thin = [k for k, v in s.items() if isinstance(v, dict) and v.get("thin")]
