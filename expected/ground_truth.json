@@ -2186,6 +2186,19 @@
       "note": "PQC-washing decoy: labeled ML-KEM, actually ECDH. Reporting ML-KEM is an over-claim."
     },
     {
+      "id": "PQ-PY-07",
+      "tier": "pqc",
+      "lang": "python",
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "family": "LMS",
+      "params": {},
+      "anchors": [
+        "LMS_SHA256_M32_H5 = 0x00000005",
+        "def lms_verify("
+      ],
+      "note": "LMS implemented in the application (RFC 8554), no library call: only hashlib. Interoperates with Bouncy Castle in both directions."
+    },
+    {
       "id": "PQ-JV-01",
       "tier": "pqc",
       "lang": "java",
@@ -10870,6 +10883,13 @@
         "SHA-256"
       ],
       "note": "the digest inside crypto.sign"
+    },
+    {
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "families": [
+        "SHA-256"
+      ],
+      "note": "the hash LMS is built from"
     }
   ],
   "decoys": {

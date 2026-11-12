@@ -6875,6 +6875,29 @@
       "ticket_ready": true
     },
     {
+      "id": "PQ-PY-07",
+      "tier": "pqc",
+      "lang": "python",
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "family": "LMS",
+      "expected_params": {},
+      "expected_line": 12,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "Approved, with conditions: a one-time key must never sign twice, so key generation and signing belong in a hardware module that doesn't export the key. Meant for firmware and software signing, not general use.",
+      "algorithm": "LMS",
+      "actionability": {}
+    },
+    {
       "id": "PQ-JV-01",
       "tier": "pqc",
       "lang": "java",
@@ -19571,15 +19594,15 @@
       "precision": 50.0
     },
     "pqc/python": {
-      "expected": 6,
+      "expected": 7,
       "detected": 6,
-      "recall": 100.0,
+      "recall": 85.7,
       "recall_ci95": [
-        61.0,
-        100.0
+        48.7,
+        97.4
       ],
       "thin": true,
-      "usage_site_recall": 100.0,
+      "usage_site_recall": 85.7,
       "params_correct": 2,
       "params_accuracy": 33.3,
       "line_accuracy": 100.0,
@@ -19673,15 +19696,15 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 393,
+      "expected": 394,
       "detected": 265,
-      "recall": 67.4,
+      "recall": 67.3,
       "recall_ci95": [
-        62.6,
-        71.9
+        62.5,
+        71.7
       ],
       "thin": false,
-      "usage_site_recall": 63.6,
+      "usage_site_recall": 63.5,
       "params_correct": 148,
       "params_accuracy": 55.8,
       "line_accuracy": 99.2,
@@ -19826,14 +19849,14 @@
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 148,
+        "expected": 149,
         "detected": 105,
-        "recall": 70.9,
-        "primary_site_recall": 68.2
+        "recall": 70.5,
+        "primary_site_recall": 67.8
       }
     },
     "weighted_recall": 67.4,
-    "weighted_primary_site_recall": 62.9,
+    "weighted_primary_site_recall": 62.8,
     "missed_due_by_2030": [
       {
         "id": "T4-AS-03",
@@ -20137,8 +20160,8 @@
     "detected": 265,
     "ticket_ready": 135,
     "ticket_ready_pct": 50.9,
-    "actionable_recall": 34.4,
-    "expected": 393,
+    "actionable_recall": 34.3,
+    "expected": 394,
     "completeness_pct": 36.8,
     "checks": {
       "location": {
@@ -35447,20 +35470,20 @@
     }
   ],
   "manifest": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 393,
-    "finding_set": "3fcb732598bba9b6",
+    "scored_findings": 394,
+    "finding_set": "1325a7abe7ee8c86",
     "scope": null,
     "scanner": "grep baseline",
-    "scanner_version": "benchmark 2.4.1",
+    "scanner_version": "benchmark 2.5.0",
     "adapter": null
   }
 }

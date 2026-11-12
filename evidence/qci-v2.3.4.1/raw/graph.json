@@ -4032,6 +4032,13 @@
     "implemented_by": ""
   },
   {
+    "finding": "SHA-256",
+    "path": "pqc/python/firmware_verify_lms.py",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-256"
+  },
+  {
     "finding": "X25519",
     "path": "pqc/python/pq_hybrid_kem.py",
     "app": "corpus",

@@ -3145,6 +3145,23 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "PQ-PY-07",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/python/firmware_verify_lms.py",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "PQ-JV-01",
       "name": "ML-KEM-1024",
       "cryptoProperties": {

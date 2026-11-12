@@ -1,6 +1,6 @@
 {
   "project": "corpus",
-  "findings": 855,
+  "findings": 856,
   "readiness_score": 0.0,
   "breakdown": {
     "vulnerable_count": 319,
@@ -19,17 +19,17 @@
   "ignored": 0,
   "baseline_diff": null,
   "outputs": {
-    "report": "/tmp/cbom-sandbox-dty1u70i/out/report.html",
-    "cbom": "/tmp/cbom-sandbox-dty1u70i/out/cbom.json",
-    "sarif": "/tmp/cbom-sandbox-dty1u70i/out/results.sarif"
+    "report": "/tmp/cbom-sandbox-matcm1m6/out/report.html",
+    "cbom": "/tmp/cbom-sandbox-matcm1m6/out/cbom.json",
+    "sarif": "/tmp/cbom-sandbox-matcm1m6/out/results.sarif"
   }
 }
 
 --- stderr ---
-Scanning /tmp/cbom-sandbox-dty1u70i/corpus with adapter(s): internal ...
-  qci-pattern: 1275 raw findings
-Deduplicated: 1275 → 855 findings
-Source findings: 853
+Scanning /tmp/cbom-sandbox-matcm1m6/corpus with adapter(s): internal ...
+  qci-pattern: 1276 raw findings
+Deduplicated: 1276 → 856 findings
+Source findings: 854
 Artifact findings: 2 (2 with a parameter)
-Not blended: 855
-Dependency graph: 855 edges
+Not blended: 856
+Dependency graph: 856 edges

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.5.0 (2026-11-12): LMS without a library
+
+One new finding, 394 in all; methodology 2.3. Everything rescanned, every bundle rebuilt.
+
+- **LMS implemented in Python.** `corpus/pqc/python/firmware_verify_lms.py` is RFC 8554 signing and
+  verification on `hashlib` alone (LMS_SHA256_M32_H5 over LMOTS_SHA256_N32_W8), the way firmware
+  verifiers are often written. No API call names the scheme. Checked against Bouncy Castle in both
+  directions: its signatures verify there, and Bouncy Castle's verify here. This replaces the
+  library-based Python case that couldn't be built.
+- **Gate floors reset.** The floors are now v2.3.4.1's own numbers; the ones carried in 2.4.1 from
+  earlier QCI releases are gone, and so is the `carried_from` note. v2.3.4.1 therefore passes its
+  ratchet gates by construction. The six findings it stopped reporting are still item 1 in
+  `integrations/qci-pqc/FINDINGS.md`, now with the line of scanner code that causes it.
+- **Container-lane bundle restored.** `evidence/qci-v2.3.4.1-container/` is v2.3.4.1 run in its own
+  container, for comparison with the namespace lane.
+
 ## 2.4.1 (2026-11-11): one scanner release, remeasured
 
 The corpus, answer key, scorer and methodology (2.3) are those of 2.4.0. What changed is what is

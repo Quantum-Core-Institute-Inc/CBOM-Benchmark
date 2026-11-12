@@ -1,22 +1,22 @@
 {
   "bundle_format": 1,
-  "testbench": "2.4.1",
+  "testbench": "2.5.0",
   "methodology": "2.3",
-  "created": "2026-11-11T23:23:43Z",
+  "created": "2026-11-12T12:42:08Z",
   "stamp": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "6d35dec80deb988f"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "6d850e3ac42d0dd06bfdcce9151c1e6b40f4cf5272778f63eececea27c78f0b6",
-    "expected/ground_truth.json": "6954e7b555a574e229395734417bef90adf5ad5bb78941321e125ef52c8d64da",
+    "VERSION": "732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c",
+    "expected/ground_truth.json": "d9303ef1ba46531cdffb04095cc45acdf1794f439275a140298cf0dc77a3d147",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
     "policies/eo14412-hva.json": "3fc1e30afe7f5965c825e8e043b91752d0d821b6e9053eaafe899a2aab49ebaf",
@@ -79,10 +79,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 52.17,
-    "cpu_user_s": 79.95,
-    "cpu_sys_s": 6.75,
-    "peak_rss_mb": 1527.6,
+    "wall_s": 72.7,
+    "cpu_user_s": 115.26,
+    "cpu_sys_s": 7.15,
+    "peak_rss_mb": 1215.0,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -103,7 +103,7 @@
     }
   },
   "headline": {
-    "scored_findings": 393,
+    "scored_findings": 394,
     "recall": 4.3,
     "primary_site_recall": 4.3,
     "params_accuracy": 76.5,
@@ -132,10 +132,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 51.15,
-      "cpu_user_s": 79.67,
-      "cpu_sys_s": 5.34,
-      "peak_rss_mb": 871.6,
+      "wall_s": 57.12,
+      "cpu_user_s": 89.74,
+      "cpu_sys_s": 5.69,
+      "peak_rss_mb": 1091.3,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -167,7 +167,7 @@
       "checks": 19,
       "passed": 19,
       "corpus": {
-        "passed": 523,
+        "passed": 524,
         "failed": 0,
         "skipped": 0
       }

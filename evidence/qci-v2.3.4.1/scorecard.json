@@ -5908,6 +5908,29 @@
       "ticket_ready": true
     },
     {
+      "id": "PQ-PY-07",
+      "tier": "pqc",
+      "lang": "python",
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "family": "LMS",
+      "expected_params": {},
+      "expected_line": 12,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "Approved, with conditions: a one-time key must never sign twice, so key generation and signing belong in a hardware module that doesn't export the key. Meant for firmware and software signing, not general use.",
+      "algorithm": "LMS",
+      "actionability": {}
+    },
+    {
       "id": "PQ-JV-01",
       "tier": "pqc",
       "lang": "java",
@@ -17849,15 +17872,15 @@
       "precision": 100.0
     },
     "pqc/python": {
-      "expected": 6,
+      "expected": 7,
       "detected": 6,
-      "recall": 100.0,
+      "recall": 85.7,
       "recall_ci95": [
-        61.0,
-        100.0
+        48.7,
+        97.4
       ],
       "thin": true,
-      "usage_site_recall": 100.0,
+      "usage_site_recall": 85.7,
       "params_correct": 3,
       "params_accuracy": 50.0,
       "line_accuracy": 100.0,
@@ -17951,15 +17974,15 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 366,
+      "expected": 367,
       "detected": 246,
-      "recall": 67.2,
+      "recall": 67.0,
       "recall_ci95": [
-        62.2,
-        71.8
+        62.1,
+        71.6
       ],
       "thin": false,
-      "usage_site_recall": 64.8,
+      "usage_site_recall": 64.6,
       "params_correct": 134,
       "params_accuracy": 54.5,
       "line_accuracy": 97.4,
@@ -18082,14 +18105,14 @@
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 136,
+        "expected": 137,
         "detected": 86,
-        "recall": 63.2,
-        "primary_site_recall": 61.8
+        "recall": 62.8,
+        "primary_site_recall": 61.3
       }
     },
-    "weighted_recall": 68.4,
-    "weighted_primary_site_recall": 65.6,
+    "weighted_recall": 68.3,
+    "weighted_primary_site_recall": 65.5,
     "missed_due_by_2030": [
       {
         "id": "T2-PY-04",
@@ -18372,8 +18395,8 @@
     "detected": 246,
     "ticket_ready": 113,
     "ticket_ready_pct": 45.9,
-    "actionable_recall": 30.9,
-    "expected": 366,
+    "actionable_recall": 30.8,
+    "expected": 367,
     "completeness_pct": 56.5,
     "checks": {
       "location": {
@@ -32567,29 +32590,29 @@
   ],
   "password_gated_results": [],
   "manifest": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 366,
-    "finding_set": "175e1e33c5dc3245",
+    "scored_findings": 367,
+    "finding_set": "a40523efb3328f36",
     "scope": "qci-pqc declared scope (docs/LIMITATIONS.md)",
     "scanner": "QCI v2.3.4.1",
     "scanner_version": "qci-pqc, version 2.3.4.1",
     "adapter": "qci-pqc 1.1"
   },
   "signal_coverage": {
-    "expected": 366,
+    "expected": 367,
     "strict_detected": 246,
     "signal_only": 14,
     "combined": 260,
-    "strict_recall": 67.2,
-    "combined_recall": 71.0,
+    "strict_recall": 67.0,
+    "combined_recall": 70.8,
     "signal_only_ids": [
       "MX-JS-2a",
       "PQ-AS-11",
@@ -32789,25 +32812,25 @@
         "category": "SSH-Modern-Cipher",
         "location": "system/payments-platform/edge/nginx/gateway.conf",
         "line": 9,
-        "ref": "QCI-0589"
+        "ref": "QCI-0590"
       },
       {
         "category": "SHA-3",
         "location": "tier1/go/hashes/main.go",
         "line": 8,
-        "ref": "QCI-0661"
+        "ref": "QCI-0662"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "tier4/assets/tls/haproxy.cfg",
         "line": 7,
-        "ref": "QCI-0835"
+        "ref": "QCI-0836"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "tier4/assets/tls/nginx.conf",
         "line": 21,
-        "ref": "QCI-0847"
+        "ref": "QCI-0848"
       }
     ]
   }

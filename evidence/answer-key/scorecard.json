@@ -8405,6 +8405,55 @@
       "ticket_ready": true
     },
     {
+      "id": "PQ-PY-07",
+      "tier": "pqc",
+      "lang": "python",
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "family": "LMS",
+      "expected_params": {},
+      "expected_line": 12,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": null,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        12
+      ],
+      "reported_files": [
+        "corpus/pqc/python/firmware_verify_lms.py"
+      ],
+      "rule": "file+family",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "Approved, with conditions: a one-time key must never sign twice, so key generation and signing belong in a hardware module that doesn't export the key. Meant for firmware and software signing, not general use.",
+      "algorithm": "LMS",
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": null,
+        "functions": true,
+        "quantum_level": null,
+        "code_context": true,
+        "provenance": true
+      },
+      "missing_must": [],
+      "ticket_ready": true
+    },
+    {
       "id": "PQ-JV-01",
       "tier": "pqc",
       "lang": "java",
@@ -20838,16 +20887,16 @@
       "precision": 100.0
     },
     "pqc/python": {
-      "expected": 6,
-      "detected": 6,
+      "expected": 7,
+      "detected": 7,
       "recall": 100.0,
       "recall_ci95": [
-        61.0,
+        64.6,
         100.0
       ],
       "thin": true,
       "usage_site_recall": 100.0,
-      "params_correct": 6,
+      "params_correct": 7,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -20940,8 +20989,8 @@
       "precision": 100.0
     },
     "all/all": {
-      "expected": 393,
-      "detected": 393,
+      "expected": 394,
+      "detected": 394,
       "recall": 100.0,
       "recall_ci95": [
         99.0,
@@ -20949,7 +20998,7 @@
       ],
       "thin": false,
       "usage_site_recall": 100.0,
-      "params_correct": 393,
+      "params_correct": 394,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -20964,8 +21013,8 @@
       "files": []
     },
     "pqc_standard_names": {
-      "detected": 27,
-      "standard": 27,
+      "detected": 28,
+      "standard": 28,
       "accuracy": 100.0,
       "prestandard_only": []
     }
@@ -21035,8 +21084,8 @@
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 148,
-        "detected": 148,
+        "expected": 149,
+        "detected": 149,
         "recall": 100.0,
         "primary_site_recall": 100.0
       }
@@ -21048,18 +21097,18 @@
   "actionability": {
     "rubric": "cbom-actionability-v1",
     "rubric_status": "proposed",
-    "detected": 393,
-    "ticket_ready": 393,
+    "detected": 394,
+    "ticket_ready": 394,
     "ticket_ready_pct": 100.0,
     "actionable_recall": 100.0,
-    "expected": 393,
+    "expected": 394,
     "completeness_pct": 100.0,
     "checks": {
       "location": {
         "label": "Exact location",
         "tier": "must",
-        "applicable": 393,
-        "passed": 393,
+        "applicable": 394,
+        "passed": 394,
         "pct": 100.0
       },
       "parameters": {
@@ -21114,8 +21163,8 @@
       "functions": {
         "label": "Crypto functions",
         "tier": "should",
-        "applicable": 344,
-        "passed": 344,
+        "applicable": 345,
+        "passed": 345,
         "pct": 100.0
       },
       "quantum_level": {
@@ -21128,15 +21177,15 @@
       "code_context": {
         "label": "Code context",
         "tier": "should",
-        "applicable": 122,
-        "passed": 122,
+        "applicable": 123,
+        "passed": 123,
         "pct": 100.0
       },
       "provenance": {
         "label": "Providing library",
         "tier": "should",
-        "applicable": 127,
-        "passed": 127,
+        "applicable": 128,
+        "passed": 128,
         "pct": 100.0
       },
       "cert_issuer": {
@@ -36881,20 +36930,20 @@
     }
   ],
   "manifest": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 393,
-    "finding_set": "3fcb732598bba9b6",
+    "scored_findings": 394,
+    "finding_set": "1325a7abe7ee8c86",
     "scope": null,
     "scanner": "answer key",
-    "scanner_version": "benchmark 2.4.1",
+    "scanner_version": "benchmark 2.5.0",
     "adapter": null
   }
 }

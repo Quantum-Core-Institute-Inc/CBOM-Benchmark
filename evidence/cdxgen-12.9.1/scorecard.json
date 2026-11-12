@@ -3998,6 +3998,29 @@
       "actionability": {}
     },
     {
+      "id": "PQ-PY-07",
+      "tier": "pqc",
+      "lang": "python",
+      "file": "corpus/pqc/python/firmware_verify_lms.py",
+      "family": "LMS",
+      "expected_params": {},
+      "expected_line": 12,
+      "detected": false,
+      "at_usage_site": false,
+      "params_ok": null,
+      "line_ok": null,
+      "quantum_ok": null,
+      "reported_params": [],
+      "reported_lines": [],
+      "reported_files": [],
+      "rule": "missed: no report of this family in the file",
+      "due": null,
+      "due_bucket": "none",
+      "due_note": "Approved, with conditions: a one-time key must never sign twice, so key generation and signing belong in a hardware module that doesn't export the key. Meant for firmware and software signing, not general use.",
+      "algorithm": "LMS",
+      "actionability": {}
+    },
+    {
       "id": "PQ-JV-01",
       "tier": "pqc",
       "lang": "java",
@@ -10557,12 +10580,12 @@
       "precision": null
     },
     "pqc/python": {
-      "expected": 6,
+      "expected": 7,
       "detected": 0,
       "recall": 0.0,
       "recall_ci95": [
         0.0,
-        39.0
+        35.4
       ],
       "thin": true,
       "usage_site_recall": 0.0,
@@ -10659,7 +10682,7 @@
       "precision": null
     },
     "all/all": {
-      "expected": 393,
+      "expected": 394,
       "detected": 17,
       "recall": 4.3,
       "recall_ci95": [
@@ -10754,7 +10777,7 @@
       "none": {
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
-        "expected": 148,
+        "expected": 149,
         "detected": 7,
         "recall": 4.7,
         "primary_site_recall": 4.7
@@ -11689,7 +11712,7 @@
     "ticket_ready": 13,
     "ticket_ready_pct": 76.5,
     "actionable_recall": 3.3,
-    "expected": 393,
+    "expected": 394,
     "completeness_pct": 35.8,
     "checks": {
       "location": {
@@ -20507,24 +20530,24 @@
     }
   ],
   "manifest": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",
-    "scored_findings": 393,
-    "finding_set": "3fcb732598bba9b6",
+    "scored_findings": 394,
+    "finding_set": "1325a7abe7ee8c86",
     "scope": null,
     "scanner": "cdxgen 12.9.1",
     "scanner_version": "\u001b[1mCycloneDX Generator 12.9.1\u001b[0m",
     "adapter": "cdxgen 1.0"
   },
   "signal_coverage": {
-    "expected": 393,
+    "expected": 394,
     "strict_detected": 17,
     "signal_only": 24,
     "combined": 41,

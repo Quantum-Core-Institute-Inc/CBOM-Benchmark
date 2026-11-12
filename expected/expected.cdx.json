@@ -4583,6 +4583,31 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "PQ-PY-07",
+      "name": "LMS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/pqc/python/firmware_verify_lms.py",
+            "line": 12,
+            "additionalContext": "LMS_SHA256_M32_H5 = 0x00000005"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "PQ-JV-01",
       "name": "ML-KEM-1024",
       "cryptoProperties": {
@@ -19419,6 +19444,7 @@
         "PQ-PY-04",
         "PQ-PY-05",
         "PQ-PY-06",
+        "PQ-PY-07",
         "MX-PY-1a",
         "MX-PY-1c",
         "MX-PY-1d",

@@ -10955,6 +10955,25 @@
           ]
         },
         {
+          "ruleId": "qci/SHA-256",
+          "level": "warning",
+          "message": {
+            "text": "SHA-256 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pqc/python/firmware_verify_lms.py"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/X25519",
           "level": "error",
           "message": {
