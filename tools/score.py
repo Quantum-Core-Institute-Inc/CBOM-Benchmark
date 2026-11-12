@@ -348,6 +348,7 @@ def score(bom: dict, tolerance: int = 1, policy: str = "nist", as_of: dt.date = 
             "out_of_scope_occurrences": out_of_scope, "unlocated_components": unlocated,
             "summary": summarize(results, false_positives),
             "parameter_recovery": parameter_recovery(results),
+            "config_completeness": config_completeness(results),
             "binary_honesty": binary_honesty(results),
             "linkage": __import__("linkage").evaluate(results, gt, bom),
             "deadlines": summarize_deadlines(results, pol, as_of),
@@ -501,6 +502,30 @@ def binary_honesty(results: list[dict], skips: list[dict] | None = None) -> dict
     return {"known": list(KNOWN_BINARIES), "failures": failures, "ok": not failures}
 
 
+
+def config_completeness(results: list[dict]) -> dict:
+    """Config-completeness among detected findings that carry config-like parameters.
+
+    A finding is config-complete when its expected params include at least one of
+    protocol version, cipher/proposal, or DH/group size and the report matched them.
+    Additive; does not change existing scores.
+    """
+    CONFIG_KEYS = {"version", "protocol", "min_version", "cipher", "ciphers", "suite",
+                   "suites", "proposal", "dh", "group", "modp", "named_group"}
+    def is_config(r):
+        return bool(set(r.get("expected_params") or {}) & CONFIG_KEYS)
+    sel = [r for r in results if is_config(r)]
+    det = [r for r in sel if r["detected"]]
+    ok = sum(1 for r in det if r["params_ok"])
+    # Asset links are tracked separately in linkage; surface the count here for visibility
+    return {
+        "config_expected": len(sel),
+        "config_detected": len(det),
+        "config_complete": ok,
+        "config_pct": pct(ok, len(det)) if det else None,
+    }
+
+
 def parameter_recovery(results: list[dict]) -> dict:
     """Breakdown of parameters correct among detected findings.
 
@@ -584,6 +609,16 @@ def to_markdown(name: str, rep: dict) -> str:
             if v["detected"]:
                 out.append(f"| {k} | {v['detected']} | {v['params_correct']} | {fmt(v['pct'])} |")
         out.append("")
+
+    cc = rep.get("config_completeness")
+    if cc and cc.get("config_expected"):
+        out += ["## Config Completeness", "",
+                "Detected findings that carry protocol version, cipher/proposal, or DH/group size, "
+                "and whether those parameters matched. See also asset links in the linkage section.", "",
+                "| Bucket | Expected | Detected | Config-complete | % |",
+                "|---|---|---|---|---|",
+                f"| TLS / SSH / IPsec / config | {cc['config_expected']} | {cc['config_detected']} | {cc['config_complete']} | {fmt(cc['config_pct'])} |",
+                ""]
 
     bh = rep.get("binary_honesty")
     if bh:
