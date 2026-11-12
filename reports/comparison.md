@@ -2,7 +2,7 @@
 
 Shipped corpus only, every scanner on the same denominator, no declared scopes. Baselines (grep baseline) are calibration points, not products.
 
-Testbench 2.6.1, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scorer 1362cfc06eabaf34. Scanners: QCI v2.3.4.1 = qci-pqc, version 2.3.4.1 via qci_pqc 1.1; cdxgen 12.9.1 = CycloneDX Generator 12.9.1 via cdxgen 1.0; grep baseline = grep baseline.
+Testbench 2.6.3, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scorer 1362cfc06eabaf34. Scanners: QCI v2.3.4.1 = qci-pqc, version 2.3.4.1 via qci_pqc 1.1; cdxgen 12.9.1 = CycloneDX Generator 12.9.1 via cdxgen 1.0; grep baseline = grep baseline.
 
 ## Overall
 

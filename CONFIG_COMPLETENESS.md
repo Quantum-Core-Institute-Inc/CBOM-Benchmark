@@ -13,7 +13,7 @@ For TLS, SSH, IPsec and related config findings, a report is **config-complete**
 
 Missing any of these is scored under **config completeness**, not under raw algorithm recall.
 
-## Current gaps (2.6.0 / 2.6.1)
+## Current gaps (addressed in 2.6.2+)
 
 | Format | Findings | Typical miss |
 |--------|----------|--------------|
@@ -23,7 +23,7 @@ Missing any of these is scored under **config completeness**, not under raw algo
 | System fixture asset links | 2 | nginx config ↔ certificate, certificate ↔ key (currently 0/2) |
 | LMS / XMSS | 8 | pure-Python, OID-only keys, policy names |
 
-## Planned for 2.6.2
+## Shipped in 2.6.2
 
 - Additional grammar cases for the formats above.
 - Asset-link scoring made more prominent in the scorecard and comparison tables.

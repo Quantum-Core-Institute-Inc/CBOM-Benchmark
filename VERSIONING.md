@@ -32,7 +32,7 @@ Every scorecard and evidence bundle records a stamp (`tools/release.py`):
 
 ## Next release
 
-The next release is **2.6.2**. Subsequent ordinary work stays on the 2.6 line until a deliberate methodology or breaking change.
+The next release is **2.6.3**. Subsequent ordinary work stays on the 2.6 line until a deliberate methodology or breaking change.
 
 ## Restamping published artifacts
 
