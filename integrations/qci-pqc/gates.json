@@ -51,7 +51,7 @@
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "08c38c88e193228d",
+    "scorer": "1362cfc06eabaf34",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"
   },
