@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.6.3 (2026-11-12): hard holdout cells and leaderboard adapters
+
+Methodology stays 2.3. Patch release on the 2.6 line.
+
+- **Holdout hard cells.** Generator 1.3 emits minified-JS, stripped-binary, and LMS/XMSS OID-only cells.
+- **Recalibration script.** `tools/recalibrate.sh` runs a five-seed holdout recalibration.
+- **Leaderboard adapters.** Stubs for cryptoscan and qScan so open scanners can join the comparison table.
+
+
 ## 2.6.2 (2026-11-12): additive scorecard sections and stamp tooling
 
 Methodology stays 2.3. This is a patch release on the 2.6 line.
