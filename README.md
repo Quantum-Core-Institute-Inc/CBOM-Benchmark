@@ -1,15 +1,15 @@
 # QCI CBOM Benchmark
 
-> A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners. It scores a scanner's CycloneDX 1.6 output against 393 known findings. Not a certification.
+> A graded test corpus and scoring harness for Cryptographic Bill of Materials (CBOM) scanners. It scores a scanner's CycloneDX 1.6 output against 394 known findings. Not a certification.
 
 [![testbench](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/testbench.yml/badge.svg)](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/testbench.yml)
 [![image](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/image.yml/badge.svg)](https://github.com/Quantum-Core-Institute-Inc/CBOM-Benchmark/actions/workflows/image.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Methodology 2.3](https://img.shields.io/badge/methodology-2.3-informational.svg)](METHODOLOGY.md)
 
-**Version:** 2.4.1 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
+**Version:** 2.5.0 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
 
-2.4.1 publishes one QCI scanner release (v2.3.4.1), remeasures every holdout number on generator 1.2 and reorganises this README. The corpus and answer key are those of 2.4.0.
+2.5.0 adds LMS implemented in Python with no library behind it, resets the gate floors to the one published QCI scanner release, and restores the container-lane evidence bundle.
 
 [Release notes](CHANGELOG.md) · [Methodology](METHODOLOGY.md) · [Results](reports/comparison.md) · [Evidence](evidence/) · [Holdout sets](HOLDOUT.md) · [Bring your own code](BYOC.md)
 
@@ -23,7 +23,7 @@ for whether an engineer could open a ticket from it. Because a public corpus get
 benchmark also generates private holdout sets that show whether a published score still predicts
 performance on unseen code.
 
-- **393 findings in seven languages** (Python, Java, Go, JavaScript/TypeScript, C/OpenSSL, C#/.NET)
+- **394 findings in seven languages** (Python, Java, Go, JavaScript/TypeScript, C/OpenSSL, C#/.NET)
   plus certificates, keys, keystores, configs and compiled artifacts. Every code case runs and every
   asset parses.
 - **Five tiers of difficulty**, from a literal `hashlib.md5()` to a stripped binary, plus a
@@ -124,7 +124,8 @@ required checks; `perf` times a scanner on a large generated tree.
   one the run is recorded as "not confined" and `--require-isolation` refuses.
 - **The container lane** is for a scanner you don't trust at all. It runs in an image that holds only
   the scanner (`integrations/scanner-image.Dockerfile` builds one from wheels), with no network, a
-  read-only root, no capabilities, the corpus mounted read-only and one output directory.
+  read-only root, no capabilities, the corpus mounted read-only and one output directory. QCI
+  v2.3.4.1 scores the same in both lanes (`evidence/qci-v2.3.4.1-container/`).
 - **The build step isn't sandboxed**: `pip install` runs the scanner's code and needs the network.
   For someone else's scanner, build in a job with no secrets and score in another;
   `integrations/qci-pqc/github-workflow.yml` does that, and
@@ -228,7 +229,7 @@ file boundary, then source code altogether, then the name itself.
 | **3. Cross-file flow** | Multi-file projects. Algorithm names and key sizes defined in one module and used in another; a shared wrapper called with two different key sizes; decorator registries and strategy factories; constructor dependency injection; JWT `alg` read from `.ini` / `.properties` and resolved through a lookup table. | 16 (9 Python in 5 projects, 7 Java in 4 projects) |
 | **4. Non-code assets** | X.509 certificates (PEM, DER, a two-cert chain, one SHA-1-signed); private keys (PKCS#8, SEC1 on secp256k1, password-encrypted PKCS#8); a JWKS; a PKCS#12 keystore and a JKS truststore; an sshd_config, an SSH host public key and an OpenSSH private key; nginx, Apache httpd, HAProxy, Spring Boot and OpenSSL TLS configs (HAProxy sets its DH group size on a tuning line, away from the ciphers); strongSwan IPsec proposals in both `swanctl.conf` and legacy `ipsec.conf` spelling (`aes256-sha256-modp2048`); a Kubernetes TLS secret with the certificate base64-encoded inside YAML. | 68 |
 | **5. Adversarial** | Names assembled at runtime (fragments, base64, `chr()` codes, reversed strings, char arrays); `importlib` and Java reflection; hand-rolled RC4, SHA-256, TEA and textbook RSA with no crypto library call at all; a `.pyc` and a `.jar` with no source; a ProGuard-obfuscated `.jar` (every name replaced, algorithm strings intact); a minified JavaScript bundle (one line, the cipher name hoisted into a one-letter constant); a stripped ELF binary whose only trace of MD5 and 3DES is two imported libcrypto symbols, and whose RSA key size is an immediate operand. | 26 (9 Python, 11 Java, 3 JavaScript, 3 C) |
-| **PQC** | ML-KEM-768/1024 and ML-DSA-44/65/87 via `cryptography`, the JDK 24+ JCA and Go's `crypto/mlkem`; Go `tls.Config` preferring `X25519MLKEM768` with an X25519 fallback; including a parameter set passed through a constant or `NamedParameterSpec`; an application-level X25519 + ML-KEM hybrid; ML-DSA certificates, one PQ key signed by a classical RSA CA; ML-KEM and ML-DSA key files; hybrid groups (`X25519MLKEM768`, `SecP384r1MLKEM1024`) in nginx and OpenSSL configs; `mlkem768x25519-sha256` and `sntrup761x25519` in sshd_config; two PQC-washing decoys plus a washing config; and LMS and XMSS: Bouncy Castle signing code, HSS/LMS and XMSS public keys identified only by OID, and a firmware signing policy that names both next to the P-384 signer it keeps for old devices. | 43 (6 Python, 6 Java, 4 Go, 27 assets) |
+| **PQC** | ML-KEM-768/1024 and ML-DSA-44/65/87 via `cryptography`, the JDK 24+ JCA and Go's `crypto/mlkem`; Go `tls.Config` preferring `X25519MLKEM768` with an X25519 fallback; including a parameter set passed through a constant or `NamedParameterSpec`; an application-level X25519 + ML-KEM hybrid; ML-DSA certificates, one PQ key signed by a classical RSA CA; ML-KEM and ML-DSA key files; hybrid groups (`X25519MLKEM768`, `SecP384r1MLKEM1024`) in nginx and OpenSSL configs; `mlkem768x25519-sha256` and `sntrup761x25519` in sshd_config; two PQC-washing decoys plus a washing config; and LMS and XMSS: Bouncy Castle signing code, HSS/LMS and XMSS public keys identified only by OID, and a firmware signing policy that names both next to the P-384 signer it keeps for old devices. | 44 (7 Python, 6 Java, 4 Go, 27 assets) |
 | **Mixed** | Realistic-size modules, 220 to 520 lines, with three to five crypto uses spread through ordinary code: CSV parsing, pagination, retries, money formatting, logging. Most files use one family twice with different parameters (AES-128-CBC and AES-256-CTR, HMAC-MD5 and HMAC-SHA512, P-256 and P-521); the surrounding code has numbers a guesser will grab (page sizes of 256, buffers of 32 bytes, `bit_length()`); log lines and note dictionaries name algorithms the file doesn't use, including PQC claims. Scored per site, not per file. | 62 sites in 15 files (3 Python, 3 Java, 3 Go, 2 JavaScript, 1 TypeScript, 3 C) |
 | **Dead code** | Crypto that ships and never runs: a function nothing calls, a branch behind a constant that is always false, statements after a `return`. It counts, because it's in the artifact an auditor will read and one config flip away from running. A scanner that prunes unreachable code misses all of it. | 10 (2 each in Python, Java, Go, JavaScript, C) |
 | **Negatives** | Algorithm names in docstrings, comments, UI labels, log messages, identifiers and a Markdown runbook; known-answer test vectors; CRC32, Adler32, Base64, `hash()`; a file with valid PEM armor around base64 that isn't a certificate; and code that reuses crypto's constants and math for other jobs (Fibonacci hashing with TEA's constant, `pow()` for an IBAN check, `modPow` in a primality test); in Go, JavaScript and C, algorithm names in string tables, display labels and changelog comments next to FNV, CRC32 and djb2. Zero real crypto. | 12 files |
@@ -244,8 +245,8 @@ reading key sizes out of comments: cleaning them up dropped its Tier 1 Java para
 87.5% to 56.2%. Case descriptions live in this README and in the ground truth's `note` fields.
 
 Coverage: MD5, SHA-1, SHA-256, SHA3-256, RSA, DSA, ECDSA, Ed25519, X25519, DH, AES, 3DES, HMAC and
-PBKDF2 have at least one case in each code language. 141 of the 393 findings are Shor-vulnerable, 92
-are classically broken, and 27 are post-quantum (6 hybrids, 6 stateful). 304 generated calibration
+PBKDF2 have at least one case in each code language. 141 of the 394 findings are Shor-vulnerable, 92
+are classically broken, and 28 are post-quantum (6 hybrids, 7 stateful). 304 generated calibration
 cases top up the Tier 1-2 cells for the overfit gap; they are scored but kept out of every headline
 number.
 
@@ -344,6 +345,12 @@ The LMS and XMSS cases use Bouncy Castle (`KeyPairGenerator.getInstance("LMS", "
 JDK has neither. Both are stateful: each signature spends a one-time key, and signing twice from the
 same state breaks the scheme. That is the reason to inventory them separately from ML-DSA, and why the
 corpus ships their public keys only.
+
+There is also LMS with no library at all: `corpus/pqc/python/firmware_verify_lms.py` implements RFC
+8554 signing and verification on `hashlib` alone, the way firmware verifiers often do. Nothing in
+it is an API call a scanner knows; what identifies it is the parameter-set constants
+(`LMS_SHA256_M32_H5`, `LMOTS_SHA256_N32_W8`) and the shape of the code. Its signatures verify under
+Bouncy Castle and Bouncy Castle's verify under it.
 
 ## How scoring works
 
@@ -448,9 +455,9 @@ Three runs ship with every release, so a new scorecard has something to be read 
 <!-- generated:calibration-points (tools/render_docs.py; edit the scorecards, not this table) -->
 | Run | Findings | Recall | At primary site | Params correct | False positives | Precision | PQC over-claims | Ticket-ready | Actionable recall |
 |---|---|---|---|---|---|---|---|---|---|
-| `expected/expected.cdx.json` (the answer key) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
-| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 393 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
-| `tools/baseline_grep.py` (naive regex) | 393 | 67.4% | 63.6% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.4% |
+| `expected/expected.cdx.json` (the answer key) | 394 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 100.0% | 100.0% |
+| `reports/reference-names-only.cdx.json` (answer key, names and locations only) | 394 | 100.0% | 100.0% | 100.0% | 0 | 100.0% | 0 | 75.1% | 75.1% |
+| `tools/baseline_grep.py` (naive regex) | 394 | 67.3% | 63.5% | 55.8% | 170 | 60.9% | 28 | 50.9% | 34.3% |
 
 Shipped corpus only (BYOC example cases excluded), so every row has the same denominator.
 <!-- /generated:calibration-points -->
@@ -470,7 +477,7 @@ Grep by tier, which is the shape to expect from a weak scanner:
 | 4. Non-code assets | 66 | 34.8% | 34.8% | 69.6% |
 | 5. Adversarial, source and bytecode | 20 | 0% | 0% | n/a |
 | 5. Adversarial, minified JS and native binary | 6 | 66.7–100% | 66.7–100% | 50–100% |
-| PQC, code | 16 | 50–100% | 50–100% | 25–50% |
+| PQC, code | 17 | 50–85.7% | 50–85.7% | 25–50% |
 | PQC, assets | 27 | 37% | 37% | 90% |
 | Mixed files | 62 | 69.2–100% | 69.2–100% | 18.2–50% |
 | System fixture | 26 | 18.2–100% | 0–66.7% | 33.3–100% |

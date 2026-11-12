@@ -1,0 +1,61 @@
+{
+  "files": {
+    "cbom.json": {
+      "sha256": "5fd94e722dce074b85e806b4ead11280caf8f3beb1ca7975b01aa07469cbce20",
+      "size": 1975013
+    },
+    "findings.json": {
+      "sha256": "f10b4964e79c36f5b1cadaeaa577717599f34c59c99161122ef9a76390dbaf1f",
+      "size": 264332
+    },
+    "graph.json": {
+      "sha256": "63b73007a08b20304ba57ba193daa2531be3ce6f08a97df2896bac01f6d034f7",
+      "size": 134514
+    },
+    "report.html": {
+      "sha256": "f1d2ae8fa3f50631214d9595504625ff9df60aba93b284bcbfe44e32cb0a6e05",
+      "size": 453479
+    },
+    "results.sarif": {
+      "sha256": "fe3e45ba962bb9e8564b698f9d48fb86f94077666c245cd776b0c987bba562de",
+      "size": 417906
+    },
+    "scan-coverage.json": {
+      "sha256": "beb129e772ddec53e133bd276c00bb841464decdc9bf10c43d6a08ae1e7e39a1",
+      "size": 110
+    }
+  },
+  "generated": null,
+  "input_revision": "",
+  "policy": {},
+  "reproducible": true,
+  "ruleset_hash": "ab09bbe5e792533c",
+  "scanner_build": "2.3.4.1",
+  "scanner_version": "2.3.4.1",
+  "summary": {
+    "baseline_diff": null,
+    "breakdown": {
+      "bonus_pqc": 40,
+      "formula": "100 - (vulnerable\u00d715) - (weak\u00d75). PQC is recorded, not added.",
+      "penalty_vulnerable": 4785,
+      "penalty_weak": 920,
+      "pqc_count": 20,
+      "raw": -5605.0,
+      "scored": true,
+      "vulnerable_count": 319,
+      "weak_count": 184
+    },
+    "findings": 856,
+    "ignored": 0,
+    "outputs": {
+      "cbom": "/out/cbom.json",
+      "report": "/out/report.html",
+      "sarif": "/out/results.sarif"
+    },
+    "project": "corpus",
+    "readiness_score": 0.0,
+    "scanners": [
+      "qci-pattern"
+    ]
+  }
+}

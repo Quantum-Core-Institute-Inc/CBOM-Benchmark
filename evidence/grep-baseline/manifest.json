@@ -1,21 +1,21 @@
 {
   "bundle_format": 1,
-  "testbench": "2.4.1",
+  "testbench": "2.5.0",
   "methodology": "2.3",
-  "created": "2026-11-11T23:24:40Z",
+  "created": "2026-11-12T12:43:11Z",
   "stamp": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "6d850e3ac42d0dd06bfdcce9151c1e6b40f4cf5272778f63eececea27c78f0b6",
-    "expected/ground_truth.json": "6954e7b555a574e229395734417bef90adf5ad5bb78941321e125ef52c8d64da",
+    "VERSION": "732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c",
+    "expected/ground_truth.json": "d9303ef1ba46531cdffb04095cc45acdf1794f439275a140298cf0dc77a3d147",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
     "policies/eo14412-hva.json": "3fc1e30afe7f5965c825e8e043b91752d0d821b6e9053eaafe899a2aab49ebaf",
@@ -31,7 +31,7 @@
   },
   "scanner": {
     "name": "grep baseline",
-    "version": "benchmark 2.4.1",
+    "version": "benchmark 2.5.0",
     "cmd": [
       "python3",
       "baseline_grep.py",
@@ -72,9 +72,9 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 1.09,
-    "cpu_user_s": 1.03,
-    "cpu_sys_s": 0.04,
+    "wall_s": 1.13,
+    "cpu_user_s": 1.08,
+    "cpu_sys_s": 0.05,
     "peak_rss_mb": 32.2,
     "isolation": {
       "environment": "scrubbed",
@@ -96,16 +96,16 @@
     }
   },
   "headline": {
-    "scored_findings": 393,
-    "recall": 67.4,
-    "primary_site_recall": 63.6,
+    "scored_findings": 394,
+    "recall": 67.3,
+    "primary_site_recall": 63.5,
     "params_accuracy": 55.8,
     "precision": 60.9,
     "false_positives": 170,
     "pqc_overclaims": 28,
     "pqc_standard_name_pct": 100.0,
     "ticket_ready_pct": 50.9,
-    "actionable_recall": 34.4,
+    "actionable_recall": 34.3,
     "deadline_weighted_recall": 67.4,
     "library_recall": 0.0
   },
@@ -122,10 +122,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 1.09,
-      "cpu_user_s": 1.03,
-      "cpu_sys_s": 0.05,
-      "peak_rss_mb": 73.6,
+      "wall_s": 1.11,
+      "cpu_user_s": 1.05,
+      "cpu_sys_s": 0.04,
+      "peak_rss_mb": 73.7,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -157,7 +157,7 @@
       "checks": 19,
       "passed": 19,
       "corpus": {
-        "passed": 523,
+        "passed": 524,
         "failed": 0,
         "skipped": 0
       }

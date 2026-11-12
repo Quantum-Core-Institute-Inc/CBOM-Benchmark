@@ -22,5 +22,5 @@
 | library recall | 75.0 |
 | library pq verdict accuracy | None |
 
-Signal coverage: crypto-file entries cover 24 more expected findings (combined 41/393, 10.4%).
+Signal coverage: crypto-file entries cover 24 more expected findings (combined 41/394, 10.4%).
 

@@ -1,14 +1,14 @@
 # QCI PQC Scanner on the CBOM Testbench
 
 - Scanner: **qci-pqc, version 2.3.4.1**, adapter(s) `internal`
-- Scanner's own CBOM: valid CycloneDX 1.6; 855 components
+- Scanner's own CBOM: valid CycloneDX 1.6; 856 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-11 23:07 UTC
+- Run: 2026-11-12 12:22 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
-| Recall | 67.2% | 63.6% |
-| At primary site | 64.8% | 61.3% |
+| Recall | 67.0% | 63.5% |
+| At primary site | 64.6% | 61.2% |
 | Parameters correct | 54.5% | 54.4% |
 | Precision | 99.6% | 99.6% |
 | False positives | 1 | 1 |
@@ -17,9 +17,9 @@
 | PQC by standard name (of detected PQC) | 100.0% | 100.0% |
 | System fixture: routable (of detected) | 61.5% | 61.5% |
 | Ticket-ready (of detected) | 45.9% | 45.2% |
-| Actionable recall | 30.9% | 28.8% |
+| Actionable recall | 30.8% | 28.7% |
 | Field completeness | 56.5% | 56.2% |
-| Deadline-weighted recall (nist) | 68.4% | 64.7% |
+| Deadline-weighted recall (nist) | 68.3% | 64.6% |
 | Missed findings due by 2030 | 39 | 49 |
 | Crypto libraries, right manifest | 96.4% | 96.4% |
 | Library PQC verdicts right | n/a | n/a |
@@ -31,7 +31,7 @@
 | Holdout crypto libraries, right manifest | 86.7% | n/a |
 | Library gap (points, not gated) | 5.3 | n/a |
 
-Risk-signal coverage (in scope): strict 246/366, plus 14 covered only by a QCI category signal, combined **71.0%**.
+Risk-signal coverage (in scope): strict 246/367, plus 14 covered only by a QCI category signal, combined **70.8%**.
 
 | Bucket | Detected | Recall | At primary site | Params |
 |---|---|---|---|---|
@@ -68,7 +68,7 @@ Risk-signal coverage (in scope): strict 246/366, plus 14 covered only by a QCI c
 | pqc/assets | 19/25 | 76.0% | 76.0% | 100.0% |
 | pqc/go | 1/4 | 25.0% | 25.0% | 100.0% |
 | pqc/java | 4/6 | 66.7% | 66.7% | 50.0% |
-| pqc/python | 6/6 | 100.0% | 100.0% | 50.0% |
+| pqc/python | 6/7 | 85.7% | 85.7% | 50.0% |
 | system/artifacts | 0/4 | 0.0% | 0.0% | n/a |
 | system/assets | 5/9 | 55.6% | 55.6% | 40.0% |
 | system/go | 3/3 | 100.0% | 33.3% | 33.3% |
@@ -163,15 +163,9 @@ Direct dependencies found in the right manifest: published 92.0% (weighted to th
 
 ## Gates
 
-Testbench 2.4.1; stamp `{"release": "2.4.1", "methodology": "2.3", "findings": 393, "answer_key": "c9f27be6d6a5098a", "corpus": "a0087dc174d516e4", "scorer": "4449df0c3850c51f", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
+Testbench 2.5.0; stamp `{"release": "2.5.0", "methodology": "2.3", "findings": 394, "answer_key": "a4ecdd86a8a593eb", "corpus": "ce56704b1418c9a2", "scorer": "4449df0c3850c51f", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
 
-**FAILED** (5):
-
-- recall = 67.2 is below the gate minimum 68.6
-- primary_site_recall = 64.8 is below the gate minimum 66.1
-- params_accuracy = 54.5 is below the gate minimum 63.4
-- ticket_ready_pct = 45.9 is below the gate minimum 54.3
-- deadline_weighted_recall = 68.4 is below the gate minimum 69.8
+**All gates passed.**
 
 Skipped:
 

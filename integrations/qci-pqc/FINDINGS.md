@@ -1,6 +1,6 @@
 # qci-pqc-scan v2.3.4.1 on the QCI CBOM Benchmark: findings for the scanner team
 
-Scanner: `qci-pqc-scan` 2.3.4.1, internal adapter, run in the sandbox. Benchmark 2.4.1 (393
+Scanner: `qci-pqc-scan` 2.3.4.1, internal adapter, run in the sandbox. Benchmark 2.5.0 (394
 findings, methodology 2.3, NIST policy), declared scope from `integrations/qci-pqc/scope.json`,
 holdout generator 1.2. Reproduce with `python tools/run_qci_pqc.py --scanner <checkout>` and
 `CBOM_HOLDOUT_SEED` set. Evidence: `evidence/qci-v2.3.4.1/` and `evidence/perf-qci-v2.3.4.1/`; the
@@ -10,12 +10,12 @@ numbers below are in `reports/qci-pqc/SUMMARY.md`.
 
 | | In declared scope | Everything |
 |---|---|---|
-| Recall | 67.2% | 63.6% |
-| At primary site | 64.8% | 61.3% |
+| Recall | 67.0% | 63.5% |
+| At primary site | 64.6% | 61.2% |
 | Parameters correct (of detected) | 54.5% | 54.4% |
 | Precision | 99.6% (1 false positive) | 99.6% |
 | Ticket-ready (of detected) | 45.9% | 45.2% |
-| Deadline-weighted recall | 68.4% | 64.7% |
+| Deadline-weighted recall | 68.3% | 64.6% |
 | Missed findings due by 2030 | 39 | 49 |
 | Crypto libraries in the right manifest | 96.4% | |
 | Overfit gap | -0.8 (interval -5.8 to +4.3), not significant | |
@@ -26,9 +26,9 @@ PQC over-claims; libraries are found in the right manifest; the published score 
 unseen code; the CBOM validates as CycloneDX 1.6; and on the large tree it finds all 60 planted uses
 in 115 seconds with no fall-off toward the end.
 
-It fails five gates, all of them ratchet floors: recall, primary-site recall, parameters,
-ticket-ready and deadline-weighted recall. A floor is the best value a QCI release has reached on
-this corpus, and it doesn't move down. The first item below is why recall is under its floor.
+The gate floors were reset on this release to v2.3.4.1's own numbers, at the scanner owner's
+request, so it passes every gate by construction. What the old floors would have flagged is item 1:
+six findings this release no longer reports.
 
 ## 1. Binaries are read and nothing is reported from them
 
@@ -45,10 +45,19 @@ Two things make this worse than a plain miss:
 - **The release notes don't mention it.** They list a symlink check and a change to wrapper
   matching.
 
-It did remove two false positives (DH matched in the bytes of both binaries), which is why precision
-rose from 98.8% to 99.6%. If dropping the byte matcher was the intent, the binaries belong in the
-declared scope and in `scan-coverage.json` as not inspected, and the imported-symbol evidence
-(`EVP_md5`, `EVP_des_ede3_cbc` in `.dynsym`) is the reliable way back to those findings.
+**The cause is one added check.** In `scanner.py`, the source pass now reads each file as bytes
+and moves on if there is a NUL in the first 1,024 (`if b"\x00" in raw[:1024]: continue`). Before,
+it decoded everything as text and ran the source patterns over it, which is how `EVP_md5` in a
+binary's symbol table became an MD5 finding, and also how "DH" somewhere in the bytes became a DH
+finding. The check removed both at once: the two false positives are gone (precision 98.8% to
+99.6%) and so are the six real findings. The `continue` records nothing, which is why the coverage
+file still shows the binary as read.
+
+Two changes fix it properly. Record the skip (`skip(rel, "binary: not scanned as source")`), so the
+coverage file is true. Then get the findings back from evidence that can't produce the old false
+positives: `artifacts.py` already parses ELF headers for needed libraries; reading the dynamic symbol
+table next to it (`EVP_md5`, `EVP_des_ede3_cbc`, `EVP_PKEY_CTX_set_rsa_keygen_bits`) gives exact
+names where the byte matcher gave substrings.
 
 ## 2. Parameters: found, but not sized
 
@@ -79,7 +88,7 @@ The same gap shows in the asset fields a ticket needs: certificate expiry and su
 | Apache httpd (5) | 0 | `SSLProtocol` and `SSLCipherSuite` aren't read. The nginx equivalents are. |
 | HAProxy (6) | 1 | Finds the DH group, without its size. Misses `ssl-min-ver` and both cipher lines. |
 | IPsec (9) | 1 | Finds `chacha20poly1305` in `swanctl.conf`. `aes256-sha256-modp2048` and `3des-sha1-modp1024!` aren't parsed. |
-| LMS and XMSS (7) | 0 | Not in Bouncy Castle code, not by OID in the two public keys, not by name in the signing policy. The P-384 signer in that policy is missed too. |
+| LMS and XMSS (8) | 0 | Not in Bouncy Castle code, not in the pure-Python implementation, not by OID in the two public keys, not by name in the signing policy. The P-384 signer in that policy is missed too. |
 | Minified JavaScript (3) | 0 | `e.createHash("md5")` on a one-line bundle. The same call is found in ordinary source. |
 | C#, direct (13) | 9 | Misses `MD5.HashData`, `SHA256.HashData` and `SHA3_256.HashData` in a file where it finds `SHA1.HashData`, and `new HMACSHA256(...)`. |
 | C#, indirection (6) | 3 | Misses `IncrementalHash.CreateHash(new HashAlgorithmName(Fingerprint))` and both entries of a `Func<HashAlgorithm>` table. |
@@ -112,12 +121,11 @@ everything they retire beforehand. Nothing outside the migrated files changed be
 ## Where to spend effort
 
 1. **Decide what the scanner does with binaries, and say so.** Either restore the findings from
-   imported symbols or declare binaries out of scope and list them as not inspected. Six findings and
-   the recall floor.
+   imported symbols or declare binaries out of scope and list them as not inspected. Six findings.
 2. **Carry parameters through.** The detections exist; sizes, curves and modes at the call site are
    the cheapest points on the board, and they move parameters, ticket-ready and four migrations at
    once.
 3. **Apache and HAProxy directives.** Eleven findings, and the nginx parser is already there.
 4. **IPsec proposal strings.** Nine findings behind one small grammar.
-5. **LMS and XMSS.** Seven findings, and the first thing a CNSA 2.0 firmware-signing audit asks about.
+5. **LMS and XMSS.** Eight findings, and the first thing a CNSA 2.0 firmware-signing audit asks about.
    A scanner that can't name them reports that estate as empty.

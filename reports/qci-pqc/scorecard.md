@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: qci-pqc, version 2.3.4.1 (adapter 1.1), declared scope
 
-**Overall:** 246/366 findings detected (67.2% recall), 1 false positives (99.6% precision), parameters correct on 54.5% of detections.
+**Overall:** 246/367 findings detected (67.0% recall), 1 false positives (99.6% precision), parameters correct on 54.5% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 246/304 detected (80.9%), 3 false positives.
 
@@ -39,13 +39,13 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | PQC assets | 19/25 | 76.0% | 56.6–88.5% | 76.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC go | 1/4 | 25.0% | 4.6–69.9% (thin) | 25.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC java | 4/6 | 66.7% | 30.0–90.3% (thin) | 66.7% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC python | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC python | 6/7 | 85.7% | 48.7–97.4% (thin) | 85.7% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture artifacts | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture assets | 5/9 | 55.6% | 26.7–81.1% (thin) | 55.6% | 40.0% | 66.7% | 100.0% | 0 | 100.0% |
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 246/366 | 67.2% | 62.2–71.8% | 64.8% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
+| **Total** | 246/367 | 67.0% | 62.1–71.6% | 64.6% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
 | Negative controls | | | | | | | | 0 | |
 
 Intervals are 95% Wilson intervals on recall. 27 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
@@ -81,7 +81,7 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 68.4%** (at primary site: 65.6%). **Findings due by end of 2030 that this scanner missed: 39.**
+**Deadline-weighted recall: 68.3%** (at primary site: 65.5%). **Findings due by end of 2030 that this scanner missed: 39.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
@@ -89,7 +89,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | Due by end of 2030 | 4 | 24/32 | 75.0% | 68.8% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
 | Due 2034 to 2035 | 2 | 72/103 | 69.9% | 67.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 86/136 | 63.2% | 61.8% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 86/137 | 62.8% | 61.3% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -137,7 +137,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 113/246 detected findings (45.9%)**, meaning every must-have is present and correct. **Actionable recall: 30.9%** of all 366 expected findings were both found and ticket-ready. Field completeness across all checks: 56.5%.
+**Ticket-ready: 113/246 detected findings (45.9%)**, meaning every must-have is present and correct. **Actionable recall: 30.8%** of all 367 expected findings were both found and ticket-ready. Field completeness across all checks: 56.5%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
@@ -286,6 +286,7 @@ Detected but not ticket-ready (133), first 25:
 | T5-C-01 | `corpus/tier5/c/bin/meterd` | MD5  | file |
 | T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
 | T5-C-03 | `corpus/tier5/c/bin/meterd` | RSA {'key_size': 1024} | file |
+| PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
 | PQ-AS-11 | `corpus/pqc/assets/tls/openssl_pq.cnf` | SecP384r1MLKEM1024  | 13 |
@@ -800,6 +801,7 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | PQ-PY-04 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-05 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-PY-06 | EC | yes | yes | yes | yes | yes |
+| PQ-PY-07 | LMS | NO | NO | n/a | n/a | n/a |
 | PQ-JV-01 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-JV-02 | ML-DSA | yes | yes | yes | yes | yes |
 | PQ-JV-03 | ML-DSA | yes | yes | NO | yes | n/a |
@@ -1028,9 +1030,9 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 
 QCI reports many findings as risk categories (`DH/ECDH`, `SSH-Weak-Cipher`, `Hybrid-KEM`) rather than specific algorithms. Those aren't credited in the strict score above. Here they are credited when a category sits on the line (±1) of an expected finding it plausibly describes.
 
-- Strict detections: **246/366** (67.2%)
+- Strict detections: **246/367** (67.0%)
 - Additional findings covered only by a category signal: **14**
-- Combined coverage: **260/366** (71.0%)
+- Combined coverage: **260/367** (70.8%)
 - Category signals emitted: 74; matching no expected finding: 30
 
 | Category | Expected findings it covers |

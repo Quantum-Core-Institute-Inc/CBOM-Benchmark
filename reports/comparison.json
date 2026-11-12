@@ -1,9 +1,9 @@
 {
   "QCI v2.3.4.1": {
-    "Findings": 393,
-    "Recall": 63.6,
-    "Recall incl. signals": 67.2,
-    "At primary site": 61.3,
+    "Findings": 394,
+    "Recall": 63.5,
+    "Recall incl. signals": 67.0,
+    "At primary site": 61.2,
     "Parameters correct (of detected)": 54.4,
     "False positives": 1,
     "  in negative controls": 0,
@@ -16,7 +16,7 @@
       2
     ],
     "Ticket-ready (of detected)": 45.2,
-    "Actionable recall": 28.8,
+    "Actionable recall": 28.7,
     "Detected, due by 2030 (NIST)": "63/90",
     "lib:Crypto libraries, in the right manifest": [
       27,
@@ -32,7 +32,7 @@
     "lib:False positives": 2,
     "lang:Python": [
       55,
-      67
+      68
     ],
     "lang:Java": [
       47,
@@ -84,7 +84,7 @@
     ],
     "tier:Post-quantum": [
       32,
-      43
+      44
     ],
     "tier:Mixed files": [
       50,
@@ -100,7 +100,7 @@
     ]
   },
   "cdxgen 12.9.1": {
-    "Findings": 393,
+    "Findings": 394,
     "Recall": 4.3,
     "Recall incl. signals": 10.4,
     "At primary site": 4.3,
@@ -132,7 +132,7 @@
     "lib:False positives": 0,
     "lang:Python": [
       0,
-      67
+      68
     ],
     "lang:Java": [
       0,
@@ -184,7 +184,7 @@
     ],
     "tier:Post-quantum": [
       0,
-      43
+      44
     ],
     "tier:Mixed files": [
       4,
@@ -200,10 +200,10 @@
     ]
   },
   "grep baseline": {
-    "Findings": 393,
-    "Recall": 67.4,
+    "Findings": 394,
+    "Recall": 67.3,
     "Recall incl. signals": null,
-    "At primary site": 63.6,
+    "At primary site": 63.5,
     "Parameters correct (of detected)": 55.8,
     "False positives": 170,
     "  in negative controls": 60,
@@ -216,7 +216,7 @@
       2
     ],
     "Ticket-ready (of detected)": 50.9,
-    "Actionable recall": 34.4,
+    "Actionable recall": 34.3,
     "Detected, due by 2030 (NIST)": "62/90",
     "lib:Crypto libraries, in the right manifest": [
       0,
@@ -232,7 +232,7 @@
     "lib:False positives": 0,
     "lang:Python": [
       56,
-      67
+      68
     ],
     "lang:Java": [
       51,
@@ -284,7 +284,7 @@
     ],
     "tier:Post-quantum": [
       22,
-      43
+      44
     ],
     "tier:Mixed files": [
       55,

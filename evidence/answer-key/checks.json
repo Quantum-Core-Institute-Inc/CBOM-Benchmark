@@ -1,16 +1,16 @@
 {
-  "testbench": "2.4.1",
+  "testbench": "2.5.0",
   "methodology": "2.3",
   "stamp": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48"
   },
-  "created": "2026-11-11T23:22:18Z",
+  "created": "2026-11-12T12:39:39Z",
   "image": null,
   "host": {
     "python": "3.13.18",
@@ -22,7 +22,7 @@
     "checks": 19,
     "passed": 19,
     "corpus": {
-      "passed": 523,
+      "passed": 524,
       "failed": 0,
       "skipped": 0
     }
@@ -31,14 +31,14 @@
     {
       "name": "corpus executes (strict)",
       "status": "pass",
-      "detail": "All 523 corpus cases execute (0 failed, 0 skipped).",
-      "seconds": 166.9
+      "detail": "All 524 corpus cases execute (0 failed, 0 skipped).",
+      "seconds": 219.0
     },
     {
       "name": "answer key reproducible",
       "status": "pass",
       "detail": "byte-identical",
-      "seconds": 0.7
+      "seconds": 0.8
     },
     {
       "name": "mixed files reproducible",
@@ -50,13 +50,13 @@
       "name": "calibration cases reproducible",
       "status": "pass",
       "detail": "corpus/calibration matches the generator (304 cases)",
-      "seconds": 0.2
+      "seconds": 0.1
     },
     {
       "name": "reference replays to 100%",
       "status": "pass",
       "detail": "recall 100.0, params 100.0, FP 0",
-      "seconds": 3.2
+      "seconds": 3.4
     },
     {
       "name": "docs match scorecards",
@@ -68,7 +68,7 @@
       "name": "tests: test_bench",
       "status": "pass",
       "detail": "All bench checks pass.",
-      "seconds": 121.7
+      "seconds": 128.8
     },
     {
       "name": "tests: test_cdxgen_adapter",
@@ -80,7 +80,7 @@
       "name": "tests: test_compare",
       "status": "pass",
       "detail": "All comparison checks pass.",
-      "seconds": 6.2
+      "seconds": 6.5
     },
     {
       "name": "tests: test_gates",
@@ -92,19 +92,19 @@
       "name": "tests: test_holdout",
       "status": "pass",
       "detail": "holdout checks: all pass",
-      "seconds": 50.2
+      "seconds": 59.1
     },
     {
       "name": "tests: test_libraries",
       "status": "pass",
       "detail": "All library checks pass.",
-      "seconds": 0.0
+      "seconds": 0.1
     },
     {
       "name": "tests: test_linkage",
       "status": "pass",
       "detail": "All linkage checks pass.",
-      "seconds": 15.1
+      "seconds": 15.5
     },
     {
       "name": "tests: test_normalize",
@@ -116,7 +116,7 @@
       "name": "tests: test_policy",
       "status": "pass",
       "detail": "41/41 policy checks pass",
-      "seconds": 9.2
+      "seconds": 9.3
     },
     {
       "name": "tests: test_qci_adapter",
@@ -128,19 +128,19 @@
       "name": "tests: test_remediation",
       "status": "pass",
       "detail": "All remediation checks pass.",
-      "seconds": 15.5
+      "seconds": 19.1
     },
     {
       "name": "tests: test_sandbox",
       "status": "pass",
       "detail": "Sandbox checks: all pass",
-      "seconds": 2.8
+      "seconds": 6.5
     },
     {
       "name": "tests: test_scorer",
       "status": "pass",
       "detail": "All scorer checks pass.",
-      "seconds": 102.5
+      "seconds": 106.9
     }
   ],
   "corpus_verification": {
@@ -181,7 +181,7 @@
         "skipped": 0
       },
       "Python": {
-        "passed": 107,
+        "passed": 108,
         "failed": 0,
         "skipped": 0
       },
@@ -192,7 +192,7 @@
       }
     },
     "total": {
-      "passed": 523,
+      "passed": 524,
       "failed": 0,
       "skipped": 0
     },

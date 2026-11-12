@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: cdxgen 12.9.1
 
-**Overall:** 17/393 findings detected (4.3% recall), 0 false positives (100.0% precision), parameters correct on 76.5% of detections.
+**Overall:** 17/394 findings detected (4.3% recall), 0 false positives (100.0% precision), parameters correct on 76.5% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 29/304 detected (9.5%), 0 false positives.
 
@@ -41,13 +41,13 @@ Password-gated findings (readable only by trying a well-known default password; 
 | PQC assets | 0/27 | 0.0% | 0.0–12.5% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | PQC go | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | PQC java | 0/6 | 0.0% | 0.0–39.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| PQC python | 0/6 | 0.0% | 0.0–39.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| PQC python | 0/7 | 0.0% | 0.0–35.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture artifacts | 0/6 | 0.0% | 0.0–39.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture assets | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture go | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture java | 0/2 | 0.0% | 0.0–65.8% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture python | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| **Total** | 17/393 | 4.3% | 2.7–6.8% | 4.3% | 76.5% | 100.0% | n/a | 0 | 100.0% |
+| **Total** | 17/394 | 4.3% | 2.7–6.8% | 4.3% | 76.5% | 100.0% | n/a | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 
 Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
@@ -81,7 +81,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | Due by end of 2030 | 4 | 1/39 | 2.6% | 2.6% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
 | Due 2034 to 2035 | 2 | 3/107 | 2.8% | 2.8% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 7/148 | 4.7% | 4.7% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 7/149 | 4.7% | 4.7% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -221,7 +221,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 13/17 detected findings (76.5%)**, meaning every must-have is present and correct. **Actionable recall: 3.3%** of all 393 expected findings were both found and ticket-ready. Field completeness across all checks: 35.8%.
+**Ticket-ready: 13/17 detected findings (76.5%)**, meaning every must-have is present and correct. **Actionable recall: 3.3%** of all 394 expected findings were both found and ticket-ready. Field completeness across all checks: 35.8%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
@@ -417,6 +417,7 @@ Detected but not ticket-ready (4), first 25:
 | PQ-PY-04 | `corpus/pqc/python/pq_hybrid_kem.py` | ML-KEM {'param_set': '768'} | 14 |
 | PQ-PY-05 | `corpus/pqc/python/pq_level_constant.py` | ML-KEM {'param_set': '1024'} | 8 |
 | PQ-PY-06 | `corpus/pqc/python/pq_washing.py` | EC {'curve': 'P-256'} | 14 |
+| PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-01 | `corpus/pqc/java/PqKem.java` | ML-KEM {'param_set': '1024'} | 10 |
 | PQ-JV-02 | `corpus/pqc/java/PqSignature.java` | ML-DSA {'param_set': '87'} | 8 |
 | PQ-JV-03 | `corpus/pqc/java/PqParamSpec.java` | ML-DSA {'param_set': '44'} | 10 |
@@ -854,6 +855,7 @@ Missed, and the declared version has no ML-KEM/ML-DSA: org.bouncycastle:bcprov-j
 | PQ-PY-04 | ML-KEM | NO | NO | n/a | n/a | n/a |
 | PQ-PY-05 | ML-KEM | NO | NO | n/a | n/a | n/a |
 | PQ-PY-06 | EC | NO | NO | n/a | n/a | n/a |
+| PQ-PY-07 | LMS | NO | NO | n/a | n/a | n/a |
 | PQ-JV-01 | ML-KEM | NO | NO | n/a | n/a | n/a |
 | PQ-JV-02 | ML-DSA | NO | NO | n/a | n/a | n/a |
 | PQ-JV-03 | ML-DSA | NO | NO | n/a | n/a | n/a |

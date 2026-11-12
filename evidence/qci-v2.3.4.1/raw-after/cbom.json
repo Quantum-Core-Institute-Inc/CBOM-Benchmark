@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:5cb00892-ea64-5295-8f3c-3d9efb7d60f5",
+  "serialNumber": "urn:uuid:38682929-75c5-5bc4-b4e7-1f204c96d34b",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-11-11T23:22:46.223932+00:00",
+    "timestamp": "2026-11-12T12:40:10.488110+00:00",
     "tools": {
       "components": [
         {
@@ -57137,6 +57137,109 @@
     {
       "type": "cryptographic-asset",
       "bom-ref": "QCI-0577",
+      "name": "SHA-256",
+      "description": "SHA-256 (safe_symmetric)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "SHA-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/python/firmware_verify_lms.py",
+            "line": 19
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "qci:provenance",
+          "value": "source"
+        },
+        {
+          "name": "qci:agility",
+          "value": "code"
+        },
+        {
+          "name": "qci:owner",
+          "value": ""
+        },
+        {
+          "name": "qci:system",
+          "value": ""
+        },
+        {
+          "name": "qci:dataLifetime",
+          "value": ""
+        },
+        {
+          "name": "qci:quantum_status",
+          "value": "safe_symmetric"
+        },
+        {
+          "name": "qci:risk_category",
+          "value": ""
+        },
+        {
+          "name": "qci:protocol",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "SHA-256"
+        },
+        {
+          "name": "qci:curve",
+          "value": ""
+        },
+        {
+          "name": "qci:subject",
+          "value": ""
+        },
+        {
+          "name": "qci:not_after",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "SHA-256"
+        },
+        {
+          "name": "qci:notes",
+          "value": ""
+        },
+        {
+          "name": "qci:quantum_resistance",
+          "value": "resistant"
+        },
+        {
+          "name": "qci:confidence",
+          "value": "0.7"
+        },
+        {
+          "name": "qci:priority_score",
+          "value": "30"
+        },
+        {
+          "name": "qci:migration_phase",
+          "value": "Review"
+        },
+        {
+          "name": "qci:timeline",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "QCI-0578",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -57243,7 +57346,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0578",
+      "bom-ref": "QCI-0579",
       "name": "ML-KEM",
       "description": "ML-KEM-768 is the recommended default for most key-establishment uses.",
       "cryptoProperties": {
@@ -57346,7 +57449,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0579",
+      "bom-ref": "QCI-0580",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -57453,7 +57556,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0580",
+      "bom-ref": "QCI-0581",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -57556,7 +57659,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0581",
+      "bom-ref": "QCI-0582",
       "name": "ML-KEM",
       "description": "ML-KEM-768 is the recommended default for most key-establishment uses.",
       "cryptoProperties": {
@@ -57659,7 +57762,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0582",
+      "bom-ref": "QCI-0583",
       "name": "ML-KEM-1024",
       "description": "ML-KEM-768 is the recommended default for most key-establishment uses.",
       "cryptoProperties": {
@@ -57764,7 +57867,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0583",
+      "bom-ref": "QCI-0584",
       "name": "ML-DSA",
       "description": "ML-DSA-65 is the recommended general-purpose parameter set.",
       "cryptoProperties": {
@@ -57867,7 +57970,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0584",
+      "bom-ref": "QCI-0585",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -57976,7 +58079,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0585",
+      "bom-ref": "QCI-0586",
       "name": "unspecified",
       "description": "TLS-Cert-Config (unknown)",
       "cryptoProperties": {
@@ -58083,7 +58186,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0586",
+      "bom-ref": "QCI-0587",
       "name": "unspecified",
       "description": "TLS-Cert-Config (unknown)",
       "cryptoProperties": {
@@ -58190,7 +58293,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0587",
+      "bom-ref": "QCI-0588",
       "name": "TLS-1.2",
       "description": "TLS-1.2 (safe_symmetric)",
       "cryptoProperties": {
@@ -58297,7 +58400,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0588",
+      "bom-ref": "QCI-0589",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -58400,7 +58503,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0589",
+      "bom-ref": "QCI-0590",
       "name": "SSH-Modern-Cipher",
       "description": "SSH-Modern-Cipher (safe_symmetric)",
       "cryptoProperties": {
@@ -58507,7 +58610,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0590",
+      "bom-ref": "QCI-0591",
       "name": "TLS-Classical-Cipher",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -58615,7 +58718,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0591",
+      "bom-ref": "QCI-0592",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -58720,7 +58823,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0592",
+      "bom-ref": "QCI-0593",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -58823,7 +58926,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0593",
+      "bom-ref": "QCI-0594",
       "name": "Private-Key",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -58930,7 +59033,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0594",
+      "bom-ref": "QCI-0595",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59038,7 +59141,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0595",
+      "bom-ref": "QCI-0596",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59146,7 +59249,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0596",
+      "bom-ref": "QCI-0597",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59251,7 +59354,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0597",
+      "bom-ref": "QCI-0598",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59359,7 +59462,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0598",
+      "bom-ref": "QCI-0599",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59467,7 +59570,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0599",
+      "bom-ref": "QCI-0600",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -59575,7 +59678,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0600",
+      "bom-ref": "QCI-0601",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -59683,7 +59786,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0601",
+      "bom-ref": "QCI-0602",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -59786,7 +59889,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0602",
+      "bom-ref": "QCI-0603",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -59894,7 +59997,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0603",
+      "bom-ref": "QCI-0604",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -59997,7 +60100,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0604",
+      "bom-ref": "QCI-0605",
       "name": "HMAC",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -60100,7 +60203,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0605",
+      "bom-ref": "QCI-0606",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -60208,7 +60311,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0606",
+      "bom-ref": "QCI-0607",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -60312,7 +60415,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0607",
+      "bom-ref": "QCI-0608",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -60415,7 +60518,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0608",
+      "bom-ref": "QCI-0609",
       "name": "SHA-512",
       "description": "SHA-512 (safe_symmetric)",
       "cryptoProperties": {
@@ -60518,7 +60621,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0609",
+      "bom-ref": "QCI-0610",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -60621,7 +60724,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0610",
+      "bom-ref": "QCI-0611",
       "name": "HMAC",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -60724,7 +60827,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0611",
+      "bom-ref": "QCI-0612",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -60827,7 +60930,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0612",
+      "bom-ref": "QCI-0613",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -60930,7 +61033,7 @@
     },
     {
       "type": "library",
-      "bom-ref": "QCI-0613",
+      "bom-ref": "QCI-0614",
       "name": "bouncycastle",
       "evidence": {
         "occurrences": [
@@ -60945,7 +61048,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0614",
+      "bom-ref": "QCI-0615",
       "name": "SHA-1",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -61049,7 +61152,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0615",
+      "bom-ref": "QCI-0616",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -61154,7 +61257,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0616",
+      "bom-ref": "QCI-0617",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -61257,7 +61360,7 @@
     },
     {
       "type": "library",
-      "bom-ref": "QCI-0617",
+      "bom-ref": "QCI-0618",
       "name": "cryptography",
       "evidence": {
         "occurrences": [
@@ -61271,7 +61374,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0618",
+      "bom-ref": "QCI-0619",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -61374,7 +61477,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0619",
+      "bom-ref": "QCI-0620",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -61477,7 +61580,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0620",
+      "bom-ref": "QCI-0621",
       "name": "ChaCha20-Poly1305",
       "description": "ChaCha20-Poly1305 (safe_symmetric)",
       "cryptoProperties": {
@@ -61580,7 +61683,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0621",
+      "bom-ref": "QCI-0622",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -61687,7 +61790,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0622",
+      "bom-ref": "QCI-0623",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -61791,7 +61894,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0623",
+      "bom-ref": "QCI-0624",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -61895,7 +61998,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0624",
+      "bom-ref": "QCI-0625",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -61998,7 +62101,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0625",
+      "bom-ref": "QCI-0626",
       "name": "SHA-3",
       "description": "SHA-3 (safe_symmetric)",
       "cryptoProperties": {
@@ -62101,7 +62204,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0626",
+      "bom-ref": "QCI-0627",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -62209,7 +62312,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0627",
+      "bom-ref": "QCI-0628",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -62312,7 +62415,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0628",
+      "bom-ref": "QCI-0629",
       "name": "HMAC-SHA-256",
       "description": "HMAC (safe_symmetric)",
       "cryptoProperties": {
@@ -62415,7 +62518,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0629",
+      "bom-ref": "QCI-0630",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -62518,7 +62621,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0630",
+      "bom-ref": "QCI-0631",
       "name": "HMAC",
       "description": "HMAC (safe_symmetric)",
       "cryptoProperties": {
@@ -62621,7 +62724,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0631",
+      "bom-ref": "QCI-0632",
       "name": "PBKDF2",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -62724,7 +62827,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0632",
+      "bom-ref": "QCI-0633",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -62828,7 +62931,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0633",
+      "bom-ref": "QCI-0634",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -62932,7 +63035,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0634",
+      "bom-ref": "QCI-0635",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -63040,7 +63143,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0635",
+      "bom-ref": "QCI-0636",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -63148,7 +63251,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0636",
+      "bom-ref": "QCI-0637",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -63251,7 +63354,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0637",
+      "bom-ref": "QCI-0638",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -63354,7 +63457,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0638",
+      "bom-ref": "QCI-0639",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -63457,7 +63560,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0639",
+      "bom-ref": "QCI-0640",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -63564,7 +63667,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0640",
+      "bom-ref": "QCI-0641",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -63669,7 +63772,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0641",
+      "bom-ref": "QCI-0642",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -63773,7 +63876,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0642",
+      "bom-ref": "QCI-0643",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -63878,7 +63981,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0643",
+      "bom-ref": "QCI-0644",
       "name": "PBKDF2",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -63981,7 +64084,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0644",
+      "bom-ref": "QCI-0645",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -64089,7 +64192,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0645",
+      "bom-ref": "QCI-0646",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -64193,7 +64296,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0646",
+      "bom-ref": "QCI-0647",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -64271,109 +64374,6 @@
         {
           "name": "qci:notes",
           "value": ""
-        },
-        {
-          "name": "qci:quantum_resistance",
-          "value": "resistant"
-        },
-        {
-          "name": "qci:confidence",
-          "value": "0.7"
-        },
-        {
-          "name": "qci:priority_score",
-          "value": "0"
-        },
-        {
-          "name": "qci:migration_phase",
-          "value": "Review"
-        },
-        {
-          "name": "qci:timeline",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "type": "cryptographic-asset",
-      "bom-ref": "QCI-0647",
-      "name": "AES",
-      "description": "Merged from 2 scanners",
-      "cryptoProperties": {
-        "assetType": "algorithm",
-        "algorithmProperties": {
-          "primitive": "other",
-          "parameterSetIdentifier": "AES",
-          "cryptoFunctions": [
-            "encrypt"
-          ],
-          "executionEnvironment": "software-plain-ram"
-        }
-      },
-      "evidence": {
-        "occurrences": [
-          {
-            "location": "tier1/go/aes_cbc/main.go",
-            "line": 14
-          }
-        ]
-      },
-      "properties": [
-        {
-          "name": "qci:provenance",
-          "value": "source"
-        },
-        {
-          "name": "qci:agility",
-          "value": "code"
-        },
-        {
-          "name": "qci:owner",
-          "value": ""
-        },
-        {
-          "name": "qci:system",
-          "value": ""
-        },
-        {
-          "name": "qci:dataLifetime",
-          "value": ""
-        },
-        {
-          "name": "qci:quantum_status",
-          "value": "safe_symmetric"
-        },
-        {
-          "name": "qci:risk_category",
-          "value": ""
-        },
-        {
-          "name": "qci:protocol",
-          "value": ""
-        },
-        {
-          "name": "qci:key_size",
-          "value": "AES"
-        },
-        {
-          "name": "qci:curve",
-          "value": ""
-        },
-        {
-          "name": "qci:subject",
-          "value": ""
-        },
-        {
-          "name": "qci:not_after",
-          "value": ""
-        },
-        {
-          "name": "qci:key_size",
-          "value": "AES"
-        },
-        {
-          "name": "qci:notes",
-          "value": "Merged from 2 scanners"
         },
         {
           "name": "qci:quantum_resistance",
@@ -64401,6 +64401,109 @@
       "type": "cryptographic-asset",
       "bom-ref": "QCI-0648",
       "name": "AES",
+      "description": "Merged from 2 scanners",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "parameterSetIdentifier": "AES",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier1/go/aes_cbc/main.go",
+            "line": 14
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "qci:provenance",
+          "value": "source"
+        },
+        {
+          "name": "qci:agility",
+          "value": "code"
+        },
+        {
+          "name": "qci:owner",
+          "value": ""
+        },
+        {
+          "name": "qci:system",
+          "value": ""
+        },
+        {
+          "name": "qci:dataLifetime",
+          "value": ""
+        },
+        {
+          "name": "qci:quantum_status",
+          "value": "safe_symmetric"
+        },
+        {
+          "name": "qci:risk_category",
+          "value": ""
+        },
+        {
+          "name": "qci:protocol",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "AES"
+        },
+        {
+          "name": "qci:curve",
+          "value": ""
+        },
+        {
+          "name": "qci:subject",
+          "value": ""
+        },
+        {
+          "name": "qci:not_after",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "AES"
+        },
+        {
+          "name": "qci:notes",
+          "value": "Merged from 2 scanners"
+        },
+        {
+          "name": "qci:quantum_resistance",
+          "value": "resistant"
+        },
+        {
+          "name": "qci:confidence",
+          "value": "0.7"
+        },
+        {
+          "name": "qci:priority_score",
+          "value": "0"
+        },
+        {
+          "name": "qci:migration_phase",
+          "value": "Review"
+        },
+        {
+          "name": "qci:timeline",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "QCI-0649",
+      "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
         "assetType": "algorithm",
@@ -64502,7 +64605,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0649",
+      "bom-ref": "QCI-0650",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -64605,7 +64708,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0650",
+      "bom-ref": "QCI-0651",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -64709,7 +64812,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0651",
+      "bom-ref": "QCI-0652",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -64813,7 +64916,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0652",
+      "bom-ref": "QCI-0653",
       "name": "DES",
       "description": "DES (weak)",
       "cryptoProperties": {
@@ -64917,7 +65020,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0653",
+      "bom-ref": "QCI-0654",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -65024,7 +65127,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0654",
+      "bom-ref": "QCI-0655",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -65131,7 +65234,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0655",
+      "bom-ref": "QCI-0656",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -65234,7 +65337,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0656",
+      "bom-ref": "QCI-0657",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -65339,7 +65442,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0657",
+      "bom-ref": "QCI-0658",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -65442,7 +65545,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0658",
+      "bom-ref": "QCI-0659",
       "name": "Ed25519",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -65547,7 +65650,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0659",
+      "bom-ref": "QCI-0660",
       "name": "Ed25519",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -65652,7 +65755,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0660",
+      "bom-ref": "QCI-0661",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -65755,7 +65858,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0661",
+      "bom-ref": "QCI-0662",
       "name": "SHA-3",
       "description": "SHA-3 (safe_symmetric)",
       "cryptoProperties": {
@@ -65858,7 +65961,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0662",
+      "bom-ref": "QCI-0663",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -65962,7 +66065,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0663",
+      "bom-ref": "QCI-0664",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -66066,7 +66169,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0664",
+      "bom-ref": "QCI-0665",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -66169,7 +66272,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0665",
+      "bom-ref": "QCI-0666",
       "name": "SHA-3",
       "description": "SHA-3 (safe_symmetric)",
       "cryptoProperties": {
@@ -66272,7 +66375,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0666",
+      "bom-ref": "QCI-0667",
       "name": "SHA-256",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -66375,7 +66478,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0667",
+      "bom-ref": "QCI-0668",
       "name": "SHA-512",
       "description": "SHA-512 (safe_symmetric)",
       "cryptoProperties": {
@@ -66478,7 +66581,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0668",
+      "bom-ref": "QCI-0669",
       "name": "HMAC-SHA-256",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -66581,7 +66684,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0669",
+      "bom-ref": "QCI-0670",
       "name": "PBKDF2",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -66684,7 +66787,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0670",
+      "bom-ref": "QCI-0671",
       "name": "SHA-512",
       "description": "SHA-512 (safe_symmetric)",
       "cryptoProperties": {
@@ -66787,7 +66890,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0671",
+      "bom-ref": "QCI-0672",
       "name": "RC4",
       "description": "RC4 (weak)",
       "cryptoProperties": {
@@ -66891,7 +66994,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0672",
+      "bom-ref": "QCI-0673",
       "name": "RC4",
       "description": "RC4 (weak)",
       "cryptoProperties": {
@@ -66995,7 +67098,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0673",
+      "bom-ref": "QCI-0674",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -67103,7 +67206,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0674",
+      "bom-ref": "QCI-0675",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -67206,7 +67309,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0675",
+      "bom-ref": "QCI-0676",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -67309,7 +67412,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0676",
+      "bom-ref": "QCI-0677",
       "name": "TLS",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -67417,7 +67520,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0677",
+      "bom-ref": "QCI-0678",
       "name": "TLS",
       "description": "TLS (weak)",
       "cryptoProperties": {
@@ -67525,7 +67628,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0678",
+      "bom-ref": "QCI-0679",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -67629,7 +67732,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0679",
+      "bom-ref": "QCI-0680",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -67732,7 +67835,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0680",
+      "bom-ref": "QCI-0681",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -67836,7 +67939,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0681",
+      "bom-ref": "QCI-0682",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -67939,7 +68042,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0682",
+      "bom-ref": "QCI-0683",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -68043,7 +68146,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0683",
+      "bom-ref": "QCI-0684",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -68150,7 +68253,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0684",
+      "bom-ref": "QCI-0685",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -68257,7 +68360,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0685",
+      "bom-ref": "QCI-0686",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -68364,7 +68467,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0686",
+      "bom-ref": "QCI-0687",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -68471,7 +68574,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0687",
+      "bom-ref": "QCI-0688",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -68579,7 +68682,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0688",
+      "bom-ref": "QCI-0689",
       "name": "MD5",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -68683,7 +68786,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0689",
+      "bom-ref": "QCI-0690",
       "name": "SHA-1",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -68787,7 +68890,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0690",
+      "bom-ref": "QCI-0691",
       "name": "SHA-256",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -68890,7 +68993,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0691",
+      "bom-ref": "QCI-0692",
       "name": "SHA-3",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -68993,7 +69096,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0692",
+      "bom-ref": "QCI-0693",
       "name": "DES",
       "description": "DES (weak)",
       "cryptoProperties": {
@@ -69098,7 +69201,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0693",
+      "bom-ref": "QCI-0694",
       "name": "DESede",
       "description": "DESede (weak)",
       "cryptoProperties": {
@@ -69202,7 +69305,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0694",
+      "bom-ref": "QCI-0695",
       "name": "3DES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -69307,7 +69410,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0695",
+      "bom-ref": "QCI-0696",
       "name": "DESEDE",
       "description": "DESEDE (weak)",
       "cryptoProperties": {
@@ -69412,7 +69515,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0696",
+      "bom-ref": "QCI-0697",
       "name": "HMAC-SHA-256",
       "description": "HMAC (safe_symmetric)",
       "cryptoProperties": {
@@ -69515,7 +69618,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0697",
+      "bom-ref": "QCI-0698",
       "name": "PBKDF2-SHA-256",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -69618,7 +69721,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0698",
+      "bom-ref": "QCI-0699",
       "name": "Ed25519",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -69723,7 +69826,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0699",
+      "bom-ref": "QCI-0700",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -69830,7 +69933,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0700",
+      "bom-ref": "QCI-0701",
       "name": "ML-DSA",
       "description": "ML-DSA-65 is the recommended general-purpose parameter set.",
       "cryptoProperties": {
@@ -69933,7 +70036,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0701",
+      "bom-ref": "QCI-0702",
       "name": "ML-DSA-65",
       "description": "ML-DSA-65 is the recommended general-purpose parameter set.",
       "cryptoProperties": {
@@ -70038,7 +70141,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0702",
+      "bom-ref": "QCI-0703",
       "name": "Java-PQC",
       "description": "Java-PQC (pqc)",
       "cryptoProperties": {
@@ -70141,7 +70244,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0703",
+      "bom-ref": "QCI-0704",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -70240,115 +70343,115 @@
         {
           "name": "qci:timeline",
           "value": "Deprecated after 2030 (IR 8547); Disallowed after 2035 (IR 8547)"
-        }
-      ]
-    },
-    {
-      "type": "cryptographic-asset",
-      "bom-ref": "QCI-0704",
-      "name": "AES",
-      "description": "AES (safe_symmetric)",
-      "cryptoProperties": {
-        "assetType": "algorithm",
-        "algorithmProperties": {
-          "primitive": "other",
-          "parameterSetIdentifier": "AES",
-          "cryptoFunctions": [
-            "encrypt"
-          ],
-          "executionEnvironment": "software-plain-ram"
-        }
-      },
-      "evidence": {
-        "occurrences": [
-          {
-            "location": "tier1/javascript/t1_aes_cbc.js",
-            "line": 6
-          }
-        ]
-      },
-      "properties": [
-        {
-          "name": "qci:provenance",
-          "value": "source"
-        },
-        {
-          "name": "qci:agility",
-          "value": "code"
-        },
-        {
-          "name": "qci:owner",
-          "value": ""
-        },
-        {
-          "name": "qci:system",
-          "value": ""
-        },
-        {
-          "name": "qci:dataLifetime",
-          "value": ""
-        },
-        {
-          "name": "qci:quantum_status",
-          "value": "safe_symmetric"
-        },
-        {
-          "name": "qci:risk_category",
-          "value": ""
-        },
-        {
-          "name": "qci:protocol",
-          "value": ""
-        },
-        {
-          "name": "qci:key_size",
-          "value": "AES"
-        },
-        {
-          "name": "qci:curve",
-          "value": ""
-        },
-        {
-          "name": "qci:subject",
-          "value": ""
-        },
-        {
-          "name": "qci:not_after",
-          "value": ""
-        },
-        {
-          "name": "qci:key_size",
-          "value": "AES"
-        },
-        {
-          "name": "qci:notes",
-          "value": ""
-        },
-        {
-          "name": "qci:quantum_resistance",
-          "value": "resistant"
-        },
-        {
-          "name": "qci:confidence",
-          "value": "0.7"
-        },
-        {
-          "name": "qci:priority_score",
-          "value": "0"
-        },
-        {
-          "name": "qci:migration_phase",
-          "value": "Review"
-        },
-        {
-          "name": "qci:timeline",
-          "value": ""
         }
       ]
     },
     {
       "type": "cryptographic-asset",
       "bom-ref": "QCI-0705",
+      "name": "AES",
+      "description": "AES (safe_symmetric)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "parameterSetIdentifier": "AES",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier1/javascript/t1_aes_cbc.js",
+            "line": 6
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "qci:provenance",
+          "value": "source"
+        },
+        {
+          "name": "qci:agility",
+          "value": "code"
+        },
+        {
+          "name": "qci:owner",
+          "value": ""
+        },
+        {
+          "name": "qci:system",
+          "value": ""
+        },
+        {
+          "name": "qci:dataLifetime",
+          "value": ""
+        },
+        {
+          "name": "qci:quantum_status",
+          "value": "safe_symmetric"
+        },
+        {
+          "name": "qci:risk_category",
+          "value": ""
+        },
+        {
+          "name": "qci:protocol",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "AES"
+        },
+        {
+          "name": "qci:curve",
+          "value": ""
+        },
+        {
+          "name": "qci:subject",
+          "value": ""
+        },
+        {
+          "name": "qci:not_after",
+          "value": ""
+        },
+        {
+          "name": "qci:key_size",
+          "value": "AES"
+        },
+        {
+          "name": "qci:notes",
+          "value": ""
+        },
+        {
+          "name": "qci:quantum_resistance",
+          "value": "resistant"
+        },
+        {
+          "name": "qci:confidence",
+          "value": "0.7"
+        },
+        {
+          "name": "qci:priority_score",
+          "value": "0"
+        },
+        {
+          "name": "qci:migration_phase",
+          "value": "Review"
+        },
+        {
+          "name": "qci:timeline",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "QCI-0706",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -70452,7 +70555,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0706",
+      "bom-ref": "QCI-0707",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -70555,7 +70658,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0707",
+      "bom-ref": "QCI-0708",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -70659,7 +70762,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0708",
+      "bom-ref": "QCI-0709",
       "name": "ChaCha20-Poly1305",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -70762,7 +70865,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0709",
+      "bom-ref": "QCI-0710",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -70866,7 +70969,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0710",
+      "bom-ref": "QCI-0711",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -70970,7 +71073,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0711",
+      "bom-ref": "QCI-0712",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -71074,7 +71177,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0712",
+      "bom-ref": "QCI-0713",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -71183,7 +71286,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0713",
+      "bom-ref": "QCI-0714",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -71287,7 +71390,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0714",
+      "bom-ref": "QCI-0715",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -71391,7 +71494,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0715",
+      "bom-ref": "QCI-0716",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -71494,7 +71597,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0716",
+      "bom-ref": "QCI-0717",
       "name": "SHA-3",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -71597,7 +71700,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0717",
+      "bom-ref": "QCI-0718",
       "name": "HMAC",
       "description": "Merged from 6 scanners",
       "cryptoProperties": {
@@ -71700,7 +71803,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0718",
+      "bom-ref": "QCI-0719",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -71804,7 +71907,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0719",
+      "bom-ref": "QCI-0720",
       "name": "PBKDF2",
       "description": "Merged from 7 scanners",
       "cryptoProperties": {
@@ -71907,7 +72010,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0720",
+      "bom-ref": "QCI-0721",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -72011,7 +72114,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0721",
+      "bom-ref": "QCI-0722",
       "name": "Ed25519",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -72116,7 +72219,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0722",
+      "bom-ref": "QCI-0723",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -72220,7 +72323,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0723",
+      "bom-ref": "QCI-0724",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -72324,7 +72427,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0724",
+      "bom-ref": "QCI-0725",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -72432,7 +72535,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0725",
+      "bom-ref": "QCI-0726",
       "name": "Node-crypto",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -72536,7 +72639,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0726",
+      "bom-ref": "QCI-0727",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -72639,7 +72742,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0727",
+      "bom-ref": "QCI-0728",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -72743,7 +72846,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0728",
+      "bom-ref": "QCI-0729",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -72851,7 +72954,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0729",
+      "bom-ref": "QCI-0730",
       "name": "AES",
       "description": "Merged from 6 scanners",
       "cryptoProperties": {
@@ -72955,7 +73058,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0730",
+      "bom-ref": "QCI-0731",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -73059,7 +73162,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0731",
+      "bom-ref": "QCI-0732",
       "name": "ChaCha20-Poly1305",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -73162,7 +73265,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0732",
+      "bom-ref": "QCI-0733",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -73269,7 +73372,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0733",
+      "bom-ref": "QCI-0734",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -73376,7 +73479,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0734",
+      "bom-ref": "QCI-0735",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -73479,7 +73582,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0735",
+      "bom-ref": "QCI-0736",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -73588,7 +73691,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0736",
+      "bom-ref": "QCI-0737",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -73692,7 +73795,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0737",
+      "bom-ref": "QCI-0738",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -73796,7 +73899,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0738",
+      "bom-ref": "QCI-0739",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -73899,7 +74002,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0739",
+      "bom-ref": "QCI-0740",
       "name": "SHA-3",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -74002,7 +74105,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0740",
+      "bom-ref": "QCI-0741",
       "name": "HMAC-SHA-256",
       "description": "Merged from 4 scanners",
       "cryptoProperties": {
@@ -74105,7 +74208,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0741",
+      "bom-ref": "QCI-0742",
       "name": "SHA-256",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -74208,7 +74311,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0742",
+      "bom-ref": "QCI-0743",
       "name": "PBKDF2-SHA-256",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -74311,7 +74414,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0743",
+      "bom-ref": "QCI-0744",
       "name": "Ed25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -74419,7 +74522,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0744",
+      "bom-ref": "QCI-0745",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -74526,7 +74629,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0745",
+      "bom-ref": "QCI-0746",
       "name": "ML-DSA",
       "description": "ML-DSA-65 is the recommended general-purpose parameter set.",
       "cryptoProperties": {
@@ -74629,7 +74732,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0746",
+      "bom-ref": "QCI-0747",
       "name": "AES",
       "description": "Merged from 6 scanners",
       "cryptoProperties": {
@@ -74733,7 +74836,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0747",
+      "bom-ref": "QCI-0748",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -74837,7 +74940,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0748",
+      "bom-ref": "QCI-0749",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -74941,7 +75044,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0749",
+      "bom-ref": "QCI-0750",
       "name": "HMAC",
       "description": "HMAC (safe_symmetric)",
       "cryptoProperties": {
@@ -75044,7 +75147,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0750",
+      "bom-ref": "QCI-0751",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -75147,7 +75250,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0751",
+      "bom-ref": "QCI-0752",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -75250,7 +75353,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0752",
+      "bom-ref": "QCI-0753",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -75355,7 +75458,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0753",
+      "bom-ref": "QCI-0754",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -75458,7 +75561,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0754",
+      "bom-ref": "QCI-0755",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -75566,7 +75669,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0755",
+      "bom-ref": "QCI-0756",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -75670,7 +75773,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0756",
+      "bom-ref": "QCI-0757",
       "name": "3DES",
       "description": "3DES (weak)",
       "cryptoProperties": {
@@ -75774,7 +75877,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0757",
+      "bom-ref": "QCI-0758",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -75878,7 +75981,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0758",
+      "bom-ref": "QCI-0759",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -75982,7 +76085,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0759",
+      "bom-ref": "QCI-0760",
       "name": "HMAC",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -76085,7 +76188,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0760",
+      "bom-ref": "QCI-0761",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -76193,7 +76296,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0761",
+      "bom-ref": "QCI-0762",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -76301,7 +76404,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0762",
+      "bom-ref": "QCI-0763",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -76404,7 +76507,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0763",
+      "bom-ref": "QCI-0764",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -76507,7 +76610,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0764",
+      "bom-ref": "QCI-0765",
       "name": "3DES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -76612,7 +76715,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0765",
+      "bom-ref": "QCI-0766",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -76720,7 +76823,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0766",
+      "bom-ref": "QCI-0767",
       "name": "DSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -76827,7 +76930,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0767",
+      "bom-ref": "QCI-0768",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -76931,7 +77034,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0768",
+      "bom-ref": "QCI-0769",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -77035,7 +77138,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0769",
+      "bom-ref": "QCI-0770",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -77143,7 +77246,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0770",
+      "bom-ref": "QCI-0771",
       "name": "AES-128-CBC",
       "description": "AES-128-CBC (safe_symmetric)",
       "cryptoProperties": {
@@ -77247,7 +77350,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0771",
+      "bom-ref": "QCI-0772",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -77350,7 +77453,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0772",
+      "bom-ref": "QCI-0773",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -77458,7 +77561,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0773",
+      "bom-ref": "QCI-0774",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -77562,7 +77665,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0774",
+      "bom-ref": "QCI-0775",
       "name": "SHA-384",
       "description": "SHA-384 (safe_symmetric)",
       "cryptoProperties": {
@@ -77665,7 +77768,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0775",
+      "bom-ref": "QCI-0776",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -77773,7 +77876,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0776",
+      "bom-ref": "QCI-0777",
       "name": "MD5",
       "description": "MD5 (weak)",
       "cryptoProperties": {
@@ -77877,7 +77980,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0777",
+      "bom-ref": "QCI-0778",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -77980,7 +78083,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0778",
+      "bom-ref": "QCI-0779",
       "name": "HMAC-SHA-1",
       "description": "Merged from 5 scanners",
       "cryptoProperties": {
@@ -78084,7 +78187,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0779",
+      "bom-ref": "QCI-0780",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -78188,7 +78291,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0780",
+      "bom-ref": "QCI-0781",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -78292,7 +78395,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0781",
+      "bom-ref": "QCI-0782",
       "name": "ECDSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -78400,7 +78503,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0782",
+      "bom-ref": "QCI-0783",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -78508,7 +78611,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0783",
+      "bom-ref": "QCI-0784",
       "name": "HMAC",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -78611,7 +78714,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0784",
+      "bom-ref": "QCI-0785",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -78719,7 +78822,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0785",
+      "bom-ref": "QCI-0786",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -78823,7 +78926,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0786",
+      "bom-ref": "QCI-0787",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -78927,7 +79030,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0787",
+      "bom-ref": "QCI-0788",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -79030,7 +79133,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0788",
+      "bom-ref": "QCI-0789",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -79134,7 +79237,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0789",
+      "bom-ref": "QCI-0790",
       "name": "DESede",
       "description": "DESede (weak)",
       "cryptoProperties": {
@@ -79238,7 +79341,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0790",
+      "bom-ref": "QCI-0791",
       "name": "3DES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -79343,7 +79446,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0791",
+      "bom-ref": "QCI-0792",
       "name": "DESEDE",
       "description": "DESEDE (weak)",
       "cryptoProperties": {
@@ -79448,7 +79551,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0792",
+      "bom-ref": "QCI-0793",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -79556,7 +79659,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0793",
+      "bom-ref": "QCI-0794",
       "name": "AES",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -79660,7 +79763,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0794",
+      "bom-ref": "QCI-0795",
       "name": "SHA-256",
       "description": "SHA-256 (safe_symmetric)",
       "cryptoProperties": {
@@ -79763,7 +79866,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0795",
+      "bom-ref": "QCI-0796",
       "name": "SHA-384",
       "description": "SHA-384 (safe_symmetric)",
       "cryptoProperties": {
@@ -79866,7 +79969,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0796",
+      "bom-ref": "QCI-0797",
       "name": "SHA-512",
       "description": "SHA-512 (safe_symmetric)",
       "cryptoProperties": {
@@ -79969,7 +80072,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0797",
+      "bom-ref": "QCI-0798",
       "name": "HMAC",
       "description": "Merged from 3 scanners",
       "cryptoProperties": {
@@ -80072,7 +80175,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0798",
+      "bom-ref": "QCI-0799",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -80176,7 +80279,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0799",
+      "bom-ref": "QCI-0800",
       "name": "ChaCha20-Poly1305",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -80279,7 +80382,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0800",
+      "bom-ref": "QCI-0801",
       "name": "RSA",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -80387,7 +80490,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0801",
+      "bom-ref": "QCI-0802",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -80492,7 +80595,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0802",
+      "bom-ref": "QCI-0803",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -80595,7 +80698,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0803",
+      "bom-ref": "QCI-0804",
       "name": "Ed25519",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -80700,7 +80803,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0804",
+      "bom-ref": "QCI-0805",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -80803,7 +80906,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0805",
+      "bom-ref": "QCI-0806",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -80908,7 +81011,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0806",
+      "bom-ref": "QCI-0807",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -81011,7 +81114,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0807",
+      "bom-ref": "QCI-0808",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -81122,7 +81225,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0808",
+      "bom-ref": "QCI-0809",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -81227,7 +81330,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0809",
+      "bom-ref": "QCI-0810",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -81330,7 +81433,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0810",
+      "bom-ref": "QCI-0811",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -81433,7 +81536,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0811",
+      "bom-ref": "QCI-0812",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -81538,7 +81641,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0812",
+      "bom-ref": "QCI-0813",
       "name": "X509-Cert",
       "description": "X509-Cert (unknown)",
       "cryptoProperties": {
@@ -81641,7 +81744,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0813",
+      "bom-ref": "QCI-0814",
       "name": "SHA-1",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -81745,7 +81848,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0814",
+      "bom-ref": "QCI-0815",
       "name": "ChaCha20-Poly1305",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -81848,7 +81951,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0815",
+      "bom-ref": "QCI-0816",
       "name": "PKCS8",
       "description": "PKCS8 (unknown)",
       "cryptoProperties": {
@@ -81954,7 +82057,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0816",
+      "bom-ref": "QCI-0817",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -82062,7 +82165,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0817",
+      "bom-ref": "QCI-0818",
       "name": "ECC-P-256",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -82169,7 +82272,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0818",
+      "bom-ref": "QCI-0819",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -82277,7 +82380,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0819",
+      "bom-ref": "QCI-0820",
       "name": "ECC-P-256",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -82384,7 +82487,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0820",
+      "bom-ref": "QCI-0821",
       "name": "ECC-P-256",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -82491,7 +82594,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0821",
+      "bom-ref": "QCI-0822",
       "name": "ECDSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -82599,7 +82702,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0822",
+      "bom-ref": "QCI-0823",
       "name": "Private-Key",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -82706,7 +82809,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0823",
+      "bom-ref": "QCI-0824",
       "name": "SSH-Ed25519-HostKey",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -82811,7 +82914,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0824",
+      "bom-ref": "QCI-0825",
       "name": "Named-Hybrid",
       "description": "Hybrid appears to contain both classical and PQC components \u2014 good transition pattern. Plan pure-PQC cutover.",
       "cryptoProperties": {
@@ -82914,7 +83017,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0825",
+      "bom-ref": "QCI-0826",
       "name": "SSH-Classical-Kex",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -83018,7 +83121,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0826",
+      "bom-ref": "QCI-0827",
       "name": "SSH-PQC-Kex",
       "description": "Hybrid appears to contain both classical and PQC components \u2014 good transition pattern. Plan pure-PQC cutover.",
       "cryptoProperties": {
@@ -83121,7 +83224,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0827",
+      "bom-ref": "QCI-0828",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -83225,7 +83328,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0828",
+      "bom-ref": "QCI-0829",
       "name": "X25519MLKEM768",
       "description": "Hybrid appears to contain both classical and PQC components \u2014 good transition pattern. Plan pure-PQC cutover.",
       "cryptoProperties": {
@@ -83328,7 +83431,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0829",
+      "bom-ref": "QCI-0830",
       "name": "ChaCha20-Poly1305",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -83431,7 +83534,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0830",
+      "bom-ref": "QCI-0831",
       "name": "SSH-Modern-Cipher",
       "description": "SSH-Modern-Cipher (safe_symmetric)",
       "cryptoProperties": {
@@ -83538,7 +83641,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0831",
+      "bom-ref": "QCI-0832",
       "name": "HMAC",
       "description": "HMAC (safe_symmetric)",
       "cryptoProperties": {
@@ -83641,7 +83744,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0832",
+      "bom-ref": "QCI-0833",
       "name": "TLS",
       "description": "TLS (weak)",
       "cryptoProperties": {
@@ -83749,7 +83852,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0833",
+      "bom-ref": "QCI-0834",
       "name": "DH",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -83856,7 +83959,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0834",
+      "bom-ref": "QCI-0835",
       "name": "SSH-Modern-Cipher",
       "description": "SSH-Modern-Cipher (safe_symmetric)",
       "cryptoProperties": {
@@ -83963,7 +84066,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0835",
+      "bom-ref": "QCI-0836",
       "name": "unspecified",
       "description": "TLS-Cert-Config (unknown)",
       "cryptoProperties": {
@@ -84070,7 +84173,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0836",
+      "bom-ref": "QCI-0837",
       "name": "TLS-Weak-Protocol",
       "description": "TLS-Weak-Protocol (weak)",
       "cryptoProperties": {
@@ -84178,7 +84281,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0837",
+      "bom-ref": "QCI-0838",
       "name": "unspecified",
       "description": "TLS-Cert-Config (unknown)",
       "cryptoProperties": {
@@ -84285,7 +84388,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0838",
+      "bom-ref": "QCI-0839",
       "name": "unspecified",
       "description": "TLS-Cert-Config (unknown)",
       "cryptoProperties": {
@@ -84392,7 +84495,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0839",
+      "bom-ref": "QCI-0840",
       "name": "TLS-1.2",
       "description": "TLS-1.2 (safe_symmetric)",
       "cryptoProperties": {
@@ -84499,7 +84602,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0840",
+      "bom-ref": "QCI-0841",
       "name": "TLS-1.3",
       "description": "TLS-1.3 (safe_symmetric)",
       "cryptoProperties": {
@@ -84606,7 +84709,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0841",
+      "bom-ref": "QCI-0842",
       "name": "AES",
       "description": "Merged from 2 scanners",
       "cryptoProperties": {
@@ -84709,7 +84812,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0842",
+      "bom-ref": "QCI-0843",
       "name": "SSH-Modern-Cipher",
       "description": "SSH-Modern-Cipher (safe_symmetric)",
       "cryptoProperties": {
@@ -84816,7 +84919,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0843",
+      "bom-ref": "QCI-0844",
       "name": "TLS-Classical-Cipher",
       "description": "Replace with NIST PQC (ML-KEM or ML-DSA/SLH-DSA) or a validated hybrid.",
       "cryptoProperties": {
@@ -84924,7 +85027,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0844",
+      "bom-ref": "QCI-0845",
       "name": "Hybrid-Named",
       "description": "Hybrid appears to contain both classical and PQC components \u2014 good transition pattern. Plan pure-PQC cutover.",
       "cryptoProperties": {
@@ -85027,7 +85130,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0845",
+      "bom-ref": "QCI-0846",
       "name": "X25519",
       "description": "Migrate key establishment to ML-KEM-768 (FIPS 203). Use hybrid (e.g. X25519+ML-KEM) during transition.",
       "cryptoProperties": {
@@ -85131,7 +85234,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0846",
+      "bom-ref": "QCI-0847",
       "name": "X25519MLKEM768",
       "description": "Hybrid appears to contain both classical and PQC components \u2014 good transition pattern. Plan pure-PQC cutover.",
       "cryptoProperties": {
@@ -85234,7 +85337,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0847",
+      "bom-ref": "QCI-0848",
       "name": "TLS-1.0",
       "description": "TLS-1.0 (weak)",
       "cryptoProperties": {
@@ -85342,7 +85445,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0848",
+      "bom-ref": "QCI-0849",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -85446,7 +85549,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0849",
+      "bom-ref": "QCI-0850",
       "name": "AES",
       "description": "Constant pool of com.acme.billing.Settlement.",
       "cryptoProperties": {
@@ -85550,7 +85653,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0850",
+      "bom-ref": "QCI-0851",
       "name": "RSA",
       "description": "Migrate signatures to ML-DSA-65 (FIPS 204). Use SLH-DSA (FIPS 205) for root/firmware. Consider hybrid.",
       "cryptoProperties": {
@@ -85655,7 +85758,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0851",
+      "bom-ref": "QCI-0852",
       "name": "AES",
       "description": "AES (safe_symmetric)",
       "cryptoProperties": {
@@ -85758,7 +85861,7 @@
     },
     {
       "type": "cryptographic-asset",
-      "bom-ref": "QCI-0852",
+      "bom-ref": "QCI-0853",
       "name": "SHA-1",
       "description": "SHA-1 (weak)",
       "cryptoProperties": {
@@ -86716,7 +86819,8 @@
         "QCI-0849",
         "QCI-0850",
         "QCI-0851",
-        "QCI-0852"
+        "QCI-0852",
+        "QCI-0853"
       ]
     }
   ]

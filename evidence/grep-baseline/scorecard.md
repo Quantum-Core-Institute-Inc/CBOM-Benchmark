@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: grep baseline
 
-**Overall:** 265/393 findings detected (67.4% recall), 170 false positives (60.9% precision), parameters correct on 55.8% of detections.
+**Overall:** 265/394 findings detected (67.3% recall), 170 false positives (60.9% precision), parameters correct on 55.8% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 277/304 detected (91.1%), 18 false positives.
 
@@ -41,13 +41,13 @@ Password-gated findings (readable only by trying a well-known default password; 
 | PQC assets | 10/27 | 37.0% | 21.5–55.8% | 37.0% | 90.0% | 100.0% | 100.0% | 1 | 90.9% |
 | PQC go | 2/4 | 50.0% | 15.0–85.0% (thin) | 50.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC java | 4/6 | 66.7% | 30.0–90.3% (thin) | 66.7% | 25.0% | 100.0% | 100.0% | 4 | 50.0% |
-| PQC python | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 33.3% | 100.0% | 100.0% | 2 | 75.0% |
+| PQC python | 6/7 | 85.7% | 48.7–97.4% (thin) | 85.7% | 33.3% | 100.0% | 100.0% | 2 | 75.0% |
 | System fixture artifacts | 4/6 | 66.7% | 30.0–90.3% (thin) | 66.7% | 100.0% | n/a | 100.0% | 3 | 57.1% |
 | System fixture assets | 2/11 | 18.2% | 5.1–47.7% | 18.2% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 2/4 | 50.0% | 15.0–85.0% (thin) | 0.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 265/393 | 67.4% | 62.6–71.9% | 63.6% | 55.8% | 99.2% | 100.0% | 170 | 60.9% |
+| **Total** | 265/394 | 67.3% | 62.5–71.7% | 63.5% | 55.8% | 99.2% | 100.0% | 170 | 60.9% |
 | Negative controls | | | | | | | | 60 | |
 
 Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
@@ -83,7 +83,7 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 67.4%** (at primary site: 62.9%). **Findings due by end of 2030 that this scanner missed: 42.**
+**Deadline-weighted recall: 67.4%** (at primary site: 62.8%). **Findings due by end of 2030 that this scanner missed: 42.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
@@ -91,7 +91,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | Due by end of 2030 | 4 | 30/39 | 76.9% | 66.7% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
 | Due 2034 to 2035 | 2 | 64/107 | 59.8% | 57.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 105/148 | 70.9% | 68.2% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 105/149 | 70.5% | 67.8% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -142,7 +142,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 135/265 detected findings (50.9%)**, meaning every must-have is present and correct. **Actionable recall: 34.4%** of all 393 expected findings were both found and ticket-ready. Field completeness across all checks: 36.8%.
+**Ticket-ready: 135/265 detected findings (50.9%)**, meaning every must-have is present and correct. **Actionable recall: 34.3%** of all 394 expected findings were both found and ticket-ready. Field completeness across all checks: 36.8%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
@@ -262,6 +262,7 @@ Detected but not ticket-ready (130), first 25:
 | T5-JV-10 | `corpus/tier5/java/compiled/token-vault.jar` | SHA-1  | file |
 | T5-JV-11 | `corpus/tier5/java/compiled/token-vault.jar` | EC {'curve': 'P-256'} | file |
 | T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
+| PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
 | PQ-AS-01 | `corpus/pqc/assets/certs/release_root_mldsa.pem` | ML-DSA {'param_set': '65'} | file |
@@ -834,6 +835,7 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | PQ-PY-04 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-05 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-06 | EC | yes | yes | yes | yes | yes |
+| PQ-PY-07 | LMS | NO | NO | n/a | n/a | n/a |
 | PQ-JV-01 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-JV-02 | ML-DSA | yes | yes | NO | yes | n/a |
 | PQ-JV-03 | ML-DSA | yes | yes | NO | yes | n/a |

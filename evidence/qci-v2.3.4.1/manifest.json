@@ -1,22 +1,22 @@
 {
   "bundle_format": 1,
-  "testbench": "2.4.1",
+  "testbench": "2.5.0",
   "methodology": "2.3",
-  "created": "2026-11-11T23:22:23Z",
+  "created": "2026-11-12T12:39:45Z",
   "stamp": {
-    "release": "2.4.1",
+    "release": "2.5.0",
     "methodology": "2.3",
-    "findings": 393,
-    "answer_key": "c9f27be6d6a5098a",
-    "corpus": "a0087dc174d516e4",
+    "findings": 394,
+    "answer_key": "a4ecdd86a8a593eb",
+    "corpus": "ce56704b1418c9a2",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "6d850e3ac42d0dd06bfdcce9151c1e6b40f4cf5272778f63eececea27c78f0b6",
-    "expected/ground_truth.json": "6954e7b555a574e229395734417bef90adf5ad5bb78941321e125ef52c8d64da",
+    "VERSION": "732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c",
+    "expected/ground_truth.json": "d9303ef1ba46531cdffb04095cc45acdf1794f439275a140298cf0dc77a3d147",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "integrations/qci-pqc/scope.json": "64a6f4da6c9c820059a540ac3c397ac14f5b07c22a84dd0eedbce2f6a31401d4",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -82,10 +82,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 4.6,
-    "cpu_user_s": 4.43,
-    "cpu_sys_s": 0.13,
-    "peak_rss_mb": 46.2,
+    "wall_s": 4.92,
+    "cpu_user_s": 4.71,
+    "cpu_sys_s": 0.15,
+    "peak_rss_mb": 43.9,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -106,31 +106,31 @@
     }
   },
   "headline": {
-    "scored_findings": 366,
-    "recall": 67.2,
-    "primary_site_recall": 64.8,
+    "scored_findings": 367,
+    "recall": 67.0,
+    "primary_site_recall": 64.6,
     "params_accuracy": 54.5,
     "precision": 99.6,
     "false_positives": 1,
     "pqc_overclaims": 0,
     "pqc_standard_name_pct": 100.0,
     "ticket_ready_pct": 45.9,
-    "actionable_recall": 30.9,
-    "deadline_weighted_recall": 68.4,
+    "actionable_recall": 30.8,
+    "deadline_weighted_recall": 68.3,
     "library_recall": 96.4
   },
   "headline_full": {
-    "scored_findings": 393,
-    "recall": 63.6,
-    "primary_site_recall": 61.3,
+    "scored_findings": 394,
+    "recall": 63.5,
+    "primary_site_recall": 61.2,
     "params_accuracy": 54.4,
     "precision": 99.6,
     "false_positives": 1,
     "pqc_overclaims": 0,
     "pqc_standard_name_pct": 100.0,
     "ticket_ready_pct": 45.2,
-    "actionable_recall": 28.8,
-    "deadline_weighted_recall": 64.7,
+    "actionable_recall": 28.7,
+    "deadline_weighted_recall": 64.6,
     "library_recall": 96.4
   },
   "holdout": {
@@ -150,9 +150,9 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 2.72,
-      "cpu_user_s": 2.65,
-      "cpu_sys_s": 0.06,
+      "wall_s": 2.96,
+      "cpu_user_s": 2.83,
+      "cpu_sys_s": 0.07,
       "peak_rss_mb": 66.5,
       "isolation": {
         "environment": "scrubbed",
@@ -173,7 +173,7 @@
         "network": false
       }
     },
-    "raw_cbom_sha256": "8b40c17bd9af3127a6c38ef0561b5c7738dde769a12079f63707c7d5f60ad77d",
+    "raw_cbom_sha256": "3e1b706b21aa62f00565aef9359eeeece621e2b193b12107678c5923d4998325",
     "verdict": "scored",
     "overfit_gap": {
       "comparable_findings": 342,
@@ -559,10 +559,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 4.82,
-      "cpu_user_s": 4.66,
-      "cpu_sys_s": 0.13,
-      "peak_rss_mb": 71.0,
+      "wall_s": 5.05,
+      "cpu_user_s": 4.88,
+      "cpu_sys_s": 0.14,
+      "peak_rss_mb": 70.8,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -590,14 +590,8 @@
   },
   "gates": {
     "file": "gates.json",
-    "status": "fail",
-    "fails": [
-      "recall = 67.2 is below the gate minimum 68.6",
-      "primary_site_recall = 64.8 is below the gate minimum 66.1",
-      "params_accuracy = 54.5 is below the gate minimum 63.4",
-      "ticket_ready_pct = 45.9 is below the gate minimum 54.3",
-      "deadline_weighted_recall = 68.4 is below the gate minimum 69.8"
-    ],
+    "status": "pass",
+    "fails": [],
     "missing": [],
     "skipped": [
       {
@@ -607,8 +601,8 @@
     ],
     "why": "",
     "metrics": {
-      "recall": 67.2,
-      "primary_site_recall": 64.8,
+      "recall": 67.0,
+      "primary_site_recall": 64.6,
       "params_accuracy": 54.5,
       "precision": 99.6,
       "false_positives": 1,
@@ -617,9 +611,9 @@
       "pqc_standard_name_pct": 100.0,
       "system_routable_pct": 61.5,
       "ticket_ready_pct": 45.9,
-      "actionable_recall": 30.9,
+      "actionable_recall": 30.8,
       "field_completeness": 56.5,
-      "deadline_weighted_recall": 68.4,
+      "deadline_weighted_recall": 68.3,
       "missed_due_by_2030": 39,
       "library_recall": 96.4,
       "library_pq_verdict_accuracy": null,
@@ -635,7 +629,7 @@
       "checks": 19,
       "passed": 19,
       "corpus": {
-        "passed": 523,
+        "passed": 524,
         "failed": 0,
         "skipped": 0
       }

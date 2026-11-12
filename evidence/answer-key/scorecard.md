@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: answer key
 
-**Overall:** 393/393 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
+**Overall:** 394/394 findings detected (100.0% recall), 0 false positives (100.0% precision), parameters correct on 100.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 304/304 detected (100.0%), 0 false positives.
 
@@ -41,20 +41,20 @@ Password-gated findings (readable only by trying a well-known default password; 
 | PQC assets | 27/27 | 100.0% | 87.5–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC go | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC java | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC python | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC python | 7/7 | 100.0% | 64.6–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture artifacts | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | n/a | 100.0% | 0 | 100.0% |
 | System fixture assets | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 393/393 | 100.0% | 99.0–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| **Total** | 394/394 | 100.0% | 99.0–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 
 Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
-**PQC by standard name: 27/27 (100.0%).** Detected post-quantum findings reported under the FIPS 203/204/205 name or OID. Reports that only say Kyber, Dilithium, SPHINCS+ or Falcon keep their recall credit and fail this check.
+**PQC by standard name: 28/28 (100.0%).** Detected post-quantum findings reported under the FIPS 203/204/205 name or OID. Reports that only say Kyber, Dilithium, SPHINCS+ or Falcon keep their recall credit and fail this check.
 
 ## System fixture: routing and asset links
 
@@ -83,17 +83,17 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | Due by end of 2030 | 4 | 39/39 | 100.0% | 100.0% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
 | Due 2034 to 2035 | 2 | 107/107 | 100.0% | 100.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 148/148 | 100.0% | 100.0% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 149/149 | 100.0% | 100.0% |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 393/393 detected findings (100.0%)**, meaning every must-have is present and correct. **Actionable recall: 100.0%** of all 393 expected findings were both found and ticket-ready. Field completeness across all checks: 100.0%.
+**Ticket-ready: 394/394 detected findings (100.0%)**, meaning every must-have is present and correct. **Actionable recall: 100.0%** of all 394 expected findings were both found and ticket-ready. Field completeness across all checks: 100.0%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 393 | 393 | 100.0% |
+| Exact location | must | 394 | 394 | 100.0% |
 | Correct parameters | must | 222 | 222 | 100.0% |
 | Primitive, where the family is ambiguous | must | 81 | 81 | 100.0% |
 | Certificate expiry (correct) | must | 28 | 28 | 100.0% |
@@ -101,10 +101,10 @@ Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each
 | Key material type | must | 11 | 11 | 100.0% |
 | Protocol version | must | 16 | 16 | 100.0% |
 | OID | should | 324 | 324 | 100.0% |
-| Crypto functions | should | 344 | 344 | 100.0% |
+| Crypto functions | should | 345 | 345 | 100.0% |
 | Quantum security level (correct) | should | 335 | 335 | 100.0% |
-| Code context | should | 122 | 122 | 100.0% |
-| Providing library | should | 127 | 127 | 100.0% |
+| Code context | should | 123 | 123 | 100.0% |
+| Providing library | should | 128 | 128 | 100.0% |
 | Certificate issuer | should | 28 | 28 | 100.0% |
 | Certificate start date | should | 28 | 28 | 100.0% |
 | Certificate key and signature linked | should | 28 | 28 | 100.0% |
@@ -329,6 +329,7 @@ None.
 | PQ-PY-04 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-PY-05 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-PY-06 | EC | yes | yes | yes | yes | yes |
+| PQ-PY-07 | LMS | yes | yes | yes | yes | n/a |
 | PQ-JV-01 | ML-KEM | yes | yes | yes | yes | yes |
 | PQ-JV-02 | ML-DSA | yes | yes | yes | yes | yes |
 | PQ-JV-03 | ML-DSA | yes | yes | yes | yes | yes |

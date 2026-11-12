@@ -1,9 +1,9 @@
 {
   "bundle_format": 1,
   "kind": "perf",
-  "testbench": "2.4.1",
+  "testbench": "2.5.0",
   "methodology": "2.3",
-  "created": "2026-11-11T23:11:03Z",
+  "created": "2026-11-12T12:26:24Z",
   "fixture": {
     "seed": 2026,
     "size": "medium",
@@ -62,10 +62,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 102.21,
-    "cpu_user_s": 162.58,
-    "cpu_sys_s": 10.79,
-    "peak_rss_mb": 1716.7,
+    "wall_s": 101.11,
+    "cpu_user_s": 165.89,
+    "cpu_sys_s": 7.21,
+    "peak_rss_mb": 1713.3,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -88,7 +88,7 @@
   "status": "finished",
   "within_budget": true,
   "throughput": {
-    "files_per_s": 29.4,
+    "files_per_s": 29.7,
     "mb_per_s": 0.17
   },
   "result": {

@@ -200,8 +200,8 @@ TLS protocol settings in code (Tier 1 `TLS-` cases) have no generator yet, so th
 Of the 55 findings added in 2.4.0, generator 1.2 covers the C# cases, the Apache, HAProxy and IPsec
 configs, LMS and XMSS in signing policies, minified JavaScript and native binaries. Still without a
 generator: the ProGuard-obfuscated jar (the generator's jars are compiled, not obfuscated), LMS and
-XMSS in Java code, and the two stateful public keys identified by OID. A scanner could fit to those
-eight findings and the gap wouldn't show it. C# also has no calibration cases on the published side
+XMSS in Java code, LMS implemented in Python, and the two stateful public keys identified by OID. A scanner could fit to those
+nine findings and the gap wouldn't show it. C# also has no calibration cases on the published side
 and no mixed or cross-file cases on either, so its cells are thin: read a C# jump with the interval
 in view.
 
