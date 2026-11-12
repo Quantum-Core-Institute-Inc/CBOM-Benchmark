@@ -48,6 +48,18 @@ jobs:
             ecosystem: npm
             package: quantascan@1.0.1
             cmd: "quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json"
+          - id: cryptoscan
+            name: cryptoscan 1.5.0
+            version: "1.5.0"
+            ecosystem: go
+            package: github.com/csnp/cryptoscan/cmd/cryptoscan@v1.5.0
+            cmd: "cryptoscan scan {corpus} --format cbom --output {out}/cbom.json"
+          - id: qscan
+            name: qScan
+            version: "latest"
+            ecosystem: npm
+            package: "@quantakrypto/qscan"
+            cmd: "qscan {corpus} --cbom -o {out}/cbom.json"
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
