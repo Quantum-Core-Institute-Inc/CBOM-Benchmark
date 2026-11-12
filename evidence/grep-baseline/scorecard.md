@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: grep baseline
 
-**Overall:** 265/394 findings detected (67.3% recall), 170 false positives (60.9% precision), parameters correct on 55.8% of detections.
+**Overall:** 275/410 findings detected (67.1% recall), 171 false positives (61.7% precision), parameters correct on 56.0% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 277/304 detected (91.1%), 18 false positives.
 
@@ -23,9 +23,9 @@ Password-gated findings (readable only by trying a well-known default password; 
 | Tier 3 java | 7/7 | 100.0% | 64.6–100.0% (thin) | 42.9% | 42.9% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 3 python | 9/9 | 100.0% | 70.1–100.0% (thin) | 55.6% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 4 assets | 23/66 | 34.8% | 24.5–46.9% | 34.8% | 69.6% | 95.5% | 100.0% | 4 | 85.2% |
-| Tier 5 c | 2/3 | 66.7% | 20.8–93.9% (thin) | 66.7% | 50.0% | n/a | 100.0% | 1 | 66.7% |
+| Tier 5 c | 7/11 | 63.6% | 35.4–84.8% | 63.6% | 57.1% | n/a | 100.0% | 1 | 87.5% |
 | Tier 5 java | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| Tier 5 javascript | 3/3 | 100.0% | 43.8–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 5 javascript | 8/11 | 72.7% | 43.4–90.3% | 72.7% | 75.0% | 100.0% | 100.0% | 1 | 88.9% |
 | Tier 5 python | 0/9 | 0.0% | 0.0–29.9% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Dead code c | 1/2 | 50.0% | 9.5–90.5% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 1 | 50.0% |
 | Dead code go | 1/2 | 50.0% | 9.5–90.5% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
@@ -47,10 +47,10 @@ Password-gated findings (readable only by trying a well-known default password; 
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 2/4 | 50.0% | 15.0–85.0% (thin) | 0.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 265/394 | 67.3% | 62.5–71.7% | 63.5% | 55.8% | 99.2% | 100.0% | 170 | 60.9% |
+| **Total** | 275/410 | 67.1% | 62.4–71.4% | 63.4% | 56.0% | 99.2% | 100.0% | 171 | 61.7% |
 | Negative controls | | | | | | | | 60 | |
 
-Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 28.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -83,15 +83,15 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 67.4%** (at primary site: 62.8%). **Findings due by end of 2030 that this scanner missed: 42.**
+**Deadline-weighted recall: 67.2%** (at primary site: 62.8%). **Findings due by end of 2030 that this scanner missed: 44.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 66/99 | 66.7% | 62.6% |
-| Due by end of 2030 | 4 | 30/39 | 76.9% | 66.7% |
+| Due now (not approved or past its date) | 5 | 68/103 | 66.0% | 62.1% |
+| Due by end of 2030 | 4 | 33/42 | 78.6% | 69.0% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 64/107 | 59.8% | 57.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 105/149 | 70.5% | 67.8% |
+| Due 2034 to 2035 | 2 | 66/112 | 58.9% | 56.2% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 108/153 | 70.6% | 68.0% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -119,6 +119,8 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T5-JV-08 | SHA-1 | 2030-12-31 | `corpus/tier5/java/compiled/billing-core.jar` |
 | T5-JV-09 | DES-ECB | **now** | `corpus/tier5/java/compiled/token-vault.jar` |
 | T5-JV-10 | SHA-1 | 2030-12-31 | `corpus/tier5/java/compiled/token-vault.jar` |
+| T5-JS-06 | 3DES-CBC | 2023-12-31 | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
+| T5-JS-10 | DH-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/webhook-relay.min.js` |
 | T5-C-02 | 3DES-CBC | 2023-12-31 | `corpus/tier5/c/bin/meterd` |
 | T1-GO-09 | RC4 | **now** | `corpus/tier1/go/rc4/main.go` |
 | T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/go/tls_config/main.go` |
@@ -142,20 +144,20 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 135/265 detected findings (50.9%)**, meaning every must-have is present and correct. **Actionable recall: 34.3%** of all 394 expected findings were both found and ticket-ready. Field completeness across all checks: 36.8%.
+**Ticket-ready: 141/275 detected findings (51.3%)**, meaning every must-have is present and correct. **Actionable recall: 34.4%** of all 410 expected findings were both found and ticket-ready. Field completeness across all checks: 36.9%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 265 | 262 | 98.9% |
-| Correct parameters | must | 161 | 44 | 27.3% |
+| Exact location | must | 275 | 272 | 98.9% |
+| Correct parameters | must | 167 | 46 | 27.5% |
 | Primitive, where the family is ambiguous | must | 52 | 52 | 100.0% |
 | Certificate expiry (correct) | must | 0 | 0 | n/a |
 | Certificate subject (correct) | must | 0 | 0 | n/a |
 | Key material type | must | 3 | 0 | 0.0% |
 | Protocol version | must | 13 | 0 | 0.0% |
-| OID | should | 245 | 0 | 0.0% |
-| Crypto functions | should | 252 | 0 | 0.0% |
-| Quantum security level (correct) | should | 251 | 179 | 71.3% |
+| OID | should | 255 | 0 | 0.0% |
+| Crypto functions | should | 262 | 0 | 0.0% |
+| Quantum security level (correct) | should | 261 | 185 | 70.9% |
 | Code context | should | 107 | 0 | 0.0% |
 | Providing library | should | 107 | 0 | 0.0% |
 | Certificate issuer | should | 0 | 0 | n/a |
@@ -164,7 +166,7 @@ Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each
 | Key format | should | 3 | 0 | 0.0% |
 | Cipher suite in a protocol | should | 0 | 0 | n/a |
 
-Detected but not ticket-ready (130), first 25:
+Detected but not ticket-ready (134), first 25:
 
 | ID | Algorithm | Missing must-haves |
 |---|---|---|
@@ -261,7 +263,13 @@ Detected but not ticket-ready (130), first 25:
 | T5-JV-09 | `corpus/tier5/java/compiled/token-vault.jar` | DES {'mode': 'ECB'} | file |
 | T5-JV-10 | `corpus/tier5/java/compiled/token-vault.jar` | SHA-1  | file |
 | T5-JV-11 | `corpus/tier5/java/compiled/token-vault.jar` | EC {'curve': 'P-256'} | file |
+| T5-JS-06 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | 3DES {'mode': 'CBC'} | 1 |
+| T5-JS-07 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | EC {'curve': 'P-256'} | 1 |
+| T5-JS-10 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | DH {'key_size': 1024} | 1 |
 | T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
+| T5-C-07 | `corpus/tier5/c/bin/keyd` | EC {'curve': 'P-256'} | file |
+| T5-C-08 | `corpus/tier5/c/bin/fwcheck` | SHA-512  | file |
+| T5-C-10 | `corpus/tier5/c/bin/fwcheck` | DH {'key_size': 2048} | file |
 | PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
@@ -368,7 +376,11 @@ Detected but not ticket-ready (130), first 25:
 | T4-AS-32 | RSA | `{"key_size": 2048}` | `{}` |
 | T4-AS-60 | AES | `{"key_size": 256}` | `{}` |
 | T4-AS-68 | AES | `{"key_size": 128}` | `{}` |
+| T5-JS-05 | HMAC | `{"hash": "MD5"}` | `{}` |
+| T5-JS-08 | PBKDF2 | `{"hash": "SHA-1"}` | `{}` |
 | T5-C-03 | RSA | `{"key_size": 1024}` | `{}; {}` |
+| T5-C-05 | HMAC | `{"hash": "MD5"}` | `{}` |
+| T5-C-06 | AES | `{"key_size": 256, "mode": "GCM"}` | `{}` |
 | PQ-PY-01 | ML-KEM | `{"param_set": "768"}` | `{}; {}` |
 | PQ-PY-02 | ML-DSA | `{"param_set": "65"}` | `{}; {}` |
 | PQ-PY-04 | ML-KEM | `{"param_set": "768"}` | `{}; {}` |
@@ -623,6 +635,7 @@ Detected but not ticket-ready (130), first 25:
 | `corpus/tier4/assets/tls/nginx.conf` | DES | 18, 21 | no |
 | `corpus/tier4/assets/tls/nginx.conf` | SSL-3.0 | 17 | no |
 | `corpus/tier5/c/bin/meterd` | DES | 8 | no |
+| `corpus/tier5/javascript/dist/payments-sdk.min.js` | DES | 1 | no |
 | `corpus/mixed/go/report_gateway/main.go` | DES | 237 | no |
 
 ## Crypto libraries (dependency manifests)
@@ -826,9 +839,25 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T5-JS-01 | MD5 | yes | yes | yes | yes | yes |
 | T5-JS-02 | AES | yes | yes | yes | yes | yes |
 | T5-JS-03 | RSA | yes | yes | yes | yes | yes |
+| T5-JS-04 | SHA-1 | yes | yes | yes | yes | yes |
+| T5-JS-05 | HMAC | yes | yes | NO | yes | n/a |
+| T5-JS-06 | 3DES | NO | NO | n/a | n/a | n/a |
+| T5-JS-07 | EC | NO | NO | n/a | n/a | n/a |
+| T5-JS-08 | PBKDF2 | yes | yes | NO | yes | n/a |
+| T5-JS-09 | AES | yes | yes | yes | yes | yes |
+| T5-JS-10 | DH | NO | NO | n/a | n/a | n/a |
+| T5-JS-11 | Ed25519 | yes | yes | yes | yes | yes |
 | T5-C-01 | MD5 | yes | yes | yes | n/a | yes |
 | T5-C-02 | 3DES | NO | NO | n/a | n/a | n/a |
 | T5-C-03 | RSA | yes | yes | NO | n/a | yes |
+| T5-C-04 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-C-05 | HMAC | yes | yes | NO | n/a | n/a |
+| T5-C-06 | AES | yes | yes | NO | n/a | n/a |
+| T5-C-07 | EC | NO | NO | n/a | n/a | n/a |
+| T5-C-08 | SHA-512 | NO | NO | n/a | n/a | n/a |
+| T5-C-09 | AES | yes | yes | yes | n/a | yes |
+| T5-C-10 | DH | NO | NO | n/a | n/a | n/a |
+| T5-C-11 | X25519 | yes | yes | yes | n/a | yes |
 | PQ-PY-01 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-02 | ML-DSA | yes | yes | NO | yes | n/a |
 | PQ-PY-03 | X25519 | yes | yes | yes | yes | yes |

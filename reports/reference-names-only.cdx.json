@@ -2981,6 +2981,151 @@
     },
     {
       "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-04",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-05",
+      "name": "HMAC-MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-06",
+      "name": "3DES-CBC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "mode": "cbc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-07",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-256"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/payments-sdk.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-08",
+      "name": "PBKDF2-HMAC-SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-09",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "256",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-10",
+      "name": "DH-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "1024"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-JS-11",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/javascript/dist/webhook-relay.min.js",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
       "bom-ref": "T5-C-01",
       "name": "MD5",
       "cryptoProperties": {
@@ -3027,6 +3172,144 @@
         "occurrences": [
           {
             "location": "corpus/tier5/c/bin/meterd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-04",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-05",
+      "name": "HMAC-MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-06",
+      "name": "AES-256-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "256",
+          "mode": "gcm"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-07",
+      "name": "ECC-P-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "curve": "P-256"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/keyd"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-08",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-09",
+      "name": "AES-128-ECB",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "128",
+          "mode": "ecb"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-10",
+      "name": "DH-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "2048"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "T5-C-11",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "corpus/tier5/c/bin/fwcheck"
           }
         ]
       }

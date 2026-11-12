@@ -11,11 +11,11 @@
   "why": "",
   "report_only": false,
   "stamp": {
-    "release": "2.5.0",
+    "release": "2.6.0",
     "methodology": "2.3",
-    "findings": 394,
-    "answer_key": "a4ecdd86a8a593eb",
-    "corpus": "ce56704b1418c9a2",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"

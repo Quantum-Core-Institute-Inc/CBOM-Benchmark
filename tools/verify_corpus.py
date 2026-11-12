@@ -273,9 +273,8 @@ def verify_tier5(failures, has_java):
         else:
             report(f"{pyc.relative_to(ROOT)} (runs as bytecode)", r, failures)
 
-    native = t5 / "c" / "bin" / "meterd"
-    if native.exists():
-        import platform
+    import platform
+    for native in sorted((t5 / "c" / "bin").glob("*")):
         if platform.system() == "Linux" and platform.machine() == "x86_64":
             native.chmod(0o755)
             report(f"{native.relative_to(ROOT)} (stripped binary, self-test)", run([str(native)], cwd=ROOT), failures)

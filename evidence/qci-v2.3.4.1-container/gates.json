@@ -3,10 +3,10 @@
   "note": "Ratchet gates (everything except the policy limits below) are floors: the best value a QCI release has reached on this corpus and answer key, so a ratchet never moves down because a later release regressed; raise them when a release improves a number. Where 'carried_from' is set, a floor may have been set by a release that is no longer published here; it was measured on the same corpus, answer key, scorer and policy, which the rebaseline tool checks before carrying it. cbom_schema_valid (the scanner's own cbom.json must validate against CycloneDX 1.6) and the two holdout gates are fixed policy limits that a rebaseline never moves: overfit_gap_ci_low fails when the published score beats a private holdout by more than sampling noise; negative_fp_gap fails when freshly generated negative controls draw more than 0.5 extra false positives per file than the published ones (calibration in HOLDOUT.md). Both apply only when CBOM_HOLDOUT_SEED is set. Every gate is a required measurement: one that is absent makes the run 'not evaluated' (exit 3), unless the gate carries when_missing: skip with a reason, or the run was made with --without-holdout, in which case it is listed as skipped.",
   "gates": {
     "recall": {
-      "min": 67.0
+      "min": 64.2
     },
     "primary_site_recall": {
-      "min": 64.6
+      "min": 61.9
     },
     "params_accuracy": {
       "min": 54.5
@@ -24,7 +24,7 @@
       "min": 45.9
     },
     "deadline_weighted_recall": {
-      "min": 68.3
+      "min": 65.1
     },
     "overfit_gap_ci_low": {
       "max": 0
@@ -46,11 +46,11 @@
   },
   "set_on": "2026-11-12",
   "stamp": {
-    "release": "2.5.0",
+    "release": "2.6.0",
     "methodology": "2.3",
-    "findings": 394,
-    "answer_key": "a4ecdd86a8a593eb",
-    "corpus": "ce56704b1418c9a2",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"

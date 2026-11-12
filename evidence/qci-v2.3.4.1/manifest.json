@@ -1,22 +1,22 @@
 {
   "bundle_format": 1,
-  "testbench": "2.5.0",
+  "testbench": "2.6.0",
   "methodology": "2.3",
-  "created": "2026-11-12T12:39:45Z",
+  "created": "2026-11-12T13:24:16Z",
   "stamp": {
-    "release": "2.5.0",
+    "release": "2.6.0",
     "methodology": "2.3",
-    "findings": 394,
-    "answer_key": "a4ecdd86a8a593eb",
-    "corpus": "ce56704b1418c9a2",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
     "scorer": "4449df0c3850c51f",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c",
-    "expected/ground_truth.json": "d9303ef1ba46531cdffb04095cc45acdf1794f439275a140298cf0dc77a3d147",
+    "VERSION": "6693435eadb673dda297a0652d241e293e361200bc40db949cf2501d18dd01ee",
+    "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "integrations/qci-pqc/scope.json": "64a6f4da6c9c820059a540ac3c397ac14f5b07c22a84dd0eedbce2f6a31401d4",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -82,10 +82,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 4.92,
-    "cpu_user_s": 4.71,
-    "cpu_sys_s": 0.15,
-    "peak_rss_mb": 43.9,
+    "wall_s": 5.11,
+    "cpu_user_s": 4.91,
+    "cpu_sys_s": 0.14,
+    "peak_rss_mb": 44.0,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -106,31 +106,31 @@
     }
   },
   "headline": {
-    "scored_findings": 367,
-    "recall": 67.0,
-    "primary_site_recall": 64.6,
+    "scored_findings": 383,
+    "recall": 64.2,
+    "primary_site_recall": 61.9,
     "params_accuracy": 54.5,
     "precision": 99.6,
     "false_positives": 1,
     "pqc_overclaims": 0,
     "pqc_standard_name_pct": 100.0,
     "ticket_ready_pct": 45.9,
-    "actionable_recall": 30.8,
-    "deadline_weighted_recall": 68.3,
+    "actionable_recall": 29.5,
+    "deadline_weighted_recall": 65.1,
     "library_recall": 96.4
   },
   "headline_full": {
-    "scored_findings": 394,
-    "recall": 63.5,
-    "primary_site_recall": 61.2,
+    "scored_findings": 410,
+    "recall": 61.0,
+    "primary_site_recall": 58.8,
     "params_accuracy": 54.4,
     "precision": 99.6,
     "false_positives": 1,
     "pqc_overclaims": 0,
     "pqc_standard_name_pct": 100.0,
     "ticket_ready_pct": 45.2,
-    "actionable_recall": 28.7,
-    "deadline_weighted_recall": 64.6,
+    "actionable_recall": 27.6,
+    "deadline_weighted_recall": 61.8,
     "library_recall": 96.4
   },
   "holdout": {
@@ -150,10 +150,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 2.96,
-      "cpu_user_s": 2.83,
-      "cpu_sys_s": 0.07,
-      "peak_rss_mb": 66.5,
+      "wall_s": 3.05,
+      "cpu_user_s": 2.92,
+      "cpu_sys_s": 0.11,
+      "peak_rss_mb": 66.7,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -173,17 +173,17 @@
         "network": false
       }
     },
-    "raw_cbom_sha256": "3e1b706b21aa62f00565aef9359eeeece621e2b193b12107678c5923d4998325",
+    "raw_cbom_sha256": "7d91da71241630361c16ac31774b4436d8d67003a81226a52b44a49f44f14eef",
     "verdict": "scored",
     "overfit_gap": {
-      "comparable_findings": 342,
-      "cells": 143,
+      "comparable_findings": 346,
+      "cells": 146,
       "families": 33,
-      "published_matched": 66.5,
-      "holdout": 67.3,
+      "published_matched": 65.7,
+      "holdout": 66.5,
       "gap": -0.8,
       "gap_ci95": [
-        -5.8,
+        -5.9,
         4.3
       ],
       "significant": false,
@@ -211,7 +211,7 @@
         "tier5": {
           "published": 0.0,
           "holdout": 0.0,
-          "holdout_n": 6
+          "holdout_n": 10
         },
         "tierpqc": {
           "published": 87.5,
@@ -227,11 +227,11 @@
       "by_family": [
         {
           "family": "3DES",
-          "published": 76.7,
-          "published_n": 30,
-          "holdout": 60.7,
-          "holdout_n": 28,
-          "gap": 16.0
+          "published": 74.2,
+          "published_n": 31,
+          "holdout": 56.7,
+          "holdout_n": 30,
+          "gap": 17.5
         },
         {
           "family": "AES",
@@ -259,10 +259,10 @@
         },
         {
           "family": "EC",
-          "published": 69.2,
-          "published_n": 39,
-          "holdout": 74.4,
-          "holdout_n": 43,
+          "published": 67.5,
+          "published_n": 40,
+          "holdout": 72.7,
+          "holdout_n": 44,
           "gap": -5.2
         },
         {
@@ -275,11 +275,11 @@
         },
         {
           "family": "HMAC",
-          "published": 92.5,
-          "published_n": 40,
-          "holdout": 85.4,
-          "holdout_n": 41,
-          "gap": 7.1
+          "published": 90.2,
+          "published_n": 41,
+          "holdout": 83.3,
+          "holdout_n": 42,
+          "gap": 6.9
         },
         {
           "family": "LMS",
@@ -559,10 +559,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 5.05,
-      "cpu_user_s": 4.88,
-      "cpu_sys_s": 0.14,
-      "peak_rss_mb": 70.8,
+      "wall_s": 5.23,
+      "cpu_user_s": 4.99,
+      "cpu_sys_s": 0.16,
+      "peak_rss_mb": 70.9,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -601,8 +601,8 @@
     ],
     "why": "",
     "metrics": {
-      "recall": 67.0,
-      "primary_site_recall": 64.6,
+      "recall": 64.2,
+      "primary_site_recall": 61.9,
       "params_accuracy": 54.5,
       "precision": 99.6,
       "false_positives": 1,
@@ -611,14 +611,14 @@
       "pqc_standard_name_pct": 100.0,
       "system_routable_pct": 61.5,
       "ticket_ready_pct": 45.9,
-      "actionable_recall": 30.8,
+      "actionable_recall": 29.5,
       "field_completeness": 56.5,
-      "deadline_weighted_recall": 68.3,
-      "missed_due_by_2030": 39,
+      "deadline_weighted_recall": 65.1,
+      "missed_due_by_2030": 46,
       "library_recall": 96.4,
       "library_pq_verdict_accuracy": null,
       "cbom_schema_valid": 1,
-      "overfit_gap_ci_low": -5.8,
+      "overfit_gap_ci_low": -5.9,
       "negative_fp_gap": 0.0
     },
     "without": {}
@@ -629,7 +629,7 @@
       "checks": 19,
       "passed": 19,
       "corpus": {
-        "passed": 524,
+        "passed": 528,
         "failed": 0,
         "skipped": 0
       }

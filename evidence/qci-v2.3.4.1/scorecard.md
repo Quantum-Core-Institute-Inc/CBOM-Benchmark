@@ -1,6 +1,6 @@
 # CBOM Testbench Scorecard: QCI v2.3.4.1, declared scope
 
-**Overall:** 246/367 findings detected (67.0% recall), 1 false positives (99.6% precision), parameters correct on 54.5% of detections.
+**Overall:** 246/383 findings detected (64.2% recall), 1 false positives (99.6% precision), parameters correct on 54.5% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 246/304 detected (80.9%), 3 false positives.
 
@@ -21,9 +21,9 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 3 java | 5/7 | 71.4% | 35.9–91.8% (thin) | 71.4% | 40.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 3 python | 7/9 | 77.8% | 45.3–93.7% (thin) | 55.6% | 14.3% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 4 assets | 22/54 | 40.7% | 28.7–54.0% | 40.7% | 81.8% | 92.9% | 100.0% | 0 | 100.0% |
-| Tier 5 c | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Tier 5 c | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 java | 0/5 | 0.0% | 0.0–43.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| Tier 5 javascript | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Tier 5 javascript | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 python | 2/7 | 28.6% | 8.2–64.1% (thin) | 28.6% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Dead code c | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Dead code go | 1/2 | 50.0% | 9.5–90.5% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
@@ -45,10 +45,10 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 246/367 | 67.0% | 62.1–71.6% | 64.6% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
+| **Total** | 246/383 | 64.2% | 59.3–68.9% | 61.9% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
 | Negative controls | | | | | | | | 0 | |
 
-Intervals are 95% Wilson intervals on recall. 27 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -81,15 +81,15 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 68.3%** (at primary site: 65.5%). **Findings due by end of 2030 that this scanner missed: 39.**
+**Deadline-weighted recall: 65.1%** (at primary site: 62.5%). **Findings due by end of 2030 that this scanner missed: 46.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 64/95 | 67.4% | 65.3% |
-| Due by end of 2030 | 4 | 24/32 | 75.0% | 68.8% |
+| Due now (not approved or past its date) | 5 | 64/99 | 64.6% | 62.6% |
+| Due by end of 2030 | 4 | 24/35 | 68.6% | 62.9% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 72/103 | 69.9% | 67.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 86/137 | 62.8% | 61.3% |
+| Due 2034 to 2035 | 2 | 72/108 | 66.7% | 63.9% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 86/141 | 61.0% | 59.6% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -113,9 +113,16 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T5-JV-04 | TEA | **now** | `corpus/tier5/java/T5BlockTransform.java` |
 | T5-JS-01 | MD5 | **now** | `corpus/tier5/javascript/dist/session-tokens.min.js` |
 | T5-JS-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/session-tokens.min.js` |
+| T5-JS-04 | SHA-1 | 2030-12-31 | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
+| T5-JS-05 | HMAC-MD5 | **now** | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
+| T5-JS-06 | 3DES-CBC | 2023-12-31 | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
+| T5-JS-08 | PBKDF2-HMAC-SHA-1 | 2030-12-31 | `corpus/tier5/javascript/dist/webhook-relay.min.js` |
+| T5-JS-10 | DH-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/webhook-relay.min.js` |
 | T5-C-01 | MD5 | **now** | `corpus/tier5/c/bin/meterd` |
 | T5-C-02 | 3DES-CBC | 2023-12-31 | `corpus/tier5/c/bin/meterd` |
 | T5-C-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/c/bin/meterd` |
+| T5-C-04 | SHA-1 | 2030-12-31 | `corpus/tier5/c/bin/keyd` |
+| T5-C-05 | HMAC-MD5 | **now** | `corpus/tier5/c/bin/keyd` |
 | T1-GO-09 | RC4 | **now** | `corpus/tier1/go/rc4/main.go` |
 | T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/go/tls_config/main.go` |
 | T1-JS-01 | MD5 | **now** | `corpus/tier1/javascript/t1_hashes.js` |
@@ -137,7 +144,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 113/246 detected findings (45.9%)**, meaning every must-have is present and correct. **Actionable recall: 30.8%** of all 367 expected findings were both found and ticket-ready. Field completeness across all checks: 56.5%.
+**Ticket-ready: 113/246 detected findings (45.9%)**, meaning every must-have is present and correct. **Actionable recall: 29.5%** of all 383 expected findings were both found and ticket-ready. Field completeness across all checks: 56.5%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
@@ -283,9 +290,25 @@ Detected but not ticket-ready (133), first 25:
 | T5-JS-01 | `corpus/tier5/javascript/dist/session-tokens.min.js` | MD5  | 1 |
 | T5-JS-02 | `corpus/tier5/javascript/dist/session-tokens.min.js` | AES {'key_size': 128, 'mode': 'CBC'} | 1 |
 | T5-JS-03 | `corpus/tier5/javascript/dist/session-tokens.min.js` | RSA {'key_size': 1024} | 1 |
+| T5-JS-04 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | SHA-1  | 1 |
+| T5-JS-05 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | HMAC {'hash': 'MD5'} | 1 |
+| T5-JS-06 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | 3DES {'mode': 'CBC'} | 1 |
+| T5-JS-07 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | EC {'curve': 'P-256'} | 1 |
+| T5-JS-08 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | PBKDF2 {'hash': 'SHA-1'} | 1 |
+| T5-JS-09 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | AES {'key_size': 256, 'mode': 'GCM'} | 1 |
+| T5-JS-10 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | DH {'key_size': 1024} | 1 |
+| T5-JS-11 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | Ed25519  | 1 |
 | T5-C-01 | `corpus/tier5/c/bin/meterd` | MD5  | file |
 | T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
 | T5-C-03 | `corpus/tier5/c/bin/meterd` | RSA {'key_size': 1024} | file |
+| T5-C-04 | `corpus/tier5/c/bin/keyd` | SHA-1  | file |
+| T5-C-05 | `corpus/tier5/c/bin/keyd` | HMAC {'hash': 'MD5'} | file |
+| T5-C-06 | `corpus/tier5/c/bin/keyd` | AES {'key_size': 256, 'mode': 'GCM'} | file |
+| T5-C-07 | `corpus/tier5/c/bin/keyd` | EC {'curve': 'P-256'} | file |
+| T5-C-08 | `corpus/tier5/c/bin/fwcheck` | SHA-512  | file |
+| T5-C-09 | `corpus/tier5/c/bin/fwcheck` | AES {'key_size': 128, 'mode': 'ECB'} | file |
+| T5-C-10 | `corpus/tier5/c/bin/fwcheck` | DH {'key_size': 2048} | file |
+| T5-C-11 | `corpus/tier5/c/bin/fwcheck` | X25519  | file |
 | PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
@@ -792,9 +815,25 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T5-JS-01 | MD5 | NO | NO | n/a | n/a | n/a |
 | T5-JS-02 | AES | NO | NO | n/a | n/a | n/a |
 | T5-JS-03 | RSA | NO | NO | n/a | n/a | n/a |
+| T5-JS-04 | SHA-1 | NO | NO | n/a | n/a | n/a |
+| T5-JS-05 | HMAC | NO | NO | n/a | n/a | n/a |
+| T5-JS-06 | 3DES | NO | NO | n/a | n/a | n/a |
+| T5-JS-07 | EC | NO | NO | n/a | n/a | n/a |
+| T5-JS-08 | PBKDF2 | NO | NO | n/a | n/a | n/a |
+| T5-JS-09 | AES | NO | NO | n/a | n/a | n/a |
+| T5-JS-10 | DH | NO | NO | n/a | n/a | n/a |
+| T5-JS-11 | Ed25519 | NO | NO | n/a | n/a | n/a |
 | T5-C-01 | MD5 | NO | NO | n/a | n/a | n/a |
 | T5-C-02 | 3DES | NO | NO | n/a | n/a | n/a |
 | T5-C-03 | RSA | NO | NO | n/a | n/a | n/a |
+| T5-C-04 | SHA-1 | NO | NO | n/a | n/a | n/a |
+| T5-C-05 | HMAC | NO | NO | n/a | n/a | n/a |
+| T5-C-06 | AES | NO | NO | n/a | n/a | n/a |
+| T5-C-07 | EC | NO | NO | n/a | n/a | n/a |
+| T5-C-08 | SHA-512 | NO | NO | n/a | n/a | n/a |
+| T5-C-09 | AES | NO | NO | n/a | n/a | n/a |
+| T5-C-10 | DH | NO | NO | n/a | n/a | n/a |
+| T5-C-11 | X25519 | NO | NO | n/a | n/a | n/a |
 | PQ-PY-01 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-02 | ML-DSA | yes | yes | NO | yes | n/a |
 | PQ-PY-03 | X25519 | yes | yes | yes | yes | yes |

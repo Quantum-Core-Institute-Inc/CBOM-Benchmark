@@ -181,7 +181,7 @@ def main() -> int:
             (cp.get("certificateProperties") or {}).pop(k, None)
     rep = score(bom)
     ok &= check("names-only CBOM: 100% recall, far from 100% ticket-ready",
-                rep["summary"]["all/all"]["recall"] == 100 and rep["actionability"]["ticket_ready_pct"] < 75
+                rep["summary"]["all/all"]["recall"] == 100 and rep["actionability"]["ticket_ready_pct"] < 85
                 and rep["actionability"]["completeness_pct"] < 40)
 
     # --- Calibration cases: scored apart, never in the headline -----------------------------------

@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:dedf41f2-bb21-4846-af78-2fd7f77283ea",
+  "serialNumber": "urn:uuid:d399c17f-8b2c-4fd1-902b-c144947291cd",
   "version": 2,
   "metadata": {
-    "timestamp": "2026-11-12T12:42:07Z",
+    "timestamp": "2026-11-12T13:26:25Z",
     "tools": {
       "components": [
         {
@@ -61,7 +61,7 @@
           "properties": [
             {
               "name": "SrcGoMod",
-              "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/tier2/go/go.mod"
+              "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/tier2/go/go.mod"
             },
             {
               "name": "ModuleGoVersion",
@@ -73,7 +73,7 @@
             },
             {
               "name": "cdx:go:local_dir",
-              "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/tier2/go"
+              "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/tier2/go"
             }
           ],
           "components": [
@@ -88,7 +88,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/tier1/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/tier1/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -100,7 +100,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/tier1/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/tier1/go"
                 }
               ]
             },
@@ -115,7 +115,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/system/payments-platform/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/system/payments-platform/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -127,7 +127,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/system/payments-platform"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/system/payments-platform"
                 }
               ]
             },
@@ -142,7 +142,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/pqc/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/pqc/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -154,7 +154,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/pqc/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/pqc/go"
                 }
               ]
             },
@@ -169,7 +169,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/negatives/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/negatives/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -181,7 +181,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/negatives/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/negatives/go"
                 }
               ]
             },
@@ -196,7 +196,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/mixed/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/mixed/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -208,7 +208,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/mixed/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/mixed/go"
                 }
               ]
             },
@@ -223,7 +223,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/deadcode/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/deadcode/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -235,7 +235,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/deadcode/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/deadcode/go"
                 }
               ]
             },
@@ -250,7 +250,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/calibration/tier2/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/calibration/tier2/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -262,7 +262,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/calibration/tier2/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/calibration/tier2/go"
                 }
               ]
             },
@@ -277,7 +277,7 @@
               "properties": [
                 {
                   "name": "SrcGoMod",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/calibration/tier1/go/go.mod"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/calibration/tier1/go/go.mod"
                 },
                 {
                   "name": "ModuleGoVersion",
@@ -289,7 +289,7 @@
                 },
                 {
                   "name": "cdx:go:local_dir",
-                  "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/calibration/tier1/go"
+                  "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/calibration/tier1/go"
                 }
               ]
             },
@@ -316,7 +316,7 @@
       },
       {
         "name": "cdx:bom:componentSrcFiles",
-        "value": "Filename /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/c-agent/CMakeLists.txt\\nFilename /usr/include/openssl/evp.h\\nFilename /usr/include/openssl/obj_mac.h\\nFilename /usr/include/openssl/rsa.h\\nFilename /usr/include/openssl/ssl.h\\nFilename calibration/tier1/c/cal_3des_002.c\\nFilename calibration/tier1/c/cal_aes_004.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_006.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_007.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_008.c\\nFilename calibration/tier1/c/cal_dh_009.c\\nFilename calibration/tier1/c/cal_dh_010.c\\nFilename calibration/tier1/c/cal_dh_011.c\\nFilename calibration/tier1/c/cal_ec_012.c\\nFilename calibration/tier1/c/cal_ec_013.c\\nFilename calibration/tier1/c/cal_ec_014.c\\nFilename calibration/tier1/c/cal_ed25519_015.c\\nFilename calibration/tier1/c/cal_ed25519_016.c\\nFilename calibration/tier1/c/cal_ed25519_017.c\\nFilename calibration/tier1/c/cal_hmac_018.c\\nFilename calibration/tier1/c/cal_hmac_019.c\\nFilename calibration/tier1/c/cal_hmac_020.c\\nFilename calibration/tier1/c/cal_md5_021.c\\nFilename calibration/tier1/c/cal_md5_022.c\\nFilename calibration/tier1/c/cal_md5_023.c\\nFilename calibration/tier1/c/cal_pbkdf2_024.c\\nFilename calibration/tier1/c/cal_pbkdf2_025.c\\nFilename calibration/tier1/c/cal_pbkdf2_026.c\\nFilename calibration/tier1/c/cal_rsa_027.c\\nFilename calibration/tier1/c/cal_rsa_028.c\\nFilename calibration/tier1/c/cal_sha1_029.c\\nFilename calibration/tier1/c/cal_sha1_030.c\\nFilename calibration/tier1/c/cal_sha1_031.c\\nFilename calibration/tier1/c/cal_sha256_032.c\\nFilename calibration/tier1/c/cal_sha256_033.c\\nFilename calibration/tier1/c/cal_sha256_034.c\\nFilename calibration/tier1/c/cal_sha3256_035.c\\nFilename calibration/tier1/c/cal_sha3256_036.c\\nFilename calibration/tier1/c/cal_sha3256_037.c\\nFilename calibration/tier1/c/cal_x25519_038.c\\nFilename calibration/tier1/c/cal_x25519_039.c\\nFilename calibration/tier1/c/cal_x25519_040.c\\nFilename calibration/tier2/c/cal_3des_001.c\\nFilename calibration/tier2/c/cal_3des_003.c\\nFilename calibration/tier2/c/cal_aes_005.c\\nFilename calibration/tier2/c/cal_aes_006.c\\nFilename calibration/tier2/c/cal_ec_007.c\\nFilename calibration/tier2/c/cal_ec_008.c\\nFilename calibration/tier2/c/cal_ec_009.c\\nFilename calibration/tier2/c/cal_hmac_010.c\\nFilename calibration/tier2/c/cal_hmac_011.c\\nFilename calibration/tier2/c/cal_hmac_012.c\\nFilename calibration/tier2/c/cal_rsa_013.c\\nFilename calibration/tier2/c/cal_rsa_014.c\\nFilename calibration/tier2/c/cal_rsa_015.c\\nFilename calibration/tier2/c/cal_sha1_016.c\\nFilename calibration/tier2/c/cal_sha1_017.c\\nFilename calibration/tier2/c/cal_sha1_018.c\\nFilename deadcode/c/dead_branches.c\\nFilename mixed/c/audit_daemon.c\\nFilename mixed/c/device_daemon.c\\nFilename mixed/c/policy_agent.c\\nFilename negatives/c/n_strings.c\\nFilename openssl/bn.h\\nFilename openssl/hmac.h\\nFilename openssl/rand.h\\nFilename tier1/c/t1_aes_ecb.c\\nFilename tier1/c/t1_aes_gcm.c\\nFilename tier1/c/t1_chacha.c\\nFilename tier1/c/t1_dh.c\\nFilename tier1/c/t1_digests.c\\nFilename tier1/c/t1_ec.c\\nFilename tier1/c/t1_mac_kdf.c\\nFilename tier1/c/t1_modern_curves.c\\nFilename tier1/c/t1_rsa_evp.c\\nFilename tier1/c/t1_rsa_legacy.c\\nFilename tier1/c/t1_tls_ctx.c\\nFilename tier1/c/t1_triple_des.c\\nFilename tier2/c/t2_cipher_struct.c\\nFilename tier2/c/t2_curve_index.c\\nFilename tier2/c/t2_digest_table.c\\nFilename tier2/c/t2_fetch_by_name.c\\nFilename tier2/c/t2_func_ptr.c\\nFilename tier2/c/t2_macro_bits.c\\nPkgProvides /usr/include/ctype.h\\nPkgProvides /usr/include/openssl/ec.h\\nPkgProvides stdio.h\\nPkgProvides stdlib.h\\napi_gateway.pem\\nattestation_signer.pem\\nbackup_signing_encrypted.pem\\nbilling_service.pem\\nbootloader_lms_pub.pem\\ncorpus/calibration/tier1/javascript/cal_ec_012.js\\ncorpus/calibration/tier1/javascript/cal_ec_013.js\\ncorpus/calibration/tier1/javascript/cal_ec_014.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_015.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_016.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_017.js\\ncorpus/calibration/tier1/javascript/cal_hmac_018.js\\ncorpus/calibration/tier1/javascript/cal_hmac_019.js\\ncorpus/calibration/tier1/javascript/cal_hmac_020.js\\ncorpus/calibration/tier1/javascript/cal_md5_021.js\\ncorpus/calibration/tier1/javascript/cal_md5_022.js\\ncorpus/calibration/tier1/javascript/cal_md5_023.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_024.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_025.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_026.js\\ncorpus/calibration/tier1/javascript/cal_rsa_027.js\\ncorpus/calibration/tier1/javascript/cal_rsa_028.js\\ncorpus/calibration/tier1/javascript/cal_sha1_029.js\\ncorpus/calibration/tier1/javascript/cal_sha1_030.js\\ncorpus/calibration/tier1/javascript/cal_sha256_031.js\\ncorpus/calibration/tier1/javascript/cal_sha256_032.js\\ncorpus/calibration/tier1/javascript/cal_sha256_033.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_034.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_035.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_036.js\\ncorpus/calibration/tier2/typescript/cal_ec_006.ts\\ncorpus/calibration/tier2/typescript/cal_ec_007.ts\\ncorpus/calibration/tier2/typescript/cal_ec_008.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_009.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_010.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_011.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_012.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_013.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_014.ts\\ncorpus/calibration/tier2/typescript/cal_sha1_017.ts\\ncorpus/deadcode/javascript/dead_paths.js\\ncorpus/deps/java-gateway/pom.xml\\ncorpus/deps/node-api/package-lock.json\\ncorpus/deps/python-billing/requirements.txt\\ncorpus/mixed/javascript/device_session.js\\ncorpus/mixed/javascript/partner_routes.js\\ncorpus/mixed/typescript/voucher_service.ts\\ncorpus/negatives/assets/upload_validator_fake.pem\\ncorpus/pqc/assets/certs/firmware_signing.pem\\ncorpus/pqc/assets/certs/migrated_leaf.pem\\ncorpus/pqc/assets/certs/release_root_mldsa.pem\\ncorpus/pqc/assets/keys/attestation_signer.pem\\ncorpus/pqc/assets/keys/bootloader_lms_pub.pem\\ncorpus/pqc/assets/keys/kem_recipient_pub.pem\\ncorpus/pqc/assets/keys/update_xmss_pub.pem\\ncorpus/system/payments-platform/edge/nginx/tls/gateway.key\\ncorpus/system/payments-platform/services/settlement-worker/requirements.txt\\ncorpus/tier1/javascript/t1_ec.js\\ncorpus/tier1/javascript/t1_hashes.js\\ncorpus/tier1/javascript/t1_mac_kdf.js\\ncorpus/tier1/javascript/t1_modern_curves.js\\ncorpus/tier1/javascript/t1_rsa.js\\ncorpus/tier2/typescript/t2_env_default.ts\\ncorpus/tier2/typescript/t2_hmac_const.ts\\ncorpus/tier4/assets/certs/api_gateway.pem\\ncorpus/tier4/assets/certs/device_ed25519.pem\\ncorpus/tier4/assets/certs/portal_fullchain.pem\\ncorpus/tier4/assets/certs/telemetry_ecdsa.pem\\ncorpus/tier4/assets/keys/backup_signing_encrypted.pem\\ncorpus/tier4/assets/keys/billing_service.pem\\ncorpus/tier4/assets/keys/treasury_hot_wallet.key\\ncorpus/tier4/assets/keystores/orders_keystore.p12\\ncorpus/tier4/assets/keystores/partner_truststore.jks\\ncorpus/tier4/assets/ssh/ssh_host_rsa_key.pub\\ncorpus/tier5/javascript/dist/session-tokens.min.js\\ndevice_ed25519.pem\\ned25519\\nfirmware_signing.pem\\ngateway.key\\nkem_recipient_pub.pem\\nmd5\\nmigrated_leaf.pem\\norders_keystore.p12\\npartner_truststore.jks\\nportal_fullchain.pem\\nrelease_root_mldsa.pem\\nrsa\\nsha-1\\nsha-256\\nsha-512\\nsha3-256\\nssh_host_rsa_key.pub\\ntelemetry_ecdsa.pem\\ntreasury_hot_wallet.key\\nupdate_xmss_pub.pem\\nupload_validator_fake.pem"
+        "value": "Filename /tmp/cbom-sandbox-up1w4h7c/corpus/deps/c-agent/CMakeLists.txt\\nFilename /usr/include/openssl/evp.h\\nFilename /usr/include/openssl/obj_mac.h\\nFilename /usr/include/openssl/rsa.h\\nFilename /usr/include/openssl/ssl.h\\nFilename calibration/tier1/c/cal_3des_002.c\\nFilename calibration/tier1/c/cal_aes_004.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_006.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_007.c\\nFilename calibration/tier1/c/cal_chacha20poly1305_008.c\\nFilename calibration/tier1/c/cal_dh_009.c\\nFilename calibration/tier1/c/cal_dh_010.c\\nFilename calibration/tier1/c/cal_dh_011.c\\nFilename calibration/tier1/c/cal_ec_012.c\\nFilename calibration/tier1/c/cal_ec_013.c\\nFilename calibration/tier1/c/cal_ec_014.c\\nFilename calibration/tier1/c/cal_ed25519_015.c\\nFilename calibration/tier1/c/cal_ed25519_016.c\\nFilename calibration/tier1/c/cal_ed25519_017.c\\nFilename calibration/tier1/c/cal_hmac_018.c\\nFilename calibration/tier1/c/cal_hmac_019.c\\nFilename calibration/tier1/c/cal_hmac_020.c\\nFilename calibration/tier1/c/cal_md5_021.c\\nFilename calibration/tier1/c/cal_md5_022.c\\nFilename calibration/tier1/c/cal_md5_023.c\\nFilename calibration/tier1/c/cal_pbkdf2_024.c\\nFilename calibration/tier1/c/cal_pbkdf2_025.c\\nFilename calibration/tier1/c/cal_pbkdf2_026.c\\nFilename calibration/tier1/c/cal_rsa_027.c\\nFilename calibration/tier1/c/cal_rsa_028.c\\nFilename calibration/tier1/c/cal_sha1_029.c\\nFilename calibration/tier1/c/cal_sha1_030.c\\nFilename calibration/tier1/c/cal_sha1_031.c\\nFilename calibration/tier1/c/cal_sha256_032.c\\nFilename calibration/tier1/c/cal_sha256_033.c\\nFilename calibration/tier1/c/cal_sha256_034.c\\nFilename calibration/tier1/c/cal_sha3256_035.c\\nFilename calibration/tier1/c/cal_sha3256_036.c\\nFilename calibration/tier1/c/cal_sha3256_037.c\\nFilename calibration/tier1/c/cal_x25519_038.c\\nFilename calibration/tier1/c/cal_x25519_039.c\\nFilename calibration/tier1/c/cal_x25519_040.c\\nFilename calibration/tier2/c/cal_3des_001.c\\nFilename calibration/tier2/c/cal_3des_003.c\\nFilename calibration/tier2/c/cal_aes_005.c\\nFilename calibration/tier2/c/cal_aes_006.c\\nFilename calibration/tier2/c/cal_ec_007.c\\nFilename calibration/tier2/c/cal_ec_008.c\\nFilename calibration/tier2/c/cal_ec_009.c\\nFilename calibration/tier2/c/cal_hmac_010.c\\nFilename calibration/tier2/c/cal_hmac_011.c\\nFilename calibration/tier2/c/cal_hmac_012.c\\nFilename calibration/tier2/c/cal_rsa_013.c\\nFilename calibration/tier2/c/cal_rsa_014.c\\nFilename calibration/tier2/c/cal_rsa_015.c\\nFilename calibration/tier2/c/cal_sha1_016.c\\nFilename calibration/tier2/c/cal_sha1_017.c\\nFilename calibration/tier2/c/cal_sha1_018.c\\nFilename deadcode/c/dead_branches.c\\nFilename mixed/c/audit_daemon.c\\nFilename mixed/c/device_daemon.c\\nFilename mixed/c/policy_agent.c\\nFilename negatives/c/n_strings.c\\nFilename openssl/bn.h\\nFilename openssl/hmac.h\\nFilename openssl/rand.h\\nFilename tier1/c/t1_aes_ecb.c\\nFilename tier1/c/t1_aes_gcm.c\\nFilename tier1/c/t1_chacha.c\\nFilename tier1/c/t1_dh.c\\nFilename tier1/c/t1_digests.c\\nFilename tier1/c/t1_ec.c\\nFilename tier1/c/t1_mac_kdf.c\\nFilename tier1/c/t1_modern_curves.c\\nFilename tier1/c/t1_rsa_evp.c\\nFilename tier1/c/t1_rsa_legacy.c\\nFilename tier1/c/t1_tls_ctx.c\\nFilename tier1/c/t1_triple_des.c\\nFilename tier2/c/t2_cipher_struct.c\\nFilename tier2/c/t2_curve_index.c\\nFilename tier2/c/t2_digest_table.c\\nFilename tier2/c/t2_fetch_by_name.c\\nFilename tier2/c/t2_func_ptr.c\\nFilename tier2/c/t2_macro_bits.c\\nPkgProvides /usr/include/ctype.h\\nPkgProvides /usr/include/openssl/ec.h\\nPkgProvides stdio.h\\nPkgProvides stdlib.h\\napi_gateway.pem\\nattestation_signer.pem\\nbackup_signing_encrypted.pem\\nbilling_service.pem\\nbootloader_lms_pub.pem\\ncorpus/calibration/tier1/javascript/cal_ec_012.js\\ncorpus/calibration/tier1/javascript/cal_ec_013.js\\ncorpus/calibration/tier1/javascript/cal_ec_014.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_015.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_016.js\\ncorpus/calibration/tier1/javascript/cal_ed25519_017.js\\ncorpus/calibration/tier1/javascript/cal_hmac_018.js\\ncorpus/calibration/tier1/javascript/cal_hmac_019.js\\ncorpus/calibration/tier1/javascript/cal_hmac_020.js\\ncorpus/calibration/tier1/javascript/cal_md5_021.js\\ncorpus/calibration/tier1/javascript/cal_md5_022.js\\ncorpus/calibration/tier1/javascript/cal_md5_023.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_024.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_025.js\\ncorpus/calibration/tier1/javascript/cal_pbkdf2_026.js\\ncorpus/calibration/tier1/javascript/cal_rsa_027.js\\ncorpus/calibration/tier1/javascript/cal_rsa_028.js\\ncorpus/calibration/tier1/javascript/cal_sha1_029.js\\ncorpus/calibration/tier1/javascript/cal_sha1_030.js\\ncorpus/calibration/tier1/javascript/cal_sha256_031.js\\ncorpus/calibration/tier1/javascript/cal_sha256_032.js\\ncorpus/calibration/tier1/javascript/cal_sha256_033.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_034.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_035.js\\ncorpus/calibration/tier1/javascript/cal_sha3256_036.js\\ncorpus/calibration/tier2/typescript/cal_ec_006.ts\\ncorpus/calibration/tier2/typescript/cal_ec_007.ts\\ncorpus/calibration/tier2/typescript/cal_ec_008.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_009.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_010.ts\\ncorpus/calibration/tier2/typescript/cal_hmac_011.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_012.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_013.ts\\ncorpus/calibration/tier2/typescript/cal_rsa_014.ts\\ncorpus/calibration/tier2/typescript/cal_sha1_017.ts\\ncorpus/deadcode/javascript/dead_paths.js\\ncorpus/deps/java-gateway/pom.xml\\ncorpus/deps/node-api/package-lock.json\\ncorpus/deps/python-billing/requirements.txt\\ncorpus/mixed/javascript/device_session.js\\ncorpus/mixed/javascript/partner_routes.js\\ncorpus/mixed/typescript/voucher_service.ts\\ncorpus/negatives/assets/upload_validator_fake.pem\\ncorpus/pqc/assets/certs/firmware_signing.pem\\ncorpus/pqc/assets/certs/migrated_leaf.pem\\ncorpus/pqc/assets/certs/release_root_mldsa.pem\\ncorpus/pqc/assets/keys/attestation_signer.pem\\ncorpus/pqc/assets/keys/bootloader_lms_pub.pem\\ncorpus/pqc/assets/keys/kem_recipient_pub.pem\\ncorpus/pqc/assets/keys/update_xmss_pub.pem\\ncorpus/system/payments-platform/edge/nginx/tls/gateway.key\\ncorpus/system/payments-platform/services/settlement-worker/requirements.txt\\ncorpus/tier1/javascript/t1_ec.js\\ncorpus/tier1/javascript/t1_hashes.js\\ncorpus/tier1/javascript/t1_mac_kdf.js\\ncorpus/tier1/javascript/t1_modern_curves.js\\ncorpus/tier1/javascript/t1_rsa.js\\ncorpus/tier2/typescript/t2_env_default.ts\\ncorpus/tier2/typescript/t2_hmac_const.ts\\ncorpus/tier4/assets/certs/api_gateway.pem\\ncorpus/tier4/assets/certs/device_ed25519.pem\\ncorpus/tier4/assets/certs/portal_fullchain.pem\\ncorpus/tier4/assets/certs/telemetry_ecdsa.pem\\ncorpus/tier4/assets/keys/backup_signing_encrypted.pem\\ncorpus/tier4/assets/keys/billing_service.pem\\ncorpus/tier4/assets/keys/treasury_hot_wallet.key\\ncorpus/tier4/assets/keystores/orders_keystore.p12\\ncorpus/tier4/assets/keystores/partner_truststore.jks\\ncorpus/tier4/assets/ssh/ssh_host_rsa_key.pub\\ncorpus/tier5/javascript/dist/payments-sdk.min.js\\ncorpus/tier5/javascript/dist/session-tokens.min.js\\ncorpus/tier5/javascript/dist/webhook-relay.min.js\\ndevice_ed25519.pem\\ned25519\\nfirmware_signing.pem\\ngateway.key\\nkem_recipient_pub.pem\\nmd5\\nmigrated_leaf.pem\\norders_keystore.p12\\npartner_truststore.jks\\nportal_fullchain.pem\\nrelease_root_mldsa.pem\\nrsa\\nsha-1\\nsha-256\\nsha-512\\nsha3-256\\nssh_host_rsa_key.pub\\ntelemetry_ecdsa.pem\\ntreasury_hot_wallet.key\\nupdate_xmss_pub.pem\\nupload_validator_fake.pem"
       },
       {
         "name": "cbom-testbench:adapter",
@@ -2013,7 +2013,7 @@
         },
         {
           "name": "cdx:npm:binPaths",
-          "value": "/tmp/cbom-sandbox-f9aj7q0l/corpus/deps/node-api/node_modules/.bin/semver"
+          "value": "/tmp/cbom-sandbox-up1w4h7c/corpus/deps/node-api/node_modules/.bin/semver"
         },
         {
           "name": "cdx:npm:bin",
@@ -2720,10 +2720,10 @@
               {
                 "technique": "source-code-analysis",
                 "confidence": 0.5,
-                "value": "Filename /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/c-agent/CMakeLists.txt"
+                "value": "Filename /tmp/cbom-sandbox-up1w4h7c/corpus/deps/c-agent/CMakeLists.txt"
               }
             ],
-            "concludedValue": "Filename /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/c-agent/CMakeLists.txt"
+            "concludedValue": "Filename /tmp/cbom-sandbox-up1w4h7c/corpus/deps/c-agent/CMakeLists.txt"
           }
         ]
       },
@@ -2747,10 +2747,10 @@
               {
                 "technique": "source-code-analysis",
                 "confidence": 0.5,
-                "value": "Filename /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/c-agent/CMakeLists.txt"
+                "value": "Filename /tmp/cbom-sandbox-up1w4h7c/corpus/deps/c-agent/CMakeLists.txt"
               }
             ],
-            "concludedValue": "Filename /tmp/cbom-sandbox-f9aj7q0l/corpus/deps/c-agent/CMakeLists.txt"
+            "concludedValue": "Filename /tmp/cbom-sandbox-up1w4h7c/corpus/deps/c-agent/CMakeLists.txt"
           }
         ]
       }
@@ -5840,6 +5840,14 @@
         {
           "name": "cdx:crypto:sourceLocation",
           "value": "tier1/javascript/t1_modern_curves.js:4:15"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/webhook-relay.min.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/webhook-relay.min.js:1:692"
         }
       ],
       "evidence": {
@@ -5868,6 +5876,11 @@
                 "technique": "source-code-analysis",
                 "confidence": 1,
                 "value": "tier1/javascript/t1_modern_curves.js#4"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/webhook-relay.min.js#1"
               }
             ]
           }
@@ -5895,6 +5908,12 @@
             "location": "tier1/javascript/t1_modern_curves.js",
             "additionalContext": "key-generation",
             "line": 4,
+            "symbol": "node:crypto.generateKeyPairSync"
+          },
+          {
+            "location": "tier5/javascript/dist/webhook-relay.min.js",
+            "additionalContext": "key-generation",
+            "line": 1,
             "symbol": "node:crypto.generateKeyPairSync"
           }
         ]
@@ -6003,6 +6022,14 @@
         },
         {
           "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/payments-sdk.min.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/payments-sdk.min.js:1:193"
+        },
+        {
+          "name": "SrcFile",
           "value": "corpus/tier5/javascript/dist/session-tokens.min.js"
         },
         {
@@ -6061,6 +6088,11 @@
                 "technique": "source-code-analysis",
                 "confidence": 1,
                 "value": "tier2/typescript/t2_hmac_const.ts#7"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/payments-sdk.min.js#1"
               },
               {
                 "technique": "source-code-analysis",
@@ -6212,6 +6244,14 @@
         },
         {
           "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/payments-sdk.min.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/payments-sdk.min.js:1:193"
+        },
+        {
+          "name": "SrcFile",
           "value": "corpus/tier5/javascript/dist/session-tokens.min.js"
         },
         {
@@ -6274,6 +6314,11 @@
               {
                 "technique": "source-code-analysis",
                 "confidence": 1,
+                "value": "tier5/javascript/dist/payments-sdk.min.js#1"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
                 "value": "tier5/javascript/dist/session-tokens.min.js#1"
               }
             ]
@@ -6302,6 +6347,12 @@
             "location": "tier2/typescript/t2_hmac_const.ts",
             "additionalContext": "hmac",
             "line": 7,
+            "symbol": "node:crypto.createHmac"
+          },
+          {
+            "location": "tier5/javascript/dist/payments-sdk.min.js",
+            "additionalContext": "hmac",
+            "line": 1,
             "symbol": "node:crypto.createHmac"
           }
         ]
@@ -6566,6 +6617,30 @@
         {
           "name": "cdx:crypto:sourceLocation",
           "value": "tier1/javascript/t1_hashes.js:6:17"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/payments-sdk.min.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/payments-sdk.min.js:1:116"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/webhook-relay.min.js"
+        },
+        {
+          "name": "cdx:crypto:primitive",
+          "value": "kdf"
+        },
+        {
+          "name": "cdx:crypto:sourceType",
+          "value": "js-ast:node:crypto.pbkdf2Sync"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/webhook-relay.min.js:1:177"
         }
       ],
       "evidence": {
@@ -6594,6 +6669,16 @@
                 "technique": "source-code-analysis",
                 "confidence": 1,
                 "value": "tier1/javascript/t1_hashes.js#6"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/payments-sdk.min.js#1"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/webhook-relay.min.js#1"
               }
             ]
           }
@@ -6622,6 +6707,139 @@
             "additionalContext": "hash",
             "line": 6,
             "symbol": "node:crypto.createHash"
+          },
+          {
+            "location": "tier5/javascript/dist/payments-sdk.min.js",
+            "additionalContext": "hash",
+            "line": 1,
+            "symbol": "node:crypto.createHash"
+          }
+        ]
+      },
+      "tags": [
+        "cryptographic-asset"
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "PBKDF2-sha-1",
+      "bom-ref": "crypto/algorithm/sha-1@2.16.840.1.113719.1.2.8.82#PBKDF2-sha-1",
+      "description": "Novell digest algorithm",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "corpus/calibration/tier1/javascript/cal_sha1_029.js"
+        },
+        {
+          "name": "cdx:crypto:primitive",
+          "value": "hash"
+        },
+        {
+          "name": "cdx:crypto:sourceType",
+          "value": "js-ast:node:crypto.createHash"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "calibration/tier1/javascript/cal_sha1_029.js:9:22"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/calibration/tier1/javascript/cal_sha1_030.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "calibration/tier1/javascript/cal_sha1_030.js:5:22"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/calibration/tier2/typescript/cal_sha1_017.ts"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "calibration/tier2/typescript/cal_sha1_017.ts:13:24"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier1/javascript/t1_hashes.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier1/javascript/t1_hashes.js:6:17"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/payments-sdk.min.js"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/payments-sdk.min.js:1:116"
+        },
+        {
+          "name": "SrcFile",
+          "value": "corpus/tier5/javascript/dist/webhook-relay.min.js"
+        },
+        {
+          "name": "cdx:crypto:primitive",
+          "value": "kdf"
+        },
+        {
+          "name": "cdx:crypto:sourceType",
+          "value": "js-ast:node:crypto.pbkdf2Sync"
+        },
+        {
+          "name": "cdx:crypto:sourceLocation",
+          "value": "tier5/javascript/dist/webhook-relay.min.js:1:177"
+        }
+      ],
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 1,
+            "concludedValue": "sha-1",
+            "methods": [
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "calibration/tier1/javascript/cal_sha1_029.js#9"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "calibration/tier1/javascript/cal_sha1_030.js#5"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "calibration/tier2/typescript/cal_sha1_017.ts#13"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier1/javascript/t1_hashes.js#6"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/payments-sdk.min.js#1"
+              },
+              {
+                "technique": "source-code-analysis",
+                "confidence": 1,
+                "value": "tier5/javascript/dist/webhook-relay.min.js#1"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "tier5/javascript/dist/webhook-relay.min.js",
+            "additionalContext": "kdf",
+            "line": 1,
+            "symbol": "node:crypto.pbkdf2Sync"
           }
         ]
       },
@@ -8235,7 +8453,7 @@
           ]
         }
       },
-      "timestamp": "2026-11-12T12:42:07Z",
+      "timestamp": "2026-11-12T13:26:25Z",
       "text": "This Cryptography Bill-of-Materials (CBOM) document was created on Thursday, November 12, 2026 with cdxgen. The data was captured during the pre-build lifecycle phase without building the application. The document describes an application named 'partner-api' with version '3.2.0'. There are 32 cryptographic assets listed under components in this CBOM. The application also has 2 child modules/components. There are 168 components. 7 package type(s) and 9 purl namespaces are described in the document under components."
     }
   ]
