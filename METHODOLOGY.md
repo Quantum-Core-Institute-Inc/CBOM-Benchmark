@@ -135,6 +135,8 @@ scanner runs in the sandbox (section 8) and never sees the seed; scoring happens
   languages the generator covers.
 - **Library gap.** Library recall, published minus holdout. Reported, not gated.
 
+Generator 1.2 adds C# cases, Apache, HAProxy and IPsec configs, firmware signing policies naming LMS
+and XMSS, minified JavaScript bundles and stripped native binaries, under the same rule as below.
 Since generator 1.1 a holdout set also holds certificates, keys and keystores with random
 algorithms and containers, TLS and SSH configs with random protocol, suite and group lists, and
 compiled `.pyc` and `.jar` artifacts. A generated finding enters the overfit gap only where the

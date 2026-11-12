@@ -702,7 +702,7 @@ def generate(seed: int, out: Path, n_files: int = 120, n_broad: int = 48, n_t3: 
         return sorted(f for f in pub.get((tier, lang), set()) if not f.startswith(UNCOVERED))
 
     # Go programs get unique file names, not main.go. A scanner that de-duplicates on the basename
-    # (QCI v0.7 does) loses more findings the more same-named files a scan holds, and a holdout with
+    # (one QCI release did) loses more findings the more same-named files a scan holds, and a holdout with
     # 150 main.go files against the corpus's 40 would read that as overfitting.
     def write(rel, text):
         p = out / rel
@@ -1187,8 +1187,8 @@ def negative_markdown(n: dict) -> str:
                       "", f"Gap: **{n['gap_per_file']:+} false positives per file**. {verdict}", ""])
 
 
-# Calibrated (24 negatives, six languages, five seeds): grep -0.01 to +0.24 and QCI 0.3.0 -0.27 to +0.15, neither
-# tuned to the corpus; v0.7, whose filters match the published negatives' shapes, +0.72 to +1.18.
+# Calibrated over five seeds (HOLDOUT.md has the current numbers): scanners with no knowledge of the
+# corpus stay well under it, and one whose filters matched the published negatives' shapes read over it.
 
 NEG_GAP_LIMIT = 0.5
 

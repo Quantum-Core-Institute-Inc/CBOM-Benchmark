@@ -36881,7 +36881,7 @@
     }
   ],
   "manifest": {
-    "release": "2.4.0",
+    "release": "2.4.1",
     "methodology": "2.3",
     "findings": 393,
     "answer_key": "c9f27be6d6a5098a",

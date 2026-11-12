@@ -2,16 +2,16 @@
 """The one command: run a scanner in the sandbox, score it, and write an evidence bundle.
 
   # score any scanner; {corpus} and {out} are filled in by the sandbox
-  python tools/bench.py run --name "QCI v2.3" --adapter qci-pqc \\
+  python tools/bench.py run --name "QCI v2.3.4.1" --adapter qci-pqc \\
       --scanner-cmd "qci-pqc scan {corpus} --reproducible --out {out} --json" --cbom cbom.json \\
       --version-cmd "qci-pqc --version" --scope integrations/qci-pqc/scope.json \\
-      --bundle bundles/qci-v2.3
+      --bundle bundles/qci-v2.3.4.1
 
   # the testbench's required checks (CI runs this on a tag; a bundle can carry the result)
   python tools/bench.py checks --out bundles/checks.json
 
   # an evaluator re-derives every number in a bundle from its raw CBOM, on this tree
-  python tools/bench.py verify bundles/qci-v2.3
+  python tools/bench.py verify bundles/qci-v2.3.4.1
 
 Set CBOM_HOLDOUT_SEED (or --holdout-seed) to add a private holdout run: this process generates the
 set, the scanner scans it in the sandbox without the seed, and the bundle records a commitment to the

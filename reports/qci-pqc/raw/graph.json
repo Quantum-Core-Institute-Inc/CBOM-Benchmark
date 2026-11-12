@@ -109,7 +109,7 @@
     "path": "calibration/tier1/c/cal_hmac_018.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -123,7 +123,7 @@
     "path": "calibration/tier1/c/cal_hmac_019.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -137,28 +137,28 @@
     "path": "calibration/tier1/c/cal_hmac_020.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/c/cal_md5_021.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/c/cal_md5_022.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/c/cal_md5_023.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -179,7 +179,7 @@
     "path": "calibration/tier1/c/cal_pbkdf2_024.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "HMAC",
@@ -200,7 +200,7 @@
     "path": "calibration/tier1/c/cal_pbkdf2_025.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "HMAC",
@@ -221,7 +221,7 @@
     "path": "calibration/tier1/c/cal_pbkdf2_026.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "RSA",
@@ -242,63 +242,63 @@
     "path": "calibration/tier1/c/cal_sha1_029.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/c/cal_sha1_030.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/c/cal_sha1_031.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/c/cal_sha256_032.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/c/cal_sha256_033.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/c/cal_sha256_034.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/c/cal_sha3256_035.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/c/cal_sha3256_036.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/c/cal_sha3256_037.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "X25519",
@@ -501,7 +501,7 @@
     "path": "calibration/tier1/go/cal_hmac_018/cal_hmac_018.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -515,14 +515,14 @@
     "path": "calibration/tier1/go/cal_hmac_018/cal_hmac_018.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_hmac_019/cal_hmac_019.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -536,14 +536,14 @@
     "path": "calibration/tier1/go/cal_hmac_019/cal_hmac_019.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_hmac_020/cal_hmac_020.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -557,35 +557,35 @@
     "path": "calibration/tier1/go/cal_hmac_020/cal_hmac_020.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/go/cal_md5_021/cal_md5_021.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/go/cal_md5_022/cal_md5_022.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/go/cal_md5_023/cal_md5_023.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-512",
     "path": "calibration/tier1/go/cal_pbkdf2_024/cal_pbkdf2_024.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "PBKDF2",
@@ -599,14 +599,14 @@
     "path": "calibration/tier1/go/cal_pbkdf2_024/cal_pbkdf2_024.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "SHA-512",
     "path": "calibration/tier1/go/cal_pbkdf2_025/cal_pbkdf2_025.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "PBKDF2",
@@ -620,14 +620,14 @@
     "path": "calibration/tier1/go/cal_pbkdf2_025/cal_pbkdf2_025.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "SHA-512",
     "path": "calibration/tier1/go/cal_pbkdf2_026/cal_pbkdf2_026.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "PBKDF2",
@@ -641,7 +641,7 @@
     "path": "calibration/tier1/go/cal_pbkdf2_026/cal_pbkdf2_026.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "RC4",
@@ -732,105 +732,105 @@
     "path": "calibration/tier1/go/cal_sha1_033/cal_sha1_033.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/go/cal_sha1_034/cal_sha1_034.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/go/cal_sha1_035/cal_sha1_035.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_036/cal_sha256_036.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_036/cal_sha256_036.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_037/cal_sha256_037.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_037/cal_sha256_037.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_038/cal_sha256_038.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/go/cal_sha256_038/cal_sha256_038.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "X25519",
@@ -1166,21 +1166,21 @@
     "path": "calibration/tier1/java/Cal1037ShipmentSettings.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/java/Cal1038MemberOptions.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/java/Cal1039PayloadDefaults.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "X25519",
@@ -1617,6 +1617,13 @@
     "implemented_by": ""
   },
   {
+    "finding": "SHA-1",
+    "path": "calibration/tier1/javascript/cal_sha1_029.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
     "finding": "Node-crypto",
     "path": "calibration/tier1/javascript/cal_sha1_030.js",
     "app": "corpus",
@@ -1624,6 +1631,13 @@
     "implemented_by": ""
   },
   {
+    "finding": "SHA-1",
+    "path": "calibration/tier1/javascript/cal_sha1_030.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
     "finding": "Node-crypto",
     "path": "calibration/tier1/javascript/cal_sha256_031.js",
     "app": "corpus",
@@ -1635,7 +1649,7 @@
     "path": "calibration/tier1/javascript/cal_sha256_031.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "Node-crypto",
@@ -1649,7 +1663,7 @@
     "path": "calibration/tier1/javascript/cal_sha256_032.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "Node-crypto",
@@ -1663,7 +1677,7 @@
     "path": "calibration/tier1/javascript/cal_sha256_033.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "Node-crypto",
@@ -1677,7 +1691,7 @@
     "path": "calibration/tier1/javascript/cal_sha3256_034.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "Node-crypto",
@@ -1691,7 +1705,7 @@
     "path": "calibration/tier1/javascript/cal_sha3256_035.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "Node-crypto",
@@ -1705,7 +1719,7 @@
     "path": "calibration/tier1/javascript/cal_sha3256_036.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "Node-crypto",
@@ -1901,7 +1915,7 @@
     "path": "calibration/tier1/python/cal_hmac_021.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -1915,7 +1929,7 @@
     "path": "calibration/tier1/python/cal_hmac_022.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "HMAC",
@@ -1929,35 +1943,35 @@
     "path": "calibration/tier1/python/cal_hmac_023.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/python/cal_md5_024.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/python/cal_md5_025.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier1/python/cal_md5_026.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/python/cal_pbkdf2_027.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -1978,7 +1992,7 @@
     "path": "calibration/tier1/python/cal_pbkdf2_028.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -1999,7 +2013,7 @@
     "path": "calibration/tier1/python/cal_pbkdf2_029.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -2041,63 +2055,63 @@
     "path": "calibration/tier1/python/cal_sha1_033.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/python/cal_sha1_034.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier1/python/cal_sha1_035.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/python/cal_sha256_036.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/python/cal_sha256_037.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier1/python/cal_sha256_038.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/python/cal_sha3256_039.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/python/cal_sha3256_040.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-3",
     "path": "calibration/tier1/python/cal_sha3256_041.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "X25519",
@@ -2153,7 +2167,7 @@
     "path": "calibration/tier2/c/cal_hmac_010.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -2167,7 +2181,7 @@
     "path": "calibration/tier2/c/cal_hmac_011.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -2188,7 +2202,7 @@
     "path": "calibration/tier2/c/cal_hmac_012.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "3DES",
@@ -2293,14 +2307,14 @@
     "path": "calibration/tier2/go/cal_hmac_010/cal_hmac_010.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier2/go/cal_hmac_011/cal_hmac_011.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -2314,7 +2328,7 @@
     "path": "calibration/tier2/go/cal_hmac_012/cal_hmac_012.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -2370,21 +2384,21 @@
     "path": "calibration/tier2/go/cal_sha1_016/cal_sha1_016.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier2/go/cal_sha1_017/cal_sha1_017.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier2/go/cal_sha1_018/cal_sha1_018.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "DESede",
@@ -2489,14 +2503,14 @@
     "path": "calibration/tier2/java/Cal2013TenantOptions.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier2/java/Cal2015UploadSettings.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "RSA",
@@ -2524,21 +2538,21 @@
     "path": "calibration/tier2/java/Cal2020TenantDefaults.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier2/java/Cal2021ReportOptions.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier2/java/Cal2022ShipmentSettings.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
@@ -2552,7 +2566,7 @@
     "path": "calibration/tier2/java/Cal2023TenantOptions.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
@@ -2566,7 +2580,7 @@
     "path": "calibration/tier2/java/Cal2024TenantSettings.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "AES",
@@ -2622,7 +2636,7 @@
     "path": "calibration/tier2/python/cal_hmac_006.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "HMAC",
@@ -2636,7 +2650,7 @@
     "path": "calibration/tier2/python/cal_hmac_007.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "HMAC",
@@ -2650,56 +2664,56 @@
     "path": "calibration/tier2/python/cal_hmac_008.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier2/python/cal_md5_009.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "MD5",
     "path": "calibration/tier2/python/cal_md5_010.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier2/python/cal_sha1_015.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-1",
     "path": "calibration/tier2/python/cal_sha1_016.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier2/python/cal_sha256_017.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier2/python/cal_sha256_018.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "calibration/tier2/python/cal_sha256_019.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "ECDSA",
@@ -2797,7 +2811,7 @@
     "path": "custom/example_envelope/envelope/wrap_agreement.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "RSA",
@@ -2811,14 +2825,14 @@
     "path": "custom/example_envelope/envelope/wrap_transport.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "MD5",
     "path": "deadcode/c/dead_branches.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "3DES",
@@ -2839,7 +2853,7 @@
     "path": "deadcode/go/legacy/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "RC4",
@@ -2881,7 +2895,7 @@
     "path": "deadcode/python/dead_export.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "RSA",
@@ -3140,7 +3154,7 @@
     "path": "mixed/c/audit_daemon.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "3DES",
@@ -3154,7 +3168,7 @@
     "path": "mixed/c/audit_daemon.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "DH",
@@ -3168,14 +3182,14 @@
     "path": "mixed/c/device_daemon.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "MD5",
     "path": "mixed/c/device_daemon.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "X25519",
@@ -3245,7 +3259,7 @@
     "path": "mixed/go/invoice_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "RSA",
@@ -3259,7 +3273,7 @@
     "path": "mixed/go/invoice_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "HMAC",
@@ -3280,7 +3294,7 @@
     "path": "mixed/go/invoice_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "RSA",
@@ -3294,14 +3308,14 @@
     "path": "mixed/go/payload_worker/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "SHA-512",
     "path": "mixed/go/payload_worker/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "ML-KEM-768",
@@ -3343,7 +3357,7 @@
     "path": "mixed/go/report_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "PBKDF2",
@@ -3357,7 +3371,7 @@
     "path": "mixed/go/report_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "DES",
@@ -3378,7 +3392,7 @@
     "path": "mixed/go/report_gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "3DES",
@@ -3406,7 +3420,7 @@
     "path": "mixed/java/BookingOptionsModule.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "PBKDF2",
@@ -3476,7 +3490,7 @@
     "path": "mixed/java/VoucherProfileModule.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "AES",
@@ -3504,7 +3518,7 @@
     "path": "mixed/javascript/device_session.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "ECDSA",
@@ -3553,7 +3567,7 @@
     "path": "mixed/javascript/partner_routes.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "DH",
@@ -3567,7 +3581,7 @@
     "path": "mixed/python/invoice_service.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "DH",
@@ -3595,7 +3609,7 @@
     "path": "mixed/python/metric_service.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "HMAC",
@@ -3616,7 +3630,7 @@
     "path": "mixed/python/metric_service.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -3651,7 +3665,7 @@
     "path": "mixed/python/order_jobs.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "ECDSA",
@@ -3665,7 +3679,7 @@
     "path": "mixed/python/order_jobs.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "ECDSA",
@@ -4043,7 +4057,7 @@
     "path": "pqc/python/pq_hybrid_kem.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "ML-KEM",
@@ -4190,7 +4204,7 @@
     "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "RSA",
@@ -4204,7 +4218,7 @@
     "path": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -4225,21 +4239,21 @@
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-512",
     "path": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "AES",
@@ -4256,452 +4270,18 @@
     "implemented_by": ""
   },
   {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA3-384",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA3-512",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-1",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "finding": "SHA-256",
+    "path": "system/payments-platform/services/api-gateway/main.go",
     "app": "corpus",
     "library": "",
     "implemented_by": "SHA-256"
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA3-384",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA3-512",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHAKE128",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RIPEMD-160",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "AES",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "AES"
-  },
-  {
-    "finding": "AES",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "AES"
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-256",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-1",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-256",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "AES",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "AES"
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "SHA-256"
-  },
-  {
-    "finding": "SHA-1",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHAKE128",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-512",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-256",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "HMAC",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "SHA-256"
-  },
-  {
-    "finding": "SHA-1",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-256",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-3",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "RSA",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "DH",
-    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
   },
   {
     "finding": "SHA-256",
     "path": "system/payments-platform/services/api-gateway/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "SHA-256",
-    "path": "system/payments-platform/services/api-gateway/main.go",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "bouncycastle",
@@ -4771,28 +4351,28 @@
     "path": "tier1/c/t1_digests.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-1",
     "path": "tier1/c/t1_digests.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "tier1/c/t1_digests.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "tier1/c/t1_digests.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "ECDSA",
@@ -4806,7 +4386,7 @@
     "path": "tier1/c/t1_ec.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -4820,7 +4400,7 @@
     "path": "tier1/c/t1_mac_kdf.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -4841,7 +4421,7 @@
     "path": "tier1/c/t1_mac_kdf.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "X25519",
@@ -4904,7 +4484,7 @@
     "path": "tier1/csharp/Hashes/Program.cs",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "ECDSA",
@@ -5002,7 +4582,7 @@
     "path": "tier1/go/ecdsa/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "ECDSA",
@@ -5016,7 +4596,7 @@
     "path": "tier1/go/ecdsa/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "Ed25519",
@@ -5037,56 +4617,56 @@
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "MD5",
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-1",
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "tier1/go/hashes/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "SHA-256",
     "path": "tier1/go/mac_kdf/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-512",
     "path": "tier1/go/mac_kdf/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "HMAC",
@@ -5107,7 +4687,7 @@
     "path": "tier1/go/mac_kdf/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "RC4",
@@ -5135,14 +4715,14 @@
     "path": "tier1/go/rsa/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-256",
     "path": "tier1/go/rsa/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "TLS",
@@ -5247,7 +4827,7 @@
     "path": "tier1/java/T1Hashes.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "DES",
@@ -5390,18 +4970,25 @@
     "implemented_by": ""
   },
   {
+    "finding": "SHA-1",
+    "path": "tier1/javascript/t1_hashes.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
     "finding": "SHA-256",
     "path": "tier1/javascript/t1_hashes.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "tier1/javascript/t1_hashes.js",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "HMAC",
@@ -5478,7 +5065,7 @@
     "path": "tier1/javascript/t1_webcrypto.mjs",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "RSA",
@@ -5527,7 +5114,7 @@
     "path": "tier1/python/t1_dsa.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "ECDSA",
@@ -5541,28 +5128,28 @@
     "path": "tier1/python/t1_hashes.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-1",
     "path": "tier1/python/t1_hashes.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-256",
     "path": "tier1/python/t1_hashes.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-3",
     "path": "tier1/python/t1_hashes.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-3"
   },
   {
     "finding": "HMAC",
@@ -5576,7 +5163,7 @@
     "path": "tier1/python/t1_mac_kdf.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "PBKDF2",
@@ -5611,7 +5198,7 @@
     "path": "tier1/python/t1_rsa.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "3DES",
@@ -5632,7 +5219,7 @@
     "path": "tier2/c/t2_func_ptr.c",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -5667,7 +5254,7 @@
     "path": "tier2/csharp/DispatchTable/Program.cs",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "RSA",
@@ -5695,14 +5282,14 @@
     "path": "tier2/go/hash_enum/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "MD5",
     "path": "tier2/go/hmac_func_value/main.go",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "HMAC",
@@ -5807,14 +5394,14 @@
     "path": "tier2/python/t2_constant_hash.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "SHA-384",
     "path": "tier2/python/t2_curve_variable.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-384"
   },
   {
     "finding": "ECDSA",
@@ -5828,14 +5415,14 @@
     "path": "tier2/python/t2_dispatch_table.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "MD5"
   },
   {
     "finding": "SHA-256",
     "path": "tier2/python/t2_dispatch_table.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "HMAC",
@@ -5849,7 +5436,7 @@
     "path": "tier2/python/t2_partial.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "AES",
@@ -5898,7 +5485,7 @@
     "path": "tier3/java/cross_class_constant/src/com/acme/tokens/Fingerprint.java",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "AES",
@@ -5954,21 +5541,21 @@
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-256"
   },
   {
     "finding": "SHA-384",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-384"
   },
   {
     "finding": "SHA-512",
     "path": "tier3/python/jwt_alg_mapping/jwtlib/algorithms.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-512"
   },
   {
     "finding": "HMAC",
@@ -6087,7 +5674,7 @@
     "path": "tier4/assets/ipsec/ipsec.conf",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "ChaCha20-Poly1305",
@@ -6171,7 +5758,7 @@
     "path": "tier4/assets/ssh/sshd_config",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "X25519",
@@ -6367,28 +5954,7 @@
     "path": "tier4/assets/tls/openssl.cnf",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "MD5",
-    "path": "tier5/c/bin/meterd",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
-    "finding": "3DES",
-    "path": "tier5/c/bin/meterd",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": "3DES"
-  },
-  {
-    "finding": "DH",
-    "path": "tier5/c/bin/meterd",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   },
   {
     "finding": "AES",
@@ -6405,13 +5971,6 @@
     "implemented_by": "SHA-1"
   },
   {
-    "finding": "SHA-1",
-    "path": "tier5/python/compiled/ledger_sync.pyc",
-    "app": "corpus",
-    "library": "",
-    "implemented_by": ""
-  },
-  {
     "finding": "AES",
     "path": "tier5/python/t5_char_codes.py",
     "app": "corpus",
@@ -6423,6 +5982,6 @@
     "path": "tier5/python/t5_string_assembly.py",
     "app": "corpus",
     "library": "",
-    "implemented_by": ""
+    "implemented_by": "SHA-1"
   }
 ]

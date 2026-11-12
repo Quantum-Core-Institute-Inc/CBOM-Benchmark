@@ -1,8 +1,8 @@
-# CBOM Testbench Scorecard: qci-pqc, version 2.3.4 (adapter 1.1), declared scope
+# CBOM Testbench Scorecard: qci-pqc, version 2.3.4.1 (adapter 1.1), declared scope
 
-**Overall:** 251/366 findings detected (68.6% recall), 3 false positives (98.8% precision), parameters correct on 55.0% of detections.
+**Overall:** 246/366 findings detected (67.2% recall), 1 false positives (99.6% precision), parameters correct on 54.5% of detections.
 
-Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 244/304 detected (80.3%), 3 false positives.
+Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 246/304 detected (80.9%), 3 false positives.
 
 | Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
 |---|---|---|---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 1 csharp | 9/13 | 69.2% | 42.4–87.3% | 69.2% | 11.1% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 1 go | 14/20 | 70.0% | 48.1–85.5% | 70.0% | 42.9% | 92.9% | 100.0% | 0 | 100.0% |
 | Tier 1 java | 15/16 | 93.8% | 71.7–98.9% | 93.8% | 66.7% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 javascript | 14/17 | 82.4% | 59.0–93.8% | 82.4% | 42.9% | 78.6% | 100.0% | 0 | 100.0% |
+| Tier 1 javascript | 15/17 | 88.2% | 65.7–96.7% | 88.2% | 46.7% | 80.0% | 100.0% | 0 | 100.0% |
 | Tier 1 python | 15/16 | 93.8% | 71.7–98.9% | 93.8% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 2 c | 2/6 | 33.3% | 9.7–70.0% (thin) | 33.3% | 0.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 2 csharp | 3/6 | 50.0% | 18.8–81.2% (thin) | 50.0% | 0.0% | 100.0% | 100.0% | 1 | 75.0% |
@@ -21,7 +21,7 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 3 java | 5/7 | 71.4% | 35.9–91.8% (thin) | 71.4% | 40.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 3 python | 7/9 | 77.8% | 45.3–93.7% (thin) | 55.6% | 14.3% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 4 assets | 22/54 | 40.7% | 28.7–54.0% | 40.7% | 81.8% | 92.9% | 100.0% | 0 | 100.0% |
-| Tier 5 c | 2/3 | 66.7% | 20.8–93.9% (thin) | 66.7% | 50.0% | n/a | 100.0% | 1 | 66.7% |
+| Tier 5 c | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 java | 0/5 | 0.0% | 0.0–43.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 javascript | 0/3 | 0.0% | 0.0–56.2% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | Tier 5 python | 2/7 | 28.6% | 8.2–64.1% (thin) | 28.6% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
@@ -40,12 +40,12 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | PQC go | 1/4 | 25.0% | 4.6–69.9% (thin) | 25.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC java | 4/6 | 66.7% | 30.0–90.3% (thin) | 66.7% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC python | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
-| System fixture artifacts | 4/4 | 100.0% | 51.0–100.0% (thin) | 100.0% | 100.0% | n/a | 100.0% | 1 | 80.0% |
+| System fixture artifacts | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | System fixture assets | 5/9 | 55.6% | 26.7–81.1% (thin) | 55.6% | 40.0% | 66.7% | 100.0% | 0 | 100.0% |
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 251/366 | 68.6% | 63.7–73.1% | 66.1% | 55.0% | 97.4% | 100.0% | 3 | 98.8% |
+| **Total** | 246/366 | 67.2% | 62.2–71.8% | 64.8% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
 | Negative controls | | | | | | | | 0 | |
 
 Intervals are 95% Wilson intervals on recall. 27 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
@@ -56,7 +56,7 @@ Intervals are 95% Wilson intervals on recall. 27 bucket(s) have fewer than 10 fi
 
 ## System fixture: routing and asset links
 
-**Routable: 12/17 detected system findings (70.6%)** (of 21). Routable means a reported location resolves, through the fixture's CODEOWNERS, to the team that owns the fix. Reporting only the shared wrapper or its config is detection, but the ticket lands with platform-security.
+**Routable: 8/13 detected system findings (61.5%)** (of 21). Routable means a reported location resolves, through the fixture's CODEOWNERS, to the team that owns the fix. Reporting only the shared wrapper or its config is detection, but the ticket lands with platform-security.
 
 | Finding | Owner | Reported locations route to |
 |---|---|---|
@@ -81,15 +81,15 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 69.8%** (at primary site: 67.1%). **Findings due by end of 2030 that this scanner missed: 37.**
+**Deadline-weighted recall: 68.4%** (at primary site: 65.6%). **Findings due by end of 2030 that this scanner missed: 39.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 66/95 | 69.5% | 67.4% |
+| Due now (not approved or past its date) | 5 | 64/95 | 67.4% | 65.3% |
 | Due by end of 2030 | 4 | 24/32 | 75.0% | 68.8% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 73/103 | 70.9% | 68.0% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 88/136 | 64.7% | 63.2% |
+| Due 2034 to 2035 | 2 | 72/103 | 69.9% | 67.0% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 86/136 | 63.2% | 61.8% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -113,11 +113,12 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T5-JV-04 | TEA | **now** | `corpus/tier5/java/T5BlockTransform.java` |
 | T5-JS-01 | MD5 | **now** | `corpus/tier5/javascript/dist/session-tokens.min.js` |
 | T5-JS-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/session-tokens.min.js` |
+| T5-C-01 | MD5 | **now** | `corpus/tier5/c/bin/meterd` |
+| T5-C-02 | 3DES-CBC | 2023-12-31 | `corpus/tier5/c/bin/meterd` |
 | T5-C-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/c/bin/meterd` |
 | T1-GO-09 | RC4 | **now** | `corpus/tier1/go/rc4/main.go` |
 | T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/go/tls_config/main.go` |
 | T1-JS-01 | MD5 | **now** | `corpus/tier1/javascript/t1_hashes.js` |
-| T1-JS-02 | SHA-1 | 2030-12-31 | `corpus/tier1/javascript/t1_hashes.js` |
 | T2-TS-01 | 3DES-CBC | 2023-12-31 | `corpus/tier2/typescript/t2_config_object.ts` |
 | T2-TS-02 | SHA-1 | 2030-12-31 | `corpus/tier2/typescript/t2_default_param.ts` |
 | T1-C-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/c/t1_tls_ctx.c` |
@@ -128,6 +129,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T2-CS-03 | MD5 | **now** | `corpus/tier2/csharp/DispatchTable/Program.cs` |
 | MX-GO-3b | RC4 | **now** | `corpus/mixed/go/invoice_gateway/main.go` |
 | MX-C-2d | 3DES-CBC | 2023-12-31 | `corpus/mixed/c/policy_agent.c` |
+| SYS-AR-05 | SHA-1 | 2030-12-31 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` |
 | DC-GO-02 | RC4 | **now** | `corpus/deadcode/go/legacy/main.go` |
 | DC-JS-01 | MD5 | **now** | `corpus/deadcode/javascript/dead_paths.js` |
 
@@ -135,20 +137,20 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 117/251 detected findings (46.6%)**, meaning every must-have is present and correct. **Actionable recall: 32.0%** of all 366 expected findings were both found and ticket-ready. Field completeness across all checks: 56.8%.
+**Ticket-ready: 113/246 detected findings (45.9%)**, meaning every must-have is present and correct. **Actionable recall: 30.9%** of all 366 expected findings were both found and ticket-ready. Field completeness across all checks: 56.5%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 251 | 249 | 99.2% |
-| Correct parameters | must | 173 | 60 | 34.7% |
-| Primitive, where the family is ambiguous | must | 61 | 49 | 80.3% |
+| Exact location | must | 246 | 244 | 99.2% |
+| Correct parameters | must | 172 | 60 | 34.9% |
+| Primitive, where the family is ambiguous | must | 60 | 48 | 80.0% |
 | Certificate expiry (correct) | must | 11 | 2 | 18.2% |
 | Certificate subject (correct) | must | 11 | 2 | 18.2% |
 | Key material type | must | 7 | 3 | 42.9% |
 | Protocol version | must | 8 | 0 | 0.0% |
-| OID | should | 236 | 75 | 31.8% |
-| Crypto functions | should | 243 | 243 | 100.0% |
-| Quantum security level (correct) | should | 241 | 155 | 64.3% |
+| OID | should | 232 | 74 | 31.9% |
+| Crypto functions | should | 238 | 238 | 100.0% |
+| Quantum security level (correct) | should | 237 | 152 | 64.1% |
 | Code context | should | 99 | 0 | 0.0% |
 | Providing library | should | 99 | 0 | 0.0% |
 | Certificate issuer | should | 11 | 2 | 18.2% |
@@ -157,7 +159,7 @@ Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each
 | Key format | should | 7 | 0 | 0.0% |
 | Cipher suite in a protocol | should | 0 | 0 | n/a |
 
-Detected but not ticket-ready (134), first 25:
+Detected but not ticket-ready (133), first 25:
 
 | ID | Algorithm | Missing must-haves |
 |---|---|---|
@@ -189,7 +191,7 @@ Detected but not ticket-ready (134), first 25:
 
 ## Outside declared scope: qci-pqc declared scope (docs/LIMITATIONS.md)
 
-29 expected findings fall outside what this scanner says it covers. They are not counted above. 5 were detected anyway.
+29 expected findings fall outside what this scanner says it covers. They are not counted above. 4 were detected anyway.
 
 | ID | Algorithm | File | Detected anyway | Why out of scope |
 |---|---|---|---|---|
@@ -207,7 +209,7 @@ Detected but not ticket-ready (134), first 25:
 | T4-AS-24 | RSA-1024 | `corpus/tier4/assets/keystores/partner_truststore.jks` | no | Binary Java keystore; scanner inspects PEM only |
 | T4-AS-25 | SHA-1 | `corpus/tier4/assets/keystores/partner_truststore.jks` | no | Binary Java keystore; scanner inspects PEM only |
 | T4-AS-48 | SHA-384 | `corpus/tier4/assets/k8s/ingress-tls-secret.yaml` | no | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
-| T5-PY-08 | SHA-1 | `corpus/tier5/python/compiled/ledger_sync.pyc` | yes | Binary scanning (LIMITATIONS: out of scope) |
+| T5-PY-08 | SHA-1 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Binary scanning (LIMITATIONS: out of scope) |
 | T5-PY-09 | HMAC-MD5 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Binary scanning (LIMITATIONS: out of scope) |
 | T5-JV-06 | AES-128-CBC | `corpus/tier5/java/compiled/billing-core.jar` | yes | Binary / JAR scanning (LIMITATIONS: out of scope) |
 | T5-JV-07 | RSA-1024 | `corpus/tier5/java/compiled/billing-core.jar` | yes | Binary / JAR scanning (LIMITATIONS: out of scope) |
@@ -281,6 +283,8 @@ Detected but not ticket-ready (134), first 25:
 | T5-JS-01 | `corpus/tier5/javascript/dist/session-tokens.min.js` | MD5  | 1 |
 | T5-JS-02 | `corpus/tier5/javascript/dist/session-tokens.min.js` | AES {'key_size': 128, 'mode': 'CBC'} | 1 |
 | T5-JS-03 | `corpus/tier5/javascript/dist/session-tokens.min.js` | RSA {'key_size': 1024} | 1 |
+| T5-C-01 | `corpus/tier5/c/bin/meterd` | MD5  | file |
+| T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
 | T5-C-03 | `corpus/tier5/c/bin/meterd` | RSA {'key_size': 1024} | file |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
@@ -301,7 +305,6 @@ Detected but not ticket-ready (134), first 25:
 | PQ-GO-03 | `corpus/pqc/go/tls_hybrid/main.go` | X25519MLKEM768  | 12 |
 | PQ-GO-04 | `corpus/pqc/go/tls_hybrid/main.go` | X25519  | 12 |
 | T1-JS-01 | `corpus/tier1/javascript/t1_hashes.js` | MD5  | 5 |
-| T1-JS-02 | `corpus/tier1/javascript/t1_hashes.js` | SHA-1  | 6 |
 | T1-JS-04 | `corpus/tier1/javascript/t1_hashes.js` | SHA3-256  | 8 |
 | T2-TS-01 | `corpus/tier2/typescript/t2_config_object.ts` | 3DES {'mode': 'CBC'} | 5 |
 | T2-TS-02 | `corpus/tier2/typescript/t2_default_param.ts` | SHA-1  | 4 |
@@ -336,6 +339,10 @@ Detected but not ticket-ready (134), first 25:
 | MX-C-2b | `corpus/mixed/c/policy_agent.c` | AES {'key_size': 192, 'mode': 'CBC'} | 10 |
 | MX-C-2d | `corpus/mixed/c/policy_agent.c` | 3DES {'mode': 'CBC'} | 11 |
 | MX-C-3a | `corpus/mixed/c/audit_daemon.c` | AES {'key_size': 192, 'mode': 'CBC'} | 8 |
+| SYS-AR-03 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | RSA  | file |
+| SYS-AR-04 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | HMAC  | file |
+| SYS-AR-05 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | SHA-1  | file |
+| SYS-AR-06 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | SHA-256  | file |
 | SYS-AS-02 | `corpus/system/payments-platform/edge/nginx/gateway.conf` | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384  | 9 |
 | SYS-AS-03 | `corpus/system/payments-platform/edge/nginx/gateway.conf` | TLS_RSA_WITH_AES_128_CBC_SHA  | 9 |
 | SYS-AS-07 | `corpus/system/payments-platform/deploy/k8s/gateway-ingress-tls.yaml` | EC {'curve': 'P-384'} | file |
@@ -368,7 +375,6 @@ Detected but not ticket-ready (134), first 25:
 | T4-AS-27 | DH | `{"key_size": 2048}` | `{}` |
 | T4-AS-59 | DH | `{"key_size": 1024}` | `{}` |
 | T5-PY-04 | AES | `{"key_size": 128, "mode": "ECB"}` | `{"key_size": 128}` |
-| T5-C-02 | 3DES | `{"mode": "CBC"}` | `{}` |
 | PQ-PY-01 | ML-KEM | `{"param_set": "768"}` | `{"param_set": "ML-KEM"}` |
 | PQ-PY-02 | ML-DSA | `{"param_set": "65"}` | `{"param_set": "ML-DSA"}` |
 | PQ-PY-04 | ML-KEM | `{"param_set": "768"}` | `{"param_set": "ML-KEM"}` |
@@ -465,9 +471,7 @@ Detected but not ticket-ready (134), first 25:
 
 | File | Reported family | Lines | Negative control? |
 |---|---|---|---|
-| `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | DH | 348, 1461, 1912, 4654, 4675, 5013, 5218, 5235, 5239, 5249, 5264, 6065, 7065, 7072, 10688, 10945, 11763, 12417, 12746, 49070, 50098, 53217 | no |
 | `corpus/tier2/csharp/DispatchTable/Program.cs` | SHA-256 | 10 | no |
-| `corpus/tier5/c/bin/meterd` | DH | 65 | no |
 
 ## Unrecognized names (not scored, review manually)
 
@@ -565,55 +569,42 @@ Detected but not ticket-ready (134), first 25:
 - `corpus/system/payments-platform/edge/nginx/gateway.conf` line 9: qci-category-100
 - `corpus/system/payments-platform/edge/nginx/gateway.conf` line 9: qci-category-101
 - `corpus/system/payments-platform/edge/nginx/tls/gateway.key` line 1: qci-category-103
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 12895: qci-category-104
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 12895: qci-category-105
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 12895: qci-category-106
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 13300: qci-category-107
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 13514: qci-category-108
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 14665: qci-category-109
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 14666: qci-category-110
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 14666: qci-category-111
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 14670: qci-category-112
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 14670: qci-category-113
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 16796: qci-category-114
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 16796: qci-category-115
-- `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` line 16986: qci-category-116
-- `corpus/tier1/c/t1_digests.c` line 18: qci-category-118
-- `corpus/tier1/go/hashes/main.go` line 8: qci-category-119
-- `corpus/tier1/go/hashes/main.go` line 17: qci-category-120
-- `corpus/tier1/go/rc4/main.go` line 5: qci-category-121
-- `corpus/tier1/go/rc4/main.go` line 10: qci-category-122
-- `corpus/tier1/go/tls_config/main.go` line 10: qci-category-123
-- `corpus/tier1/go/tls_config/main.go` line 14: qci-category-124
-- `corpus/tier1/java/T1Hashes.java` line 13: qci-category-125
-- `corpus/tier1/javascript/t1_aes_cbc.js` line 2: qci-category-126
-- `corpus/tier1/javascript/t1_aes_gcm.js` line 2: qci-category-127
-- `corpus/tier1/javascript/t1_chacha.js` line 2: qci-category-128
-- `corpus/tier1/javascript/t1_dh.js` line 2: qci-category-129
-- `corpus/tier1/javascript/t1_ec.js` line 2: qci-category-130
-- `corpus/tier1/javascript/t1_hashes.js` line 2: qci-category-131
-- `corpus/tier1/javascript/t1_hashes.js` line 8: qci-category-132
-- `corpus/tier1/javascript/t1_mac_kdf.js` line 2: qci-category-133
-- `corpus/tier1/javascript/t1_modern_curves.js` line 2: qci-category-134
-- `corpus/tier1/javascript/t1_rsa.js` line 2: qci-category-135
-- `corpus/tier1/javascript/t1_triple_des.js` line 2: qci-category-136
-- `corpus/tier1/python/t1_hashes.py` line 9: qci-category-137
-- `corpus/tier4/assets/keys/billing_service.pem` line 1: qci-category-144
-- `corpus/tier4/assets/keys/treasury_hot_wallet.key` line 1: qci-category-145
-- `corpus/tier4/assets/ssh/sshd_config` line 8: qci-category-146
-- `corpus/tier4/assets/ssh/sshd_config` line 9: qci-category-147
-- `corpus/tier4/assets/ssh/sshd_config` line 9: qci-category-148
-- `corpus/tier4/assets/ssh/sshd_config` line 10: qci-category-149
-- `corpus/tier4/assets/ssh/sshd_config` line 10: qci-category-150
-- `corpus/tier4/assets/ssh/sshd_config` line 11: qci-category-151
-- `corpus/tier4/assets/tls/application.yml` line 15: qci-category-152
-- `corpus/tier4/assets/tls/haproxy.cfg` line 7: qci-category-153
-- `corpus/tier4/assets/tls/httpd-ssl.conf` line 14: qci-category-155
-- `corpus/tier4/assets/tls/nginx.conf` line 20: qci-category-158
-- `corpus/tier4/assets/tls/nginx.conf` line 20: qci-category-159
-- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-160
-- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-161
-- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-162
+- `corpus/tier1/c/t1_digests.c` line 18: qci-category-105
+- `corpus/tier1/go/hashes/main.go` line 8: qci-category-106
+- `corpus/tier1/go/hashes/main.go` line 17: qci-category-107
+- `corpus/tier1/go/rc4/main.go` line 5: qci-category-108
+- `corpus/tier1/go/rc4/main.go` line 10: qci-category-109
+- `corpus/tier1/go/tls_config/main.go` line 10: qci-category-110
+- `corpus/tier1/go/tls_config/main.go` line 14: qci-category-111
+- `corpus/tier1/java/T1Hashes.java` line 13: qci-category-112
+- `corpus/tier1/javascript/t1_aes_cbc.js` line 2: qci-category-113
+- `corpus/tier1/javascript/t1_aes_gcm.js` line 2: qci-category-114
+- `corpus/tier1/javascript/t1_chacha.js` line 2: qci-category-115
+- `corpus/tier1/javascript/t1_dh.js` line 2: qci-category-116
+- `corpus/tier1/javascript/t1_ec.js` line 2: qci-category-117
+- `corpus/tier1/javascript/t1_hashes.js` line 2: qci-category-118
+- `corpus/tier1/javascript/t1_hashes.js` line 8: qci-category-119
+- `corpus/tier1/javascript/t1_mac_kdf.js` line 2: qci-category-120
+- `corpus/tier1/javascript/t1_modern_curves.js` line 2: qci-category-121
+- `corpus/tier1/javascript/t1_rsa.js` line 2: qci-category-122
+- `corpus/tier1/javascript/t1_triple_des.js` line 2: qci-category-123
+- `corpus/tier1/python/t1_hashes.py` line 9: qci-category-124
+- `corpus/tier4/assets/keys/billing_service.pem` line 1: qci-category-131
+- `corpus/tier4/assets/keys/treasury_hot_wallet.key` line 1: qci-category-132
+- `corpus/tier4/assets/ssh/sshd_config` line 8: qci-category-133
+- `corpus/tier4/assets/ssh/sshd_config` line 9: qci-category-134
+- `corpus/tier4/assets/ssh/sshd_config` line 9: qci-category-135
+- `corpus/tier4/assets/ssh/sshd_config` line 10: qci-category-136
+- `corpus/tier4/assets/ssh/sshd_config` line 10: qci-category-137
+- `corpus/tier4/assets/ssh/sshd_config` line 11: qci-category-138
+- `corpus/tier4/assets/tls/application.yml` line 15: qci-category-139
+- `corpus/tier4/assets/tls/haproxy.cfg` line 7: qci-category-140
+- `corpus/tier4/assets/tls/httpd-ssl.conf` line 14: qci-category-142
+- `corpus/tier4/assets/tls/nginx.conf` line 20: qci-category-145
+- `corpus/tier4/assets/tls/nginx.conf` line 20: qci-category-146
+- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-147
+- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-148
+- `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-149
 
 ## Crypto libraries (dependency manifests)
 
@@ -800,8 +791,8 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T5-JS-01 | MD5 | NO | NO | n/a | n/a | n/a |
 | T5-JS-02 | AES | NO | NO | n/a | n/a | n/a |
 | T5-JS-03 | RSA | NO | NO | n/a | n/a | n/a |
-| T5-C-01 | MD5 | yes | yes | yes | n/a | yes |
-| T5-C-02 | 3DES | yes | yes | NO | n/a | yes |
+| T5-C-01 | MD5 | NO | NO | n/a | n/a | n/a |
+| T5-C-02 | 3DES | NO | NO | n/a | n/a | n/a |
 | T5-C-03 | RSA | NO | NO | n/a | n/a | n/a |
 | PQ-PY-01 | ML-KEM | yes | yes | NO | yes | n/a |
 | PQ-PY-02 | ML-DSA | yes | yes | NO | yes | n/a |
@@ -871,7 +862,7 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | PQ-GO-03 | X25519MLKEM768 | NO | NO | n/a | n/a | n/a |
 | PQ-GO-04 | X25519 | NO | NO | n/a | n/a | n/a |
 | T1-JS-01 | MD5 | NO | NO | n/a | n/a | n/a |
-| T1-JS-02 | SHA-1 | NO | NO | n/a | n/a | n/a |
+| T1-JS-02 | SHA-1 | yes | yes | yes | yes | yes |
 | T1-JS-03 | SHA-256 | yes | yes | yes | yes | n/a |
 | T1-JS-04 | SHA3-256 | NO | NO | n/a | n/a | n/a |
 | T1-JS-05 | AES | yes | yes | NO | yes | n/a |
@@ -1009,10 +1000,10 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | SYS-PY-03 | RSA | yes | yes | yes | n/a | yes |
 | SYS-JV-01 | EC | yes | NO | NO | yes | yes |
 | SYS-JV-02 | SHA-1 | yes | yes | yes | yes | yes |
-| SYS-AR-03 | RSA | yes | yes | yes | n/a | yes |
-| SYS-AR-04 | HMAC | yes | yes | yes | n/a | n/a |
-| SYS-AR-05 | SHA-1 | yes | yes | yes | n/a | yes |
-| SYS-AR-06 | SHA-256 | yes | yes | yes | n/a | n/a |
+| SYS-AR-03 | RSA | NO | NO | n/a | n/a | n/a |
+| SYS-AR-04 | HMAC | NO | NO | n/a | n/a | n/a |
+| SYS-AR-05 | SHA-1 | NO | NO | n/a | n/a | n/a |
+| SYS-AR-06 | SHA-256 | NO | NO | n/a | n/a | n/a |
 | SYS-AS-01 | TLS-1.2 | yes | yes | yes | yes | n/a |
 | SYS-AS-02 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | NO | NO | n/a | n/a | n/a |
 | SYS-AS-03 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
@@ -1037,10 +1028,10 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 
 QCI reports many findings as risk categories (`DH/ECDH`, `SSH-Weak-Cipher`, `Hybrid-KEM`) rather than specific algorithms. Those aren't credited in the strict score above. Here they are credited when a category sits on the line (±1) of an expected finding it plausibly describes.
 
-- Strict detections: **251/366** (68.6%)
+- Strict detections: **246/366** (67.2%)
 - Additional findings covered only by a category signal: **14**
-- Combined coverage: **265/366** (72.4%)
-- Category signals emitted: 80; matching no expected finding: 36
+- Combined coverage: **260/366** (71.0%)
+- Category signals emitted: 74; matching no expected finding: 30
 
 | Category | Expected findings it covers |
 |---|---|
@@ -1093,9 +1084,9 @@ Category signals that describe nothing in the ground truth (signal-level false a
 - `SHA-3` at `mixed/python/order_jobs.py`:33
 - `X509-Cert` at `negatives/assets/upload_validator_fake.pem`:1
 - `SSH-Modern-Cipher` at `system/payments-platform/edge/nginx/gateway.conf`:9
-- `SHA-3` at `system/payments-platform/services/api-gateway/bin/api-gateway`:12895
-- `SHA-3` at `system/payments-platform/services/api-gateway/bin/api-gateway`:13300
-- `SHA-3` at `system/payments-platform/services/api-gateway/bin/api-gateway`:13514
+- `SHA-3` at `tier1/go/hashes/main.go`:8
+- `SSH-Modern-Cipher` at `tier4/assets/tls/haproxy.cfg`:7
+- `SSH-Modern-Cipher` at `tier4/assets/tls/nginx.conf`:21
 
-**Unmapped QCI names** (new in this scanner version? add them to the adapter's tables): `Node-crypto`, `RC4`, `RIPEMD-160`, `SHA3-384`, `SHA3-512`, `SHAKE128`, `TLS`, `unspecified`
+**Unmapped QCI names** (new in this scanner version? add them to the adapter's tables): `Node-crypto`, `RC4`, `TLS`, `unspecified`
 

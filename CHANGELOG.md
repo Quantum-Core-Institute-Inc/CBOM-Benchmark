@@ -1,12 +1,32 @@
 # Changelog
 
-## Unreleased
+## 2.4.1 (2026-11-11): one scanner release, remeasured
 
-- **The image is built before the tag.** `.github/workflows/image.yml` builds the Dockerfile from the
-  real base images on any pull request that touches it (and weekly, and on demand), records the
-  digest each base tag resolved to, requires every toolchain to report a version, runs the required
-  checks inside the image with no network, and confirms the sandbox refuses to run unconfined when
-  the container lacks the capability it needs. Nothing is published.
+The corpus, answer key, scorer and methodology (2.3) are those of 2.4.0. What changed is what is
+published about them. Everything was rescanned and every bundle rebuilt.
+
+- **One QCI release.** The published QCI column, `reports/qci-pqc/`, the gates and the evidence are
+  now v2.3.4.1 only. Reports, bundles and document sections for earlier QCI releases are removed;
+  they remain in the git history.
+- **Floors were carried, not reset.** The ratchet floors measured on 2.4.0 stay in force, because the
+  corpus and answer key didn't change: `rebaseline.py --carry` keeps existing floors as candidates
+  and refuses when the stamp shows a different corpus, answer key, scorer or policy. v2.3.4.1 raises
+  the precision floor (99.6%) and fails five others. It reads 67.2% recall in scope: it no longer
+  reports anything from the two binaries, which costs six findings and removes two false positives.
+  Its CBOM now validates. Details in `integrations/qci-pqc/FINDINGS.md`.
+- **Holdout numbers are generator 1.2 throughout.** Reports and bundles were remeasured, so the
+  mismatch noted when the generator was merged is gone. Calibration on five seeds: answer key 0, grep
+  -4.0 to -2.2, QCI v2.3.4.1 -0.9 to +1.0, none significant. METHODOLOGY.md section 6 names
+  generator 1.2.
+- **No container-lane bundle in this release.** The lane is unchanged and CI still tests it, but the
+  Docker daemon wasn't available where this release was built, so the bundle showing the same score
+  in both lanes couldn't be remade for v2.3.4.1.
+- **README reorganised**: requirements, usage with option tables, outputs, a documentation index and
+  a shorter layout. The tier, PQC and scoring sections are kept.
+- **CI additions since 2.4.0**: the image is built from the real base images on pull requests that
+  touch it (`image.yml`), and three open-source scanners run in the sandbox on GitHub with no secrets
+  (`third-party-scanners.yml`); their results are artifacts until someone has read them.
+- **Fixes.** Two stray report files removed. `rebaseline.py` records where a carried floor came from.
 
 ## 2.4.0 (2026-11-11): more of what's deployed
 
