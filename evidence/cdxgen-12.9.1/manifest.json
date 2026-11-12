@@ -1,10 +1,10 @@
 {
   "bundle_format": 1,
-  "testbench": "2.6.1",
+  "testbench": "2.6.3",
   "methodology": "2.3",
   "created": "2026-11-12T13:26:25Z",
   "stamp": {
-    "release": "2.6.1",
+    "release": "2.6.3",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
