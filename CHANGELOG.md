@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.6.2 (2026-11-12): additive scorecard sections and stamp tooling
+
+Methodology stays 2.3. This is a patch release on the 2.6 line.
+
+- **Parameter Recovery.** Scorecards emit a dedicated Parameter Recovery section (overall and by tier/language/family).
+- **Config Completeness.** Scorecards emit a Config Completeness section for findings that carry protocol version, cipher/proposal, or DH/group size.
+- **Binary evidence honesty.** Known stripped binaries must produce findings or a recorded skip; an empty result without a skip is a coverage honesty failure.
+- **Stamp tooling.** `tools/stamp.py` restamps release fields; `--scorer` also updates the scorer hash so a scorer change no longer leaves CI red.
+- **Comparison table.** Header updated to the current stamp.
+
+
 ## 2.6.1 (2026-11-12): versioning discipline and parameter recovery
 
 Methodology stays 2.3. This is a patch release on the 2.6 line.
