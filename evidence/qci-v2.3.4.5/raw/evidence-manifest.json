@@ -1,7 +1,7 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "0aba1daac1cec4b693527b22cae48af8cb6d2184aef7b4c750c699f5992454c2",
+      "sha256": "2d0f71a79d7c839c2be7f02bbcd0e5fbe652f6dee09e25ec26f9e4307eec76b3",
       "size": 2131720
     },
     "findings.json": {
@@ -48,9 +48,9 @@
     "findings": 920,
     "ignored": 0,
     "outputs": {
-      "cbom": "/tmp/cbom-sandbox-wak9rzay/out/cbom.json",
-      "report": "/tmp/cbom-sandbox-wak9rzay/out/report.html",
-      "sarif": "/tmp/cbom-sandbox-wak9rzay/out/results.sarif"
+      "cbom": "/tmp/cbom-sandbox-w3l959w7/out/cbom.json",
+      "report": "/tmp/cbom-sandbox-w3l959w7/out/report.html",
+      "sarif": "/tmp/cbom-sandbox-w3l959w7/out/results.sarif"
     },
     "project": "corpus",
     "readiness_score": 0.0,

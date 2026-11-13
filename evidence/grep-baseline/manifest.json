@@ -2,7 +2,7 @@
   "bundle_format": 1,
   "testbench": "2.6.6",
   "methodology": "2.3",
-  "created": "2026-11-13T17:33:10Z",
+  "created": "2026-11-13T18:53:05Z",
   "stamp": {
     "release": "2.6.6",
     "methodology": "2.3",
@@ -13,7 +13,7 @@
     "policy": "nist:c78f618c306e7d48"
   },
   "files": {
-    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "METHODOLOGY.md": "24a05d0aca69bd594b07be5b3cc7915e86ddd060d627e1665db516856778f32a",
     "VERSION": "245f7531ea44f28f7b7e8893179f4224fff4d081dcc3ee19f770ab1ab9b8d691",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
@@ -72,9 +72,9 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 0.87,
-    "cpu_user_s": 0.83,
-    "cpu_sys_s": 0.03,
+    "wall_s": 0.99,
+    "cpu_user_s": 0.92,
+    "cpu_sys_s": 0.06,
     "peak_rss_mb": 32.2,
     "isolation": {
       "environment": "scrubbed",
@@ -123,9 +123,9 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 0.9,
-      "cpu_user_s": 0.85,
-      "cpu_sys_s": 0.04,
+      "wall_s": 1.07,
+      "cpu_user_s": 1.03,
+      "cpu_sys_s": 0.03,
       "peak_rss_mb": 73.7,
       "isolation": {
         "environment": "scrubbed",
