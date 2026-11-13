@@ -1,7 +1,7 @@
 {
   "name": "qci-pqc declared scope (docs/LIMITATIONS.md)",
   "scanner": "qci-pqc-scan",
-  "scanner_version": "2.3.4.1",
+  "scanner_version": "2.3.4.3",
   "source": "https://github.com/Quantum-Core-Institute-Inc/qci-pqc-scanner/blob/main/docs/LIMITATIONS.md",
   "note": "Findings matching these rules are listed in the scorecard but not counted. Everything else LIMITATIONS.md calls in scope is scored: source code and config patterns, PEM certificates and keys, TLS and SSH configs, NIST PQC names. Key size from certificates is scored too: LIMITATIONS lists it as out of scope, but certs.py reports it, so the scanner gets credit when it's right.",
   "out_of_scope": [

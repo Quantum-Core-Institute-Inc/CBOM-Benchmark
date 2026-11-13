@@ -59,8 +59,12 @@ def main() -> int:
                 else:
                     out = work / "scan"
                     shutil.rmtree(out, ignore_errors=True)
-                    subprocess.run([a.qci_bin, "scan", str(d / "corpus"), "--reproducible", "--adapter", "internal", "--out", str(out), "--json"],
-                                   capture_output=True, check=True)
+                    # The scanner exits non-zero when it skipped files it couldn't read (2.3.4.3 onward).
+                    # That is a report, not a failure: what counts is that it wrote its CBOM.
+                    r = subprocess.run([a.qci_bin, "scan", str(d / "corpus"), "--reproducible", "--adapter", "internal", "--out", str(out), "--json"],
+                                       capture_output=True)
+                    if not (out / "cbom.json").exists():
+                        sys.exit(f"the scanner wrote no CBOM on seed {seed} (exit {r.returncode}): {r.stderr.decode()[-400:]}")
                     bom, _, _ = qci_pqc.translate(json.loads((out / "cbom.json").read_text()))
                     sc = scope
                 h = ho.score_holdout(bom, d, "nist", sc)

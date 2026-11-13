@@ -1,37 +1,37 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "ac94196420cbf1e2e7531ae2eb92b28e4a3e92e4d8dc12dc0ea35057e3b20fa7",
-      "size": 1975013
+      "sha256": "288a4dc5079e32719cb2e31a8e038759f0c5165c6d3b8545bcb3fb15126efe17",
+      "size": 1981295
     },
     "findings.json": {
-      "sha256": "f10b4964e79c36f5b1cadaeaa577717599f34c59c99161122ef9a76390dbaf1f",
-      "size": 264332
+      "sha256": "c3db66489a8d7e4aca9da59bff596d1a9a8c67ef5832104da7f2d39e1dc3d87c",
+      "size": 264574
     },
     "graph.json": {
-      "sha256": "63b73007a08b20304ba57ba193daa2531be3ce6f08a97df2896bac01f6d034f7",
-      "size": 134514
+      "sha256": "ebb852a5a35f59779dea68b9c9c6ba285ac6cd21d3303e4cff0ce51f9c9be701",
+      "size": 135412
     },
     "report.html": {
-      "sha256": "e9d0b8690ab3896ef7054e5385ea3eefaaad492dafd6850ff4d31a293bb13788",
-      "size": 453479
+      "sha256": "ee61ab615d5eea07ac4b3795ebf9f925cb8a8f192248f5c6e866f603383b34dd",
+      "size": 454116
     },
     "results.sarif": {
-      "sha256": "fe3e45ba962bb9e8564b698f9d48fb86f94077666c245cd776b0c987bba562de",
-      "size": 417906
+      "sha256": "2a783865d4280f78421c7c5e7aedf7f2c8678cbdc165a174ddf6779e0b5aaa6e",
+      "size": 418417
     },
     "scan-coverage.json": {
-      "sha256": "988dc7c29408abbb20e2cf21193686498303450dd4f2cb0635eeabe69b1707f4",
-      "size": 110
+      "sha256": "da4af8e74efa3328e869e59883bbf20e22dcac0a23462aac6fab667369c2c447",
+      "size": 517
     }
   },
   "generated": null,
   "input_revision": "",
   "policy": {},
   "reproducible": true,
-  "ruleset_hash": "ab09bbe5e792533c",
-  "scanner_build": "2.3.4.1",
-  "scanner_version": "2.3.4.1",
+  "ruleset_hash": "5335f3d22965bf9b",
+  "scanner_build": "2.3.4.3",
+  "scanner_version": "2.3.4.3",
   "summary": {
     "baseline_diff": null,
     "breakdown": {
@@ -45,12 +45,12 @@
       "vulnerable_count": 319,
       "weak_count": 184
     },
-    "findings": 856,
+    "findings": 857,
     "ignored": 0,
     "outputs": {
-      "cbom": "/tmp/cbom-sandbox-b65otian/out/cbom.json",
-      "report": "/tmp/cbom-sandbox-b65otian/out/report.html",
-      "sarif": "/tmp/cbom-sandbox-b65otian/out/results.sarif"
+      "cbom": "/tmp/cbom-sandbox-xdhhliqq/out/cbom.json",
+      "report": "/tmp/cbom-sandbox-xdhhliqq/out/report.html",
+      "sarif": "/tmp/cbom-sandbox-xdhhliqq/out/results.sarif"
     },
     "project": "corpus",
     "readiness_score": 0.0,

@@ -45,7 +45,7 @@
 |                        |            |                          | can.                                               |
 +------------------------+------------+--------------------------+----------------------------------------------------+
 [1;35mSECURE MODE: DO NOT run cdxgen with root privileges.[0m
-Executing 'mvn in /tmp/cdxgen-scan-_5v5qf49/corpus/deps/java-gateway
+Executing 'mvn in /tmp/cdxgen-scan-2ganss9n/corpus/deps/java-gateway
 You can try the following remediation tips to resolve this error:
 
 1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
@@ -100,8 +100,8 @@ Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/
 [WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-release-plugin:3.0.1: Plugin org.apache.maven.plugins:maven-release-plugin:3.0.1 or one of its dependencies could not be resolved:
 	The following artifacts could not be resolved: org.apache.maven.plugins:maven-release-plugin:pom:3.0.1 (absent): Could not transfer artifact org.apache.maven.plugins:maven-release-plugin:pom:3.0.1 from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
 
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
 [WARNING] Could not transfer metadata org.apache.maven.plugins/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
 [WARNING] Could not transfer metadata org.codehaus.mojo/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
 [WARNING] org.apache.maven.plugins/maven-metadata.xml failed to transfer from https://repo.maven.apache.org/maven2 during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer metadata org.apache.maven.plugins/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): repo.maven.apache.org
@@ -109,8 +109,8 @@ Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.523 s
-[INFO] Finished at: 2026-11-12T18:01:00-05:00
+[INFO] Total time:  0.990 s
+[INFO] Finished at: 2026-11-13T09:13:07-05:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] No plugin found for prefix 'dependency' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (/root/.m2/repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
 [ERROR] 
@@ -120,7 +120,7 @@ Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException
 
-Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=45779 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=41031 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
 
 The above build errors could be due to:
 
@@ -136,13 +136,13 @@ Ensure $HOME/.netrc file contains a valid username and password for the private 
 3. Alternatively, consider generating a post-build SBOM from the built binary using blint. Use the official container image and invoke cdxgen with the arguments `-t binary --lifecycle post-build`.
 Manually parsing go.mod files. The resultant BOM would be incomplete.
 Set the environment variable CDXGEN_GEM_HOME or GEM_HOME to collect the module names for installed gems.
-Unable to extract component information from /tmp/cdxgen-scan-_5v5qf49/corpus/tier5/java/compiled/token-vault.jar. The SBOM won't include this artifact.
-Unable to extract component information from /tmp/cdxgen-scan-_5v5qf49/corpus/tier5/java/compiled/billing-core.jar. The SBOM won't include this artifact.
-Unable to extract component information from /tmp/cdxgen-scan-_5v5qf49/corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cdxgen-scan-2ganss9n/corpus/tier5/java/compiled/token-vault.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cdxgen-scan-2ganss9n/corpus/tier5/java/compiled/billing-core.jar. The SBOM won't include this artifact.
+Unable to extract component information from /tmp/cdxgen-scan-2ganss9n/corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar. The SBOM won't include this artifact.
 Dotnet SDK is not installed. Please use the cdxgen dotnet container images to analyze this project with dosai.
 Alternatively, download the dosai self-contained binary (-full suffix) from https://github.com/owasp-dep-scan/dosai/releases and set DOSAI_CMD to its location.
-About to collect jar dependencies for the path /tmp/cdxgen-scan-_5v5qf49/corpus
-Executing 'mvn in /tmp/cdxgen-scan-_5v5qf49/corpus
+About to collect jar dependencies for the path /tmp/cdxgen-scan-2ganss9n/corpus
+Executing 'mvn in /tmp/cdxgen-scan-2ganss9n/corpus
 You can try the following remediation tips to resolve this error:
 
 1. Check if the correct version of maven is installed and available in the PATH. Check if the environment variable MVN_ARGS needs to be set.
@@ -151,11 +151,11 @@ You can try the following remediation tips to resolve this error:
 About to collect jar dependencies from the gradle cache. This would take a while ...
 /root/.gradle/caches/modules-2/files-2.1 did not contain any jars. Try building the project to improve the BOM precision.
 To speed up successive re-runs, pass the argument --skip-maven-collector to evinse command.
-Creating reachables slice for /tmp/cdxgen-scan-_5v5qf49/corpus. Please wait ...
-Creating usages slice for /tmp/cdxgen-scan-_5v5qf49/corpus. Please wait ...
+Creating reachables slice for /tmp/cdxgen-scan-2ganss9n/corpus. Please wait ...
+Creating usages slice for /tmp/cdxgen-scan-2ganss9n/corpus. Please wait ...
 Use an official cdxgen container image to improve the precision of endpoints detection (for SaaSBOM).
 Unable to identify component evidence for the input SBOM based on the slices from atom. The slices are either empty or lack appropriate tags.
-Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=45779 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=41031 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
  undefined
-Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=45779 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=41031 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
  undefined

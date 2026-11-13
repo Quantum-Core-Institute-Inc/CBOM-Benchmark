@@ -7,9 +7,9 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Methodology 2.3](https://img.shields.io/badge/methodology-2.3-informational.svg)](METHODOLOGY.md)
 
-**Version:** 2.6.4.1 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
+**Version:** 2.6.5 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
 
-2.6.4.1 adds cryptoscan 1.5.0 and qScan 0.12.0 to the published comparison; nothing was rescored. 2.6.4 is a repair release: every published number was measured again on this release's own code, the holdout generator runs again, and config completeness measures something. See [CHANGELOG.md](CHANGELOG.md).
+2.6.5 measures QCI PQC Scanner v2.3.4.3: parameters correct on 90.2% of detections (54.4% for v2.3.4.1), no false positives, 62.2% recall. Every published number was measured on this release by `tools/release_run.sh`. See [CHANGELOG.md](CHANGELOG.md).
 
 [Release notes](CHANGELOG.md) · [Methodology](METHODOLOGY.md) · [Versioning](VERSIONING.md) · [Parameter cheat-sheet](PARAMETER_CHEATSHEET.md) · [Results](reports/comparison.md) · [Evidence](evidence/) · [Holdout sets](HOLDOUT.md) · [Bring your own code](BYOC.md)
 
@@ -34,7 +34,7 @@ performance on unseen code.
 - **Your own code as scored cases**, kept apart from the shipped answer key.
 - **Gates for CI**, stamped to the exact release they were measured on.
 
-QCI also publishes a scanner that this benchmark grades (`qci-pqc-scan`, currently v2.3.4.1). The
+QCI also publishes a scanner that this benchmark grades (`qci-pqc-scan`, currently v2.3.4.3). The
 benchmark lives in its own repository with its own versioned methodology, and that scanner's results
 are published as measured, gate failures included: see
 [reports/qci-pqc/SUMMARY.md](reports/qci-pqc/SUMMARY.md) and
@@ -125,7 +125,7 @@ required checks; `perf` times a scanner on a large generated tree.
 - **The container lane** is for a scanner you don't trust at all. It runs in an image that holds only
   the scanner (`integrations/scanner-image.Dockerfile` builds one from wheels), with no network, a
   read-only root, no capabilities, the corpus mounted read-only and one output directory. QCI
-  v2.3.4.1 scores the same in both lanes (`evidence/qci-v2.3.4.1-container/`).
+  v2.3.4.3 scores the same in both lanes (`evidence/qci-v2.3.4.3-container/`).
 - **The build step isn't sandboxed**: `pip install` runs the scanner's code and needs the network.
   For someone else's scanner, build in a job with no secrets and score in another;
   `integrations/qci-pqc/github-workflow.yml` does that, and
