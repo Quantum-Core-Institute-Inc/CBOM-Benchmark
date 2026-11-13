@@ -1,0 +1,4649 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:15a77810-6d15-4761-93ad-21ffd3fbae0d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-13T14:48:12Z",
+    "tools": [
+      {
+        "vendor": "CSNP",
+        "name": "CryptoScan",
+        "version": "v1.5.0"
+      }
+    ],
+    "component": {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-inventory-summary",
+      "name": "Cryptographic Inventory Summary",
+      "description": "Migration Readiness: 16.3% (CRITICAL)"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-md5-0",
+      "name": "MD5",
+      "description": "MD5 detected. MD5 is cryptographically broken with practical collision attacks.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier2/python/cal_md5_011.py",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_021/cal_md5_021.go",
+            "line": 16,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_022/cal_md5_022.go",
+            "line": 16,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_023/cal_md5_023.go",
+            "line": 32,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1022LedgerDefaults.java",
+            "line": 13,
+            "symbol": "MessageDigest.getInstance(\"MD5"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1023AuditProfile.java",
+            "line": 5,
+            "symbol": "MessageDigest.getInstance(\"MD5"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1024PolicyDefaults.java",
+            "line": 9,
+            "symbol": "MessageDigest.getInstance(\"MD5"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_md5_021.js",
+            "line": 9,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_md5_022.js",
+            "line": 9,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_md5_023.js",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/python/cal_md5_024.py",
+            "line": 6,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "calibration/tier1/python/cal_md5_025.py",
+            "line": 10,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "calibration/tier1/python/cal_md5_026.py",
+            "line": 10,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_010/cal_hmac_010.go",
+            "line": 40,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_011/cal_hmac_011.go",
+            "line": 11,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_012/cal_hmac_012.go",
+            "line": 10,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2013TenantOptions.java",
+            "line": 4,
+            "symbol": "MD5"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2014DeviceDefaults.java",
+            "line": 14,
+            "symbol": "MD5"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2015UploadSettings.java",
+            "line": 4,
+            "symbol": "MD5"
+          },
+          {
+            "location": "calibration/tier2/python/cal_md5_009.py",
+            "line": 6,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "calibration/tier2/python/cal_md5_010.py",
+            "line": 6,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_hmac_009.ts",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_hmac_010.ts",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_hmac_011.ts",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "deadcode/go/legacy/main.go",
+            "line": 13,
+            "symbol": "md5"
+          },
+          {
+            "location": "deadcode/javascript/dead_paths.js",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "deadcode/python/dead_export.py",
+            "line": 10,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 362,
+            "symbol": "MD5"
+          },
+          {
+            "location": "mixed/java/BookingOptionsModule.java",
+            "line": 58,
+            "symbol": "MD5"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 55,
+            "symbol": "MD5"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 81,
+            "symbol": "MD5"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 268,
+            "symbol": "MD5"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 346,
+            "symbol": "MD5"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "MD5"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 21,
+            "symbol": "MD5"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "MD5"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 18,
+            "symbol": "md5"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 24,
+            "symbol": "MD5"
+          },
+          {
+            "location": "tier1/csharp/Hashes/Program.cs",
+            "line": 9,
+            "symbol": "MD5"
+          },
+          {
+            "location": "tier1/go/hashes/main.go",
+            "line": 14,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier1/java/T1Hashes.java",
+            "line": 10,
+            "symbol": "MessageDigest.getInstance(\"MD5"
+          },
+          {
+            "location": "tier1/javascript/t1_hashes.js",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier1/python/t1_hashes.py",
+            "line": 6,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "tier2/csharp/DispatchTable/Program.cs",
+            "line": 9,
+            "symbol": "MD5"
+          },
+          {
+            "location": "tier2/go/hmac_func_value/main.go",
+            "line": 11,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier2/java/T2Wrapper.java",
+            "line": 10,
+            "symbol": "MD5"
+          },
+          {
+            "location": "tier2/python/t2_dispatch_table.py",
+            "line": 6,
+            "symbol": "hashlib.md5"
+          },
+          {
+            "location": "tier2/typescript/t2_hmac_const.ts",
+            "line": 4,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier3/java/dependency_injection/src/com/acme/AppModule.java",
+            "line": 10,
+            "symbol": "MD5"
+          },
+          {
+            "location": "tier3/python/dependency_injection/defaults.py",
+            "line": 3,
+            "symbol": "md5"
+          },
+          {
+            "location": "negatives/python/n_test_vectors.py",
+            "line": 8,
+            "symbol": "MD5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_021/cal_md5_021.go",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_022/cal_md5_022.go",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier1/go/cal_md5_023/cal_md5_023.go",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_010/cal_hmac_010.go",
+            "line": 6,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_011/cal_hmac_011.go",
+            "line": 6,
+            "symbol": "md5"
+          },
+          {
+            "location": "calibration/tier2/go/cal_hmac_012/cal_hmac_012.go",
+            "line": 6,
+            "symbol": "md5"
+          },
+          {
+            "location": "deadcode/go/legacy/main.go",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier1/go/hashes/main.go",
+            "line": 5,
+            "symbol": "md5"
+          },
+          {
+            "location": "tier2/go/hmac_func_value/main.go",
+            "line": 6,
+            "symbol": "md5"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-des-1",
+      "name": "DES",
+      "description": "DES (56-bit) detected. DES is completely broken and must not be used.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_des_006/cal_des_006.go",
+            "line": 25,
+            "symbol": "des.NewCipher("
+          },
+          {
+            "location": "calibration/tier1/go/cal_des_007/cal_des_007.go",
+            "line": 17,
+            "symbol": "des.NewCipher("
+          },
+          {
+            "location": "calibration/tier1/go/cal_des_008/cal_des_008.go",
+            "line": 25,
+            "symbol": "des.NewCipher("
+          },
+          {
+            "location": "calibration/tier1/java/Cal1001InvoiceConfig.java",
+            "line": 10,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1002ClaimOptions.java",
+            "line": 14,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1003SessionProfile.java",
+            "line": 14,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2001UploadConfig.java",
+            "line": 8,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2002VoucherDefaults.java",
+            "line": 14,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2003VoucherConfig.java",
+            "line": 8,
+            "symbol": "DESede"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 125,
+            "symbol": "des.NewCipher("
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 147,
+            "symbol": "DESede"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 317,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier1/go/des/main.go",
+            "line": 21,
+            "symbol": "des.NewCipher("
+          },
+          {
+            "location": "tier1/java/T1LegacyCiphers.java",
+            "line": 13,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier2/java/T2ConcatTransform.java",
+            "line": 7,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier3/java/strategy_factory/src/com/acme/crypto/LegacyDesedeCipher.java",
+            "line": 12,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 18,
+            "symbol": "DES-CBC"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1001InvoiceConfig.java",
+            "line": 11,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1002ClaimOptions.java",
+            "line": 15,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1003SessionProfile.java",
+            "line": 15,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2001UploadConfig.java",
+            "line": 5,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2002VoucherDefaults.java",
+            "line": 5,
+            "symbol": "DESede"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2003VoucherConfig.java",
+            "line": 5,
+            "symbol": "DESede"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 148,
+            "symbol": "DESede"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 315,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier1/java/T1LegacyCiphers.java",
+            "line": 14,
+            "symbol": "DESede"
+          },
+          {
+            "location": "tier3/java/strategy_factory/src/com/acme/crypto/LegacyDesedeCipher.java",
+            "line": 17,
+            "symbol": "DESede"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-rc4-2",
+      "name": "RC4",
+      "description": "RC4 detected. RC4 has multiple known vulnerabilities and is prohibited in TLS.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_rc4_027/cal_rc4_027.go",
+            "line": 32,
+            "symbol": "rc4"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rc4_028/cal_rc4_028.go",
+            "line": 24,
+            "symbol": "rc4"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rc4_029/cal_rc4_029.go",
+            "line": 24,
+            "symbol": "rc4"
+          },
+          {
+            "location": "deadcode/go/legacy/main.go",
+            "line": 18,
+            "symbol": "rc4"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 198,
+            "symbol": "rc4"
+          },
+          {
+            "location": "tier1/go/rc4/main.go",
+            "line": 10,
+            "symbol": "rc4"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 12,
+            "symbol": "RC4"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 18,
+            "symbol": "RC4"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rc4_027/cal_rc4_027.go",
+            "line": 5,
+            "symbol": "rc4"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rc4_028/cal_rc4_028.go",
+            "line": 5,
+            "symbol": "rc4"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rc4_029/cal_rc4_029.go",
+            "line": 5,
+            "symbol": "rc4"
+          },
+          {
+            "location": "deadcode/go/legacy/main.go",
+            "line": 6,
+            "symbol": "rc4"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 8,
+            "symbol": "rc4"
+          },
+          {
+            "location": "tier1/go/rc4/main.go",
+            "line": 5,
+            "symbol": "rc4"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-weak-certificate-signature-(sha-1)-3",
+      "name": "Weak Certificate Signature (SHA-1)",
+      "description": "Weak certificate signature algorithm (SHA-1 or MD5) detected. These are deprecated and insecure.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 18,
+            "symbol": "SHA1withRSA"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "SHA1withRSA"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-private-key-header-4",
+      "name": "Private Key Header",
+      "description": "Private key found in source code. This is a critical security issue.",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/assets/keys/attestation_signer.pem",
+            "line": 1,
+            "symbol": "-----BEGIN PRIVATE KEY-----"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.key",
+            "line": 1,
+            "symbol": "-----BEGIN RSA PRIVATE KEY-----"
+          },
+          {
+            "location": "tier4/assets/keys/billing_service.pem",
+            "line": 1,
+            "symbol": "-----BEGIN PRIVATE KEY-----"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-pkcs#8-private-key-5",
+      "name": "PKCS#8 Private Key",
+      "description": "PKCS#8 private key found in source code. This is a critical security issue.",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/keys/backup_signing_encrypted.pem",
+            "line": 1,
+            "symbol": "-----BEGIN ENCRYPTED PRIVATE KEY-----"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ec-private-key-header-6",
+      "name": "EC Private Key Header",
+      "description": "EC private key found in source code. Both a secret exposure and quantum-vulnerable algorithm.",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/keys/treasury_hot_wallet.key",
+            "line": 1,
+            "symbol": "-----BEGIN EC PRIVATE KEY-----"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-openssh-private-key-7",
+      "name": "OpenSSH Private Key",
+      "description": "OpenSSH private key found in source code. SSH keys should never be in code.",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/ssh/deploy_id_ed25519",
+            "line": 1,
+            "symbol": "-----BEGIN OPENSSH PRIVATE KEY-----"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-dsa-8",
+      "name": "DSA",
+      "description": "DSA (Digital Signature Algorithm) detected. DSA is vulnerable to quantum attacks.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_dsa_009/cal_dsa_009.go",
+            "line": 5,
+            "symbol": "\"crypto/dsa\""
+          },
+          {
+            "location": "calibration/tier1/go/cal_dsa_010/cal_dsa_010.go",
+            "line": 5,
+            "symbol": "\"crypto/dsa\""
+          },
+          {
+            "location": "calibration/tier1/go/cal_dsa_011/cal_dsa_011.go",
+            "line": 5,
+            "symbol": "\"crypto/dsa\""
+          },
+          {
+            "location": "tier1/go/dsa/main.go",
+            "line": 5,
+            "symbol": "\"crypto/dsa\""
+          },
+          {
+            "location": "calibration/tier1/java/Cal1010DeviceConfig.java",
+            "line": 6,
+            "symbol": "KeyPairGenerator.getInstance(\"DSA\""
+          },
+          {
+            "location": "calibration/tier1/java/Cal1011AuditSettings.java",
+            "line": 10,
+            "symbol": "KeyPairGenerator.getInstance(\"DSA\""
+          },
+          {
+            "location": "calibration/tier1/java/Cal1012MemberOptions.java",
+            "line": 10,
+            "symbol": "KeyPairGenerator.getInstance(\"DSA\""
+          },
+          {
+            "location": "tier1/java/T1Dsa.java",
+            "line": 8,
+            "symbol": "KeyPairGenerator.getInstance(\"DSA\""
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ecc-9",
+      "name": "ECC",
+      "description": "Elliptic curve cryptography detected. ECC is vulnerable to Shor's algorithm on quantum computers.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_ed25519_015/cal_ed25519_015.go",
+            "line": 19,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_016/cal_ed25519_016.go",
+            "line": 35,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_017/cal_ed25519_017.go",
+            "line": 27,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_018.py",
+            "line": 2,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_019.py",
+            "line": 2,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_020.py",
+            "line": 2,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2011DeviceOptions.java",
+            "line": 6,
+            "symbol": "secp256r1"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2012InvoiceProfile.java",
+            "line": 6,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_004.py",
+            "line": 10,
+            "symbol": "SECP384R1"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 291,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 258,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 90,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 114,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 203,
+            "symbol": "secp521r1"
+          },
+          {
+            "location": "tier1/csharp/EcdsaSign/Program.cs",
+            "line": 8,
+            "symbol": "ECDsa"
+          },
+          {
+            "location": "tier1/csharp/KeyAgreement/Program.cs",
+            "line": 8,
+            "symbol": "nistP384"
+          },
+          {
+            "location": "tier1/csharp/KeyAgreement/Program.cs",
+            "line": 9,
+            "symbol": "nistP384"
+          },
+          {
+            "location": "tier1/python/t1_modern_curves.py",
+            "line": 2,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier2/csharp/CurveSwitch/Program.cs",
+            "line": 12,
+            "symbol": "ECDsa"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_015.c",
+            "line": 6,
+            "symbol": "ED25519"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_016.c",
+            "line": 14,
+            "symbol": "ED25519"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_017.c",
+            "line": 6,
+            "symbol": "ED25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_012/cal_ec_012.go",
+            "line": 18,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_013/cal_ec_013.go",
+            "line": 26,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_014/cal_ec_014.go",
+            "line": 18,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_015/cal_ed25519_015.go",
+            "line": 17,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_016/cal_ed25519_016.go",
+            "line": 33,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_017/cal_ed25519_017.go",
+            "line": 25,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_042/cal_x25519_042.go",
+            "line": 25,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_043/cal_x25519_043.go",
+            "line": 17,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_044/cal_x25519_044.go",
+            "line": 17,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1013ArchiveOptions.java",
+            "line": 14,
+            "symbol": "secp521r1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1014EventProfile.java",
+            "line": 8,
+            "symbol": "secp256r1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1015PayloadConfig.java",
+            "line": 12,
+            "symbol": "secp521r1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1016PayloadDefaults.java",
+            "line": 11,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1016PayloadDefaults.java",
+            "line": 12,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1017CatalogSettings.java",
+            "line": 7,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1017CatalogSettings.java",
+            "line": 8,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1018DeviceOptions.java",
+            "line": 11,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1018DeviceOptions.java",
+            "line": 12,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_012.js",
+            "line": 9,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_013.js",
+            "line": 9,
+            "symbol": "prime256v1"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_014.js",
+            "line": 9,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_015.js",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_016.js",
+            "line": 9,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_017.js",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_015.py",
+            "line": 11,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_015.py",
+            "line": 12,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_016.py",
+            "line": 11,
+            "symbol": "SECP521R1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_016.py",
+            "line": 12,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_017.py",
+            "line": 7,
+            "symbol": "SECP384R1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_017.py",
+            "line": 8,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "calibration/tier2/c/cal_ec_007.c",
+            "line": 6,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/c/cal_ec_008.c",
+            "line": 6,
+            "symbol": "secp521r1"
+          },
+          {
+            "location": "calibration/tier2/c/cal_ec_009.c",
+            "line": 6,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_007/cal_ec_007.go",
+            "line": 30,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_008/cal_ec_008.go",
+            "line": 28,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_009/cal_ec_009.go",
+            "line": 30,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2010ProfileSettings.java",
+            "line": 6,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_003.py",
+            "line": 6,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_003.py",
+            "line": 15,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_004.py",
+            "line": 12,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_005.py",
+            "line": 5,
+            "symbol": "SECP521R1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_006.ts",
+            "line": 4,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_007.ts",
+            "line": 4,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_008.ts",
+            "line": 5,
+            "symbol": "prime256v1"
+          },
+          {
+            "location": "custom/example_envelope/envelope/profiles.py",
+            "line": 5,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py",
+            "line": 6,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py",
+            "line": 12,
+            "symbol": "ECDH"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 228,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "mixed/c/policy_agent.c",
+            "line": 9,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 289,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "mixed/java/BookingOptionsModule.java",
+            "line": 170,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 51,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 334,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 5,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "mixed/javascript/partner_routes.js",
+            "line": 88,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "mixed/javascript/partner_routes.js",
+            "line": 232,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 208,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 79,
+            "symbol": "SECP521R1"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 415,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 416,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 4,
+            "symbol": "prime256v1"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 297,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "negatives/csharp/StringsAndComments/Program.cs",
+            "line": 22,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "pqc/java/PqWashing.java",
+            "line": 19,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "pqc/java/PqWashing.java",
+            "line": 24,
+            "symbol": "ECDH"
+          },
+          {
+            "location": "pqc/python/pq_washing.py",
+            "line": 14,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "pqc/python/pq_washing.py",
+            "line": 17,
+            "symbol": "ECDH"
+          },
+          {
+            "location": "tier1/c/t1_modern_curves.c",
+            "line": 6,
+            "symbol": "ED25519"
+          },
+          {
+            "location": "tier1/go/ecdsa/main.go",
+            "line": 13,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/go/ecdsa/main.go",
+            "line": 18,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go",
+            "line": 11,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go",
+            "line": 16,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go",
+            "line": 17,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/go/x25519/main.go",
+            "line": 12,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "tier1/go/x25519/main.go",
+            "line": 15,
+            "symbol": "ECDH"
+          },
+          {
+            "location": "tier1/go/x25519/main.go",
+            "line": 16,
+            "symbol": "ECDH"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java",
+            "line": 10,
+            "symbol": "secp256r1"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java",
+            "line": 13,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java",
+            "line": 14,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java",
+            "line": 15,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java",
+            "line": 16,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java",
+            "line": 9,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java",
+            "line": 10,
+            "symbol": "Ed25519"
+          },
+          {
+            "location": "tier1/javascript/t1_ec.js",
+            "line": 4,
+            "symbol": "prime256v1"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js",
+            "line": 4,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/python/t1_ecdsa.py",
+            "line": 5,
+            "symbol": "SECP256R1"
+          },
+          {
+            "location": "tier1/python/t1_ecdsa.py",
+            "line": 6,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "tier2/c/t2_curve_index.c",
+            "line": 7,
+            "symbol": "secp521r1"
+          },
+          {
+            "location": "tier2/csharp/CurveSwitch/Program.cs",
+            "line": 8,
+            "symbol": "nistP521"
+          },
+          {
+            "location": "tier2/go/curve_table/main.go",
+            "line": 17,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier2/java/T2CurveConstant.java",
+            "line": 6,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "tier2/python/t2_curve_variable.py",
+            "line": 5,
+            "symbol": "SECP384R1"
+          },
+          {
+            "location": "tier2/python/t2_curve_variable.py",
+            "line": 15,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "tier2/typescript/t2_curve_table.ts",
+            "line": 4,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq_washing.conf",
+            "line": 16,
+            "symbol": "prime256v1"
+          },
+          {
+            "location": "system/payments-platform/config/crypto-profiles.json",
+            "line": 6,
+            "symbol": "secp256r1"
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 16,
+            "symbol": "P-256"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg",
+            "line": 7,
+            "symbol": "ECDSA"
+          },
+          {
+            "location": "pqc/assets/ssh/sshd_config_pq",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "pqc/assets/ssh/sshd_config_pq",
+            "line": 6,
+            "symbol": "curve25519"
+          },
+          {
+            "location": "pqc/assets/tls/openssl_pq.cnf",
+            "line": 13,
+            "symbol": "secp384r1"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 9,
+            "symbol": "curve25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_012/cal_ec_012.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_013/cal_ec_013.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_014/cal_ec_014.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_015/cal_ed25519_015.go",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_016/cal_ed25519_016.go",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_017/cal_ed25519_017.go",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_042/cal_x25519_042.go",
+            "line": 5,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_043/cal_x25519_043.go",
+            "line": 5,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_044/cal_x25519_044.go",
+            "line": 5,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_007/cal_ec_007.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_008/cal_ec_008.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_009/cal_ec_009.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/go/ecdsa/main.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go",
+            "line": 5,
+            "symbol": "ed25519"
+          },
+          {
+            "location": "tier1/go/x25519/main.go",
+            "line": 6,
+            "symbol": "ecdh"
+          },
+          {
+            "location": "tier2/go/curve_table/main.go",
+            "line": 5,
+            "symbol": "ecdsa"
+          },
+          {
+            "location": "pqc/assets/firmware/signing-policy.yaml",
+            "line": 18,
+            "symbol": "ecdsa"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3des-10",
+      "name": "3DES",
+      "description": "3DES detected. 3DES is deprecated by NIST and provides only 112-bit security.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_3des_001.py",
+            "line": 3,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "calibration/tier1/python/cal_3des_002.py",
+            "line": 3,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "calibration/tier1/python/cal_3des_003.py",
+            "line": 3,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 76,
+            "symbol": "3DES"
+          },
+          {
+            "location": "tier1/csharp/TripleDesLegacy/Program.cs",
+            "line": 8,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "tier1/python/t1_triple_des.py",
+            "line": 4,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "calibration/tier1/go/cal_3des_001/cal_3des_001.go",
+            "line": 26,
+            "symbol": "des.NewTripleDESCipher("
+          },
+          {
+            "location": "calibration/tier1/go/cal_3des_002/cal_3des_002.go",
+            "line": 18,
+            "symbol": "des.NewTripleDESCipher("
+          },
+          {
+            "location": "calibration/tier1/go/cal_3des_003/cal_3des_003.go",
+            "line": 34,
+            "symbol": "des.NewTripleDESCipher("
+          },
+          {
+            "location": "calibration/tier1/python/cal_3des_001.py",
+            "line": 13,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "calibration/tier1/python/cal_3des_002.py",
+            "line": 13,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "calibration/tier1/python/cal_3des_003.py",
+            "line": 17,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 394,
+            "symbol": "3DES"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 154,
+            "symbol": "3DES"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 259,
+            "symbol": "3DES"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "3DES"
+          },
+          {
+            "location": "tier1/go/des/main.go",
+            "line": 13,
+            "symbol": "des.NewTripleDESCipher("
+          },
+          {
+            "location": "tier1/python/t1_triple_des.py",
+            "line": 9,
+            "symbol": "TripleDES"
+          },
+          {
+            "location": "tier4/assets/ipsec/ipsec.conf",
+            "line": 12,
+            "symbol": "3des"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-rsa-11",
+      "name": "RSA",
+      "description": "RSA algorithm detected. RSA is vulnerable to Shor's algorithm and will be broken by cryptographically relevant quantum computers.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke"
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_rsa_030.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_031.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_032.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2016RecordConfig.java",
+            "line": 5,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2018ReceiptProfile.java",
+            "line": 5,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_012.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_013.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_014.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_transport.py",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "deadcode/python/dead_export.py",
+            "line": 4,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 41,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "tier1/csharp/RsaSign/Program.cs",
+            "line": 8,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier1/python/t1_rsa.py",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/csharp/KeyFactory/Program.cs",
+            "line": 16,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier2/go/key_bits/main.go",
+            "line": 12,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/python/t2_alias_import.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier3/python/cross_module_constant/keys/issuer.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier3/python/wrapper_two_callers/seclib/keys.py",
+            "line": 2,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_030/cal_rsa_030.go",
+            "line": 17,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_031/cal_rsa_031.go",
+            "line": 17,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_032/cal_rsa_032.go",
+            "line": 17,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1028MetricSettings.java",
+            "line": 10,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1029MetricOptions.java",
+            "line": 6,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1030DeviceOptions.java",
+            "line": 16,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_027.js",
+            "line": 9,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_028.js",
+            "line": 9,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_030.py",
+            "line": 10,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_031.py",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_032.py",
+            "line": 10,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
+            "line": 19,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
+            "line": 29,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go",
+            "line": 21,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2017ReportSettings.java",
+            "line": 9,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_012.ts",
+            "line": 7,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_013.ts",
+            "line": 9,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_014.ts",
+            "line": 7,
+            "symbol": "rsa"
+          },
+          {
+            "location": "custom/example_envelope/envelope/core.py",
+            "line": 11,
+            "symbol": "rsa-"
+          },
+          {
+            "location": "custom/example_envelope/envelope/profiles.py",
+            "line": 4,
+            "symbol": "rsa-"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_transport.py",
+            "line": 7,
+            "symbol": "rsa"
+          },
+          {
+            "location": "deadcode/python/dead_export.py",
+            "line": 15,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 175,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "mixed/c/policy_agent.c",
+            "line": 86,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 213,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 207,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 236,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 273,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 288,
+            "symbol": "rsa"
+          },
+          {
+            "location": "negatives/csharp/StringsAndComments/Program.cs",
+            "line": 9,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 38,
+            "symbol": "rsa-"
+          },
+          {
+            "location": "negatives/javascript/n_strings.js",
+            "line": 2,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 3,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 15,
+            "symbol": "rsa"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 23,
+            "symbol": "RSA"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 50,
+            "symbol": "rsa"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 44,
+            "symbol": "rsa"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 49,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c",
+            "line": 8,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c",
+            "line": 11,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c",
+            "line": 13,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_tls_ctx.c",
+            "line": 8,
+            "symbol": "RSA-"
+          },
+          {
+            "location": "tier1/csharp/RsaSign/Program.cs",
+            "line": 9,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/go/rsa/main.go",
+            "line": 13,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/go/rsa/main.go",
+            "line": 18,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/java/T1Rsa.java",
+            "line": 8,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier1/javascript/t1_rsa.js",
+            "line": 4,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/javascript/t1_webcrypto.mjs",
+            "line": 5,
+            "symbol": "RSA-"
+          },
+          {
+            "location": "tier1/python/t1_rsa.py",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/csharp/KeyFactory/Program.cs",
+            "line": 11,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier2/csharp/KeyFactory/Program.cs",
+            "line": 12,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier2/csharp/KeyFactory/Program.cs",
+            "line": 17,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/go/key_bits/main.go",
+            "line": 13,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/typescript/t2_env_default.ts",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier3/java/cross_class_constant/src/com/acme/keys/KeyIssuer.java",
+            "line": 10,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier3/python/cross_module_constant/keys/issuer.py",
+            "line": 8,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier3/python/wrapper_two_callers/seclib/keys.py",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf",
+            "line": 9,
+            "symbol": "RSA-"
+          },
+          {
+            "location": "tier2/java/config/crypto.properties",
+            "line": 2,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 4,
+            "symbol": "RSA"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 15,
+            "symbol": "RSA-"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 21,
+            "symbol": "RSA-"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 41,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.key",
+            "line": 1,
+            "symbol": "RSA"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.key",
+            "line": 27,
+            "symbol": "RSA"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf",
+            "line": 12,
+            "symbol": "RSA_2048"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 7,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 8,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_027.js",
+            "line": 9,
+            "symbol": "modulusLength: 2048"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 175,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "mixed/c/policy_agent.c",
+            "line": 86,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 273,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/csharp/StringsAndComments/Program.cs",
+            "line": 9,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/javascript/n_strings.js",
+            "line": 2,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 3,
+            "symbol": "RSA-2048"
+          },
+          {
+            "location": "tier1/javascript/t1_rsa.js",
+            "line": 4,
+            "symbol": "modulusLength: 2048"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf",
+            "line": 12,
+            "symbol": "RSA_2048"
+          },
+          {
+            "location": "negatives/python/n_test_vectors.py",
+            "line": 15,
+            "symbol": "RSA"
+          },
+          {
+            "location": "negatives/python/n_test_vectors.py",
+            "line": 21,
+            "symbol": "RSA"
+          },
+          {
+            "location": "calibration/tier1/c/cal_rsa_027.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/c/cal_rsa_028.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_030/cal_rsa_030.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_031/cal_rsa_031.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_032/cal_rsa_032.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_013.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_014.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_015.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go",
+            "line": 6,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 9,
+            "symbol": "rsa"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 8,
+            "symbol": "rsa"
+          },
+          {
+            "location": "negatives/java/NLookalikes.java",
+            "line": 8,
+            "symbol": "RSA"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 8,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_rsa_evp.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c",
+            "line": 4,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c",
+            "line": 12,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier1/go/rsa/main.go",
+            "line": 7,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/c/t2_macro_bits.c",
+            "line": 3,
+            "symbol": "rsa"
+          },
+          {
+            "location": "tier2/go/key_bits/main.go",
+            "line": 6,
+            "symbol": "rsa"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-sha-1-12",
+      "name": "SHA-1",
+      "description": "SHA-1 detected. SHA-1 has practical collision attacks (SHAttered) and is deprecated.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier2/java/Cal2019ClaimDefaults.java",
+            "line": 4,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2021ReportOptions.java",
+            "line": 4,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_sha1_015.ts",
+            "line": 8,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_sha1_016.ts",
+            "line": 8,
+            "symbol": "sha1"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 272,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 319,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_033/cal_sha1_033.go",
+            "line": 16,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_034/cal_sha1_034.go",
+            "line": 24,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_035/cal_sha1_035.go",
+            "line": 16,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1031ReceiptOptions.java",
+            "line": 9,
+            "symbol": "MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1032BookingConfig.java",
+            "line": 5,
+            "symbol": "MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1033BillingConfig.java",
+            "line": 9,
+            "symbol": "MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_sha1_029.js",
+            "line": 9,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_sha1_030.js",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_hmac_022.py",
+            "line": 17,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha1_033.py",
+            "line": 13,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha1_034.py",
+            "line": 6,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha1_035.py",
+            "line": 10,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "calibration/tier2/c/cal_sha1_016.c",
+            "line": 5,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/c/cal_sha1_017.c",
+            "line": 5,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_017/cal_sha1_017.go",
+            "line": 10,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_018/cal_sha1_018.go",
+            "line": 39,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2020TenantDefaults.java",
+            "line": 4,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_hmac_006.py",
+            "line": 10,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_hmac_007.py",
+            "line": 17,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_hmac_008.py",
+            "line": 20,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_sha1_015.py",
+            "line": 5,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "calibration/tier2/python/cal_sha1_016.py",
+            "line": 5,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_sha1_017.ts",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "deadcode/java/DeadLegacy.java",
+            "line": 14,
+            "symbol": "MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 350,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 314,
+            "symbol": "sha1"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 236,
+            "symbol": "sha1"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 7,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/javascript/partner_routes.js",
+            "line": 268,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 134,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 221,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 159,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 307,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "negatives/c/n_strings.c",
+            "line": 6,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "negatives/csharp/StringsAndComments/Program.cs",
+            "line": 11,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 17,
+            "symbol": "sha1"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 29,
+            "symbol": "sha1"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 30,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 23,
+            "symbol": "sha1"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
+            "line": 13,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "system/payments-platform/services/ledger-service/src/main/java/com/acme/ledger/LedgerService.java",
+            "line": 10,
+            "symbol": "MessageDigest md = MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "tier1/csharp/Hashes/Program.cs",
+            "line": 10,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "tier1/go/hashes/main.go",
+            "line": 15,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier1/java/T1Hashes.java",
+            "line": 11,
+            "symbol": "MessageDigest.getInstance(\"SHA-1"
+          },
+          {
+            "location": "tier1/javascript/t1_hashes.js",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier1/javascript/t1_webcrypto.mjs",
+            "line": 9,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "tier1/python/t1_hashes.py",
+            "line": 7,
+            "symbol": "hashlib.sha1"
+          },
+          {
+            "location": "tier2/c/t2_digest_table.c",
+            "line": 12,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "tier2/csharp/HashByName/Program.cs",
+            "line": 7,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "tier2/go/hash_enum/main.go",
+            "line": 10,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "tier2/java/T2Enum.java",
+            "line": 6,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "tier2/python/t2_constant_hash.py",
+            "line": 4,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier2/python/t2_env_default.py",
+            "line": 6,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "tier2/python/t2_partial.py",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier3/java/cross_class_constant/src/com/acme/config/CryptoConfig.java",
+            "line": 10,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "tier3/python/cross_module_constant/config/settings.py",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier4/assets/ipsec/ipsec.conf",
+            "line": 12,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier4/assets/ipsec/ipsec.conf",
+            "line": 13,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 9,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 11,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier4/assets/tls/openssl.cnf",
+            "line": 17,
+            "symbol": "sha1"
+          },
+          {
+            "location": "negatives/python/n_test_vectors.py",
+            "line": 9,
+            "symbol": "SHA-1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_033/cal_sha1_033.go",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_034/cal_sha1_034.go",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier1/go/cal_sha1_035/cal_sha1_035.go",
+            "line": 5,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/c/cal_sha1_018.c",
+            "line": 18,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_016/cal_sha1_016.go",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_016/cal_sha1_016.go",
+            "line": 10,
+            "symbol": "SHA1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_017/cal_sha1_017.go",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "calibration/tier2/go/cal_sha1_018/cal_sha1_018.go",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 10,
+            "symbol": "sha1"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 8,
+            "symbol": "sha1"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 9,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier1/go/hashes/main.go",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier2/go/hash_enum/main.go",
+            "line": 6,
+            "symbol": "sha1"
+          },
+          {
+            "location": "tier2/typescript/t2_default_param.ts",
+            "line": 4,
+            "symbol": "sha1"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-dh-13",
+      "name": "DH",
+      "description": "Diffie-Hellman key exchange detected. DH/ECDH are vulnerable to Shor's algorithm.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier1/javascript/t1_modern_curves.js",
+            "line": 2,
+            "symbol": "diffieHellman"
+          },
+          {
+            "location": "pqc/python/pq_washing.py",
+            "line": 4,
+            "symbol": "Diffie-Hellman"
+          },
+          {
+            "location": "tier1/c/t1_tls_ctx.c",
+            "line": 8,
+            "symbol": "ECDHE-"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js",
+            "line": 9,
+            "symbol": "diffieHellman"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf",
+            "line": 9,
+            "symbol": "ECDHE-"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg",
+            "line": 7,
+            "symbol": "ECDHE-"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 15,
+            "symbol": "ECDHE-"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 21,
+            "symbol": "ECDHE-"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 9,
+            "symbol": "diffie-hellman"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-tls-14",
+      "name": "TLS",
+      "description": "Deprecated TLS/SSL version detected. TLS 1.0, 1.1, and SSL 2/3 have known vulnerabilities.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/tls/application.yml",
+            "line": 13,
+            "symbol": "TLSv1.1"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg",
+            "line": 6,
+            "symbol": "TLSv1.1"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 11,
+            "symbol": "SSLv2"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 14,
+            "symbol": "TLSv1.1"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 17,
+            "symbol": "SSLv3"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 20,
+            "symbol": "TLSv1.1"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq.conf",
+            "line": 13,
+            "symbol": "TLSv1.3"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq_washing.conf",
+            "line": 15,
+            "symbol": "TLSv1.3"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf",
+            "line": 8,
+            "symbol": "TLSv1.2"
+          },
+          {
+            "location": "tier4/assets/tls/application.yml",
+            "line": 13,
+            "symbol": "TLSv1.2"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 14,
+            "symbol": "TLSv1.2"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 20,
+            "symbol": "TLSv1.2"
+          },
+          {
+            "location": "pqc/assets/tls/openssl_pq.cnf",
+            "line": 12,
+            "symbol": "TLSv1.3"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-certificate-signature-algorithm-15",
+      "name": "Certificate Signature Algorithm",
+      "description": "Certificate signature algorithm detected. RSA and ECDSA signatures are quantum-vulnerable.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1028MetricSettings.java",
+            "line": 12,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1029MetricOptions.java",
+            "line": 8,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1030DeviceOptions.java",
+            "line": 18,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2016RecordConfig.java",
+            "line": 10,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2017ReportSettings.java",
+            "line": 13,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2018ReceiptProfile.java",
+            "line": 14,
+            "symbol": "SHA256withRSA"
+          },
+          {
+            "location": "tier1/java/T1Rsa.java",
+            "line": 12,
+            "symbol": "SHA256withRSA"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-weak-pbkdf-usage-16",
+      "name": "Weak PBKDF Usage",
+      "description": "Weak password-based key derivation detected. Low iteration counts or weak hashes reduce security.",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_027.py",
+            "line": 18,
+            "symbol": "iterations=1000"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_028.py",
+            "line": 7,
+            "symbol": "iterations=1000"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_029.py",
+            "line": 15,
+            "symbol": "iterations=1000"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 83,
+            "symbol": "iterations=1000"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-json-web-key-(jwk)-17",
+      "name": "JSON Web Key (JWK)",
+      "description": "JSON Web Key (JWK) format detected. Used in OAuth2/OIDC. RSA/EC keys are quantum-vulnerable.",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 4,
+            "symbol": "\"kty\": \"RSA\""
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 5,
+            "symbol": "\"use\": \"sig\""
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 12,
+            "symbol": "\"kty\": \"EC\""
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json",
+            "line": 13,
+            "symbol": "\"use\": \"sig\""
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-rsa,-aes,-des,-sha,-md5-18",
+      "name": "RSA, AES, DES, SHA, MD5",
+      "description": "JavaScript implementation of TLS and crypto (Algorithms: RSA, AES, DES, SHA, MD5)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/node-api/package.json",
+            "line": 1,
+            "symbol": "node-forge"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-rsa,-ecc,-aes,-chacha20-19",
+      "name": "RSA, ECC, AES, ChaCha20",
+      "description": "Python cryptographic recipes and primitives (Algorithms: RSA, ECC, AES, ChaCha20)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/python-billing/requirements.txt",
+            "line": 1,
+            "symbol": "cryptography"
+          },
+          {
+            "location": "deps/python-signer/pyproject.toml",
+            "line": 1,
+            "symbol": "cryptography"
+          },
+          {
+            "location": "system/payments-platform/services/settlement-worker/requirements.txt",
+            "line": 1,
+            "symbol": "cryptography"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-hmac-sha1-20",
+      "name": "HMAC-SHA1",
+      "description": "HMAC-SHA1 detected. SHA-1 is deprecated for new applications.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go",
+            "line": 23,
+            "symbol": "HmacSHA1"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/python/cryptokit.py",
+            "line": 13,
+            "symbol": "HmacSHA1"
+          },
+          {
+            "location": "system/payments-platform/config/crypto-profiles.json",
+            "line": 4,
+            "symbol": "HmacSHA1"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 11,
+            "symbol": "hmac-sha1"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aes-ecb-21",
+      "name": "AES-ECB",
+      "description": "AES in ECB mode detected. ECB mode is insecure as identical plaintext blocks produce identical ciphertext.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier2/java/Cal2004AccountSettings.java",
+            "line": 5,
+            "symbol": "AES/ECB"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2005TenantSettings.java",
+            "line": 5,
+            "symbol": "AES/ECB"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2006BillingOptions.java",
+            "line": 5,
+            "symbol": "AES/ECB"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "AES/ECB"
+          },
+          {
+            "location": "tier1/java/T1AesEcb.java",
+            "line": 12,
+            "symbol": "AES/ECB"
+          },
+          {
+            "location": "tier2/java/T2SysProp.java",
+            "line": 8,
+            "symbol": "AES/ECB"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-pkcs#12-certificate-container-22",
+      "name": "PKCS#12 Certificate Container",
+      "description": "PKCS#12/PFX certificate container detected. Contains private key and certificate chain.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/tls/application.yml",
+            "line": 9,
+            "symbol": ".p12"
+          },
+          {
+            "location": "tier4/assets/tls/application.yml",
+            "line": 10,
+            "symbol": "PKCS12"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-chacha20-poly1305-23",
+      "name": "ChaCha20-Poly1305",
+      "description": "ChaCha20-Poly1305 AEAD detected (RFC 8439). Fast, secure authenticated encryption.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_006.py",
+            "line": 3,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_007.py",
+            "line": 3,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_008.py",
+            "line": 3,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 10,
+            "symbol": "ChaCha20-Poly1305"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 10,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "tier1/python/t1_chacha.py",
+            "line": 4,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "tier3/python/registry_strategy/suites/builtin.py",
+            "line": 3,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_006.js",
+            "line": 13,
+            "symbol": "chacha20-poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_007.js",
+            "line": 9,
+            "symbol": "chacha20-poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_008.js",
+            "line": 9,
+            "symbol": "chacha20-poly1305"
+          },
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_006.py",
+            "line": 7,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_007.py",
+            "line": 15,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "calibration/tier1/python/cal_chacha20poly1305_008.py",
+            "line": 7,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 219,
+            "symbol": "ChaCha20-Poly1305"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 358,
+            "symbol": "ChaCha20-Poly1305"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 262,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 376,
+            "symbol": "ChaCha20-Poly1305"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 92,
+            "symbol": "ChaCha20-Poly1305"
+          },
+          {
+            "location": "tier1/javascript/t1_chacha.js",
+            "line": 4,
+            "symbol": "chacha20-poly1305"
+          },
+          {
+            "location": "tier1/python/t1_chacha.py",
+            "line": 6,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "tier3/python/registry_strategy/suites/builtin.py",
+            "line": 18,
+            "symbol": "ChaCha20Poly1305"
+          },
+          {
+            "location": "tier4/assets/ipsec/swanctl.conf",
+            "line": 21,
+            "symbol": "chacha20poly1305"
+          },
+          {
+            "location": "pqc/assets/ssh/sshd_config_pq",
+            "line": 7,
+            "symbol": "chacha20-poly1305"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 10,
+            "symbol": "chacha20-poly1305"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-pbkdf2-24",
+      "name": "PBKDF2",
+      "description": "PBKDF2 detected (SP 800-132). NIST-approved password-based KDF.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_027.py",
+            "line": 3,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_028.py",
+            "line": 3,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_029.py",
+            "line": 3,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 12,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "tier1/python/t1_mac_kdf.py",
+            "line": 7,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_027.py",
+            "line": 18,
+            "symbol": "PBKDF2HMAC"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_028.py",
+            "line": 7,
+            "symbol": "PBKDF2HMAC"
+          },
+          {
+            "location": "calibration/tier1/python/cal_pbkdf2_029.py",
+            "line": 15,
+            "symbol": "PBKDF2HMAC"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 19,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 283,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 59,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 166,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 500,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 39,
+            "symbol": "pbkdf2_hmac"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 83,
+            "symbol": "PBKDF2HMAC"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 329,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 340,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 370,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 180,
+            "symbol": "PBKDF2"
+          },
+          {
+            "location": "tier1/csharp/MacKdf/Program.cs",
+            "line": 10,
+            "symbol": "Pbkdf2"
+          },
+          {
+            "location": "tier1/python/t1_mac_kdf.py",
+            "line": 11,
+            "symbol": "PBKDF2HMAC"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_024/cal_pbkdf2_024.go",
+            "line": 5,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_024/cal_pbkdf2_024.go",
+            "line": 17,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_025/cal_pbkdf2_025.go",
+            "line": 5,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_025/cal_pbkdf2_025.go",
+            "line": 17,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_026/cal_pbkdf2_026.go",
+            "line": 5,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "calibration/tier1/go/cal_pbkdf2_026/cal_pbkdf2_026.go",
+            "line": 25,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 6,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 117,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 7,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 26,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 228,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "tier1/go/mac_kdf/main.go",
+            "line": 6,
+            "symbol": "pbkdf2"
+          },
+          {
+            "location": "tier1/go/mac_kdf/main.go",
+            "line": 17,
+            "symbol": "pbkdf2"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-hkdf-25",
+      "name": "HKDF",
+      "description": "HKDF detected (SP 800-56C). NIST-approved KDF for high-entropy inputs.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py",
+            "line": 4,
+            "symbol": "hkdf"
+          },
+          {
+            "location": "pqc/python/pq_hybrid_kem.py",
+            "line": 9,
+            "symbol": "hkdf"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py",
+            "line": 13,
+            "symbol": "HKDF"
+          },
+          {
+            "location": "pqc/python/pq_hybrid_kem.py",
+            "line": 20,
+            "symbol": "HKDF"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-poly1305-26",
+      "name": "Poly1305",
+      "description": "Poly1305 one-time MAC detected (RFC 8439). Used with ChaCha20 for AEAD.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 10,
+            "symbol": "Poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_006.js",
+            "line": 13,
+            "symbol": "poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_007.js",
+            "line": 9,
+            "symbol": "poly1305"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_chacha20poly1305_008.js",
+            "line": 9,
+            "symbol": "poly1305"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 219,
+            "symbol": "Poly1305"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 358,
+            "symbol": "Poly1305"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 376,
+            "symbol": "Poly1305"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 92,
+            "symbol": "Poly1305"
+          },
+          {
+            "location": "tier1/javascript/t1_chacha.js",
+            "line": 4,
+            "symbol": "poly1305"
+          },
+          {
+            "location": "pqc/assets/ssh/sshd_config_pq",
+            "line": 7,
+            "symbol": "poly1305"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config",
+            "line": 10,
+            "symbol": "poly1305"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-hmac-sha2-27",
+      "name": "HMAC-SHA2",
+      "description": "HMAC with SHA-2 detected. NIST-approved (FIPS 198-1). Quantum-partial - security reduced by Grover's algorithm.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier1/csharp/MacKdf/Program.cs",
+            "line": 8,
+            "symbol": "HMACSHA256"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1019AccountConfig.java",
+            "line": 10,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1020BookingConfig.java",
+            "line": 6,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1021ArchiveOptions.java",
+            "line": 14,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 9,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 170,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 311,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 182,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 227,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 139,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "tier1/java/T1MacKdf.java",
+            "line": 10,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "tier1/java/T1MacKdf.java",
+            "line": 11,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "tier3/java/jwt_alg_mapping/src/com/acme/jwt/JwtAlgorithms.java",
+            "line": 10,
+            "symbol": "HmacSHA256"
+          },
+          {
+            "location": "tier3/java/jwt_alg_mapping/src/com/acme/jwt/JwtAlgorithms.java",
+            "line": 11,
+            "symbol": "HmacSHA384"
+          },
+          {
+            "location": "tier3/java/jwt_alg_mapping/src/com/acme/jwt/JwtAlgorithms.java",
+            "line": 12,
+            "symbol": "HmacSHA512"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aws-kms-key-reference-28",
+      "name": "AWS KMS Key Reference",
+      "description": "AWS KMS key reference detected. Verify KMS key algorithm for quantum readiness.",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf",
+            "line": 21,
+            "symbol": "alias/ledger-statement-signing"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-sha-3-29",
+      "name": "SHA-3",
+      "description": "SHA-3 hash function detected (FIPS 202). NIST-approved alternative to SHA-2.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1037ShipmentSettings.java",
+            "line": 5,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1038MemberOptions.java",
+            "line": 9,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1039PayloadDefaults.java",
+            "line": 13,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_sha3256_034.js",
+            "line": 9,
+            "symbol": "sha3-256"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_sha3256_035.js",
+            "line": 9,
+            "symbol": "sha3-256"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_sha3256_036.js",
+            "line": 5,
+            "symbol": "sha3-256"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha3256_039.py",
+            "line": 6,
+            "symbol": "sha3_256"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha3256_040.py",
+            "line": 6,
+            "symbol": "sha3_256"
+          },
+          {
+            "location": "calibration/tier1/python/cal_sha3256_041.py",
+            "line": 17,
+            "symbol": "sha3_256"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 218,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 315,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 94,
+            "symbol": "sha3-256"
+          },
+          {
+            "location": "mixed/javascript/partner_routes.js",
+            "line": 263,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 52,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 33,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "tier1/csharp/Hashes/Program.cs",
+            "line": 12,
+            "symbol": "SHA3_256"
+          },
+          {
+            "location": "tier1/java/T1Hashes.java",
+            "line": 13,
+            "symbol": "SHA3-256"
+          },
+          {
+            "location": "tier1/javascript/t1_hashes.js",
+            "line": 8,
+            "symbol": "sha3-256"
+          },
+          {
+            "location": "tier1/python/t1_hashes.py",
+            "line": 9,
+            "symbol": "sha3_256"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aes-gcm-30",
+      "name": "AES-GCM",
+      "description": "AES-GCM AEAD detected (SP 800-38D). NIST-approved authenticated encryption.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier2/typescript/cal_aes_005.ts",
+            "line": 4,
+            "symbol": "aes-256-gcm"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 114,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 144,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "negatives/csharp/StringsAndComments/Program.cs",
+            "line": 10,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "negatives/javascript/n_strings.js",
+            "line": 2,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 16,
+            "symbol": "AES-256-GCM"
+          },
+          {
+            "location": "tier1/c/t1_tls_ctx.c",
+            "line": 8,
+            "symbol": "AES128-GCM"
+          },
+          {
+            "location": "tier1/javascript/t1_aes_gcm.js",
+            "line": 6,
+            "symbol": "aes-256-gcm"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf",
+            "line": 9,
+            "symbol": "AES256-GCM"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg",
+            "line": 7,
+            "symbol": "AES128-GCM"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf",
+            "line": 15,
+            "symbol": "AES256-GCM"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf",
+            "line": 21,
+            "symbol": "AES128-GCM"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1004DeviceOptions.java",
+            "line": 8,
+            "symbol": "AES/GCM"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1005MemberSettings.java",
+            "line": 16,
+            "symbol": "AES/GCM"
+          },
+          {
+            "location": "tier1/java/T1AesGcm.java",
+            "line": 17,
+            "symbol": "AES/GCM"
+          },
+          {
+            "location": "tier3/java/cross_class_constant/src/com/acme/config/CryptoConfig.java",
+            "line": 12,
+            "symbol": "AES/GCM"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-chacha20-31",
+      "name": "ChaCha20",
+      "description": "ChaCha20 stream cipher detected. Fast software cipher, alternative to AES.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "classicalSecurityLevel": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "mixed/java/OrderDefaultsModule.java",
+            "line": 286,
+            "symbol": "ChaCha20"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-certificate-key-usage-32",
+      "name": "Certificate Key Usage",
+      "description": "Certificate key usage extension detected. Defines permitted cryptographic operations.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1007AccountDefaults.java",
+            "line": 2,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1008BookingSettings.java",
+            "line": 2,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1009ClaimConfig.java",
+            "line": 2,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1040ProfileSettings.java",
+            "line": 3,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1041OrderSettings.java",
+            "line": 3,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1042AccountProfile.java",
+            "line": 3,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "pqc/java/PqWashing.java",
+            "line": 4,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "tier1/java/T1Dh.java",
+            "line": 3,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java",
+            "line": 4,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1007AccountDefaults.java",
+            "line": 14,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1008BookingSettings.java",
+            "line": 16,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1009ClaimConfig.java",
+            "line": 12,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1040ProfileSettings.java",
+            "line": 18,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1041OrderSettings.java",
+            "line": 12,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1042AccountProfile.java",
+            "line": 14,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "pqc/java/PqWashing.java",
+            "line": 24,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "tier1/java/T1Dh.java",
+            "line": 17,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java",
+            "line": 18,
+            "symbol": "KeyAgreement"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf",
+            "line": 5,
+            "symbol": "key_usage"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf",
+            "line": 11,
+            "symbol": "key_usage"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-hardcoded-key-size-33",
+      "name": "Hardcoded Key Size",
+      "description": "Hardcoded key size detected. Review to ensure adequate security level.",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/python/cal_dh_009.py",
+            "line": 6,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dh_010.py",
+            "line": 6,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dh_011.py",
+            "line": 6,
+            "symbol": "key_size=512"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_012.py",
+            "line": 6,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_013.py",
+            "line": 14,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_014.py",
+            "line": 6,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_030.py",
+            "line": 10,
+            "symbol": "key_size=3072"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_031.py",
+            "line": 6,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_032.py",
+            "line": 10,
+            "symbol": "key_size=2048"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_012.py",
+            "line": 6,
+            "symbol": "key_size=2048"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_013.py",
+            "line": 6,
+            "symbol": "key_size=3072"
+          },
+          {
+            "location": "calibration/tier2/python/cal_rsa_014.py",
+            "line": 10,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "deadcode/python/dead_export.py",
+            "line": 15,
+            "symbol": "key_size=1024"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 43,
+            "symbol": "key_size=512"
+          },
+          {
+            "location": "tier1/python/t1_dh.py",
+            "line": 4,
+            "symbol": "key_size=2048"
+          },
+          {
+            "location": "tier1/python/t1_dsa.py",
+            "line": 5,
+            "symbol": "key_size=2048"
+          },
+          {
+            "location": "tier1/python/t1_rsa.py",
+            "line": 6,
+            "symbol": "key_size=2048"
+          },
+          {
+            "location": "tier5/python/t5_dynamic_import.py",
+            "line": 10,
+            "symbol": "key_size=2048"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ml-dsa-34",
+      "name": "ML-DSA",
+      "description": "ML-DSA (FIPS 204) post-quantum digital signature detected. This is quantum-safe.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "mixed/go/invoice_gateway/main.go",
+            "line": 28,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 9,
+            "symbol": "mldsa"
+          },
+          {
+            "location": "mixed/python/invoice_service.py",
+            "line": 277,
+            "symbol": "mldsa"
+          },
+          {
+            "location": "pqc/python/pq_signature.py",
+            "line": 2,
+            "symbol": "mldsa"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 97,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "mixed/c/audit_daemon.c",
+            "line": 325,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "mixed/c/device_daemon.c",
+            "line": 181,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "mixed/javascript/device_session.js",
+            "line": 222,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 334,
+            "symbol": "ML-DSA-65"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 20,
+            "symbol": "mldsa"
+          },
+          {
+            "location": "pqc/java/PqParamSpec.java",
+            "line": 6,
+            "symbol": "ML-DSA-44"
+          },
+          {
+            "location": "pqc/java/PqParamSpec.java",
+            "line": 9,
+            "symbol": "ML-DSA"
+          },
+          {
+            "location": "pqc/java/PqSignature.java",
+            "line": 8,
+            "symbol": "ML-DSA-87"
+          },
+          {
+            "location": "pqc/java/PqSignature.java",
+            "line": 11,
+            "symbol": "ML-DSA"
+          },
+          {
+            "location": "pqc/python/pq_signature.py",
+            "line": 4,
+            "symbol": "mldsa"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-certificate-expiration-check-35",
+      "name": "Certificate Expiration Check",
+      "description": "Certificate validity period handling detected. Important for certificate lifecycle management.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 258,
+            "symbol": "certificates expir"
+          },
+          {
+            "location": "mixed/go/report_gateway/main.go",
+            "line": 114,
+            "symbol": "certificates expir"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java",
+            "line": 334,
+            "symbol": "certificates expir"
+          },
+          {
+            "location": "mixed/javascript/partner_routes.js",
+            "line": 232,
+            "symbol": "certificates expir"
+          },
+          {
+            "location": "mixed/python/metric_service.py",
+            "line": 208,
+            "symbol": "certificates expir"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-post-quantum-crypto-library-36",
+      "name": "Post-Quantum Crypto Library",
+      "description": "Post-quantum cryptography library detected. Good practice for quantum-safe migration.",
+      "cryptoProperties": {
+        "assetType": "algorithm"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 6,
+            "symbol": "org.bouncycastle.pqc"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 7,
+            "symbol": "org.bouncycastle.pqc"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 8,
+            "symbol": "org.bouncycastle.pqc"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 9,
+            "symbol": "org.bouncycastle.pqc"
+          },
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 6,
+            "symbol": "org.bouncycastle.pqc"
+          },
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 7,
+            "symbol": "org.bouncycastle.pqc"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-lms-37",
+      "name": "LMS",
+      "description": "LMS/HSS stateful hash-based signature detected (SP 800-208). Quantum-safe but requires careful state management.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 6,
+            "symbol": "lms"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 7,
+            "symbol": "lms"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py",
+            "line": 72,
+            "symbol": "lms_sign"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 19,
+            "symbol": "LMS"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 24,
+            "symbol": "LMS"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 29,
+            "symbol": "LMS"
+          },
+          {
+            "location": "pqc/java/FirmwareSignLms.java",
+            "line": 33,
+            "symbol": "LMS"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py",
+            "line": 1,
+            "symbol": "LMS"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py",
+            "line": 111,
+            "symbol": "lms_sign"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ml-kem-38",
+      "name": "ML-KEM",
+      "description": "ML-KEM (FIPS 203) post-quantum key encapsulation detected. This is quantum-safe.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/python/pq_hybrid_kem.py",
+            "line": 7,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/python/pq_kem.py",
+            "line": 2,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/python/pq_level_constant.py",
+            "line": 2,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "mixed/c/device_daemon.c",
+            "line": 143,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "mixed/c/device_daemon.c",
+            "line": 312,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "mixed/c/policy_agent.c",
+            "line": 54,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 20,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 163,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "mixed/python/order_jobs.py",
+            "line": 302,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts",
+            "line": 101,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "negatives/c/n_strings.c",
+            "line": 6,
+            "symbol": "ML-KEM"
+          },
+          {
+            "location": "negatives/java/NStringsAndComments.java",
+            "line": 16,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "negatives/javascript/n_strings.js",
+            "line": 2,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 4,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "negatives/python/n_strings_and_comments.py",
+            "line": 19,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/go/mlkem/main.go",
+            "line": 11,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/java/PqKem.java",
+            "line": 10,
+            "symbol": "ML-KEM-1024"
+          },
+          {
+            "location": "pqc/java/PqKem.java",
+            "line": 12,
+            "symbol": "ML-KEM"
+          },
+          {
+            "location": "pqc/python/pq_hybrid_kem.py",
+            "line": 14,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/python/pq_kem.py",
+            "line": 4,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/python/pq_level_constant.py",
+            "line": 8,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/python/pq_washing.py",
+            "line": 1,
+            "symbol": "ML-KEM-768"
+          },
+          {
+            "location": "pqc/python/pq_washing.py",
+            "line": 4,
+            "symbol": "ML-KEM"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq_washing.conf",
+            "line": 6,
+            "symbol": "ML-KEM"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go",
+            "line": 5,
+            "symbol": "mlkem"
+          },
+          {
+            "location": "pqc/go/mlkem/main.go",
+            "line": 6,
+            "symbol": "mlkem"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-hybrid-kem-39",
+      "name": "Hybrid-KEM",
+      "description": "Hybrid key exchange detected (classical + PQC). Excellent transition strategy.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "combiner",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "negatives/go/strings/main.go",
+            "line": 11,
+            "symbol": "X25519MLKEM768"
+          },
+          {
+            "location": "pqc/go/tls_hybrid/main.go",
+            "line": 12,
+            "symbol": "X25519MLKEM768"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq.conf",
+            "line": 14,
+            "symbol": "X25519MLKEM768"
+          },
+          {
+            "location": "pqc/assets/tls/openssl_pq.cnf",
+            "line": 13,
+            "symbol": "X25519MLKEM768"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-xmss-40",
+      "name": "XMSS",
+      "description": "XMSS stateful hash-based signature detected (SP 800-208). Quantum-safe but requires careful state management.",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 16,
+            "symbol": "XMSS"
+          },
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 21,
+            "symbol": "XMSS"
+          },
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 26,
+            "symbol": "XMSS"
+          },
+          {
+            "location": "pqc/java/UpdateSignXmss.java",
+            "line": 30,
+            "symbol": "XMSS"
+          },
+          {
+            "location": "pqc/assets/firmware/signing-policy.yaml",
+            "line": 13,
+            "symbol": "XMSS-"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-x.509-certificate-41",
+      "name": "X.509 Certificate",
+      "description": "X.509 certificate detected. Certificate algorithm and key size should be verified for quantum safety.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/payments-platform/services/settlement-worker/partner_ca.py",
+            "line": 4,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "negatives/assets/upload_validator_fake.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "pqc/assets/certs/firmware_signing.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "pqc/assets/certs/migrated_leaf.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "pqc/assets/certs/release_root_mldsa.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.crt",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/api_gateway.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/device_ed25519.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/payments_legacy.crt",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/portal_fullchain.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/portal_fullchain.pem",
+            "line": 20,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          },
+          {
+            "location": "tier4/assets/certs/telemetry_ecdsa.pem",
+            "line": 1,
+            "symbol": "-----BEGIN CERTIFICATE-----"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-certificate-subject/issuer-42",
+      "name": "Certificate Subject/Issuer",
+      "description": "Certificate subject or issuer information handling detected.",
+      "cryptoProperties": {
+        "assetType": "certificate"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/ipsec/swanctl.conf",
+            "line": 15,
+            "symbol": "CN=c"
+          },
+          {
+            "location": "tier4/assets/tls/openssl.cnf",
+            "line": 24,
+            "symbol": "CN = b"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ml-kem,-x25519,-p-256-43",
+      "name": "ML-KEM, X25519, P-256",
+      "description": "Cloudflare Interoperable Reusable Cryptographic Library with PQC (Algorithms: ML-KEM, X25519, P-256)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/go-service/go.mod",
+            "line": 1,
+            "symbol": "github.com/cloudflare/circl"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-rsa,-ecc,-aes,-ml-kem,-ml-dsa-44",
+      "name": "RSA, ECC, AES, ML-KEM, ML-DSA",
+      "description": "Java crypto provider with PQC support in recent versions (Algorithms: RSA, ECC, AES, ML-KEM, ML-DSA)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/java-gateway/pom.xml",
+            "line": 1,
+            "symbol": "org.bouncycastle"
+          }
+        ]
+      }
+    }
+  ]
+}

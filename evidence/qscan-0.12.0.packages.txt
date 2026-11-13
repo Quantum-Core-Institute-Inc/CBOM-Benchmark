@@ -1,0 +1,6 @@
+scanner@ /home/runner/work/_temp/scanner
+└─┬ @quantakrypto/qscan@0.12.0
+  ├─┬ @quantakrypto/agent@0.12.0
+  │ └── @quantakrypto/core@0.12.0 deduped
+  └── @quantakrypto/core@0.12.0
+

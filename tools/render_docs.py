@@ -42,7 +42,8 @@ COMPARISON = {
                  ("cdxgen 12.9.1", "reports/cdxgen/scorecard.json"),
                  # Third-party scanners: scored in .github/workflows/third-party-scanners.yml, bundle
                  # read and committed by a person (integrations/third-party/README.md).
-                 ],
+                 ("cryptoscan 1.5.0", "evidence/cryptoscan-1.5.0/scorecard.json"),
+                 ("qScan 0.12.0", "evidence/qscan-0.12.0/scorecard.json")],
     "baselines": [("grep baseline", "reports/baseline_grep.json")],
 }
 DOCS = ["README.md"]
