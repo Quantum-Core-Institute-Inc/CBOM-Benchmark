@@ -1,10 +1,10 @@
 {
   "bundle_format": 1,
-  "testbench": "2.6.5",
+  "testbench": "2.6.6",
   "methodology": "2.3",
-  "created": "2026-11-13T14:33:27Z",
+  "created": "2026-11-13T17:32:11Z",
   "stamp": {
-    "release": "2.6.5",
+    "release": "2.6.6",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
@@ -15,7 +15,7 @@
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "0842905a7965d3d4ad48ee568cec24ff08e12eed431b3f083876041b10cbd83e",
+    "VERSION": "245f7531ea44f28f7b7e8893179f4224fff4d081dcc3ee19f770ab1ab9b8d691",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -79,10 +79,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 59.56,
-    "cpu_user_s": 92.13,
-    "cpu_sys_s": 6.82,
-    "peak_rss_mb": 1494.3,
+    "wall_s": 55.66,
+    "cpu_user_s": 86.13,
+    "cpu_sys_s": 5.7,
+    "peak_rss_mb": 1015.4,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -132,10 +132,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 56.29,
-      "cpu_user_s": 87.62,
-      "cpu_sys_s": 6.12,
-      "peak_rss_mb": 1034.1,
+      "wall_s": 52.88,
+      "cpu_user_s": 82.65,
+      "cpu_sys_s": 6.01,
+      "peak_rss_mb": 1379.1,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -164,8 +164,8 @@
   "checks": {
     "status": "pass",
     "counts": {
-      "checks": 19,
-      "passed": 19,
+      "checks": 20,
+      "passed": 20,
       "corpus": {
         "passed": 528,
         "failed": 0,

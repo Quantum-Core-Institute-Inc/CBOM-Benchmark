@@ -1,0 +1,70 @@
+{
+  "name": "qci-pqc regression ratchet",
+  "note": "Ratchet gates (everything except the policy limits below) are floors: the best value a QCI release has reached on this corpus and answer key, so a ratchet never moves down because a later release regressed; raise them when a release improves a number. Where 'carried_from' is set, a floor may have been set by a release that is no longer published here; it was measured on the same corpus, answer key, scorer and policy, which the rebaseline tool checks before carrying it. cbom_schema_valid (the scanner's own cbom.json must validate against CycloneDX 1.6) and the two holdout gates are fixed policy limits that a rebaseline never moves: overfit_gap_ci_low fails when the published score beats a private holdout by more than sampling noise; negative_fp_gap fails when freshly generated negative controls draw more than 0.5 extra false positives per file than the published ones (calibration in HOLDOUT.md). Both apply only when CBOM_HOLDOUT_SEED is set. Every gate is a required measurement: one that is absent makes the run 'not evaluated' (exit 3), unless the gate carries when_missing: skip with a reason, or the run was made with --without-holdout, in which case it is listed as skipped.",
+  "gates": {
+    "recall": {
+      "min": 79.8
+    },
+    "primary_site_recall": {
+      "min": 77.5
+    },
+    "params_accuracy": {
+      "min": 92.6
+    },
+    "precision": {
+      "min": 100.0
+    },
+    "negative_control_fps": {
+      "max": 0
+    },
+    "pqc_overclaims": {
+      "max": 0
+    },
+    "ticket_ready_pct": {
+      "min": 87.5
+    },
+    "deadline_weighted_recall": {
+      "min": 81.6
+    },
+    "overfit_gap_ci_low": {
+      "max": 0
+    },
+    "library_recall": {
+      "min": 96.4
+    },
+    "library_pq_verdict_accuracy": {
+      "min": 71.4,
+      "when_missing": "skip",
+      "reason": "the scanner gave no PQC-capability verdicts for libraries, so there is nothing to judge"
+    },
+    "negative_fp_gap": {
+      "max": 0.5
+    },
+    "cbom_schema_valid": {
+      "min": 1
+    },
+    "parameter_recovery": {
+      "min": 92.6,
+      "note": "parameters correct among detected findings, from the scorecard's Parameter Recovery section; the same quantity as params_accuracy"
+    },
+    "config_completeness": {
+      "min": 100.0,
+      "when_missing": "skip",
+      "reason": "the scanner detected no finding in a configuration file, so there is nothing to judge"
+    }
+  },
+  "set_on": "2026-11-13",
+  "stamp": {
+    "release": "2.6.6",
+    "methodology": "2.3",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
+    "scorer": "0dead3635a2ae115",
+    "policy": "nist:c78f618c306e7d48",
+    "adapter": "c71a627874e536b5"
+  },
+  "set_from": [
+    "reports/qci-pqc/scorecard.json"
+  ]
+}

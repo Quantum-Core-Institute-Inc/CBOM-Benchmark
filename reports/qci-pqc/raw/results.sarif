@@ -6,7 +6,7 @@
       "tool": {
         "driver": {
           "name": "qci-pqc-scan",
-          "version": "2.3.4.3"
+          "version": "2.3.4.5"
         }
       },
       "results": [
@@ -10784,6 +10784,25 @@
           ]
         },
         {
+          "ruleId": "qci/TLS-1.3",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.3 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pqc/go/tls_hybrid/main.go"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/PQC-Dependency",
           "level": "warning",
           "message": {
@@ -11240,6 +11259,44 @@
           ]
         },
         {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/edge/nginx/gateway.conf"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_128_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_128_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/edge/nginx/gateway.conf"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/RSA",
           "level": "error",
           "message": {
@@ -11639,6 +11696,63 @@
           ]
         },
         {
+          "ruleId": "qci/RSA",
+          "level": "error",
+          "message": {
+            "text": "RSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/api-gateway/bin/api-gateway"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/api-gateway/bin/api-gateway"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-256",
+          "level": "warning",
+          "message": {
+            "text": "SHA-256 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/api-gateway/bin/api-gateway"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/SHA-256",
           "level": "warning",
           "message": {
@@ -11687,6 +11801,44 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "system/payments-platform/services/ledger-service/build.gradle"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/ECDSA",
+          "level": "error",
+          "message": {
+            "text": "ECDSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/ledger-service/build/libs/ledger-service.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/ledger-service/build/libs/ledger-service.jar"
                 },
                 "region": {
                   "startLine": 1
@@ -12108,6 +12260,82 @@
                 },
                 "region": {
                   "startLine": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS-1.0",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.0 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/c/t1_tls_ctx.c"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/c/t1_tls_ctx.c"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "level": "warning",
+          "message": {
+            "text": "TLS_RSA_WITH_3DES_EDE_CBC_SHA (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/c/t1_tls_ctx.c"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_128_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_128_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/c/t1_tls_ctx.c"
+                },
+                "region": {
+                  "startLine": 8
                 }
               }
             }
@@ -12893,6 +13121,44 @@
           ]
         },
         {
+          "ruleId": "qci/TLS-1.0",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.0 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/go/tls_config/main.go"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "level": "warning",
+          "message": {
+            "text": "TLS_RSA_WITH_3DES_EDE_CBC_SHA (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/go/tls_config/main.go"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/TLS",
           "level": "warning",
           "message": {
@@ -12906,6 +13172,44 @@
                 },
                 "region": {
                   "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_128_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_128_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/go/tls_config/main.go"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier1/go/tls_config/main.go"
+                },
+                "region": {
+                  "startLine": 15
                 }
               }
             }
@@ -15857,6 +16161,44 @@
           ]
         },
         {
+          "ruleId": "qci/TLS-1.1",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/application.yml"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS-1.2",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.2 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/application.yml"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/TLS",
           "level": "warning",
           "message": {
@@ -15870,6 +16212,44 @@
                 },
                 "region": {
                   "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_128_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_128_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/application.yml"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/application.yml"
+                },
+                "region": {
+                  "startLine": 16
                 }
               }
             }
@@ -15895,6 +16275,25 @@
           ]
         },
         {
+          "ruleId": "qci/TLS-1.1",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/SSH-Modern-Cipher",
           "level": "warning",
           "message": {
@@ -15908,6 +16307,82 @@
                 },
                 "region": {
                   "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_256_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_256_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_AES_256_GCM_SHA384",
+          "level": "warning",
+          "message": {
+            "text": "TLS_AES_256_GCM_SHA384 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_CHACHA20_POLY1305_SHA256",
+          "level": "warning",
+          "message": {
+            "text": "TLS_CHACHA20_POLY1305_SHA256 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/haproxy.cfg"
+                },
+                "region": {
+                  "startLine": 8
                 }
               }
             }
@@ -15933,6 +16408,44 @@
           ]
         },
         {
+          "ruleId": "qci/TLS-1.1",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS-1.2",
+          "level": "warning",
+          "message": {
+            "text": "TLS-1.2 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/TLS-Weak-Protocol",
           "level": "warning",
           "message": {
@@ -15946,6 +16459,63 @@
                 },
                 "region": {
                   "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "level": "warning",
+          "message": {
+            "text": "TLS_RSA_WITH_3DES_EDE_CBC_SHA (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_128_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_128_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/httpd-ssl.conf"
+                },
+                "region": {
+                  "startLine": 15
                 }
               }
             }
@@ -16180,6 +16750,63 @@
           ]
         },
         {
+          "ruleId": "qci/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "level": "error",
+          "message": {
+            "text": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/nginx.conf"
+                },
+                "region": {
+                  "startLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "level": "warning",
+          "message": {
+            "text": "TLS_RSA_WITH_3DES_EDE_CBC_SHA (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/nginx.conf"
+                },
+                "region": {
+                  "startLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/TLS_RSA_WITH_AES_256_CBC_SHA",
+          "level": "error",
+          "message": {
+            "text": "TLS_RSA_WITH_AES_256_CBC_SHA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier4/assets/tls/nginx.conf"
+                },
+                "region": {
+                  "startLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/TLS-1.0",
           "level": "warning",
           "message": {
@@ -16227,6 +16854,234 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
+                  "uri": "tier5/c/bin/fwcheck"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DH",
+          "level": "error",
+          "message": {
+            "text": "DH (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/fwcheck"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-512",
+          "level": "warning",
+          "message": {
+            "text": "SHA-512 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/fwcheck"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/X25519",
+          "level": "error",
+          "message": {
+            "text": "X25519 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/fwcheck"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/AES",
+          "level": "warning",
+          "message": {
+            "text": "AES (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/keyd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/ECDSA",
+          "level": "error",
+          "message": {
+            "text": "ECDSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/keyd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/HMAC",
+          "level": "warning",
+          "message": {
+            "text": "HMAC (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/keyd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/keyd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/keyd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/3DES",
+          "level": "warning",
+          "message": {
+            "text": "3DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/meterd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/meterd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RSA",
+          "level": "error",
+          "message": {
+            "text": "RSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/c/bin/meterd"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/AES",
+          "level": "warning",
+          "message": {
+            "text": "AES (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
                   "uri": "tier5/java/compiled/billing-core.jar"
                 },
                 "region": {
@@ -16247,6 +17102,348 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "tier5/java/compiled/billing-core.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/java/compiled/billing-core.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DES",
+          "level": "warning",
+          "message": {
+            "text": "DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/java/compiled/token-vault.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/ECDSA",
+          "level": "error",
+          "message": {
+            "text": "ECDSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/java/compiled/token-vault.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/java/compiled/token-vault.jar"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/3DES",
+          "level": "warning",
+          "message": {
+            "text": "3DES (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/payments-sdk.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/ECDSA",
+          "level": "error",
+          "message": {
+            "text": "ECDSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/payments-sdk.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/HMAC",
+          "level": "warning",
+          "message": {
+            "text": "HMAC (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/payments-sdk.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/payments-sdk.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/AES",
+          "level": "warning",
+          "message": {
+            "text": "AES (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/session-tokens.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/MD5",
+          "level": "warning",
+          "message": {
+            "text": "MD5 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/session-tokens.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/Node-crypto",
+          "level": "error",
+          "message": {
+            "text": "Node-crypto (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/session-tokens.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/RSA",
+          "level": "error",
+          "message": {
+            "text": "RSA (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/session-tokens.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/AES",
+          "level": "warning",
+          "message": {
+            "text": "AES (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/DH",
+          "level": "error",
+          "message": {
+            "text": "DH (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/Ed25519",
+          "level": "error",
+          "message": {
+            "text": "Ed25519 (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/Node-crypto",
+          "level": "error",
+          "message": {
+            "text": "Node-crypto (vulnerable) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/PBKDF2",
+          "level": "warning",
+          "message": {
+            "text": "PBKDF2 (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "qci/SHA-1",
+          "level": "warning",
+          "message": {
+            "text": "SHA-1 (weak) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tier5/javascript/dist/webhook-relay.min.js"
                 },
                 "region": {
                   "startLine": 1

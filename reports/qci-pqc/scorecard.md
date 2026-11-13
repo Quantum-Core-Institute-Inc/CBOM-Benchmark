@@ -1,14 +1,14 @@
-# CBOM Testbench Scorecard: qci-pqc, version 2.3.4.3 (adapter 1.2), declared scope
+# CBOM Testbench Scorecard: qci-pqc, version 2.3.4.5 (adapter 1.3), declared scope
 
-**Overall:** 251/383 findings detected (65.5% recall), 0 false positives (100.0% precision), parameters correct on 90.8% of detections.
+**Overall:** 312/391 findings detected (79.8% recall), 0 false positives (100.0% precision), parameters correct on 92.6% of detections.
 
 Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they feed the holdout's overfit gap and are not counted anywhere else here): 249/304 detected (81.9%), 3 false positives.
 
 | Bucket | Detected | Recall | 95% interval | At primary site | Params correct | Line accurate | Quantum flag | False pos. | Precision |
 |---|---|---|---|---|---|---|---|---|---|
-| Tier 1 c | 14/20 | 70.0% | 48.1–85.5% | 70.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| Tier 1 c | 18/20 | 90.0% | 69.9–97.2% | 90.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 1 csharp | 9/13 | 69.2% | 42.4–87.3% | 69.2% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 1 go | 15/20 | 75.0% | 53.1–88.8% | 75.0% | 100.0% | 93.3% | 100.0% | 0 | 100.0% |
+| Tier 1 go | 19/20 | 95.0% | 76.4–99.1% | 95.0% | 100.0% | 94.7% | 100.0% | 0 | 100.0% |
 | Tier 1 java | 15/16 | 93.8% | 71.7–98.9% | 93.8% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 1 javascript | 15/17 | 88.2% | 65.7–96.7% | 88.2% | 100.0% | 80.0% | 100.0% | 0 | 100.0% |
 | Tier 1 python | 15/16 | 93.8% | 71.7–98.9% | 93.8% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
@@ -20,10 +20,10 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Tier 2 typescript | 3/7 | 42.9% | 15.8–75.0% (thin) | 42.9% | 66.7% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 3 java | 5/7 | 71.4% | 35.9–91.8% (thin) | 71.4% | 40.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 3 python | 7/9 | 77.8% | 45.3–93.7% (thin) | 55.6% | 14.3% | 100.0% | 100.0% | 0 | 100.0% |
-| Tier 4 assets | 22/54 | 40.7% | 28.7–54.0% | 40.7% | 95.5% | 92.9% | 100.0% | 0 | 100.0% |
-| Tier 5 c | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| Tier 5 java | 0/5 | 0.0% | 0.0–43.4% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
-| Tier 5 javascript | 0/11 | 0.0% | 0.0–25.9% | 0.0% | n/a | n/a | n/a | 0 | n/a |
+| Tier 4 assets | 39/54 | 72.2% | 59.1–82.4% | 72.2% | 97.4% | 96.8% | 100.0% | 0 | 100.0% |
+| Tier 5 c | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | n/a | 100.0% | 0 | 100.0% |
+| Tier 5 java | 6/11 | 54.5% | 28.0–78.7% | 54.5% | 100.0% | n/a | 100.0% | 0 | 100.0% |
+| Tier 5 javascript | 11/11 | 100.0% | 74.1–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Tier 5 python | 2/7 | 28.6% | 8.2–64.1% (thin) | 28.6% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Dead code c | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Dead code go | 2/2 | 100.0% | 34.2–100.0% (thin) | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
@@ -37,15 +37,15 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | Mixed files python | 12/12 | 100.0% | 75.7–100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | Mixed files typescript | 3/4 | 75.0% | 30.1–95.4% (thin) | 75.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC assets | 19/25 | 76.0% | 56.6–88.5% | 76.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| PQC go | 1/4 | 25.0% | 4.6–69.9% (thin) | 25.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
+| PQC go | 2/4 | 50.0% | 15.0–85.0% (thin) | 50.0% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC java | 4/6 | 66.7% | 30.0–90.3% (thin) | 66.7% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
 | PQC python | 6/7 | 85.7% | 48.7–97.4% (thin) | 85.7% | 100.0% | 100.0% | 100.0% | 0 | 100.0% |
-| System fixture artifacts | 1/4 | 25.0% | 4.6–69.9% (thin) | 25.0% | 100.0% | n/a | n/a | 0 | 100.0% |
-| System fixture assets | 5/9 | 55.6% | 26.7–81.1% (thin) | 55.6% | 80.0% | 66.7% | 100.0% | 0 | 100.0% |
+| System fixture artifacts | 6/6 | 100.0% | 61.0–100.0% (thin) | 100.0% | 100.0% | n/a | 100.0% | 0 | 100.0% |
+| System fixture assets | 7/9 | 77.8% | 45.3–93.7% (thin) | 77.8% | 85.7% | 80.0% | 100.0% | 0 | 100.0% |
 | System fixture go | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture java | 2/2 | 100.0% | 34.2–100.0% (thin) | 50.0% | 50.0% | 100.0% | 100.0% | 0 | 100.0% |
 | System fixture python | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
-| **Total** | 251/383 | 65.5% | 60.6–70.1% | 63.2% | 90.8% | 97.4% | 100.0% | 0 | 100.0% |
+| **Total** | 312/391 | 79.8% | 75.5–83.5% | 77.5% | 92.6% | 97.8% | 100.0% | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
 ## Parameter Recovery
 
@@ -53,33 +53,33 @@ Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for th
 
 | Bucket | Detected | Parameters correct | % |
 |---|---|---|---|
-| **Overall** | 251 | 228 | 90.8% |
-| Tier 1 | 83 | 83 | 100.0% |
+| **Overall** | 312 | 289 | 92.6% |
+| Tier 1 | 91 | 91 | 100.0% |
 | Tier 2 | 28 | 25 | 89.3% |
 | Tier 3 | 12 | 3 | 25.0% |
-| Tier 4 | 22 | 21 | 95.5% |
-| Tier 5 | 2 | 1 | 50.0% |
+| Tier 4 | 39 | 38 | 97.4% |
+| Tier 5 | 30 | 29 | 96.7% |
 | Tier deadcode | 9 | 9 | 100.0% |
 | Tier mixed | 51 | 48 | 94.1% |
-| Tier pqc | 30 | 30 | 100.0% |
-| Tier system | 14 | 8 | 57.1% |
-| artifacts | 1 | 1 | 100.0% |
-| assets | 46 | 44 | 95.7% |
-| c | 27 | 27 | 100.0% |
+| Tier pqc | 31 | 31 | 100.0% |
+| Tier system | 21 | 15 | 71.4% |
+| artifacts | 6 | 6 | 100.0% |
+| assets | 65 | 63 | 96.9% |
+| c | 42 | 42 | 100.0% |
 | csharp | 13 | 12 | 92.3% |
-| go | 38 | 34 | 89.5% |
-| java | 45 | 39 | 86.7% |
-| javascript | 20 | 20 | 100.0% |
+| go | 43 | 39 | 90.7% |
+| java | 51 | 45 | 88.2% |
+| javascript | 31 | 31 | 100.0% |
 | python | 55 | 46 | 83.6% |
 | typescript | 6 | 5 | 83.3% |
-| RSA | 33 | 27 | 81.8% |
-| EC | 27 | 23 | 85.2% |
-| AES | 26 | 19 | 73.1% |
-| HMAC | 22 | 19 | 86.4% |
-| 3DES | 17 | 14 | 82.4% |
-| SHA-1 | 17 | 17 | 100.0% |
-| PBKDF2 | 14 | 14 | 100.0% |
-| DH | 11 | 11 | 100.0% |
+| RSA | 37 | 31 | 83.8% |
+| AES | 31 | 24 | 77.4% |
+| EC | 31 | 27 | 87.1% |
+| HMAC | 24 | 21 | 87.5% |
+| SHA-1 | 23 | 23 | 100.0% |
+| 3DES | 19 | 16 | 84.2% |
+| PBKDF2 | 15 | 15 | 100.0% |
+| DH | 13 | 13 | 100.0% |
 
 ## Config Completeness
 
@@ -87,22 +87,18 @@ Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, 
 
 | Bucket | Expected | Detected | Recall | Config-complete | % of detected |
 |---|---|---|---|---|---|
-| Configuration files | 60 | 24 | 40.0% | 24 | 100.0% |
+| Configuration files | 60 | 43 | 71.7% | 43 | 100.0% |
 
 ## Binary Evidence Honesty
 
 Known stripped binaries must either produce findings or a recorded skip. An empty result without a skip is a coverage honesty failure.
 
-**Status:** FAIL (3 unrecorded empty binaries)
+**Status:** pass (0 unrecorded empty binaries)
 
-| Path | Reason |
-|---|---|
-| `corpus/tier5/c/bin/meterd` | binary: no findings and no recorded skip |
-| `corpus/tier5/c/bin/keyd` | binary: no findings and no recorded skip |
-| `corpus/tier5/c/bin/fwcheck` | binary: no findings and no recorded skip |
+All known binaries either produced findings or were skipped with a record.
 
 
-Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
+Intervals are 95% Wilson intervals on recall. 24 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 
 **PQC over-claims: 0.** Post-quantum or hybrid algorithms reported where the code or config has none. Each one makes migration look further along than it is. Any number above zero should be explained by the vendor before purchase.
 
@@ -110,7 +106,7 @@ Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 fi
 
 ## System fixture: routing and asset links
 
-**Routable: 9/14 detected system findings (64.3%)** (of 21). Routable means a reported location resolves, through the fixture's CODEOWNERS, to the team that owns the fix. Reporting only the shared wrapper or its config is detection, but the ticket lands with platform-security.
+**Routable: 16/21 detected system findings (76.2%)** (of 23). Routable means a reported location resolves, through the fixture's CODEOWNERS, to the team that owns the fix. Reporting only the shared wrapper or its config is detection, but the ticket lands with platform-security.
 
 | Finding | Owner | Reported locations route to |
 |---|---|---|
@@ -135,15 +131,15 @@ False positives in the bucket rows are those inside positive test files; negativ
 
 As of 2026-11-10. Each expected finding is dated under this policy; misses that fall due sooner weigh more.
 
-**Deadline-weighted recall: 66.8%** (at primary site: 64.2%). **Findings due by end of 2030 that this scanner missed: 43.**
+**Deadline-weighted recall: 81.6%** (at primary site: 79.0%). **Findings due by end of 2030 that this scanner missed: 25.**
 
 | When it's due | Weight | Detected | Recall | At primary site |
 |---|---|---|---|---|
-| Due now (not approved or past its date) | 5 | 67/99 | 67.7% | 65.7% |
-| Due by end of 2030 | 4 | 24/35 | 68.6% | 62.9% |
+| Due now (not approved or past its date) | 5 | 83/101 | 82.2% | 80.2% |
+| Due by end of 2030 | 4 | 31/38 | 81.6% | 76.3% |
 | Due 2031 to 2033 | 3 | 0/0 | n/a | n/a |
-| Due 2034 to 2035 | 2 | 72/108 | 66.7% | 63.9% |
-| No deadline (approved, review, out of scope, unknown) | 1 | 88/141 | 62.4% | 61.0% |
+| Due 2034 to 2035 | 2 | 94/110 | 85.5% | 82.7% |
+| No deadline (approved, review, out of scope, unknown) | 1 | 104/142 | 73.2% | 71.8% |
 
 | Missed | Algorithm | Due | File |
 |---|---|---|---|
@@ -152,10 +148,7 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T3-PY-02 | SHA-1 | 2030-12-31 | `corpus/tier3/python/cross_module_constant/tokens/fingerprint.py` |
 | T3-PY-08 | MD5 | **now** | `corpus/tier3/python/dependency_injection/wiring.py` |
 | T3-JV-06 | MD5 | **now** | `corpus/tier3/java/dependency_injection/src/com/acme/audit/DigestProvider.java` |
-| T4-AS-38 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier4/assets/tls/nginx.conf` |
 | T4-AS-44 | RSA-1024 | 2013-12-31 | `corpus/tier4/assets/tls/openssl.cnf` |
-| T4-AS-53 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier4/assets/tls/httpd-ssl.conf` |
-| T4-AS-58 | TLS_CHACHA20_POLY1305_SHA256 | **now** | `corpus/tier4/assets/tls/haproxy.cfg` |
 | T4-AS-65 | 3DES | 2023-12-31 | `corpus/tier4/assets/ipsec/ipsec.conf` |
 | T4-AS-66 | HMAC-SHA-1 | 2030-12-31 | `corpus/tier4/assets/ipsec/ipsec.conf` |
 | T4-AS-67 | DH-1024 | 2013-12-31 | `corpus/tier4/assets/ipsec/ipsec.conf` |
@@ -165,59 +158,44 @@ As of 2026-11-10. Each expected finding is dated under this policy; misses that 
 | T5-JV-02 | 3DES-CBC | 2023-12-31 | `corpus/tier5/java/T5StringAssembly.java` |
 | T5-JV-03 | MD5 | **now** | `corpus/tier5/java/T5Reflection.java` |
 | T5-JV-04 | TEA | **now** | `corpus/tier5/java/T5BlockTransform.java` |
-| T5-JS-01 | MD5 | **now** | `corpus/tier5/javascript/dist/session-tokens.min.js` |
-| T5-JS-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/session-tokens.min.js` |
-| T5-JS-04 | SHA-1 | 2030-12-31 | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
-| T5-JS-05 | HMAC-MD5 | **now** | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
-| T5-JS-06 | 3DES-CBC | 2023-12-31 | `corpus/tier5/javascript/dist/payments-sdk.min.js` |
-| T5-JS-08 | PBKDF2-HMAC-SHA-1 | 2030-12-31 | `corpus/tier5/javascript/dist/webhook-relay.min.js` |
-| T5-JS-10 | DH-1024 | 2013-12-31 | `corpus/tier5/javascript/dist/webhook-relay.min.js` |
-| T5-C-01 | MD5 | **now** | `corpus/tier5/c/bin/meterd` |
-| T5-C-02 | 3DES-CBC | 2023-12-31 | `corpus/tier5/c/bin/meterd` |
-| T5-C-03 | RSA-1024 | 2013-12-31 | `corpus/tier5/c/bin/meterd` |
-| T5-C-04 | SHA-1 | 2030-12-31 | `corpus/tier5/c/bin/keyd` |
-| T5-C-05 | HMAC-MD5 | **now** | `corpus/tier5/c/bin/keyd` |
-| T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/go/tls_config/main.go` |
 | T1-JS-01 | MD5 | **now** | `corpus/tier1/javascript/t1_hashes.js` |
 | T2-TS-01 | 3DES-CBC | 2023-12-31 | `corpus/tier2/typescript/t2_config_object.ts` |
 | T2-TS-02 | SHA-1 | 2030-12-31 | `corpus/tier2/typescript/t2_default_param.ts` |
-| T1-C-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | **now** | `corpus/tier1/c/t1_tls_ctx.c` |
 | T1-CS-01 | MD5 | **now** | `corpus/tier1/csharp/Hashes/Program.cs` |
 | T2-C-02 | SHA-1 | 2030-12-31 | `corpus/tier2/c/t2_digest_table.c` |
 | T2-C-03 | RSA-1024 | 2013-12-31 | `corpus/tier2/c/t2_macro_bits.c` |
 | T2-CS-02 | SHA-1 | 2030-12-31 | `corpus/tier2/csharp/HashByName/Program.cs` |
 | T2-CS-03 | MD5 | **now** | `corpus/tier2/csharp/DispatchTable/Program.cs` |
 | MX-C-2d | 3DES-CBC | 2023-12-31 | `corpus/mixed/c/policy_agent.c` |
-| SYS-AR-05 | SHA-1 | 2030-12-31 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` |
 | DC-JS-01 | MD5 | **now** | `corpus/deadcode/javascript/dead_paths.js` |
 
 ## Actionability: could an engineer open a ticket from this?
 
 Rubric `cbom-actionability-v1` (proposed; see `rubric/actionability.json`). Each detected finding is checked for the fields a migration ticket needs. Facts are checked against the real files.
 
-**Ticket-ready: 204/251 detected findings (81.3%)**, meaning every must-have is present and correct. **Actionable recall: 53.3%** of all 383 expected findings were both found and ticket-ready. Field completeness across all checks: 62.7%.
+**Ticket-ready: 273/312 detected findings (87.5%)**, meaning every must-have is present and correct. **Actionable recall: 69.8%** of all 391 expected findings were both found and ticket-ready. Field completeness across all checks: 65.6%.
 
 | Check | Tier | Applies to | Passed | Rate |
 |---|---|---|---|---|
-| Exact location | must | 251 | 249 | 99.2% |
-| Correct parameters | must | 172 | 149 | 86.6% |
-| Primitive, where the family is ambiguous | must | 60 | 48 | 80.0% |
+| Exact location | must | 312 | 310 | 99.4% |
+| Correct parameters | must | 191 | 168 | 88.0% |
+| Primitive, where the family is ambiguous | must | 68 | 56 | 82.4% |
 | Certificate expiry (correct) | must | 11 | 2 | 18.2% |
 | Certificate subject (correct) | must | 11 | 2 | 18.2% |
 | Key material type | must | 7 | 3 | 42.9% |
-| Protocol version | must | 8 | 0 | 0.0% |
-| OID | should | 236 | 74 | 31.4% |
-| Crypto functions | should | 243 | 243 | 100.0% |
-| Quantum security level (correct) | should | 241 | 155 | 64.3% |
+| Protocol version | must | 16 | 16 | 100.0% |
+| OID | should | 269 | 83 | 30.9% |
+| Crypto functions | should | 276 | 276 | 100.0% |
+| Quantum security level (correct) | should | 274 | 178 | 65.0% |
 | Code context | should | 99 | 0 | 0.0% |
-| Providing library | should | 99 | 0 | 0.0% |
+| Providing library | should | 107 | 0 | 0.0% |
 | Certificate issuer | should | 11 | 2 | 18.2% |
 | Certificate start date | should | 11 | 0 | 0.0% |
 | Certificate key and signature linked | should | 11 | 0 | 0.0% |
 | Key format | should | 7 | 0 | 0.0% |
-| Cipher suite in a protocol | should | 0 | 0 | n/a |
+| Cipher suite in a protocol | should | 20 | 20 | 100.0% |
 
-Detected but not ticket-ready (47), first 25:
+Detected but not ticket-ready (39), first 25:
 
 | ID | Algorithm | Missing must-haves |
 |---|---|---|
@@ -240,16 +218,16 @@ Detected but not ticket-ready (47), first 25:
 | T4-AS-18 | RSA-2048 | Primitive, where the family is ambiguous |
 | T4-AS-19 | ECC-P-256 | Primitive, where the family is ambiguous |
 | T4-AS-26 | RSA | Primitive, where the family is ambiguous |
-| T4-AS-34 | TLS-1.0 | Protocol version |
-| T4-AS-35 | TLS-1.1 | Protocol version |
-| T4-AS-36 | TLS-1.2 | Protocol version |
-| T4-AS-46 | TLS-1.0 | Protocol version |
 | T5-PY-04 | AES-128-ECB | Correct parameters |
 | PQ-AS-01 | ML-DSA-65 | Certificate expiry (correct), Certificate subject (correct) |
+| PQ-AS-02 | ML-DSA-87 | Certificate expiry (correct), Certificate subject (correct) |
+| PQ-AS-07 | ML-DSA-44 | Key material type |
+| T2-GO-06 | 3DES-CBC | Correct parameters |
+| T2-TS-04 | ECC-P-384 | Correct parameters |
 
 ## Outside declared scope: qci-pqc declared scope (docs/LIMITATIONS.md)
 
-29 expected findings fall outside what this scanner says it covers. They are not counted above. 4 were detected anyway.
+21 expected findings fall outside what this scanner says it covers. They are not counted above. 2 were detected anyway.
 
 | ID | Algorithm | File | Detected anyway | Why out of scope |
 |---|---|---|---|---|
@@ -267,19 +245,11 @@ Detected but not ticket-ready (47), first 25:
 | T4-AS-24 | RSA-1024 | `corpus/tier4/assets/keystores/partner_truststore.jks` | no | Binary Java keystore; scanner inspects PEM only |
 | T4-AS-25 | SHA-1 | `corpus/tier4/assets/keystores/partner_truststore.jks` | no | Binary Java keystore; scanner inspects PEM only |
 | T4-AS-48 | SHA-384 | `corpus/tier4/assets/k8s/ingress-tls-secret.yaml` | no | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
-| T5-PY-08 | SHA-1 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Binary scanning (LIMITATIONS: out of scope) |
-| T5-PY-09 | HMAC-MD5 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Binary scanning (LIMITATIONS: out of scope) |
-| T5-JV-06 | AES-128-CBC | `corpus/tier5/java/compiled/billing-core.jar` | yes | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| T5-JV-07 | RSA-1024 | `corpus/tier5/java/compiled/billing-core.jar` | yes | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| T5-JV-08 | SHA-1 | `corpus/tier5/java/compiled/billing-core.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| T5-JV-09 | DES-ECB | `corpus/tier5/java/compiled/token-vault.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| T5-JV-10 | SHA-1 | `corpus/tier5/java/compiled/token-vault.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| T5-JV-11 | ECC-P-256 | `corpus/tier5/java/compiled/token-vault.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
+| T5-PY-08 | SHA-1 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Compiled Python bytecode; the scanner reads Java class files and ELF binaries, not .pyc |
+| T5-PY-09 | HMAC-MD5 | `corpus/tier5/python/compiled/ledger_sync.pyc` | no | Compiled Python bytecode; the scanner reads Java class files and ELF binaries, not .pyc |
 | PQ-AS-04 | RSA | `corpus/pqc/assets/certs/migrated_leaf.pem` | yes | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
 | PQ-AS-05 | SHA-256 | `corpus/pqc/assets/certs/migrated_leaf.pem` | yes | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
 | SYS-PY-04 | SHA-1 | `corpus/system/payments-platform/services/settlement-worker/partner_ca.py` | no | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
-| SYS-AR-01 | EC | `corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
-| SYS-AR-02 | SHA-1 | `corpus/system/payments-platform/services/ledger-service/build/libs/ledger-service.jar` | no | Binary / JAR scanning (LIMITATIONS: out of scope) |
 | SYS-AS-05 | SHA-256 | `corpus/system/payments-platform/edge/nginx/tls/gateway.crt` | no | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
 | SYS-AS-08 | SHA-384 | `corpus/system/payments-platform/deploy/k8s/gateway-ingress-tls.yaml` | no | Certificate signature algorithm: full X.509 parsing is out of scope (LIMITATIONS) |
 
@@ -301,25 +271,8 @@ Detected but not ticket-ready (47), first 25:
 | T4-AS-29 | `corpus/tier4/assets/ssh/sshd_config` | AES {'key_size': 128, 'mode': 'CBC'} | 10 |
 | T4-AS-32 | `corpus/tier4/assets/ssh/ssh_host_rsa_key.pub` | RSA {'key_size': 2048} | file |
 | T4-AS-33 | `corpus/tier4/assets/ssh/deploy_id_ed25519` | Ed25519  | file |
-| T4-AS-37 | `corpus/tier4/assets/tls/nginx.conf` | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256  | 21 |
-| T4-AS-38 | `corpus/tier4/assets/tls/nginx.conf` | TLS_RSA_WITH_3DES_EDE_CBC_SHA  | 21 |
-| T4-AS-39 | `corpus/tier4/assets/tls/nginx.conf` | TLS_RSA_WITH_AES_256_CBC_SHA  | 21 |
-| T4-AS-40 | `corpus/tier4/assets/tls/application.yml` | TLS-1.1  | 13 |
-| T4-AS-41 | `corpus/tier4/assets/tls/application.yml` | TLS-1.2  | 13 |
-| T4-AS-42 | `corpus/tier4/assets/tls/application.yml` | TLS_RSA_WITH_AES_128_CBC_SHA  | 15 |
-| T4-AS-43 | `corpus/tier4/assets/tls/application.yml` | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384  | 16 |
 | T4-AS-44 | `corpus/tier4/assets/tls/openssl.cnf` | RSA {'key_size': 1024} | 16 |
 | T4-AS-47 | `corpus/tier4/assets/k8s/ingress-tls-secret.yaml` | EC {'curve': 'P-384'} | file |
-| T4-AS-49 | `corpus/tier4/assets/tls/httpd-ssl.conf` | TLS-1.1  | 14 |
-| T4-AS-50 | `corpus/tier4/assets/tls/httpd-ssl.conf` | TLS-1.2  | 14 |
-| T4-AS-51 | `corpus/tier4/assets/tls/httpd-ssl.conf` | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384  | 15 |
-| T4-AS-52 | `corpus/tier4/assets/tls/httpd-ssl.conf` | TLS_RSA_WITH_AES_128_CBC_SHA  | 15 |
-| T4-AS-53 | `corpus/tier4/assets/tls/httpd-ssl.conf` | TLS_RSA_WITH_3DES_EDE_CBC_SHA  | 15 |
-| T4-AS-54 | `corpus/tier4/assets/tls/haproxy.cfg` | TLS-1.1  | 6 |
-| T4-AS-55 | `corpus/tier4/assets/tls/haproxy.cfg` | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256  | 7 |
-| T4-AS-56 | `corpus/tier4/assets/tls/haproxy.cfg` | TLS_RSA_WITH_AES_256_CBC_SHA  | 7 |
-| T4-AS-57 | `corpus/tier4/assets/tls/haproxy.cfg` | TLS_AES_256_GCM_SHA384  | 8 |
-| T4-AS-58 | `corpus/tier4/assets/tls/haproxy.cfg` | TLS_CHACHA20_POLY1305_SHA256  | 8 |
 | T4-AS-60 | `corpus/tier4/assets/ipsec/swanctl.conf` | AES {'key_size': 256} | 7 |
 | T4-AS-61 | `corpus/tier4/assets/ipsec/swanctl.conf` | HMAC {'hash': 'SHA-256'} | 7 |
 | T4-AS-62 | `corpus/tier4/assets/ipsec/swanctl.conf` | DH {'key_size': 2048} | 7 |
@@ -338,28 +291,6 @@ Detected but not ticket-ready (47), first 25:
 | T5-JV-03 | `corpus/tier5/java/T5Reflection.java` | MD5  | 10 |
 | T5-JV-04 | `corpus/tier5/java/T5BlockTransform.java` | TEA  | 3 |
 | T5-JV-05 | `corpus/tier5/java/T5HandrolledPubkey.java` | RSA {'key_size': 2048} | 19 |
-| T5-JS-01 | `corpus/tier5/javascript/dist/session-tokens.min.js` | MD5  | 1 |
-| T5-JS-02 | `corpus/tier5/javascript/dist/session-tokens.min.js` | AES {'key_size': 128, 'mode': 'CBC'} | 1 |
-| T5-JS-03 | `corpus/tier5/javascript/dist/session-tokens.min.js` | RSA {'key_size': 1024} | 1 |
-| T5-JS-04 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | SHA-1  | 1 |
-| T5-JS-05 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | HMAC {'hash': 'MD5'} | 1 |
-| T5-JS-06 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | 3DES {'mode': 'CBC'} | 1 |
-| T5-JS-07 | `corpus/tier5/javascript/dist/payments-sdk.min.js` | EC {'curve': 'P-256'} | 1 |
-| T5-JS-08 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | PBKDF2 {'hash': 'SHA-1'} | 1 |
-| T5-JS-09 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | AES {'key_size': 256, 'mode': 'GCM'} | 1 |
-| T5-JS-10 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | DH {'key_size': 1024} | 1 |
-| T5-JS-11 | `corpus/tier5/javascript/dist/webhook-relay.min.js` | Ed25519  | 1 |
-| T5-C-01 | `corpus/tier5/c/bin/meterd` | MD5  | file |
-| T5-C-02 | `corpus/tier5/c/bin/meterd` | 3DES {'mode': 'CBC'} | file |
-| T5-C-03 | `corpus/tier5/c/bin/meterd` | RSA {'key_size': 1024} | file |
-| T5-C-04 | `corpus/tier5/c/bin/keyd` | SHA-1  | file |
-| T5-C-05 | `corpus/tier5/c/bin/keyd` | HMAC {'hash': 'MD5'} | file |
-| T5-C-06 | `corpus/tier5/c/bin/keyd` | AES {'key_size': 256, 'mode': 'GCM'} | file |
-| T5-C-07 | `corpus/tier5/c/bin/keyd` | EC {'curve': 'P-256'} | file |
-| T5-C-08 | `corpus/tier5/c/bin/fwcheck` | SHA-512  | file |
-| T5-C-09 | `corpus/tier5/c/bin/fwcheck` | AES {'key_size': 128, 'mode': 'ECB'} | file |
-| T5-C-10 | `corpus/tier5/c/bin/fwcheck` | DH {'key_size': 2048} | file |
-| T5-C-11 | `corpus/tier5/c/bin/fwcheck` | X25519  | file |
 | PQ-PY-07 | `corpus/pqc/python/firmware_verify_lms.py` | LMS  | 12 |
 | PQ-JV-05 | `corpus/pqc/java/FirmwareSignLms.java` | LMS  | 19 |
 | PQ-JV-06 | `corpus/pqc/java/UpdateSignXmss.java` | XMSS  | 16 |
@@ -370,12 +301,7 @@ Detected but not ticket-ready (47), first 25:
 | PQ-AS-26 | `corpus/pqc/assets/firmware/signing-policy.yaml` | XMSS  | 13 |
 | PQ-AS-27 | `corpus/pqc/assets/firmware/signing-policy.yaml` | EC {'curve': 'P-384'} | 18 |
 | T1-GO-04 | `corpus/tier1/go/hashes/main.go` | SHA3-256  | 17 |
-| T1-GO-17 | `corpus/tier1/go/tls_config/main.go` | TLS-1.0  | 11 |
-| T1-GO-18 | `corpus/tier1/go/tls_config/main.go` | TLS_RSA_WITH_3DES_EDE_CBC_SHA  | 13 |
-| T1-GO-19 | `corpus/tier1/go/tls_config/main.go` | TLS_RSA_WITH_AES_128_CBC_SHA  | 14 |
-| T1-GO-20 | `corpus/tier1/go/tls_config/main.go` | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256  | 15 |
 | T2-GO-03 | `corpus/tier2/go/curve_table/main.go` | EC {'curve': 'P-384'} | 12 |
-| PQ-GO-02 | `corpus/pqc/go/tls_hybrid/main.go` | TLS-1.3  | 11 |
 | PQ-GO-03 | `corpus/pqc/go/tls_hybrid/main.go` | X25519MLKEM768  | 12 |
 | PQ-GO-04 | `corpus/pqc/go/tls_hybrid/main.go` | X25519  | 12 |
 | T1-JS-01 | `corpus/tier1/javascript/t1_hashes.js` | MD5  | 5 |
@@ -386,10 +312,6 @@ Detected but not ticket-ready (47), first 25:
 | T2-TS-06 | `corpus/tier2/typescript/t2_template.ts` | AES {'key_size': 256, 'mode': 'GCM'} | 4 |
 | T1-C-04 | `corpus/tier1/c/t1_digests.c` | SHA3-256  | 18 |
 | T1-C-12 | `corpus/tier1/c/t1_modern_curves.c` | Ed25519  | 6 |
-| T1-C-17 | `corpus/tier1/c/t1_tls_ctx.c` | TLS-1.0  | 7 |
-| T1-C-18 | `corpus/tier1/c/t1_tls_ctx.c` | TLS_RSA_WITH_3DES_EDE_CBC_SHA  | 8 |
-| T1-C-19 | `corpus/tier1/c/t1_tls_ctx.c` | TLS_RSA_WITH_AES_128_CBC_SHA  | 8 |
-| T1-C-20 | `corpus/tier1/c/t1_tls_ctx.c` | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256  | 8 |
 | T1-CS-01 | `corpus/tier1/csharp/Hashes/Program.cs` | MD5  | 9 |
 | T1-CS-03 | `corpus/tier1/csharp/Hashes/Program.cs` | SHA-256  | 11 |
 | T1-CS-04 | `corpus/tier1/csharp/Hashes/Program.cs` | SHA3-256  | 12 |
@@ -411,11 +333,6 @@ Detected but not ticket-ready (47), first 25:
 | MX-C-2b | `corpus/mixed/c/policy_agent.c` | AES {'key_size': 192, 'mode': 'CBC'} | 10 |
 | MX-C-2d | `corpus/mixed/c/policy_agent.c` | 3DES {'mode': 'CBC'} | 11 |
 | MX-C-3a | `corpus/mixed/c/audit_daemon.c` | AES {'key_size': 192, 'mode': 'CBC'} | 8 |
-| SYS-AR-03 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | RSA  | file |
-| SYS-AR-05 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | SHA-1  | file |
-| SYS-AR-06 | `corpus/system/payments-platform/services/api-gateway/bin/api-gateway` | SHA-256  | file |
-| SYS-AS-02 | `corpus/system/payments-platform/edge/nginx/gateway.conf` | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384  | 9 |
-| SYS-AS-03 | `corpus/system/payments-platform/edge/nginx/gateway.conf` | TLS_RSA_WITH_AES_128_CBC_SHA  | 9 |
 | SYS-AS-07 | `corpus/system/payments-platform/deploy/k8s/gateway-ingress-tls.yaml` | EC {'curve': 'P-384'} | file |
 | SYS-AS-11 | `corpus/system/payments-platform/infra/terraform/kms.tf` | AES {'key_size': 256, 'mode': 'GCM'} | 15 |
 | DC-JS-01 | `corpus/deadcode/javascript/dead_paths.js` | MD5  | 5 |
@@ -572,6 +489,8 @@ None.
 - `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-135
 - `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-136
 - `corpus/tier4/assets/tls/nginx.conf` line 21: qci-category-137
+- `corpus/tier5/javascript/dist/session-tokens.min.js` line 1: qci-category-138
+- `corpus/tier5/javascript/dist/webhook-relay.min.js` line 1: qci-category-139
 
 ## Crypto libraries (dependency manifests)
 
@@ -712,27 +631,27 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T4-AS-34 | TLS-1.0 | yes | yes | yes | yes | n/a |
 | T4-AS-35 | TLS-1.1 | yes | yes | yes | yes | n/a |
 | T4-AS-36 | TLS-1.2 | yes | yes | yes | yes | n/a |
-| T4-AS-37 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | NO | NO | n/a | n/a | n/a |
-| T4-AS-38 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-39 | TLS_RSA_WITH_AES_256_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-40 | TLS-1.1 | NO | NO | n/a | n/a | n/a |
-| T4-AS-41 | TLS-1.2 | NO | NO | n/a | n/a | n/a |
-| T4-AS-42 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-43 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | NO | NO | n/a | n/a | n/a |
+| T4-AS-37 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
+| T4-AS-38 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-39 | TLS_RSA_WITH_AES_256_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-40 | TLS-1.1 | yes | yes | yes | yes | n/a |
+| T4-AS-41 | TLS-1.2 | yes | yes | yes | yes | n/a |
+| T4-AS-42 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-43 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
 | T4-AS-44 | RSA | NO | NO | n/a | n/a | n/a |
 | T4-AS-45 | SHA-1 | yes | yes | yes | yes | yes |
 | T4-AS-46 | TLS-1.0 | yes | yes | yes | yes | n/a |
 | T4-AS-47 | EC | NO | NO | n/a | n/a | n/a |
-| T4-AS-49 | TLS-1.1 | NO | NO | n/a | n/a | n/a |
-| T4-AS-50 | TLS-1.2 | NO | NO | n/a | n/a | n/a |
-| T4-AS-51 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | NO | NO | n/a | n/a | n/a |
-| T4-AS-52 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-53 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-54 | TLS-1.1 | NO | NO | n/a | n/a | n/a |
-| T4-AS-55 | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | NO | NO | n/a | n/a | n/a |
-| T4-AS-56 | TLS_RSA_WITH_AES_256_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T4-AS-57 | TLS_AES_256_GCM_SHA384 | NO | NO | n/a | n/a | n/a |
-| T4-AS-58 | TLS_CHACHA20_POLY1305_SHA256 | NO | NO | n/a | n/a | n/a |
+| T4-AS-49 | TLS-1.1 | yes | yes | yes | yes | n/a |
+| T4-AS-50 | TLS-1.2 | yes | yes | yes | yes | n/a |
+| T4-AS-51 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| T4-AS-52 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-53 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-54 | TLS-1.1 | yes | yes | yes | yes | n/a |
+| T4-AS-55 | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
+| T4-AS-56 | TLS_RSA_WITH_AES_256_CBC_SHA | yes | yes | yes | yes | n/a |
+| T4-AS-57 | TLS_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| T4-AS-58 | TLS_CHACHA20_POLY1305_SHA256 | yes | yes | yes | yes | n/a |
 | T4-AS-59 | DH | yes | yes | yes | yes | yes |
 | T4-AS-60 | AES | NO | NO | n/a | n/a | n/a |
 | T4-AS-61 | HMAC | NO | NO | n/a | n/a | n/a |
@@ -755,28 +674,34 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T5-JV-03 | MD5 | NO | NO | n/a | n/a | n/a |
 | T5-JV-04 | TEA | NO | NO | n/a | n/a | n/a |
 | T5-JV-05 | RSA | NO | NO | n/a | n/a | n/a |
-| T5-JS-01 | MD5 | NO | NO | n/a | n/a | n/a |
-| T5-JS-02 | AES | NO | NO | n/a | n/a | n/a |
-| T5-JS-03 | RSA | NO | NO | n/a | n/a | n/a |
-| T5-JS-04 | SHA-1 | NO | NO | n/a | n/a | n/a |
-| T5-JS-05 | HMAC | NO | NO | n/a | n/a | n/a |
-| T5-JS-06 | 3DES | NO | NO | n/a | n/a | n/a |
-| T5-JS-07 | EC | NO | NO | n/a | n/a | n/a |
-| T5-JS-08 | PBKDF2 | NO | NO | n/a | n/a | n/a |
-| T5-JS-09 | AES | NO | NO | n/a | n/a | n/a |
-| T5-JS-10 | DH | NO | NO | n/a | n/a | n/a |
-| T5-JS-11 | Ed25519 | NO | NO | n/a | n/a | n/a |
-| T5-C-01 | MD5 | NO | NO | n/a | n/a | n/a |
-| T5-C-02 | 3DES | NO | NO | n/a | n/a | n/a |
-| T5-C-03 | RSA | NO | NO | n/a | n/a | n/a |
-| T5-C-04 | SHA-1 | NO | NO | n/a | n/a | n/a |
-| T5-C-05 | HMAC | NO | NO | n/a | n/a | n/a |
-| T5-C-06 | AES | NO | NO | n/a | n/a | n/a |
-| T5-C-07 | EC | NO | NO | n/a | n/a | n/a |
-| T5-C-08 | SHA-512 | NO | NO | n/a | n/a | n/a |
-| T5-C-09 | AES | NO | NO | n/a | n/a | n/a |
-| T5-C-10 | DH | NO | NO | n/a | n/a | n/a |
-| T5-C-11 | X25519 | NO | NO | n/a | n/a | n/a |
+| T5-JV-06 | AES | yes | yes | yes | n/a | n/a |
+| T5-JV-07 | RSA | yes | yes | yes | n/a | yes |
+| T5-JV-08 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-JV-09 | DES | yes | yes | yes | n/a | yes |
+| T5-JV-10 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-JV-11 | EC | yes | yes | yes | n/a | yes |
+| T5-JS-01 | MD5 | yes | yes | yes | yes | yes |
+| T5-JS-02 | AES | yes | yes | yes | yes | n/a |
+| T5-JS-03 | RSA | yes | yes | yes | yes | yes |
+| T5-JS-04 | SHA-1 | yes | yes | yes | yes | yes |
+| T5-JS-05 | HMAC | yes | yes | yes | yes | n/a |
+| T5-JS-06 | 3DES | yes | yes | yes | yes | yes |
+| T5-JS-07 | EC | yes | yes | yes | yes | yes |
+| T5-JS-08 | PBKDF2 | yes | yes | yes | yes | n/a |
+| T5-JS-09 | AES | yes | yes | yes | yes | n/a |
+| T5-JS-10 | DH | yes | yes | yes | yes | yes |
+| T5-JS-11 | Ed25519 | yes | yes | yes | yes | yes |
+| T5-C-01 | MD5 | yes | yes | yes | n/a | yes |
+| T5-C-02 | 3DES | yes | yes | yes | n/a | yes |
+| T5-C-03 | RSA | yes | yes | yes | n/a | yes |
+| T5-C-04 | SHA-1 | yes | yes | yes | n/a | yes |
+| T5-C-05 | HMAC | yes | yes | yes | n/a | n/a |
+| T5-C-06 | AES | yes | yes | yes | n/a | n/a |
+| T5-C-07 | EC | yes | yes | yes | n/a | yes |
+| T5-C-08 | SHA-512 | yes | yes | yes | n/a | n/a |
+| T5-C-09 | AES | yes | yes | yes | n/a | n/a |
+| T5-C-10 | DH | yes | yes | yes | n/a | yes |
+| T5-C-11 | X25519 | yes | yes | yes | n/a | yes |
 | PQ-PY-01 | ML-KEM | yes | yes | yes | yes | n/a |
 | PQ-PY-02 | ML-DSA | yes | yes | yes | yes | n/a |
 | PQ-PY-03 | X25519 | yes | yes | yes | yes | yes |
@@ -831,10 +756,10 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T1-GO-14 | DSA | yes | yes | yes | yes | yes |
 | T1-GO-15 | HMAC | yes | yes | yes | yes | n/a |
 | T1-GO-16 | PBKDF2 | yes | yes | yes | yes | n/a |
-| T1-GO-17 | TLS-1.0 | NO | NO | n/a | n/a | n/a |
-| T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T1-GO-19 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T1-GO-20 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | NO | NO | n/a | n/a | n/a |
+| T1-GO-17 | TLS-1.0 | yes | yes | yes | yes | n/a |
+| T1-GO-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
+| T1-GO-19 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| T1-GO-20 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
 | T2-GO-01 | SHA-1 | yes | yes | yes | yes | yes |
 | T2-GO-02 | RSA | yes | yes | yes | yes | yes |
 | T2-GO-03 | EC | NO | NO | n/a | n/a | n/a |
@@ -842,7 +767,7 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T2-GO-05 | AES | yes | yes | yes | yes | n/a |
 | T2-GO-06 | 3DES | yes | yes | NO | yes | yes |
 | PQ-GO-01 | ML-KEM | yes | yes | yes | yes | yes |
-| PQ-GO-02 | TLS-1.3 | NO | NO | n/a | n/a | n/a |
+| PQ-GO-02 | TLS-1.3 | yes | yes | yes | yes | n/a |
 | PQ-GO-03 | X25519MLKEM768 | NO | NO | n/a | n/a | n/a |
 | PQ-GO-04 | X25519 | NO | NO | n/a | n/a | n/a |
 | T1-JS-01 | MD5 | NO | NO | n/a | n/a | n/a |
@@ -885,10 +810,10 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | T1-C-14 | DH | yes | yes | yes | yes | yes |
 | T1-C-15 | HMAC | yes | yes | yes | yes | n/a |
 | T1-C-16 | PBKDF2 | yes | yes | yes | yes | n/a |
-| T1-C-17 | TLS-1.0 | NO | NO | n/a | n/a | n/a |
-| T1-C-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T1-C-19 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
-| T1-C-20 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | NO | NO | n/a | n/a | n/a |
+| T1-C-17 | TLS-1.0 | yes | yes | yes | yes | n/a |
+| T1-C-18 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | yes | yes | yes | yes | n/a |
+| T1-C-19 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
+| T1-C-20 | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | yes | yes | yes | yes | n/a |
 | T1-CS-01 | MD5 | NO | NO | n/a | n/a | n/a |
 | T1-CS-02 | SHA-1 | yes | yes | yes | yes | yes |
 | T1-CS-03 | SHA-256 | NO | NO | n/a | n/a | n/a |
@@ -984,13 +909,15 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 | SYS-PY-03 | RSA | yes | yes | yes | n/a | yes |
 | SYS-JV-01 | EC | yes | NO | NO | yes | yes |
 | SYS-JV-02 | SHA-1 | yes | yes | yes | yes | yes |
-| SYS-AR-03 | RSA | NO | NO | n/a | n/a | n/a |
+| SYS-AR-01 | EC | yes | yes | yes | n/a | yes |
+| SYS-AR-02 | SHA-1 | yes | yes | yes | n/a | yes |
+| SYS-AR-03 | RSA | yes | yes | yes | n/a | yes |
 | SYS-AR-04 | HMAC | yes | yes | yes | n/a | n/a |
-| SYS-AR-05 | SHA-1 | NO | NO | n/a | n/a | n/a |
-| SYS-AR-06 | SHA-256 | NO | NO | n/a | n/a | n/a |
+| SYS-AR-05 | SHA-1 | yes | yes | yes | n/a | yes |
+| SYS-AR-06 | SHA-256 | yes | yes | yes | n/a | n/a |
 | SYS-AS-01 | TLS-1.2 | yes | yes | yes | yes | n/a |
-| SYS-AS-02 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | NO | NO | n/a | n/a | n/a |
-| SYS-AS-03 | TLS_RSA_WITH_AES_128_CBC_SHA | NO | NO | n/a | n/a | n/a |
+| SYS-AS-02 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | yes | yes | yes | yes | n/a |
+| SYS-AS-03 | TLS_RSA_WITH_AES_128_CBC_SHA | yes | yes | yes | yes | n/a |
 | SYS-AS-04 | RSA | yes | yes | yes | n/a | yes |
 | SYS-AS-06 | RSA | yes | yes | NO | n/a | yes |
 | SYS-AS-07 | EC | NO | NO | n/a | n/a | n/a |
@@ -1012,9 +939,9 @@ Missed, with a support problem: org.bouncycastle:bcprov-jdk15on, bcpkix-jdk15on 
 
 QCI reports many findings as risk categories (`DH/ECDH`, `SSH-Weak-Cipher`, `Hybrid-KEM`) rather than specific algorithms. Those aren't credited in the strict score above. Here they are credited when a category sits on the line (±1) of an expected finding it plausibly describes.
 
-- Strict detections: **251/383** (65.5%)
-- Additional findings covered only by a category signal: **14**
-- Combined coverage: **265/383** (69.2%)
+- Strict detections: **312/391** (79.8%)
+- Additional findings covered only by a category signal: **10**
+- Combined coverage: **322/391** (82.4%)
 - Category signals emitted: 74; matching no expected finding: 30
 
 | Category | Expected findings it covers |
