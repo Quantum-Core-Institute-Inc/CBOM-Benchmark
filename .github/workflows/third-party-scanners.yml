@@ -144,6 +144,12 @@ jobs:
                     "| types:", dict(collections.Counter(c.get("type") for c in comps)))
               for c in comps[:3]:
                   print("   ", json.dumps(c)[:900])
+              # A component the scanner itself couldn't name: everything it did say about it.
+              for c in comps:
+                  if "unknown" in (c.get("name") or "").lower():
+                      occ = (c.get("evidence") or {}).get("occurrences") or []
+                      slim = dict(c, evidence={"occurrences": occ[:4], "total": len(occ)})
+                      print("    unnamed:", json.dumps(slim)[:2500])
           PY
           # The reading a person does before a result is published, in the job log: the scorecard, the
           # names the normalizer couldn't classify (a naming mismatch scores as a miss, and an adapter
