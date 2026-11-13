@@ -182,7 +182,7 @@ jobs:
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
             --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 --adapter "${{ matrix.adapter || 'none' }}" \
             --cbom "${{ matrix.output || 'cbom.json' }}" --timeout "${{ matrix.timeout || '1800' }}" \
-            --without-holdout --remediation --repeat --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
+            --without-holdout --remediation --drift --repeat --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
       - name: The bundle re-derives

@@ -1,0 +1,29 @@
+{
+  "note": "Injected changes for change detection (METHODOLOGY.md 4e). Each one replaces, adds or deletes a corpus file; drift/after/<same path> holds the file as it is afterwards. Three kinds: an algorithm that appears (add), one that goes away (remove), and one replaced by something weaker (downgrade). The scanner scans the corpus before and after, and a change is seen when the difference between its two reports shows it. Every after-file runs (tools/test_drift.py).",
+  "changes": [
+    {"id": "DRIFT-ADD-01", "kind": "add", "title": "Python: a new file that uses MD5",
+     "file": "corpus/tier1/python/t1_export_digest.py", "tier": 1, "lang": "python", "retires": [],
+     "adds": [{"family": "MD5", "params": {}, "anchors": ["hashlib.md5(manifest)"]}]},
+    {"id": "DRIFT-ADD-02", "kind": "add", "title": "Go: 3DES-CBC appears in a file that only signed",
+     "file": "corpus/tier1/go/ed25519/main.go", "retires": [],
+     "adds": [{"family": "3DES", "params": {"mode": "CBC"}, "anchors": ["des.NewTripleDESCipher(archiveKey)", "cipher.NewCBCEncrypter(archiveBlock"]}]},
+    {"id": "DRIFT-ADD-03", "kind": "add", "title": "Java: AES-256-GCM appears next to DSA signing",
+     "file": "corpus/tier1/java/T1Dsa.java", "retires": [],
+     "adds": [{"family": "AES", "params": {"key_size": 256, "mode": "GCM"}, "anchors": ["Cipher.getInstance(\"AES/GCM/NoPadding\")", "KeyGenerator.getInstance(\"AES\")"]}]},
+    {"id": "DRIFT-REMOVE-01", "kind": "remove", "title": "C#: 3DES removed, the file stays",
+     "file": "corpus/tier1/csharp/TripleDesLegacy/Program.cs", "retires": ["T1-CS-10"], "adds": []},
+    {"id": "DRIFT-REMOVE-02", "kind": "remove", "title": "Go: RC4 removed, the file stays",
+     "file": "corpus/tier1/go/rc4/main.go", "retires": ["T1-GO-09"], "adds": []},
+    {"id": "DRIFT-REMOVE-03", "kind": "remove", "title": "Python: the file that used DSA-2048 is deleted",
+     "file": "corpus/tier1/python/t1_dsa.py", "delete": true, "retires": ["T1-PY-07"], "adds": []},
+    {"id": "DRIFT-DOWN-01", "kind": "downgrade", "title": "Python: AES-256-GCM -> 3DES-CBC",
+     "file": "corpus/tier1/python/t1_aes_gcm.py", "retires": ["T1-PY-09"],
+     "adds": [{"family": "3DES", "params": {"mode": "CBC"}, "anchors": ["TripleDES(key)"]}]},
+    {"id": "DRIFT-DOWN-02", "kind": "downgrade", "title": "C: RSA-3072 -> RSA-1024",
+     "file": "corpus/tier1/c/t1_rsa_evp.c", "retires": ["T1-C-10"],
+     "adds": [{"family": "RSA", "params": {"key_size": 1024}, "anchors": ["EVP_PKEY_CTX_new_id(EVP_PKEY_RSA, NULL)", "EVP_PKEY_CTX_set_rsa_keygen_bits(ctx, 1024)"]}]},
+    {"id": "DRIFT-DOWN-03", "kind": "downgrade", "title": "JavaScript: AES-256-GCM -> AES-128-ECB",
+     "file": "corpus/tier1/javascript/t1_aes_gcm.js", "retires": ["T1-JS-06"],
+     "adds": [{"family": "AES", "params": {"key_size": 128, "mode": "ECB"}, "anchors": ["createCipheriv(\"aes-128-ecb\""]}]}
+  ]
+}
