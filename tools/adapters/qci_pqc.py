@@ -1,4 +1,4 @@
-"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), last checked against version 2.3.4.1.
+"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), last checked against version 2.3.4.3.
 
 The scanner writes a schema-valid CycloneDX 1.6 CBOM (cbom.json). Its component names fall into
 two kinds, and this adapter treats them differently on purpose:
@@ -24,8 +24,8 @@ from cbomlib import FAMILIES
 
 from . import common
 
-ADAPTER_VERSION = "1.1"
-BUILT_FOR = "qci-pqc-scan 2.3.4.1"
+ADAPTER_VERSION = "1.2"
+BUILT_FOR = "qci-pqc-scan 2.3.4.3"
 
 # QCI family name -> testbench algorithm name (scored strictly).
 EXACT = {
@@ -45,6 +45,9 @@ EXACT = {
     "HmacSHA512": "HmacSHA512", "PBKDF2": "PBKDF2", "PBKDF2-SHA-1": "PBKDF2-SHA1", "PBKDF2-SHA-256": "PBKDF2-SHA256",
     "PBKDF2-SHA-384": "PBKDF2-SHA384", "PBKDF2-SHA-512": "PBKDF2-SHA512", "PBKDF2-MD5": "PBKDF2-MD5",
     "HMAC-MD5": "HMAC-MD5", "HMAC-SHA-224": "HMAC-SHA224",
+    # The scanner has reported RC4 under this name since before 2.3.4.1 and the table lacked it, so
+    # its RC4 detections scored as misses. Added in adapter 1.2.
+    "RC4": "RC4",
     "SHA-384": "SHA-384", "TLS-1.0": "TLS-1.0", "TLS-1.1": "TLS-1.1", "TLS-1.2": "TLS-1.2", "TLS-1.3": "TLS-1.3",
     "X25519MLKEM768": "X25519MLKEM768", "SecP256r1MLKEM768": "SecP256r1MLKEM768",
     "SecP384r1MLKEM1024": "SecP384r1MLKEM1024", "sntrup761x25519": "sntrup761x25519",

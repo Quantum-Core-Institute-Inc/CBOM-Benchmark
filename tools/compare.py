@@ -2,7 +2,7 @@
 """Compare scanners side by side on the shipped corpus.
 
   python tools/compare.py \\
-      --scanner "QCI v2.3.4.1=reports/qci-pqc/scorecard-full.json" \\
+      --scanner "QCI v2.3.4.3=reports/qci-pqc/scorecard-full.json" \\
       --scanner "cdxgen 12.9.1=reports/cdxgen/scorecard.json" \\
       --baseline "grep baseline=reports/baseline_grep.json" \\
       --out reports/comparison
