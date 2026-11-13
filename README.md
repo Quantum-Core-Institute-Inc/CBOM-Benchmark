@@ -7,9 +7,9 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Methodology 2.3](https://img.shields.io/badge/methodology-2.3-informational.svg)](METHODOLOGY.md)
 
-**Version:** 2.6.4 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
+**Version:** 2.6.4.1 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
 
-2.6.4 is a repair release: every published number was measured again on this release's own code, the holdout generator runs again, and config completeness measures something. See [CHANGELOG.md](CHANGELOG.md).
+2.6.4.1 adds cryptoscan 1.5.0 and qScan 0.12.0 to the published comparison; nothing was rescored. 2.6.4 is a repair release: every published number was measured again on this release's own code, the holdout generator runs again, and config completeness measures something. See [CHANGELOG.md](CHANGELOG.md).
 
 [Release notes](CHANGELOG.md) · [Methodology](METHODOLOGY.md) · [Versioning](VERSIONING.md) · [Parameter cheat-sheet](PARAMETER_CHEATSHEET.md) · [Results](reports/comparison.md) · [Evidence](evidence/) · [Holdout sets](HOLDOUT.md) · [Bring your own code](BYOC.md)
 

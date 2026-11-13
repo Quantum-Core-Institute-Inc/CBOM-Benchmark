@@ -53,6 +53,8 @@ def main() -> int:
         print("\nThese can't be restamped. Run tools/release_run.sh to measure them again.")
         return 1
     print(f"Every published scorecard, gate file and evidence bundle was measured on release {cur['release']}.")
+    if release.REVISION:
+        print(f"Published as {release.PUBLISHED}: results revision {release.REVISION} of {cur['release']}, nothing rescored.")
     return 0
 
 

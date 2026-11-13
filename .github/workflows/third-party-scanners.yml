@@ -144,6 +144,38 @@ jobs:
                     "| types:", dict(collections.Counter(c.get("type") for c in comps)))
               for c in comps[:3]:
                   print("   ", json.dumps(c)[:900])
+              # A component the scanner itself couldn't name: everything it did say about it.
+              for c in comps:
+                  if "unknown" in (c.get("name") or "").lower():
+                      occ = (c.get("evidence") or {}).get("occurrences") or []
+                      slim = dict(c, evidence={"occurrences": occ[:4], "total": len(occ)})
+                      print("    unnamed:", json.dumps(slim)[:2500])
+          PY
+          # The reading a person does before a result is published, in the job log: the scorecard, the
+          # names the normalizer couldn't classify (a naming mismatch scores as a miss, and an adapter
+          # fixes it), and where the false positives are.
+          echo "--- scorecard.md"; cat "$B/scorecard.md" 2>/dev/null || echo "(no scorecard)"
+          python3 - "$B" <<'PY'
+          import collections, json, sys
+          try:
+              rep = json.load(open(sys.argv[1] + "/scorecard.json"))
+          except Exception as e:
+              print("no scorecard.json:", e); sys.exit(0)
+          un = rep.get("unrecognized") or []
+          print("--- unrecognized names:", len(un), "occurrences")
+          for name, n in collections.Counter(u["name"] for u in un).most_common(60):
+              print(f"   {n:4d}  {name!r}")
+          print("--- unlocated components:", rep.get("unlocated_components"), "| out of scope:", rep.get("out_of_scope_occurrences"))
+          fps = rep.get("false_positives") or []
+          print("--- false positives:", len(fps), "| in negative controls:", sum(1 for f in fps if f.get("negative_control")))
+          for fam, n in collections.Counter(f["family"] for f in fps).most_common(30):
+              print(f"   {n:4d}  {fam}")
+          for d, n in collections.Counter("/".join(f["file"].split("/")[:3]) for f in fps).most_common(15):
+              print(f"   {n:4d}  under {d}")
+          hits = collections.Counter(r["family"] for r in rep.get("results", []) if r.get("detected"))
+          miss = collections.Counter(r["family"] for r in rep.get("results", []) if not r.get("detected"))
+          print("--- detected by family:", dict(hits.most_common(40)))
+          print("--- missed by family:", dict(miss.most_common(40)))
           PY
 
       - uses: actions/upload-artifact@v4

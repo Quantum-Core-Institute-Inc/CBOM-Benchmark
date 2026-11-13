@@ -19,6 +19,10 @@ cd "$(dirname "$0")/.."
 : "${QCI_BIN:?set QCI_BIN to the qci-pqc executable}"
 : "${CDXGEN_BIN:?set CDXGEN_BIN to the cbom executable that cdxgen installs}"
 : "${CBOM_HOLDOUT_SEED:?set CBOM_HOLDOUT_SEED (the private holdout seed)}"
+# A measured release starts at revision 0; REVISION counts results added afterwards without rescoring.
+if [ "$(cat REVISION 2>/dev/null || echo 0)" != "0" ]; then
+  echo "REVISION is $(cat REVISION): bump VERSION and set REVISION to 0 before measuring a release." >&2; exit 1
+fi
 SEED="$CBOM_HOLDOUT_SEED"
 unset CBOM_HOLDOUT_SEED   # only the scanner runs below get it; the benchmark's own tests must not
 LOGS="${LOGS:-$(mktemp -d)}"; mkdir -p "$LOGS"

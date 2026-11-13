@@ -13,7 +13,7 @@ Open-source CBOM scanners that QCI doesn't maintain, run against the corpus by
 | qScan | 0.12.0 | npm `@quantakrypto/qscan` | `qscan {corpus} --cbom -o {out}/cbom.json` | CycloneDX 1.6 CBOM |
 
 The commands were written from each package's command-line definition and all three run to
-completion in the sandbox. First results on benchmark 2.4.0 (393 findings, no adapter, no declared
+completion in the sandbox. First results, on benchmark 2.4.0 (393 findings, no adapter, no declared
 scope, nobody has read the bundles yet):
 
 | Scanner | Recall | Precision | Parameters correct | Verified migrations |
@@ -27,22 +27,37 @@ normalizer doesn't know scores low here for a reason an adapter would fix, and n
 been checked for that.
 
 cryptoscan and qScan are the two open scanners chosen for the leaderboard, next to QCI PQC (the
-reference product), cdxgen (existing baseline) and grep (calibration baseline). Both ran for the
-first time on benchmark 2.6.4 (410 findings). First results, raw and unread:
+reference product), cdxgen (existing baseline) and grep (calibration baseline). Both were measured on
+benchmark 2.6.4 (410 findings). Their bundles were verified and read on 13 Nov 2026, are committed
+as `evidence/cryptoscan-1.5.0` and `evidence/qscan-0.12.0`, and both are columns in
+`reports/comparison.md`.
 
-| Scanner | Recall | Precision | Parameters correct | Adapter |
-|---|---|---|---|---|
-| cryptoscan 1.5.0 | 34.6% | 59.2% | 37.3% | none |
-| qScan 0.12.0 | 18.3% | 83.3% | 17.3% | `tools/adapters/qscan.py` |
+| Scanner | Recall | Precision | Parameters correct | False positives | Adapter |
+|---|---|---|---|---|---|
+| cryptoscan 1.5.0 | 34.6% | 59.2% | 37.3% | 98, 26 in negative controls | none |
+| qScan 0.12.0 | 18.3% | 83.3% | 17.3% | 15, 1 in negative controls | `tools/adapters/qscan.py` |
 
-qScan needs its adapter to be scored at all. It names components `DH (key-agree)` and writes
-locations as `path/File.java:12`; the scorer reads plain names and a separate line field, so without
-the adapter 22 located components scored zero. The adapter strips the suffix and splits the line,
-and nothing else. qScan skips minified files unless given `--scan-minified`; the workflow runs it
-with its defaults. `tools/adapters/cryptoscan.py` is still a pass-through and isn't registered:
-cryptoscan's output scores without one.
+What reading them found:
 
-## Why they aren't in the comparison yet
+- **cryptoscan** scores without an adapter. Of its 90 unrecognized occurrences, most are rule labels
+  and not algorithms (`Hardcoded Key Size`, `TLS`, `Private Key Header`). It reports `SHA-3` with no
+  output size 19 times and `Hybrid-KEM` 4 times; the answer key expects `SHA3-256` and a named
+  hybrid group, and an adapter can't supply a detail the scanner didn't report. It has 18 PQC
+  over-claims.
+- **qScan** needs its adapter to be scored at all. It names components `DH (key-agree)` and writes
+  locations as `path/File.java:12`; the adapter strips the suffix and splits the line, and nothing
+  else. It reports asymmetric algorithms only, so it scores no symmetric, hash or MAC finding. It
+  names 65 occurrences in scored files `unknown` in every field of its CBOM, so those can't be
+  credited. It marks the corpus's LMS, XMSS and ML-KEM public keys as
+  quantum-vulnerable without naming them. It skips minified files unless given `--scan-minified`;
+  the workflow runs it with its defaults.
+
+The other three were read the same way and their scores stand. pqcheck's and cbom-scan's
+unrecognized names are categories or absent. quantascan names DSA as `Java JCA DSA` in 4 places,
+which an adapter would fix for at most 4 findings. Their numbers on 2.6.4: pqcheck 19.8% recall,
+98.8% precision; quantascan 14.6%, 70.6%; cbom-scan 12.0%, 83.1%.
+
+## How a scanner gets into the comparison
 
 A scanner goes into `reports/comparison.md` and the README when its bundle has been read by a
 person, not when a job goes green. Before publishing a column for one of these:

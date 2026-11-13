@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.6.4.1 (2026-11-13): cryptoscan and qScan published
+
+A results revision of 2.6.4 (see VERSIONING.md): results were added and nothing was rescored. The
+measurement release is still 2.6.4, `VERSION` is unchanged, and every scorecard and evidence bundle
+stamped 2.6.4 is still valid and still verifies. The fourth number lives in `REVISION`.
+
+- **cryptoscan 1.5.0 and qScan 0.12.0 are in the published comparison.** Their bundles from the
+  third-party workflow were verified and read, and are committed under `evidence/`. No scoring
+  change: both were measured on 2.6.4. cryptoscan needs no adapter; qScan is scored through
+  `tools/adapters/qscan.py`. Neither has a holdout run or a timing run.
+- The third-party workflow prints each scorecard, the unrecognized names, false positives by family
+  and any component a scanner could not name, in the job log.
+
 ## 2.6.4 (2026-11-12): measured, not restamped
 
 A repair release. Methodology stays 2.3; the corpus and answer key are unchanged (410 findings).

@@ -14,6 +14,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = (ROOT / "VERSION").read_text().strip()
+# Results-only revision of VERSION (VERSIONING.md): results were added to the published set and
+# nothing was rescored. It is not part of the stamp and not in a bundle's file inventory, so every
+# scorecard and bundle measured on VERSION stays valid; 0 means none.
+_rev = ROOT / "REVISION"
+REVISION = int(_rev.read_text().strip() or 0) if _rev.exists() else 0
+PUBLISHED = f"{VERSION}.{REVISION}" if REVISION else VERSION
 
 
 def _methodology() -> str:

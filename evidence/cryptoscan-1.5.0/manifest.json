@@ -1,0 +1,166 @@
+{
+  "bundle_format": 1,
+  "testbench": "2.6.4",
+  "methodology": "2.3",
+  "created": "2026-11-13T11:41:53Z",
+  "stamp": {
+    "release": "2.6.4",
+    "methodology": "2.3",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
+    "scorer": "0dead3635a2ae115",
+    "policy": "nist:c78f618c306e7d48"
+  },
+  "files": {
+    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "VERSION": "cbe892c63551904b7de297b049a93d839b763278e2a8ecd49e7c99cdecbb565e",
+    "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
+    "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
+    "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
+    "policies/eo14412-hva.json": "3fc1e30afe7f5965c825e8e043b91752d0d821b6e9053eaafe899a2aab49ebaf",
+    "policies/nist.json": "e6f5ad5a9c7a3e92f69abf363df02a0e1c729c83257d3391f7e79cdb6c4a4542",
+    "rubric/actionability.json": "ab9f2e71be0c2d0445fe96c07fed5961b89377c24bea53f86ce014d005acb121",
+    "tools/actionability.py": "19b8eb26534de9248d8fff6e88fe0ce8775a8f950abbd947be7f06a3d316c0f7",
+    "tools/assetfacts.py": "8be04ea768b96f52abcea5c59b32cb31891d64867a6051b928765dbaeb3f877f",
+    "tools/cbomlib.py": "257261685f859e19fe06ecd1d18743d401ff381ed391c00efe20e628e402938a",
+    "tools/libraries.py": "4c6ca81358eb24b70861ce272eb9f041bee7a0ca5d3d966fbf20ebaa429d7bec",
+    "tools/policy.py": "7133fe4cd6ef415f629669e575792593b415a14f771163e80ebbd3c9eb0fca87",
+    "tools/score.py": "1facde469f1b5006eddb076ad8815399dc0ca06288d56ff037a4f6ace9e3da9a",
+    "tools/truth.py": "c14278d5372445cb835c0a011f8c48fba19f3c0b97b6877f9857711a860612c3"
+  },
+  "scanner": {
+    "name": "cryptoscan 1.5.0",
+    "version": "1.5.0",
+    "cmd": [
+      "cryptoscan",
+      "scan",
+      "{corpus}",
+      "--format",
+      "cbom",
+      "--output",
+      "{out}/cbom.json"
+    ],
+    "executable_sha256": "8a44f48bd7b6fc08acec4957b09abe2fa49f7d5fc0880121483bddaee7195908",
+    "image": null,
+    "image_id": null,
+    "allowed_paths": [
+      "scanner",
+      "scanner-bin"
+    ],
+    "cbom": "cbom.json",
+    "adapter": "none",
+    "adapter_version": null,
+    "scope": null,
+    "policy": "nist",
+    "cbom_schema": "valid CycloneDX 1.6"
+  },
+  "image": {
+    "digest": null,
+    "containerized": false
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "cryptoscan",
+      "scan",
+      "corpus",
+      "--format",
+      "cbom",
+      "--output",
+      "cbom.json"
+    ],
+    "exit_code": 1,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 1.13,
+    "cpu_user_s": 3.79,
+    "cpu_sys_s": 0.24,
+    "peak_rss_mb": 19.1,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts, 2 path(s) allowed back by the caller",
+      "hidden_caller_paths": 1
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 1800,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "headline": {
+    "scored_findings": 410,
+    "recall": 34.6,
+    "primary_site_recall": 31.5,
+    "params_accuracy": 37.3,
+    "precision": 59.2,
+    "false_positives": 98,
+    "pqc_overclaims": 18,
+    "pqc_standard_name_pct": 100.0,
+    "ticket_ready_pct": 35.9,
+    "actionable_recall": 12.4,
+    "deadline_weighted_recall": 41.5,
+    "library_recall": 0.0
+  },
+  "remediation": {
+    "verdict": "scored",
+    "run": {
+      "cmd": [
+        "cryptoscan",
+        "scan",
+        "corpus",
+        "--format",
+        "cbom",
+        "--output",
+        "cbom.json"
+      ],
+      "exit_code": 1,
+      "signal": null,
+      "timed_out": false,
+      "wall_s": 1.1,
+      "cpu_user_s": 3.78,
+      "cpu_sys_s": 0.22,
+      "peak_rss_mb": 49.6,
+      "isolation": {
+        "environment": "scrubbed",
+        "seed_withheld": true,
+        "inputs_hashed": true,
+        "rlimits": true,
+        "network": "isolated (network namespace)",
+        "inputs_readonly": "read-only bind mount",
+        "filesystem": "confined: 8 location(s) hidden behind empty mounts, 2 path(s) allowed back by the caller",
+        "hidden_caller_paths": 2
+      },
+      "tampered": [],
+      "limits": {
+        "wall_s": 1800,
+        "cpu_s": null,
+        "mem_mb": 32768,
+        "fsize_mb": 4096,
+        "network": false
+      }
+    },
+    "total": 10,
+    "eligible": 4,
+    "verified": 0,
+    "verified_pct": 0.0,
+    "regressions_outside": 0
+  },
+  "checks": {
+    "status": "not run",
+    "note": "run `bench.py checks` and pass --checks for a release bundle"
+  },
+  "verdict": "scored"
+}
