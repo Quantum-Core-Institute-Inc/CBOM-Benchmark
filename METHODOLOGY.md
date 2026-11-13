@@ -167,6 +167,34 @@ asset can be followed from one report to the next.
 
 Scored unscoped. Not part of recall, precision or any gate in this release.
 
+## 4f. Priority agreement (reported, not scored)
+
+A team fixes findings in the order its scanner suggests. This compares that order with the
+policy's deadlines, for the findings the scanner detected. No extra scan is needed.
+
+The scanner's urgency for a finding is read from its adapted CBOM: the highest rating of a
+CycloneDX vulnerability that affects the component, or else a component property named (after any
+`vendor:` prefix) `priority_score`, `priority`, `risk_score`, `severity`, `security-severity`,
+`risk`, `risk_level`, `urgency`, `criticality` or `level`. One source is used per scanner, the
+property most components carry, and it is named in the result. Severity words map to critical 4,
+high 3, medium 2, low 1, info 0; numbers are taken as written, higher meaning more urgent; `P1` to
+`P5` is read with P1 highest. For a SARIF tool the adapter carries the rule's `security-severity`,
+or the result's level, onto the component.
+
+Agreement is over pairs of detected findings with different deadlines. A pair agrees when the
+finding due sooner has the higher urgency, disagrees when it has the lower, and counts half when
+the two are equal. 50% is what an order unrelated to the deadlines scores, and what giving
+everything one level scores; 100% is the policy's own order. The share of detections that carry an
+urgency is reported beside it.
+
+Only findings the policy dates are compared. Its undated bucket holds approved algorithms together
+with ones marked for review or out of scope, so it does not say how urgent its members are.
+
+What this does not say: that the scanner's order is wrong. A scanner may rank by something the
+policy's dates do not capture, such as exposure to harvest-now-decrypt-later, and then a low
+agreement describes a different priority, which its documentation should state. The number tells a
+buyer whether following the scanner's order is the same as following the policy's dates.
+
 ## 5. Declared scope
 
 A scanner may publish what it doesn't cover. A scope file has rules of three kinds: `glob` (files

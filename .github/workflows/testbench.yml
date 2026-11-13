@@ -77,6 +77,6 @@ jobs:
         run: |
           set -e
           python -m py_compile tools/*.py tools/adapters/*.py
-          for t in normalize scorer policy gates compare libraries linkage sandbox qci_adapter cdxgen_adapter sarif_adapter integrity; do   # test_remediation and test_drift run the changed files, so they need the toolchains: see `bench.py checks`
+          for t in normalize scorer policy gates compare libraries linkage sandbox qci_adapter cdxgen_adapter sarif_adapter integrity priority; do   # test_remediation and test_drift run the changed files, so they need the toolchains: see `bench.py checks`
             python "tools/test_$t.py"
           done
