@@ -82,6 +82,7 @@ def metric_rows(rep: dict) -> dict:
         "field_completeness": ac["completeness_pct"], "deadline_weighted_recall": d["weighted_recall"],
         "missed_due_by_2030": len(d["missed_due_by_2030"]),
         "library_recall": (rep.get("libraries") or {}).get("recall"),
+        "version_accuracy": (rep.get("libraries") or {}).get("version_accuracy"),
         "parameter_recovery": ((rep.get("parameter_recovery") or {}).get("overall") or {}).get("pct"),
         "config_completeness": (rep.get("config_completeness") or {}).get("config_pct"),
         "library_pq_verdict_accuracy": (rep.get("libraries") or {}).get("pq_verdict_accuracy"),
@@ -331,6 +332,7 @@ def main() -> int:
               ("deadline_weighted_recall", f"Deadline-weighted recall ({a.policy})", True),
               ("missed_due_by_2030", "Missed findings due by 2030", False),
               ("library_recall", "Crypto libraries, right manifest", True),
+              ("version_accuracy", "Versions correct (of found)", True),
               ("library_pq_verdict_accuracy", "Library PQC verdicts right", True)]
     for key in ("holdout_recall", "broad_recall", "overfit_gap", "overfit_gap_ci_low", "negative_fp_gap",
                 "holdout_library_recall", "library_gap"):

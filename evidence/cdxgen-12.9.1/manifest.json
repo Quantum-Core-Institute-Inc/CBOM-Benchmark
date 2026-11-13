@@ -114,7 +114,8 @@
     "ticket_ready_pct": 81.0,
     "actionable_recall": 4.1,
     "deadline_weighted_recall": 5.8,
-    "library_recall": 75.0
+    "library_recall": 75.0,
+    "version_accuracy": 100.0
   },
   "remediation": {
     "verdict": "scored",

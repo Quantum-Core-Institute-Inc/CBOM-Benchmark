@@ -117,7 +117,8 @@
     "ticket_ready_pct": 87.5,
     "actionable_recall": 69.8,
     "deadline_weighted_recall": 81.6,
-    "library_recall": 96.4
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
   },
   "headline_full": {
     "scored_findings": 410,
@@ -131,7 +132,8 @@
     "ticket_ready_pct": 86.9,
     "actionable_recall": 66.6,
     "deadline_weighted_recall": 78.7,
-    "library_recall": 96.4
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
   },
   "holdout": {
     "seed_commitment": "715591cb211c22cbab672b2e6558ddad268671939bb927feb05dbb950c4cc588",
@@ -633,6 +635,7 @@
       "missed_due_by_2030": 25,
       "library_recall": 96.4,
       "parameter_recovery": 92.6,
+      "version_accuracy": 84.6,
       "config_completeness": 100.0,
       "library_pq_verdict_accuracy": null,
       "cbom_schema_valid": 1,

@@ -71,6 +71,7 @@ release stamp.
 | Field completeness | applicable rubric checks passed / applicable checks |
 | Deadline-weighted recall | recall with each finding weighted by when it falls due under the chosen policy: due now 5, by 2030 4, 2031–2033 3, 2034–2035 2, no deadline 1 |
 | Library recall | expected crypto libraries reported in the right manifest / expected libraries |
+| Versions correct | reported version equals the manifest version / libraries found with a judgeable version |
 
 Every bucket's recall carries a 95% Wilson interval, and a bucket with fewer than 10 findings is
 marked thin. Comparison tables mark thin cells with †.
