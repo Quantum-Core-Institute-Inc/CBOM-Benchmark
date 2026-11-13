@@ -103,7 +103,8 @@
     "ticket_ready_pct": 100.0,
     "actionable_recall": 100.0,
     "deadline_weighted_recall": 100.0,
-    "library_recall": 100.0
+    "library_recall": 100.0,
+    "version_accuracy": 100.0
   },
   "checks": {
     "status": "pass",
