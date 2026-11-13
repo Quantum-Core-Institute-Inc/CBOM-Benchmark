@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.6.6 (2026-11-13): QCI PQC Scanner v2.3.4.5; Semgrep, Opengrep and CodeQL
+
+A measured release: every scanner was rescanned by `tools/release_run.sh`, gate floors were reset
+from the scan, and all evidence was rebuilt. Corpus, answer key and scorer are unchanged (410
+findings, methodology 2.3).
+
+- **Scanner v2.3.4.5 replaces v2.3.4.3.** Recall 62.2% to 76.6% (255 to 314 of 410), parameters
+  correct 90.2% to 92.7%, ticket-ready 80.0% to 86.9%, precision still 100% with no false
+  positives. Overfit gap -1.6 (-6.5 to +3.2). It scores the same in the sandbox and in its own
+  container. The gain is TLS cipher suites, minified JavaScript, compiled Java and native binaries.
+  Details in `integrations/qci-pqc/FINDINGS.md`.
+- **QCI adapter 1.3.** IANA cipher-suite names (`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`) pass
+  through to the scorer, which already splits a suite into its parts. The adapter is an allowlist,
+  so without this the scanner's suite findings were dropped as unknown names.
+- **QCI's declared scope no longer excludes `*.jar`.** The scanner reads archives now. 19 findings
+  remain out of its scope (`.pyc`, `.der`, `.p12`, `.jks`, certificate signature algorithms), down
+  from 21.
+- **Gate floors reset** to v2.3.4.5: recall 79.8, parameters 92.6, precision 100, ticket-ready 87.5.
+- **SARIF adapter 0.1 and three static-analysis tools.** `tools/adapters/sarif.py` reads the crypto
+  results out of SARIF 2.1.0. The third-party workflow runs Semgrep 1.183.0 and Opengrep 1.16.0
+  with the community rule set pinned by date, and CodeQL through the runner's CLI. First results
+  are in `integrations/third-party/README.md`; none is in the published comparison yet.
+- **Calibration rerun** on five public seeds: answer key 0; grep -4.0 to -1.5; QCI -2.4 to +0.5, none
+  significant.
+- **cryptoscan and qScan are out of the comparison until rerun.** Their bundles were measured on
+  2.6.5 and are not carried onto a new release. They come back as 2.6.6.1 when the rerun bundles
+  are read and committed.
+
 ## 2.6.5.1 (2026-11-13): cryptoscan and qScan back in the comparison
 
 A results revision of 2.6.5: results added, nothing rescored.

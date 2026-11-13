@@ -1,0 +1,174 @@
+{
+  "migrations": [
+    {
+      "id": "MIG-PY-01",
+      "title": "Python: RSA-2048 PSS signing -> ML-DSA-65",
+      "file": "corpus/tier1/python/t1_rsa.py",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-PY-02",
+      "title": "Python: AES-128-ECB -> AES-256-GCM",
+      "file": "corpus/tier1/python/t1_aes_ecb.py",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-PY-03",
+      "title": "Python: 3DES-CBC -> AES-256-GCM",
+      "file": "corpus/tier1/python/t1_triple_des.py",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-JV-01",
+      "title": "Java: AES-128-ECB -> AES-256-GCM",
+      "file": "corpus/tier1/java/T1AesEcb.java",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-JV-02",
+      "title": "Java: RSA-3072 SHA256withRSA -> ML-DSA-65 (JDK 24+)",
+      "file": "corpus/tier1/java/T1Rsa.java",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-GO-01",
+      "title": "Go: AES-128-CBC -> AES-256-GCM",
+      "file": "corpus/tier1/go/aes_cbc/main.go",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-JS-01",
+      "title": "JavaScript: 3DES-CBC -> AES-256-GCM",
+      "file": "corpus/tier1/javascript/t1_triple_des.js",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-C-01",
+      "title": "C/OpenSSL: 3DES-CBC -> AES-256-GCM",
+      "file": "corpus/tier1/c/t1_triple_des.c",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true
+      ],
+      "added_params_ok": [
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-TLS-01",
+      "title": "nginx: drop TLS 1.0/1.1, 3DES and RSA key transport; add TLS 1.3 and X25519MLKEM768",
+      "file": "corpus/tier4/assets/tls/nginx.conf",
+      "eligible": true,
+      "retired_still_reported": [],
+      "added_found": [
+        true,
+        true,
+        true
+      ],
+      "added_params_ok": [
+        true,
+        true,
+        true
+      ],
+      "unstable": [],
+      "verdict": "verified"
+    },
+    {
+      "id": "MIG-SSH-01",
+      "title": "sshd: ssh-rsa, group14-sha1, AES-CBC and HMAC-SHA1 out; Ed25519, ML-KEM hybrid, AES-GCM, HMAC-SHA512 in",
+      "file": "corpus/tier4/assets/ssh/sshd_config",
+      "eligible": false,
+      "retired_still_reported": [],
+      "added_found": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "added_params_ok": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "unstable": [],
+      "verdict": "not eligible"
+    }
+  ],
+  "total": 10,
+  "eligible": 9,
+  "verified": 9,
+  "verified_pct": 100.0,
+  "regressions_outside": {
+    "lost": [],
+    "gained": [],
+    "false_positives_before": 0,
+    "false_positives_after": 0
+  }
+}

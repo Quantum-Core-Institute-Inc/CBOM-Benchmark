@@ -115,13 +115,13 @@ interval is above zero.
 ## Calibration
 
 A metric like this is only worth something if it reads zero for a scanner that can't have overfit,
-and reads high for one that has. Measured, not assumed, on benchmark 2.6.5 with generator 1.4 (`python tools/recalibrate.py`):
+and reads high for one that has. Measured, not assumed, on benchmark 2.6.6 with generator 1.4 (`python tools/recalibrate.py`):
 
 | Scanner | What it is | Gap across five seeds |
 |---|---|---|
 | Reference CBOM | the answer key | 0, every seed |
-| `baseline_grep.py` | regexes with no file knowledge | -4.0 to -1.8, none significant (a weak control: it flags every name it sees) |
-| qci-pqc-scan v2.3.4.3 | the published QCI release, in its declared scope | -1.3 to +0.9, none significant |
+| `baseline_grep.py` | regexes with no file knowledge | -4.0 to -1.5, none significant (a weak control: it flags every name it sees) |
+| qci-pqc-scan v2.3.4.5 | the published QCI release, in its declared scope | -2.4 to +0.5, none significant |
 | A scanner that memorized the answer key | | +100 |
 
 Five seeds (1234, 4242, 55, 777, 90210), default sizes: 120 matched files, 48 broad, 10 Tier 3
@@ -169,7 +169,7 @@ algorithm names in log lines, string constants and returned values, post-quantum
 | Scanner | Gap, false positives per file (five seeds, 28 files in seven languages) |
 |---|---|
 | `baseline_grep.py` | 0.00 to +0.36 |
-| qci-pqc-scan v2.3.4.3 | 0.00 to +0.04 |
+| qci-pqc-scan v2.3.4.5 | 0.00 to +0.04 |
 
 The `negative_fp_gap` gate fails above +0.5 per file. The limit sits between two kinds of scanner
 that were measured when the check was designed: ones with no knowledge of the corpus, which stay

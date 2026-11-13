@@ -1,0 +1,661 @@
+{
+  "bundle_format": 1,
+  "testbench": "2.6.6",
+  "methodology": "2.3",
+  "created": "2026-11-13T17:30:06Z",
+  "stamp": {
+    "release": "2.6.6",
+    "methodology": "2.3",
+    "findings": 410,
+    "answer_key": "b0867a4029ea0c56",
+    "corpus": "9ecce20d59d14efb",
+    "scorer": "0dead3635a2ae115",
+    "policy": "nist:c78f618c306e7d48",
+    "adapter": "c71a627874e536b5"
+  },
+  "files": {
+    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "VERSION": "245f7531ea44f28f7b7e8893179f4224fff4d081dcc3ee19f770ab1ab9b8d691",
+    "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
+    "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
+    "integrations/qci-pqc/scope.json": "4ac9f9e23b757dbd482d7e64968a126adec524874e4337fc2a102631ceee8691",
+    "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
+    "policies/eo14412-hva.json": "3fc1e30afe7f5965c825e8e043b91752d0d821b6e9053eaafe899a2aab49ebaf",
+    "policies/nist.json": "e6f5ad5a9c7a3e92f69abf363df02a0e1c729c83257d3391f7e79cdb6c4a4542",
+    "rubric/actionability.json": "ab9f2e71be0c2d0445fe96c07fed5961b89377c24bea53f86ce014d005acb121",
+    "tools/actionability.py": "19b8eb26534de9248d8fff6e88fe0ce8775a8f950abbd947be7f06a3d316c0f7",
+    "tools/adapters/common.py": "3791e6c5087bcd12eaa8bb4d5699aaf413f56202dbab1e3bf50fc40054995bf2",
+    "tools/adapters/qci_pqc.py": "0290adb21eb6757628384cc532524a8b07b3175f39f4df9747f81a691b1e609a",
+    "tools/assetfacts.py": "8be04ea768b96f52abcea5c59b32cb31891d64867a6051b928765dbaeb3f877f",
+    "tools/cbomlib.py": "257261685f859e19fe06ecd1d18743d401ff381ed391c00efe20e628e402938a",
+    "tools/libraries.py": "4c6ca81358eb24b70861ce272eb9f041bee7a0ca5d3d966fbf20ebaa429d7bec",
+    "tools/policy.py": "7133fe4cd6ef415f629669e575792593b415a14f771163e80ebbd3c9eb0fca87",
+    "tools/score.py": "1facde469f1b5006eddb076ad8815399dc0ca06288d56ff037a4f6ace9e3da9a",
+    "tools/truth.py": "c14278d5372445cb835c0a011f8c48fba19f3c0b97b6877f9857711a860612c3"
+  },
+  "scanner": {
+    "name": "QCI v2.3.4.5",
+    "version": "qci-pqc, version 2.3.4.5",
+    "cmd": [
+      "qci-pqc",
+      "scan",
+      "{corpus}",
+      "--reproducible",
+      "--adapter",
+      "internal",
+      "--out",
+      "{out}",
+      "--json"
+    ],
+    "executable_sha256": "1dfa3492e0944c502a8527c2e37158490c8f20b9651a0b27e0ffea45906b9f88",
+    "image": null,
+    "image_id": null,
+    "allowed_paths": [],
+    "cbom": "cbom.json",
+    "adapter": "qci-pqc",
+    "adapter_version": "1.3",
+    "scope": "integrations/qci-pqc/scope.json",
+    "policy": "nist",
+    "cbom_schema": "valid CycloneDX 1.6"
+  },
+  "image": {
+    "digest": null,
+    "containerized": false
+  },
+  "host": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v445-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "run": {
+    "cmd": [
+      "qci-pqc",
+      "scan",
+      "corpus",
+      "--reproducible",
+      "--adapter",
+      "internal",
+      "--out",
+      "out",
+      "--json"
+    ],
+    "exit_code": 1,
+    "signal": null,
+    "timed_out": false,
+    "wall_s": 5.77,
+    "cpu_user_s": 5.54,
+    "cpu_sys_s": 0.15,
+    "peak_rss_mb": 47.6,
+    "isolation": {
+      "environment": "scrubbed",
+      "seed_withheld": true,
+      "inputs_hashed": true,
+      "rlimits": true,
+      "network": "isolated (network namespace)",
+      "inputs_readonly": "read-only bind mount",
+      "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+      "hidden_caller_paths": 1
+    },
+    "tampered": [],
+    "limits": {
+      "wall_s": 1800,
+      "cpu_s": null,
+      "mem_mb": 32768,
+      "fsize_mb": 4096,
+      "network": false
+    }
+  },
+  "headline": {
+    "scored_findings": 391,
+    "recall": 79.8,
+    "primary_site_recall": 77.5,
+    "params_accuracy": 92.6,
+    "precision": 100.0,
+    "false_positives": 0,
+    "pqc_overclaims": 0,
+    "pqc_standard_name_pct": 100.0,
+    "ticket_ready_pct": 87.5,
+    "actionable_recall": 69.8,
+    "deadline_weighted_recall": 81.6,
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
+  },
+  "headline_full": {
+    "scored_findings": 410,
+    "recall": 76.6,
+    "primary_site_recall": 74.4,
+    "params_accuracy": 92.7,
+    "precision": 100.0,
+    "false_positives": 0,
+    "pqc_overclaims": 0,
+    "pqc_standard_name_pct": 100.0,
+    "ticket_ready_pct": 86.9,
+    "actionable_recall": 66.6,
+    "deadline_weighted_recall": 78.7,
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
+  },
+  "holdout": {
+    "seed_commitment": "715591cb211c22cbab672b2e6558ddad268671939bb927feb05dbb950c4cc588",
+    "run": {
+      "cmd": [
+        "qci-pqc",
+        "scan",
+        "corpus",
+        "--reproducible",
+        "--adapter",
+        "internal",
+        "--out",
+        "out",
+        "--json"
+      ],
+      "exit_code": 1,
+      "signal": null,
+      "timed_out": false,
+      "wall_s": 4.18,
+      "cpu_user_s": 3.99,
+      "cpu_sys_s": 0.12,
+      "peak_rss_mb": 66.4,
+      "isolation": {
+        "environment": "scrubbed",
+        "seed_withheld": true,
+        "inputs_hashed": true,
+        "rlimits": true,
+        "network": "isolated (network namespace)",
+        "inputs_readonly": "read-only bind mount",
+        "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+        "hidden_caller_paths": 2
+      },
+      "tampered": [],
+      "limits": {
+        "wall_s": 1800,
+        "cpu_s": null,
+        "mem_mb": 32768,
+        "fsize_mb": 4096,
+        "network": false
+      }
+    },
+    "raw_cbom_sha256": "4a8ab3b1bc31e948a828f5da457cff5dd240c88500a61970388f3e13e0e170a4",
+    "verdict": "scored",
+    "overfit_gap": {
+      "comparable_findings": 355,
+      "cells": 150,
+      "families": 35,
+      "published_matched": 76.4,
+      "holdout": 78.0,
+      "gap": -1.6,
+      "gap_ci95": [
+        -6.5,
+        3.2
+      ],
+      "significant": false,
+      "by_tier": {
+        "tier1": {
+          "published": 86.1,
+          "holdout": 85.2,
+          "holdout_n": 54
+        },
+        "tier2": {
+          "published": 73.0,
+          "holdout": 71.7,
+          "holdout_n": 99
+        },
+        "tier3": {
+          "published": 80.0,
+          "holdout": 86.7,
+          "holdout_n": 15
+        },
+        "tier4": {
+          "published": 66.4,
+          "holdout": 74.0,
+          "holdout_n": 96
+        },
+        "tier5": {
+          "published": 91.7,
+          "holdout": 100.0,
+          "holdout_n": 16
+        },
+        "tierpqc": {
+          "published": 81.5,
+          "holdout": 77.8,
+          "holdout_n": 27
+        },
+        "tiermixed": {
+          "published": 83.3,
+          "holdout": 81.2,
+          "holdout_n": 48
+        }
+      },
+      "by_family": [
+        {
+          "family": "3DES",
+          "published": 80.0,
+          "published_n": 30,
+          "holdout": 69.2,
+          "holdout_n": 26,
+          "gap": 10.8
+        },
+        {
+          "family": "AES",
+          "published": 63.3,
+          "published_n": 49,
+          "holdout": 62.5,
+          "holdout_n": 48,
+          "gap": 0.8
+        },
+        {
+          "family": "ChaCha20-Poly1305",
+          "published": 100.0,
+          "published_n": 4,
+          "holdout": 100.0,
+          "holdout_n": 6,
+          "gap": 0.0
+        },
+        {
+          "family": "DES",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        },
+        {
+          "family": "DH",
+          "published": 88.9,
+          "published_n": 18,
+          "holdout": 80.0,
+          "holdout_n": 15,
+          "gap": 8.9
+        },
+        {
+          "family": "EC",
+          "published": 70.0,
+          "published_n": 40,
+          "holdout": 75.0,
+          "holdout_n": 44,
+          "gap": -5.0
+        },
+        {
+          "family": "Ed25519",
+          "published": 66.7,
+          "published_n": 15,
+          "holdout": 63.6,
+          "holdout_n": 11,
+          "gap": 3.0
+        },
+        {
+          "family": "HMAC",
+          "published": 92.7,
+          "published_n": 41,
+          "holdout": 85.7,
+          "holdout_n": 42,
+          "gap": 7.0
+        },
+        {
+          "family": "LMS",
+          "published": 0.0,
+          "published_n": 2,
+          "holdout": 0.0,
+          "holdout_n": 3,
+          "gap": 0.0
+        },
+        {
+          "family": "MD5",
+          "published": 61.1,
+          "published_n": 18,
+          "holdout": 54.5,
+          "holdout_n": 11,
+          "gap": 6.6
+        },
+        {
+          "family": "ML-DSA",
+          "published": 100.0,
+          "published_n": 7,
+          "holdout": 83.3,
+          "holdout_n": 6,
+          "gap": 16.7
+        },
+        {
+          "family": "ML-KEM",
+          "published": 100.0,
+          "published_n": 6,
+          "holdout": 100.0,
+          "holdout_n": 9,
+          "gap": 0.0
+        },
+        {
+          "family": "PBKDF2",
+          "published": 94.4,
+          "published_n": 18,
+          "holdout": 87.5,
+          "holdout_n": 8,
+          "gap": 6.9
+        },
+        {
+          "family": "RC4",
+          "published": 100.0,
+          "published_n": 5,
+          "holdout": 100.0,
+          "holdout_n": 4,
+          "gap": 0.0
+        },
+        {
+          "family": "RSA",
+          "published": 86.8,
+          "published_n": 53,
+          "holdout": 89.7,
+          "holdout_n": 39,
+          "gap": -3.0
+        },
+        {
+          "family": "SHA-1",
+          "published": 73.0,
+          "published_n": 37,
+          "holdout": 66.7,
+          "holdout_n": 24,
+          "gap": 6.3
+        },
+        {
+          "family": "SHA-256",
+          "published": 88.9,
+          "published_n": 9,
+          "holdout": 75.0,
+          "holdout_n": 4,
+          "gap": 13.9
+        },
+        {
+          "family": "SHA-512",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 3,
+          "gap": 0.0
+        },
+        {
+          "family": "SHA3-256",
+          "published": 0.0,
+          "published_n": 12,
+          "holdout": 0.0,
+          "holdout_n": 3,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS-1.0",
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 4,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS-1.1",
+          "published": 100.0,
+          "published_n": 4,
+          "holdout": 100.0,
+          "holdout_n": 6,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS-1.2",
+          "published": 100.0,
+          "published_n": 3,
+          "holdout": 100.0,
+          "holdout_n": 4,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS-1.3",
+          "published": 100.0,
+          "published_n": 3,
+          "holdout": 100.0,
+          "holdout_n": 4,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_AES_256_GCM_SHA384",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 2,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_CHACHA20_POLY1305_SHA256",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 4,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 2,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_RSA_WITH_AES_128_CBC_SHA",
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        },
+        {
+          "family": "TLS_RSA_WITH_AES_256_CBC_SHA",
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 2,
+          "gap": 0.0
+        },
+        {
+          "family": "X25519",
+          "published": 92.9,
+          "published_n": 14,
+          "holdout": 100.0,
+          "holdout_n": 10,
+          "gap": -7.1
+        },
+        {
+          "family": "X25519MLKEM768",
+          "published": 100.0,
+          "published_n": 3,
+          "holdout": 100.0,
+          "holdout_n": 3,
+          "gap": 0.0
+        },
+        {
+          "family": "XMSS",
+          "published": 0.0,
+          "published_n": 2,
+          "holdout": 0.0,
+          "holdout_n": 2,
+          "gap": 0.0
+        },
+        {
+          "family": "sntrup761x25519",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 1,
+          "gap": 0.0
+        }
+      ]
+    },
+    "negative_gap": {
+      "published_files": 12,
+      "published_fps": 0,
+      "published_pqc_overclaims": 0,
+      "holdout_files": 28,
+      "holdout_fps": 0,
+      "holdout_pqc_overclaims": 0,
+      "published_per_file": 0.0,
+      "holdout_per_file": 0.0,
+      "gap_per_file": 0.0
+    },
+    "library_gap": {
+      "by_ecosystem": {
+        "conan": {
+          "published": 100.0,
+          "published_n": 2,
+          "holdout": 100.0,
+          "holdout_n": 4
+        },
+        "golang": {
+          "published": 100.0,
+          "published_n": 3,
+          "holdout": 100.0,
+          "holdout_n": 2
+        },
+        "maven": {
+          "published": 80.0,
+          "published_n": 5,
+          "holdout": 66.7,
+          "holdout_n": 6
+        },
+        "npm": {
+          "published": 100.0,
+          "published_n": 5,
+          "holdout": null,
+          "holdout_n": 0
+        },
+        "pypi": {
+          "published": 100.0,
+          "published_n": 9,
+          "holdout": 100.0,
+          "holdout_n": 3
+        }
+      },
+      "published_matched": 92.0,
+      "holdout": 86.7,
+      "gap": 5.3,
+      "holdout_false_positives": 0,
+      "holdout_version_accuracy": 100.0
+    }
+  },
+  "remediation": {
+    "verdict": "scored",
+    "run": {
+      "cmd": [
+        "qci-pqc",
+        "scan",
+        "corpus",
+        "--reproducible",
+        "--adapter",
+        "internal",
+        "--out",
+        "out",
+        "--json"
+      ],
+      "exit_code": 1,
+      "signal": null,
+      "timed_out": false,
+      "wall_s": 6.87,
+      "cpu_user_s": 6.66,
+      "cpu_sys_s": 0.14,
+      "peak_rss_mb": 72.0,
+      "isolation": {
+        "environment": "scrubbed",
+        "seed_withheld": true,
+        "inputs_hashed": true,
+        "rlimits": true,
+        "network": "isolated (network namespace)",
+        "inputs_readonly": "read-only bind mount",
+        "filesystem": "confined: 8 location(s) hidden behind empty mounts",
+        "hidden_caller_paths": 2
+      },
+      "tampered": [],
+      "limits": {
+        "wall_s": 1800,
+        "cpu_s": null,
+        "mem_mb": 32768,
+        "fsize_mb": 4096,
+        "network": false
+      }
+    },
+    "total": 10,
+    "eligible": 9,
+    "verified": 9,
+    "verified_pct": 100.0,
+    "regressions_outside": 0
+  },
+  "gates": {
+    "file": "gates.json",
+    "status": "pass",
+    "fails": [],
+    "missing": [],
+    "skipped": [
+      {
+        "gate": "library_pq_verdict_accuracy",
+        "reason": "the scanner gave no PQC-capability verdicts for libraries, so there is nothing to judge"
+      }
+    ],
+    "why": "",
+    "metrics": {
+      "recall": 79.8,
+      "primary_site_recall": 77.5,
+      "params_accuracy": 92.6,
+      "precision": 100.0,
+      "false_positives": 0,
+      "negative_control_fps": 0,
+      "pqc_overclaims": 0,
+      "pqc_standard_name_pct": 100.0,
+      "system_routable_pct": 76.2,
+      "ticket_ready_pct": 87.5,
+      "actionable_recall": 69.8,
+      "field_completeness": 65.6,
+      "deadline_weighted_recall": 81.6,
+      "missed_due_by_2030": 25,
+      "library_recall": 96.4,
+      "parameter_recovery": 92.6,
+      "version_accuracy": 84.6,
+      "config_completeness": 100.0,
+      "library_pq_verdict_accuracy": null,
+      "cbom_schema_valid": 1,
+      "overfit_gap_ci_low": -6.5,
+      "negative_fp_gap": 0.0
+    },
+    "without": {}
+  },
+  "checks": {
+    "status": "pass",
+    "counts": {
+      "checks": 20,
+      "passed": 20,
+      "corpus": {
+        "passed": 528,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "stale": null
+  },
+  "verdict": "scored"
+}

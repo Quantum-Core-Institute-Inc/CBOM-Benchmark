@@ -1,0 +1,36 @@
+{
+  "project": "corpus",
+  "findings": 920,
+  "readiness_score": 0.0,
+  "breakdown": {
+    "vulnerable_count": 346,
+    "weak_count": 206,
+    "pqc_count": 20,
+    "penalty_vulnerable": 5190,
+    "penalty_weak": 1030,
+    "bonus_pqc": 40,
+    "raw": -6120.0,
+    "scored": true,
+    "formula": "100 - (vulnerable\u00d715) - (weak\u00d75). PQC is recorded, not added."
+  },
+  "scanners": [
+    "qci-pattern"
+  ],
+  "ignored": 0,
+  "baseline_diff": null,
+  "outputs": {
+    "report": "/out/report.html",
+    "cbom": "/out/cbom.json",
+    "sarif": "/out/results.sarif"
+  }
+}
+
+--- stderr ---
+Scanning /in/corpus with adapter(s): internal ...
+  qci-pattern: 1357 raw findings
+Deduplicated: 1357 → 920 findings
+Source findings: 912
+Artifact findings: 8 (4 with a parameter)
+Not blended: 920
+Dependency graph: 920 edges
+Incomplete scan: 4 skipped

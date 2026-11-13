@@ -3969,6 +3969,13 @@
     "implemented_by": "TLS"
   },
   {
+    "finding": "TLS-1.3",
+    "path": "pqc/go/tls_hybrid/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.3"
+  },
+  {
     "finding": "PQC-Dependency",
     "path": "pqc/java/FirmwareSignLms.java",
     "app": "corpus",
@@ -4113,7 +4120,21 @@
     "path": "system/payments-platform/edge/nginx/gateway.conf",
     "app": "corpus",
     "library": "",
-    "implemented_by": "TLS-1.2"
+    "implemented_by": "TLSv1.2"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "path": "system/payments-platform/edge/nginx/gateway.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "path": "system/payments-platform/edge/nginx/gateway.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_128_CBC_SHA"
   },
   {
     "finding": "AES",
@@ -4284,6 +4305,27 @@
     "implemented_by": ""
   },
   {
+    "finding": "RSA",
+    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-1",
+    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-256",
+    "path": "system/payments-platform/services/api-gateway/bin/api-gateway",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "SHA-256",
     "path": "system/payments-platform/services/api-gateway/main.go",
     "app": "corpus",
@@ -4303,6 +4345,20 @@
     "app": "corpus",
     "library": "bouncycastle",
     "implemented_by": "1.77"
+  },
+  {
+    "finding": "ECDSA",
+    "path": "system/payments-platform/services/ledger-service/build/libs/ledger-service.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-1",
+    "path": "system/payments-platform/services/ledger-service/build/libs/ledger-service.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
   },
   {
     "finding": "SHA-1",
@@ -4457,6 +4513,34 @@
     "app": "corpus",
     "library": "",
     "implemented_by": "1024"
+  },
+  {
+    "finding": "TLS-1.0",
+    "path": "tier1/c/t1_tls_ctx.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.0"
+  },
+  {
+    "finding": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "path": "tier1/c/t1_tls_ctx.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "path": "tier1/c/t1_tls_ctx.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_128_CBC_SHA"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "path": "tier1/c/t1_tls_ctx.c",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
   },
   {
     "finding": "3DES",
@@ -4746,11 +4830,39 @@
     "implemented_by": "TLS"
   },
   {
+    "finding": "TLS-1.0",
+    "path": "tier1/go/tls_config/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.0"
+  },
+  {
+    "finding": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "path": "tier1/go/tls_config/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "path": "tier1/go/tls_config/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_128_CBC_SHA"
+  },
+  {
     "finding": "TLS",
     "path": "tier1/go/tls_config/main.go",
     "app": "corpus",
     "library": "",
     "implemented_by": "TLS"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "path": "tier1/go/tls_config/main.go",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
   },
   {
     "finding": "X25519",
@@ -5838,11 +5950,39 @@
     "implemented_by": ""
   },
   {
+    "finding": "TLS-1.1",
+    "path": "tier4/assets/tls/application.yml",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.1"
+  },
+  {
+    "finding": "TLS-1.2",
+    "path": "tier4/assets/tls/application.yml",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.2"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "path": "tier4/assets/tls/application.yml",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_128_CBC_SHA"
+  },
+  {
     "finding": "TLS",
     "path": "tier4/assets/tls/application.yml",
     "app": "corpus",
     "library": "",
     "implemented_by": "TLS"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "path": "tier4/assets/tls/application.yml",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
   },
   {
     "finding": "DH",
@@ -5852,11 +5992,46 @@
     "implemented_by": "1024"
   },
   {
+    "finding": "TLS-1.1",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.1"
+  },
+  {
+    "finding": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_256_CBC_SHA"
+  },
+  {
     "finding": "SSH-Modern-Cipher",
     "path": "tier4/assets/tls/haproxy.cfg",
     "app": "corpus",
     "library": "",
     "implemented_by": "SSH-Modern-Cipher"
+  },
+  {
+    "finding": "TLS_AES_256_GCM_SHA384",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_AES_256_GCM_SHA384"
+  },
+  {
+    "finding": "TLS_CHACHA20_POLY1305_SHA256",
+    "path": "tier4/assets/tls/haproxy.cfg",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_CHACHA20_POLY1305_SHA256"
   },
   {
     "finding": "TLS-Cert-Config",
@@ -5866,11 +6041,46 @@
     "implemented_by": ""
   },
   {
+    "finding": "TLS-1.1",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.1"
+  },
+  {
+    "finding": "TLS-1.2",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLSv1.2"
+  },
+  {
     "finding": "TLS-Weak-Protocol",
     "path": "tier4/assets/tls/httpd-ssl.conf",
     "app": "corpus",
     "library": "",
     "implemented_by": "TLS-Weak-Protocol"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_128_CBC_SHA"
+  },
+  {
+    "finding": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "path": "tier4/assets/tls/httpd-ssl.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
   },
   {
     "finding": "TLS-Cert-Config",
@@ -5891,21 +6101,21 @@
     "path": "tier4/assets/tls/nginx.conf",
     "app": "corpus",
     "library": "",
-    "implemented_by": "TLS-1.0"
+    "implemented_by": "TLSv1.0"
   },
   {
     "finding": "TLS-1.1",
     "path": "tier4/assets/tls/nginx.conf",
     "app": "corpus",
     "library": "",
-    "implemented_by": "TLS-1.1"
+    "implemented_by": "TLSv1.1"
   },
   {
     "finding": "TLS-1.2",
     "path": "tier4/assets/tls/nginx.conf",
     "app": "corpus",
     "library": "",
-    "implemented_by": "TLS-1.2"
+    "implemented_by": "TLSv1.2"
   },
   {
     "finding": "TLS1.0/1.1",
@@ -5920,6 +6130,27 @@
     "app": "corpus",
     "library": "",
     "implemented_by": "TLS-Weak-Protocol"
+  },
+  {
+    "finding": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "path": "tier4/assets/tls/nginx.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+  },
+  {
+    "finding": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "path": "tier4/assets/tls/nginx.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  },
+  {
+    "finding": "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "path": "tier4/assets/tls/nginx.conf",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "TLS_RSA_WITH_AES_256_CBC_SHA"
   },
   {
     "finding": "AES",
@@ -5961,7 +6192,7 @@
     "path": "tier4/assets/tls/openssl.cnf",
     "app": "corpus",
     "library": "",
-    "implemented_by": "TLS-1.0"
+    "implemented_by": "TLSv1.0"
   },
   {
     "finding": "SHA-1",
@@ -5971,18 +6202,228 @@
     "implemented_by": "SHA-1"
   },
   {
+    "finding": "SHA-512",
+    "path": "tier5/c/bin/fwcheck",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "AES",
+    "path": "tier5/c/bin/fwcheck",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "128-ECB"
+  },
+  {
+    "finding": "X25519",
+    "path": "tier5/c/bin/fwcheck",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "DH",
+    "path": "tier5/c/bin/fwcheck",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "2048"
+  },
+  {
+    "finding": "ECDSA",
+    "path": "tier5/c/bin/keyd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "P-256"
+  },
+  {
+    "finding": "AES",
+    "path": "tier5/c/bin/keyd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "256-GCM"
+  },
+  {
+    "finding": "MD5",
+    "path": "tier5/c/bin/keyd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier5/c/bin/keyd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "HMAC",
+    "path": "tier5/c/bin/keyd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "MD5"
+  },
+  {
+    "finding": "RSA",
+    "path": "tier5/c/bin/meterd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
+    "finding": "3DES",
+    "path": "tier5/c/bin/meterd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "CBC"
+  },
+  {
+    "finding": "MD5",
+    "path": "tier5/c/bin/meterd",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
     "finding": "AES",
     "path": "tier5/java/compiled/billing-core.jar",
     "app": "corpus",
     "library": "",
-    "implemented_by": "CBC"
+    "implemented_by": "128-CBC"
   },
   {
     "finding": "RSA",
     "path": "tier5/java/compiled/billing-core.jar",
     "app": "corpus",
     "library": "",
+    "implemented_by": "1024"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier5/java/compiled/billing-core.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "DES",
+    "path": "tier5/java/compiled/token-vault.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "ECB"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier5/java/compiled/token-vault.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "ECDSA",
+    "path": "tier5/java/compiled/token-vault.jar",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "P-256"
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier5/javascript/dist/payments-sdk.min.js",
+    "app": "corpus",
+    "library": "",
     "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "HMAC",
+    "path": "tier5/javascript/dist/payments-sdk.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "MD5"
+  },
+  {
+    "finding": "3DES",
+    "path": "tier5/javascript/dist/payments-sdk.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "CBC"
+  },
+  {
+    "finding": "ECDSA",
+    "path": "tier5/javascript/dist/payments-sdk.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "P-256"
+  },
+  {
+    "finding": "Node-crypto",
+    "path": "tier5/javascript/dist/session-tokens.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "MD5",
+    "path": "tier5/javascript/dist/session-tokens.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "MD5"
+  },
+  {
+    "finding": "AES",
+    "path": "tier5/javascript/dist/session-tokens.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "128-CBC"
+  },
+  {
+    "finding": "RSA",
+    "path": "tier5/javascript/dist/session-tokens.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
+    "finding": "PBKDF2",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "Node-crypto",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
+  },
+  {
+    "finding": "SHA-1",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "SHA-1"
+  },
+  {
+    "finding": "AES",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "256-GCM"
+  },
+  {
+    "finding": "DH",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": "1024"
+  },
+  {
+    "finding": "Ed25519",
+    "path": "tier5/javascript/dist/webhook-relay.min.js",
+    "app": "corpus",
+    "library": "",
+    "implemented_by": ""
   },
   {
     "finding": "AES",
