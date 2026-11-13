@@ -26,7 +26,8 @@ jobs:
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
 
       - name: The tag matches VERSION
-        run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+        # VERSION, plus ".N" when REVISION holds a results-only revision (VERSIONING.md).
+        run: test "v$(python3 -c 'import sys; sys.path.insert(0, "tools"); import release; print(release.PUBLISHED)')" = "${GITHUB_REF_NAME}"
 
       - uses: docker/setup-buildx-action@v3
 

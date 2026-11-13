@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 2.6.4.1 (2026-11-13): cryptoscan and qScan published
+
+A results revision of 2.6.4 (see VERSIONING.md): results were added and nothing was rescored. The
+measurement release is still 2.6.4, `VERSION` is unchanged, and every scorecard and evidence bundle
+stamped 2.6.4 is still valid and still verifies. The fourth number lives in `REVISION`.
 
 - **cryptoscan 1.5.0 and qScan 0.12.0 are in the published comparison.** Their bundles from the
   third-party workflow were verified and read, and are committed under `evidence/`. No scoring

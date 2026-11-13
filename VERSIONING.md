@@ -12,6 +12,14 @@ The CBOM Benchmark uses **patch-level releases** for ordinary work. The current 
   - Holdout-generator extensions
   - Bug fixes that do not change existing scoring rules
 
+- **Results revision (2.6.4.1, 2.6.4.2, …)** when results are added to the published set and nothing
+  is rescored: a new scanner's verified bundle, a new comparison column, documentation of what a
+  reading found. The fourth number is the `REVISION` file. `VERSION` does not change, so the stamp
+  does not change, and every published scorecard and bundle stays valid without being touched. A
+  revision may not change the corpus, the answer key, a scorer file or a policy; `python
+  tools/stamp.py` and `bench.py verify` on every bundle fail if it did. The next patch release
+  resets `REVISION` to 0.
+
 - **Minor (2.7.0)** only when a scoring rule itself changes in a way that can move numbers on existing findings. That also requires a methodology version bump in `METHODOLOGY.md`.
 
 - **Major** only for breaking changes to the stamp format, the public corpus layout, or the scorecard schema that cannot be handled by the existing comparability checks.
@@ -20,7 +28,7 @@ The CBOM Benchmark uses **patch-level releases** for ordinary work. The current 
 
 Every scorecard and evidence bundle records a stamp (`tools/release.py`):
 
-- release (VERSION)
+- release (VERSION; a results revision in `REVISION` is not part of the stamp)
 - methodology
 - findings count + finding-set hash
 - answer-key hash
