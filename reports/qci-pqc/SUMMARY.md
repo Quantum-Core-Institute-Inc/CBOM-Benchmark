@@ -3,7 +3,7 @@
 - Scanner: **qci-pqc, version 2.3.4.1**, adapter(s) `internal`
 - Scanner's own CBOM: valid CycloneDX 1.6; 856 components
 - Translation: `tools/adapters/qci_pqc.py` 1.1; scope: `integrations/qci-pqc/scope.json`
-- Run: 2026-11-12 12:51 UTC
+- Run: 2026-11-12 23:02 UTC
 
 | Metric | In declared scope | Everything |
 |---|---|---|
@@ -23,10 +23,10 @@
 | Missed findings due by 2030 | 46 | 56 |
 | Crypto libraries, right manifest | 96.4% | 96.4% |
 | Library PQC verdicts right | n/a | n/a |
-| Matched holdout recall | 66.5% | n/a |
+| Matched holdout recall | 66.2% | n/a |
 | Broad holdout recall | 68.8% | n/a |
 | Overfit gap (points) | -0.8 | n/a |
-|   lower 95% bound | -5.9 | n/a |
+|   lower 95% bound | -5.7 | n/a |
 | Negative-control gap (FPs per file) | 0.0 | n/a |
 | Holdout crypto libraries, right manifest | 86.7% | n/a |
 | Library gap (points, not gated) | 5.3 | n/a |
@@ -81,9 +81,9 @@ Risk-signal coverage (in scope): strict 246/383, plus 14 covered only by a QCI c
 
 ## Holdout (private seed)
 
-Holdout recall **66.5%** on 346 findings across 33 families (146 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **65.7%**.
+Holdout recall **66.2%** on 349 findings across 34 families (146 tier/language/family cells). The published cases in the same cells (hand-written plus calibration), weighted the same way: **65.4%**.
 
-Overfit gap: **-0.8 points** (95% interval -5.9 to +4.3). Within sampling noise: the published score generalizes.
+Overfit gap: **-0.8 points** (95% interval -5.7 to +4.2). Within sampling noise: the published score generalizes.
 
 | | Published | Holdout | Holdout n |
 |---|---|---|---|
@@ -92,43 +92,44 @@ Overfit gap: **-0.8 points** (95% interval -5.9 to +4.3). Within sampling noise:
 | Tier 3 | 80.0% | 86.7% | 15 |
 | Tier 4 | 44.4% | 52.1% | 96 |
 | Tier 5 | 0.0% | 0.0% | 10 |
-| Tier pqc | 87.5% | 75.0% | 24 |
+| Tier pqc | 81.5% | 70.4% | 27 |
 | Tier mixed | 81.2% | 79.2% | 48 |
 
 Holdout false positives: 13 (0 in negative controls), PQC over-claims: 0.
 
 | Family | Published | Holdout | Gap |
 |---|---|---|---|
-| TLS-1.3 | 100.0% (n=3) | 33.3% (n=3) | +66.7 |
-| TLS-1.0 | 100.0% (n=2) | 60.0% (n=5) | +40.0 |
-| 3DES | 74.2% (n=31) | 56.7% (n=30) | +17.5 |
+| TLS-1.0 | 100.0% (n=2) | 50.0% (n=4) | +50.0 |
+| TLS-1.3 | 100.0% (n=3) | 50.0% (n=4) | +50.0 |
+| MD5 | 55.6% (n=18) | 36.4% (n=11) | +19.2 |
 | ML-DSA | 100.0% (n=7) | 83.3% (n=6) | +16.7 |
-| MD5 | 52.6% (n=19) | 36.4% (n=11) | +16.3 |
+| SHA-1 | 68.6% (n=35) | 54.5% (n=22) | +14.0 |
 | SHA-256 | 88.9% (n=9) | 75.0% (n=4) | +13.9 |
-| SHA-1 | 70.6% (n=34) | 60.0% (n=20) | +10.6 |
+| 3DES | 76.7% (n=30) | 65.4% (n=26) | +11.3 |
 | DH | 88.9% (n=18) | 80.0% (n=15) | +8.9 |
 | TLS-1.2 | 33.3% (n=3) | 25.0% (n=4) | +8.3 |
 | HMAC | 90.2% (n=41) | 83.3% (n=42) | +6.9 |
 | PBKDF2 | 94.4% (n=18) | 87.5% (n=8) | +6.9 |
 | Ed25519 | 66.7% (n=15) | 63.6% (n=11) | +3.0 |
-| RSA | 86.3% (n=51) | 84.2% (n=38) | +2.1 |
-| ChaCha20-Poly1305 | 100.0% (n=4) | 100.0% (n=5) | +0.0 |
-| LMS | 0.0% (n=2) | 0.0% (n=1) | +0.0 |
+| RSA | 88.0% (n=50) | 86.5% (n=37) | +1.5 |
+| AES | 58.3% (n=48) | 57.4% (n=47) | +0.9 |
+| ChaCha20-Poly1305 | 100.0% (n=4) | 100.0% (n=6) | +0.0 |
+| LMS | 0.0% (n=2) | 0.0% (n=3) | +0.0 |
 | ML-KEM | 100.0% (n=6) | 100.0% (n=9) | +0.0 |
 | RC4 | 0.0% (n=5) | 0.0% (n=4) | +0.0 |
 | SHA-512 | 0.0% (n=1) | 0.0% (n=3) | +0.0 |
 | SHA3-256 | 0.0% (n=12) | 0.0% (n=3) | +0.0 |
 | TLS_AES_256_GCM_SHA384 | 0.0% (n=1) | 0.0% (n=2) | +0.0 |
 | TLS_CHACHA20_POLY1305_SHA256 | 0.0% (n=1) | 0.0% (n=1) | +0.0 |
-| TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | 0.0% (n=1) | 0.0% (n=3) | +0.0 |
-| TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | 0.0% (n=1) | 0.0% (n=2) | +0.0 |
+| TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | 0.0% (n=1) | 0.0% (n=4) | +0.0 |
+| TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 | 0.0% (n=1) | 0.0% (n=1) | +0.0 |
 | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 | 0.0% (n=2) | 0.0% (n=2) | +0.0 |
 | TLS_RSA_WITH_3DES_EDE_CBC_SHA | 0.0% (n=2) | 0.0% (n=1) | +0.0 |
 | TLS_RSA_WITH_AES_128_CBC_SHA | 0.0% (n=2) | 0.0% (n=1) | +0.0 |
 | TLS_RSA_WITH_AES_256_CBC_SHA | 0.0% (n=2) | 0.0% (n=2) | +0.0 |
-| X25519MLKEM768 | 100.0% (n=3) | 100.0% (n=4) | +0.0 |
+| X25519MLKEM768 | 100.0% (n=3) | 100.0% (n=3) | +0.0 |
 | XMSS | 0.0% (n=2) | 0.0% (n=2) | +0.0 |
-| AES | 60.9% (n=46) | 61.4% (n=44) | -0.5 |
+| sntrup761x25519 | 100.0% (n=1) | 100.0% (n=1) | +0.0 |
 | EC | 67.5% (n=40) | 72.7% (n=44) | -5.2 |
 | X25519 | 92.9% (n=14) | 100.0% (n=10) | -7.1 |
 | TLS-1.1 | 25.0% (n=4) | 66.7% (n=6) | -41.7 |
@@ -163,7 +164,7 @@ Direct dependencies found in the right manifest: published 92.0% (weighted to th
 
 ## Gates
 
-Testbench 2.6.0; stamp `{"release": "2.6.0", "methodology": "2.3", "findings": 410, "answer_key": "b0867a4029ea0c56", "corpus": "9ecce20d59d14efb", "scorer": "4449df0c3850c51f", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
+Testbench 2.6.4; stamp `{"release": "2.6.4", "methodology": "2.3", "findings": 410, "answer_key": "b0867a4029ea0c56", "corpus": "9ecce20d59d14efb", "scorer": "0dead3635a2ae115", "policy": "nist:c78f618c306e7d48", "adapter": "c4d7c475e5626d1e"}`.
 
 **All gates passed.**
 

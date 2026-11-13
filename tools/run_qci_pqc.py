@@ -82,6 +82,8 @@ def metric_rows(rep: dict) -> dict:
         "field_completeness": ac["completeness_pct"], "deadline_weighted_recall": d["weighted_recall"],
         "missed_due_by_2030": len(d["missed_due_by_2030"]),
         "library_recall": (rep.get("libraries") or {}).get("recall"),
+        "parameter_recovery": ((rep.get("parameter_recovery") or {}).get("overall") or {}).get("pct"),
+        "config_completeness": (rep.get("config_completeness") or {}).get("config_pct"),
         "library_pq_verdict_accuracy": (rep.get("libraries") or {}).get("pq_verdict_accuracy"),
     }
 

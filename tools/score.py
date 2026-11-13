@@ -503,25 +503,29 @@ def binary_honesty(results: list[dict], skips: list[dict] | None = None) -> dict
 
 
 
-def config_completeness(results: list[dict]) -> dict:
-    """Config-completeness among detected findings that carry config-like parameters.
+CONFIG_SUFFIXES = (".conf", ".cfg", ".cnf", ".properties", ".yaml", ".yml", ".tf")
+CONFIG_NAMES = ("sshd_config", "ssh_config")
 
-    A finding is config-complete when its expected params include at least one of
-    protocol version, cipher/proposal, or DH/group size and the report matched them.
-    Additive; does not change existing scores.
-    """
-    CONFIG_KEYS = {"version", "protocol", "min_version", "cipher", "ciphers", "suite",
-                   "suites", "proposal", "dh", "group", "modp", "named_group"}
-    def is_config(r):
-        return bool(set(r.get("expected_params") or {}) & CONFIG_KEYS)
-    sel = [r for r in results if is_config(r)]
+
+def is_config_finding(r: dict) -> bool:
+    """A finding that lives in a configuration file: TLS, SSH and IPsec configs, signing policies,
+    Kubernetes and Terraform files. Certificates, keys and keystores are assets, not configs."""
+    name = r["file"].rsplit("/", 1)[-1]
+    return r["lang"] == "assets" and (name.endswith(CONFIG_SUFFIXES) or name in CONFIG_NAMES)
+
+
+def config_completeness(results: list[dict]) -> dict:
+    """Findings in configuration files: how many were found, and of those, how many were reported
+    with every expected parameter (protocol version, suite, key or group size). Reporting only: the
+    same findings are already in recall and parameter accuracy; this isolates them."""
+    sel = [r for r in results if is_config_finding(r)]
     det = [r for r in sel if r["detected"]]
     ok = sum(1 for r in det if r["params_ok"])
-    # Asset links are tracked separately in linkage; surface the count here for visibility
     return {
         "config_expected": len(sel),
         "config_detected": len(det),
         "config_complete": ok,
+        "config_recall": pct(len(det), len(sel)) if sel else None,
         "config_pct": pct(ok, len(det)) if det else None,
     }
 
@@ -613,11 +617,12 @@ def to_markdown(name: str, rep: dict) -> str:
     cc = rep.get("config_completeness")
     if cc and cc.get("config_expected"):
         out += ["## Config Completeness", "",
-                "Detected findings that carry protocol version, cipher/proposal, or DH/group size, "
-                "and whether those parameters matched. See also asset links in the linkage section.", "",
-                "| Bucket | Expected | Detected | Config-complete | % |",
-                "|---|---|---|---|---|",
-                f"| TLS / SSH / IPsec / config | {cc['config_expected']} | {cc['config_detected']} | {cc['config_complete']} | {fmt(cc['config_pct'])} |",
+                "Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, Terraform): how many "
+                "were found, and of those, how many came with every expected parameter. The same findings count in "
+                "recall and parameter accuracy; this isolates them. Asset links are in the linkage section.", "",
+                "| Bucket | Expected | Detected | Recall | Config-complete | % of detected |",
+                "|---|---|---|---|---|---|",
+                f"| Configuration files | {cc['config_expected']} | {cc['config_detected']} | {fmt(cc.get('config_recall'))} | {cc['config_complete']} | {fmt(cc['config_pct'])} |",
                 ""]
 
     bh = rep.get("binary_honesty")

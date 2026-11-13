@@ -52,14 +52,16 @@ jobs:
             name: cryptoscan 1.5.0
             version: "1.5.0"
             ecosystem: go
+            # The repository is csnp/qramm-cryptoscan; the module still declares its old path.
             package: github.com/csnp/cryptoscan/cmd/cryptoscan@v1.5.0
             cmd: "cryptoscan scan {corpus} --format cbom --output {out}/cbom.json"
           - id: qscan
-            name: qScan
-            version: "latest"
+            name: qScan 0.12.0
+            version: "0.12.0"
             ecosystem: npm
-            package: "@quantakrypto/qscan"
+            package: "@quantakrypto/qscan@0.12.0"
             cmd: "qscan {corpus} --cbom -o {out}/cbom.json"
+            adapter: qscan      # strips the "(primitive)" suffix from names; see tools/adapters/qscan.py
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -69,6 +71,12 @@ jobs:
         if: matrix.ecosystem == 'npm'
         with:
           node-version: "22.18"
+
+      - uses: actions/setup-go@v5
+        if: matrix.ecosystem == 'go'
+        with:
+          go-version: "1.24"
+          cache: false
 
       - name: Benchmark dependencies (pinned)
         run: pip install -r requirements.txt
@@ -85,6 +93,11 @@ jobs:
             mkdir -p "$RUNNER_TEMP/scanner-bin"
             ln -s "$SCANNER_HOME/bin/${{ matrix.id }}" "$RUNNER_TEMP/scanner-bin/${{ matrix.id }}"
             echo "$RUNNER_TEMP/scanner-bin" >> "$GITHUB_PATH"
+          elif [ "${{ matrix.ecosystem }}" = "go" ]; then
+            mkdir -p "$SCANNER_HOME"
+            GOBIN="$SCANNER_HOME" go install "${{ matrix.package }}"
+            go version -m "$SCANNER_HOME/${{ matrix.id }}" > scanner-packages.txt
+            echo "$SCANNER_HOME" >> "$GITHUB_PATH"
           else
             mkdir -p "$SCANNER_HOME" && cd "$SCANNER_HOME"
             npm install --no-audit --no-fund --ignore-scripts "${{ matrix.package }}"
@@ -99,7 +112,7 @@ jobs:
       - name: Scan, score and bundle, in the sandbox
         run: |
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
-            --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 \
+            --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 --adapter "${{ matrix.adapter || 'none' }}" \
             --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
@@ -114,6 +127,24 @@ jobs:
             echo "## ${{ matrix.name }}"
             if [ -f "$B/scorecard.md" ]; then sed -n '1,60p' "$B/scorecard.md"; else echo "No scorecard: see run.log in the artifact."; fi
           } >> "$GITHUB_STEP_SUMMARY"
+          # What the scanner itself said and produced, in the job log: a score of zero means nothing
+          # until you know whether it scanned anything.
+          echo "--- scanner output (last 40 lines of run.log)"; tail -n 40 "$B/run.log" 2>/dev/null || echo "(no run.log)"
+          echo "--- raw output files"; ls -la "$B/raw" 2>/dev/null || echo "(no raw directory)"
+          python3 - "$B" <<'PY'
+          import collections, glob, json, sys
+          for path in sorted(glob.glob(sys.argv[1] + "/raw/*.json")):
+              try:
+                  bom = json.load(open(path))
+              except Exception as e:
+                  print(path, "is not JSON:", e); continue
+              comps = bom.get("components") or []
+              located = sum(1 for c in comps if (c.get("evidence") or {}).get("occurrences"))
+              print(path, "|", bom.get("bomFormat"), bom.get("specVersion"), "| components:", len(comps), "| with a location:", located,
+                    "| types:", dict(collections.Counter(c.get("type") for c in comps)))
+              for c in comps[:3]:
+                  print("   ", json.dumps(c)[:900])
+          PY
 
       - uses: actions/upload-artifact@v4
         if: always()

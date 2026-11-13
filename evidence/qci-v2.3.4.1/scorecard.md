@@ -47,6 +47,59 @@ Calibration cases (generated Tier 1-2 siblings of the hand-written cases; they f
 | System fixture python | 3/3 | 100.0% | 43.8–100.0% (thin) | 33.3% | 33.3% | 100.0% | 100.0% | 0 | 100.0% |
 | **Total** | 246/383 | 64.2% | 59.3–68.9% | 61.9% | 54.5% | 97.4% | 100.0% | 1 | 99.6% |
 | Negative controls | | | | | | | | 0 | |
+## Parameter Recovery
+
+Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for the fields required.
+
+| Bucket | Detected | Parameters correct | % |
+|---|---|---|---|
+| **Overall** | 246 | 134 | 54.5% |
+| Tier 1 | 82 | 45 | 54.9% |
+| Tier 2 | 27 | 13 | 48.1% |
+| Tier 3 | 12 | 3 | 25.0% |
+| Tier 4 | 22 | 18 | 81.8% |
+| Tier 5 | 2 | 1 | 50.0% |
+| Tier deadcode | 8 | 6 | 75.0% |
+| Tier mixed | 50 | 18 | 36.0% |
+| Tier pqc | 30 | 25 | 83.3% |
+| Tier system | 13 | 5 | 38.5% |
+| assets | 46 | 39 | 84.8% |
+| c | 27 | 9 | 33.3% |
+| csharp | 12 | 1 | 8.3% |
+| go | 35 | 13 | 37.1% |
+| java | 45 | 28 | 62.2% |
+| javascript | 20 | 8 | 40.0% |
+| python | 55 | 36 | 65.5% |
+| typescript | 6 | 0 | 0.0% |
+| RSA | 33 | 12 | 36.4% |
+| EC | 27 | 9 | 33.3% |
+| AES | 26 | 6 | 23.1% |
+| HMAC | 21 | 8 | 38.1% |
+| 3DES | 17 | 5 | 29.4% |
+| SHA-1 | 17 | 17 | 100.0% |
+| PBKDF2 | 14 | 5 | 35.7% |
+| DH | 11 | 2 | 18.2% |
+
+## Config Completeness
+
+Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, Terraform): how many were found, and of those, how many came with every expected parameter. The same findings count in recall and parameter accuracy; this isolates them. Asset links are in the linkage section.
+
+| Bucket | Expected | Detected | Recall | Config-complete | % of detected |
+|---|---|---|---|---|---|
+| Configuration files | 60 | 24 | 40.0% | 20 | 83.3% |
+
+## Binary Evidence Honesty
+
+Known stripped binaries must either produce findings or a recorded skip. An empty result without a skip is a coverage honesty failure.
+
+**Status:** FAIL (3 unrecorded empty binaries)
+
+| Path | Reason |
+|---|---|
+| `corpus/tier5/c/bin/meterd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/keyd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/fwcheck` | binary: no findings and no recorded skip |
+
 
 Intervals are 95% Wilson intervals on recall. 25 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 

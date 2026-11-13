@@ -19,14 +19,14 @@
   "ignored": 0,
   "baseline_diff": null,
   "outputs": {
-    "report": "/tmp/cbom-sandbox-192yknux/out/report.html",
-    "cbom": "/tmp/cbom-sandbox-192yknux/out/cbom.json",
-    "sarif": "/tmp/cbom-sandbox-192yknux/out/results.sarif"
+    "report": "/tmp/cbom-sandbox-nra817_3/out/report.html",
+    "cbom": "/tmp/cbom-sandbox-nra817_3/out/cbom.json",
+    "sarif": "/tmp/cbom-sandbox-nra817_3/out/results.sarif"
   }
 }
 
 --- stderr ---
-Scanning /tmp/cbom-sandbox-192yknux/corpus with adapter(s): internal ...
+Scanning /tmp/cbom-sandbox-nra817_3/corpus with adapter(s): internal ...
   qci-pattern: 1276 raw findings
 Deduplicated: 1276 → 856 findings
 Source findings: 854

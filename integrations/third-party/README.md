@@ -9,6 +9,8 @@ Open-source CBOM scanners that QCI doesn't maintain, run against the corpus by
 | cbom-scan | 0.1.0 | PyPI | `cbom-scan scan {corpus} --format json --fail-on never --output {out}/cbom.json` | CycloneDX, declares spec 1.7 |
 | pqcheck | 0.1.0 | PyPI | `pqcheck scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
 | quantascan | 1.0.1 | npm | `quantascan {corpus} --format cyclonedx-cbom --output {out}/cbom.json` | CycloneDX 1.6 CBOM |
+| cryptoscan | 1.5.0 | Go module `github.com/csnp/cryptoscan` (repository `csnp/qramm-cryptoscan`) | `cryptoscan scan {corpus} --format cbom --output {out}/cbom.json` | CycloneDX CBOM |
+| qScan | 0.12.0 | npm `@quantakrypto/qscan` | `qscan {corpus} --cbom -o {out}/cbom.json` | CycloneDX 1.6 CBOM |
 
 The commands were written from each package's command-line definition and all three run to
 completion in the sandbox. First results on benchmark 2.4.0 (393 findings, no adapter, no declared
@@ -23,6 +25,22 @@ scope, nobody has read the bundles yet):
 These are raw numbers, not published results. A scanner that names algorithms in a vocabulary the
 normalizer doesn't know scores low here for a reason an adapter would fix, and none of the three has
 been checked for that.
+
+cryptoscan and qScan are the two open scanners chosen for the leaderboard, next to QCI PQC (the
+reference product), cdxgen (existing baseline) and grep (calibration baseline). Both ran for the
+first time on benchmark 2.6.4 (410 findings). First results, raw and unread:
+
+| Scanner | Recall | Precision | Parameters correct | Adapter |
+|---|---|---|---|---|
+| cryptoscan 1.5.0 | 34.6% | 59.2% | 37.3% | none |
+| qScan 0.12.0 | 18.3% | 83.3% | 17.3% | `tools/adapters/qscan.py` |
+
+qScan needs its adapter to be scored at all. It names components `DH (key-agree)` and writes
+locations as `path/File.java:12`; the scorer reads plain names and a separate line field, so without
+the adapter 22 located components scored zero. The adapter strips the suffix and splits the line,
+and nothing else. qScan skips minified files unless given `--scan-minified`; the workflow runs it
+with its defaults. `tools/adapters/cryptoscan.py` is still a pass-through and isn't registered:
+cryptoscan's output scores without one.
 
 ## Why they aren't in the comparison yet
 

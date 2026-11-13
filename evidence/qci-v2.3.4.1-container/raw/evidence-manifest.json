@@ -1,7 +1,7 @@
 {
   "files": {
     "cbom.json": {
-      "sha256": "73d208730e5df34e06b2007dc612e8c67d5753088c6b7261df7b974fce0ad781",
+      "sha256": "a4fef927fa532254a86c31605d77e4f5006e98253e8ba79c80259dbbca02c0af",
       "size": 1975013
     },
     "findings.json": {
@@ -13,7 +13,7 @@
       "size": 134514
     },
     "report.html": {
-      "sha256": "f5985b3b6cf136aae0a3e60ac510a669dbd646b56d5369fe8e32c4472b89bf73",
+      "sha256": "e9d0b8690ab3896ef7054e5385ea3eefaaad492dafd6850ff4d31a293bb13788",
       "size": 453479
     },
     "results.sarif": {
@@ -21,7 +21,7 @@
       "size": 417906
     },
     "scan-coverage.json": {
-      "sha256": "271adad9543cb31bd5a74bd884267e44e57d788c58f03dd89069dd08e8c42250",
+      "sha256": "988dc7c29408abbb20e2cf21193686498303450dd4f2cb0635eeabe69b1707f4",
       "size": 110
     }
   },

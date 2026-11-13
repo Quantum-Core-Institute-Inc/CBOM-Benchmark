@@ -49,6 +49,49 @@ Password-gated findings (readable only by trying a well-known default password; 
 | System fixture python | 0/4 | 0.0% | 0.0–49.0% (thin) | 0.0% | n/a | n/a | n/a | 0 | n/a |
 | **Total** | 21/410 | 5.1% | 3.4–7.7% | 5.1% | 81.0% | 100.0% | n/a | 0 | 100.0% |
 | Negative controls | | | | | | | | 0 | |
+## Parameter Recovery
+
+Parameters correct among *detected* findings. See PARAMETER_CHEATSHEET.md for the fields required.
+
+| Bucket | Detected | Parameters correct | % |
+|---|---|---|---|
+| **Overall** | 21 | 17 | 81.0% |
+| Tier 1 | 8 | 7 | 87.5% |
+| Tier 2 | 2 | 1 | 50.0% |
+| Tier 5 | 6 | 5 | 83.3% |
+| Tier deadcode | 1 | 1 | 100.0% |
+| Tier mixed | 4 | 3 | 75.0% |
+| javascript | 17 | 15 | 88.2% |
+| typescript | 4 | 2 | 50.0% |
+| HMAC | 5 | 5 | 100.0% |
+| RSA | 4 | 0 | 0.0% |
+| MD5 | 3 | 3 | 100.0% |
+| Ed25519 | 2 | 2 | 100.0% |
+| PBKDF2 | 2 | 2 | 100.0% |
+| SHA-1 | 2 | 2 | 100.0% |
+| SHA3-256 | 2 | 2 | 100.0% |
+| SHA-256 | 1 | 1 | 100.0% |
+
+## Config Completeness
+
+Findings in configuration files (TLS, SSH, IPsec, signing policies, Kubernetes, Terraform): how many were found, and of those, how many came with every expected parameter. The same findings count in recall and parameter accuracy; this isolates them. Asset links are in the linkage section.
+
+| Bucket | Expected | Detected | Recall | Config-complete | % of detected |
+|---|---|---|---|---|---|
+| Configuration files | 62 | 0 | 0.0% | 0 | n/a |
+
+## Binary Evidence Honesty
+
+Known stripped binaries must either produce findings or a recorded skip. An empty result without a skip is a coverage honesty failure.
+
+**Status:** FAIL (3 unrecorded empty binaries)
+
+| Path | Reason |
+|---|---|
+| `corpus/tier5/c/bin/meterd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/keyd` | binary: no findings and no recorded skip |
+| `corpus/tier5/c/bin/fwcheck` | binary: no findings and no recorded skip |
+
 
 Intervals are 95% Wilson intervals on recall. 23 bucket(s) have fewer than 10 findings and are marked thin: read their rates as indications, not measurements.
 

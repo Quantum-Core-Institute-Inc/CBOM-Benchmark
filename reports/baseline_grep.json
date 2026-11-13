@@ -20424,6 +20424,320 @@
       "prestandard_only": []
     }
   },
+  "parameter_recovery": {
+    "overall": {
+      "detected": 275,
+      "params_correct": 154,
+      "pct": 56.0
+    },
+    "by_tier": {
+      "1": {
+        "detected": 85,
+        "params_correct": 55,
+        "pct": 64.7
+      },
+      "2": {
+        "detected": 39,
+        "params_correct": 19,
+        "pct": 48.7
+      },
+      "3": {
+        "detected": 16,
+        "params_correct": 6,
+        "pct": 37.5
+      },
+      "4": {
+        "detected": 23,
+        "params_correct": 16,
+        "pct": 69.6
+      },
+      "5": {
+        "detected": 15,
+        "params_correct": 10,
+        "pct": 66.7
+      },
+      "deadcode": {
+        "detected": 7,
+        "params_correct": 7,
+        "pct": 100.0
+      },
+      "mixed": {
+        "detected": 55,
+        "params_correct": 19,
+        "pct": 34.5
+      },
+      "pqc": {
+        "detected": 22,
+        "params_correct": 13,
+        "pct": 59.1
+      },
+      "system": {
+        "detected": 13,
+        "params_correct": 9,
+        "pct": 69.2
+      }
+    },
+    "by_lang": {
+      "artifacts": {
+        "detected": 4,
+        "params_correct": 4,
+        "pct": 100.0
+      },
+      "assets": {
+        "detected": 35,
+        "params_correct": 26,
+        "pct": 74.3
+      },
+      "c": {
+        "detected": 35,
+        "params_correct": 21,
+        "pct": 60.0
+      },
+      "csharp": {
+        "detected": 17,
+        "params_correct": 9,
+        "pct": 52.9
+      },
+      "go": {
+        "detected": 37,
+        "params_correct": 13,
+        "pct": 35.1
+      },
+      "java": {
+        "detected": 51,
+        "params_correct": 26,
+        "pct": 51.0
+      },
+      "javascript": {
+        "detected": 31,
+        "params_correct": 23,
+        "pct": 74.2
+      },
+      "python": {
+        "detected": 56,
+        "params_correct": 28,
+        "pct": 50.0
+      },
+      "typescript": {
+        "detected": 9,
+        "params_correct": 4,
+        "pct": 44.4
+      }
+    },
+    "by_family": {
+      "3DES": {
+        "detected": 11,
+        "params_correct": 5,
+        "pct": 45.5
+      },
+      "AES": {
+        "detected": 41,
+        "params_correct": 12,
+        "pct": 29.3
+      },
+      "ChaCha20-Poly1305": {
+        "detected": 9,
+        "params_correct": 9,
+        "pct": 100.0
+      },
+      "DES": {
+        "detected": 4,
+        "params_correct": 2,
+        "pct": 50.0
+      },
+      "DH": {
+        "detected": 7,
+        "params_correct": 1,
+        "pct": 14.3
+      },
+      "DSA": {
+        "detected": 5,
+        "params_correct": 2,
+        "pct": 40.0
+      },
+      "EC": {
+        "detected": 21,
+        "params_correct": 14,
+        "pct": 66.7
+      },
+      "Ed25519": {
+        "detected": 9,
+        "params_correct": 9,
+        "pct": 100.0
+      },
+      "HMAC": {
+        "detected": 26,
+        "params_correct": 1,
+        "pct": 3.8
+      },
+      "LMS": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "MD5": {
+        "detected": 17,
+        "params_correct": 17,
+        "pct": 100.0
+      },
+      "ML-DSA": {
+        "detected": 4,
+        "params_correct": 0,
+        "pct": 0.0
+      },
+      "ML-KEM": {
+        "detected": 6,
+        "params_correct": 0,
+        "pct": 0.0
+      },
+      "PBKDF2": {
+        "detected": 15,
+        "params_correct": 0,
+        "pct": 0.0
+      },
+      "RC4": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "RSA": {
+        "detected": 31,
+        "params_correct": 13,
+        "pct": 41.9
+      },
+      "SHA-1": {
+        "detected": 25,
+        "params_correct": 25,
+        "pct": 100.0
+      },
+      "SHA-256": {
+        "detected": 11,
+        "params_correct": 11,
+        "pct": 100.0
+      },
+      "SHA-384": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "SHA-512": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "SHA3-256": {
+        "detected": 6,
+        "params_correct": 6,
+        "pct": 100.0
+      },
+      "SecP384r1MLKEM1024": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TEA": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS-1.0": {
+        "detected": 2,
+        "params_correct": 2,
+        "pct": 100.0
+      },
+      "TLS-1.1": {
+        "detected": 4,
+        "params_correct": 4,
+        "pct": 100.0
+      },
+      "TLS-1.2": {
+        "detected": 4,
+        "params_correct": 4,
+        "pct": 100.0
+      },
+      "TLS-1.3": {
+        "detected": 3,
+        "params_correct": 3,
+        "pct": 100.0
+      },
+      "TLS_AES_256_GCM_SHA384": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_CHACHA20_POLY1305_SHA256": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_RSA_WITH_3DES_EDE_CBC_SHA": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_RSA_WITH_AES_128_CBC_SHA": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "TLS_RSA_WITH_AES_256_CBC_SHA": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "X25519": {
+        "detected": 14,
+        "params_correct": 14,
+        "pct": 100.0
+      },
+      "X25519MLKEM768": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "XMSS": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      },
+      "sntrup761x25519": {
+        "detected": 0,
+        "params_correct": 0,
+        "pct": null
+      }
+    }
+  },
+  "config_completeness": {
+    "config_expected": 62,
+    "config_detected": 29,
+    "config_complete": 23,
+    "config_recall": 46.8,
+    "config_pct": 79.3
+  },
+  "binary_honesty": {
+    "known": [
+      "corpus/tier5/c/bin/meterd",
+      "corpus/tier5/c/bin/keyd",
+      "corpus/tier5/c/bin/fwcheck"
+    ],
+    "failures": [],
+    "ok": true
+  },
   "linkage": {
     "system_findings": 26,
     "detected": 13,
@@ -36160,12 +36474,12 @@
     }
   ],
   "manifest": {
-    "release": "2.6.3",
+    "release": "2.6.4",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "1362cfc06eabaf34",
+    "scorer": "0dead3635a2ae115",
     "policy": "nist:c78f618c306e7d48",
     "holdout": false,
     "custom": "exclude",

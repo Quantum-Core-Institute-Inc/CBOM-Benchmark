@@ -32,17 +32,23 @@ Every scorecard and evidence bundle records a stamp (`tools/release.py`):
 
 ## Next release
 
-The next release is **2.6.3**. Subsequent ordinary work stays on the 2.6 line until a deliberate methodology or breaking change.
+The next release is **2.6.5**. Subsequent ordinary work stays on the 2.6 line until a deliberate methodology or breaking change.
 
-## Restamping published artifacts
+## Measuring a release
 
-A patch-level VERSION bump does not change the corpus, answer key, or scorer, but published
-scorecards, gates, and evidence manifests still carry the previous release in their stamp.
-`python tools/stamp.py` updates the release field in:
+A stamp says what a number was measured on: the release, the corpus, the answer key, the scorer and
+the policy. It is evidence, so it is never edited. Any change to `VERSION`, the corpus, the answer
+key, the scorer files or a policy makes every published scorecard, the gates file and every
+evidence bundle stale, and the only way to bring them forward is to measure again:
 
-- `reports/*/scorecard*.json`
-- `integrations/qci-pqc/gates.json`
-- every `evidence/*/manifest.json`
+```bash
+QCI_BIN=... CDXGEN_BIN=... CBOM_HOLDOUT_SEED=... tools/release_run.sh
+```
 
-Run it after editing `VERSION`, then commit the result. `python tools/stamp.py --check` exits 1
-if any file still carries an older release (useful in CI).
+That rescans every published scanner, sets the gate floors, times the scanners, runs the required
+checks, rebuilds the evidence bundles and verifies them: about 30 minutes. `python tools/stamp.py`
+lists anything still measured on another tree and exits 1 if there is any.
+
+Releases 2.6.1 to 2.6.3 were published by rewriting the release field and scorer hash in place
+instead. Their evidence bundles did not verify and their holdout generator did not run; 2.6.4 is the
+first release since 2.6.0 whose numbers were measured on its own code.

@@ -1,21 +1,21 @@
 {
   "bundle_format": 1,
-  "testbench": "2.6.1",
+  "testbench": "2.6.4",
   "methodology": "2.3",
-  "created": "2026-11-12T13:24:52Z",
+  "created": "2026-11-12T23:40:37Z",
   "stamp": {
-    "release": "2.6.3",
+    "release": "2.6.4",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
     "corpus": "9ecce20d59d14efb",
-    "scorer": "4449df0c3850c51f",
+    "scorer": "0dead3635a2ae115",
     "policy": "nist:c78f618c306e7d48",
     "adapter": "c4d7c475e5626d1e"
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "6693435eadb673dda297a0652d241e293e361200bc40db949cf2501d18dd01ee",
+    "VERSION": "cbe892c63551904b7de297b049a93d839b763278e2a8ecd49e7c99cdecbb565e",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "integrations/qci-pqc/scope.json": "64a6f4da6c9c820059a540ac3c397ac14f5b07c22a84dd0eedbce2f6a31401d4",
@@ -30,7 +30,7 @@
     "tools/cbomlib.py": "257261685f859e19fe06ecd1d18743d401ff381ed391c00efe20e628e402938a",
     "tools/libraries.py": "4c6ca81358eb24b70861ce272eb9f041bee7a0ca5d3d966fbf20ebaa429d7bec",
     "tools/policy.py": "7133fe4cd6ef415f629669e575792593b415a14f771163e80ebbd3c9eb0fca87",
-    "tools/score.py": "39b376a5c9040f3a8ed222fe2cf2699a012f73b7d1bd8b351b9fc2100624da42",
+    "tools/score.py": "1facde469f1b5006eddb076ad8815399dc0ca06288d56ff037a4f6ace9e3da9a",
     "tools/truth.py": "c14278d5372445cb835c0a011f8c48fba19f3c0b97b6877f9857711a860612c3"
   },
   "scanner": {
@@ -82,10 +82,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 5.74,
-    "cpu_user_s": 5.33,
-    "cpu_sys_s": 0.13,
-    "peak_rss_mb": 31.4,
+    "wall_s": 5.36,
+    "cpu_user_s": 4.82,
+    "cpu_sys_s": 0.11,
+    "peak_rss_mb": 32.6,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -151,9 +151,9 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 3.53,
-      "cpu_user_s": 3.2,
-      "cpu_sys_s": 0.1,
+      "wall_s": 3.38,
+      "cpu_user_s": 2.96,
+      "cpu_sys_s": 0.09,
       "peak_rss_mb": 26.6,
       "isolation": {
         "environment": "scrubbed",
@@ -175,18 +175,18 @@
         "network": false
       }
     },
-    "raw_cbom_sha256": "dbf551655beb84d398d03d93d640b9730de621e3fd5b93c93a3e179eeafe5676",
+    "raw_cbom_sha256": "356bf68ee18470f24d636771f3bc28894063fc2939473cda1801216ee814e4db",
     "verdict": "scored",
     "overfit_gap": {
-      "comparable_findings": 346,
+      "comparable_findings": 349,
       "cells": 146,
-      "families": 33,
-      "published_matched": 65.7,
-      "holdout": 66.5,
+      "families": 34,
+      "published_matched": 65.4,
+      "holdout": 66.2,
       "gap": -0.8,
       "gap_ci95": [
-        -5.9,
-        4.3
+        -5.7,
+        4.2
       ],
       "significant": false,
       "by_tier": {
@@ -216,9 +216,9 @@
           "holdout_n": 10
         },
         "tierpqc": {
-          "published": 87.5,
-          "holdout": 75.0,
-          "holdout_n": 24
+          "published": 81.5,
+          "holdout": 70.4,
+          "holdout_n": 27
         },
         "tiermixed": {
           "published": 81.2,
@@ -229,26 +229,26 @@
       "by_family": [
         {
           "family": "3DES",
-          "published": 74.2,
-          "published_n": 31,
-          "holdout": 56.7,
-          "holdout_n": 30,
-          "gap": 17.5
+          "published": 76.7,
+          "published_n": 30,
+          "holdout": 65.4,
+          "holdout_n": 26,
+          "gap": 11.3
         },
         {
           "family": "AES",
-          "published": 60.9,
-          "published_n": 46,
-          "holdout": 61.4,
-          "holdout_n": 44,
-          "gap": -0.5
+          "published": 58.3,
+          "published_n": 48,
+          "holdout": 57.4,
+          "holdout_n": 47,
+          "gap": 0.9
         },
         {
           "family": "ChaCha20-Poly1305",
           "published": 100.0,
           "published_n": 4,
           "holdout": 100.0,
-          "holdout_n": 5,
+          "holdout_n": 6,
           "gap": 0.0
         },
         {
@@ -288,16 +288,16 @@
           "published": 0.0,
           "published_n": 2,
           "holdout": 0.0,
-          "holdout_n": 1,
+          "holdout_n": 3,
           "gap": 0.0
         },
         {
           "family": "MD5",
-          "published": 52.6,
-          "published_n": 19,
+          "published": 55.6,
+          "published_n": 18,
           "holdout": 36.4,
           "holdout_n": 11,
-          "gap": 16.3
+          "gap": 19.2
         },
         {
           "family": "ML-DSA",
@@ -333,19 +333,19 @@
         },
         {
           "family": "RSA",
-          "published": 86.3,
-          "published_n": 51,
-          "holdout": 84.2,
-          "holdout_n": 38,
-          "gap": 2.1
+          "published": 88.0,
+          "published_n": 50,
+          "holdout": 86.5,
+          "holdout_n": 37,
+          "gap": 1.5
         },
         {
           "family": "SHA-1",
-          "published": 70.6,
-          "published_n": 34,
-          "holdout": 60.0,
-          "holdout_n": 20,
-          "gap": 10.6
+          "published": 68.6,
+          "published_n": 35,
+          "holdout": 54.5,
+          "holdout_n": 22,
+          "gap": 14.0
         },
         {
           "family": "SHA-256",
@@ -375,9 +375,9 @@
           "family": "TLS-1.0",
           "published": 100.0,
           "published_n": 2,
-          "holdout": 60.0,
-          "holdout_n": 5,
-          "gap": 40.0
+          "holdout": 50.0,
+          "holdout_n": 4,
+          "gap": 50.0
         },
         {
           "family": "TLS-1.1",
@@ -399,9 +399,9 @@
           "family": "TLS-1.3",
           "published": 100.0,
           "published_n": 3,
-          "holdout": 33.3,
-          "holdout_n": 3,
-          "gap": 66.7
+          "holdout": 50.0,
+          "holdout_n": 4,
+          "gap": 50.0
         },
         {
           "family": "TLS_AES_256_GCM_SHA384",
@@ -424,7 +424,7 @@
           "published": 0.0,
           "published_n": 1,
           "holdout": 0.0,
-          "holdout_n": 3,
+          "holdout_n": 4,
           "gap": 0.0
         },
         {
@@ -432,7 +432,7 @@
           "published": 0.0,
           "published_n": 1,
           "holdout": 0.0,
-          "holdout_n": 2,
+          "holdout_n": 1,
           "gap": 0.0
         },
         {
@@ -480,7 +480,7 @@
           "published": 100.0,
           "published_n": 3,
           "holdout": 100.0,
-          "holdout_n": 4,
+          "holdout_n": 3,
           "gap": 0.0
         },
         {
@@ -489,6 +489,14 @@
           "published_n": 2,
           "holdout": 0.0,
           "holdout_n": 2,
+          "gap": 0.0
+        },
+        {
+          "family": "sntrup761x25519",
+          "published": 100.0,
+          "published_n": 1,
+          "holdout": 100.0,
+          "holdout_n": 1,
           "gap": 0.0
         }
       ]
@@ -561,10 +569,10 @@
       "exit_code": 0,
       "signal": null,
       "timed_out": false,
-      "wall_s": 5.75,
-      "cpu_user_s": 5.34,
-      "cpu_sys_s": 0.15,
-      "peak_rss_mb": 30.5,
+      "wall_s": 5.36,
+      "cpu_user_s": 4.79,
+      "cpu_sys_s": 0.1,
+      "peak_rss_mb": 31.4,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -619,9 +627,11 @@
       "deadline_weighted_recall": 65.1,
       "missed_due_by_2030": 46,
       "library_recall": 96.4,
+      "parameter_recovery": 54.5,
+      "config_completeness": 83.3,
       "library_pq_verdict_accuracy": null,
       "cbom_schema_valid": 1,
-      "overfit_gap_ci_low": -5.9,
+      "overfit_gap_ci_low": -5.7,
       "negative_fp_gap": 0.0
     },
     "without": {}
