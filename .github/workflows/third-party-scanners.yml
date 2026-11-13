@@ -182,7 +182,7 @@ jobs:
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
             --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 --adapter "${{ matrix.adapter || 'none' }}" \
             --cbom "${{ matrix.output || 'cbom.json' }}" --timeout "${{ matrix.timeout || '1800' }}" \
-            --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
+            --without-holdout --remediation --repeat --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
       - name: The bundle re-derives
@@ -195,11 +195,13 @@ jobs:
           {
             echo "## ${{ matrix.name }}"
             if [ -f "$B/scorecard.md" ]; then sed -n '1,60p' "$B/scorecard.md"; else echo "No scorecard: see run.log in the artifact."; fi
+            for extra in integrity drift priority; do [ -f "$B/$extra.md" ] && cat "$B/$extra.md"; done; true
           } >> "$GITHUB_STEP_SUMMARY"
           # What the scanner itself said and produced, in the job log: a score of zero means nothing
           # until you know whether it scanned anything.
           echo "--- scanner output (last 40 lines of run.log)"; tail -n 40 "$B/run.log" 2>/dev/null || echo "(no run.log)"
           echo "--- raw output files"; ls -la "$B/raw" 2>/dev/null || echo "(no raw directory)"
+          for extra in integrity drift priority; do [ -f "$B/$extra.md" ] && { echo "--- $extra"; cat "$B/$extra.md"; }; done; true
           # For a SARIF tool: which rules produced components, and which crypto rules named no algorithm.
           python3 - "$B" <<'PY'
           import glob, json, sys

@@ -226,6 +226,8 @@ def cmd_run(a) -> int:
     if a.remediation:
         manifest["remediation"] = run_remediation(cmd, a, lim, extra_path, parts, version, bundle)
 
+    manifest["integrity"] = run_integrity(cmd, a, lim, extra_path, bundle)
+
     gate_code = None
     if a.gates:
         gate_code = gates(a, manifest, parts["scorecard"], bundle)
@@ -279,6 +281,30 @@ def run_holdout(seed: int, cmd, a, lim, extra_path, published: dict, scope, bund
         return out
     finally:
         shutil.rmtree(work, ignore_errors=True)
+
+
+def run_integrity(cmd, a, lim, extra_path, bundle: Path) -> dict:
+    """Signature facts from the raw output; with --repeat, a second scan of the same corpus to compare."""
+    import integrity
+    out = {}
+    if a.repeat:
+        print("Second scan of the same corpus, to compare the two outputs ...")
+        res = sandbox.run(cmd, {"corpus": ROOT / "corpus"}, lim, pass_env=tuple(a.pass_env), extra_path=extra_path,
+                          require=a.require_isolation, **fs(a))
+        cb = Path(res.out) / a.cbom
+        if cb.exists() and not res.timed_out and not res.tampered:
+            (bundle / "raw-repeat").mkdir()
+            shutil.copy2(cb, bundle / "raw-repeat" / a.cbom)
+        out["repeat_run"] = res.record()
+        sandbox.cleanup(res)
+    f = integrity.facts(bundle / "raw", a.cbom, bundle / "raw-repeat")
+    if a.repeat and f["repeat"]["verdict"] == "not run":
+        f["repeat"] = {"verdict": "no output from the second scan"}
+    (bundle / "integrity.json").write_text(json.dumps(f, indent=2) + "\n")
+    (bundle / "integrity.md").write_text(integrity.markdown(f, a.name))
+    print(f"  signed: {integrity.signed_cell(f)}; second scan: {integrity.repeat_cell(f)}")
+    return {**out, "signed": f["signature"]["signed"], "signature_verifies": f["signature"]["verifies"],
+            "repeat": f["repeat"]["verdict"]}
 
 
 def remediation_score(adapter: str, raw_after: dict, policy: str, before: dict, after_corpus: Path) -> dict:
@@ -465,6 +491,9 @@ def cmd_verify(a) -> int:
     need += ["scorecard-full.json"] if sc.get("scope") else []
     rem_scored = (m.get("remediation") or {}).get("verdict") == "scored"
     need += [f"raw-after/{sc['cbom']}", "remediation.json"] if rem_scored else []
+    integ = m.get("integrity")
+    need += ["integrity.json"] if integ else []
+    need += [f"raw-repeat/{sc['cbom']}"] if integ and (bundle / "raw-repeat").exists() else []
     need += ["gates.json"] if m.get("gates") else []
     need += ["checks.json"] if (m.get("checks") or {}).get("status") not in (None, "not run") else []
     absent = [f for f in need if not (bundle / f).exists()]
@@ -509,6 +538,15 @@ def cmd_verify(a) -> int:
                 "fix-and-rescan re-derives from raw-after/, and the manifest's counts match")
         finally:
             shutil.rmtree(work, ignore_errors=True)
+    if integ:
+        import integrity
+        f = integrity.facts(bundle / "raw", sc["cbom"], bundle / "raw-repeat")
+        if "repeat_run" in integ and f["repeat"]["verdict"] == "not run":
+            f["repeat"] = {"verdict": "no output from the second scan"}
+        say(f == json.loads((bundle / "integrity.json").read_text())
+            and (integ["signed"], integ["signature_verifies"], integ["repeat"])
+            == (f["signature"]["signed"], f["signature"]["verifies"], f["repeat"]["verdict"]),
+            "the signature verdict and the second-scan comparison re-derive from raw/ and raw-repeat/")
     ho_m = m.get("holdout") or {}
     ho_checked = False
     if ho_m.get("verdict") == "scored" and a.holdout_seed is not None:
@@ -630,6 +668,8 @@ def main() -> int:
     r.add_argument("--checks", help="checks.json from `bench.py checks` to include")
     r.add_argument("--remediation", action="store_true",
                    help="also apply the reference migrations, rescan, and score verified remediation")
+    r.add_argument("--repeat", action="store_true",
+                   help="also scan the corpus a second time and report whether the two outputs are the same")
     r.add_argument("--bundle", required=True)
     r.add_argument("--force", action="store_true", help="replace an existing bundle directory")
     r.add_argument("--timeout", type=int, default=1800, help="wall-clock seconds (default 1800)")

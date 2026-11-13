@@ -115,6 +115,26 @@ whether it finished inside the budget, wall and CPU time, peak memory, files and
 recall on the planted uses overall and by quartile of position in the tree, and a coverage
 fall-off flag when the last quartile is 25 points or more below the first. Not part of the headline.
 
+## 4d. Artifact integrity (reported, not scored)
+
+Two facts about the scanner's output as a record. Neither enters recall, precision or any gate.
+
+**Signed.** Whether the CBOM carries a signature, and whether it verifies. A CycloneDX `signature`
+object in JSON Signature Format with one signer and an embedded public key is verified (RS, PS and
+ES at 256, 384 and 512, and Ed25519), over the RFC 8785 canonical form. "Verifies" means the
+content is unaltered since it was signed with the key the file carries. It does not establish who
+signed: that needs a key the reader already trusts. Anything the check cannot settle is "not
+verified" with the reason, never "fails": another algorithm, a multi-signer or chained signature,
+no embedded key, a document with non-integer numbers, or a detached signature file beside the CBOM.
+
+**Second scan of the same input.** With `--repeat` the scanner scans the unchanged corpus a second
+time and the two outputs are compared. The result is one of: byte-identical; identical apart from
+serial number and timestamp (`serialNumber`, `metadata.timestamp`, a signature over them, and
+SARIF invocation times, and nothing else); same content in a different order; or different, with
+the number of components or results found in only one of the two. A changed `bom-ref` counts as
+different. An inventory that changes when the code has not cannot be compared from one week to
+the next.
+
 ## 5. Declared scope
 
 A scanner may publish what it doesn't cover. A scope file has rules of three kinds: `glob` (files
