@@ -38062,7 +38062,7 @@
     }
   ],
   "manifest": {
-    "release": "2.6.4",
+    "release": "2.6.5",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
@@ -38075,7 +38075,7 @@
     "finding_set": "3cb6b2e44bdc9776",
     "scope": null,
     "scanner": "answer key",
-    "scanner_version": "benchmark 2.6.4",
+    "scanner_version": "benchmark 2.6.5",
     "adapter": null
   }
 }

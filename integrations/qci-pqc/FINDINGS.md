@@ -1,134 +1,80 @@
-# qci-pqc-scan v2.3.4.1 on the QCI CBOM Benchmark: findings for the scanner team
+# qci-pqc-scan v2.3.4.3 on the QCI CBOM Benchmark: findings for the scanner team
 
-Scanner: `qci-pqc-scan` 2.3.4.1, internal adapter, run in the sandbox. Benchmark 2.6.0 (410
-findings, methodology 2.3, NIST policy), declared scope from `integrations/qci-pqc/scope.json`,
-holdout generator 1.2. Reproduce with `python tools/run_qci_pqc.py --scanner <checkout>` and
-`CBOM_HOLDOUT_SEED` set. Evidence: `evidence/qci-v2.3.4.1/` and `evidence/perf-qci-v2.3.4.1/`; the
-numbers below are in `reports/qci-pqc/SUMMARY.md`.
+Scanner: `qci-pqc-scan` 2.3.4.3, internal adapter, run in the sandbox and in its own container.
+Benchmark 2.6.5 (410 findings, methodology 2.3, NIST policy), declared scope from
+`integrations/qci-pqc/scope.json`, holdout generator 1.4. Reproduce with `tools/release_run.sh`.
+Evidence: `evidence/qci-v2.3.4.3/`, `evidence/qci-v2.3.4.3-container/` and
+`evidence/perf-qci-v2.3.4.3/`; the numbers below are in `reports/qci-pqc/SUMMARY.md`.
 
 ## The short version
 
-| | In declared scope | Everything |
+| | v2.3.4.1 on 2.6.4 | v2.3.4.3 on 2.6.5 |
 |---|---|---|
-| Recall | 64.2% | 61.0% |
-| At primary site | 61.9% | 58.8% |
-| Parameters correct (of detected) | 54.5% | 54.4% |
-| Precision | 99.6% (1 false positive) | 99.6% |
-| Ticket-ready (of detected) | 45.9% | 45.2% |
-| Deadline-weighted recall | 65.1% | 61.8% |
-| Missed findings due by 2030 | 46 | 56 |
-| Crypto libraries in the right manifest | 96.4% | |
-| Overfit gap | -0.8 (interval -5.9 to +4.3), not significant | |
-| Negative-control gap | 0.0 per file | |
+| Recall, everything | 61.0% | 62.2% |
+| Recall, declared scope | 64.2% | 65.5% |
+| Parameters correct (of detected) | 54.4% | 90.2% |
+| Precision | 99.6% (1 false positive) | 100% (none) |
+| Ticket-ready (of detected) | 45.2% | 80.0% |
+| Actionable recall | 27.6% | 49.8% |
+| Config findings complete (of found) | 20 of 24 | 24 of 24 |
+| Crypto libraries in the right manifest | 96.4% | 96.4% |
+| Overfit gap | -0.8 (-5.7 to +4.2) | -0.8 (-5.6 to +4.2) |
+| Negative-control gap | 0.0 per file | 0.0 per file |
 
-What works: precision is where it should be, with no false positives in negative controls and no
-PQC over-claims; libraries are found in the right manifest; the published score carries over to
-unseen code; the CBOM validates as CycloneDX 1.6; and on the large tree it finds all 60 planted uses
-in 115 seconds with no fall-off toward the end.
+Parameters were the gap and are mostly closed. The scanner now reads the whole statement, follows
+names a file defines once, and follows the object a call creates. Of 255 detections, 230 carry the
+right parameters, 25 carry none, and none carries a wrong one. The gain holds on code the scanner
+has not seen: on a public-seed holdout set, parameters went from 47.4% to 88.1% with recall and false
+positives unchanged.
 
-The gate floors were reset on this release to v2.3.4.1's own numbers, at the scanner owner's
-request, so it passes every gate by construction. What the old floors would have flagged is item 1:
-six findings this release no longer reports.
+Recall moved by five findings. Three are RC4, and those are the benchmark's correction, not the
+scanner's: the adapter's name table lacked `RC4`, so detections the scanner had always made were
+scored as misses (adapter 1.2 fixes it). Two are the scanner's: SHA-512 in C# (`SHA512.Create` was
+reported as SHA-256, the one false positive on 2.6.4) and HMAC in the system fixture.
 
-## 1. Binaries are read and nothing is reported from them
+The gate floors were reset to v2.3.4.3's own numbers on this release, so it passes every gate by
+construction. The floors now protect 90.8% on parameters and 100% precision.
 
-The corpus now has three stripped binaries and a Go binary: 15 findings, none reported.
+## 1. Binaries are skipped, and now the scanner says so
 
-Six findings that the scanner used to report are gone: MD5 and 3DES in the stripped binary
-(`corpus/tier5/c/bin/meterd`), and RSA, HMAC, SHA-1 and SHA-256 in the Go binary of the system
-fixture. Run on `corpus/tier5/c` alone, 2.3.4.1 reports nothing where the release before it reported
-MD5 and 3DES.
+2.3.4.1 skipped any file with a NUL byte in its first 1,024 bytes and recorded nothing. 2.3.4.3
+still skips them, but `scan-coverage.json` lists each one (eight on this corpus), marks the scan
+`partial`, and the command exits 1 with "Incomplete scan: 8 skipped". That is the honest half of the
+fix. The findings are still missing: 14 of the 15 in the four native binaries (the one found is HMAC in
+the system fixture's Go binary, through the artifact parser), and the scanner finds 4 of 42 Tier 5
+findings overall. Reading the dynamic symbol table and the string table of an ELF file would
+recover most of them without bringing back the two DH false positives that plain text matching
+over binary bytes produced.
 
-Two things make this worse than a plain miss:
+Anything that wraps the scanner must expect exit code 1 on a tree with binaries. The benchmark
+scores the run as long as the CBOM was written.
 
-- **The coverage file says nothing happened.** `scan-coverage.json` counts the binary as read,
-  lists the `artifact` parser, and shows `skipped: []` and `partial: false`. A reader of that file
-  concludes the binary was inspected and is clean.
-- **The release notes don't mention it.** They list a symlink check and a change to wrapper
-  matching.
+## 2. Compiled Java and minified JavaScript
 
-**The cause is one added check.** In `scanner.py`, the source pass now reads each file as bytes
-and moves on if there is a NUL in the first 1,024 (`if b"\x00" in raw[:1024]: continue`). Before,
-it decoded everything as text and ran the source patterns over it, which is how `EVP_md5` in a
-binary's symbol table became an MD5 finding, and also how "DH" somewhere in the bytes became a DH
-finding. The check removed both at once: the two false positives are gone (precision 98.8% to
-99.6%) and so are the six real findings. The `continue` records nothing, which is why the coverage
-file still shows the binary as read.
+Two of the 3 findings in `billing-core.jar` are detected; none of the 5 in `token-vault.jar` and the
+system fixture's `ledger-service.jar`, and none of the 11 in the three minified bundles. Minified code is
+text, so this is a pattern problem and not a file-reading one: the calls are there with shortened
+receiver names.
 
-Two changes fix it properly. Record the skip (`skip(rel, "binary: not scanned as source")`), so the
-coverage file is true. Then get the findings back from evidence that can't produce the old false
-positives: `artifacts.py` already parses ELF headers for needed libraries; reading the dynamic symbol
-table next to it (`EVP_md5`, `EVP_des_ede3_cbc`, `EVP_PKEY_CTX_set_rsa_keygen_bits`) gives exact
-names where the byte matcher gave substrings.
+## 3. Non-code assets
 
-## 2. Parameters: found, but not sized
+22 of 66 Tier 4 findings. In configuration files the scanner finds 24 of 62; every one it finds is
+now complete. TLS cipher suites named in server configs remain unreported: all eight suite families
+in the corpus score zero.
 
-Parameters are right on 54.5% of what is detected. The pattern is consistent: the algorithm is
-named and the key size, curve or mode is left out.
+## 4. The 25 detections without parameters
 
-| Where | Parameters right |
-|---|---|
-| Python, Tier 1 | 100% |
-| Java, Tier 1 | 66.7% |
-| Go, C, JavaScript, Tier 1 | 42.9% to 46.7% |
-| C#, Tier 1 | 11.1% |
-| C, C#, TypeScript, Tier 2 | 0% |
-| Mixed files | 0% to 54.5% by language |
-
-Examples: `RSA.Create(2048)` reported as RSA with no size; `new AesGcm(key, 16)` as AES with no mode;
-`tune.ssl.default-dh-param 1024` as DH with no size. A finding without its parameters can't be dated
-(RSA-1024 is out now, RSA-3072 is not) and can't become a ticket, which is most of why ticket-ready
-is 45.9%.
-
-The same gap shows in the asset fields a ticket needs: certificate expiry and subject are correct on
-2 of 11 detected certificates, and the protocol version is given on none of 8 detected TLS findings.
-
-## 3. Formats and languages it doesn't read yet
-
-| Area | Found | What happens |
+| Where | Count | Why |
 |---|---|---|
-| Apache httpd (5) | 0 | `SSLProtocol` and `SSLCipherSuite` aren't read. The nginx equivalents are. |
-| HAProxy (6) | 1 | Finds the DH group, without its size. Misses `ssl-min-ver` and both cipher lines. |
-| IPsec (9) | 1 | Finds `chacha20poly1305` in `swanctl.conf`. `aes256-sha256-modp2048` and `3des-sha1-modp1024!` aren't parsed. |
-| LMS and XMSS (8) | 0 | Not in Bouncy Castle code, not in the pure-Python implementation, not by OID in the two public keys, not by name in the signing policy. The P-384 signer in that policy is missed too. |
-| Minified JavaScript (11) | 0 | Three one-line bundles. `e.createHash("md5")` isn't found, though the same call is in ordinary source. cdxgen finds 6 of these 11 and grep 8. |
-| Stripped binaries (11) | 0 | See item 1. Grep finds 7 of 11 from symbol and name strings. |
-| C#, direct (13) | 9 | Misses `MD5.HashData`, `SHA256.HashData` and `SHA3_256.HashData` in a file where it finds `SHA1.HashData`, and `new HMACSHA256(...)`. |
-| C#, indirection (6) | 3 | Misses `IncrementalHash.CreateHash(new HashAlgorithmName(Fingerprint))` and both entries of a `Func<HashAlgorithm>` table. |
-| TypeScript and C, indirection | 3 of 7, 2 of 6 | `as const` config objects, template literals, macros and function pointers. |
-| Go PQC (4) | 1 | `crypto/mlkem` and the hybrid group in `tls.Config`. |
-| Tier 5, source (12) | 2 | Runtime-assembled names, reflection, hand-rolled algorithms. Expected to be hard. |
+| Python | 9 | constants and wrappers in another module (Tier 3), a JWT algorithm table |
+| Java | 8 | constants in another class, a strategy factory, compiled code |
+| Go | 4 | a block cipher returned from a factory, a value read from config |
+| Certificates and keys | 2 | a PKCS#1 RSA key with no size, a secp256k1 key |
+| TypeScript, C# | 2 | a table indexed by a runtime value, a ternary between two curves |
 
-## 4. The one false positive
+Most need cross-file resolution, which `resolve.py` does for some Python shapes already. The last
+row is correct behavior: with two possible values, the scanner should stay silent.
 
-**SHA-256 reported for `SHA512.Create`** (`corpus/tier2/csharp/DispatchTable/Program.cs`, line 10).
-The file has no SHA-256 in it. Something maps a SHA-2 constructor reference to the default member of
-the family.
+## 5. Still not detected at all
 
-## 5. Routing and links in the system fixture
-
-- **Five of 13 detected system findings route to the wrong team.** Where the shared wrapper and its
-  config decide the algorithm, the scanner reports the wrapper, so the ticket goes to
-  platform-security instead of the edge, payments or ledger team that has to change its code.
-  Reporting the calling service as well fixes it.
-- **No asset links.** The CBOM doesn't connect the nginx config to the certificate it serves, or the
-  certificate to its key (0 of 2).
-
-## 6. Fix and rescan
-
-4 of 8 eligible migrations verify. The other four fail for the reason in item 2: after the fix the
-scanner finds the new algorithm and not its parameters (ML-DSA-65 in Python, AES-256-GCM in Go,
-JavaScript and C). The nginx and sshd migrations aren't eligible, because the scanner didn't find
-everything they retire beforehand. Nothing outside the migrated files changed between the two scans.
-
-## Where to spend effort
-
-1. **Decide what the scanner does with binaries, and say so.** Either restore the findings from
-   imported symbols or declare binaries out of scope and list them as not inspected. Six findings.
-2. **Carry parameters through.** The detections exist; sizes, curves and modes at the call site are
-   the cheapest points on the board, and they move parameters, ticket-ready and four migrations at
-   once.
-3. **Apache and HAProxy directives.** Eleven findings, and the nginx parser is already there.
-4. **IPsec proposal strings.** Nine findings behind one small grammar.
-5. **LMS and XMSS.** Eight findings, and the first thing a CNSA 2.0 firmware-signing audit asks about.
-   A scanner that can't name them reports that estate as empty.
+SHA3-256 (7 findings), LMS and XMSS public keys, and the TLS cipher suites above.

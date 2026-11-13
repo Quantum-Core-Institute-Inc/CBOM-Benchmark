@@ -4,6 +4,15 @@
     "artifact",
     "source"
   ],
-  "skipped": [],
-  "partial": false
+  "skipped": [
+    "system/payments-platform/services/api-gateway/bin/api-gateway: binary",
+    "tier5/c/bin/fwcheck: binary",
+    "tier5/c/bin/keyd: binary",
+    "tier5/c/bin/meterd: binary",
+    "tier5/python/compiled/ledger_sync.pyc: binary",
+    "tier4/assets/certs/mainframe_gateway.der: binary",
+    "tier4/assets/keystores/orders_keystore.p12: binary",
+    "tier4/assets/keystores/partner_truststore.jks: binary"
+  ],
+  "partial": true
 }

@@ -6,7 +6,7 @@
       "tool": {
         "driver": {
           "name": "qci-pqc-scan",
-          "version": "2.3.4.1"
+          "version": "2.3.4.3"
         }
       },
       "results": [
@@ -11620,6 +11620,25 @@
           ]
         },
         {
+          "ruleId": "qci/HMAC",
+          "level": "warning",
+          "message": {
+            "text": "HMAC (safe_symmetric) found"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "system/payments-platform/services/api-gateway/bin/api-gateway"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "qci/SHA-256",
           "level": "warning",
           "message": {
@@ -14280,10 +14299,10 @@
           ]
         },
         {
-          "ruleId": "qci/SHA-256",
+          "ruleId": "qci/SHA-512",
           "level": "warning",
           "message": {
-            "text": "SHA-256 (safe_symmetric) found"
+            "text": "SHA-512 (safe_symmetric) found"
           },
           "locations": [
             {

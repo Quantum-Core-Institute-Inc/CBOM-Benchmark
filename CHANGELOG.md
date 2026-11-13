@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.6.5 (2026-11-13): QCI PQC Scanner v2.3.4.3
+
+A measured release: every scanner was rescanned by `tools/release_run.sh`, gate floors were reset
+from the scan, and all evidence was rebuilt. Corpus, answer key and scorer are unchanged (410
+findings, methodology 2.3).
+
+- **Scanner v2.3.4.3 replaces v2.3.4.1.** Parameters correct 54.4% to 90.2%, ticket-ready 45.2% to
+  80.0%, precision 99.6% to 100% (no false positives), recall 61.0% to 62.2%. Overfit gap -0.8
+  (-5.6 to +4.2). It scores the same in the sandbox and in its own container. Details in
+  `integrations/qci-pqc/FINDINGS.md`.
+- **QCI adapter 1.2.** Adds `RC4`, which the scanner has always reported and the name table lacked,
+  so three RC4 detections were being scored as misses. Adds the hash-qualified HMAC and PBKDF2 names
+  the new scanner emits (`PBKDF2-SHA-512`, `HMAC-MD5` and others). Of the five findings recall
+  gained, three are this correction and two are the scanner.
+- **Gate floors reset** to v2.3.4.3: parameters 90.8, precision 100, ticket-ready 81.3, recall 65.5,
+  config completeness 100.
+- **The scanner now exits 1 when it skips files** and lists them in its coverage file. The benchmark
+  scores such a run; `tools/recalibrate.py` no longer treats that exit code as a crash.
+- **Calibration rerun** on five public seeds: answer key 0; grep -4.0 to -1.8; QCI -1.3 to +0.9, none
+  significant.
+- **cryptoscan and qScan are out of the comparison until rerun.** Their bundles were measured on
+  2.6.4 and are not carried onto a new release. The third-party workflow reruns them; they come back
+  as 2.6.5.1 when their bundles are read and committed.
+
 ## 2.6.4.1 (2026-11-13): cryptoscan and qScan published
 
 A results revision of 2.6.4 (see VERSIONING.md): results were added and nothing was rescored. The

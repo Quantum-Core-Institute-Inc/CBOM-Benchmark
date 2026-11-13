@@ -1,10 +1,10 @@
 {
   "bundle_format": 1,
-  "testbench": "2.6.4",
+  "testbench": "2.6.5",
   "methodology": "2.3",
-  "created": "2026-11-12T23:44:09Z",
+  "created": "2026-11-13T14:34:43Z",
   "stamp": {
-    "release": "2.6.4",
+    "release": "2.6.5",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
@@ -14,7 +14,7 @@
   },
   "files": {
     "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
-    "VERSION": "cbe892c63551904b7de297b049a93d839b763278e2a8ecd49e7c99cdecbb565e",
+    "VERSION": "0842905a7965d3d4ad48ee568cec24ff08e12eed431b3f083876041b10cbd83e",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
     "policies/cnsa2.json": "a8cc58f662a61626fbffa7c2002befebe4552ca54a68540f403c86a09312d0af",
@@ -31,7 +31,7 @@
   },
   "scanner": {
     "name": "answer key",
-    "version": "benchmark 2.6.4",
+    "version": "benchmark 2.6.5",
     "cmd": [
       "cp",
       "expected.cdx.json",
@@ -56,7 +56,7 @@
   },
   "host": {
     "python": "3.13.18",
-    "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+    "platform": "Linux-6.18.44-fc-v445-x86_64-with-glibc2.39",
     "machine": "x86_64"
   },
   "run": {
@@ -68,10 +68,10 @@
     "exit_code": 0,
     "signal": null,
     "timed_out": false,
-    "wall_s": 0.11,
-    "cpu_user_s": 0.05,
-    "cpu_sys_s": 0.0,
-    "peak_rss_mb": 19.5,
+    "wall_s": 0.06,
+    "cpu_user_s": 0.03,
+    "cpu_sys_s": 0.02,
+    "peak_rss_mb": 19.6,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,

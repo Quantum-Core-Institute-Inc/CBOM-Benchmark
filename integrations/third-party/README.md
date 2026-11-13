@@ -28,9 +28,10 @@ been checked for that.
 
 cryptoscan and qScan are the two open scanners chosen for the leaderboard, next to QCI PQC (the
 reference product), cdxgen (existing baseline) and grep (calibration baseline). Both were measured on
-benchmark 2.6.4 (410 findings). Their bundles were verified and read on 13 Nov 2026, are committed
-as `evidence/cryptoscan-1.5.0` and `evidence/qscan-0.12.0`, and both are columns in
-`reports/comparison.md`.
+benchmark 2.6.4 (410 findings), verified and read on 13 Nov 2026, and published in 2.6.4.1. A new
+release does not carry their bundles forward: on 2.6.5 they are rerun by the workflow and return to
+`reports/comparison.md` when the new bundles are read and committed. The corpus, answer key and
+scorer did not change in 2.6.5, so the numbers below are expected to repeat.
 
 | Scanner | Recall | Precision | Parameters correct | False positives | Adapter |
 |---|---|---|---|---|---|

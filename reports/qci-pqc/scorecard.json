@@ -980,11 +980,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         8
@@ -999,7 +1001,7 @@
       "algorithm": "RSA-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -1016,10 +1018,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JV-06",
@@ -1033,11 +1033,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         9
@@ -1052,7 +1054,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -1069,10 +1071,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JV-07",
@@ -1086,11 +1086,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "key_size": 2048
+        },
         {}
       ],
       "reported_lines": [
@@ -1107,7 +1109,7 @@
       "algorithm": "DSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -1124,10 +1126,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JV-08",
@@ -1142,12 +1142,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "key_size": 128
+          "key_size": 128,
+          "mode": "ECB"
         }
       ],
       "reported_lines": [
@@ -1163,7 +1164,7 @@
       "algorithm": "AES-128-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -1180,10 +1181,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JV-09",
@@ -1203,7 +1202,8 @@
       "quantum_ok": null,
       "reported_params": [
         {
-          "key_size": 256
+          "key_size": 256,
+          "mode": "GCM"
         },
         {
           "key_size": 256,
@@ -1465,11 +1465,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "key_size": 2048
+        },
         {}
       ],
       "reported_lines": [
@@ -1486,7 +1488,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -1503,10 +1505,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JV-15",
@@ -2014,11 +2014,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         10
@@ -2033,7 +2035,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -2050,10 +2052,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-JV-01",
@@ -2376,11 +2376,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         9
@@ -2395,7 +2397,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -2412,10 +2414,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T3-PY-01",
@@ -3284,12 +3284,12 @@
       "expected_line": null,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": null,
       "quantum_ok": true,
       "reported_params": [
         {
-          "key_size": 256
+          "curve": "P-256"
         }
       ],
       "reported_lines": [
@@ -3305,7 +3305,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": false,
         "cert_subject": false,
@@ -3323,7 +3323,6 @@
         "provenance": null
       },
       "missing_must": [
-        "parameters",
         "cert_expiry",
         "cert_subject"
       ],
@@ -3398,7 +3397,6 @@
       "quantum_ok": true,
       "reported_params": [
         {
-          "key_size": 384,
           "curve": "P-384"
         }
       ],
@@ -3835,11 +3833,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         9
@@ -3854,7 +3854,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -3871,10 +3871,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T4-AS-28",
@@ -4807,11 +4805,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         5
@@ -4826,7 +4826,7 @@
       "algorithm": "DH-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -4843,10 +4843,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T4-AS-60",
@@ -5990,12 +5988,12 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "param_set": "ML-KEM"
+          "param_set": "768"
         }
       ],
       "reported_lines": [
@@ -6011,7 +6009,7 @@
       "algorithm": "ML-KEM-768",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -6028,10 +6026,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-PY-02",
@@ -6045,12 +6041,12 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "param_set": "ML-DSA"
+          "param_set": "65"
         }
       ],
       "reported_lines": [
@@ -6066,7 +6062,7 @@
       "algorithm": "ML-DSA-65",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -6083,10 +6079,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-PY-03",
@@ -6151,12 +6145,12 @@
       "expected_line": 14,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "param_set": "ML-KEM"
+          "param_set": "768"
         }
       ],
       "reported_lines": [
@@ -6172,7 +6166,7 @@
       "algorithm": "ML-KEM-768",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -6189,10 +6183,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-PY-05",
@@ -6444,12 +6436,12 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "param_set": "ML-DSA"
+          "param_set": "44"
         }
       ],
       "reported_lines": [
@@ -6465,7 +6457,7 @@
       "algorithm": "ML-DSA-44",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -6482,10 +6474,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-JV-04",
@@ -6499,11 +6489,13 @@
       "expected_line": 19,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         18
@@ -6518,7 +6510,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -6535,10 +6527,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "PQ-JV-05",
@@ -7884,12 +7874,15 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 256,
+          "mode": "GCM"
+        }
       ],
       "reported_lines": [
         5,
@@ -7905,7 +7898,7 @@
       "algorithm": "AES-256-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -7922,10 +7915,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-06",
@@ -7940,12 +7931,15 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         5,
@@ -7961,7 +7955,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -7978,10 +7972,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-07",
@@ -7995,12 +7987,14 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         6,
@@ -8016,7 +8010,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8033,10 +8027,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-08",
@@ -8050,11 +8042,13 @@
       "expected_line": 21,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         21
@@ -8069,7 +8063,7 @@
       "algorithm": "DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8086,10 +8080,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-09",
@@ -8099,20 +8091,48 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 10,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {},
+        {}
+      ],
+      "reported_lines": [
+        5,
+        10
+      ],
+      "reported_files": [
+        "corpus/tier1/go/rc4/main.go"
+      ],
+      "rule": "file+family",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-10",
@@ -8126,11 +8146,13 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": false,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         7
@@ -8145,7 +8167,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8162,10 +8184,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-11",
@@ -8179,11 +8199,13 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         13
@@ -8198,7 +8220,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8215,10 +8237,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-12",
@@ -8332,11 +8352,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "key_size": 2048
+        },
         {}
       ],
       "reported_lines": [
@@ -8353,7 +8375,7 @@
       "algorithm": "DSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8370,10 +8392,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-15",
@@ -8440,11 +8460,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         17
@@ -8459,7 +8481,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8476,10 +8498,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-GO-17",
@@ -8634,12 +8654,14 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -8655,7 +8677,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8672,10 +8694,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-GO-03",
@@ -8714,11 +8734,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         12
@@ -8733,7 +8755,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8750,10 +8772,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-GO-05",
@@ -8768,12 +8788,15 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 192,
+          "mode": "CTR"
+        }
       ],
       "reported_lines": [
         5,
@@ -8789,7 +8812,7 @@
       "algorithm": "AES-192-CTR",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -8806,10 +8829,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-GO-06",
@@ -9145,11 +9166,14 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         6
@@ -9164,7 +9188,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9181,10 +9205,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-06",
@@ -9199,11 +9221,14 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 256,
+          "mode": "GCM"
+        }
       ],
       "reported_lines": [
         6
@@ -9218,7 +9243,7 @@
       "algorithm": "AES-256-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9235,10 +9260,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-07",
@@ -9252,11 +9275,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         4
@@ -9271,7 +9296,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9288,10 +9313,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-08",
@@ -9354,11 +9377,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         4
@@ -9373,7 +9398,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9390,10 +9415,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-10",
@@ -9558,11 +9581,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         4
@@ -9577,7 +9602,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9594,10 +9619,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-14",
@@ -9611,11 +9634,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": false,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-256"
+        }
       ],
       "reported_lines": [
         2
@@ -9630,7 +9655,7 @@
       "algorithm": "HMAC-SHA-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9647,10 +9672,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-15",
@@ -9664,11 +9687,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": false,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         2
@@ -9683,7 +9708,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9700,10 +9725,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-16",
@@ -9717,11 +9740,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         5
@@ -9736,7 +9761,7 @@
       "algorithm": "RSA-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9753,10 +9778,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-JS-17",
@@ -9867,11 +9890,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6
@@ -9886,7 +9911,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -9903,10 +9928,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-TS-04",
@@ -10025,11 +10048,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         7
@@ -10044,7 +10069,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10061,10 +10086,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-01",
@@ -10249,11 +10272,14 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         12
@@ -10268,7 +10294,7 @@
       "algorithm": "AES-128-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10285,10 +10311,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-06",
@@ -10303,11 +10327,14 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 256,
+          "mode": "GCM"
+        }
       ],
       "reported_lines": [
         12
@@ -10322,7 +10349,7 @@
       "algorithm": "AES-256-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10339,10 +10366,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-07",
@@ -10356,11 +10381,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         12
@@ -10375,7 +10402,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10392,10 +10419,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-08",
@@ -10458,11 +10483,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         11
@@ -10477,7 +10504,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10494,10 +10521,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-10",
@@ -10511,11 +10536,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         8
@@ -10530,7 +10557,7 @@
       "algorithm": "RSA-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": false,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10548,7 +10575,6 @@
         "provenance": null
       },
       "missing_must": [
-        "parameters",
         "primitive"
       ],
       "ticket_ready": false
@@ -10565,11 +10591,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         8
@@ -10584,7 +10612,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10601,10 +10629,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-12",
@@ -10690,11 +10716,13 @@
       "expected_line": 7,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         7
@@ -10709,7 +10737,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10726,10 +10754,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-15",
@@ -10750,7 +10776,9 @@
         {
           "hash": "SHA-256"
         },
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         11,
@@ -10798,11 +10826,13 @@
       "expected_line": 15,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         15
@@ -10817,7 +10847,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -10834,10 +10864,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-C-17",
@@ -11061,11 +11089,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         8
@@ -11080,7 +11110,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11097,10 +11127,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-06",
@@ -11114,11 +11142,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         8
@@ -11133,7 +11163,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11150,10 +11180,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-07",
@@ -11167,11 +11195,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         8
@@ -11186,7 +11216,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11203,10 +11233,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-08",
@@ -11221,11 +11249,14 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         8
@@ -11240,7 +11271,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11257,10 +11288,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-09",
@@ -11275,11 +11304,14 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 256,
+          "mode": "GCM"
+        }
       ],
       "reported_lines": [
         13
@@ -11294,7 +11326,7 @@
       "algorithm": "AES-256-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11311,10 +11343,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-10",
@@ -11328,11 +11358,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         8
@@ -11347,7 +11379,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11364,10 +11396,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-11",
@@ -11406,11 +11436,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         10
@@ -11425,7 +11457,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11442,10 +11474,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T1-CS-13",
@@ -11459,11 +11489,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         8
@@ -11478,7 +11510,7 @@
       "algorithm": "DSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11495,10 +11527,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-C-01",
@@ -11611,11 +11641,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         14
@@ -11630,7 +11662,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11647,10 +11679,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-C-06",
@@ -11664,11 +11694,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         10
@@ -11683,7 +11715,7 @@
       "algorithm": "3DES-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11700,10 +11732,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-CS-01",
@@ -11718,11 +11748,14 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {},
+        {
+          "key_size": 192,
+          "mode": "CBC"
+        },
         {}
       ],
       "reported_lines": [
@@ -11739,7 +11772,7 @@
       "algorithm": "AES-192-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11756,10 +11789,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-CS-02",
@@ -11815,20 +11846,46 @@
       "family": "SHA-512",
       "expected_params": {},
       "expected_line": 10,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
       "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        10
+      ],
+      "reported_files": [
+        "corpus/tier2/csharp/DispatchTable/Program.cs"
+      ],
+      "rule": "file+family",
       "due": null,
       "due_bucket": "none",
       "due_note": "",
       "algorithm": "SHA-512",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": false,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-CS-05",
@@ -11842,11 +11899,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         12
@@ -11861,7 +11920,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -11878,10 +11937,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "T2-CS-06",
@@ -12001,11 +12058,13 @@
       "expected_line": 39,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         39
@@ -12020,7 +12079,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12037,10 +12096,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-1c",
@@ -12054,11 +12111,13 @@
       "expected_line": 15,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         236
@@ -12073,7 +12132,7 @@
       "algorithm": "HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12090,10 +12149,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-1d",
@@ -12108,12 +12165,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "key_size": 128
+          "key_size": 192,
+          "mode": "CTR"
         }
       ],
       "reported_lines": [
@@ -12129,7 +12187,7 @@
       "algorithm": "AES-192-CTR",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12146,10 +12204,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-2a",
@@ -12216,12 +12272,12 @@
       "expected_line": 277,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "param_set": "ML-DSA"
+          "param_set": "65"
         }
       ],
       "reported_lines": [
@@ -12237,7 +12293,7 @@
       "algorithm": "ML-DSA-65",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12254,10 +12310,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-2c",
@@ -12271,11 +12325,13 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         57
@@ -12290,7 +12346,7 @@
       "algorithm": "DH-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12307,10 +12363,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-2d",
@@ -12422,11 +12476,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         420
@@ -12441,7 +12497,7 @@
       "algorithm": "HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12458,10 +12514,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-PY-3c",
@@ -12581,11 +12635,13 @@
       "expected_line": 69,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         69
@@ -12600,7 +12656,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12617,10 +12673,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JV-1b",
@@ -12683,11 +12737,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         91
@@ -12702,7 +12758,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12719,10 +12775,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JV-1d",
@@ -12864,11 +12918,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {},
+        {
+          "hash": "SHA-512"
+        },
         {}
       ],
       "reported_lines": [
@@ -12885,7 +12941,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -12902,10 +12958,8 @@
         "code_context": false,
         "provenance": false
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JV-2d",
@@ -13154,7 +13208,9 @@
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "mode": "CBC"
+        },
         {
           "mode": "CBC"
         }
@@ -13205,11 +13261,13 @@
       "expected_line": 19,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         117
@@ -13224,7 +13282,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13241,10 +13299,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-1b",
@@ -13311,11 +13367,13 @@
       "expected_line": 21,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         236
@@ -13330,7 +13388,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13347,10 +13405,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-1d",
@@ -13364,11 +13420,13 @@
       "expected_line": 207,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         207
@@ -13383,7 +13441,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13400,10 +13458,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-2a",
@@ -13470,11 +13526,13 @@
       "expected_line": 125,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         125
@@ -13489,7 +13547,7 @@
       "algorithm": "DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13506,10 +13564,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-2c",
@@ -13523,11 +13579,13 @@
       "expected_line": 228,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         228
@@ -13542,7 +13600,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13559,10 +13617,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-2d",
@@ -13629,11 +13685,13 @@
       "expected_line": 213,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         213
@@ -13648,7 +13706,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13665,10 +13723,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-3b",
@@ -13678,20 +13734,46 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 198,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file within 3 lines of the site",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        198
+      ],
+      "reported_files": [
+        "corpus/mixed/go/invoice_gateway/main.go"
+      ],
+      "rule": "site-match/window=3",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-3c",
@@ -13705,11 +13787,13 @@
       "expected_line": 277,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         277
@@ -13724,7 +13808,7 @@
       "algorithm": "HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13741,10 +13825,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-GO-3d",
@@ -13935,11 +14017,13 @@
       "expected_line": 409,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         410
@@ -13954,7 +14038,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -13971,10 +14055,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JS-2c",
@@ -13988,11 +14070,13 @@
       "expected_line": 203,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-521"
+        }
       ],
       "reported_lines": [
         204
@@ -14007,7 +14091,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14024,10 +14108,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JS-2d",
@@ -14041,11 +14123,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         338
@@ -14060,7 +14144,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14077,10 +14161,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-JS-2e",
@@ -14120,11 +14202,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         323
@@ -14139,7 +14223,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14156,10 +14240,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-TS-1b",
@@ -14173,11 +14255,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         341
@@ -14192,7 +14276,7 @@
       "algorithm": "HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14209,10 +14293,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-TS-1c",
@@ -14252,11 +14334,13 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         288
@@ -14271,7 +14355,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14288,10 +14372,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-1a",
@@ -14354,11 +14436,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-521"
+        }
       ],
       "reported_lines": [
         351
@@ -14373,7 +14457,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14390,10 +14474,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-1c",
@@ -14407,11 +14489,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         292
@@ -14426,7 +14510,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14443,10 +14527,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-1d",
@@ -14509,11 +14591,13 @@
       "expected_line": 154,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         154
@@ -14528,7 +14612,7 @@
       "algorithm": "HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14545,10 +14629,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-2a",
@@ -14613,11 +14695,13 @@
       "expected_line": 66,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         66
@@ -14632,7 +14716,7 @@
       "algorithm": "3DES-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14649,10 +14733,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-2d",
@@ -14717,11 +14799,13 @@
       "expected_line": 300,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         300
@@ -14736,7 +14820,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14753,10 +14837,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-3c",
@@ -14771,11 +14853,14 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         9
@@ -14790,7 +14875,7 @@
       "algorithm": "AES-128-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14807,10 +14892,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "MX-C-3d",
@@ -14824,11 +14907,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         381
@@ -14843,7 +14928,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -14860,10 +14945,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "SYS-GO-01",
@@ -15325,20 +15408,46 @@
       "family": "HMAC",
       "expected_params": {},
       "expected_line": null,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
       "line_ok": null,
       "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "reported_params": [
+        {}
+      ],
+      "reported_lines": [
+        0
+      ],
+      "reported_files": [
+        "corpus/system/payments-platform/services/api-gateway/bin/api-gateway"
+      ],
+      "rule": "file+family",
       "due": null,
       "due_bucket": "none",
       "due_note": "",
       "algorithm": "HMAC",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": null,
+        "functions": true,
+        "quantum_level": null,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "SYS-AR-05",
@@ -15632,11 +15741,13 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         6
@@ -15651,7 +15762,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -15668,10 +15779,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "SYS-AS-10",
@@ -15685,12 +15794,14 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": false,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {},
+        {
+          "key_size": 2048
+        },
         {},
         {}
       ],
@@ -15710,7 +15821,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": false,
         "cert_expiry": null,
         "cert_subject": null,
@@ -15728,7 +15839,6 @@
         "provenance": null
       },
       "missing_must": [
-        "parameters",
         "primitive"
       ],
       "ticket_ready": false
@@ -16020,20 +16130,48 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 18,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {},
+        {}
+      ],
+      "reported_lines": [
+        6,
+        18
+      ],
+      "reported_files": [
+        "corpus/deadcode/go/legacy/main.go"
+      ],
+      "rule": "file+family",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      },
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "DC-JS-01",
@@ -16070,11 +16208,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         10
@@ -16089,7 +16229,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -16106,10 +16246,8 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     },
     {
       "id": "DC-C-01",
@@ -16172,11 +16310,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         11
@@ -16191,7 +16331,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -16208,23 +16348,11 @@
         "code_context": null,
         "provenance": null
       },
-      "missing_must": [
-        "parameters"
-      ],
-      "ticket_ready": false
+      "missing_must": [],
+      "ticket_ready": true
     }
   ],
-  "false_positives": [
-    {
-      "file": "corpus/tier2/csharp/DispatchTable/Program.cs",
-      "family": "SHA-256",
-      "lines": [
-        10
-      ],
-      "negative_control": false,
-      "rule": "unmatched: no finding of this family in this file, not in also_ok"
-    }
-  ],
+  "false_positives": [],
   "unrecognized": [
     {
       "file": "corpus/calibration/tier1/c/cal_sha3256_035.c",
@@ -16242,638 +16370,578 @@
       "line": 8
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_027/cal_rc4_027.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
       "name": "qci-category-4",
       "line": 5
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_027/cal_rc4_027.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
       "name": "qci-category-5",
       "line": 32
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_028/cal_rc4_028.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
       "name": "qci-category-6",
       "line": 5
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_028/cal_rc4_028.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
       "name": "qci-category-7",
       "line": 24
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_029/cal_rc4_029.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
       "name": "qci-category-8",
       "line": 5
     },
     {
-      "file": "corpus/calibration/tier1/go/cal_rc4_029/cal_rc4_029.go",
+      "file": "corpus/calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
       "name": "qci-category-9",
-      "line": 24
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
-      "name": "qci-category-10",
-      "line": 5
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_039/cal_sha3256_039.go",
-      "name": "qci-category-11",
-      "line": 32
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
-      "name": "qci-category-12",
-      "line": 5
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_040/cal_sha3256_040.go",
-      "name": "qci-category-13",
-      "line": 24
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
-      "name": "qci-category-14",
-      "line": 5
-    },
-    {
-      "file": "corpus/calibration/tier1/go/cal_sha3256_041/cal_sha3256_041.go",
-      "name": "qci-category-15",
       "line": 32
     },
     {
       "file": "corpus/calibration/tier1/java/Cal1037ShipmentSettings.java",
-      "name": "qci-category-16",
+      "name": "qci-category-10",
       "line": 5
     },
     {
       "file": "corpus/calibration/tier1/java/Cal1038MemberOptions.java",
-      "name": "qci-category-17",
+      "name": "qci-category-11",
       "line": 9
     },
     {
       "file": "corpus/calibration/tier1/java/Cal1039PayloadDefaults.java",
-      "name": "qci-category-18",
+      "name": "qci-category-12",
       "line": 13
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_3des_001.js",
-      "name": "qci-category-19",
+      "name": "qci-category-13",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_3des_002.js",
-      "name": "qci-category-20",
+      "name": "qci-category-14",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_3des_003.js",
-      "name": "qci-category-21",
+      "name": "qci-category-15",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_aes_004.js",
-      "name": "qci-category-22",
+      "name": "qci-category-16",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_aes_005.js",
-      "name": "qci-category-23",
+      "name": "qci-category-17",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_chacha20poly1305_006.js",
-      "name": "qci-category-24",
+      "name": "qci-category-18",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_chacha20poly1305_007.js",
-      "name": "qci-category-25",
+      "name": "qci-category-19",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_chacha20poly1305_008.js",
-      "name": "qci-category-26",
+      "name": "qci-category-20",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_dh_009.js",
-      "name": "qci-category-27",
+      "name": "qci-category-21",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_dh_010.js",
-      "name": "qci-category-28",
+      "name": "qci-category-22",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_dh_011.js",
-      "name": "qci-category-29",
+      "name": "qci-category-23",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ec_012.js",
-      "name": "qci-category-30",
+      "name": "qci-category-24",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ec_013.js",
-      "name": "qci-category-31",
+      "name": "qci-category-25",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ec_014.js",
-      "name": "qci-category-32",
+      "name": "qci-category-26",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ed25519_015.js",
-      "name": "qci-category-33",
+      "name": "qci-category-27",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ed25519_016.js",
-      "name": "qci-category-34",
+      "name": "qci-category-28",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_ed25519_017.js",
-      "name": "qci-category-35",
+      "name": "qci-category-29",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_hmac_018.js",
-      "name": "qci-category-36",
+      "name": "qci-category-30",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_hmac_019.js",
-      "name": "qci-category-37",
+      "name": "qci-category-31",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_hmac_020.js",
-      "name": "qci-category-38",
+      "name": "qci-category-32",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_md5_021.js",
-      "name": "qci-category-39",
+      "name": "qci-category-33",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_md5_022.js",
-      "name": "qci-category-40",
+      "name": "qci-category-34",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_md5_023.js",
-      "name": "qci-category-41",
+      "name": "qci-category-35",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_pbkdf2_024.js",
-      "name": "qci-category-42",
+      "name": "qci-category-36",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_pbkdf2_025.js",
-      "name": "qci-category-43",
+      "name": "qci-category-37",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_pbkdf2_026.js",
-      "name": "qci-category-44",
+      "name": "qci-category-38",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_rsa_027.js",
-      "name": "qci-category-45",
+      "name": "qci-category-39",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_rsa_028.js",
-      "name": "qci-category-46",
+      "name": "qci-category-40",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_sha1_029.js",
-      "name": "qci-category-47",
+      "name": "qci-category-41",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_sha1_030.js",
-      "name": "qci-category-48",
+      "name": "qci-category-42",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_sha256_031.js",
-      "name": "qci-category-49",
+      "name": "qci-category-43",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_sha256_032.js",
-      "name": "qci-category-50",
+      "name": "qci-category-44",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_sha256_033.js",
+      "name": "qci-category-45",
+      "line": 2
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_034.js",
+      "name": "qci-category-46",
+      "line": 2
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_034.js",
+      "name": "qci-category-47",
+      "line": 9
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_035.js",
+      "name": "qci-category-48",
+      "line": 2
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_035.js",
+      "name": "qci-category-49",
+      "line": 9
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_036.js",
+      "name": "qci-category-50",
+      "line": 2
+    },
+    {
+      "file": "corpus/calibration/tier1/javascript/cal_sha3256_036.js",
       "name": "qci-category-51",
-      "line": 2
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_034.js",
-      "name": "qci-category-52",
-      "line": 2
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_034.js",
-      "name": "qci-category-53",
-      "line": 9
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_035.js",
-      "name": "qci-category-54",
-      "line": 2
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_035.js",
-      "name": "qci-category-55",
-      "line": 9
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_036.js",
-      "name": "qci-category-56",
-      "line": 2
-    },
-    {
-      "file": "corpus/calibration/tier1/javascript/cal_sha3256_036.js",
-      "name": "qci-category-57",
       "line": 5
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_x25519_037.js",
-      "name": "qci-category-58",
+      "name": "qci-category-52",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_x25519_038.js",
-      "name": "qci-category-59",
+      "name": "qci-category-53",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/javascript/cal_x25519_039.js",
-      "name": "qci-category-60",
+      "name": "qci-category-54",
       "line": 2
     },
     {
       "file": "corpus/calibration/tier1/python/cal_sha3256_039.py",
-      "name": "qci-category-61",
+      "name": "qci-category-55",
       "line": 6
     },
     {
       "file": "corpus/calibration/tier1/python/cal_sha3256_040.py",
-      "name": "qci-category-62",
+      "name": "qci-category-56",
       "line": 6
     },
     {
       "file": "corpus/calibration/tier1/python/cal_sha3256_041.py",
-      "name": "qci-category-63",
+      "name": "qci-category-57",
       "line": 17
     },
     {
-      "file": "corpus/deadcode/go/legacy/main.go",
-      "name": "qci-category-64",
-      "line": 6
-    },
-    {
-      "file": "corpus/deadcode/go/legacy/main.go",
-      "name": "qci-category-65",
-      "line": 18
-    },
-    {
       "file": "corpus/deadcode/javascript/dead_paths.js",
-      "name": "qci-category-66",
+      "name": "qci-category-58",
       "line": 2
     },
     {
       "file": "corpus/mixed/c/audit_daemon.c",
-      "name": "qci-category-67",
+      "name": "qci-category-59",
       "line": 218
     },
     {
       "file": "corpus/mixed/c/audit_daemon.c",
-      "name": "qci-category-68",
+      "name": "qci-category-60",
       "line": 315
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-69",
-      "line": 8
-    },
-    {
-      "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-70",
-      "line": 198
-    },
-    {
-      "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-71",
+      "name": "qci-category-61",
       "line": 207
     },
     {
       "file": "corpus/mixed/go/invoice_gateway/main.go",
-      "name": "qci-category-72",
+      "name": "qci-category-62",
       "line": 230
     },
     {
       "file": "corpus/mixed/javascript/device_session.js",
-      "name": "qci-category-73",
+      "name": "qci-category-63",
       "line": 2
     },
     {
       "file": "corpus/mixed/javascript/device_session.js",
-      "name": "qci-category-74",
+      "name": "qci-category-64",
       "line": 94
     },
     {
       "file": "corpus/mixed/javascript/partner_routes.js",
-      "name": "qci-category-75",
+      "name": "qci-category-65",
       "line": 2
     },
     {
       "file": "corpus/mixed/javascript/partner_routes.js",
-      "name": "qci-category-76",
+      "name": "qci-category-66",
       "line": 263
     },
     {
       "file": "corpus/mixed/python/invoice_service.py",
-      "name": "qci-category-77",
+      "name": "qci-category-67",
       "line": 52
     },
     {
       "file": "corpus/mixed/python/order_jobs.py",
-      "name": "qci-category-78",
+      "name": "qci-category-68",
       "line": 33
     },
     {
       "file": "corpus/pqc/assets/keys/attestation_signer.pem",
-      "name": "qci-category-83",
+      "name": "qci-category-73",
       "line": 1
     },
     {
       "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-84",
+      "name": "qci-category-74",
       "line": 6
     },
     {
       "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-85",
+      "name": "qci-category-75",
       "line": 6
     },
     {
       "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-86",
+      "name": "qci-category-76",
       "line": 6
     },
     {
       "file": "corpus/pqc/assets/ssh/sshd_config_pq",
-      "name": "qci-category-87",
+      "name": "qci-category-77",
       "line": 7
     },
     {
       "file": "corpus/pqc/assets/tls/nginx_pq.conf",
-      "name": "qci-category-89",
+      "name": "qci-category-79",
       "line": 14
     },
     {
       "file": "corpus/pqc/assets/tls/openssl_pq.cnf",
-      "name": "qci-category-91",
+      "name": "qci-category-81",
       "line": 13
     },
     {
       "file": "corpus/pqc/assets/tls/openssl_pq.cnf",
-      "name": "qci-category-92",
+      "name": "qci-category-82",
       "line": 13
     },
     {
       "file": "corpus/pqc/go/tls_hybrid/main.go",
-      "name": "qci-category-93",
+      "name": "qci-category-83",
       "line": 10
     },
     {
       "file": "corpus/pqc/java/FirmwareSignLms.java",
-      "name": "qci-category-94",
+      "name": "qci-category-84",
       "line": 18
     },
     {
       "file": "corpus/pqc/java/PqParamSpec.java",
-      "name": "qci-category-95",
+      "name": "qci-category-85",
       "line": 9
     },
     {
       "file": "corpus/pqc/java/PqSignature.java",
-      "name": "qci-category-96",
+      "name": "qci-category-86",
       "line": 11
     },
     {
       "file": "corpus/pqc/java/UpdateSignXmss.java",
-      "name": "qci-category-97",
+      "name": "qci-category-87",
       "line": 15
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/gateway.conf",
-      "name": "qci-category-100",
+      "name": "qci-category-90",
       "line": 9
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/gateway.conf",
-      "name": "qci-category-101",
+      "name": "qci-category-91",
       "line": 9
     },
     {
       "file": "corpus/system/payments-platform/edge/nginx/tls/gateway.key",
-      "name": "qci-category-103",
+      "name": "qci-category-93",
       "line": 1
     },
     {
       "file": "corpus/tier1/c/t1_digests.c",
-      "name": "qci-category-105",
+      "name": "qci-category-95",
       "line": 18
     },
     {
       "file": "corpus/tier1/go/hashes/main.go",
-      "name": "qci-category-106",
+      "name": "qci-category-96",
       "line": 8
     },
     {
       "file": "corpus/tier1/go/hashes/main.go",
-      "name": "qci-category-107",
+      "name": "qci-category-97",
       "line": 17
     },
     {
-      "file": "corpus/tier1/go/rc4/main.go",
-      "name": "qci-category-108",
-      "line": 5
-    },
-    {
-      "file": "corpus/tier1/go/rc4/main.go",
-      "name": "qci-category-109",
+      "file": "corpus/tier1/go/tls_config/main.go",
+      "name": "qci-category-98",
       "line": 10
     },
     {
       "file": "corpus/tier1/go/tls_config/main.go",
-      "name": "qci-category-110",
-      "line": 10
-    },
-    {
-      "file": "corpus/tier1/go/tls_config/main.go",
-      "name": "qci-category-111",
+      "name": "qci-category-99",
       "line": 14
     },
     {
       "file": "corpus/tier1/java/T1Hashes.java",
-      "name": "qci-category-112",
+      "name": "qci-category-100",
       "line": 13
     },
     {
       "file": "corpus/tier1/javascript/t1_aes_cbc.js",
-      "name": "qci-category-113",
+      "name": "qci-category-101",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_aes_gcm.js",
-      "name": "qci-category-114",
+      "name": "qci-category-102",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_chacha.js",
-      "name": "qci-category-115",
+      "name": "qci-category-103",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_dh.js",
-      "name": "qci-category-116",
+      "name": "qci-category-104",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_ec.js",
-      "name": "qci-category-117",
+      "name": "qci-category-105",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_hashes.js",
-      "name": "qci-category-118",
+      "name": "qci-category-106",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_hashes.js",
-      "name": "qci-category-119",
+      "name": "qci-category-107",
       "line": 8
     },
     {
       "file": "corpus/tier1/javascript/t1_mac_kdf.js",
-      "name": "qci-category-120",
+      "name": "qci-category-108",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_modern_curves.js",
-      "name": "qci-category-121",
+      "name": "qci-category-109",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_rsa.js",
-      "name": "qci-category-122",
+      "name": "qci-category-110",
       "line": 2
     },
     {
       "file": "corpus/tier1/javascript/t1_triple_des.js",
-      "name": "qci-category-123",
+      "name": "qci-category-111",
       "line": 2
     },
     {
       "file": "corpus/tier1/python/t1_hashes.py",
-      "name": "qci-category-124",
+      "name": "qci-category-112",
       "line": 9
     },
     {
       "file": "corpus/tier4/assets/keys/billing_service.pem",
-      "name": "qci-category-131",
+      "name": "qci-category-119",
       "line": 1
     },
     {
       "file": "corpus/tier4/assets/keys/treasury_hot_wallet.key",
-      "name": "qci-category-132",
+      "name": "qci-category-120",
       "line": 1
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-133",
+      "name": "qci-category-121",
       "line": 8
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-134",
+      "name": "qci-category-122",
       "line": 9
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-135",
+      "name": "qci-category-123",
       "line": 9
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-136",
+      "name": "qci-category-124",
       "line": 10
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-137",
+      "name": "qci-category-125",
       "line": 10
     },
     {
       "file": "corpus/tier4/assets/ssh/sshd_config",
-      "name": "qci-category-138",
+      "name": "qci-category-126",
       "line": 11
     },
     {
       "file": "corpus/tier4/assets/tls/application.yml",
-      "name": "qci-category-139",
+      "name": "qci-category-127",
       "line": 15
     },
     {
       "file": "corpus/tier4/assets/tls/haproxy.cfg",
-      "name": "qci-category-140",
+      "name": "qci-category-128",
       "line": 7
     },
     {
       "file": "corpus/tier4/assets/tls/httpd-ssl.conf",
-      "name": "qci-category-142",
+      "name": "qci-category-130",
       "line": 14
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-145",
+      "name": "qci-category-133",
       "line": 20
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-146",
+      "name": "qci-category-134",
       "line": 20
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-147",
+      "name": "qci-category-135",
       "line": 21
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-148",
+      "name": "qci-category-136",
       "line": 21
     },
     {
       "file": "corpus/tier4/assets/tls/nginx.conf",
-      "name": "qci-category-149",
+      "name": "qci-category-137",
       "line": 21
     }
   ],
@@ -17713,8 +17781,8 @@
       ],
       "thin": false,
       "usage_site_recall": 70.0,
-      "params_correct": 6,
-      "params_accuracy": 42.9,
+      "params_correct": 14,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17730,8 +17798,8 @@
       ],
       "thin": false,
       "usage_site_recall": 69.2,
-      "params_correct": 1,
-      "params_accuracy": 11.1,
+      "params_correct": 9,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17739,17 +17807,17 @@
     },
     "1/go": {
       "expected": 20,
-      "detected": 14,
-      "recall": 70.0,
+      "detected": 15,
+      "recall": 75.0,
       "recall_ci95": [
-        48.1,
-        85.5
+        53.1,
+        88.8
       ],
       "thin": false,
-      "usage_site_recall": 70.0,
-      "params_correct": 6,
-      "params_accuracy": 42.9,
-      "line_accuracy": 92.9,
+      "usage_site_recall": 75.0,
+      "params_correct": 15,
+      "params_accuracy": 100.0,
+      "line_accuracy": 93.3,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
       "precision": 100.0
@@ -17764,8 +17832,8 @@
       ],
       "thin": false,
       "usage_site_recall": 93.8,
-      "params_correct": 10,
-      "params_accuracy": 66.7,
+      "params_correct": 15,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17781,8 +17849,8 @@
       ],
       "thin": false,
       "usage_site_recall": 88.2,
-      "params_correct": 7,
-      "params_accuracy": 46.7,
+      "params_correct": 15,
+      "params_accuracy": 100.0,
       "line_accuracy": 80.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17815,8 +17883,8 @@
       ],
       "thin": true,
       "usage_site_recall": 33.3,
-      "params_correct": 0,
-      "params_accuracy": 0.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17824,20 +17892,20 @@
     },
     "2/csharp": {
       "expected": 6,
-      "detected": 3,
-      "recall": 50.0,
+      "detected": 4,
+      "recall": 66.7,
       "recall_ci95": [
-        18.8,
-        81.2
+        30.0,
+        90.3
       ],
       "thin": true,
-      "usage_site_recall": 50.0,
-      "params_correct": 0,
-      "params_accuracy": 0.0,
+      "usage_site_recall": 66.7,
+      "params_correct": 3,
+      "params_accuracy": 75.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
-      "false_positives": 1,
-      "precision": 75.0
+      "false_positives": 0,
+      "precision": 100.0
     },
     "2/go": {
       "expected": 6,
@@ -17849,8 +17917,8 @@
       ],
       "thin": true,
       "usage_site_recall": 83.3,
-      "params_correct": 1,
-      "params_accuracy": 20.0,
+      "params_correct": 4,
+      "params_accuracy": 80.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17866,8 +17934,8 @@
       ],
       "thin": true,
       "usage_site_recall": 62.5,
-      "params_correct": 5,
-      "params_accuracy": 83.3,
+      "params_correct": 6,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17883,8 +17951,8 @@
       ],
       "thin": true,
       "usage_site_recall": 77.8,
-      "params_correct": 7,
-      "params_accuracy": 87.5,
+      "params_correct": 8,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17900,8 +17968,8 @@
       ],
       "thin": true,
       "usage_site_recall": 42.9,
-      "params_correct": 0,
-      "params_accuracy": 0.0,
+      "params_correct": 2,
+      "params_accuracy": 66.7,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -17951,8 +18019,8 @@
       ],
       "thin": false,
       "usage_site_recall": 40.7,
-      "params_correct": 18,
-      "params_accuracy": 81.8,
+      "params_correct": 21,
+      "params_accuracy": 95.5,
       "line_accuracy": 92.9,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18036,8 +18104,8 @@
       ],
       "thin": true,
       "usage_site_recall": 100.0,
-      "params_correct": 1,
-      "params_accuracy": 50.0,
+      "params_correct": 2,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18045,15 +18113,15 @@
     },
     "deadcode/go": {
       "expected": 2,
-      "detected": 1,
-      "recall": 50.0,
+      "detected": 2,
+      "recall": 100.0,
       "recall_ci95": [
-        9.5,
-        90.5
+        34.2,
+        100.0
       ],
       "thin": true,
-      "usage_site_recall": 50.0,
-      "params_correct": 1,
+      "usage_site_recall": 100.0,
+      "params_correct": 2,
       "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
@@ -18087,8 +18155,8 @@
       ],
       "thin": true,
       "usage_site_recall": 50.0,
-      "params_correct": 0,
-      "params_accuracy": 0.0,
+      "params_correct": 1,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18121,8 +18189,8 @@
       ],
       "thin": false,
       "usage_site_recall": 69.2,
-      "params_correct": 2,
-      "params_accuracy": 22.2,
+      "params_correct": 9,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18130,16 +18198,16 @@
     },
     "mixed/go": {
       "expected": 12,
-      "detected": 11,
-      "recall": 91.7,
+      "detected": 12,
+      "recall": 100.0,
       "recall_ci95": [
-        64.6,
-        98.5
+        75.7,
+        100.0
       ],
       "thin": false,
-      "usage_site_recall": 91.7,
-      "params_correct": 3,
-      "params_accuracy": 27.3,
+      "usage_site_recall": 100.0,
+      "params_correct": 11,
+      "params_accuracy": 91.7,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18155,8 +18223,8 @@
       ],
       "thin": false,
       "usage_site_recall": 84.6,
-      "params_correct": 6,
-      "params_accuracy": 54.5,
+      "params_correct": 9,
+      "params_accuracy": 81.8,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18172,8 +18240,8 @@
       ],
       "thin": true,
       "usage_site_recall": 50.0,
-      "params_correct": 1,
-      "params_accuracy": 25.0,
+      "params_correct": 4,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18189,8 +18257,8 @@
       ],
       "thin": false,
       "usage_site_recall": 100.0,
-      "params_correct": 6,
-      "params_accuracy": 50.0,
+      "params_correct": 12,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18206,8 +18274,8 @@
       ],
       "thin": true,
       "usage_site_recall": 75.0,
-      "params_correct": 0,
-      "params_accuracy": 0.0,
+      "params_correct": 3,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18257,8 +18325,8 @@
       ],
       "thin": true,
       "usage_site_recall": 66.7,
-      "params_correct": 2,
-      "params_accuracy": 50.0,
+      "params_correct": 4,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18274,8 +18342,8 @@
       ],
       "thin": true,
       "usage_site_recall": 85.7,
-      "params_correct": 3,
-      "params_accuracy": 50.0,
+      "params_correct": 6,
+      "params_accuracy": 100.0,
       "line_accuracy": 100.0,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18283,20 +18351,20 @@
     },
     "system/artifacts": {
       "expected": 4,
-      "detected": 0,
-      "recall": 0.0,
+      "detected": 1,
+      "recall": 25.0,
       "recall_ci95": [
-        0.0,
-        49.0
+        4.6,
+        69.9
       ],
       "thin": true,
-      "usage_site_recall": 0.0,
-      "params_correct": 0,
-      "params_accuracy": null,
+      "usage_site_recall": 25.0,
+      "params_correct": 1,
+      "params_accuracy": 100.0,
       "line_accuracy": null,
       "quantum_flag_accuracy": null,
       "false_positives": 0,
-      "precision": null
+      "precision": 100.0
     },
     "system/assets": {
       "expected": 9,
@@ -18308,8 +18376,8 @@
       ],
       "thin": true,
       "usage_site_recall": 55.6,
-      "params_correct": 2,
-      "params_accuracy": 40.0,
+      "params_correct": 4,
+      "params_accuracy": 80.0,
       "line_accuracy": 66.7,
       "quantum_flag_accuracy": 100.0,
       "false_positives": 0,
@@ -18368,20 +18436,20 @@
     },
     "all/all": {
       "expected": 383,
-      "detected": 246,
-      "recall": 64.2,
+      "detected": 251,
+      "recall": 65.5,
       "recall_ci95": [
-        59.3,
-        68.9
+        60.6,
+        70.1
       ],
       "thin": false,
-      "usage_site_recall": 61.9,
-      "params_correct": 134,
-      "params_accuracy": 54.5,
+      "usage_site_recall": 63.2,
+      "params_correct": 228,
+      "params_accuracy": 90.8,
       "line_accuracy": 97.4,
       "quantum_flag_accuracy": 100.0,
-      "false_positives": 1,
-      "precision": 99.6
+      "false_positives": 0,
+      "precision": 100.0
     },
     "negatives": {
       "false_positives": 0
@@ -18399,20 +18467,20 @@
   },
   "parameter_recovery": {
     "overall": {
-      "detected": 246,
-      "params_correct": 134,
-      "pct": 54.5
+      "detected": 251,
+      "params_correct": 228,
+      "pct": 90.8
     },
     "by_tier": {
       "1": {
-        "detected": 82,
-        "params_correct": 45,
-        "pct": 54.9
+        "detected": 83,
+        "params_correct": 83,
+        "pct": 100.0
       },
       "2": {
-        "detected": 27,
-        "params_correct": 13,
-        "pct": 48.1
+        "detected": 28,
+        "params_correct": 25,
+        "pct": 89.3
       },
       "3": {
         "detected": 12,
@@ -18421,8 +18489,8 @@
       },
       "4": {
         "detected": 22,
-        "params_correct": 18,
-        "pct": 81.8
+        "params_correct": 21,
+        "pct": 95.5
       },
       "5": {
         "detected": 2,
@@ -18430,83 +18498,83 @@
         "pct": 50.0
       },
       "deadcode": {
-        "detected": 8,
-        "params_correct": 6,
-        "pct": 75.0
+        "detected": 9,
+        "params_correct": 9,
+        "pct": 100.0
       },
       "mixed": {
-        "detected": 50,
-        "params_correct": 18,
-        "pct": 36.0
+        "detected": 51,
+        "params_correct": 48,
+        "pct": 94.1
       },
       "pqc": {
         "detected": 30,
-        "params_correct": 25,
-        "pct": 83.3
+        "params_correct": 30,
+        "pct": 100.0
       },
       "system": {
-        "detected": 13,
-        "params_correct": 5,
-        "pct": 38.5
+        "detected": 14,
+        "params_correct": 8,
+        "pct": 57.1
       }
     },
     "by_lang": {
       "artifacts": {
-        "detected": 0,
-        "params_correct": 0,
-        "pct": null
+        "detected": 1,
+        "params_correct": 1,
+        "pct": 100.0
       },
       "assets": {
         "detected": 46,
-        "params_correct": 39,
-        "pct": 84.8
+        "params_correct": 44,
+        "pct": 95.7
       },
       "c": {
         "detected": 27,
-        "params_correct": 9,
-        "pct": 33.3
+        "params_correct": 27,
+        "pct": 100.0
       },
       "csharp": {
-        "detected": 12,
-        "params_correct": 1,
-        "pct": 8.3
+        "detected": 13,
+        "params_correct": 12,
+        "pct": 92.3
       },
       "go": {
-        "detected": 35,
-        "params_correct": 13,
-        "pct": 37.1
+        "detected": 38,
+        "params_correct": 34,
+        "pct": 89.5
       },
       "java": {
         "detected": 45,
-        "params_correct": 28,
-        "pct": 62.2
+        "params_correct": 39,
+        "pct": 86.7
       },
       "javascript": {
         "detected": 20,
-        "params_correct": 8,
-        "pct": 40.0
+        "params_correct": 20,
+        "pct": 100.0
       },
       "python": {
         "detected": 55,
-        "params_correct": 36,
-        "pct": 65.5
+        "params_correct": 46,
+        "pct": 83.6
       },
       "typescript": {
         "detected": 6,
-        "params_correct": 0,
-        "pct": 0.0
+        "params_correct": 5,
+        "pct": 83.3
       }
     },
     "by_family": {
       "3DES": {
         "detected": 17,
-        "params_correct": 5,
-        "pct": 29.4
+        "params_correct": 14,
+        "pct": 82.4
       },
       "AES": {
         "detected": 26,
-        "params_correct": 6,
-        "pct": 23.1
+        "params_correct": 19,
+        "pct": 73.1
       },
       "ChaCha20-Poly1305": {
         "detected": 9,
@@ -18515,23 +18583,23 @@
       },
       "DES": {
         "detected": 4,
-        "params_correct": 2,
-        "pct": 50.0
+        "params_correct": 4,
+        "pct": 100.0
       },
       "DH": {
         "detected": 11,
-        "params_correct": 2,
-        "pct": 18.2
+        "params_correct": 11,
+        "pct": 100.0
       },
       "DSA": {
         "detected": 5,
-        "params_correct": 2,
-        "pct": 40.0
+        "params_correct": 5,
+        "pct": 100.0
       },
       "EC": {
         "detected": 27,
-        "params_correct": 9,
-        "pct": 33.3
+        "params_correct": 23,
+        "pct": 85.2
       },
       "Ed25519": {
         "detected": 7,
@@ -18539,9 +18607,9 @@
         "pct": 100.0
       },
       "HMAC": {
-        "detected": 21,
-        "params_correct": 8,
-        "pct": 38.1
+        "detected": 22,
+        "params_correct": 19,
+        "pct": 86.4
       },
       "LMS": {
         "detected": 0,
@@ -18555,28 +18623,28 @@
       },
       "ML-DSA": {
         "detected": 8,
-        "params_correct": 5,
-        "pct": 62.5
+        "params_correct": 8,
+        "pct": 100.0
       },
       "ML-KEM": {
         "detected": 7,
-        "params_correct": 5,
-        "pct": 71.4
+        "params_correct": 7,
+        "pct": 100.0
       },
       "PBKDF2": {
         "detected": 14,
-        "params_correct": 5,
-        "pct": 35.7
+        "params_correct": 14,
+        "pct": 100.0
       },
       "RC4": {
-        "detected": 0,
-        "params_correct": 0,
-        "pct": null
+        "detected": 3,
+        "params_correct": 3,
+        "pct": 100.0
       },
       "RSA": {
         "detected": 33,
-        "params_correct": 12,
-        "pct": 36.4
+        "params_correct": 27,
+        "pct": 81.8
       },
       "SHA-1": {
         "detected": 17,
@@ -18589,9 +18657,9 @@
         "pct": 100.0
       },
       "SHA-512": {
-        "detected": 0,
-        "params_correct": 0,
-        "pct": null
+        "detected": 1,
+        "params_correct": 1,
+        "pct": 100.0
       },
       "SHA3-256": {
         "detected": 0,
@@ -18693,9 +18761,9 @@
   "config_completeness": {
     "config_expected": 60,
     "config_detected": 24,
-    "config_complete": 20,
+    "config_complete": 24,
     "config_recall": 40.0,
-    "config_pct": 83.3
+    "config_pct": 100.0
   },
   "binary_honesty": {
     "known": [
@@ -18721,9 +18789,9 @@
   },
   "linkage": {
     "system_findings": 21,
-    "detected": 13,
-    "routable": 8,
-    "routable_pct": 61.5,
+    "detected": 14,
+    "routable": 9,
+    "routable_pct": 64.3,
     "misrouted": [
       {
         "id": "SYS-GO-01",
@@ -18789,9 +18857,9 @@
         "label": "Due now (not approved or past its date)",
         "weight": 5,
         "expected": 99,
-        "detected": 64,
-        "recall": 64.6,
-        "primary_site_recall": 62.6
+        "detected": 67,
+        "recall": 67.7,
+        "primary_site_recall": 65.7
       },
       "by-2030": {
         "label": "Due by end of 2030",
@@ -18821,13 +18889,13 @@
         "label": "No deadline (approved, review, out of scope, unknown)",
         "weight": 1,
         "expected": 141,
-        "detected": 86,
-        "recall": 61.0,
-        "primary_site_recall": 59.6
+        "detected": 88,
+        "recall": 62.4,
+        "primary_site_recall": 61.0
       }
     },
-    "weighted_recall": 65.1,
-    "weighted_primary_site_recall": 62.5,
+    "weighted_recall": 66.8,
+    "weighted_primary_site_recall": 64.2,
     "missed_due_by_2030": [
       {
         "id": "T2-PY-04",
@@ -19040,13 +19108,6 @@
         "why": "MD5 is not an approved hash function, in HMAC or otherwise."
       },
       {
-        "id": "T1-GO-09",
-        "algorithm": "RC4",
-        "file": "corpus/tier1/go/rc4/main.go",
-        "due": "now",
-        "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
-      },
-      {
         "id": "T1-GO-18",
         "algorithm": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
         "file": "corpus/tier1/go/tls_config/main.go",
@@ -19117,13 +19178,6 @@
         "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
       },
       {
-        "id": "MX-GO-3b",
-        "algorithm": "RC4",
-        "file": "corpus/mixed/go/invoice_gateway/main.go",
-        "due": "now",
-        "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
-      },
-      {
         "id": "MX-C-2d",
         "algorithm": "3DES-CBC",
         "file": "corpus/mixed/c/policy_agent.c",
@@ -19138,13 +19192,6 @@
         "why": "All SHA-1 uses end Dec 31, 2030. Already disallowed for digital signature generation."
       },
       {
-        "id": "DC-GO-02",
-        "algorithm": "RC4",
-        "file": "corpus/deadcode/go/legacy/main.go",
-        "due": "now",
-        "why": "Not a NIST-approved algorithm, and broken or weak in its own right."
-      },
-      {
         "id": "DC-JS-01",
         "algorithm": "MD5",
         "file": "corpus/deadcode/javascript/dead_paths.js",
@@ -19156,26 +19203,26 @@
   "actionability": {
     "rubric": "cbom-actionability-v1",
     "rubric_status": "proposed",
-    "detected": 246,
-    "ticket_ready": 113,
-    "ticket_ready_pct": 45.9,
-    "actionable_recall": 29.5,
+    "detected": 251,
+    "ticket_ready": 204,
+    "ticket_ready_pct": 81.3,
+    "actionable_recall": 53.3,
     "expected": 383,
-    "completeness_pct": 56.5,
+    "completeness_pct": 62.7,
     "checks": {
       "location": {
         "label": "Exact location",
         "tier": "must",
-        "applicable": 246,
-        "passed": 244,
+        "applicable": 251,
+        "passed": 249,
         "pct": 99.2
       },
       "parameters": {
         "label": "Correct parameters",
         "tier": "must",
         "applicable": 172,
-        "passed": 60,
-        "pct": 34.9
+        "passed": 149,
+        "pct": 86.6
       },
       "primitive": {
         "label": "Primitive, where the family is ambiguous",
@@ -19215,23 +19262,23 @@
       "oid": {
         "label": "OID",
         "tier": "should",
-        "applicable": 232,
+        "applicable": 236,
         "passed": 74,
-        "pct": 31.9
+        "pct": 31.4
       },
       "functions": {
         "label": "Crypto functions",
         "tier": "should",
-        "applicable": 238,
-        "passed": 238,
+        "applicable": 243,
+        "passed": 243,
         "pct": 100.0
       },
       "quantum_level": {
         "label": "Quantum security level (correct)",
         "tier": "should",
-        "applicable": 237,
-        "passed": 152,
-        "pct": 64.1
+        "applicable": 241,
+        "passed": 155,
+        "pct": 64.3
       },
       "code_context": {
         "label": "Code context",
@@ -19871,11 +19918,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         10
@@ -19890,7 +19939,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -19920,11 +19969,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         10
@@ -19939,7 +19990,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -19969,11 +20020,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         10
@@ -19988,7 +20041,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20019,11 +20072,14 @@
       "expected_line": 14,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         14
@@ -20038,7 +20094,7 @@
       "algorithm": "AES-128-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20069,11 +20125,14 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         10
@@ -20088,7 +20147,7 @@
       "algorithm": "AES-128-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20259,11 +20318,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         11
@@ -20278,7 +20339,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20308,11 +20369,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         11
@@ -20327,7 +20390,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20357,11 +20420,13 @@
       "expected_line": 15,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         15
@@ -20376,7 +20441,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20406,11 +20471,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         12
@@ -20425,7 +20492,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20455,11 +20522,13 @@
       "expected_line": 16,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         16
@@ -20474,7 +20543,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20504,11 +20573,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-521"
+        }
       ],
       "reported_lines": [
         8
@@ -20523,7 +20594,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20916,11 +20987,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         11
@@ -20935,7 +21008,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -20965,11 +21038,13 @@
       "expected_line": 7,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         7
@@ -20984,7 +21059,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21014,11 +21089,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         11
@@ -21033,7 +21110,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21063,11 +21140,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         8
@@ -21082,7 +21161,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": false,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21112,11 +21191,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         12
@@ -21131,7 +21212,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": false,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21653,12 +21734,14 @@
       "expected_line": 26,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         6,
@@ -21674,7 +21757,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21704,12 +21787,14 @@
       "expected_line": 18,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         6,
@@ -21725,7 +21810,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21755,12 +21840,14 @@
       "expected_line": 34,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         6,
@@ -21776,7 +21863,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21807,12 +21894,15 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         5,
@@ -21828,7 +21918,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21859,12 +21949,15 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 128,
+          "mode": "GCM"
+        }
       ],
       "reported_lines": [
         5,
@@ -21880,7 +21973,7 @@
       "algorithm": "AES-128-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21910,11 +22003,13 @@
       "expected_line": 25,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         25
@@ -21929,7 +22024,7 @@
       "algorithm": "DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -21959,11 +22054,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         17
@@ -21978,7 +22075,7 @@
       "algorithm": "DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22008,11 +22105,13 @@
       "expected_line": 25,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         25
@@ -22027,7 +22126,7 @@
       "algorithm": "DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22057,11 +22156,13 @@
       "expected_line": 26,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         25
@@ -22076,7 +22177,7 @@
       "algorithm": "DSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22106,11 +22207,13 @@
       "expected_line": 26,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         25
@@ -22125,7 +22228,7 @@
       "algorithm": "DSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22155,11 +22258,13 @@
       "expected_line": 34,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         33
@@ -22174,7 +22279,7 @@
       "algorithm": "DSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22720,11 +22825,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         17
@@ -22739,7 +22846,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22769,11 +22876,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         17
@@ -22788,7 +22897,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22818,11 +22927,13 @@
       "expected_line": 25,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         25
@@ -22837,7 +22948,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22863,20 +22974,46 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 32,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {},
+        {}
+      ],
+      "reported_lines": [
+        5,
+        32
+      ],
+      "reported_files": [
+        "corpus/calibration/tier1/go/cal_rc4_027/cal_rc4_027.go"
+      ],
+      "rule": "file+family",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      }
     },
     {
       "id": "CAL-T1-GO-028",
@@ -22886,20 +23023,46 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 24,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {},
+        {}
+      ],
+      "reported_lines": [
+        5,
+        24
+      ],
+      "reported_files": [
+        "corpus/calibration/tier1/go/cal_rc4_028/cal_rc4_028.go"
+      ],
+      "rule": "file+family",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      }
     },
     {
       "id": "CAL-T1-GO-029",
@@ -22909,20 +23072,46 @@
       "family": "RC4",
       "expected_params": {},
       "expected_line": 24,
-      "detected": false,
-      "at_usage_site": false,
-      "params_ok": null,
-      "line_ok": null,
-      "quantum_ok": null,
-      "reported_params": [],
-      "reported_lines": [],
-      "reported_files": [],
-      "rule": "missed: no report of this family in the file",
+      "detected": true,
+      "at_usage_site": true,
+      "params_ok": true,
+      "line_ok": true,
+      "quantum_ok": true,
+      "reported_params": [
+        {},
+        {}
+      ],
+      "reported_lines": [
+        5,
+        24
+      ],
+      "reported_files": [
+        "corpus/calibration/tier1/go/cal_rc4_029/cal_rc4_029.go"
+      ],
+      "rule": "file+family",
       "due": "now",
       "due_bucket": "now",
       "due_note": "Not a NIST-approved algorithm, and broken or weak in its own right.",
       "algorithm": "RC4",
-      "actionability": {}
+      "actionability": {
+        "location": true,
+        "parameters": null,
+        "primitive": null,
+        "cert_expiry": null,
+        "cert_subject": null,
+        "cert_issuer": null,
+        "cert_validity_start": null,
+        "cert_refs": null,
+        "key_type": null,
+        "key_format": null,
+        "protocol_version": null,
+        "suite_listed": null,
+        "oid": false,
+        "functions": true,
+        "quantum_level": true,
+        "code_context": null,
+        "provenance": null
+      }
     },
     {
       "id": "CAL-T1-GO-030",
@@ -22936,12 +23125,14 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -22957,7 +23148,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -22987,12 +23178,14 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -23008,7 +23201,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -23038,12 +23231,14 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         6,
@@ -23059,7 +23254,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -23591,7 +23786,9 @@
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "mode": "CBC"
+        },
         {
           "mode": "CBC"
         }
@@ -23644,7 +23841,9 @@
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "mode": "CBC"
+        },
         {
           "mode": "CBC"
         }
@@ -23697,7 +23896,9 @@
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "mode": "CBC"
+        },
         {
           "mode": "CBC"
         }
@@ -23804,12 +24005,13 @@
       "expected_line": 14,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "key_size": 128
+          "key_size": 128,
+          "mode": "GCM"
         }
       ],
       "reported_lines": [
@@ -23825,7 +24027,7 @@
       "algorithm": "AES-128-GCM",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -23855,11 +24057,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "key_size": 3072
+        },
         {}
       ],
       "reported_lines": [
@@ -23876,7 +24080,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -23906,11 +24110,13 @@
       "expected_line": 14,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         14
@@ -23925,7 +24131,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -23955,11 +24161,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         10
@@ -23974,7 +24182,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24004,11 +24212,13 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6
@@ -24023,7 +24233,7 @@
       "algorithm": "DSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24053,11 +24263,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         10
@@ -24072,7 +24284,7 @@
       "algorithm": "DSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24102,11 +24314,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         10
@@ -24121,7 +24335,7 @@
       "algorithm": "DSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24151,11 +24365,13 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "curve": "P-521"
+        },
         {}
       ],
       "reported_lines": [
@@ -24172,7 +24388,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24202,11 +24418,13 @@
       "expected_line": 7,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         7
@@ -24221,7 +24439,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24251,11 +24469,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-521"
+        }
       ],
       "reported_lines": [
         11
@@ -24270,7 +24490,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24742,7 +24962,9 @@
         {
           "hash": "SHA-256"
         },
-        {}
+        {
+          "hash": "SHA-256"
+        }
       ],
       "reported_lines": [
         6,
@@ -24795,7 +25017,9 @@
         {
           "hash": "SHA-256"
         },
-        {}
+        {
+          "hash": "SHA-256"
+        }
       ],
       "reported_lines": [
         6,
@@ -24892,11 +25116,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         10
@@ -24911,7 +25137,7 @@
       "algorithm": "RSA-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24941,11 +25167,13 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {},
+        {
+          "key_size": 3072
+        },
         {}
       ],
       "reported_lines": [
@@ -24962,7 +25190,7 @@
       "algorithm": "RSA-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -24992,11 +25220,13 @@
       "expected_line": 16,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         16
@@ -25011,7 +25241,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25533,11 +25763,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         9
@@ -25552,7 +25784,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25582,11 +25814,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         9
@@ -25601,7 +25835,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25631,11 +25865,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         5
@@ -25650,7 +25886,7 @@
       "algorithm": "3DES-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25681,11 +25917,14 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         5
@@ -25700,7 +25939,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25731,11 +25970,14 @@
       "expected_line": 13,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "key_size": 128,
+          "mode": "CBC"
+        }
       ],
       "reported_lines": [
         13
@@ -25750,7 +25992,7 @@
       "algorithm": "AES-128-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25921,11 +26163,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         5
@@ -25940,7 +26184,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -25970,11 +26214,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         5
@@ -25989,7 +26235,7 @@
       "algorithm": "DH-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26019,11 +26265,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 3072
+        }
       ],
       "reported_lines": [
         9
@@ -26038,7 +26286,7 @@
       "algorithm": "DH-3072",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26362,11 +26610,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": false,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-256"
+        }
       ],
       "reported_lines": [
         2
@@ -26381,7 +26631,7 @@
       "algorithm": "HMAC-SHA-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26586,12 +26836,14 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         2,
@@ -26607,7 +26859,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26637,12 +26889,14 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         2,
@@ -26658,7 +26912,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26688,12 +26942,14 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "hash": "SHA-512"
+        }
       ],
       "reported_lines": [
         2,
@@ -26709,7 +26965,7 @@
       "algorithm": "PBKDF2-HMAC-SHA-512",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26739,11 +26995,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         9
@@ -26758,7 +27016,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -26788,11 +27046,13 @@
       "expected_line": 9,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         9
@@ -26807,7 +27067,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -28333,11 +28593,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         17
@@ -28352,7 +28614,7 @@
       "algorithm": "HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -29401,11 +29663,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         5
@@ -29420,7 +29684,7 @@
       "algorithm": "3DES-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -29450,11 +29714,13 @@
       "expected_line": 14,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "mode": "ECB"
+        }
       ],
       "reported_lines": [
         25
@@ -29469,7 +29735,7 @@
       "algorithm": "3DES-ECB",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -29750,11 +30016,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         17
@@ -29769,7 +30037,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30102,7 +30370,9 @@
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CTR"
+        }
       ],
       "reported_lines": [
         5,
@@ -30154,7 +30424,9 @@
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CTR"
+        }
       ],
       "reported_lines": [
         5,
@@ -30206,7 +30478,9 @@
       "quantum_ok": null,
       "reported_params": [
         {},
-        {}
+        {
+          "mode": "CTR"
+        }
       ],
       "reported_lines": [
         5,
@@ -30252,11 +30526,13 @@
       "expected_line": 12,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         12
@@ -30271,7 +30547,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30351,11 +30627,13 @@
       "expected_line": 18,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         18
@@ -30370,7 +30648,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30400,11 +30678,13 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         28
@@ -30419,7 +30699,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30449,11 +30729,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         19
@@ -30468,7 +30750,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30498,12 +30780,14 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -30519,7 +30803,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30549,12 +30833,14 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -30570,7 +30856,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -30600,12 +30886,14 @@
       "expected_line": 11,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
         {},
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         6,
@@ -30621,7 +30909,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -31157,11 +31445,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         16
@@ -31176,7 +31466,7 @@
       "algorithm": "DSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -31262,7 +31552,9 @@
         {
           "curve": "P-256"
         },
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         6,
@@ -31308,11 +31600,13 @@
       "expected_line": 6,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         9
@@ -31327,7 +31621,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -31884,12 +32178,13 @@
       "expected_line": 8,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
         {
-          "key_size": 256
+          "key_size": 256,
+          "mode": "CBC"
         }
       ],
       "reported_lines": [
@@ -31905,7 +32200,7 @@
       "algorithm": "AES-256-CBC",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -31994,7 +32289,9 @@
         {
           "curve": "P-256"
         },
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         6,
@@ -32040,11 +32337,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         11
@@ -32059,7 +32358,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32089,11 +32388,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-521"
+        }
       ],
       "reported_lines": [
         9
@@ -32108,7 +32409,7 @@
       "algorithm": "ECC-P-521",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32138,11 +32439,13 @@
       "expected_line": 10,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         10
@@ -32157,7 +32460,7 @@
       "algorithm": "HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32187,11 +32490,13 @@
       "expected_line": 17,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         17
@@ -32206,7 +32511,7 @@
       "algorithm": "HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32236,11 +32541,13 @@
       "expected_line": 20,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "SHA-1"
+        }
       ],
       "reported_lines": [
         20
@@ -32255,7 +32562,7 @@
       "algorithm": "HMAC-SHA-1",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32839,11 +33146,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         7
@@ -32858,7 +33167,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32888,11 +33197,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-384"
+        }
       ],
       "reported_lines": [
         11
@@ -32907,7 +33218,7 @@
       "algorithm": "ECC-P-384",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32937,11 +33248,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "curve": "P-256"
+        }
       ],
       "reported_lines": [
         9
@@ -32956,7 +33269,7 @@
       "algorithm": "ECC-P-256",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -32986,11 +33299,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         13
@@ -33005,7 +33320,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33035,11 +33350,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         9
@@ -33054,7 +33371,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33084,11 +33401,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": null,
       "reported_params": [
-        {}
+        {
+          "hash": "MD5"
+        }
       ],
       "reported_lines": [
         13
@@ -33103,7 +33422,7 @@
       "algorithm": "HMAC-MD5",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": null,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33133,11 +33452,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 2048
+        }
       ],
       "reported_lines": [
         7
@@ -33152,7 +33473,7 @@
       "algorithm": "RSA-2048",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33182,11 +33503,13 @@
       "expected_line": 5,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         9
@@ -33201,7 +33524,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33231,11 +33554,13 @@
       "expected_line": 4,
       "detected": true,
       "at_usage_site": true,
-      "params_ok": false,
+      "params_ok": true,
       "line_ok": true,
       "quantum_ok": true,
       "reported_params": [
-        {}
+        {
+          "key_size": 1024
+        }
       ],
       "reported_lines": [
         7
@@ -33250,7 +33575,7 @@
       "algorithm": "RSA-1024",
       "actionability": {
         "location": true,
-        "parameters": false,
+        "parameters": true,
         "primitive": true,
         "cert_expiry": null,
         "cert_subject": null,
@@ -33354,7 +33679,7 @@
   ],
   "password_gated_results": [],
   "manifest": {
-    "release": "2.6.4",
+    "release": "2.6.5",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
@@ -33366,17 +33691,17 @@
     "scored_findings": 383,
     "finding_set": "393b8d4fada959fd",
     "scope": "qci-pqc declared scope (docs/LIMITATIONS.md)",
-    "scanner": "qci-pqc, version 2.3.4.1",
-    "adapter": "qci_pqc 1.1",
-    "adapter_sha": "c4d7c475e5626d1e"
+    "scanner": "qci-pqc, version 2.3.4.3",
+    "adapter": "qci_pqc 1.2",
+    "adapter_sha": "42ce77161a3a4c69"
   },
   "signal_coverage": {
     "expected": 383,
-    "strict_detected": 246,
+    "strict_detected": 251,
     "signal_only": 14,
-    "combined": 260,
-    "strict_recall": 64.2,
-    "combined_recall": 67.9,
+    "combined": 265,
+    "strict_recall": 65.5,
+    "combined_recall": 69.2,
     "signal_only_ids": [
       "MX-JS-2a",
       "PQ-AS-11",
@@ -33582,25 +33907,24 @@
         "category": "SHA-3",
         "location": "tier1/go/hashes/main.go",
         "line": 8,
-        "ref": "QCI-0662"
+        "ref": "QCI-0663"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "tier4/assets/tls/haproxy.cfg",
         "line": 7,
-        "ref": "QCI-0836"
+        "ref": "QCI-0837"
       },
       {
         "category": "SSH-Modern-Cipher",
         "location": "tier4/assets/tls/nginx.conf",
         "line": 21,
-        "ref": "QCI-0848"
+        "ref": "QCI-0849"
       }
     ]
   },
   "unmapped": [
     "Node-crypto",
-    "RC4",
     "TLS",
     "unspecified"
   ]
