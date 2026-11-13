@@ -18,13 +18,14 @@ unmapped, so a new scanner version with new families shows up instead of silentl
 from __future__ import annotations
 
 import copy
+import re
 from pathlib import Path
 
 from cbomlib import FAMILIES
 
 from . import common
 
-ADAPTER_VERSION = "1.2"
+ADAPTER_VERSION = "1.3"
 BUILT_FOR = "qci-pqc-scan 2.3.4.3"
 
 # QCI family name -> testbench algorithm name (scored strictly).
@@ -120,6 +121,10 @@ DEPENDENCIES = {"Python-cryptography", "pyOpenSSL", "liboqs", "Go-CIRCL", "Bounc
 NOT_MODELED = {"BLAKE2", "HQC", "Classic-McEliece", "BIKE", "SM2", "SM3", "SM4", "sm2", "sm3", "sm4"}
 
 
+# TLS cipher suites, which the scanner reports one per component from 2.3.4.4 on.
+_IANA_SUITE = re.compile(r"TLS_[A-Z0-9]+(?:_[A-Z0-9]+)*")
+
+
 def translate(qci_bom: dict) -> tuple[dict, list[dict], list[str]]:
     """-> (bom for the scorer, risk-signal records, unmapped QCI names)."""
     bom = copy.deepcopy(qci_bom)
@@ -139,6 +144,8 @@ def translate(qci_bom: dict) -> tuple[dict, list[dict], list[str]]:
         if name in EXACT:
             c["name"] = EXACT[name]
             continue
+        if _IANA_SUITE.fullmatch(name):
+            continue        # a TLS cipher suite under its IANA name is already the testbench's own name for it
         if name in SIGNALS:
             for o in (c.get("evidence") or {}).get("occurrences", []):
                 signals.append({"category": name, "location": o.get("location", ""), "line": o.get("line"),
