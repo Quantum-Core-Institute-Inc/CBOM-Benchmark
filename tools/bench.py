@@ -112,7 +112,7 @@ def headline(rep: dict) -> dict:
             "false_positives": a["false_positives"], "pqc_overclaims": rep["summary"]["pqc_overclaims"]["count"],
             "pqc_standard_name_pct": (rep["summary"].get("pqc_standard_names") or {}).get("accuracy"),
             "ticket_ready_pct": ac["ticket_ready_pct"], "actionable_recall": ac["actionable_recall"],
-            "deadline_weighted_recall": rep["deadlines"]["weighted_recall"], "library_recall": lib.get("recall")}
+            "deadline_weighted_recall": rep["deadlines"]["weighted_recall"], "library_recall": lib.get("recall"), "version_accuracy": lib.get("version_accuracy")}
 
 
 def validate_cyclonedx(path: Path) -> str:
