@@ -27,12 +27,20 @@ normalizer doesn't know scores low here for a reason an adapter would fix, and n
 been checked for that.
 
 cryptoscan and qScan are the two open scanners chosen for the leaderboard, next to QCI PQC (the
-reference product), cdxgen (existing baseline) and grep (calibration baseline). Both were added to the
-workflow in 2.6.4 and neither had been run when this was written: qScan's command comes from its
-package README, cryptoscan's from its repository README, and cryptoscan's version tag (v1.5.0) is
-taken from the adapter stub and not confirmed. `tools/adapters/cryptoscan.py` and `qscan.py` pass
-components through unchanged and aren't registered with `bench.py`; the workflow runs both scanners
-with no adapter until their output has been read.
+reference product), cdxgen (existing baseline) and grep (calibration baseline). Both ran for the
+first time on benchmark 2.6.4 (410 findings). First results, raw and unread:
+
+| Scanner | Recall | Precision | Parameters correct | Adapter |
+|---|---|---|---|---|
+| cryptoscan 1.5.0 | 34.6% | 59.2% | 37.3% | none |
+| qScan 0.12.0 | 18.3% | 83.3% | 17.3% | `tools/adapters/qscan.py` |
+
+qScan needs its adapter to be scored at all. It names components `DH (key-agree)` and writes
+locations as `path/File.java:12`; the scorer reads plain names and a separate line field, so without
+the adapter 22 located components scored zero. The adapter strips the suffix and splits the line,
+and nothing else. qScan skips minified files unless given `--scan-minified`; the workflow runs it
+with its defaults. `tools/adapters/cryptoscan.py` is still a pass-through and isn't registered:
+cryptoscan's output scores without one.
 
 ## Why they aren't in the comparison yet
 
