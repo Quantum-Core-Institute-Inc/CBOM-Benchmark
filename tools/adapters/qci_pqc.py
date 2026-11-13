@@ -1,4 +1,4 @@
-"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), last checked against version 2.3.4.3.
+"""Adapter for the QCI PQC Readiness Scanner (qci-pqc-scan), last checked against version 2.3.4.5.
 
 The scanner writes a schema-valid CycloneDX 1.6 CBOM (cbom.json). Its component names fall into
 two kinds, and this adapter treats them differently on purpose:
@@ -26,7 +26,7 @@ from cbomlib import FAMILIES
 from . import common
 
 ADAPTER_VERSION = "1.3"
-BUILT_FOR = "qci-pqc-scan 2.3.4.3"
+BUILT_FOR = "qci-pqc-scan 2.3.4.5"
 
 # QCI family name -> testbench algorithm name (scored strictly).
 EXACT = {

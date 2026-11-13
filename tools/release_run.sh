@@ -8,7 +8,7 @@
 #
 # Optional:
 #   QCI_IMAGE=qci-scanner:<version>   also build the container-lane bundle (needs Docker and the image)
-#   QCI_NAME="QCI v2.3.4.3"           name in reports; default asks the scanner for its version
+#   QCI_NAME="QCI v2.3.4.5"           name in reports; default asks the scanner for its version
 #   CARRY=1                           keep existing gate floors as candidates (same corpus and answer key only)
 #   LOGS=dir                          where the per-step logs go (default: a temp directory)
 #   RESUME=checks                     skip the scans; rerun the required checks and rebuild the bundles around them
