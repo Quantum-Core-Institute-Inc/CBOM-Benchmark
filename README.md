@@ -109,6 +109,7 @@ required checks; `perf` times a scanner on a large generated tree.
 | `--adapter qci-pqc\|cdxgen` | Translate the scanner's native output first |
 | `--scope FILE`, `--gates FILE` | Declared scope; gates to evaluate (exit 1 fail, 3 not evaluated) |
 | `--remediation` | Also apply the ten reference migrations, rescan, and score verified remediation |
+| `--repeat` | Also scan the corpus a second time and report whether the two outputs are the same |
 | `--require-isolation` | Refuse to run without both the network cut and the filesystem boundary |
 | `--allow-path PATH` | A path the scanner may read although it sits in a hidden location (recorded) |
 | `--scanner-image IMAGE` | Run the scanner in its own container: the strongest lane |

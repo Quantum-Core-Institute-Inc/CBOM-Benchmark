@@ -60,7 +60,9 @@ OPS = [("QCI v2.3.4.5", "evidence/qci-v2.3.4.5", "evidence/perf-qci-v2.3.4.5"),
 
 
 def operations_block() -> str:
+    import integrity
     rows = {"Verified remediation (of eligible migrations)": [], "Migrations eligible (of 10)": [],
+            "CBOM signed": [], "Second scan of the same input": [],
             "Large repo: finished inside the budget": [], "Large repo: wall time": [], "Large repo: peak memory": [],
             "Large repo: planted uses found": [], "Large repo: found, first vs last quarter of the tree": []}
     sizes = set()
@@ -78,6 +80,10 @@ def operations_block() -> str:
         else:
             rows["Verified remediation (of eligible migrations)"].append("not run")
             rows["Migrations eligible (of 10)"].append("n/a")
+        ip = ROOT / run_b / "integrity.json"
+        facts = json.loads(ip.read_text()) if ip.is_file() else None
+        rows["CBOM signed"].append(integrity.signed_cell(facts))
+        rows["Second scan of the same input"].append(integrity.repeat_cell(facts))
         pm = json.loads((ROOT / perf_b / "manifest.json").read_text())
         res = pm.get("result") or {}
         sizes.add((pm["fixture"]["code_files"], pm["fixture"]["planted"], round(pm["fixture"]["bytes"] / 1e6), pm["budget_s"]))
@@ -91,6 +97,7 @@ def operations_block() -> str:
     out += [f"| {k} | " + " | ".join(v) + " |" for k, v in rows.items()]
     (files, planted, mb, budget), = sizes
     return ("\n".join(out) + f"\n\nFix and rescan: the 10 reference migrations in `remediation/`, scored as in METHODOLOGY.md 4b. "
+            "Signed and second scan: reported, not scored (METHODOLOGY.md 4d). "
             f"Large repo: `bench.py perf --size medium` ({files:,} code files, {mb} MB, {planted} planted Tier 1 uses, "
             f"seed 2026), {budget} s budget, same host for every scanner.\n")
 

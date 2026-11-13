@@ -40,13 +40,13 @@ qci() { python3 tools/run_qci_pqc.py --qci-bin "$QCI_BIN" --out reports/qci-pqc 
 bundles() {
   local C=""; [ -n "$1" ] && C="--checks $1"
   CBOM_HOLDOUT_SEED="$SEED" python3 tools/bench.py run --name "$QCI_NAME" --adapter qci-pqc --scanner-cmd "$QCI_BIN $QCI_CMD" --version-cmd "$QCI_BIN --version" \
-    --scope integrations/qci-pqc/scope.json --gates integrations/qci-pqc/gates.json $C --remediation --require-isolation --bundle "evidence/$QCI_SLUG" --force > "$LOGS/bundle-qci.log" 2>&1 || true
+    --scope integrations/qci-pqc/scope.json --gates integrations/qci-pqc/gates.json $C --remediation --repeat --require-isolation --bundle "evidence/$QCI_SLUG" --force > "$LOGS/bundle-qci.log" 2>&1 || true
   if [ -n "${QCI_IMAGE:-}" ]; then
     CBOM_HOLDOUT_SEED="$SEED" python3 tools/bench.py run --name "$QCI_NAME (own container)" --adapter qci-pqc --scanner-image "$QCI_IMAGE" --scanner-cmd "qci-pqc $QCI_CMD" --version-cmd "qci-pqc --version" \
-      --scope integrations/qci-pqc/scope.json --gates integrations/qci-pqc/gates.json $C --remediation --require-isolation --bundle "evidence/$QCI_SLUG-container" --force > "$LOGS/bundle-qci-container.log" 2>&1 || true
+      --scope integrations/qci-pqc/scope.json --gates integrations/qci-pqc/gates.json $C --remediation --repeat --require-isolation --bundle "evidence/$QCI_SLUG-container" --force > "$LOGS/bundle-qci-container.log" 2>&1 || true
   fi
-  python3 tools/bench.py run --name "cdxgen 12.9.1" --adapter cdxgen --scanner-cmd "$CDX_CMD" --version-cmd "$CDXGEN_BIN --version" $C --remediation --require-isolation --bundle evidence/cdxgen-12.9.1 --force > "$LOGS/bundle-cdxgen.log" 2>&1
-  python3 tools/bench.py run --name "grep baseline" --scanner-cmd "$GREP_CMD" --allow-path tools --scanner-version "benchmark $VERSION" $C --remediation --require-isolation --bundle evidence/grep-baseline --force > "$LOGS/bundle-grep.log" 2>&1
+  python3 tools/bench.py run --name "cdxgen 12.9.1" --adapter cdxgen --scanner-cmd "$CDX_CMD" --version-cmd "$CDXGEN_BIN --version" $C --remediation --repeat --require-isolation --bundle evidence/cdxgen-12.9.1 --force > "$LOGS/bundle-cdxgen.log" 2>&1
+  python3 tools/bench.py run --name "grep baseline" --scanner-cmd "$GREP_CMD" --allow-path tools --scanner-version "benchmark $VERSION" $C --remediation --repeat --require-isolation --bundle evidence/grep-baseline --force > "$LOGS/bundle-grep.log" 2>&1
   python3 tools/bench.py run --name "answer key" --scanner-cmd "cp $PWD/expected/expected.cdx.json {out}/cbom.json" --allow-path expected --scanner-version "benchmark $VERSION" $C --require-isolation --bundle evidence/answer-key --force > "$LOGS/bundle-key.log" 2>&1
 }
 

@@ -77,6 +77,6 @@ jobs:
         run: |
           set -e
           python -m py_compile tools/*.py tools/adapters/*.py
-          for t in normalize scorer policy gates compare libraries linkage sandbox qci_adapter cdxgen_adapter sarif_adapter; do
+          for t in normalize scorer policy gates compare libraries linkage sandbox qci_adapter cdxgen_adapter sarif_adapter integrity; do
             python "tools/test_$t.py"
           done
