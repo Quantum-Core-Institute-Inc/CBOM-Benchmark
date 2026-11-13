@@ -62,8 +62,10 @@ OPS = [("QCI v2.3.4.5", "evidence/qci-v2.3.4.5", "evidence/perf-qci-v2.3.4.5"),
 def operations_block() -> str:
     import drift
     import integrity
+    import priority
     rows = {"Verified remediation (of eligible migrations)": [], "Migrations eligible (of 10)": [],
             "Changes seen (of eligible, 9 injected)": [], "Unchanged assets keep their identifier": [],
+            "Priority order agrees with the deadlines": [],
             "CBOM signed": [], "Second scan of the same input": [],
             "Large repo: finished inside the budget": [], "Large repo: wall time": [], "Large repo: peak memory": [],
             "Large repo: planted uses found": [], "Large repo: found, first vs last quarter of the tree": []}
@@ -86,6 +88,8 @@ def operations_block() -> str:
         dev = json.loads(dp.read_text()) if dp.is_file() else None
         rows["Changes seen (of eligible, 9 injected)"].append(drift.seen_cell(dev))
         rows["Unchanged assets keep their identifier"].append(drift.identity_cell(dev))
+        pp = ROOT / run_b / "priority.json"
+        rows["Priority order agrees with the deadlines"].append(priority.cell(json.loads(pp.read_text()) if pp.is_file() else None))
         ip = ROOT / run_b / "integrity.json"
         facts = json.loads(ip.read_text()) if ip.is_file() else None
         rows["CBOM signed"].append(integrity.signed_cell(facts))
@@ -105,6 +109,7 @@ def operations_block() -> str:
     return ("\n".join(out) + f"\n\nFix and rescan: the 10 reference migrations in `remediation/`, scored as in METHODOLOGY.md 4b. "
             "Changes seen: the 9 injected changes in `drift/` (METHODOLOGY.md 4e). "
             "Signed and second scan: reported, not scored (METHODOLOGY.md 4d). "
+            "Priority order: reported, not scored; 50% is an order unrelated to the deadlines (METHODOLOGY.md 4f). "
             f"Large repo: `bench.py perf --size medium` ({files:,} code files, {mb} MB, {planted} planted Tier 1 uses, "
             f"seed 2026), {budget} s budget, same host for every scanner.\n")
 

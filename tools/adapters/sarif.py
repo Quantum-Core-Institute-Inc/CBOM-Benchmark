@@ -18,6 +18,9 @@ What the adapter does:
   3. Emits one CycloneDX cryptographic-asset component per algorithm, with each result's file and
      line as an occurrence. A key size stated in the message ("uses 1024 bits") is kept for RSA,
      DSA and DH, and a mode named with a cipher (ECB, CBC) is kept.
+  4. Carries the tool's own severity onto the component, as the property `sarif:security-severity`
+     (the rule's numeric score, where the tool gives one) or `sarif:level` (error, warning, note).
+     Where several results name the same algorithm, the highest is kept. tools/priority.py reads it.
 
 What it cannot do, and does not pretend to:
 
@@ -34,7 +37,7 @@ from __future__ import annotations
 
 import re
 
-ADAPTER_VERSION = "0.1"
+ADAPTER_VERSION = "0.2"
 BUILT_FOR = "SARIF 2.1.0 (Semgrep, Opengrep, CodeQL)"
 
 # Token in a rule id or message -> the name the scorer's normalizer knows. Longest first where one
@@ -168,11 +171,24 @@ def translate(sarif: dict) -> tuple[dict, list[dict], dict]:
                     "evidence": {"occurrences": []},
                     "properties": [{"name": "cbom-testbench:sarif_rule", "value": rule_id}],
                 })
+                sev = (rule.get("properties") or {}).get("security-severity")
+                level = res.get("level") or (rule.get("defaultConfiguration") or {}).get("level") or "warning"
+                try:
+                    comp.setdefault("_score", []).append(float(sev))
+                except (TypeError, ValueError):
+                    comp.setdefault("_level", []).append(level)
                 occ = {"location": uri}
                 if isinstance(line, int):
                     occ["line"] = line
                 if occ not in comp["evidence"]["occurrences"]:
                     comp["evidence"]["occurrences"].append(occ)
+    order = {"error": 3, "warning": 2, "note": 1, "none": 0}
+    for comp in found.values():
+        scores, levels = comp.pop("_score", []), comp.pop("_level", [])
+        if scores:
+            comp["properties"].append({"name": "sarif:security-severity", "value": f"{max(scores):g}"})
+        elif levels:
+            comp["properties"].append({"name": "sarif:level", "value": max(levels, key=lambda lv: order.get(lv, 2))})
     bom = {
         "bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1,
         "metadata": {"properties": [{"name": "cbom-testbench:adapter", "value": f"sarif {ADAPTER_VERSION} ({', '.join(notes['tools']) or 'unknown tool'})"}]},

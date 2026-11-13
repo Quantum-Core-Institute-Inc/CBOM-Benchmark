@@ -230,6 +230,7 @@ def cmd_run(a) -> int:
         manifest["drift"] = run_drift(cmd, a, lim, extra_path, parts, bundle)
 
     manifest["integrity"] = run_integrity(cmd, a, lim, extra_path, bundle)
+    manifest["priority"] = run_priority(parts, bundle, a.name)
 
     gate_code = None
     if a.gates:
@@ -323,6 +324,22 @@ def run_drift(cmd, a, lim, extra_path, parts: dict, bundle: Path) -> dict:
                 "noise_outside": len(ev["noise_outside"]["lost"]) + len(ev["noise_outside"]["gained"])}
     finally:
         shutil.rmtree(work, ignore_errors=True)
+
+
+def priority_eval(parts: dict) -> dict:
+    """The scanner's own urgency order against the policy's deadlines, unscoped. No extra scan."""
+    import priority
+    rep = parts.get("scorecard-full") or parts["scorecard"]
+    return priority.evaluate(parts["cbom"], json.loads(json.dumps(rep, default=str)))
+
+
+def run_priority(parts: dict, bundle: Path, name: str) -> dict:
+    import priority
+    ev = priority_eval(parts)
+    (bundle / "priority.json").write_text(json.dumps(ev, indent=2) + "\n")
+    (bundle / "priority.md").write_text(priority.markdown(ev, name))
+    print(f"  priority agreement: {priority.cell(ev)}")
+    return {"verdict": ev["verdict"], "source": ev["source"], "agreement_pct": ev["agreement_pct"], "coverage_pct": ev["coverage_pct"]}
 
 
 def run_integrity(cmd, a, lim, extra_path, bundle: Path) -> dict:
@@ -537,6 +554,7 @@ def cmd_verify(a) -> int:
     need += [f"raw-drift/{sc['cbom']}", "drift.json"] if drift_scored else []
     integ = m.get("integrity")
     need += ["integrity.json"] if integ else []
+    need += ["priority.json"] if m.get("priority") else []
     need += [f"raw-repeat/{sc['cbom']}"] if integ and (bundle / "raw-repeat").exists() else []
     need += ["gates.json"] if m.get("gates") else []
     need += ["checks.json"] if (m.get("checks") or {}).get("status") not in (None, "not run") else []
@@ -595,6 +613,12 @@ def cmd_verify(a) -> int:
                 "change detection re-derives from raw/ and raw-drift/, and the manifest's counts match")
         finally:
             shutil.rmtree(work, ignore_errors=True)
+    if m.get("priority"):
+        pev = priority_eval(parts)
+        mp = m["priority"]
+        say(pev == json.loads((bundle / "priority.json").read_text())
+            and (mp["verdict"], mp["source"], mp["agreement_pct"]) == (pev["verdict"], pev["source"], pev["agreement_pct"]),
+            "priority agreement re-derives from the adapted CBOM and the scorecard")
     if integ:
         import integrity
         f = integrity.facts(bundle / "raw", sc["cbom"], bundle / "raw-repeat")
