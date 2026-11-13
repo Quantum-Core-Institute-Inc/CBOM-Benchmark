@@ -25,7 +25,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 120
     strategy:
       fail-fast: false          # one scanner breaking says nothing about the others
       matrix:
@@ -62,6 +62,35 @@ jobs:
             package: "@quantakrypto/qscan@0.12.0"
             cmd: "qscan {corpus} --cbom -o {out}/cbom.json"
             adapter: qscan      # strips the "(primitive)" suffix from names; see tools/adapters/qscan.py
+          # Static-analysis tools a team may already run. They report rule violations as SARIF, not
+          # an inventory; tools/adapters/sarif.py turns the crypto results into components.
+          - id: semgrep
+            name: Semgrep 1.183.0
+            version: "1.183.0"
+            ecosystem: pip
+            package: semgrep==1.183.0
+            rules: semgrep-rules
+            cmd: "semgrep scan --config $SCANNER_HOME/rules --sarif-output={out}/results.sarif --metrics off --disable-version-check --no-git-ignore --quiet {corpus}"
+            output: results.sarif
+            adapter: sarif
+          - id: opengrep
+            name: Opengrep 1.16.0
+            version: "1.16.0"
+            ecosystem: binary
+            package: https://github.com/opengrep/opengrep/releases/download/v1.16.0/opengrep_manylinux_x86
+            rules: semgrep-rules
+            cmd: "opengrep scan -f $SCANNER_HOME/rules --sarif-output={out}/results.sarif --no-git-ignore --quiet {corpus}"
+            output: results.sarif
+            adapter: sarif
+          - id: codeql
+            name: CodeQL (runner's bundled CLI)
+            version: "runner"
+            ecosystem: codeql
+            package: preinstalled
+            cmd: "$SCANNER_HOME/codeql-scan {corpus} {out}"
+            output: results.sarif
+            adapter: sarif
+            timeout: "3000"
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -92,7 +121,28 @@ jobs:
             # replace `python` for the benchmark, which has its own pinned dependencies.
             mkdir -p "$RUNNER_TEMP/scanner-bin"
             ln -s "$SCANNER_HOME/bin/${{ matrix.id }}" "$RUNNER_TEMP/scanner-bin/${{ matrix.id }}"
+            # Semgrep's command starts helper programs installed beside it, by name.
+            for helper in pysemgrep osemgrep semgrep-core; do
+              if [ "${{ matrix.id }}" = "semgrep" ] && [ -e "$SCANNER_HOME/bin/$helper" ]; then ln -s "$SCANNER_HOME/bin/$helper" "$RUNNER_TEMP/scanner-bin/$helper"; fi
+            done
             echo "$RUNNER_TEMP/scanner-bin" >> "$GITHUB_PATH"
+          elif [ "${{ matrix.ecosystem }}" = "binary" ]; then
+            mkdir -p "$SCANNER_HOME"
+            curl -fsSL --retry 3 -o "$SCANNER_HOME/${{ matrix.id }}" "${{ matrix.package }}"
+            chmod +x "$SCANNER_HOME/${{ matrix.id }}"
+            sha256sum "$SCANNER_HOME/${{ matrix.id }}" > scanner-packages.txt
+            echo "${{ matrix.package }}" >> scanner-packages.txt
+            echo "$SCANNER_HOME" >> "$GITHUB_PATH"
+          elif [ "${{ matrix.ecosystem }}" = "codeql" ]; then
+            # The CodeQL CLI and its query packs ship on GitHub's runner images. A wrapper builds
+            # one database per language and runs the security-extended suite on each.
+            mkdir -p "$SCANNER_HOME"
+            CODEQL="$(ls -d /opt/hostedtoolcache/CodeQL/*/x64/codeql 2>/dev/null | sort -V | tail -1)/codeql"
+            "$CODEQL" version --format=terse | tee scanner-packages.txt
+            cp integrations/third-party/codeql-scan.sh "$SCANNER_HOME/codeql-scan"
+            sed -i "s#@CODEQL@#$CODEQL#" "$SCANNER_HOME/codeql-scan"
+            chmod +x "$SCANNER_HOME/codeql-scan"
+            echo "$SCANNER_HOME" >> "$GITHUB_PATH"
           elif [ "${{ matrix.ecosystem }}" = "go" ]; then
             mkdir -p "$SCANNER_HOME"
             GOBIN="$SCANNER_HOME" go install "${{ matrix.package }}"
@@ -106,6 +156,24 @@ jobs:
           fi
           echo "SCANNER_HOME=$SCANNER_HOME" >> "$GITHUB_ENV"
 
+      - name: Rules for Semgrep and Opengrep (the community rule set, pinned by date)
+        if: matrix.rules == 'semgrep-rules'
+        run: |
+          # Neither tool ships rules, and the sandbox has no network, so they are fetched here. The
+          # commit is the last one before a fixed date, which pins the rule set without a tag.
+          git clone -q --shallow-since=2026-08-01 https://github.com/semgrep/semgrep-rules "$RUNNER_TEMP/semgrep-rules"
+          cd "$RUNNER_TEMP/semgrep-rules"
+          SHA="$(git rev-list -1 --before=2026-11-01T00:00:00Z HEAD)"
+          git checkout -q "$SHA"
+          mkdir -p "$SCANNER_HOME/rules"
+          for d in python java go javascript typescript c csharp kotlin scala ruby php rust swift generic terraform yaml json dockerfile; do
+            [ -d "$d" ] && cp -r "$d" "$SCANNER_HOME/rules/"
+          done
+          # Rule files only: the repository keeps each rule's test fixtures beside it.
+          find "$SCANNER_HOME/rules" -type f ! -name '*.yaml' ! -name '*.yml' -delete
+          find "$SCANNER_HOME/rules" -type f \( -name '*.test.yaml' -o -name '*.test.yml' -o -name '*.fixed.yaml' -o -name '*.fixed.yml' \) -delete
+          echo "semgrep-rules $SHA ($(find "$SCANNER_HOME/rules" -type f | wc -l) rule files)" | tee -a "$GITHUB_WORKSPACE/scanner-packages.txt"
+
       - name: Allow unprivileged user namespaces (the sandbox needs them on ubuntu-24.04 runners)
         run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
@@ -113,6 +181,7 @@ jobs:
         run: |
           python tools/bench.py run --name "${{ matrix.name }}" --scanner-version "${{ matrix.version }}" \
             --scanner-cmd "${{ matrix.cmd }}" --ok-exit 0 1 2 --adapter "${{ matrix.adapter || 'none' }}" \
+            --cbom "${{ matrix.output || 'cbom.json' }}" --timeout "${{ matrix.timeout || '1800' }}" \
             --without-holdout --remediation --require-isolation --allow-path "$SCANNER_HOME" --allow-path "$RUNNER_TEMP/scanner-bin" \
             --bundle "bundle/${{ matrix.id }}"
 
@@ -131,6 +200,20 @@ jobs:
           # until you know whether it scanned anything.
           echo "--- scanner output (last 40 lines of run.log)"; tail -n 40 "$B/run.log" 2>/dev/null || echo "(no run.log)"
           echo "--- raw output files"; ls -la "$B/raw" 2>/dev/null || echo "(no raw directory)"
+          # For a SARIF tool: which rules produced components, and which crypto rules named no algorithm.
+          python3 - "$B" <<'PY'
+          import glob, json, sys
+          sys.path.insert(0, "tools")
+          from adapters import sarif
+          for path in sorted(glob.glob(sys.argv[1] + "/raw/*.sarif")):
+              bom, _, notes = sarif.translate(json.load(open(path)))
+              print(path, "|", {k: notes[k] for k in ("tools", "results", "crypto_results", "named", "unnamed")})
+              print("  components:", sorted((c["name"], len(c["evidence"]["occurrences"])) for c in bom["components"]))
+              for label in ("rules_used", "unnamed_rules"):
+                  print(" ", label)
+                  for rule, n in sorted(notes[label].items(), key=lambda kv: -kv[1])[:40]:
+                      print(f"    {n:4d}  {rule}")
+          PY
           python3 - "$B" <<'PY'
           import collections, glob, json, sys
           for path in sorted(glob.glob(sys.argv[1] + "/raw/*.json")):
