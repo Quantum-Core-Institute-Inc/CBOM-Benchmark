@@ -31,13 +31,20 @@ def migrations() -> list[dict]:
     return json.loads(SPEC.read_text())["migrations"]
 
 
-def build_after(dst: Path) -> Path:
-    """Copy corpus/ to dst/corpus with every migration applied. -> dst/corpus"""
+def build_after(dst: Path, migs: list[dict] | None = None, after_dir: Path = AFTER) -> Path:
+    """Copy corpus/ to dst/corpus with every migration applied. -> dst/corpus
+
+    The same machinery serves tools/drift.py, whose changes can also delete a file ("delete") or
+    add one that the shipped corpus does not have."""
     out = Path(dst) / "corpus"
     shutil.copytree(ROOT / "corpus", out, symlinks=True)
-    for m in migrations():
-        src = AFTER / m["file"]
-        shutil.copy2(src, Path(dst) / m["file"])
+    for m in migrations() if migs is None else migs:
+        target = Path(dst) / m["file"]
+        if m.get("delete"):
+            target.unlink()
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(after_dir / m["file"], target)
     return out
 
 
@@ -51,10 +58,10 @@ def _resolve(text_lines: list[str], anchors: list[str], what: str) -> list[int]:
     return out
 
 
-def after_truth(gt: dict) -> dict:
+def after_truth(gt: dict, migs: list[dict] | None = None, after_dir: Path = AFTER) -> dict:
     """The answer key for the migrated corpus, from the (resolved) shipped one."""
     gt = copy.deepcopy(gt)
-    migs = migrations()
+    migs = migrations() if migs is None else migs
     retired = {i for m in migs for i in m["retires"]}
     by_file = {m["file"]: m for m in migs}
     keep = []
@@ -63,13 +70,20 @@ def after_truth(gt: dict) -> dict:
             continue
         m = by_file.get(f["file"])
         if m:
-            lines = (AFTER / f["file"]).read_text().splitlines()
+            if m.get("delete"):
+                raise ValueError(f"{m['id']} deletes {m['file']} but does not retire {f['id']}")
+            lines = (after_dir / f["file"]).read_text().splitlines()
             anchors = m.get("reanchor", {}).get(f["id"], f.get("anchors", []))
             f = {**f, "anchors": anchors, "lines": _resolve(lines, anchors, f["id"]) if anchors else []}
         keep.append(f)
     for m in migs:
-        lines = (AFTER / m["file"]).read_text().splitlines()
-        model = next(f for f in gt["findings"] if f["id"] == m["retires"][0])
+        if not m["adds"]:
+            continue
+        lines = (after_dir / m["file"]).read_text().splitlines()
+        # tier and language come from a finding the change retires, else from another in the same
+        # file, else from the change itself (a file the shipped corpus does not have)
+        model = next((f for f in gt["findings"] if f["id"] in m["retires"]), None) \
+            or next((f for f in gt["findings"] if f["file"] == m["file"]), None) or {"tier": m["tier"], "lang": m["lang"]}
         for k, add in enumerate(m["adds"], 1):
             fid = f"{m['id']}-A{k}"
             keep.append({"id": fid, "tier": model["tier"], "lang": model["lang"], "file": m["file"],
@@ -83,11 +97,11 @@ def _matches(params: dict, want: dict) -> bool:
     return bool(want) and all(params.get(k) == v for k, v in want.items())
 
 
-def evaluate(before: dict, after: dict) -> dict:
+def evaluate(before: dict, after: dict, migs: list[dict] | None = None) -> dict:
     """before: the scorecard on the shipped corpus; after: on the migrated one (unscoped, same policy)."""
     b = {r["id"]: r for r in before["results"]}
     a = {r["id"]: r for r in after["results"]}
-    migs = migrations()
+    migs = migrations() if migs is None else migs
     files = {m["file"] for m in migs}
     out = []
     for m in migs:

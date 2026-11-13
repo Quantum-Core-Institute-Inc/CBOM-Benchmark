@@ -135,6 +135,38 @@ the number of components or results found in only one of the two. A changed `bom
 different. An inventory that changes when the code has not cannot be compared from one week to
 the next.
 
+## 4e. Change detection
+
+A scanner is run repeatedly, and what matters on the second run is what changed. `drift/changes.json`
+lists nine injected changes, three of each kind: an algorithm that appears (in a new file, or in a
+file that already had other cryptography), one that goes away (the call removed, or the file
+deleted), and one replaced by something weaker (AES-256-GCM to 3DES-CBC, RSA-3072 to RSA-1024,
+AES-256-GCM to AES-128-ECB). `drift/after/<path>` holds each changed file, and every one runs.
+
+With `--drift` the scanner scans the changed corpus as well. Nothing is asked of it beyond the two
+scans: the benchmark takes the difference between its two reports. A change is **seen** when
+
+- add: the new algorithm is reported afterwards with correct parameters, and was not already
+  reported in that file before;
+- remove: what was removed is not reported in that file afterwards (for a deleted file, no
+  occurrence still points at it);
+- downgrade: both, with the weaker algorithm's parameters correct;
+
+and every other finding in the changed file is detected exactly as before. A removal or downgrade is
+**eligible** when the scanner detected the original beforehand; one that is not eligible is reported
+as such and not counted as missed. Changes seen = seen / eligible, also given per kind.
+
+Two more results come from the same pair of scans. **Noise**: findings lost or gained, and false
+positives added or dropped, outside the changed files, where nothing changed. **Identity**: whether
+assets outside the changed files carry the same identifier in both scans, read from the scanner's
+own output before any adapter (`bom-ref` for a CycloneDX component, `fingerprints` or
+`partialFingerprints` for a SARIF result). Assets are paired by content; one whose content is not
+unique in a report is left out. The verdict is stable, not stable, no identifiers, or not
+measurable. An identifier that is a sequence number shifts when one file changes, and then no
+asset can be followed from one report to the next.
+
+Scored unscoped. Not part of recall, precision or any gate in this release.
+
 ## 5. Declared scope
 
 A scanner may publish what it doesn't cover. A scope file has rules of three kinds: `glob` (files

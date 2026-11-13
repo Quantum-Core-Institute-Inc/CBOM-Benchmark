@@ -226,6 +226,9 @@ def cmd_run(a) -> int:
     if a.remediation:
         manifest["remediation"] = run_remediation(cmd, a, lim, extra_path, parts, version, bundle)
 
+    if a.drift:
+        manifest["drift"] = run_drift(cmd, a, lim, extra_path, parts, bundle)
+
     manifest["integrity"] = run_integrity(cmd, a, lim, extra_path, bundle)
 
     gate_code = None
@@ -279,6 +282,45 @@ def run_holdout(seed: int, cmd, a, lim, extra_path, published: dict, scope, bund
         (bundle / "holdout.md").write_text(ho.gap_markdown(gap, hrep) + ho.negative_markdown(neg) + ho.library_markdown(lib))
         print(f"  overfit gap {gap.get('gap')} {gap.get('gap_ci95')}, negative gap {neg['gap_per_file']}")
         return out
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
+def drift_score(adapter: str, raw_before: dict, raw_after: dict, policy: str, before: dict, after_corpus: Path) -> dict:
+    """Score the scan of the changed corpus against its answer key and take the difference."""
+    import drift as dr
+    bom, _, _ = translate(adapter, raw_after)
+    after = score(bom, policy=policy, custom="exclude", truth=dr.after_truth(load_truth(include_custom=False)[0]), corpus=after_corpus)
+    ev = dr.evaluate(before, after, bom)
+    ev["identity"] = dr.identity(raw_before, raw_after)
+    return ev
+
+
+def run_drift(cmd, a, lim, extra_path, parts: dict, bundle: Path) -> dict:
+    import drift as dr
+    work = Path(tempfile.mkdtemp(prefix="cbom-drift-"))
+    try:
+        print("Change detection: applying the injected changes and rescanning ...")
+        corpus = dr.build_after(work)
+        res = sandbox.run(cmd, {"corpus": corpus}, lim, pass_env=tuple(a.pass_env), extra_path=extra_path,
+                          require=a.require_isolation, **fs(a, work))
+        (bundle / "raw-drift").mkdir()
+        cb = Path(res.out) / a.cbom
+        if cb.exists():
+            shutil.copy2(cb, bundle / "raw-drift" / a.cbom)
+        sandbox.cleanup(res)
+        if res.timed_out or res.tampered or not (bundle / "raw-drift" / a.cbom).exists():
+            return {"verdict": "not scored", "run": res.record()}
+        before = parts.get("scorecard-full") or parts["scorecard"]
+        ev = drift_score(a.adapter, json.loads((bundle / "raw" / a.cbom).read_text()),
+                         json.loads((bundle / "raw-drift" / a.cbom).read_text()), a.policy,
+                         json.loads(json.dumps(before, default=str)), corpus)
+        (bundle / "drift.json").write_text(json.dumps(ev, indent=2) + "\n")
+        (bundle / "drift.md").write_text(dr.markdown(ev, a.name))
+        print(f"  changes seen {dr.seen_cell(ev)} of {ev['total']}; identity: {dr.identity_cell(ev)}")
+        return {"verdict": "scored", "run": res.record(), "total": ev["total"], "eligible": ev["eligible"],
+                "seen": ev["seen"], "seen_pct": ev["seen_pct"], "identity": ev["identity"]["verdict"],
+                "noise_outside": len(ev["noise_outside"]["lost"]) + len(ev["noise_outside"]["gained"])}
     finally:
         shutil.rmtree(work, ignore_errors=True)
 
@@ -491,6 +533,8 @@ def cmd_verify(a) -> int:
     need += ["scorecard-full.json"] if sc.get("scope") else []
     rem_scored = (m.get("remediation") or {}).get("verdict") == "scored"
     need += [f"raw-after/{sc['cbom']}", "remediation.json"] if rem_scored else []
+    drift_scored = (m.get("drift") or {}).get("verdict") == "scored"
+    need += [f"raw-drift/{sc['cbom']}", "drift.json"] if drift_scored else []
     integ = m.get("integrity")
     need += ["integrity.json"] if integ else []
     need += [f"raw-repeat/{sc['cbom']}"] if integ and (bundle / "raw-repeat").exists() else []
@@ -536,6 +580,19 @@ def cmd_verify(a) -> int:
             say(rem_ev == json.loads((bundle / "remediation.json").read_text())
                 and (mr["total"], mr["eligible"], mr["verified"]) == (rem_ev["total"], rem_ev["eligible"], rem_ev["verified"]),
                 "fix-and-rescan re-derives from raw-after/, and the manifest's counts match")
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+    if drift_scored:
+        import drift as dr
+        work = Path(tempfile.mkdtemp(prefix="cbom-drift-v-"))
+        try:
+            before = parts.get("scorecard-full") or parts["scorecard"]
+            ev = drift_score(sc["adapter"], raw, json.loads((bundle / "raw-drift" / sc["cbom"]).read_text()), sc["policy"],
+                             json.loads(json.dumps(before, default=str)), dr.build_after(work))
+            md = m["drift"]
+            say(ev == json.loads((bundle / "drift.json").read_text())
+                and (md["total"], md["eligible"], md["seen"], md["identity"]) == (ev["total"], ev["eligible"], ev["seen"], ev["identity"]["verdict"]),
+                "change detection re-derives from raw/ and raw-drift/, and the manifest's counts match")
         finally:
             shutil.rmtree(work, ignore_errors=True)
     if integ:
@@ -668,6 +725,8 @@ def main() -> int:
     r.add_argument("--checks", help="checks.json from `bench.py checks` to include")
     r.add_argument("--remediation", action="store_true",
                    help="also apply the reference migrations, rescan, and score verified remediation")
+    r.add_argument("--drift", action="store_true",
+                   help="also apply the injected changes (add, remove, downgrade), rescan, and score which the scanner's two reports show")
     r.add_argument("--repeat", action="store_true",
                    help="also scan the corpus a second time and report whether the two outputs are the same")
     r.add_argument("--bundle", required=True)
