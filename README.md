@@ -7,9 +7,9 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Methodology 2.3](https://img.shields.io/badge/methodology-2.3-informational.svg)](METHODOLOGY.md)
 
-**Version:** 2.6.5 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
+**Version:** 2.6.5.1 · **Author:** Quantum Core Institute · **License:** Apache-2.0 ([LICENSE](LICENSE))
 
-2.6.5 measures QCI PQC Scanner v2.3.4.3: parameters correct on 90.2% of detections (54.4% for v2.3.4.1), no false positives, 62.2% recall. Every published number was measured on this release by `tools/release_run.sh`. See [CHANGELOG.md](CHANGELOG.md).
+2.6.5.1 puts cryptoscan 1.5.0 and qScan 0.12.0, rerun on 2.6.5, back in the published comparison. 2.6.5 measures QCI PQC Scanner v2.3.4.3: parameters correct on 90.2% of detections (54.4% for v2.3.4.1), no false positives, 62.2% recall. Every published number was measured on this release by `tools/release_run.sh`. See [CHANGELOG.md](CHANGELOG.md).
 
 [Release notes](CHANGELOG.md) · [Methodology](METHODOLOGY.md) · [Versioning](VERSIONING.md) · [Parameter cheat-sheet](PARAMETER_CHEATSHEET.md) · [Results](reports/comparison.md) · [Evidence](evidence/) · [Holdout sets](HOLDOUT.md) · [Bring your own code](BYOC.md)
 

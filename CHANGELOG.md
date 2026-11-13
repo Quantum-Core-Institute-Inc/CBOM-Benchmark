@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.6.5.1 (2026-11-13): cryptoscan and qScan back in the comparison
+
+A results revision of 2.6.5: results added, nothing rescored.
+
+- **cryptoscan 1.5.0 and qScan 0.12.0 rerun on 2.6.5** by the third-party workflow, verified, and
+  committed under `evidence/`. Their scores repeat the 2.6.4 run exactly, as expected with the
+  corpus, answer key and scorer unchanged: cryptoscan 34.6% recall, 59.2% precision, 98 false
+  positives; qScan 18.3%, 83.3%, 15.
+
 ## 2.6.5 (2026-11-13): QCI PQC Scanner v2.3.4.3
 
 A measured release: every scanner was rescanned by `tools/release_run.sh`, gate floors were reset
