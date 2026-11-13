@@ -63,6 +63,16 @@ def main() -> int:
           and all(c["type"] == "cryptographic-asset" for c in bom["components"]))
     check("names inside longer names are not double counted",
           sarif.algorithms_in("use of 3des and sha-512, never des-ede3") == ["3DES", "SHA-512"])
+    # A rule whose message recommends a cipher and names none: the flagged code says which one.
+    oracle = result("java.lang.security.audit.cbc-padding-oracle",
+                    "Using CBC with PKCS5Padding is susceptible to padding oracle attacks. Use 'AES/GCM/NoPadding' instead.",
+                    "src/T.java", 9)
+    plain = sarif.translate({"runs": [run("Semgrep OSS", [rule("java.lang.security.audit.cbc-padding-oracle", ["CWE-327"])], [oracle])]})
+    check("a cipher the message only recommends is not reported", plain[0]["components"] == [] and plain[2]["unnamed"] == 1)
+    oracle["locations"][0]["physicalLocation"]["region"]["snippet"] = {"text": 'Cipher.getInstance("DESede/CBC/PKCS5Padding")'}
+    code = sarif.translate({"runs": [run("Semgrep OSS", [rule("java.lang.security.audit.cbc-padding-oracle", ["CWE-327"])], [oracle])]})[0]["components"]
+    check("the flagged code names the algorithm when the rule and message do not",
+          [(c["name"], c["cryptoProperties"]["algorithmProperties"].get("mode")) for c in code] == [("3DES", "cbc")])
     check("an empty document gives an empty BOM", sarif.translate({})[0]["components"] == [])
 
     print("\nAll SARIF adapter checks pass." if not bad else f"\n{len(bad)} FAILED: {bad}")

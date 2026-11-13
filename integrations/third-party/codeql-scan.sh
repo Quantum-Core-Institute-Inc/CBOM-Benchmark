@@ -22,7 +22,7 @@ for spec in python:none java-kotlin:none javascript-typescript:none c-cpp:none c
     echo "   database create failed:"; tail -n 8 "$OUT/codeql/$lang.create.log" | sed 's/^/   /'; status=1; continue
   fi
   if ! "$CODEQL" database analyze "$WORK/db-$lang" "codeql/$pack-queries:codeql-suites/$pack-security-extended.qls" \
-        --format=sarif-latest --output="$OUT/codeql/$lang.sarif" --threads=0 --no-sarif-add-snippets \
+        --format=sarif-latest --output="$OUT/codeql/$lang.sarif" --threads=0 --sarif-add-snippets \
         >"$OUT/codeql/$lang.analyze.log" 2>&1; then
     echo "   analyze failed:"; tail -n 8 "$OUT/codeql/$lang.analyze.log" | sed 's/^/   /'; status=1; continue
   fi

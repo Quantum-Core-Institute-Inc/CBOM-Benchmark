@@ -10,9 +10,11 @@ What the adapter does:
      cryptography when its id, tags or description say so (crypto, cipher, hash, a CWE for weak or
      broken cryptography, or an algorithm name).
   2. Reads the algorithm each kept result names. The rule id comes first
-     ("...insecure-hash-algorithm-md5" names MD5). When the id names none, the result's message and
-     the rule's description are read, up to the point where they start recommending something:
-     "MD5 is weak; use SHA-256 instead" names MD5, not SHA-256.
+     ("...insecure-hash-algorithm-md5" names MD5). When the id names none, the result's message is
+     read, up to the point where it starts recommending something: "MD5 is weak. Use SHA-256
+     instead" names MD5, not SHA-256. When the message names none either, the flagged code itself
+     is read, if the tool included it: a padding-oracle rule does not say which cipher, the line
+     `Cipher.getInstance("AES/CBC/PKCS5Padding")` does. The rule's description comes last.
   3. Emits one CycloneDX cryptographic-asset component per algorithm, with each result's file and
      line as an occurrence. A key size stated in the message ("uses 1024 bits") is kept for RSA,
      DSA and DH, and a mode named with a cipher (ECB, CBC) is kept.
@@ -62,7 +64,7 @@ _CRYPTO_RULE = re.compile(
     r"cwe-?(?:326|327|328|916|780|310|1240)(?![0-9])|md5|sha-?1|(?<![a-z0-9])des(?![a-z0-9])|rc4|(?<![a-z0-9])rsa(?![a-z])|"
     r"(?<![a-z0-9])ecb(?![a-z0-9])|pbkdf|hmac|bcrypt", re.I)
 # Where a message stops describing what it found and starts recommending something else.
-_ADVICE = re.compile(r"\b(?:instead|use (?:of )?(?:a |an |the )?(?:stronger|secure|safer|modern)|should (?:be )?(?:use|switch|replac|migrat)|"
+_ADVICE = re.compile(r"(?:(?:^|[.;:!]\s+)(?:please\s+)?(?:use|switch|replace|migrate|upgrade|prefer|choose|try)\b)|\b(?:instead|use (?:of )?(?:a |an |the )?(?:stronger|secure|safer|modern)|should (?:be )?(?:use|switch|replac|migrat)|"
                      r"recommend|consider|prefer|such as|switch to|replace (?:it )?with|upgrade to|like sha|e\.g\.)", re.I)
 _BITS = re.compile(r"\b(512|768|1024|1536|2048|3072|4096|7680|8192)\s*-?\s*bits?\b|\bkey (?:size|length) (?:of )?(512|768|1024|1536|2048|3072|4096)\b", re.I)
 _MODE = re.compile(r"(?<![a-z0-9])(ECB|CBC|GCM|CTR|CFB|OFB)(?![a-z0-9])", re.I)
@@ -107,6 +109,15 @@ def _location(result: dict) -> tuple[str, int | None]:
     return "", None
 
 
+def _snippet(result: dict) -> str:
+    """The flagged code, when the tool included it. Only the flagged region, never its context."""
+    for loc in result.get("locations") or []:
+        text = ((((loc.get("physicalLocation") or {}).get("region") or {}).get("snippet") or {}).get("text")) or ""
+        if text:
+            return text[:400]
+    return ""
+
+
 def translate(sarif: dict) -> tuple[dict, list[dict], dict]:
     """-> (CycloneDX bom for the scorer, signals, notes)."""
     notes = {"results": 0, "crypto_results": 0, "named": 0, "unnamed": 0, "tools": [], "unnamed_rules": {}, "rules_used": {}}
@@ -130,7 +141,9 @@ def translate(sarif: dict) -> tuple[dict, list[dict], dict]:
             notes["crypto_results"] += 1
             # The last segment of a dotted or slashed id is the rule's own name; the rest is its path.
             own = re.split(r"[./]", rule_id)[-1]
-            names = algorithms_in(own) or algorithms_in(_described(message)) \
+            # Then the code the result points at, which is what a person reading the finding sees:
+            # a rule about CBC padding says nothing of the cipher, the flagged line says AES.
+            names = algorithms_in(own) or algorithms_in(_described(message)) or algorithms_in(_snippet(res)) \
                 or algorithms_in(_described((rule.get("shortDescription") or {}).get("text", "")))
             if not names:
                 notes["unnamed"] += 1
@@ -141,7 +154,7 @@ def translate(sarif: dict) -> tuple[dict, list[dict], dict]:
             uri, line = _location(res)
             said = _described(message)
             bits = _BITS.search(said)
-            mode = _MODE.search(own) or _MODE.search(said)
+            mode = _MODE.search(own) or _MODE.search(said) or _MODE.search(_snippet(res))
             for name in names:
                 props = {}
                 if bits and name in ("RSA", "DSA", "DH"):
