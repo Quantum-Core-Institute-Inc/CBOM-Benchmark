@@ -1,0 +1,2025 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:0be94445-4ff8-4b35-8956-afe1fb5f39e5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-13T11:41:56.121Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "qScan",
+          "version": "0.12.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "root",
+      "name": "/tmp/cbom-sandbox-2q89zqio/corpus"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:00550317890c949a",
+      "name": "DH (key-agree)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "DH",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1007AccountDefaults.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1007AccountDefaults.java:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1008BookingSettings.java:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1008BookingSettings.java:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1009ClaimConfig.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1009ClaimConfig.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_dh_009.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_dh_010.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_dh_011.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dh_009.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dh_010.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dh_011.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java:69",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/java/VoucherProfileModule.java:91",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/python/invoice_service.py:43",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/python/invoice_service.py:57",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Dh.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Dh.java:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Dh.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_dh.js:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_dh.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_dh.py:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/ipsec/ipsec.conf:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/ipsec/swanctl.conf:7",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:d4832e4646ef2f33",
+      "name": "DSA (signature)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "DSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_dsa_009/cal_dsa_009.go:26",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_dsa_010/cal_dsa_010.go:26",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_dsa_011/cal_dsa_011.go:34",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1010DeviceConfig.java:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1010DeviceConfig.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1011AuditSettings.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1011AuditSettings.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1012MemberOptions.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1012MemberOptions.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_012.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_013.py:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_dsa_014.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2007PayloadDefaults.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2008PayloadOptions.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2009ProfileProfile.java:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/java/PqParamSpec.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/java/PqSignature.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/java/PqSignature.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/csharp/DsaLegacy/Program.cs:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/dsa/main.go:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/dsa/main.go:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Dsa.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Dsa.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Rsa.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Rsa.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_dsa.py:5",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:2c7075c63fd2effd",
+      "name": "ECDH (key-agree)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "ECDH",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1013ArchiveOptions.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1014EventProfile.java:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1015PayloadConfig.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_012.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_013.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_014.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_015.py:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_016.py:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_017.py:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2010ProfileSettings.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2011DeviceOptions.java:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2012InvoiceProfile.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_003.py:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_004.py:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_005.py:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_006.ts:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_007.ts:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_008.ts:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_agreement.py:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/javascript/device_session.js:204",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/javascript/device_session.js:338",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/python/order_jobs.py:415",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/python/order_jobs.py:79",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts:323",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/java/PqWashing.java:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/java/PqWashing.java:24",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/python/pq_washing.py:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/python/pq_washing.py:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/java/com/acme/cryptokit/CryptoKit.java:27",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/csharp/KeyAgreement/Program.cs:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/csharp/KeyAgreement/Program.cs:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_ec.js:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_ecdsa.py:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/java/T2CurveConstant.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/python/t2_curve_variable.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/typescript/t2_curve_table.ts:7",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:8abafb4880d2fb60",
+      "name": "ECDH (other)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "parameterSetIdentifier": "ECDH",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/go-service/go.mod:6",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:60dc53fd4f4cdf3f",
+      "name": "ECDSA (other)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "parameterSetIdentifier": "ECDSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/node-api/package-lock.json:128",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package-lock.json:55",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:15a9432774a9072b",
+      "name": "ECDSA (signature)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "ECDSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_ec_012/cal_ec_012.go:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_013/cal_ec_013.go:26",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ec_014/cal_ec_014.go:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1013ArchiveOptions.java:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1014EventProfile.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1015PayloadConfig.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_015.py:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_016.py:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ec_017.py:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_007/cal_ec_007.go:30",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_008/cal_ec_008.go:28",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_ec_009/cal_ec_009.go:30",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2010ProfileSettings.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2011DeviceOptions.java:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2012InvoiceProfile.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_003.py:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/python/cal_ec_004.py:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/python/order_jobs.py:416",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/csharp/EcdsaSign/Program.cs:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/ecdsa/main.go:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/ecdsa/main.go:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1Ecdsa.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_ecdsa.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/csharp/CurveSwitch/Program.cs:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/go/curve_table/main.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/python/t2_curve_variable.py:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json:16",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:e80ee0bf8746d4ec",
+      "name": "EdDSA (signature)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "EdDSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_ed25519_015/cal_ed25519_015.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_015/cal_ed25519_015.go:19",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_016/cal_ed25519_016.go:33",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_016/cal_ed25519_016.go:35",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_017/cal_ed25519_017.go:25",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_ed25519_017/cal_ed25519_017.go:27",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1016PayloadDefaults.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1016PayloadDefaults.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1017CatalogSettings.java:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1017CatalogSettings.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1018DeviceOptions.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1018DeviceOptions.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_015.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_016.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ed25519_017.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_018.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_019.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_ed25519_020.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go:289",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go:291",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/java/BookingOptionsModule.java:170",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/ed25519/main.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_modern_curves.py:6",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:4fc7ba9e2300b48d",
+      "name": "RSA (kem)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "parameterSetIdentifier": "RSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "encapsulate",
+            "decapsulate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_rsa_030/cal_rsa_030.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_031/cal_rsa_031.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_rsa_032/cal_rsa_032.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1028MetricSettings.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1029MetricOptions.java:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1030DeviceOptions.java:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_027.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_028.js:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_030.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_031.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_rsa_032.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_013.c:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_014.c:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/c/cal_rsa_015.c:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_013/cal_rsa_013.go:19",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_014/cal_rsa_014.go:29",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/go/cal_rsa_015/cal_rsa_015.go:21",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_012.ts:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_013.ts:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_014.ts:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_transport.py:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "custom/example_envelope/envelope/wrap_transport.py:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deadcode/python/dead_export.py:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/go/invoice_gateway/main.go:213",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go:207",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/go/payload_worker/main.go:236",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts:288",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/infra/terraform/kms.tf:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go:44",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_rsa_legacy.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/csharp/RsaSign/Program.cs:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/rsa/main.go:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_rsa.js:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/c/t2_macro_bits.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/csharp/KeyFactory/Program.cs:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/go/key_bits/main.go:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/python/t2_alias_import.py:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/typescript/t2_env_default.ts:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier3/java/cross_class_constant/src/com/acme/keys/KeyIssuer.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier3/python/cross_module_constant/keys/issuer.py:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier3/python/wrapper_two_callers/seclib/keys.py:6",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:8869b5d736e5762a",
+      "name": "RSA (other)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "parameterSetIdentifier": "RSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deps/go-service/go.mod:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/go-service/go.mod:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/java-gateway/pom.xml:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/java-gateway/pom.xml:27",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/java-gateway/pom.xml:32",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/java-pq/build.gradle:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package-lock.json:105",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package-lock.json:138",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package-lock.json:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package-lock.json:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package.json:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/node-api/package.json:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-billing/requirements.txt:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-billing/requirements.txt:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-billing/requirements.txt:3",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-billing/requirements.txt:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-billing/requirements.txt:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "deps/python-signer/pyproject.toml:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/services/ledger-service/build.gradle:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/services/settlement-worker/requirements.txt:8",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:fd6b3aa3f78f4276",
+      "name": "RSA (signature)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "RSA",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/java/Cal1028MetricSettings.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1029MetricOptions.java:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1030DeviceOptions.java:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2016RecordConfig.java:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2017ReportSettings.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/java/Cal2018ReceiptProfile.java:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/libs/cryptokit/go/cryptokit.go:49",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/rsa/main.go:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_webcrypto.mjs:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/keys/jwks.json:4",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:18ab48fb0e8c4f4b",
+      "name": "X25519 (key-agree)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "X25519",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/go/cal_x25519_042/cal_x25519_042.go:25",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_043/cal_x25519_043.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/go/cal_x25519_044/cal_x25519_044.go:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1040ProfileSettings.java:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1040ProfileSettings.java:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1041OrderSettings.java:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1041OrderSettings.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1042AccountProfile.java:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/java/Cal1042AccountProfile.java:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_x25519_037.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_x25519_038.js:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_x25519_039.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_042.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_042.py:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_043.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_043.py:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_044.py:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/python/cal_x25519_044.py:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/ssh/sshd_config_pq:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/python/pq_hybrid_kem.py:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/x25519/main.go:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/java/T1ModernCurves.java:18",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_modern_curves.py:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/python/t1_modern_curves.py:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/ssh/sshd_config:9",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:0e4ceb700fe25e03",
+      "name": "unknown (hash)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "negatives/java/NStringsAndComments.java:18",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:8d569d898998eb55",
+      "name": "unknown (key-agree)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "other"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/c/cal_ec_012.c:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ec_013.c:19",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ec_014.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_015.c:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_016.c:14",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_ed25519_017.c:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_rsa_027.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_rsa_028.c:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_x25519_038.c:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_x25519_039.c:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/c/cal_x25519_040.c:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/c/device_daemon.c:354",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/c/device_daemon.c:60",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq.conf:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq.conf:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq_washing.conf:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/tls/nginx_pq_washing.conf:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_ec.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_modern_curves.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_modern_curves.c:6",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_rsa_evp.c:11",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf:13",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf:14",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:5e95d8acba7d386d",
+      "name": "unknown (signature)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software-plain-ram",
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "calibration/tier1/javascript/cal_ec_012.js:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_013.js:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_ec_014.js:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_027.js:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier1/javascript/cal_rsa_028.js:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_006.ts:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_007.ts:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_ec_008.ts:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_012.ts:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_013.ts:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "calibration/tier2/typescript/cal_rsa_014.ts:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/javascript/device_session.js:205",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/javascript/device_session.js:339",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts:289",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "mixed/typescript/voucher_service.ts:324",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/firmware/signing-policy.yaml:13",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/assets/firmware/signing-policy.yaml:7",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py:12",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py:69",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py:82",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py:86",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "pqc/python/firmware_verify_lms.py:92",
+            "additionalContext": "CWE-1240"
+          },
+          {
+            "location": "tier1/c/t1_ec.c:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_ec.c:17",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_ec.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_modern_curves.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/javascript/t1_rsa.js:5",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier2/typescript/t2_env_default.ts:7",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:18793ad440ad0620",
+      "name": "unknown (certificate)",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {}
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "negatives/assets/cert-rotation-runbook.md:10",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "negatives/assets/upload_validator_fake.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/certs/firmware_signing.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/certs/migrated_leaf.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/certs/release_root_mldsa.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.crt:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/services/settlement-worker/partner_ca.py:4",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/api_gateway.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/device_ed25519.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/payments_legacy.crt:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/portal_fullchain.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/portal_fullchain.pem:20",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/certs/telemetry_ecdsa.pem:1",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:91696e89c9a06077",
+      "name": "ECDH (tls)",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "negatives/java/NLookalikes.java:12",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "system/payments-platform/edge/nginx/gateway.conf:9",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/c/t1_tls_ctx.c:8",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier1/go/tls_config/main.go:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/application.yml:16",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/haproxy.cfg:7",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/httpd-ssl.conf:15",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "tier4/assets/tls/nginx.conf:22",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:9233d1f6e56a3bf4",
+      "name": "unknown (tls)",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier1/go/tls_config/main.go:11",
+            "additionalContext": "CWE-326"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:cda083ef482e0749",
+      "name": "ECDSA (private-key)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/keys/treasury_hot_wallet.key:1",
+            "additionalContext": "CWE-798"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:7f678c5f1480bb91",
+      "name": "RSA (private-key)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/payments-platform/edge/nginx/tls/gateway.key:1",
+            "additionalContext": "CWE-798"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:0bb0c5da1b489ea9",
+      "name": "RSA (public-key)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tier4/assets/ssh/ssh_host_rsa_key.pub:1",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:2292bd8e1dfcaa6f",
+      "name": "unknown (private-key)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "true"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/assets/keys/attestation_signer.pem:1",
+            "additionalContext": "CWE-798"
+          },
+          {
+            "location": "tier4/assets/keys/backup_signing_encrypted.pem:1",
+            "additionalContext": "CWE-798"
+          },
+          {
+            "location": "tier4/assets/keys/billing_service.pem:1",
+            "additionalContext": "CWE-798"
+          },
+          {
+            "location": "tier4/assets/keystores/orders_keystore.p12:1",
+            "additionalContext": "CWE-798"
+          },
+          {
+            "location": "tier4/assets/keystores/partner_truststore.jks:1",
+            "additionalContext": "CWE-798"
+          },
+          {
+            "location": "tier4/assets/ssh/deploy_id_ed25519:1",
+            "additionalContext": "CWE-798"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto:bf3cb6baa499b1e2",
+      "name": "unknown (public-key)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key"
+        }
+      },
+      "properties": [
+        {
+          "name": "quantakrypto:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "quantakrypto:harvestNowDecryptLater",
+          "value": "false"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "pqc/assets/keys/bootloader_lms_pub.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/keys/kem_recipient_pub.pem:1",
+            "additionalContext": "CWE-327"
+          },
+          {
+            "location": "pqc/assets/keys/update_xmss_pub.pem:1",
+            "additionalContext": "CWE-327"
+          }
+        ]
+      }
+    }
+  ]
+}
