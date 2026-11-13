@@ -2,7 +2,7 @@
   "bundle_format": 1,
   "testbench": "2.6.6",
   "methodology": "2.3",
-  "created": "2026-11-13T17:30:06Z",
+  "created": "2026-11-13T18:49:53Z",
   "stamp": {
     "release": "2.6.6",
     "methodology": "2.3",
@@ -14,7 +14,7 @@
     "adapter": "c71a627874e536b5"
   },
   "files": {
-    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "METHODOLOGY.md": "24a05d0aca69bd594b07be5b3cc7915e86ddd060d627e1665db516856778f32a",
     "VERSION": "245f7531ea44f28f7b7e8893179f4224fff4d081dcc3ee19f770ab1ab9b8d691",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
@@ -82,10 +82,10 @@
     "exit_code": 1,
     "signal": null,
     "timed_out": false,
-    "wall_s": 5.77,
-    "cpu_user_s": 5.54,
-    "cpu_sys_s": 0.15,
-    "peak_rss_mb": 47.6,
+    "wall_s": 5.39,
+    "cpu_user_s": 5.2,
+    "cpu_sys_s": 0.13,
+    "peak_rss_mb": 45.5,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -152,10 +152,10 @@
       "exit_code": 1,
       "signal": null,
       "timed_out": false,
-      "wall_s": 4.18,
-      "cpu_user_s": 3.99,
-      "cpu_sys_s": 0.12,
-      "peak_rss_mb": 66.4,
+      "wall_s": 3.58,
+      "cpu_user_s": 3.47,
+      "cpu_sys_s": 0.05,
+      "peak_rss_mb": 66.5,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -175,7 +175,7 @@
         "network": false
       }
     },
-    "raw_cbom_sha256": "4a8ab3b1bc31e948a828f5da457cff5dd240c88500a61970388f3e13e0e170a4",
+    "raw_cbom_sha256": "c06dda3089fc67b0c2a19ed80e936b348551fdf0115dcb10896dc7849498254e",
     "verdict": "scored",
     "overfit_gap": {
       "comparable_findings": 355,
@@ -577,10 +577,10 @@
       "exit_code": 1,
       "signal": null,
       "timed_out": false,
-      "wall_s": 6.87,
-      "cpu_user_s": 6.66,
-      "cpu_sys_s": 0.14,
-      "peak_rss_mb": 72.0,
+      "wall_s": 6.01,
+      "cpu_user_s": 5.78,
+      "cpu_sys_s": 0.13,
+      "peak_rss_mb": 71.1,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -634,8 +634,8 @@
       "deadline_weighted_recall": 81.6,
       "missed_due_by_2030": 25,
       "library_recall": 96.4,
-      "parameter_recovery": 92.6,
       "version_accuracy": 84.6,
+      "parameter_recovery": 92.6,
       "config_completeness": 100.0,
       "library_pq_verdict_accuracy": null,
       "cbom_schema_valid": 1,

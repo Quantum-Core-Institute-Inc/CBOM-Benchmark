@@ -2,7 +2,7 @@
   "bundle_format": 1,
   "testbench": "2.6.6",
   "methodology": "2.3",
-  "created": "2026-11-13T17:30:43Z",
+  "created": "2026-11-13T18:50:33Z",
   "stamp": {
     "release": "2.6.6",
     "methodology": "2.3",
@@ -14,7 +14,7 @@
     "adapter": "c71a627874e536b5"
   },
   "files": {
-    "METHODOLOGY.md": "be6986558b3f07cf41ba6bd4fbd66a6f1e247c97671b69460d1ff51e4aa07552",
+    "METHODOLOGY.md": "24a05d0aca69bd594b07be5b3cc7915e86ddd060d627e1665db516856778f32a",
     "VERSION": "245f7531ea44f28f7b7e8893179f4224fff4d081dcc3ee19f770ab1ab9b8d691",
     "expected/ground_truth.json": "8a207a3aee996a28e62eadc297f634b1bb77cfd31a8a98acc1c0aefb109b4c39",
     "expected/libraries.json": "5a8e9b59b9535bc4af11cf0fe41525102d5e1ac8f991f3c32dd0bfddfd9865d1",
@@ -82,10 +82,10 @@
     "exit_code": 1,
     "signal": null,
     "timed_out": false,
-    "wall_s": 5.89,
-    "cpu_user_s": 5.48,
-    "cpu_sys_s": 0.13,
-    "peak_rss_mb": 33.4,
+    "wall_s": 8.1,
+    "cpu_user_s": 6.15,
+    "cpu_sys_s": 0.14,
+    "peak_rss_mb": 39.2,
     "isolation": {
       "environment": "scrubbed",
       "seed_withheld": true,
@@ -118,7 +118,8 @@
     "ticket_ready_pct": 87.5,
     "actionable_recall": 69.8,
     "deadline_weighted_recall": 81.6,
-    "library_recall": 96.4
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
   },
   "headline_full": {
     "scored_findings": 410,
@@ -132,7 +133,8 @@
     "ticket_ready_pct": 86.9,
     "actionable_recall": 66.6,
     "deadline_weighted_recall": 78.7,
-    "library_recall": 96.4
+    "library_recall": 96.4,
+    "version_accuracy": 84.6
   },
   "holdout": {
     "seed_commitment": "715591cb211c22cbab672b2e6558ddad268671939bb927feb05dbb950c4cc588",
@@ -151,9 +153,9 @@
       "exit_code": 1,
       "signal": null,
       "timed_out": false,
-      "wall_s": 4.48,
-      "cpu_user_s": 4.13,
-      "cpu_sys_s": 0.1,
+      "wall_s": 3.73,
+      "cpu_user_s": 3.42,
+      "cpu_sys_s": 0.08,
       "peak_rss_mb": 27.5,
       "isolation": {
         "environment": "scrubbed",
@@ -175,7 +177,7 @@
         "network": false
       }
     },
-    "raw_cbom_sha256": "614823f78f88e4a3b1ff05965ca020392b7c456ba5692b044a938cc6ab240acc",
+    "raw_cbom_sha256": "6504156185efaf59213b77e62f735a9d7f5696462d65e630e0de7f3f970c694d",
     "verdict": "scored",
     "overfit_gap": {
       "comparable_findings": 355,
@@ -577,10 +579,10 @@
       "exit_code": 1,
       "signal": null,
       "timed_out": false,
-      "wall_s": 6.34,
-      "cpu_user_s": 5.97,
-      "cpu_sys_s": 0.13,
-      "peak_rss_mb": 32.3,
+      "wall_s": 6.14,
+      "cpu_user_s": 5.78,
+      "cpu_sys_s": 0.15,
+      "peak_rss_mb": 32.4,
       "isolation": {
         "environment": "scrubbed",
         "seed_withheld": true,
@@ -635,6 +637,7 @@
       "deadline_weighted_recall": 81.6,
       "missed_due_by_2030": 25,
       "library_recall": 96.4,
+      "version_accuracy": 84.6,
       "parameter_recovery": 92.6,
       "config_completeness": 100.0,
       "library_pq_verdict_accuracy": null,
