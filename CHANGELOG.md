@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.6.7 (2026-11-25): publish QCI v2.3.4.7 measurement
+
+Methodology stays 2.3. Patch release on the 2.6 line.
+
+- **QCI v2.3.4.7 measured.** Recall 79.0% (324/410), precision 99.7% (1 FP), parameters 92.6%. Binary honesty passes. LMS/XMSS 5/7 (SPKI OID fix is in the scanner main; next scanner release closes the remaining two).
+- Comparison table updated for the QCI column. cdxgen and grep unchanged.
+- Full gate rebaseline and evidence bundle rebuild still require `tools/release_run.sh` by the release owner.
+
+
 ## 2.6.6 (2026-11-13): QCI PQC Scanner v2.3.4.5; Semgrep, Opengrep and CodeQL
 
 A measured release: every scanner was rescanned by `tools/release_run.sh`, gate floors were reset
