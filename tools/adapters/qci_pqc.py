@@ -37,6 +37,7 @@ EXACT = {
     "ML-KEM": "ML-KEM", "ML-KEM-512": "ML-KEM-512", "ML-KEM-768": "ML-KEM-768", "ML-KEM-1024": "ML-KEM-1024",
     "ML-DSA": "ML-DSA", "ML-DSA-44": "ML-DSA-44", "ML-DSA-65": "ML-DSA-65", "ML-DSA-87": "ML-DSA-87",
     "SLH-DSA": "SLH-DSA", "FN-DSA": "FN-DSA", "Kyber-prestandard": "Kyber",
+    "LMS": "LMS", "XMSS": "XMSS",
     "SSH-Ed25519-HostKey": "Ed25519",
     # Names that state the algorithm (and sometimes its parameters) outright.
     "AES-CBC": "AES-CBC", "AES-128-CBC": "AES-128-CBC", "AES-192-CBC": "AES-192-CBC", "AES-256-CBC": "AES-256-CBC",
