@@ -35105,7 +35105,7 @@
   ],
   "password_gated_results": [],
   "manifest": {
-    "release": "2.6.6",
+    "release": "2.6.7",
     "methodology": "2.3",
     "findings": 410,
     "answer_key": "b0867a4029ea0c56",
