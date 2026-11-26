@@ -2,19 +2,19 @@
 
 Shipped corpus only, every scanner on the same denominator, no declared scopes. Baselines (grep baseline) are calibration points, not products.
 
-Testbench 2.6.6, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scorer 0dead3635a2ae115. Scanners: QCI v2.3.4.5 = qci-pqc, version 2.3.4.5 via qci_pqc 1.3; cdxgen 12.9.1 = CycloneDX Generator 12.9.1 via cdxgen 1.0; grep baseline = grep baseline.
+Testbench 2.6.7, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scorer 0dead3635a2ae115. Scanners: QCI v2.3.4.7 = qci-pqc, version 2.3.4.7 via qci_pqc 1.3; cdxgen 12.9.1 = CycloneDX Generator 12.9.1 via cdxgen 1.0; grep baseline = grep baseline.
 
 ## Overall
 
-| | QCI v2.3.4.5 | cdxgen 12.9.1 | grep baseline |
+| | QCI v2.3.4.7 | cdxgen 12.9.1 | grep baseline |
 |---|---|---|---|
 | Findings | 410 | 410 | 410 |
-| Recall | 76.6% | 5.1% | 67.1% |
+| Recall | 79.0% | 5.1% | 67.1% |
 | Recall incl. signals | 79.0% | 11.0% | n/a |
 | At primary site | 74.4% | 5.1% | 63.4% |
-| Parameters correct (of detected) | 92.7% | 81.0% | 56.0% |
-| Precision | 100.0% | 100.0% | 61.7% |
-| False positives | 0 | 0 | 171 |
+| Parameters correct (of detected) | 92.6% | 81.0% | 56.0% |
+| Precision | 99.7% | 100.0% | 61.7% |
+| False positives | 1 | 0 | 171 |
 |   in negative controls | 0 | 0 | 60 |
 | PQC over-claims | 0 | 0 | 28 |
 | PQC by standard name (of detected PQC) | 100.0% | n/a | 100.0% |
@@ -26,7 +26,7 @@ Testbench 2.6.6, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scor
 
 ## Crypto libraries (dependency manifests)
 
-| | QCI v2.3.4.5 | cdxgen 12.9.1 | grep baseline |
+| | QCI v2.3.4.7 | cdxgen 12.9.1 | grep baseline |
 |---|---|---|---|
 | Crypto libraries, in the right manifest | 96.4% (27/28) | 75.0% (21/28) | 0.0% (0/28) |
 | Found anywhere (incl. no location) | 96.4% (27/28) | 85.7% (24/28) | 0.0% (0/28) |
@@ -37,7 +37,7 @@ Testbench 2.6.6, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scor
 
 ## By language (recall)
 
-| | QCI v2.3.4.5 | cdxgen 12.9.1 | grep baseline |
+| | QCI v2.3.4.7 | cdxgen 12.9.1 | grep baseline |
 |---|---|---|---|
 | Python | 80.9% (55/68) | 0.0% (0/68) | 82.4% (56/68) |
 | Java | 78.5% (51/65) | 0.0% (0/65) | 78.5% (51/65) |
@@ -50,7 +50,7 @@ Testbench 2.6.6, policy nist:c78f618c306e7d48, answer key b0867a4029ea0c56, scor
 
 ## By tier (recall)
 
-| | QCI v2.3.4.5 | cdxgen 12.9.1 | grep baseline |
+| | QCI v2.3.4.7 | cdxgen 12.9.1 | grep baseline |
 |---|---|---|---|
 | 1. Direct | 89.2% (91/102) | 7.8% (8/102) | 83.3% (85/102) |
 | 2. Indirection | 66.7% (28/42) | 4.8% (2/42) | 92.9% (39/42) |
